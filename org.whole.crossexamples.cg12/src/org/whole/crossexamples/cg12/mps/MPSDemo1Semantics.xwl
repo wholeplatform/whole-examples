@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<semantics:SemanticTheory xmlns:semantics="http://lang.whole.org/Semantics">
+    <semantics:URI value="whole:org.whole.crossexamples.cg12.mps:MPSDemo1Semantics"/>
+    <semantics:Namespace value="org.whole.crossexamples.cg12.mps"/>
+    <semantics:Name value="MPSDemo1"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <semantics:SemanticFunctions initialCapacity="1">
+        <semantics:SemanticFunction>
+            <semantics:Name value="reduceToJava"/>
+            <semantics:FunctionType>
+                <semantics:AnyType/>
+                <semantics:LanguageType value="http://lang.whole.org/Java"/>
+            </semantics:FunctionType>
+            <semantics:Rules initialCapacity="2">
+                <semantics:ExecutionRule>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <semantics:EntityType value="whole:org.whole.crossexamples.cg12.mps:MPSDemo1Model#RangeIterator"/>
+                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <java:ForStatement xmlns:java="http://lang.whole.org/Java">
+                            <java:Expressions initialCapacity="1">
+                                <java:VariableDeclarationExpression>
+                                    <commons:Resolver/>
+                                    <java:PrimitiveType value="int"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <semantics:FunctionApplication>
+                                        <commons:Resolver/>
+                                        <semantics:Variable value="loopVariable"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </semantics:FunctionApplication>
+                                        <java:ExtraDimensions value="0"/>
+                                        <semantics:FunctionApplication>
+                                        <commons:Resolver/>
+                                        <semantics:Variable value="lowerBound"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </semantics:FunctionApplication>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:VariableDeclarationExpression>
+                            </java:Expressions>
+                            <java:InfixExpression>
+                                <semantics:FunctionApplication>
+                                    <commons:Resolver/>
+                                    <semantics:Variable value="loopVariable"/>
+                                    <commons:Resolver/>
+                                    <commons:Resolver/>
+                                </semantics:FunctionApplication>
+                                <java:InfixOperator value="&lt;"/>
+                                <semantics:FunctionApplication>
+                                    <commons:Resolver/>
+                                    <semantics:Variable value="upperBound"/>
+                                    <commons:Resolver/>
+                                    <commons:Resolver/>
+                                </semantics:FunctionApplication>
+                                <java:Expressions initialCapacity="0"/>
+                            </java:InfixExpression>
+                            <java:Expressions initialCapacity="1">
+                                <java:PostfixExpression>
+                                    <semantics:FunctionApplication>
+                                        <commons:Resolver/>
+                                        <semantics:Variable value="loopVariable"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                    </semantics:FunctionApplication>
+                                    <java:PostfixOperator value="++"/>
+                                </java:PostfixExpression>
+                            </java:Expressions>
+                            <semantics:FunctionApplication>
+                                <commons:Resolver/>
+                                <semantics:Variable value="body"/>
+                                <commons:Resolver/>
+                                <commons:Resolver/>
+                            </semantics:FunctionApplication>
+                        </java:ForStatement>
+                    </commons:StageUpFragment>
+                </semantics:ExecutionRule>
+                <semantics:ExecutionRule>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <semantics:TypedVariable>
+                        <semantics:Variable value="anyOther"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <semantics:AnyType/>
+                    </semantics:TypedVariable>
+                    <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="shallowClone"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="org.whole.lang.semantics.util.SemanticsUtils"/>
+                            <workflows:StringLiteral value="createShallowCloneEntity(org.whole.lang.model.IEntity)"/>
+                            <workflows:Expressions initialCapacity="1">
+                                <queries:SelfStep/>
+                            </workflows:Expressions>
+                        </workflows:InvokeJavaClassMethod>
+                        <queries:Block initialCapacity="2">
+                            <queries:Choose initialCapacity="2">
+                                <queries:If>
+                                    <queries:KindTest value="SIMPLE"/>
+                                    <queries:PointwiseUpdate>
+                                        <queries:ChildStep/>
+                                        <semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:VariableRefStep value="anyOther"/>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                    </queries:PointwiseUpdate>
+                                </queries:If>
+                                <queries:If>
+                                    <queries:KindTest value="COMPOSITE"/>
+                                    <queries:CartesianInsert>
+                                        <queries:Placement value="INTO"/>
+                                        <queries:SelfStep/>
+                                        <semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:VariableRefStep value="anyOther"/>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                    </queries:CartesianInsert>
+                                </queries:If>
+                            </queries:Choose>
+                            <queries:SelfStep/>
+                        </queries:Block>
+                    </queries:Path>
+                </semantics:ExecutionRule>
+            </semantics:Rules>
+        </semantics:SemanticFunction>
+    </semantics:SemanticFunctions>
+</semantics:SemanticTheory>

@@ -1,0 +1,923 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.crossexamples.mps.calculator:CalculatorActions"/>
+    <actions:Namespace value="org.whole.crossexamples.mps.calculator"/>
+    <actions:Name value="CalculatorActions"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:URI value="http://mps.crossexamples.whole.org/calculator"/>
+    <actions:ToolbarActions>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <actions:SimpleAction>
+            <actions:Label value="Generate Calculator"/>
+            <queries:Select xmlns:queries="http://lang.whole.org/Queries">
+                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                        <commons:Resolver/>
+                        <artifacts:Projects initialCapacity="1">
+                            <artifacts:Project>
+                                <commons:Variable>
+                                    <commons:VarType value="http://lang.whole.org/Artifacts#ProjectName"/>
+                                    <commons:VarName value="projectName"/>
+                                    <commons:Quantifier value="!"/>
+                                </commons:Variable>
+                                <artifacts:Natures initialCapacity="0"/>
+                                <commons:Resolver/>
+                                <artifacts:Artifacts initialCapacity="1">
+                                    <artifacts:FolderArtifact>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#Name"/>
+                                        <commons:VarName value="sourceFolderName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#PackageName"/>
+                                        <commons:VarName value="packageName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#Name"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#QualifiedName"/>
+                                        <commons:VarName value="packageName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </java:PackageDeclaration>
+                                        <java:ImportDeclarations initialCapacity="7">
+                                        <java:ImportDeclaration>
+                                        <java:QualifiedName value="java.awt.GridLayout"/>
+                                        <java:ImportModifier value="false"/>
+                                        <java:ImportModifier value="false"/>
+                                        </java:ImportDeclaration>
+                                        <java:ImportDeclaration>
+                                        <java:QualifiedName value="javax.swing.JFrame"/>
+                                        <java:ImportModifier value="false"/>
+                                        <java:ImportModifier value="false"/>
+                                        </java:ImportDeclaration>
+                                        <java:ImportDeclaration>
+                                        <java:QualifiedName value="javax.swing.JLabel"/>
+                                        <java:ImportModifier value="false"/>
+                                        <java:ImportModifier value="false"/>
+                                        </java:ImportDeclaration>
+                                        <java:ImportDeclaration>
+                                        <java:QualifiedName value="javax.swing.JTextField"/>
+                                        <java:ImportModifier value="false"/>
+                                        <java:ImportModifier value="false"/>
+                                        </java:ImportDeclaration>
+                                        <java:ImportDeclaration>
+                                        <java:QualifiedName value="javax.swing.SwingUtilities"/>
+                                        <java:ImportModifier value="false"/>
+                                        <java:ImportModifier value="false"/>
+                                        </java:ImportDeclaration>
+                                        <java:ImportDeclaration>
+                                        <java:QualifiedName value="javax.swing.event.DocumentEvent"/>
+                                        <java:ImportModifier value="false"/>
+                                        <java:ImportModifier value="false"/>
+                                        </java:ImportDeclaration>
+                                        <java:ImportDeclaration>
+                                        <java:QualifiedName value="javax.swing.event.DocumentListener"/>
+                                        <java:ImportModifier value="false"/>
+                                        <java:ImportModifier value="false"/>
+                                        </java:ImportDeclaration>
+                                        </java:ImportDeclarations>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="JFrame"/>
+                                        <commons:Resolver/>
+                                        <java:BodyDeclarations initialCapacity="7">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#FieldDeclaration"/>
+                                        <commons:VarName value="inputFieldDeclaration"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#FieldDeclaration"/>
+                                        <commons:VarName value="outputFieldDeclaration"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:Variable>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="MyListener"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="myListener"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="MyListener"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="8">
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setTitle"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#StringLiteral"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setLayout"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="GridLayout"/>
+                                        <java:Arguments initialCapacity="2">
+                                        <java:ByteLiteral value="0"/>
+                                        <java:ByteLiteral value="2"/>
+                                        </java:Arguments>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <commons:InlineVariable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Statement"/>
+                                        <commons:VarName value="addInputField"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:InlineVariable>
+                                        <commons:InlineVariable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Statement"/>
+                                        <commons:VarName value="addOutputField"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:InlineVariable>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="update"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setDefaultCloseOperation"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:QualifiedName value="JFrame.EXIT_ON_CLOSE"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="pack"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setVisible"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:BooleanLiteral value="true"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="update"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="3">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#VariableDeclarationStatement"/>
+                                        <commons:VarName value="localVar"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:Variable>
+                                        <java:TryStatement>
+                                        <java:Block initialCapacity="1">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Statement"/>
+                                        <commons:VarName value="parseInput"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:Variable>
+                                        </java:Block>
+                                        <java:CatchClauses initialCapacity="1">
+                                        <java:CatchClause>
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="NumberFormatException"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="e"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        <java:Block initialCapacity="0"/>
+                                        </java:CatchClause>
+                                        </java:CatchClauses>
+                                        <java:Block initialCapacity="0"/>
+                                        </java:TryStatement>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Statement"/>
+                                        <commons:VarName value="calculateOutputField"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:Variable>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="MyListener"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="1">
+                                        <java:SimpleType value="DocumentListener"/>
+                                        </java:Types>
+                                        <java:BodyDeclarations initialCapacity="3">
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="insertUpdate"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="DocumentEvent"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="e"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="update"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="removeUpdate"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="DocumentEvent"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="e"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="update"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="changedUpdate"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="DocumentEvent"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="e"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="update"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:ClassDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="2">
+                                        <java:Modifier value="public"/>
+                                        <java:Modifier value="static"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="main"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ArrayType>
+                                        <java:SimpleType value="String"/>
+                                        </java:ArrayType>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="args"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="SwingUtilities"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="invokeLater"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Runnable"/>
+                                        <commons:Resolver/>
+                                        <java:AnonymousClassDeclaration initialCapacity="1">
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="run"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleType"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:AnonymousClassDeclaration>
+                                        </java:ClassInstanceCreation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:ClassDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                    </artifacts:FolderArtifact>
+                                </artifacts:Artifacts>
+                                <commons:Resolver/>
+                            </artifacts:Project>
+                        </artifacts:Projects>
+                    </artifacts:Workspace>
+                </commons:StageUpFragment>
+                <queries:Filter>
+                    <queries:SelfStep/>
+                    <queries:TypeTest value="Calculator"/>
+                </queries:Filter>
+                <queries:Sequence initialCapacity="4">
+                    <queries:Filter>
+                        <queries:FeatureStep value="name"/>
+                        <queries:VariableTest value="name"/>
+                    </queries:Filter>
+                    <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="init unique id generators"/>
+                            <workflows:FlowObjects initialCapacity="4">
+                                <workflows:InvokeJavaClassMethod>
+                                    <workflows:Text value="inputFieldNameGenerator"/>
+                                    <workflows:Variable value="inputFieldNameGenerator"/>
+                                    <commons:Resolver/>
+                                    <workflows:StringLiteral value="org.whole.lang.util.UniqueIdGenerator"/>
+                                    <workflows:StringLiteral value="newUniqueIdGenerator(java.lang.String, long)"/>
+                                    <workflows:Expressions initialCapacity="2">
+                                        <workflows:StringLiteral value="inputField"/>
+                                        <workflows:IntLiteral value="0"/>
+                                    </workflows:Expressions>
+                                </workflows:InvokeJavaClassMethod>
+                                <workflows:InvokeJavaClassMethod>
+                                    <workflows:Text value="outputFieldNameGenerator"/>
+                                    <workflows:Variable value="outputFieldNameGenerator"/>
+                                    <commons:Resolver/>
+                                    <workflows:StringLiteral value="org.whole.lang.util.UniqueIdGenerator"/>
+                                    <workflows:StringLiteral value="newUniqueIdGenerator(java.lang.String, long)"/>
+                                    <workflows:Expressions initialCapacity="2">
+                                        <workflows:StringLiteral value="outputField"/>
+                                        <workflows:IntLiteral value="0"/>
+                                    </workflows:Expressions>
+                                </workflows:InvokeJavaClassMethod>
+                                <workflows:InvokeJavaClassMethod>
+                                    <workflows:Text value="localVarNameGenerator"/>
+                                    <workflows:Variable value="localVarNameGenerator"/>
+                                    <commons:Resolver/>
+                                    <workflows:StringLiteral value="org.whole.lang.util.UniqueIdGenerator"/>
+                                    <workflows:StringLiteral value="newUniqueIdGenerator(java.lang.String, long)"/>
+                                    <workflows:Expressions initialCapacity="2">
+                                        <workflows:StringLiteral value="i"/>
+                                        <workflows:IntLiteral value="0"/>
+                                    </workflows:Expressions>
+                                </workflows:InvokeJavaClassMethod>
+                                <workflows:CreateJavaClassInstance>
+                                    <workflows:Text value="create map"/>
+                                    <workflows:Variable value="inputFieldMap"/>
+                                    <commons:Resolver/>
+                                    <workflows:StringLiteral value="java.util.HashMap"/>
+                                    <workflows:StringLiteral value="HashMap()"/>
+                                    <commons:Resolver/>
+                                </workflows:CreateJavaClassInstance>
+                            </workflows:FlowObjects>
+                        </workflows:Sequence>
+                    </commons:SameStageFragment>
+                    <queries:Select>
+                        <queries:Tuple initialCapacity="4">
+                            <queries:Filter>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="JTextField"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="inputFieldName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="JTextField"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                    </java:FieldDeclaration>
+                                </commons:StageUpFragment>
+                                <queries:VariableTest value="inputFieldDeclaration"/>
+                            </queries:Filter>
+                            <queries:Filter>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <java:Block xmlns:java="http://lang.whole.org/Java" initialCapacity="3">
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:MethodInvocation>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="inputFieldName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getDocument"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="addDocumentListener"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="myListener"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="add"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="JLabel"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#StringLiteral"/>
+                                        <commons:VarName value="inputField"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </java:Arguments>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="add"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="inputFieldName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                    </java:Block>
+                                </commons:StageUpFragment>
+                                <queries:VariableTest value="addInputField"/>
+                            </queries:Filter>
+                            <queries:Filter>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <java:VariableDeclarationStatement xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="int"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="localVarName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ByteLiteral value="0"/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                    </java:VariableDeclarationStatement>
+                                </commons:StageUpFragment>
+                                <queries:VariableTest value="localVar"/>
+                            </queries:Filter>
+                            <queries:Filter>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
+                                        <java:Assignment>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="localVarName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="Integer"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="parseInt"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:MethodInvocation>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="inputFieldName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getText"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:Assignment>
+                                    </java:ExpressionStatement>
+                                </commons:StageUpFragment>
+                                <queries:VariableTest value="parseInput"/>
+                            </queries:Filter>
+                        </queries:Tuple>
+                        <queries:Path initialCapacity="2">
+                            <queries:FeatureStep value="inputFields"/>
+                            <queries:Filter>
+                                <queries:ChildStep/>
+                                <queries:VariableTest value="inputField"/>
+                            </queries:Filter>
+                        </queries:Path>
+                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="generate names"/>
+                                <workflows:FlowObjects initialCapacity="3">
+                                    <workflows:InvokeJavaInstanceMethod>
+                                        <workflows:Text value="generate inputFieldName"/>
+                                        <workflows:Variable value="inputFieldName"/>
+                                        <workflows:Variable value="inputFieldNameGenerator"/>
+                                        <commons:Resolver/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.UniqueIdGenerator"/>
+                                        <workflows:StringLiteral value="next()"/>
+                                        <commons:Resolver/>
+                                    </workflows:InvokeJavaInstanceMethod>
+                                    <workflows:InvokeJavaInstanceMethod>
+                                        <workflows:Text value="generate localVarName"/>
+                                        <workflows:Variable value="localVarName"/>
+                                        <workflows:Variable value="localVarNameGenerator"/>
+                                        <commons:Resolver/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.UniqueIdGenerator"/>
+                                        <workflows:StringLiteral value="next()"/>
+                                        <commons:Resolver/>
+                                    </workflows:InvokeJavaInstanceMethod>
+                                    <workflows:InvokeJavaInstanceMethod>
+                                        <workflows:Text value="put localVarName"/>
+                                        <commons:Resolver/>
+                                        <workflows:Variable value="inputFieldMap"/>
+                                        <commons:Resolver/>
+                                        <workflows:StringLiteral value="java.util.Map"/>
+                                        <workflows:StringLiteral value="put(java.lang.Object, java.lang.Object)"/>
+                                        <workflows:Expressions initialCapacity="2">
+                                        <workflows:Variable value="inputField"/>
+                                        <workflows:Variable value="localVarName"/>
+                                        </workflows:Expressions>
+                                    </workflows:InvokeJavaInstanceMethod>
+                                </workflows:FlowObjects>
+                            </workflows:Sequence>
+                        </commons:SameStageFragment>
+                        <queries:TemplateNames/>
+                    </queries:Select>
+                    <queries:Select>
+                        <queries:Tuple initialCapacity="3">
+                            <queries:Filter>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="JTextField"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="outputFieldName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="JTextField"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                    </java:FieldDeclaration>
+                                </commons:StageUpFragment>
+                                <queries:VariableTest value="outputFieldDeclaration"/>
+                            </queries:Filter>
+                            <queries:Filter>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <java:Block xmlns:java="http://lang.whole.org/Java" initialCapacity="2">
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="add"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="JLabel"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:StringLiteral value="Output"/>
+                                        </java:Arguments>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="add"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="outputFieldName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                    </java:Block>
+                                </commons:StageUpFragment>
+                                <queries:VariableTest value="addOutputField"/>
+                            </queries:Filter>
+                            <queries:Filter>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
+                                        <java:MethodInvocation>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="outputFieldName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setText"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:InfixExpression>
+                                        <java:StringLiteral value=""/>
+                                        <java:InfixOperator value="+"/>
+                                        <java:ParenthesizedExpression>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Expression"/>
+                                        <commons:VarName value="outputFieldCode"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </java:ParenthesizedExpression>
+                                        <commons:Resolver/>
+                                        </java:InfixExpression>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                    </java:ExpressionStatement>
+                                </commons:StageUpFragment>
+                                <queries:VariableTest value="calculateOutputField"/>
+                            </queries:Filter>
+                        </queries:Tuple>
+                        <queries:Path initialCapacity="3">
+                            <queries:FeatureStep value="outputFields"/>
+                            <queries:ChildStep/>
+                            <queries:Filter>
+                                <queries:ChildStep/>
+                                <queries:VariableTest value="outputField"/>
+                            </queries:Filter>
+                        </queries:Path>
+                        <queries:Sequence initialCapacity="2">
+                            <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                    <workflows:Text value="generate outputFieldNameGenerator"/>
+                                    <workflows:Variable value="outputFieldName"/>
+                                    <workflows:Variable value="outputFieldNameGenerator"/>
+                                    <commons:Resolver/>
+                                    <workflows:StringLiteral value="org.whole.lang.util.UniqueIdGenerator"/>
+                                    <workflows:StringLiteral value="next()"/>
+                                    <commons:Resolver/>
+                                </workflows:InvokeJavaInstanceMethod>
+                            </commons:SameStageFragment>
+                            <queries:Select>
+                                <queries:Filter>
+                                    <queries:SelfStep/>
+                                    <queries:VariableTest value="outputFieldCode"/>
+                                </queries:Filter>
+                                <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="clone outputField"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
+                                        <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:Variable value="outputField"/>
+                                        </workflows:Expressions>
+                                    </workflows:InvokeJavaClassMethod>
+                                </commons:SameStageFragment>
+                                <queries:CartesianUpdate>
+                                    <queries:Path initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:DescendantOrSelfStep/>
+                                        <queries:And initialCapacity="2">
+                                        <queries:TypeTest value="InputFieldRef"/>
+                                        <queries:VariableTest value="inputField"/>
+                                        </queries:And>
+                                        </queries:Filter>
+                                        <queries:ParentStep/>
+                                    </queries:Path>
+                                    <queries:Block initialCapacity="2">
+                                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="get localVarName"/>
+                                        <workflows:Variable value="localVarName"/>
+                                        <workflows:Variable value="inputFieldMap"/>
+                                        <commons:Resolver/>
+                                        <workflows:StringLiteral value="java.util.Map"/>
+                                        <workflows:StringLiteral value="get(java.lang.Object)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:Variable value="inputField"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        </commons:SameStageFragment>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="localVarName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </commons:StageUpFragment>
+                                    </queries:Block>
+                                </queries:CartesianUpdate>
+                                <queries:TemplateNames/>
+                            </queries:Select>
+                        </queries:Sequence>
+                        <queries:TemplateNames/>
+                    </queries:Select>
+                </queries:Sequence>
+                <queries:TemplateNames/>
+            </queries:Select>
+        </actions:SimpleAction>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>

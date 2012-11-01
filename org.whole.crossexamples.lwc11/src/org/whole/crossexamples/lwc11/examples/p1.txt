@@ -1,0 +1,10 @@
+package p1
+
+import p2
+
+entity Person {
+	string name
+	string firstname
+	date bithdate
+	Car ownedCar
+}

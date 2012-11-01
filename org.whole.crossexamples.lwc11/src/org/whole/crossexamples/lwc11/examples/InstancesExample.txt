@@ -1,0 +1,10 @@
+Person p = {
+    name = "Voelter"
+    firstName = "Markus"
+    birthDate = 14.02.1927
+    ownedCar = c
+}
+Car c = {
+    make = "VW"
+    model = "Touran"
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<grammars:Grammar xmlns:grammars="http://lang.whole.org/Grammars">
+    <grammars:Name value="Family"/>
+    <grammars:LanguageDescriptor>
+        <grammars:URI value="http://oslo.crossexamples.whole.org/Family"/>
+        <grammars:Namespace value="org.whole.crossexamples.oslo.family"/>
+        <grammars:Name value="Family"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </grammars:LanguageDescriptor>
+    <grammars:NonTerminal value="Persons"/>
+    <grammars:LiteralTerminal>
+        <grammars:RegExp value="[ \n\r\t]*"/>
+        <grammars:Category value="SEPARATOR"/>
+        <grammars:Literal value=" "/>
+    </grammars:LiteralTerminal>
+    <grammars:Productions initialCapacity="0"/>
+    <grammars:Productions initialCapacity="2">
+        <grammars:Production>
+            <grammars:NonTerminal value="Persons"/>
+            <grammars:Repeat>
+                <grammars:Size value="0"/>
+                <grammars:Unbounded/>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value=","/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value=", "/>
+                </grammars:LiteralTerminal>
+                <grammars:Production>
+                    <grammars:NonTerminal value="Person"/>
+                    <grammars:Concatenate initialCapacity="3">
+                        <grammars:As>
+                            <grammars:NonTerminal value="Name"/>
+                            <grammars:Name value="first"/>
+                        </grammars:As>
+                        <grammars:As>
+                            <grammars:NonTerminal value="Name"/>
+                            <grammars:Name value="last"/>
+                        </grammars:As>
+                        <grammars:Optional>
+                            <grammars:As>
+                                <grammars:Concatenate initialCapacity="4">
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="\Q{\E"/>
+                                        <grammars:Category value="PARENTHESIS"/>
+                                        <grammars:Literal value="{"/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:NonTerminal value="Persons"/>
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="}"/>
+                                        <grammars:Category value="PARENTHESIS"/>
+                                        <grammars:Literal value="}"/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value=";"/>
+                                        <grammars:Category value="DELIMITER"/>
+                                        <grammars:Literal value=";"/>
+                                    </grammars:LiteralTerminal>
+                                </grammars:Concatenate>
+                                <grammars:Name value="children"/>
+                            </grammars:As>
+                        </grammars:Optional>
+                    </grammars:Concatenate>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </grammars:Production>
+            </grammars:Repeat>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Name"/>
+            <grammars:DataTerminal>
+                <grammars:RegExp value="[a-zA-Z]+"/>
+                <grammars:Category value="IDENTIFIER"/>
+                <grammars:Format value="%s"/>
+            </grammars:DataTerminal>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+    </grammars:Productions>
+    <grammars:URI value="http://oslo.crossexamples.whole.org/FamilyGrammar"/>
+    <grammars:Namespace value="org.whole.crossexamples.oslo.family"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</grammars:Grammar>

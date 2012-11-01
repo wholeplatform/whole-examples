@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<er:Database xmlns:er="whole:org.whole.crossexamples.lwc11:ERModel">
+    <er:Tables initialCapacity="1">
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </er:Tables>
+</er:Database>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<thesimplestlanguage:TheSimplestConcept xmlns:thesimplestlanguage="http://mps.crossexamples.whole.org/theSimplestLanguage">
+    <thesimplestlanguage:StringData value="MyHelloWorld"/>
+    <thesimplestlanguage:StringData value="hello world"/>
+</thesimplestlanguage:TheSimplestConcept>

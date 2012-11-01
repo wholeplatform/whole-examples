@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="7">
+    <semantics:SemanticFunction xmlns:semantics="http://lang.whole.org/Semantics">
+        <semantics:Name value="supportsSampleView"/>
+        <semantics:FunctionType>
+            <semantics:AnyType/>
+            <semantics:LegacyType value="BOOLEAN"/>
+        </semantics:FunctionType>
+        <semantics:Rules initialCapacity="2">
+            <semantics:ExecutionRule>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <semantics:UnionType initialCapacity="10">
+                    <semantics:LanguageType value="http://lang.whole.org/Java"/>
+                    <semantics:LanguageType value="whole:org.whole.lang.javascript:JavaScript"/>
+                    <semantics:LanguageType value="http://lang.whole.org/Math"/>
+                    <semantics:LanguageType value="http://lang.whole.org/Properties"/>
+                    <semantics:LanguageType value="http://lang.whole.org/Queries"/>
+                    <semantics:LanguageType value="http://lang.whole.org/Scripts"/>
+                    <semantics:LanguageType value="http://lang.whole.org/Semantics"/>
+                    <semantics:LanguageType value="http://lang.whole.org/SQL"/>
+                    <semantics:LanguageType value="http://lang.whole.org/Text"/>
+                    <semantics:LanguageType value="http://lang.whole.org/Workflows"/>
+                </semantics:UnionType>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </semantics:ExecutionRule>
+            <semantics:ExecutionRule>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <semantics:AnyType/>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="false"/>
+            </semantics:ExecutionRule>
+        </semantics:Rules>
+    </semantics:SemanticFunction>
+    <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+        <queries:Names initialCapacity="1">
+            <queries:Name value="pageNumber"/>
+        </queries:Names>
+        <queries:Block initialCapacity="2">
+            <queries:Delete>
+                <queries:Filter>
+                    <queries:DescendantOrSelfStep/>
+                    <queries:And initialCapacity="2">
+                        <queries:TypeTest value="whole:com.metatis.activebook:ActiveBook#Page"/>
+                        <queries:ExpressionTest>
+                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <activebook:Page xmlns:activebook="whole:com.metatis.activebook:ActiveBook">
+                                    <activebook:IntData value="16"/>
+                                    <commons:Variable>
+                                        <commons:VarType value="whole:com.metatis.activebook:ActiveBook#Links"/>
+                                        <commons:VarName value="links"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                </activebook:Page>
+                            </commons:StageUpFragment>
+                        </queries:ExpressionTest>
+                    </queries:And>
+                </queries:Filter>
+            </queries:Delete>
+            <queries:SelfStep/>
+        </queries:Block>
+    </queries:Scope>
+    <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="6">
+        <queries:FeatureStep value="whole:com.metatis.activebook:ActiveBook#volumes"/>
+        <queries:Filter>
+            <queries:ChildStep/>
+            <queries:IndexTest>
+                <queries:IntLiteral value="0"/>
+            </queries:IndexTest>
+        </queries:Filter>
+        <queries:FeatureStep value="whole:com.metatis.activebook:ActiveBook#units"/>
+        <queries:Filter>
+            <queries:ChildStep/>
+            <queries:IndexTest>
+                <queries:IntLiteral value="0"/>
+            </queries:IndexTest>
+        </queries:Filter>
+        <queries:FeatureStep value="whole:com.metatis.activebook:ActiveBook#pages"/>
+        <queries:Filter>
+            <queries:ChildStep/>
+            <queries:IndexTest>
+                <queries:IntLiteral value="0"/>
+            </queries:IndexTest>
+        </queries:Filter>
+    </queries:Path>
+    <queries:QueryDeclaration xmlns:queries="http://lang.whole.org/Queries">
+        <queries:Name value="dup"/>
+        <queries:Names initialCapacity="1">
+            <queries:Name value="x"/>
+        </queries:Names>
+        <queries:Multiplication>
+            <queries:VariableRefStep value="x"/>
+            <queries:IntLiteral value="2"/>
+        </queries:Multiplication>
+    </queries:QueryDeclaration>
+    <queries:QueryDeclaration xmlns:queries="http://lang.whole.org/Queries">
+        <queries:Name value="dupdup"/>
+        <queries:Names initialCapacity="2">
+            <queries:Name value="x"/>
+            <queries:Name value="y"/>
+        </queries:Names>
+        <queries:Multiplication>
+            <queries:VariableRefStep value="x"/>
+            <queries:IntLiteral value="4"/>
+        </queries:Multiplication>
+    </queries:QueryDeclaration>
+    <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+        <queries:QueryDeclaration>
+            <queries:Name value="factorial"/>
+            <queries:Names initialCapacity="1">
+                <queries:Name value="x"/>
+            </queries:Names>
+            <queries:Choose initialCapacity="2">
+                <queries:If>
+                    <queries:ExpressionTest>
+                        <queries:LessOrEquals>
+                            <queries:VariableRefStep value="x"/>
+                            <queries:IntLiteral value="1"/>
+                        </queries:LessOrEquals>
+                    </queries:ExpressionTest>
+                    <queries:IntLiteral value="1"/>
+                </queries:If>
+                <queries:Do>
+                    <queries:Multiplication>
+                        <queries:VariableRefStep value="x"/>
+                        <queries:Singleton>
+                            <queries:Call>
+                                <queries:Name value="factorial"/>
+                                <queries:Expressions initialCapacity="1">
+                                    <queries:Subtraction>
+                                        <queries:VariableRefStep value="x"/>
+                                        <queries:IntLiteral value="1"/>
+                                    </queries:Subtraction>
+                                </queries:Expressions>
+                            </queries:Call>
+                        </queries:Singleton>
+                    </queries:Multiplication>
+                </queries:Do>
+            </queries:Choose>
+        </queries:QueryDeclaration>
+        <queries:Call>
+            <queries:Name value="factorial"/>
+            <queries:Expressions initialCapacity="1">
+                <queries:IntLiteral value="3"/>
+            </queries:Expressions>
+        </queries:Call>
+    </queries:Block>
+    <actions:GuardedAction xmlns:actions="http://lang.whole.org/Actions">
+        <actions:Label value="toVariableFlatName"/>
+        <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+            <queries:VariableRefStep value="primarySelectedEntity"/>
+            <queries:Choose initialCapacity="2">
+                <queries:If>
+                    <queries:ExpressionTest>
+                        <queries:Filter>
+                            <queries:FeatureStep value="http://lang.whole.org/Semantics#index"/>
+                            <queries:TypeTest value="http://lang.whole.org/Semantics#Num"/>
+                        </queries:Filter>
+                    </queries:ExpressionTest>
+                    <queries:Addition>
+                        <queries:Singleton>
+                            <queries:FeatureStep value="http://lang.whole.org/Semantics#variable"/>
+                        </queries:Singleton>
+                        <queries:Singleton>
+                            <queries:FeatureStep value="http://lang.whole.org/Semantics#index"/>
+                        </queries:Singleton>
+                    </queries:Addition>
+                </queries:If>
+                <queries:Do>
+                    <queries:FeatureStep value="http://lang.whole.org/Semantics#variable"/>
+                </queries:Do>
+            </queries:Choose>
+        </queries:Path>
+        <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+            <queries:Filter>
+                <queries:VariableRefStep value="primarySelectedEntity"/>
+                <queries:SubtypeTest value="http://lang.whole.org/Semantics#AbstractVariable"/>
+            </queries:Filter>
+        </queries:ExpressionTest>
+    </actions:GuardedAction>
+</misc:Misc>

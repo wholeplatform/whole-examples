@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<instances:Instances xmlns:instances="http://lwc11.crossexamples.whole.org/instances" initialCapacity="6">
+    <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+        <entities:Entities xmlns:entities="http://lwc11.crossexamples.whole.org/entities" initialCapacity="2">
+            <entities:Entity>
+                <entities:Name value="Person"/>
+                <entities:Properties initialCapacity="4">
+                    <entities:Property>
+                        <entities:PrimitiveType value="string"/>
+                        <entities:Name value="name"/>
+                    </entities:Property>
+                    <entities:Property>
+                        <entities:PrimitiveType value="string"/>
+                        <entities:Name value="firstName"/>
+                    </entities:Property>
+                    <entities:Property>
+                        <entities:PrimitiveType value="date"/>
+                        <entities:Name value="birthDate"/>
+                    </entities:Property>
+                    <entities:Property>
+                        <entities:Name value="Car"/>
+                        <entities:Name value="ownedCar"/>
+                    </entities:Property>
+                </entities:Properties>
+            </entities:Entity>
+            <entities:Entity>
+                <entities:Name value="Car"/>
+                <entities:Properties initialCapacity="2">
+                    <entities:Property>
+                        <entities:PrimitiveType value="string"/>
+                        <entities:Name value="make"/>
+                    </entities:Property>
+                    <entities:Property>
+                        <entities:PrimitiveType value="string"/>
+                        <entities:Name value="model"/>
+                    </entities:Property>
+                </entities:Properties>
+            </entities:Entity>
+        </entities:Entities>
+    </commons:SameStageFragment>
+    <instances:Instance>
+        <instances:Name value="SuperCar"/>
+        <instances:Name value="c"/>
+        <instances:Properties initialCapacity="2">
+            <instances:Property>
+                <instances:Name value="make"/>
+                <instances:StringLiteral value="VW"/>
+            </instances:Property>
+            <instances:Property>
+                <instances:Name value="model"/>
+                <instances:StringLiteral value="Touran"/>
+            </instances:Property>
+        </instances:Properties>
+    </instances:Instance>
+    <instances:Instance>
+        <instances:Name value="Person"/>
+        <instances:Name value="p"/>
+        <instances:Properties initialCapacity="4">
+            <instances:Property>
+                <instances:Name value="name"/>
+                <instances:StringLiteral value="Voelter"/>
+            </instances:Property>
+            <instances:Property>
+                <instances:Name value="firstName"/>
+                <instances:StringLiteral value="Markus"/>
+            </instances:Property>
+            <instances:Property>
+                <instances:Name value="birthDate"/>
+                <instances:DateLiteral value="14.02.1927"/>
+            </instances:Property>
+            <instances:Property>
+                <instances:Name value="ownedCar"/>
+                <instances:Name value="c"/>
+            </instances:Property>
+        </instances:Properties>
+    </instances:Instance>
+    <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+        <entities:Entity xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+            <entities:Name value="SuperCar"/>
+            <entities:Properties initialCapacity="2">
+                <entities:Property>
+                    <entities:PrimitiveType value="string"/>
+                    <entities:Name value="make"/>
+                </entities:Property>
+                <entities:Property>
+                    <entities:PrimitiveType value="string"/>
+                    <entities:Name value="model"/>
+                </entities:Property>
+            </entities:Properties>
+        </entities:Entity>
+    </commons:SameStageFragment>
+    <instances:Instance>
+        <instances:Name value="Car"/>
+        <instances:Name value="c"/>
+        <instances:Properties initialCapacity="2">
+            <instances:Property>
+                <instances:Name value="make"/>
+                <instances:StringLiteral value="VW"/>
+            </instances:Property>
+            <instances:Property>
+                <instances:Name value="model"/>
+                <instances:StringLiteral value="Touran"/>
+            </instances:Property>
+        </instances:Properties>
+    </instances:Instance>
+    <instances:Instance>
+        <instances:Name value="Car"/>
+        <instances:Name value="c2"/>
+        <instances:Properties initialCapacity="2">
+            <instances:Property>
+                <instances:Name value="make"/>
+                <instances:StringLiteral value="VW"/>
+            </instances:Property>
+            <instances:Property>
+                <instances:Name value="model"/>
+                <instances:StringLiteral value="Touran"/>
+            </instances:Property>
+        </instances:Properties>
+    </instances:Instance>
+</instances:Instances>

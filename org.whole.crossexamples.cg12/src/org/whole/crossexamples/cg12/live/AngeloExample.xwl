@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<angelomodel:Machine xmlns:angelomodel="whole:org.whole.crossexamples.cg12.live:AngeloModel">
+    <angelomodel:Units initialCapacity="5">
+        <angelomodel:ProductionUnit>
+            <angelomodel:Name value="A"/>
+            <angelomodel:Position value="BACKWARD"/>
+        </angelomodel:ProductionUnit>
+        <angelomodel:TransportUnit>
+            <angelomodel:Name value="B2"/>
+            <angelomodel:Position value="BACKWARD"/>
+        </angelomodel:TransportUnit>
+        <angelomodel:ProductionUnit>
+            <angelomodel:Name value="D"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </angelomodel:ProductionUnit>
+        <angelomodel:TransportUnit>
+            <angelomodel:Name value="B"/>
+            <angelomodel:Position value="FORWARD"/>
+        </angelomodel:TransportUnit>
+        <angelomodel:ProductionUnit>
+            <angelomodel:Name value="C"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </angelomodel:ProductionUnit>
+    </angelomodel:Units>
+</angelomodel:Machine>

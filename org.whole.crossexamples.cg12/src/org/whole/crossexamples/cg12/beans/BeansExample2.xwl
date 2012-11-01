@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<beans:Beans xmlns:beans="whole:org.whole.crossexamples.cg12.beans:BeansModel-20" initialCapacity="1">
+    <beans:Bean>
+        <beans:Name value="name"/>
+        <beans:BeanBodyDeclarations initialCapacity="4">
+            <beans:Property>
+                <beans:Name value="name"/>
+                <beans:PrimitiveType value="string"/>
+            </beans:Property>
+            <queries:QueryDeclaration xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Name value="name"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </queries:QueryDeclaration>
+            <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <java:ExtendedModifiers initialCapacity="1">
+                    <java:Modifier value="public"/>
+                </java:ExtendedModifiers>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <java:SimpleType value="String"/>
+                <java:SimpleName value="getFullName"/>
+                <java:Parameters initialCapacity="0"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <java:Block initialCapacity="1">
+                    <java:ReturnStatement>
+                        <java:InfixExpression>
+                            <java:MethodInvocation>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <java:Types initialCapacity="0"/>
+                                <java:SimpleName value="getName"/>
+                                <java:Arguments initialCapacity="0"/>
+                            </java:MethodInvocation>
+                            <java:InfixOperator value="+"/>
+                            <java:StringLiteral value=" "/>
+                            <java:Expressions initialCapacity="1">
+                                <java:MethodInvocation>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:Types initialCapacity="0"/>
+                                    <java:SimpleName value="getSurname"/>
+                                    <java:Arguments initialCapacity="0"/>
+                                </java:MethodInvocation>
+                            </java:Expressions>
+                        </java:InfixExpression>
+                    </java:ReturnStatement>
+                </java:Block>
+            </java:MethodDeclaration>
+            <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <java:SimpleName value="simpleName"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </java:MethodDeclaration>
+        </beans:BeanBodyDeclarations>
+    </beans:Bean>
+</beans:Beans>

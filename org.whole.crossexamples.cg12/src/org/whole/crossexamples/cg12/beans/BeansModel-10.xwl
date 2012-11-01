@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<models:Model xmlns:models="http://lang.whole.org/Models">
+    <models:SimpleName value="Beans"/>
+    <models:TypeRelations initialCapacity="0"/>
+    <models:ModelDeclarations initialCapacity="7">
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Beans"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="1">
+                <models:ComponentModifier value="ordered"/>
+            </models:ComponentModifiers>
+            <models:SimpleName value="Bean"/>
+        </models:CompositeEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Bean"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Properties"/>
+                    <models:SimpleName value="properties"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Properties"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="1">
+                <models:ComponentModifier value="ordered"/>
+            </models:ComponentModifiers>
+            <models:SimpleName value="Property"/>
+        </models:CompositeEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Property"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Type"/>
+                    <models:SimpleName value="type"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="1">
+                <models:EntityModifier value="abstract"/>
+            </models:EntityModifiers>
+            <models:SimpleName value="Type"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="0"/>
+        </models:SimpleEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Name"/>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Type"/>
+            </models:Types>
+            <models:DataType value="String"/>
+        </models:DataEntity>
+        <models:EnumEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="PrimitiveType"/>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Type"/>
+            </models:Types>
+            <models:EnumValues initialCapacity="3">
+                <models:EnumValue value="string"/>
+                <models:EnumValue value="int"/>
+                <models:EnumValue value="boolean"/>
+            </models:EnumValues>
+        </models:EnumEntity>
+    </models:ModelDeclarations>
+    <models:Namespace value="org.whole.crossexamples.cg12.beans"/>
+    <models:Version value="1.0"/>
+    <models:URI value="whole:org.whole.crossexamples.cg12.beans:BeansModel-10"/>
+</models:Model>

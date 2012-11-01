@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<models:Model xmlns:models="http://lang.whole.org/Models">
+    <models:SimpleName value="Calculator"/>
+    <models:TypeRelations initialCapacity="0"/>
+    <models:ModelDeclarations initialCapacity="6">
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Calculator"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="3">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="InputFields"/>
+                    <models:SimpleName value="inputFields"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="OutputFields"/>
+                    <models:SimpleName value="outputFields"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="InputFields"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="1">
+                <models:ComponentModifier value="ordered"/>
+            </models:ComponentModifiers>
+            <models:SimpleName value="InputField"/>
+        </models:CompositeEntity>
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="OutputFields"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="1">
+                <models:ComponentModifier value="ordered"/>
+            </models:ComponentModifiers>
+            <models:SimpleName value="OutputField"/>
+        </models:CompositeEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Name"/>
+            <models:Types initialCapacity="0"/>
+            <models:DataType value="String"/>
+        </models:DataEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="InputField"/>
+            <models:Types initialCapacity="0"/>
+            <models:DataType value="String"/>
+        </models:DataEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="InputFieldRef"/>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="OutputField"/>
+            </models:Types>
+            <models:DataType value="String"/>
+        </models:DataEntity>
+    </models:ModelDeclarations>
+    <models:Namespace value="org.whole.crossexamples.mps.calculator"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <models:URI value="http://mps.crossexamples.whole.org/calculator"/>
+</models:Model>

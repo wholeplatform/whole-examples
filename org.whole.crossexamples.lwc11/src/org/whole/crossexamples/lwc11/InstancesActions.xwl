@@ -1,0 +1,1042 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.crossexamples.lwc11:InstancesActions"/>
+    <actions:Namespace value="org.whole.crossexamples.lwc11"/>
+    <actions:Name value="InstancesActions"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:URI value="http://lwc11.crossexamples.whole.org/instances"/>
+    <actions:ToolbarActions>
+        <actions:SimpleAction>
+            <actions:Label value="Validator"/>
+            <queries:Sequence xmlns:queries="http://lang.whole.org/Queries" initialCapacity="10">
+                <actions:ActionCall>
+                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Validator"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </actions:ActionCall>
+                <workflows:InvokeOperation xmlns:workflows="http://lang.whole.org/Workflows">
+                    <workflows:Text value="interpret"/>
+                    <workflows:Variable value="self"/>
+                    <workflows:Operation value="INTERPRETER"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </workflows:InvokeOperation>
+                <queries:QueryDeclaration>
+                    <queries:Name value="addError"/>
+                    <queries:Names initialCapacity="3">
+                        <queries:Name value="message"/>
+                        <queries:Name value="location"/>
+                        <queries:Name value="locationString"/>
+                    </queries:Names>
+                    <queries:Block initialCapacity="2">
+                        <queries:Filter>
+                            <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="location to string"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.lang.util.DataTypeUtils"/>
+                                <workflows:StringLiteral value="toString(org.whole.lang.model.IEntity)"/>
+                                <workflows:Expressions initialCapacity="1">
+                                    <workflows:Variable value="location"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaClassMethod>
+                            <queries:VariableTest value="locationString"/>
+                        </queries:Filter>
+                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="addError"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:Variable value="decorationManager"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="org.whole.lang.operations.IDecorationManager"/>
+                            <workflows:StringLiteral value="addError(org.whole.lang.model.IEntity, java.lang.String, java.lang.String)"/>
+                            <workflows:Expressions initialCapacity="3">
+                                <workflows:Variable value="self"/>
+                                <workflows:Variable value="message"/>
+                                <workflows:Variable value="locationString"/>
+                            </workflows:Expressions>
+                        </workflows:InvokeJavaInstanceMethod>
+                    </queries:Block>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="validatePropertyReferenceValue"/>
+                    <queries:Names initialCapacity="2">
+                        <queries:Name value="propertyValue"/>
+                        <queries:Name value="propertyType"/>
+                    </queries:Names>
+                    <queries:Choose initialCapacity="2">
+                        <queries:Path initialCapacity="2">
+                            <queries:RootStep/>
+                            <queries:Filter>
+                                <queries:ChildStep/>
+                                <queries:And initialCapacity="3">
+                                    <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="name"/>
+                                        <queries:VariableTest value="propertyValue"/>
+                                        </queries:Filter>
+                                    </queries:ExpressionTest>
+                                    <queries:ExpressionTest>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:VariableRefStep value="propertyDef"/>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="type"/>
+                                        <queries:VariableTest value="propertyType"/>
+                                        </queries:Filter>
+                                        </queries:Path>
+                                    </queries:ExpressionTest>
+                                    <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="type"/>
+                                        </queries:Singleton>
+                                        <queries:VariableRefStep value="propertyType"/>
+                                        </queries:Equals>
+                                    </queries:ExpressionTest>
+                                </queries:And>
+                            </queries:Filter>
+                        </queries:Path>
+                        <queries:Path initialCapacity="2">
+                            <queries:VariableRefStep value="propertyValue"/>
+                            <queries:Call>
+                                <queries:Name value="addError"/>
+                                <queries:Expressions initialCapacity="2">
+                                    <queries:StringLiteral value="Unresolved reference type"/>
+                                    <queries:VariableRefStep value="propertyValue"/>
+                                </queries:Expressions>
+                            </queries:Call>
+                        </queries:Path>
+                    </queries:Choose>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="validatePropertyLiteralValue"/>
+                    <queries:Names initialCapacity="1">
+                        <queries:Name value="propertyValue"/>
+                    </queries:Names>
+                    <queries:Choose initialCapacity="2">
+                        <queries:Path initialCapacity="2">
+                            <queries:VariableRefStep value="propertyDef"/>
+                            <queries:Filter>
+                                <queries:FeatureStep value="type"/>
+                                <queries:Or initialCapacity="5">
+                                    <queries:And initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:SelfStep/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="string"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:VariableRefStep value="propertyValue"/>
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#StringLiteral"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                    </queries:And>
+                                    <queries:And initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:SelfStep/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="date"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:VariableRefStep value="propertyValue"/>
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#DateLiteral"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                    </queries:And>
+                                    <queries:And initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:SelfStep/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="int"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:VariableRefStep value="propertyValue"/>
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#IntLiteral"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                    </queries:And>
+                                    <queries:And initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:SelfStep/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="float"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:VariableRefStep value="propertyValue"/>
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#FloatLiteral"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                    </queries:And>
+                                    <queries:And initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:SelfStep/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="boolean"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:VariableRefStep value="propertyValue"/>
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#BooleanLiteral"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                    </queries:And>
+                                </queries:Or>
+                            </queries:Filter>
+                        </queries:Path>
+                        <queries:Path initialCapacity="2">
+                            <queries:VariableRefStep value="propertyValue"/>
+                            <queries:Call>
+                                <queries:Name value="addError"/>
+                                <queries:Expressions initialCapacity="2">
+                                    <queries:StringLiteral value="Wrong literal type"/>
+                                    <queries:VariableRefStep value="propertyValue"/>
+                                </queries:Expressions>
+                            </queries:Call>
+                        </queries:Path>
+                    </queries:Choose>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="validatePropertyName"/>
+                    <queries:Names initialCapacity="1">
+                        <queries:Name value="propertyName"/>
+                    </queries:Names>
+                    <queries:Choose initialCapacity="2">
+                        <queries:Path initialCapacity="3">
+                            <queries:VariableRefStep value="typeDef"/>
+                            <queries:FeatureStep value="properties"/>
+                            <queries:Filter>
+                                <queries:ChildStep/>
+                                <queries:ExpressionTest>
+                                    <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="name"/>
+                                        </queries:Singleton>
+                                        <queries:VariableRefStep value="propertyName"/>
+                                    </queries:Equals>
+                                </queries:ExpressionTest>
+                            </queries:Filter>
+                        </queries:Path>
+                        <queries:Call>
+                            <queries:Name value="addError"/>
+                            <queries:Expressions initialCapacity="2">
+                                <queries:StringLiteral value="The property is not defined"/>
+                                <queries:VariableRefStep value="propertyName"/>
+                            </queries:Expressions>
+                        </queries:Call>
+                    </queries:Choose>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="validateInstanceType"/>
+                    <queries:Names initialCapacity="2">
+                        <queries:Name value="typeName"/>
+                        <queries:Name value="resource"/>
+                    </queries:Names>
+                    <queries:Choose initialCapacity="2">
+                        <queries:If>
+                            <queries:ExpressionTest>
+                                <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                    <workflows:Text value="containsResource"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <workflows:Variable value="registry"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <workflows:StringLiteral value="org.whole.lang.resources.IResourceRegistry"/>
+                                    <workflows:StringLiteral value="containsResource(java.lang.String, java.lang.String, boolean)"/>
+                                    <workflows:Expressions initialCapacity="3">
+                                        <workflows:Variable value="contextURI"/>
+                                        <queries:Addition>
+                                        <queries:StringLiteral value="http://lwc11.crossexamples.whole.org/entities/"/>
+                                        <queries:VariableRefStep value="typeName"/>
+                                        </queries:Addition>
+                                        <workflows:BooleanLiteral value="false"/>
+                                    </workflows:Expressions>
+                                </workflows:InvokeJavaInstanceMethod>
+                            </queries:ExpressionTest>
+                            <queries:Block initialCapacity="2">
+                                <queries:Filter>
+                                    <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="getResource"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="registry"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.resources.IResourceRegistry"/>
+                                        <workflows:StringLiteral value="getResource(java.lang.String, java.lang.String, boolean)"/>
+                                        <workflows:Expressions initialCapacity="3">
+                                        <workflows:Variable value="contextURI"/>
+                                        <queries:Addition>
+                                        <queries:StringLiteral value="http://lwc11.crossexamples.whole.org/entities/"/>
+                                        <queries:VariableRefStep value="typeName"/>
+                                        </queries:Addition>
+                                        <workflows:BooleanLiteral value="false"/>
+                                        </workflows:Expressions>
+                                    </workflows:InvokeJavaInstanceMethod>
+                                    <queries:VariableTest value="resource"/>
+                                </queries:Filter>
+                                <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                    <workflows:Text value="getEntity"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <workflows:Variable value="resource"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <workflows:StringLiteral value="org.whole.lang.resources.IResource"/>
+                                    <workflows:StringLiteral value="getEntity()"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </workflows:InvokeJavaInstanceMethod>
+                            </queries:Block>
+                        </queries:If>
+                        <queries:Call>
+                            <queries:Name value="addError"/>
+                            <queries:Expressions initialCapacity="2">
+                                <queries:StringLiteral value="The type is not defined"/>
+                                <queries:VariableRefStep value="typeName"/>
+                            </queries:Expressions>
+                        </queries:Call>
+                    </queries:Choose>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="validateInstances"/>
+                    <queries:Names initialCapacity="2">
+                        <queries:Name value="typeDef"/>
+                        <queries:Name value="propertyDef"/>
+                    </queries:Names>
+                    <queries:Path initialCapacity="4">
+                        <queries:Filter>
+                            <queries:DescendantStep/>
+                            <queries:And initialCapacity="2">
+                                <queries:TypeTest value="Instance"/>
+                                <queries:ExpressionTest>
+                                    <queries:Filter>
+                                        <queries:Call>
+                                        <queries:Name value="validateInstanceType"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:FeatureStep value="type"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                        <queries:VariableTest value="typeDef"/>
+                                    </queries:Filter>
+                                </queries:ExpressionTest>
+                            </queries:And>
+                        </queries:Filter>
+                        <queries:FeatureStep value="properties"/>
+                        <queries:ChildStep/>
+                        <queries:Sequence initialCapacity="2">
+                            <queries:Choose initialCapacity="2">
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="name"/>
+                                        <queries:KindTest value="RESOLVER"/>
+                                        </queries:Filter>
+                                    </queries:ExpressionTest>
+                                    <queries:Call>
+                                        <queries:Name value="addError"/>
+                                        <queries:Expressions initialCapacity="2">
+                                        <queries:StringLiteral value="Missing property name"/>
+                                        <queries:StringLiteral value=""/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:If>
+                                <queries:Filter>
+                                    <queries:Call>
+                                        <queries:Name value="validatePropertyName"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:FeatureStep value="name"/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                    <queries:VariableTest value="propertyDef"/>
+                                </queries:Filter>
+                            </queries:Choose>
+                            <queries:Choose initialCapacity="3">
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="value"/>
+                                        <queries:KindTest value="RESOLVER"/>
+                                        </queries:Filter>
+                                    </queries:ExpressionTest>
+                                    <queries:Call>
+                                        <queries:Name value="addError"/>
+                                        <queries:Expressions initialCapacity="2">
+                                        <queries:StringLiteral value="Missing property value"/>
+                                        <queries:StringLiteral value=""/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:If>
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="value"/>
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#Name"/>
+                                        </queries:Filter>
+                                    </queries:ExpressionTest>
+                                    <queries:Call>
+                                        <queries:Name value="validatePropertyReferenceValue"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:FeatureStep value="value"/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:If>
+                                <queries:Do>
+                                    <queries:Call>
+                                        <queries:Name value="validatePropertyLiteralValue"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:FeatureStep value="value"/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:Do>
+                            </queries:Choose>
+                        </queries:Sequence>
+                    </queries:Path>
+                </queries:QueryDeclaration>
+                <queries:Filter>
+                    <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                        <workflows:Text value="getRegistry"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <workflows:StringLiteral value="org.whole.lang.resources.ResourceRegistry"/>
+                        <workflows:StringLiteral value="getRegistry(java.lang.String)"/>
+                        <workflows:Expressions initialCapacity="1">
+                            <workflows:StringLiteral value="http://lwc11.crossexamples.whole.org/entities"/>
+                        </workflows:Expressions>
+                    </workflows:InvokeJavaClassMethod>
+                    <queries:VariableTest value="registry"/>
+                </queries:Filter>
+                <queries:Call>
+                    <queries:Name value="validateInstances"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </queries:Call>
+            </queries:Sequence>
+        </actions:SimpleAction>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <actions:SimpleAction>
+            <actions:Label value="Interpreter"/>
+            <actions:ActionCall>
+                <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Interpreter"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </actions:ActionCall>
+        </actions:SimpleAction>
+        <actions:SimpleAction>
+            <actions:Label value="Artifacts Generator"/>
+            <actions:ActionCall>
+                <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Artifacts Generator"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </actions:ActionCall>
+        </actions:SimpleAction>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="1">
+            <actions:GuardedAction>
+                <actions:Label value="Deploy as Models"/>
+                <actions:ActionCall>
+                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Deploy as Models"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </actions:ActionCall>
+                <queries:Some xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:DescendantOrSelfStep/>
+                    <queries:TypeTest value="Entity"/>
+                </queries:Some>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="5">
+            <actions:GuardedAction>
+                <actions:Label value="Entities to ER"/>
+                <actions:ActionCall>
+                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Entities to ER"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </actions:ActionCall>
+                <queries:Some xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:DescendantOrSelfStep/>
+                    <queries:TypeTest value="Entity"/>
+                </queries:Some>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Entities to XML"/>
+                <actions:ActionCall>
+                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Entities to XML"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </actions:ActionCall>
+                <queries:Some xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:DescendantOrSelfStep/>
+                    <queries:TypeTest value="Entity"/>
+                </queries:Some>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Entities to Models"/>
+                <actions:ActionCall>
+                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Entities to Models"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </actions:ActionCall>
+                <queries:Some xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:DescendantOrSelfStep/>
+                    <queries:TypeTest value="Entity"/>
+                </queries:Some>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Entities to RDB"/>
+                <actions:ActionCall>
+                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Entities to RDB"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </actions:ActionCall>
+                <queries:Some xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:DescendantOrSelfStep/>
+                    <queries:TypeTest value="Entity"/>
+                </queries:Some>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Instances to Models instance"/>
+                <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="5">
+                    <queries:QueryDeclaration>
+                        <queries:Name value="generateInstanceTranslator"/>
+                        <queries:Names initialCapacity="8">
+                            <queries:Name value="instanceUri"/>
+                            <queries:Name value="instanceFactoryName"/>
+                            <queries:Name value="instanceName"/>
+                            <queries:Name value="instanceChild"/>
+                            <queries:Name value="property"/>
+                            <queries:Name value="name"/>
+                            <queries:Name value="value"/>
+                            <queries:Name value="expression"/>
+                        </queries:Names>
+                        <queries:Block initialCapacity="3">
+                            <queries:Filter>
+                                <queries:Addition>
+                                    <queries:VariableRefStep value="languageUri"/>
+                                    <queries:Addition>
+                                        <queries:StringLiteral value="#"/>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/instances#type"/>
+                                        </queries:Singleton>
+                                    </queries:Addition>
+                                </queries:Addition>
+                                <queries:VariableTest value="instanceUri"/>
+                            </queries:Filter>
+                            <queries:Filter>
+                                <queries:Addition>
+                                    <queries:StringLiteral value="create"/>
+                                    <queries:Singleton>
+                                        <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/instances#type"/>
+                                    </queries:Singleton>
+                                </queries:Addition>
+                                <queries:VariableTest value="instanceFactoryName"/>
+                            </queries:Filter>
+                            <queries:Select>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <queries:Block initialCapacity="2">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Queries#PathExpression"/>
+                                        <commons:VarName value="instanceChild"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:Variable>
+                                        <workflows:CreateEntity xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Workflows#Text"/>
+                                        <commons:VarName value="instanceFactoryName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        <workflows:Registry value="DEFAULT"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Workflows#StringLiteral"/>
+                                        <commons:VarName value="instanceUri"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <workflows:Assignments initialCapacity="1">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Workflows#Assign"/>
+                                        <commons:VarName value="property"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:Variable>
+                                        </workflows:Assignments>
+                                        </workflows:CreateEntity>
+                                    </queries:Block>
+                                </commons:StageUpFragment>
+                                <queries:SelfStep/>
+                                <queries:Path initialCapacity="3">
+                                    <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/instances#properties"/>
+                                    <queries:ChildStep/>
+                                    <queries:Choose initialCapacity="2">
+                                        <queries:Select>
+                                        <queries:Tuple initialCapacity="2">
+                                        <queries:Filter>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <workflows:Assign xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Workflows#Variable"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Workflows#Variable"/>
+                                        <commons:VarName value="instanceName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </workflows:Assign>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="property"/>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <queries:Filter>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Queries#StepExpression"/>
+                                        <commons:VarName value="expression"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Queries#VariableTest"/>
+                                        <commons:VarName value="instanceName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </queries:Filter>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="instanceChild"/>
+                                        </queries:Filter>
+                                        </queries:Tuple>
+                                        <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/instances#value"/>
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#Name"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        </queries:Filter>
+                                        <queries:Sequence initialCapacity="3">
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/instances#name"/>
+                                        <queries:VariableTest value="name"/>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/instances#value"/>
+                                        <queries:VariableTest value="instanceName"/>
+                                        </queries:Filter>
+                                        <queries:Path initialCapacity="3">
+                                        <queries:RootStep/>
+                                        <queries:Filter>
+                                        <queries:DescendantStep/>
+                                        <queries:And initialCapacity="2">
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#Instance"/>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/instances#name"/>
+                                        <queries:VariableTest value="instanceName"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        </queries:And>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <queries:Call>
+                                        <queries:Name value="generateInstanceTranslator"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Call>
+                                        <queries:VariableTest value="expression"/>
+                                        </queries:Filter>
+                                        </queries:Path>
+                                        </queries:Sequence>
+                                        <queries:TemplateNames/>
+                                        </queries:Select>
+                                        <queries:Select>
+                                        <queries:Filter>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <workflows:Assign xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Workflows#Variable"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:StageUpFragment>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Commons#Any"/>
+                                        <commons:VarName value="value"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </commons:StageUpFragment>
+                                        </workflows:Assign>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="property"/>
+                                        </queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:Sequence initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/instances#name"/>
+                                        <queries:VariableTest value="name"/>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/instances#value"/>
+                                        <queries:VariableTest value="value"/>
+                                        </queries:Filter>
+                                        </queries:Sequence>
+                                        <queries:TemplateNames/>
+                                        </queries:Select>
+                                    </queries:Choose>
+                                </queries:Path>
+                                <queries:TemplateNames/>
+                            </queries:Select>
+                        </queries:Block>
+                    </queries:QueryDeclaration>
+                    <queries:Filter>
+                        <queries:Choose initialCapacity="2">
+                            <queries:If>
+                                <queries:Some>
+                                    <queries:DescendantOrSelfStep/>
+                                    <queries:TypeTest value="Entity"/>
+                                </queries:Some>
+                                <queries:VariableRefStep value="fileName"/>
+                            </queries:If>
+                            <queries:Do>
+                                <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                    <workflows:Text value="replaceInstancesWithEntities"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <workflows:Variable value="fileName"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <workflows:StringLiteral value="java.lang.String"/>
+                                    <workflows:StringLiteral value="replaceAll(java.lang.String, java.lang.String)"/>
+                                    <workflows:Expressions initialCapacity="2">
+                                        <workflows:StringLiteral value="Instances"/>
+                                        <workflows:StringLiteral value="Entities"/>
+                                    </workflows:Expressions>
+                                </workflows:InvokeJavaInstanceMethod>
+                            </queries:Do>
+                        </queries:Choose>
+                        <queries:VariableTest value="modelName"/>
+                    </queries:Filter>
+                    <queries:Filter>
+                        <queries:Addition>
+                            <queries:Addition>
+                                <queries:StringLiteral value="whole:"/>
+                                <queries:VariableRefStep value="packageName"/>
+                            </queries:Addition>
+                            <queries:Addition>
+                                <queries:StringLiteral value=":"/>
+                                <queries:VariableRefStep value="modelName"/>
+                            </queries:Addition>
+                        </queries:Addition>
+                        <queries:VariableTest value="languageUri"/>
+                    </queries:Filter>
+                    <queries:Path initialCapacity="2">
+                        <queries:VariableRefStep value="primarySelectedEntity"/>
+                        <queries:Filter>
+                            <queries:Call>
+                                <queries:Name value="generateInstanceTranslator"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </queries:Call>
+                            <queries:VariableTest value="translator"/>
+                        </queries:Filter>
+                    </queries:Path>
+                    <queries:Call>
+                        <queries:Name value="translator"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Call>
+                </queries:Block>
+                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Filter>
+                        <queries:VariableRefStep value="primarySelectedEntity"/>
+                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#Instance"/>
+                    </queries:Filter>
+                </queries:ExpressionTest>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:SimpleAction>
+            <actions:Label value="Value assist"/>
+            <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="6">
+                <queries:QueryDeclaration>
+                    <queries:Name value="getEntityProperties"/>
+                    <queries:Names initialCapacity="1">
+                        <queries:Name value="typeName"/>
+                    </queries:Names>
+                    <queries:Block initialCapacity="2">
+                        <queries:QueryDeclaration>
+                            <queries:Name value="getEntity"/>
+                            <queries:Names initialCapacity="2">
+                                <queries:Name value="typeName"/>
+                                <queries:Name value="resource"/>
+                            </queries:Names>
+                            <queries:If>
+                                <queries:ExpressionTest>
+                                    <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="containsResource"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="registry"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.resources.IResourceRegistry"/>
+                                        <workflows:StringLiteral value="containsResource(java.lang.String, java.lang.String, boolean)"/>
+                                        <workflows:Expressions initialCapacity="3">
+                                        <workflows:Variable value="contextURI"/>
+                                        <queries:Addition>
+                                        <queries:StringLiteral value="http://lwc11.crossexamples.whole.org/entities/"/>
+                                        <queries:VariableRefStep value="typeName"/>
+                                        </queries:Addition>
+                                        <workflows:BooleanLiteral value="false"/>
+                                        </workflows:Expressions>
+                                    </workflows:InvokeJavaInstanceMethod>
+                                </queries:ExpressionTest>
+                                <queries:Block initialCapacity="2">
+                                    <queries:Filter>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="getResource"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="registry"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.resources.IResourceRegistry"/>
+                                        <workflows:StringLiteral value="getResource(java.lang.String, java.lang.String, boolean)"/>
+                                        <workflows:Expressions initialCapacity="3">
+                                        <workflows:Variable value="contextURI"/>
+                                        <queries:Addition>
+                                        <queries:StringLiteral value="http://lwc11.crossexamples.whole.org/entities/"/>
+                                        <queries:VariableRefStep value="typeName"/>
+                                        </queries:Addition>
+                                        <workflows:BooleanLiteral value="false"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        <queries:VariableTest value="resource"/>
+                                    </queries:Filter>
+                                    <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="getEntity"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="resource"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.resources.IResource"/>
+                                        <workflows:StringLiteral value="getEntity()"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </workflows:InvokeJavaInstanceMethod>
+                                </queries:Block>
+                            </queries:If>
+                        </queries:QueryDeclaration>
+                        <queries:Path initialCapacity="3">
+                            <queries:Call>
+                                <queries:Name value="getEntity"/>
+                                <queries:Expressions initialCapacity="1">
+                                    <queries:VariableRefStep value="typeName"/>
+                                </queries:Expressions>
+                            </queries:Call>
+                            <queries:FeatureStep value="properties"/>
+                            <queries:ChildStep/>
+                        </queries:Path>
+                    </queries:Block>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="getInstancePropertyNames"/>
+                    <queries:Names initialCapacity="3">
+                        <queries:Name value="typeName"/>
+                        <queries:Name value="propertyName"/>
+                        <queries:Name value="ed"/>
+                    </queries:Names>
+                    <queries:Path initialCapacity="3">
+                        <queries:Call>
+                            <queries:Name value="getEntityProperties"/>
+                            <queries:Expressions initialCapacity="1">
+                                <queries:VariableRefStep value="typeName"/>
+                            </queries:Expressions>
+                        </queries:Call>
+                        <queries:Filter>
+                            <queries:FeatureStep value="name"/>
+                            <queries:Not>
+                                <queries:ExpressionTest>
+                                    <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:SelfStep/>
+                                        </queries:Singleton>
+                                        <queries:VariableRefStep value="propertyName"/>
+                                    </queries:Equals>
+                                </queries:ExpressionTest>
+                            </queries:Not>
+                        </queries:Filter>
+                        <queries:Block initialCapacity="2">
+                            <queries:Filter>
+                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                    <workflows:Text value="parseEntityDescriptor"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <workflows:StringLiteral value="org.whole.lang.commons.parsers.CommonsDataTypePersistenceParser"/>
+                                    <workflows:StringLiteral value="parseEntityDescriptor(java.lang.String)"/>
+                                    <workflows:Expressions initialCapacity="1">
+                                        <workflows:StringLiteral value="http://lwc11.crossexamples.whole.org/instances#Name"/>
+                                    </workflows:Expressions>
+                                </workflows:InvokeJavaClassMethod>
+                                <queries:VariableTest value="ed"/>
+                            </queries:Filter>
+                            <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="convert"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.lang.util.DataTypeUtils"/>
+                                <workflows:StringLiteral value="convert(org.whole.lang.model.IEntity, org.whole.lang.reflect.EntityDescriptor)"/>
+                                <workflows:Expressions initialCapacity="2">
+                                    <workflows:Variable value="self"/>
+                                    <workflows:Variable value="ed"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaClassMethod>
+                        </queries:Block>
+                    </queries:Path>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="getPropertyReferenceValues"/>
+                    <queries:Names initialCapacity="4">
+                        <queries:Name value="typeName"/>
+                        <queries:Name value="propertyName"/>
+                        <queries:Name value="propertyValue"/>
+                        <queries:Name value="propertyType"/>
+                    </queries:Names>
+                    <queries:If>
+                        <queries:ExpressionTest>
+                            <queries:Path initialCapacity="2">
+                                <queries:Filter>
+                                    <queries:Call>
+                                        <queries:Name value="getEntityProperties"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:VariableRefStep value="typeName"/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                    <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="name"/>
+                                        </queries:Singleton>
+                                        <queries:VariableRefStep value="propertyName"/>
+                                        </queries:Equals>
+                                    </queries:ExpressionTest>
+                                </queries:Filter>
+                                <queries:Filter>
+                                    <queries:FeatureStep value="type"/>
+                                    <queries:VariableTest value="propertyType"/>
+                                </queries:Filter>
+                            </queries:Path>
+                        </queries:ExpressionTest>
+                        <queries:Path initialCapacity="3">
+                            <queries:VariableRefStep value="instances"/>
+                            <queries:Filter>
+                                <queries:ChildStep/>
+                                <queries:And initialCapacity="2">
+                                    <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#Instance"/>
+                                    <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="type"/>
+                                        </queries:Singleton>
+                                        <queries:VariableRefStep value="propertyType"/>
+                                        </queries:Equals>
+                                    </queries:ExpressionTest>
+                                </queries:And>
+                            </queries:Filter>
+                            <queries:Filter>
+                                <queries:FeatureStep value="name"/>
+                                <queries:And initialCapacity="2">
+                                    <queries:Not>
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:SelfStep/>
+                                        </queries:Singleton>
+                                        <queries:VariableRefStep value="propertyValue"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                    </queries:Not>
+                                    <queries:DistinctTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:DistinctTest>
+                                </queries:And>
+                            </queries:Filter>
+                        </queries:Path>
+                    </queries:If>
+                </queries:QueryDeclaration>
+                <queries:Filter>
+                    <queries:SelfStep/>
+                    <queries:VariableTest value="instances"/>
+                </queries:Filter>
+                <queries:Filter>
+                    <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                        <workflows:Text value="getRegistry"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <workflows:StringLiteral value="org.whole.lang.resources.ResourceRegistry"/>
+                        <workflows:StringLiteral value="getRegistry(java.lang.String)"/>
+                        <workflows:Expressions initialCapacity="1">
+                            <workflows:StringLiteral value="http://lwc11.crossexamples.whole.org/entities"/>
+                        </workflows:Expressions>
+                    </workflows:InvokeJavaClassMethod>
+                    <queries:VariableTest value="registry"/>
+                </queries:Filter>
+                <queries:Path initialCapacity="2">
+                    <queries:Filter>
+                        <queries:VariableRefStep value="primarySelectedEntity"/>
+                        <queries:And initialCapacity="2">
+                            <queries:ExpressionTest>
+                                <queries:Filter>
+                                    <queries:ParentStep/>
+                                    <queries:And initialCapacity="2">
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#Property"/>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="name"/>
+                                        <queries:VariableTest value="propertyName"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                    </queries:And>
+                                </queries:Filter>
+                            </queries:ExpressionTest>
+                            <queries:ExpressionTest>
+                                <queries:Path initialCapacity="2">
+                                    <queries:Filter>
+                                        <queries:AncestorStep/>
+                                        <queries:TypeTest value="http://lwc11.crossexamples.whole.org/instances#Instance"/>
+                                    </queries:Filter>
+                                    <queries:Filter>
+                                        <queries:FeatureStep value="type"/>
+                                        <queries:VariableTest value="typeName"/>
+                                    </queries:Filter>
+                                </queries:Path>
+                            </queries:ExpressionTest>
+                        </queries:And>
+                    </queries:Filter>
+                    <queries:Choose initialCapacity="2">
+                        <queries:Path initialCapacity="2">
+                            <queries:Filter>
+                                <queries:SelfStep/>
+                                <queries:AtFeatureTest value="http://lwc11.crossexamples.whole.org/instances#name"/>
+                            </queries:Filter>
+                            <queries:Call>
+                                <queries:Name value="getInstancePropertyNames"/>
+                                <queries:Expressions initialCapacity="2">
+                                    <queries:VariableRefStep value="typeName"/>
+                                    <queries:VariableRefStep value="propertyName"/>
+                                </queries:Expressions>
+                            </queries:Call>
+                        </queries:Path>
+                        <queries:Path initialCapacity="2">
+                            <queries:Filter>
+                                <queries:SelfStep/>
+                                <queries:AtFeatureTest value="http://lwc11.crossexamples.whole.org/instances#value"/>
+                            </queries:Filter>
+                            <queries:Call>
+                                <queries:Name value="getPropertyReferenceValues"/>
+                                <queries:Expressions initialCapacity="3">
+                                    <queries:VariableRefStep value="typeName"/>
+                                    <queries:VariableRefStep value="propertyName"/>
+                                    <queries:SelfStep/>
+                                </queries:Expressions>
+                            </queries:Call>
+                        </queries:Path>
+                    </queries:Choose>
+                </queries:Path>
+            </queries:Block>
+        </actions:SimpleAction>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>

@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<grammars:Grammar xmlns:grammars="http://lang.whole.org/Grammars">
+    <grammars:Name value="Logo"/>
+    <grammars:LanguageDescriptor>
+        <grammars:URI value="http://oslo.crossexamples.whole.org/Logo"/>
+        <grammars:Namespace value="org.whole.crossexamples.oslo.logo"/>
+        <grammars:Name value="Logo"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </grammars:LanguageDescriptor>
+    <grammars:NonTerminal value="Logo"/>
+    <grammars:LiteralTerminal>
+        <grammars:RegExp value="(?m)([ \t\n\r]|(//.*$))*"/>
+        <grammars:Category value="SEPARATOR"/>
+        <grammars:Literal value=""/>
+    </grammars:LiteralTerminal>
+    <grammars:Productions initialCapacity="0"/>
+    <grammars:Productions initialCapacity="5">
+        <grammars:Production>
+            <grammars:NonTerminal value="Logo"/>
+            <grammars:Production>
+                <grammars:NonTerminal value="Commands"/>
+                <grammars:Repeat>
+                    <grammars:Size value="1"/>
+                    <grammars:Unbounded/>
+                    <grammars:NewLine/>
+                    <grammars:Production>
+                        <grammars:NonTerminal value="Command"/>
+                        <grammars:Choose initialCapacity="5">
+                            <grammars:Production>
+                                <grammars:NonTerminal value="Rotate"/>
+                                <grammars:Concatenate initialCapacity="3">
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="Rotate"/>
+                                        <grammars:Category value="KEYWORD"/>
+                                        <grammars:Literal value="Rotate"/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:Space/>
+                                    <grammars:As>
+                                        <grammars:NonTerminal value="Integer"/>
+                                        <grammars:Name value="degrees"/>
+                                    </grammars:As>
+                                </grammars:Concatenate>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </grammars:Production>
+                            <grammars:Production>
+                                <grammars:NonTerminal value="Draw"/>
+                                <grammars:Concatenate initialCapacity="3">
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="Draw"/>
+                                        <grammars:Category value="KEYWORD"/>
+                                        <grammars:Literal value="Draw"/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:Space/>
+                                    <grammars:As>
+                                        <grammars:NonTerminal value="Distance"/>
+                                        <grammars:Name value="distance"/>
+                                    </grammars:As>
+                                </grammars:Concatenate>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </grammars:Production>
+                            <grammars:Production>
+                                <grammars:NonTerminal value="MoveAbs"/>
+                                <grammars:Concatenate initialCapacity="5">
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="MoveAbs"/>
+                                        <grammars:Category value="KEYWORD"/>
+                                        <grammars:Literal value="MoveAbs"/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:Space/>
+                                    <grammars:As>
+                                        <grammars:NonTerminal value="PositiveInteger"/>
+                                        <grammars:Name value="x"/>
+                                    </grammars:As>
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value=","/>
+                                        <grammars:Category value="DELIMITER"/>
+                                        <grammars:Literal value=","/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:As>
+                                        <grammars:NonTerminal value="PositiveInteger"/>
+                                        <grammars:Name value="y"/>
+                                    </grammars:As>
+                                </grammars:Concatenate>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </grammars:Production>
+                            <grammars:Production>
+                                <grammars:NonTerminal value="Move"/>
+                                <grammars:Concatenate initialCapacity="5">
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="Move"/>
+                                        <grammars:Category value="KEYWORD"/>
+                                        <grammars:Literal value="Move"/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:Space/>
+                                    <grammars:As>
+                                        <grammars:NonTerminal value="Integer"/>
+                                        <grammars:Name value="x"/>
+                                    </grammars:As>
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value=","/>
+                                        <grammars:Category value="DELIMITER"/>
+                                        <grammars:Literal value=","/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:As>
+                                        <grammars:NonTerminal value="Integer"/>
+                                        <grammars:Name value="y"/>
+                                    </grammars:As>
+                                </grammars:Concatenate>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </grammars:Production>
+                            <grammars:Production>
+                                <grammars:NonTerminal value="Loop"/>
+                                <grammars:Concatenate initialCapacity="9">
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="Loop"/>
+                                        <grammars:Category value="KEYWORD"/>
+                                        <grammars:Literal value="Loop"/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:Space/>
+                                    <grammars:NonTerminal value="LoopCount"/>
+                                    <grammars:NewLine/>
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="\Q{\E"/>
+                                        <grammars:Category value="PARENTHESIS"/>
+                                        <grammars:Literal value="{"/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:NewLine/>
+                                    <grammars:NonTerminal value="Commands"/>
+                                    <grammars:NewLine/>
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="}"/>
+                                        <grammars:Category value="PARENTHESIS"/>
+                                        <grammars:Literal value="}"/>
+                                    </grammars:LiteralTerminal>
+                                </grammars:Concatenate>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </grammars:Production>
+                        </grammars:Choose>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </grammars:Production>
+                </grammars:Repeat>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </grammars:Production>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Integer"/>
+            <grammars:DataTerminal>
+                <grammars:RegExp value="-?[0-9]+"/>
+                <grammars:Category value="LITERAL"/>
+                <grammars:Format value="%d"/>
+            </grammars:DataTerminal>
+            <grammars:DataType value="INT"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="PositiveInteger"/>
+            <grammars:DataTerminal>
+                <grammars:RegExp value="[0-9]+"/>
+                <grammars:Category value="LITERAL"/>
+                <grammars:Format value="%d"/>
+            </grammars:DataTerminal>
+            <grammars:DataType value="INT"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Distance"/>
+            <grammars:DataTerminal>
+                <grammars:RegExp value="[0-9]+"/>
+                <grammars:Category value="LITERAL"/>
+                <grammars:Format value="%d"/>
+            </grammars:DataTerminal>
+            <grammars:DataType value="INT"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="LoopCount"/>
+            <grammars:DataTerminal>
+                <grammars:RegExp value="[0-9]+"/>
+                <grammars:Category value="LITERAL"/>
+                <grammars:Format value="%d"/>
+            </grammars:DataTerminal>
+            <grammars:DataType value="INT"/>
+        </grammars:Production>
+    </grammars:Productions>
+    <grammars:URI value="http://oslo.crossexamples.whole.org/LogoGrammar"/>
+    <grammars:Namespace value="org.whole.crossexamples.oslo.logo"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</grammars:Grammar>

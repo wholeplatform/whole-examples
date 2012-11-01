@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<grammars:Grammar xmlns:grammars="http://lang.whole.org/Grammars">
+    <grammars:Name value="MPSDemo1Grammar"/>
+    <grammars:URI value="whole:org.whole.crossexamples.cg12.mps:MPSDemo1Model"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <grammars:LiteralTerminal>
+        <grammars:RegExp value="\p{javaWhitespace}*"/>
+        <grammars:Category value="SEPARATOR"/>
+        <grammars:Literal value=""/>
+    </grammars:LiteralTerminal>
+    <grammars:Productions initialCapacity="0"/>
+    <grammars:Productions initialCapacity="4">
+        <grammars:Production>
+            <grammars:NonTerminal value="RangeIterator"/>
+            <grammars:Concatenate initialCapacity="14">
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="\Q(\E"/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value="("/>
+                </grammars:LiteralTerminal>
+                <grammars:As>
+                    <grammars:NonTerminal value="SimpleName"/>
+                    <grammars:Name value="loopVariable"/>
+                </grammars:As>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="="/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value="="/>
+                </grammars:LiteralTerminal>
+                <grammars:As>
+                    <grammars:NonTerminal value="Expression"/>
+                    <grammars:Name value="lowerBound"/>
+                </grammars:As>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="\Q..\E"/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value=".."/>
+                </grammars:LiteralTerminal>
+                <grammars:As>
+                    <grammars:NonTerminal value="Expression"/>
+                    <grammars:Name value="upperBound"/>
+                </grammars:As>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="\Q)\E"/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value=")"/>
+                </grammars:LiteralTerminal>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="iterate"/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value="iterate"/>
+                </grammars:LiteralTerminal>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="\Q{\E"/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value="{"/>
+                </grammars:LiteralTerminal>
+                <grammars:NewLine/>
+                <grammars:Indent/>
+                <grammars:As>
+                    <grammars:NonTerminal value="Statement"/>
+                    <grammars:Name value="body"/>
+                </grammars:As>
+                <grammars:NewLine/>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="}"/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value="}"/>
+                </grammars:LiteralTerminal>
+            </grammars:Concatenate>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="SimpleName"/>
+            <grammars:Empty>
+                <grammars:Literal value=""/>
+            </grammars:Empty>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Expression"/>
+            <grammars:Empty>
+                <grammars:Literal value=""/>
+            </grammars:Empty>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Statement"/>
+            <grammars:Empty>
+                <grammars:Literal value=""/>
+            </grammars:Empty>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+    </grammars:Productions>
+    <grammars:URI value="whole:org.whole.crossexamples.cg12.mps:MPSDemo1Grammar"/>
+    <grammars:Namespace value="org.whole.crossexamples.cg12.mps"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</grammars:Grammar>

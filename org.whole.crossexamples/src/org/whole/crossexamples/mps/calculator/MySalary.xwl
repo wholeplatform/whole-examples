@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<calculator:Calculator xmlns:calculator="http://mps.crossexamples.whole.org/calculator">
+    <calculator:Name value="MySalary"/>
+    <calculator:InputFields initialCapacity="2">
+        <calculator:InputField value="Java Hours"/>
+        <calculator:InputField value="PHP Hours"/>
+    </calculator:InputFields>
+    <calculator:OutputFields initialCapacity="1">
+        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+            <java:InfixExpression xmlns:java="http://lang.whole.org/Java">
+                <java:InfixExpression>
+                    <commons:StageDownFragment>
+                        <calculator:InputFieldRef value="Java Hours"/>
+                    </commons:StageDownFragment>
+                    <java:InfixOperator value="*"/>
+                    <java:IntLiteral value="10"/>
+                    <commons:Resolver/>
+                </java:InfixExpression>
+                <java:InfixOperator value="+"/>
+                <java:InfixExpression>
+                    <commons:StageDownFragment>
+                        <calculator:InputFieldRef value="PHP Hours"/>
+                    </commons:StageDownFragment>
+                    <java:InfixOperator value="*"/>
+                    <java:IntLiteral value="5"/>
+                    <commons:Resolver/>
+                </java:InfixExpression>
+                <commons:Resolver/>
+            </java:InfixExpression>
+        </commons:StageUpFragment>
+    </calculator:OutputFields>
+</calculator:Calculator>

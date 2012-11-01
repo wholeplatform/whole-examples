@@ -1,0 +1,52 @@
+// Logo (and Mg) sample program 
+// Happy Thanksgiving! 
+
+// Move to top left
+MoveAbs 25,25 
+
+// Draw five rows of stars
+Loop 5
+{
+   // Draw ten columns of stars
+   Loop 10
+   {
+   // Draw five points to make each star
+   Loop 5
+   {
+         Rotate -54
+         Draw 5
+         Rotate 126
+         Draw 5
+   }
+   Move 21,0
+   }
+   Move -210,20
+}
+
+// Draw the lines next to the stars
+MoveAbs 430,25
+Rotate -90
+Loop 5
+{
+   // Lines are 5 pixels high
+   Loop 5
+   {
+      Draw 200
+      Move 200,1
+   }
+   Move 0,15
+}
+
+// Draw the lower lines on the flag
+MoveAbs 430,125
+Loop 5
+{
+   // Lines are 5 pixels high
+   Loop 5
+   {
+      Draw 410
+      Move 410,1
+   }
+   Move 0,15
+}
+

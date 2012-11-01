@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<models:Model xmlns:models="http://lang.whole.org/Models">
+    <models:SimpleName value="ER"/>
+    <models:TypeRelations initialCapacity="0"/>
+    <models:ModelDeclarations initialCapacity="7">
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Database"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="1">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Tables"/>
+                    <models:SimpleName value="tables"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Tables"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="0"/>
+            <models:SimpleName value="Table"/>
+        </models:CompositeEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Table"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="1">
+                        <models:FeatureModifier value="id"/>
+                    </models:FeatureModifiers>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Columns"/>
+                    <models:SimpleName value="columns"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Columns"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="1">
+                <models:ComponentModifier value="ordered"/>
+            </models:ComponentModifiers>
+            <models:SimpleName value="Column"/>
+        </models:CompositeEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Column"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="1">
+                        <models:FeatureModifier value="id"/>
+                    </models:FeatureModifiers>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Type"/>
+                    <models:SimpleName value="type"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Name"/>
+            <models:Types initialCapacity="0"/>
+            <models:DataType value="String"/>
+        </models:DataEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Type"/>
+            <models:Types initialCapacity="0"/>
+            <models:DataType value="String"/>
+        </models:DataEntity>
+    </models:ModelDeclarations>
+    <models:Namespace value="org.whole.crossexamples.lwc11.er"/>
+    <models:Version value="1.0.0"/>
+    <models:URI value="whole:org.whole.crossexamples.lwc11:ERModel"/>
+</models:Model>

@@ -1,0 +1,23 @@
+MoveAbs 25,50
+Draw 15
+Move 10,15
+Rotate 30
+Loop 3
+{
+	Draw 15
+	Rotate 120
+}
+Rotate -30
+Move 25,0
+Loop 4
+{
+	Draw 15
+	Rotate 90
+}
+Move 30,0
+Rotate -18
+Loop 5
+{
+	Draw 15
+	Rotate 72
+}

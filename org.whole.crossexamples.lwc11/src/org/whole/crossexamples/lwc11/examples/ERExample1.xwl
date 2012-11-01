@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<er:Database xmlns:er="whole:org.whole.crossexamples.lwc11:ERModel">
+    <er:Tables initialCapacity="1">
+        <er:Table>
+            <er:Name value="T1"/>
+            <er:Columns initialCapacity="2">
+                <er:Column>
+                    <er:Name value="c1"/>
+                    <er:Type value="T1"/>
+                </er:Column>
+                <er:Column>
+                    <er:Name value="c2"/>
+                    <er:Type value="type"/>
+                </er:Column>
+            </er:Columns>
+        </er:Table>
+    </er:Tables>
+</er:Database>

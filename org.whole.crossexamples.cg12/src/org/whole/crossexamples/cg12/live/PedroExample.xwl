@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<pedro:Package xmlns:pedro="whole:org.whole.crossexamples.cg12.live:PedroModel">
+    <pedro:Name value="pedro.outpput"/>
+    <pedro:Classes initialCapacity="3">
+        <pedro:Class>
+            <pedro:Name value="MyClass"/>
+            <pedro:Attributes initialCapacity="3">
+                <pedro:Attribute>
+                    <pedro:Modifier value="HAS"/>
+                    <pedro:Name value="attr1"/>
+                    <pedro:Name value="MyClass2"/>
+                </pedro:Attribute>
+                <pedro:Attribute>
+                    <pedro:Modifier value="HAS"/>
+                    <pedro:Name value="attr2"/>
+                    <pedro:Name value="MyClass2"/>
+                </pedro:Attribute>
+                <pedro:Attribute>
+                    <pedro:Modifier value="HAS"/>
+                    <pedro:Name value="attr3"/>
+                    <pedro:Name value="MyClass2"/>
+                </pedro:Attribute>
+            </pedro:Attributes>
+        </pedro:Class>
+        <pedro:Class>
+            <pedro:Name value="MyClass2"/>
+            <pedro:Attributes initialCapacity="1">
+                <pedro:Attribute>
+                    <pedro:Modifier value="HAS"/>
+                    <pedro:Name value="attr1"/>
+                    <pedro:Name value="MyClass"/>
+                </pedro:Attribute>
+            </pedro:Attributes>
+        </pedro:Class>
+        <pedro:Class>
+            <pedro:Name value="MyClass3"/>
+            <pedro:Attributes initialCapacity="1">
+                <pedro:Attribute>
+                    <pedro:Modifier value="HAS"/>
+                    <pedro:Name value="attr1"/>
+                    <pedro:Name value="MyClass2"/>
+                </pedro:Attribute>
+            </pedro:Attributes>
+        </pedro:Class>
+    </pedro:Classes>
+</pedro:Package>

@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<grammars:Grammar xmlns:grammars="http://lang.whole.org/Grammars">
+    <grammars:Name value="Entities"/>
+    <grammars:LanguageDescriptor>
+        <grammars:URI value="http://www.xtext.org/Entities"/>
+        <grammars:Namespace value="org.whole.crossexamples.xtext.entities"/>
+        <grammars:Name value="Entities"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </grammars:LanguageDescriptor>
+    <grammars:NonTerminal value="Model"/>
+    <grammars:LiteralTerminal>
+        <grammars:RegExp value="\p{javaWhitespace}*"/>
+        <grammars:Category value="SEPARATOR"/>
+        <grammars:Literal value=""/>
+    </grammars:LiteralTerminal>
+    <grammars:Productions initialCapacity="0"/>
+    <grammars:Productions initialCapacity="4">
+        <grammars:Production>
+            <grammars:NonTerminal value="Model"/>
+            <grammars:As>
+                <grammars:Repeat>
+                    <grammars:Size value="0"/>
+                    <grammars:Unbounded/>
+                    <grammars:NewLine/>
+                    <grammars:NonTerminal value="Type"/>
+                </grammars:Repeat>
+                <grammars:Name value="elements"/>
+            </grammars:As>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Type"/>
+            <grammars:Choose initialCapacity="2">
+                <grammars:Production>
+                    <grammars:NonTerminal value="SimpleType"/>
+                    <grammars:Concatenate initialCapacity="3">
+                        <grammars:LiteralTerminal>
+                            <grammars:RegExp value="type"/>
+                            <grammars:Category value="DELIMITER"/>
+                            <grammars:Literal value="type"/>
+                        </grammars:LiteralTerminal>
+                        <grammars:Space/>
+                        <grammars:As>
+                            <grammars:NonTerminal value="ID"/>
+                            <grammars:Name value="name"/>
+                        </grammars:As>
+                    </grammars:Concatenate>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </grammars:Production>
+                <grammars:Production>
+                    <grammars:NonTerminal value="Entity"/>
+                    <grammars:Concatenate initialCapacity="9">
+                        <grammars:LiteralTerminal>
+                            <grammars:RegExp value="entity"/>
+                            <grammars:Category value="DELIMITER"/>
+                            <grammars:Literal value="entity"/>
+                        </grammars:LiteralTerminal>
+                        <grammars:Space/>
+                        <grammars:As>
+                            <grammars:NonTerminal value="ID"/>
+                            <grammars:Name value="name"/>
+                        </grammars:As>
+                        <grammars:Optional>
+                            <grammars:As>
+                                <grammars:Concatenate initialCapacity="4">
+                                    <grammars:Space/>
+                                    <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="extends"/>
+                                        <grammars:Category value="DELIMITER"/>
+                                        <grammars:Literal value="extends"/>
+                                    </grammars:LiteralTerminal>
+                                    <grammars:Space/>
+                                    <grammars:NonTerminal value="ID"/>
+                                </grammars:Concatenate>
+                                <grammars:Name value="extends"/>
+                            </grammars:As>
+                        </grammars:Optional>
+                        <grammars:Space/>
+                        <grammars:LiteralTerminal>
+                            <grammars:RegExp value="\Q{\E"/>
+                            <grammars:Category value="DELIMITER"/>
+                            <grammars:Literal value="{"/>
+                        </grammars:LiteralTerminal>
+                        <grammars:NewLine/>
+                        <grammars:As>
+                            <grammars:Repeat>
+                                <grammars:Size value="0"/>
+                                <grammars:Unbounded/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <grammars:Concatenate initialCapacity="2">
+                                    <grammars:NonTerminal value="Property"/>
+                                    <grammars:NewLine/>
+                                </grammars:Concatenate>
+                            </grammars:Repeat>
+                            <grammars:Name value="properties"/>
+                        </grammars:As>
+                        <grammars:LiteralTerminal>
+                            <grammars:RegExp value="}"/>
+                            <grammars:Category value="DELIMITER"/>
+                            <grammars:Literal value="}"/>
+                        </grammars:LiteralTerminal>
+                    </grammars:Concatenate>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </grammars:Production>
+            </grammars:Choose>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Property"/>
+            <grammars:Concatenate initialCapacity="9">
+                <grammars:Indent/>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="property"/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value="property"/>
+                </grammars:LiteralTerminal>
+                <grammars:Space/>
+                <grammars:As>
+                    <grammars:NonTerminal value="ID"/>
+                    <grammars:Name value="name"/>
+                </grammars:As>
+                <grammars:Space/>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value=":"/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value=":"/>
+                </grammars:LiteralTerminal>
+                <grammars:Space/>
+                <grammars:As>
+                    <grammars:NonTerminal value="ID"/>
+                    <grammars:Name value="type"/>
+                </grammars:As>
+                <grammars:Optional>
+                    <grammars:As>
+                        <grammars:LiteralTerminal>
+                            <grammars:RegExp value="\Q[]\E"/>
+                            <grammars:Category value="DELIMITER"/>
+                            <grammars:Literal value="[]"/>
+                        </grammars:LiteralTerminal>
+                        <grammars:Name value="many"/>
+                    </grammars:As>
+                </grammars:Optional>
+            </grammars:Concatenate>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="ID"/>
+            <grammars:DataTerminal>
+                <grammars:RegExp value="[a-zA-Z_][_a-zA-Z_0-9]*"/>
+                <grammars:Category value="LITERAL"/>
+                <grammars:Format value="%s"/>
+            </grammars:DataTerminal>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+    </grammars:Productions>
+    <grammars:URI value="http://entities.xtext.crossexamples.whole.org/EntitiesGrammar"/>
+    <grammars:Namespace value="org.whole.crossexamples.xtext.entities"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</grammars:Grammar>

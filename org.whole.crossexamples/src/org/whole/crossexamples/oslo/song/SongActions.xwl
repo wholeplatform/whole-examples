@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.crossexamples.oslo.song:SongActions"/>
+    <actions:Namespace value="org.whole.crossexamples.oslo.song"/>
+    <actions:Name value="SongActions"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:URI value="http://oslo.crossexamples.whole.org/Song"/>
+    <actions:ToolbarActions>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <actions:SimpleAction>
+            <actions:Label value="play"/>
+            <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
+                <workflows:CreateJavaClassInstance xmlns:workflows="http://lang.whole.org/Workflows">
+                    <workflows:Text value="create song builder"/>
+                    <workflows:Variable value="songBuilder"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <workflows:StringLiteral value="org.whole.crossexamples.oslo.song.SongBuilder"/>
+                    <workflows:StringLiteral value="SongBuilder()"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </workflows:CreateJavaClassInstance>
+                <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                    <workflows:Text value="build track"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <workflows:Variable value="songBuilder"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <workflows:StringLiteral value="org.whole.crossexamples.oslo.song.SongBuilder"/>
+                    <workflows:StringLiteral value="buildTrack()"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </workflows:InvokeJavaInstanceMethod>
+                <queries:For>
+                    <queries:Path initialCapacity="3">
+                        <queries:FeatureStep value="bars"/>
+                        <queries:ChildStep/>
+                        <queries:ChildStep/>
+                    </queries:Path>
+                    <queries:Choose initialCapacity="2">
+                        <queries:If>
+                            <queries:TypeTest value="Rest"/>
+                            <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="build rest"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:Variable value="songBuilder"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.crossexamples.oslo.song.SongBuilder"/>
+                                <workflows:StringLiteral value="buildRest()"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </workflows:InvokeJavaInstanceMethod>
+                        </queries:If>
+                        <queries:If>
+                            <queries:And initialCapacity="2">
+                                <queries:TypeTest value="Note"/>
+                                <queries:VariableTest value="note"/>
+                            </queries:And>
+                            <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="build note"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:Variable value="songBuilder"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.crossexamples.oslo.song.SongBuilder"/>
+                                <workflows:StringLiteral value="buildNote(java.lang.String)"/>
+                                <workflows:Expressions initialCapacity="1">
+                                    <workflows:Variable value="note"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaInstanceMethod>
+                        </queries:If>
+                    </queries:Choose>
+                </queries:For>
+                <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                    <workflows:Text value="play song"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <workflows:Variable value="songBuilder"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <workflows:StringLiteral value="org.whole.crossexamples.oslo.song.SongBuilder"/>
+                    <workflows:StringLiteral value="play()"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </workflows:InvokeJavaInstanceMethod>
+            </queries:Block>
+        </actions:SimpleAction>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>

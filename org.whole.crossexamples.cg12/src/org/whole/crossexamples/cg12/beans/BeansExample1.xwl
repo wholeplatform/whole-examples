@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<beans:Beans xmlns:beans="whole:org.whole.crossexamples.cg12.beans:BeansModel-10" initialCapacity="2">
+    <beans:Bean>
+        <beans:Name value="bean1"/>
+        <beans:Properties initialCapacity="2">
+            <beans:Property>
+                <beans:Name value="prop1"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </beans:Property>
+            <beans:Property>
+                <beans:Name value="prop2"/>
+                <beans:PrimitiveType value="string"/>
+            </beans:Property>
+        </beans:Properties>
+    </beans:Bean>
+    <beans:Bean>
+        <beans:Name value="bean2"/>
+        <beans:Properties initialCapacity="1">
+            <beans:Property>
+                <beans:Name value="prop2"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </beans:Property>
+        </beans:Properties>
+    </beans:Bean>
+</beans:Beans>

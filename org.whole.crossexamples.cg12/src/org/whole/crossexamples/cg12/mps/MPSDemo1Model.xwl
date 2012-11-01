@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<models:Model xmlns:models="http://lang.whole.org/Models">
+    <models:SimpleName value="MPSDemo1"/>
+    <models:TypeRelations initialCapacity="4">
+        <models:SubtypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="RangeIterator"/>
+            </models:Types>
+            <models:EntityType value="http://lang.whole.org/Java#Statement"/>
+        </models:SubtypesOf>
+        <models:SupertypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="SimpleName"/>
+            </models:Types>
+            <models:EntityType value="http://lang.whole.org/Java#SimpleName"/>
+        </models:SupertypesOf>
+        <models:SupertypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Expression"/>
+            </models:Types>
+            <models:EntityType value="http://lang.whole.org/Java#Expression"/>
+        </models:SupertypesOf>
+        <models:SupertypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Statement"/>
+            </models:Types>
+            <models:EntityType value="http://lang.whole.org/Java#Statement"/>
+        </models:SupertypesOf>
+    </models:TypeRelations>
+    <models:ModelDeclarations initialCapacity="1">
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="RangeIterator"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="4">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="SimpleName"/>
+                    <models:SimpleName value="loopVariable"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Expression"/>
+                    <models:SimpleName value="lowerBound"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Expression"/>
+                    <models:SimpleName value="upperBound"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Statement"/>
+                    <models:SimpleName value="body"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+    </models:ModelDeclarations>
+    <models:Namespace value="org.whole.crossexamples.cg12.mps"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <models:URI value="whole:org.whole.crossexamples.cg12.mps:MPSDemo1Model"/>
+</models:Model>

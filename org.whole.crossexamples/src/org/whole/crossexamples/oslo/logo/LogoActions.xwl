@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.crossexamples.oslo.logo:LogoActions"/>
+    <actions:Namespace value="org.whole.crossexamples.oslo.logo"/>
+    <actions:Name value="LogoActions"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:URI value="http://oslo.crossexamples.whole.org/Logo"/>
+    <actions:ToolbarActions>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="1">
+            <actions:GuardedAction>
+                <actions:Label value="Translate to SVG"/>
+                <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="9">
+                    <queries:Filter>
+                        <queries:DoubleLiteral value="100.0"/>
+                        <queries:VariableTest value="x"/>
+                    </queries:Filter>
+                    <queries:Filter>
+                        <queries:DoubleLiteral value="100.0"/>
+                        <queries:VariableTest value="y"/>
+                    </queries:Filter>
+                    <queries:Filter>
+                        <queries:DoubleLiteral value="90.0"/>
+                        <queries:VariableTest value="angle"/>
+                    </queries:Filter>
+                    <queries:QueryDeclaration>
+                        <queries:Name value="repeat"/>
+                        <queries:Names initialCapacity="2">
+                            <queries:Name value="times"/>
+                            <queries:Name value="body"/>
+                        </queries:Names>
+                        <queries:Sequence initialCapacity="2">
+                            <queries:If>
+                                <queries:ExpressionTest>
+                                    <queries:GreaterOrEquals>
+                                        <queries:VariableRefStep value="times"/>
+                                        <queries:IntLiteral value="1"/>
+                                    </queries:GreaterOrEquals>
+                                </queries:ExpressionTest>
+                                <queries:Call>
+                                    <queries:Name value="body"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Call>
+                            </queries:If>
+                            <queries:If>
+                                <queries:ExpressionTest>
+                                    <queries:GreaterThan>
+                                        <queries:VariableRefStep value="times"/>
+                                        <queries:IntLiteral value="1"/>
+                                    </queries:GreaterThan>
+                                </queries:ExpressionTest>
+                                <queries:Call>
+                                    <queries:Name value="repeat"/>
+                                    <queries:Expressions initialCapacity="2">
+                                        <queries:Subtraction>
+                                        <queries:VariableRefStep value="times"/>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:Subtraction>
+                                        <queries:VariableRefStep value="body"/>
+                                    </queries:Expressions>
+                                </queries:Call>
+                            </queries:If>
+                        </queries:Sequence>
+                    </queries:QueryDeclaration>
+                    <queries:QueryDeclaration>
+                        <queries:Name value="cos"/>
+                        <queries:Names initialCapacity="2">
+                            <queries:Name value="angle"/>
+                            <queries:Name value="radians"/>
+                        </queries:Names>
+                        <queries:Block initialCapacity="2">
+                            <queries:Filter>
+                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                    <workflows:Text value="toRadians(angle)"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <workflows:StringLiteral value="java.lang.Math"/>
+                                    <workflows:StringLiteral value="toRadians(double)"/>
+                                    <workflows:Expressions initialCapacity="1">
+                                        <workflows:Variable value="angle"/>
+                                    </workflows:Expressions>
+                                </workflows:InvokeJavaClassMethod>
+                                <queries:VariableTest value="radians"/>
+                            </queries:Filter>
+                            <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="cos(radians)"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="java.lang.Math"/>
+                                <workflows:StringLiteral value="cos(double)"/>
+                                <workflows:Expressions initialCapacity="1">
+                                    <workflows:Variable value="radians"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaClassMethod>
+                        </queries:Block>
+                    </queries:QueryDeclaration>
+                    <queries:QueryDeclaration>
+                        <queries:Name value="sin"/>
+                        <queries:Names initialCapacity="2">
+                            <queries:Name value="angle"/>
+                            <queries:Name value="radians"/>
+                        </queries:Names>
+                        <queries:Block initialCapacity="2">
+                            <queries:Filter>
+                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                    <workflows:Text value="toRadians(angle)"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <workflows:StringLiteral value="java.lang.Math"/>
+                                    <workflows:StringLiteral value="toRadians(double)"/>
+                                    <workflows:Expressions initialCapacity="1">
+                                        <workflows:Variable value="angle"/>
+                                    </workflows:Expressions>
+                                </workflows:InvokeJavaClassMethod>
+                                <queries:VariableTest value="radians"/>
+                            </queries:Filter>
+                            <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="sin(radians)"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="java.lang.Math"/>
+                                <workflows:StringLiteral value="sin(double)"/>
+                                <workflows:Expressions initialCapacity="1">
+                                    <workflows:Variable value="radians"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaClassMethod>
+                        </queries:Block>
+                    </queries:QueryDeclaration>
+                    <queries:QueryDeclaration>
+                        <queries:Name value="translateCommand"/>
+                        <queries:Names initialCapacity="3">
+                            <queries:Name value="x2"/>
+                            <queries:Name value="y2"/>
+                            <queries:Name value="radians"/>
+                        </queries:Names>
+                        <queries:Choose initialCapacity="3">
+                            <queries:Select>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <wxml:Element xmlns:wxml="http://lang.whole.org/Xml">
+                                        <wxml:Name value="line"/>
+                                        <wxml:Attributes initialCapacity="4">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="x1"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Xml#Value"/>
+                                        <commons:VarName value="x"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="y1"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Xml#Value"/>
+                                        <commons:VarName value="y"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="x2"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Xml#Value"/>
+                                        <commons:VarName value="x2"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="y2"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Xml#Value"/>
+                                        <commons:VarName value="y2"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <wxml:Content initialCapacity="0"/>
+                                    </wxml:Element>
+                                </commons:StageUpFragment>
+                                <queries:Filter>
+                                    <queries:SelfStep/>
+                                    <queries:TypeTest value="http://oslo.crossexamples.whole.org/Logo#Draw"/>
+                                </queries:Filter>
+                                <queries:PointwiseUpdate>
+                                    <queries:Sequence initialCapacity="2">
+                                        <queries:VariableRefStep value="x"/>
+                                        <queries:VariableRefStep value="y"/>
+                                    </queries:Sequence>
+                                    <queries:Sequence initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="x"/>
+                                        <queries:Multiplication>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="http://oslo.crossexamples.whole.org/Logo#distance"/>
+                                        </queries:Singleton>
+                                        <queries:Singleton>
+                                        <queries:Call>
+                                        <queries:Name value="cos"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:VariableRefStep value="angle"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                        </queries:Singleton>
+                                        </queries:Multiplication>
+                                        </queries:Addition>
+                                        <queries:VariableTest value="x2"/>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <queries:Subtraction>
+                                        <queries:VariableRefStep value="y"/>
+                                        <queries:Multiplication>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="http://oslo.crossexamples.whole.org/Logo#distance"/>
+                                        </queries:Singleton>
+                                        <queries:Singleton>
+                                        <queries:Call>
+                                        <queries:Name value="sin"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:VariableRefStep value="angle"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                        </queries:Singleton>
+                                        </queries:Multiplication>
+                                        </queries:Subtraction>
+                                        <queries:VariableTest value="y2"/>
+                                        </queries:Filter>
+                                    </queries:Sequence>
+                                </queries:PointwiseUpdate>
+                                <queries:TemplateNames/>
+                            </queries:Select>
+                            <queries:If>
+                                <queries:TypeTest value="http://oslo.crossexamples.whole.org/Logo#Loop"/>
+                                <queries:Call>
+                                    <queries:Name value="repeat"/>
+                                    <queries:Expressions initialCapacity="2">
+                                        <queries:FeatureStep value="http://oslo.crossexamples.whole.org/Logo#loopCount"/>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <queries:Path initialCapacity="3">
+                                        <queries:FeatureStep value="http://oslo.crossexamples.whole.org/Logo#commands"/>
+                                        <queries:ChildStep/>
+                                        <queries:Call>
+                                        <queries:Name value="translateCommand"/>
+                                        <commons:Resolver/>
+                                        </queries:Call>
+                                        </queries:Path>
+                                        </commons:StageUpFragment>
+                                    </queries:Expressions>
+                                </queries:Call>
+                            </queries:If>
+                            <queries:Block initialCapacity="2">
+                                <queries:Choose initialCapacity="3">
+                                    <queries:If>
+                                        <queries:TypeTest value="http://oslo.crossexamples.whole.org/Logo#MoveAbs"/>
+                                        <queries:PointwiseUpdate>
+                                        <queries:Sequence initialCapacity="2">
+                                        <queries:VariableRefStep value="x"/>
+                                        <queries:VariableRefStep value="y"/>
+                                        </queries:Sequence>
+                                        <queries:Sequence initialCapacity="2">
+                                        <queries:Addition>
+                                        <queries:DoubleLiteral value="0.0"/>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="http://oslo.crossexamples.whole.org/Logo#x"/>
+                                        </queries:Singleton>
+                                        </queries:Addition>
+                                        <queries:Addition>
+                                        <queries:DoubleLiteral value="0.0"/>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="http://oslo.crossexamples.whole.org/Logo#y"/>
+                                        </queries:Singleton>
+                                        </queries:Addition>
+                                        </queries:Sequence>
+                                        </queries:PointwiseUpdate>
+                                    </queries:If>
+                                    <queries:If>
+                                        <queries:TypeTest value="http://oslo.crossexamples.whole.org/Logo#Move"/>
+                                        <queries:PointwiseUpdate>
+                                        <queries:Sequence initialCapacity="2">
+                                        <queries:VariableRefStep value="x"/>
+                                        <queries:VariableRefStep value="y"/>
+                                        </queries:Sequence>
+                                        <queries:Sequence initialCapacity="2">
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="x"/>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="http://oslo.crossexamples.whole.org/Logo#x"/>
+                                        </queries:Singleton>
+                                        </queries:Addition>
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="y"/>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="http://oslo.crossexamples.whole.org/Logo#y"/>
+                                        </queries:Singleton>
+                                        </queries:Addition>
+                                        </queries:Sequence>
+                                        </queries:PointwiseUpdate>
+                                    </queries:If>
+                                    <queries:If>
+                                        <queries:TypeTest value="http://oslo.crossexamples.whole.org/Logo#Rotate"/>
+                                        <queries:PointwiseUpdate>
+                                        <queries:VariableRefStep value="angle"/>
+                                        <queries:Subtraction>
+                                        <queries:VariableRefStep value="angle"/>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="http://oslo.crossexamples.whole.org/Logo#degrees"/>
+                                        </queries:Singleton>
+                                        </queries:Subtraction>
+                                        </queries:PointwiseUpdate>
+                                    </queries:If>
+                                </queries:Choose>
+                                <queries:VoidLiteral/>
+                            </queries:Block>
+                        </queries:Choose>
+                    </queries:QueryDeclaration>
+                    <queries:Select>
+                        <queries:Filter>
+                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                    <commons:Resolver/>
+                                    <artifacts:Projects initialCapacity="1">
+                                        <artifacts:Project>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#ProjectName"/>
+                                        <commons:VarName value="projectName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <artifacts:Natures initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#Name"/>
+                                        <commons:VarName value="folderName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#Name"/>
+                                        <commons:VarName value="fileName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <artifacts:Extension value="svg"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <wxml:Document xmlns:wxml="http://lang.whole.org/Xml">
+                                        <wxml:Prolog>
+                                        <wxml:XMLDecl>
+                                        <wxml:Version value="1.0"/>
+                                        <wxml:Encoding value="UTF-8"/>
+                                        <wxml:Standalone value="false"/>
+                                        </wxml:XMLDecl>
+                                        <wxml:DocTypeDecl>
+                                        <wxml:Name value="svg"/>
+                                        <wxml:PublicId>
+                                        <wxml:PubidLiteral value="-//W3C//DTD SVG 1.1//EN"/>
+                                        <wxml:SystemLiteral value="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"/>
+                                        </wxml:PublicId>
+                                        </wxml:DocTypeDecl>
+                                        <wxml:Misc initialCapacity="0"/>
+                                        </wxml:Prolog>
+                                        <wxml:Element>
+                                        <wxml:Name value="svg"/>
+                                        <wxml:Attributes initialCapacity="4">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="width"/>
+                                        <wxml:Value value="100%"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="height"/>
+                                        <wxml:Value value="100%"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="version"/>
+                                        <wxml:Value value="1.1"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="xmlns"/>
+                                        <wxml:Value value="http://www.w3.org/2000/svg"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <wxml:Content initialCapacity="2">
+                                        <wxml:Element>
+                                        <wxml:Name value="defs"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Element>
+                                        <wxml:Name value="style"/>
+                                        <wxml:Attributes initialCapacity="1">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="type"/>
+                                        <wxml:Value value="text/css"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <wxml:CDataSect initialCapacity="1">
+                                        <wxml:CDataSectData value="line {&#10;    fill: blue;&#10;    stroke: blue;&#10;    stroke-width: 1&#10;}"/>
+                                        </wxml:CDataSect>
+                                        </wxml:Element>
+                                        </wxml:Element>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Xml#Element"/>
+                                        <commons:VarName value="command"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:Variable>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        </wxml:Document>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        <commons:Resolver/>
+                                        </artifacts:Project>
+                                    </artifacts:Projects>
+                                </artifacts:Workspace>
+                            </commons:StageUpFragment>
+                            <queries:VariableTest value="workspace"/>
+                        </queries:Filter>
+                        <queries:FeatureStep value="commands"/>
+                        <queries:Path initialCapacity="2">
+                            <queries:ChildStep/>
+                            <queries:Filter>
+                                <queries:Call>
+                                    <queries:Name value="translateCommand"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Call>
+                                <queries:VariableTest value="command"/>
+                            </queries:Filter>
+                        </queries:Path>
+                        <queries:TemplateNames/>
+                    </queries:Select>
+                    <queries:Call>
+                        <queries:Name value="workspace"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Call>
+                </queries:Block>
+                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:BooleanLiteral value="true"/>
+                </queries:ExpressionTest>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>

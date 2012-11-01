@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<frames:Frame xmlns:frames="http://lang.whole.org/Frames">
+    <frames:URI value="whole:org.whole.crossexamples.cg12.live:ModelFrame2"/>
+    <frames:Namespace value="org.whole.crossexamples.cg12.live"/>
+    <frames:Name value="ModelFrame2"/>
+    <frames:Version value="2"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <frames:ReusePoint>
+        <frames:URI value="whole:org.whole.crossexamples.cg12.live:ModelFrame1"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <frames:Advices initialCapacity="1">
+            <frames:Into>
+                <queries:FeatureStep xmlns:queries="http://lang.whole.org/Queries" value="http://lang.whole.org/Models#declarations"/>
+                <frames:InlineContent>
+                    <models:ModelDeclarations xmlns:models="http://lang.whole.org/Models" initialCapacity="1">
+                        <models:SimpleEntity>
+                            <models:EntityModifiers initialCapacity="0"/>
+                            <models:SimpleName value="EntityName2"/>
+                            <models:Types initialCapacity="0"/>
+                            <models:Features initialCapacity="1">
+                                <models:Feature>
+                                    <models:FeatureModifiers initialCapacity="0"/>
+                                    <models:SimpleName value="Type"/>
+                                    <models:SimpleName value="f1"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </models:Feature>
+                            </models:Features>
+                        </models:SimpleEntity>
+                    </models:ModelDeclarations>
+                </frames:InlineContent>
+            </frames:Into>
+        </frames:Advices>
+    </frames:ReusePoint>
+</frames:Frame>

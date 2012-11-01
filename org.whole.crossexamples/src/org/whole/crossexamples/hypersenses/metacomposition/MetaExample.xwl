@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<meta:TableScript xmlns:meta="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel">
+    <meta:Tables initialCapacity="5">
+        <meta:Table>
+            <meta:Name value="Repository"/>
+            <meta:Columns initialCapacity="0"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </meta:Table>
+        <meta:Table>
+            <meta:Name value="Project"/>
+            <meta:Columns initialCapacity="1">
+                <meta:Column>
+                    <meta:Name value="Name"/>
+                    <meta:Datatype value="string"/>
+                </meta:Column>
+            </meta:Columns>
+            <meta:ForeignKeys initialCapacity="2">
+                <meta:ForeignKey>
+                    <meta:Name value="Repository"/>
+                </meta:ForeignKey>
+                <meta:ForeignKey>
+                    <meta:Name value="Person"/>
+                </meta:ForeignKey>
+            </meta:ForeignKeys>
+        </meta:Table>
+        <meta:Table>
+            <meta:Name value="Person"/>
+            <meta:Columns initialCapacity="2">
+                <meta:Column>
+                    <meta:Name value="Name"/>
+                    <meta:Datatype value="string"/>
+                </meta:Column>
+                <meta:Column>
+                    <meta:Name value="ProjectRole"/>
+                    <meta:Datatype value="string"/>
+                </meta:Column>
+            </meta:Columns>
+            <meta:ForeignKeys initialCapacity="1">
+                <meta:ForeignKey>
+                    <meta:Name value="Person"/>
+                </meta:ForeignKey>
+            </meta:ForeignKeys>
+        </meta:Table>
+        <meta:Table>
+            <meta:Name value="WorkItem"/>
+            <meta:Columns initialCapacity="3">
+                <meta:Column>
+                    <meta:Name value="Opened"/>
+                    <meta:Datatype value="datetime"/>
+                </meta:Column>
+                <meta:Column>
+                    <meta:Name value="Closed"/>
+                    <meta:Datatype value="datetime"/>
+                </meta:Column>
+                <meta:Column>
+                    <meta:Name value="Description"/>
+                    <meta:Datatype value="string"/>
+                </meta:Column>
+            </meta:Columns>
+            <meta:ForeignKeys initialCapacity="1">
+                <meta:ForeignKey>
+                    <meta:Name value="Project"/>
+                </meta:ForeignKey>
+            </meta:ForeignKeys>
+        </meta:Table>
+        <meta:Table>
+            <meta:Name value="FileAttachement"/>
+            <meta:Columns initialCapacity="1">
+                <meta:Column>
+                    <meta:Name value="Path"/>
+                    <meta:Datatype value="string"/>
+                </meta:Column>
+            </meta:Columns>
+            <meta:ForeignKeys initialCapacity="1">
+                <meta:ForeignKey>
+                    <meta:Name value="WorkItem"/>
+                </meta:ForeignKey>
+            </meta:ForeignKeys>
+        </meta:Table>
+    </meta:Tables>
+</meta:TableScript>

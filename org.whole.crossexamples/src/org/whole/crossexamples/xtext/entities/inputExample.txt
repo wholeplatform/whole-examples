@@ -1,0 +1,21 @@
+type String
+type Bool
+
+entity Session {
+  property Title : String
+  property IsTutorial : Bool
+}
+
+entity Conference {
+  property Name : String
+  property Attendees : Person[]
+  property Speakers : Speakers[]
+}
+
+entity Person {
+  property Name : String
+}
+
+entity Speaker extends Person {
+  property Sessions : Session[]
+}

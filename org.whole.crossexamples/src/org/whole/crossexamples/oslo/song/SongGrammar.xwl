@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<grammars:Grammar xmlns:grammars="http://lang.whole.org/Grammars">
+    <grammars:Name value="Song"/>
+    <grammars:LanguageDescriptor>
+        <grammars:URI value="http://oslo.crossexamples.whole.org/Song"/>
+        <grammars:Namespace value="org.whole.crossexamples.oslo.song"/>
+        <grammars:Name value="Song"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </grammars:LanguageDescriptor>
+    <grammars:NonTerminal value="Song"/>
+    <grammars:LiteralTerminal>
+        <grammars:RegExp value="[ \n\r\t,]*"/>
+        <grammars:Category value="SEPARATOR"/>
+        <grammars:Literal value=""/>
+    </grammars:LiteralTerminal>
+    <grammars:Productions initialCapacity="2">
+        <grammars:Production>
+            <grammars:NonTerminal value="SP"/>
+            <grammars:Empty>
+                <grammars:Literal value=" "/>
+            </grammars:Empty>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="NL"/>
+            <grammars:Empty>
+                <grammars:Literal value="\n"/>
+            </grammars:Empty>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+    </grammars:Productions>
+    <grammars:Productions initialCapacity="3">
+        <grammars:Production>
+            <grammars:NonTerminal value="Song"/>
+            <grammars:Concatenate initialCapacity="3">
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="Music"/>
+                    <grammars:Category value="DELIMITER"/>
+                    <grammars:Literal value="Music"/>
+                </grammars:LiteralTerminal>
+                <grammars:NonTerminal value="NL"/>
+                <grammars:Production>
+                    <grammars:NonTerminal value="Bars"/>
+                    <grammars:Repeat>
+                        <grammars:Size value="0"/>
+                        <grammars:Unbounded/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <grammars:NonTerminal value="Bar"/>
+                    </grammars:Repeat>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </grammars:Production>
+            </grammars:Concatenate>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Bar"/>
+            <grammars:Concatenate initialCapacity="8">
+                <grammars:NonTerminal value="RestOrNote"/>
+                <grammars:NonTerminal value="SP"/>
+                <grammars:NonTerminal value="RestOrNote"/>
+                <grammars:NonTerminal value="SP"/>
+                <grammars:NonTerminal value="RestOrNote"/>
+                <grammars:NonTerminal value="SP"/>
+                <grammars:NonTerminal value="RestOrNote"/>
+                <grammars:NonTerminal value="NL"/>
+            </grammars:Concatenate>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="RestOrNote"/>
+            <grammars:Choose initialCapacity="2">
+                <grammars:Production>
+                    <grammars:NonTerminal value="Rest"/>
+                    <grammars:LiteralTerminal>
+                        <grammars:RegExp value="-"/>
+                        <grammars:Category value="DELIMITER"/>
+                        <grammars:Literal value="-"/>
+                    </grammars:LiteralTerminal>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </grammars:Production>
+                <grammars:Concatenate initialCapacity="1">
+                    <grammars:Production>
+                        <grammars:NonTerminal value="Note"/>
+                        <grammars:DataTerminal>
+                            <grammars:RegExp value="[A-G][#b]?"/>
+                            <grammars:Category value="LITERAL"/>
+                            <grammars:Format value="%s"/>
+                        </grammars:DataTerminal>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </grammars:Production>
+                </grammars:Concatenate>
+            </grammars:Choose>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+    </grammars:Productions>
+    <grammars:URI value="http://oslo.crossexamples.whole.org/SongGrammar"/>
+    <grammars:Namespace value="org.whole.crossexamples.oslo.song"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</grammars:Grammar>

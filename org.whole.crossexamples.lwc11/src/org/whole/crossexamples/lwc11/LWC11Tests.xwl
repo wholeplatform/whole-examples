@@ -1,0 +1,2333 @@
+<?xml version="1.0"?>
+<tests:TestSuite xmlns:tests="http://lang.whole.org/Tests">
+    <tests:PackageName value="org.whole.crossexamples.lwc11.tests"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <tests:Name value="LWC11TestSuite"/>
+    <workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+        <workflows:Text value="deploy"/>
+        <workflows:FlowObjects initialCapacity="2">
+            <workflows:LoadModel>
+                <workflows:Text value="load Deployer Workflow"/>
+                <workflows:Variable value="deployerWorkflow"/>
+                <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+                <workflows:ResourceKind value="CLASSPATH"/>
+                <workflows:StringLiteral value="org/whole/crossexamples/lwc11/LWC11Deployer.xwl"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </workflows:LoadModel>
+            <workflows:InvokeOperation>
+                <workflows:Text value="interpret Deployer Workflow"/>
+                <workflows:Variable value="deployerWorkflow"/>
+                <workflows:Operation value="INTERPRETER"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </workflows:InvokeOperation>
+        </workflows:FlowObjects>
+    </workflows:Sequence>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <tests:TestCases initialCapacity="2">
+        <tests:TestCase>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <tests:Name value="GrammarsConformanceTest"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <tests:Aspects initialCapacity="1">
+                <tests:BeforeTestCase>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="bindLWC11Artifacts"/>
+                    <workflows:AssignActivity xmlns:workflows="http://lang.whole.org/Workflows">
+                        <workflows:Text value="assignactivity"/>
+                        <workflows:Assignments initialCapacity="2">
+                            <workflows:Assign>
+                                <workflows:Variable value="entitiesGrammar"/>
+                                <workflows:StringLiteral value="http://lwc11.crossexamples.whole.org/entitiesGrammar"/>
+                            </workflows:Assign>
+                            <workflows:Assign>
+                                <workflows:Variable value="instancesGrammar"/>
+                                <workflows:StringLiteral value="http://lwc11.crossexamples.whole.org/instancesGrammar"/>
+                            </workflows:Assign>
+                        </workflows:Assignments>
+                    </workflows:AssignActivity>
+                </tests:BeforeTestCase>
+            </tests:Aspects>
+            <tests:Tests initialCapacity="2">
+                <tests:Test>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="testEntities"/>
+                    <tests:TestStatements initialCapacity="3">
+                        <tests:AssertThat>
+                            <workflows:Parse xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="parse"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="entity Person {&#10;    string name&#10;    string firstName&#10;    date birthDate&#10;    Car ownedCar&#10;}&#10;&#10;entity Car {&#10;    string make&#10;    string model&#10;}"/>
+                                <workflows:Variable value="entitiesGrammar"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </workflows:Parse>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <entities:Module xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <entities:Entities initialCapacity="2">
+                                        <entities:Entity>
+                                        <entities:Name value="Person"/>
+                                        <entities:Properties initialCapacity="4">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="name"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="firstName"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="date"/>
+                                        <entities:Name value="birthDate"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:Name value="Car"/>
+                                        <entities:Name value="ownedCar"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        <entities:Entity>
+                                        <entities:Name value="Car"/>
+                                        <entities:Properties initialCapacity="2">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="make"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="model"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        </entities:Entities>
+                                    </entities:Module>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                        <tests:AssertThat>
+                            <workflows:Unparse xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="unparse"/>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <entities:Module xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <entities:Entities initialCapacity="2">
+                                        <entities:Entity>
+                                        <entities:Name value="Person"/>
+                                        <entities:Properties initialCapacity="4">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="name"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="firstName"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="date"/>
+                                        <entities:Name value="birthDate"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:Name value="Car"/>
+                                        <entities:Name value="ownedCar"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        <entities:Entity>
+                                        <entities:Name value="Car"/>
+                                        <entities:Properties initialCapacity="2">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="make"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="model"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        </entities:Entities>
+                                    </entities:Module>
+                                </commons:StageUpFragment>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:Variable value="entitiesGrammar"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </workflows:Unparse>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <environment:StringData xmlns:environment="http://lang.whole.org/Environment" value="entity Person {&#10;    string name&#10;    string firstName&#10;    date birthDate&#10;    Car ownedCar&#10;}&#10;&#10;entity Car {&#10;    string make&#10;    string model&#10;}&#10;"/>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                        <tests:AssertThat>
+                            <workflows:Parse xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="parse"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="entity Person {&#10;    string name&#10;    string firstName&#10;    date birthDate&#10;    Car ownedCar"/>
+                                <workflows:Variable value="entitiesGrammar"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </workflows:Parse>
+                            <tests:IsNull/>
+                        </tests:AssertThat>
+                    </tests:TestStatements>
+                </tests:Test>
+                <tests:Test>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="testInstances"/>
+                    <tests:TestStatements initialCapacity="3">
+                        <tests:AssertThat>
+                            <workflows:Parse xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="parse"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="Person p = {&#10;    name = &quot;Voelter&quot;&#10;    firstName = &quot;Markus&quot;&#10;    birthDate = 14.02.1927&#10;    ownedCar = c&#10;}&#10;Car c = {&#10;    make = &quot;VW&quot;&#10;    model = &quot;Touran&quot;&#10;}"/>
+                                <workflows:Variable value="instancesGrammar"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </workflows:Parse>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <instances:Instances xmlns:instances="http://lwc11.crossexamples.whole.org/instances" initialCapacity="2">
+                                        <instances:Instance>
+                                        <instances:Name value="Person"/>
+                                        <instances:Name value="p"/>
+                                        <instances:Properties initialCapacity="4">
+                                        <instances:Property>
+                                        <instances:Name value="name"/>
+                                        <instances:StringLiteral value="Voelter"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="firstName"/>
+                                        <instances:StringLiteral value="Markus"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="birthDate"/>
+                                        <instances:DateLiteral value="14.02.1927"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="ownedCar"/>
+                                        <instances:Name value="c"/>
+                                        </instances:Property>
+                                        </instances:Properties>
+                                        </instances:Instance>
+                                        <instances:Instance>
+                                        <instances:Name value="Car"/>
+                                        <instances:Name value="c"/>
+                                        <instances:Properties initialCapacity="2">
+                                        <instances:Property>
+                                        <instances:Name value="make"/>
+                                        <instances:StringLiteral value="VW"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="model"/>
+                                        <instances:StringLiteral value="Touran"/>
+                                        </instances:Property>
+                                        </instances:Properties>
+                                        </instances:Instance>
+                                    </instances:Instances>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                        <tests:AssertThat>
+                            <workflows:Parse xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="parse"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="Person p = {&#10;    name = &quot;Voelter&quot;&#10;    firstName = &quot;Markus&quot;&#10;    birthDate = 44.02.1927&#10;    ownedCar = c&#10;}&#10;Car c = {&#10;    make = &quot;VW&quot;&#10;    model = 336&#10;}"/>
+                                <workflows:Variable value="instancesGrammar"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </workflows:Parse>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <instances:Instances xmlns:instances="http://lwc11.crossexamples.whole.org/instances" initialCapacity="2">
+                                        <instances:Instance>
+                                        <instances:Name value="Person"/>
+                                        <instances:Name value="p"/>
+                                        <instances:Properties initialCapacity="4">
+                                        <instances:Property>
+                                        <instances:Name value="name"/>
+                                        <instances:StringLiteral value="Voelter"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="firstName"/>
+                                        <instances:StringLiteral value="Markus"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="birthDate"/>
+                                        <instances:DateLiteral value="16.03.1927"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="ownedCar"/>
+                                        <instances:Name value="c"/>
+                                        </instances:Property>
+                                        </instances:Properties>
+                                        </instances:Instance>
+                                        <instances:Instance>
+                                        <instances:Name value="Car"/>
+                                        <instances:Name value="c"/>
+                                        <instances:Properties initialCapacity="2">
+                                        <instances:Property>
+                                        <instances:Name value="make"/>
+                                        <instances:StringLiteral value="VW"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="model"/>
+                                        <instances:IntLiteral value="336"/>
+                                        </instances:Property>
+                                        </instances:Properties>
+                                        </instances:Instance>
+                                    </instances:Instances>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                        <tests:AssertThat>
+                            <workflows:Unparse xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="unparse"/>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <instances:Instances xmlns:instances="http://lwc11.crossexamples.whole.org/instances" initialCapacity="2">
+                                        <instances:Instance>
+                                        <instances:Name value="Person"/>
+                                        <instances:Name value="p"/>
+                                        <instances:Properties initialCapacity="4">
+                                        <instances:Property>
+                                        <instances:Name value="name"/>
+                                        <instances:StringLiteral value="Voelter"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="firstName"/>
+                                        <instances:StringLiteral value="Markus"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="birthDate"/>
+                                        <instances:DateLiteral value="16.03.1927"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="ownedCar"/>
+                                        <instances:Name value="c"/>
+                                        </instances:Property>
+                                        </instances:Properties>
+                                        </instances:Instance>
+                                        <instances:Instance>
+                                        <instances:Name value="Car"/>
+                                        <instances:Name value="c"/>
+                                        <instances:Properties initialCapacity="2">
+                                        <instances:Property>
+                                        <instances:Name value="make"/>
+                                        <instances:StringLiteral value="VW"/>
+                                        </instances:Property>
+                                        <instances:Property>
+                                        <instances:Name value="model"/>
+                                        <instances:IntLiteral value="336"/>
+                                        </instances:Property>
+                                        </instances:Properties>
+                                        </instances:Instance>
+                                    </instances:Instances>
+                                </commons:StageUpFragment>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:Variable value="instancesGrammar"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </workflows:Unparse>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <environment:StringData xmlns:environment="http://lang.whole.org/Environment" value="Person p = {&#10;    name = &quot;Voelter&quot;&#10;    firstName = &quot;Markus&quot;&#10;    birthDate = 16.03.1927&#10;    ownedCar = c&#10;}&#10;Car c = {&#10;    make = &quot;VW&quot;&#10;    model = 336&#10;}"/>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                    </tests:TestStatements>
+                </tests:Test>
+            </tests:Tests>
+        </tests:TestCase>
+        <tests:TestCase>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <tests:Name value="CodeGenerationTest"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <tests:Aspects initialCapacity="1">
+                <tests:BeforeTestCase>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="bindLWC11Artifacts"/>
+                    <workflows:AssignActivity xmlns:workflows="http://lang.whole.org/Workflows">
+                        <workflows:Text value="assignactivity"/>
+                        <workflows:Assignments initialCapacity="4">
+                            <workflows:Assign>
+                                <workflows:Variable value="projectName"/>
+                                <workflows:StringLiteral value="org.whole.crossexamples.lwc11"/>
+                            </workflows:Assign>
+                            <workflows:Assign>
+                                <workflows:Variable value="sourceFolderName"/>
+                                <workflows:StringLiteral value="src"/>
+                            </workflows:Assign>
+                            <workflows:Assign>
+                                <workflows:Variable value="packageName"/>
+                                <workflows:StringLiteral value="org.whole.crossexamples.lwc11"/>
+                            </workflows:Assign>
+                            <workflows:Assign>
+                                <workflows:Variable value="fileName"/>
+                                <workflows:StringLiteral value="EntitiesExample"/>
+                            </workflows:Assign>
+                        </workflows:Assignments>
+                    </workflows:AssignActivity>
+                </tests:BeforeTestCase>
+            </tests:Aspects>
+            <tests:Tests initialCapacity="5">
+                <tests:Test>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="testBeansGenerator"/>
+                    <tests:TestStatements initialCapacity="2">
+                        <tests:AssertThat>
+                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <entities:Module xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <entities:Entities initialCapacity="2">
+                                        <entities:Entity>
+                                        <entities:Name value="Person"/>
+                                        <entities:Properties initialCapacity="4">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="name"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="firstName"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="date"/>
+                                        <entities:Name value="birthDate"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:Name value="Car"/>
+                                        <entities:Name value="ownedCar"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        <entities:Entity>
+                                        <entities:Name value="Car"/>
+                                        <entities:Properties initialCapacity="2">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="make"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="model"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        </entities:Entities>
+                                    </entities:Module>
+                                </commons:StageUpFragment>
+                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
+                                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Artifacts Generator"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </actions:ActionCall>
+                            </queries:Path>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <commons:Resolver/>
+                                        <artifacts:Projects initialCapacity="1">
+                                        <artifacts:Project>
+                                        <artifacts:Name value="org.whole.crossexamples.lwc11"/>
+                                        <artifacts:Natures initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="src"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <artifacts:Name value="org.whole.crossexamples.lwc11.beans"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="2">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <artifacts:Name value="Person"/>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedName value="org.whole.crossexamples.lwc11.beans"/>
+                                        </java:PackageDeclaration>
+                                        <java:ImportDeclarations initialCapacity="0"/>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="Person"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:BodyDeclarations initialCapacity="12">
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="String"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="name"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="String"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="firstName"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:QualifiedType value="java.util.Date"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="birthDate"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="Car"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="ownedCar"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:SimpleName value="getName"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="name"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setName"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="name"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="name"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="name"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:SimpleName value="getFirstName"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="firstName"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setFirstName"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="firstName"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="firstName"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="firstName"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:QualifiedType value="java.util.Date"/>
+                                        <java:SimpleName value="getBirthDate"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="birthDate"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setBirthDate"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:QualifiedType value="java.util.Date"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="birthDate"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="birthDate"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="birthDate"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Car"/>
+                                        <java:SimpleName value="getOwnedCar"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="ownedCar"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setOwnedCar"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Car"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="ownedCar"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="ownedCar"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="ownedCar"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:ClassDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <artifacts:Name value="Car"/>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedName value="org.whole.crossexamples.lwc11.beans"/>
+                                        </java:PackageDeclaration>
+                                        <java:ImportDeclarations initialCapacity="0"/>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="Car"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:BodyDeclarations initialCapacity="6">
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="String"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="make"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="String"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="model"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:SimpleName value="getMake"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="make"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setMake"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="make"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="make"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="make"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:SimpleName value="getModel"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="model"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setModel"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="model"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="model"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="model"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:ClassDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        <commons:Resolver/>
+                                        </artifacts:Project>
+                                        </artifacts:Projects>
+                                    </artifacts:Workspace>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                        <tests:AssertThat>
+                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <entities:Module xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <entities:Entities initialCapacity="2">
+                                        <entities:Entity>
+                                        <entities:Name value="E1"/>
+                                        <entities:Properties initialCapacity="6">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="stringProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="date"/>
+                                        <entities:Name value="dateProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="boolean"/>
+                                        <entities:Name value="booleanProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="int"/>
+                                        <entities:Name value="intProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="float"/>
+                                        <entities:Name value="floatProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:Name value="E2"/>
+                                        <entities:Name value="refProp"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        <entities:Entity>
+                                        <entities:Name value="E2"/>
+                                        <entities:Properties initialCapacity="2">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="make"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="model"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        </entities:Entities>
+                                    </entities:Module>
+                                </commons:StageUpFragment>
+                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
+                                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Artifacts Generator"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </actions:ActionCall>
+                            </queries:Path>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <commons:Resolver/>
+                                        <artifacts:Projects initialCapacity="1">
+                                        <artifacts:Project>
+                                        <artifacts:Name value="org.whole.crossexamples.lwc11"/>
+                                        <artifacts:Natures initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="src"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <artifacts:Name value="org.whole.crossexamples.lwc11.beans"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="2">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <artifacts:Name value="E1"/>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedName value="org.whole.crossexamples.lwc11.beans"/>
+                                        </java:PackageDeclaration>
+                                        <java:ImportDeclarations initialCapacity="0"/>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="E1"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:BodyDeclarations initialCapacity="18">
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="String"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="stringProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:QualifiedType value="java.util.Date"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="dateProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:PrimitiveType value="boolean"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="booleanProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:PrimitiveType value="int"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="intProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:PrimitiveType value="float"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="floatProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="E2"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="refProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:SimpleName value="getStringProp"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="stringProp"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setStringProp"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="stringProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="stringProp"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="stringProp"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:QualifiedType value="java.util.Date"/>
+                                        <java:SimpleName value="getDateProp"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="dateProp"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setDateProp"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:QualifiedType value="java.util.Date"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="dateProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="dateProp"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="dateProp"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="boolean"/>
+                                        <java:SimpleName value="getBooleanProp"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="booleanProp"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setBooleanProp"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="boolean"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="booleanProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="booleanProp"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="booleanProp"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="int"/>
+                                        <java:SimpleName value="getIntProp"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="intProp"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setIntProp"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="int"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="intProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="intProp"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="intProp"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="float"/>
+                                        <java:SimpleName value="getFloatProp"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="floatProp"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setFloatProp"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="float"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="floatProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="floatProp"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="floatProp"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="E2"/>
+                                        <java:SimpleName value="getRefProp"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="refProp"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setRefProp"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="E2"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="refProp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="refProp"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="refProp"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:ClassDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <artifacts:Name value="E2"/>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedName value="org.whole.crossexamples.lwc11.beans"/>
+                                        </java:PackageDeclaration>
+                                        <java:ImportDeclarations initialCapacity="0"/>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="E2"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:BodyDeclarations initialCapacity="6">
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="String"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="make"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="String"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="model"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:SimpleName value="getMake"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="make"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setMake"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="make"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="make"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="make"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:SimpleName value="getModel"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="model"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setModel"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="model"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="model"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="model"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:ClassDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        <commons:Resolver/>
+                                        </artifacts:Project>
+                                        </artifacts:Projects>
+                                    </artifacts:Workspace>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                    </tests:TestStatements>
+                </tests:Test>
+                <tests:Test>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="testERGenerator"/>
+                    <tests:TestStatements initialCapacity="1">
+                        <tests:AssertThat>
+                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <entities:Module xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <entities:Entities initialCapacity="2">
+                                        <entities:Entity>
+                                        <entities:Name value="E1"/>
+                                        <entities:Properties initialCapacity="6">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="stringProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="date"/>
+                                        <entities:Name value="dateProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="boolean"/>
+                                        <entities:Name value="booleanProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="int"/>
+                                        <entities:Name value="intProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="float"/>
+                                        <entities:Name value="floatProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:Name value="E2"/>
+                                        <entities:Name value="refProp"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        <entities:Entity>
+                                        <entities:Name value="E2"/>
+                                        <entities:Properties initialCapacity="2">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="make"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="model"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        </entities:Entities>
+                                    </entities:Module>
+                                </commons:StageUpFragment>
+                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
+                                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Entities to ER"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </actions:ActionCall>
+                            </queries:Path>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <er:Database xmlns:er="whole:org.whole.crossexamples.lwc11:ERModel">
+                                        <er:Tables initialCapacity="2">
+                                        <er:Table>
+                                        <er:Name value="E1"/>
+                                        <er:Columns initialCapacity="6">
+                                        <er:Column>
+                                        <er:Name value="stringProp"/>
+                                        <er:Type value="string"/>
+                                        </er:Column>
+                                        <er:Column>
+                                        <er:Name value="dateProp"/>
+                                        <er:Type value="date"/>
+                                        </er:Column>
+                                        <er:Column>
+                                        <er:Name value="booleanProp"/>
+                                        <er:Type value="boolean"/>
+                                        </er:Column>
+                                        <er:Column>
+                                        <er:Name value="intProp"/>
+                                        <er:Type value="int"/>
+                                        </er:Column>
+                                        <er:Column>
+                                        <er:Name value="floatProp"/>
+                                        <er:Type value="float"/>
+                                        </er:Column>
+                                        <er:Column>
+                                        <er:Name value="refProp"/>
+                                        <er:Type value="E2"/>
+                                        </er:Column>
+                                        </er:Columns>
+                                        </er:Table>
+                                        <er:Table>
+                                        <er:Name value="E2"/>
+                                        <er:Columns initialCapacity="2">
+                                        <er:Column>
+                                        <er:Name value="make"/>
+                                        <er:Type value="string"/>
+                                        </er:Column>
+                                        <er:Column>
+                                        <er:Name value="model"/>
+                                        <er:Type value="string"/>
+                                        </er:Column>
+                                        </er:Columns>
+                                        </er:Table>
+                                        </er:Tables>
+                                    </er:Database>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                    </tests:TestStatements>
+                </tests:Test>
+                <tests:Test>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="testXMLGenerator"/>
+                    <tests:TestStatements initialCapacity="1">
+                        <tests:AssertThat>
+                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <entities:Module xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <entities:Entities initialCapacity="2">
+                                        <entities:Entity>
+                                        <entities:Name value="E1"/>
+                                        <entities:Properties initialCapacity="6">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="stringProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="date"/>
+                                        <entities:Name value="dateProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="boolean"/>
+                                        <entities:Name value="booleanProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="int"/>
+                                        <entities:Name value="intProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="float"/>
+                                        <entities:Name value="floatProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:Name value="E2"/>
+                                        <entities:Name value="refProp"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        <entities:Entity>
+                                        <entities:Name value="E2"/>
+                                        <entities:Properties initialCapacity="2">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="make"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="model"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        </entities:Entities>
+                                    </entities:Module>
+                                </commons:StageUpFragment>
+                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
+                                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Entities to XML"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </actions:ActionCall>
+                            </queries:Path>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <wxml:Document xmlns:wxml="http://lang.whole.org/Xml">
+                                        <wxml:Prolog>
+                                        <wxml:XMLDecl>
+                                        <wxml:Version value="1.0"/>
+                                        <wxml:Encoding value="UTF-8"/>
+                                        <wxml:Standalone value="false"/>
+                                        </wxml:XMLDecl>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </wxml:Prolog>
+                                        <wxml:Element>
+                                        <wxml:Name value="entities"/>
+                                        <commons:Resolver/>
+                                        <wxml:Content initialCapacity="2">
+                                        <wxml:Element>
+                                        <wxml:Name value="entity"/>
+                                        <wxml:Attributes initialCapacity="1">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="E1"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <wxml:Content initialCapacity="6">
+                                        <wxml:Element>
+                                        <wxml:Name value="property"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="stringProp"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="type"/>
+                                        <wxml:Value value="string"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <commons:Resolver/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="property"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="dateProp"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="type"/>
+                                        <wxml:Value value="date"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <commons:Resolver/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="property"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="booleanProp"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="type"/>
+                                        <wxml:Value value="boolean"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <commons:Resolver/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="property"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="intProp"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="type"/>
+                                        <wxml:Value value="int"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <commons:Resolver/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="property"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="floatProp"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="type"/>
+                                        <wxml:Value value="float"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <commons:Resolver/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="property"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="refProp"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="type"/>
+                                        <wxml:Value value="E2"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <commons:Resolver/>
+                                        </wxml:Element>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="entity"/>
+                                        <wxml:Attributes initialCapacity="1">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="E2"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <wxml:Content initialCapacity="2">
+                                        <wxml:Element>
+                                        <wxml:Name value="property"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="make"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="type"/>
+                                        <wxml:Value value="string"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <commons:Resolver/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="property"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Value value="model"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="type"/>
+                                        <wxml:Value value="string"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <commons:Resolver/>
+                                        </wxml:Element>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                    </wxml:Document>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                    </tests:TestStatements>
+                </tests:Test>
+                <tests:Test>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="testModelsGenerator"/>
+                    <tests:TestStatements initialCapacity="1">
+                        <tests:AssertThat>
+                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <entities:Module xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <entities:Entities initialCapacity="2">
+                                        <entities:Entity>
+                                        <entities:Name value="E1"/>
+                                        <entities:Properties initialCapacity="6">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="stringProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="date"/>
+                                        <entities:Name value="dateProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="boolean"/>
+                                        <entities:Name value="booleanProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="int"/>
+                                        <entities:Name value="intProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="float"/>
+                                        <entities:Name value="floatProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:Name value="E2"/>
+                                        <entities:Name value="refProp"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        <entities:Entity>
+                                        <entities:Name value="E2"/>
+                                        <entities:Properties initialCapacity="2">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="make"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="model"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        </entities:Entities>
+                                    </entities:Module>
+                                </commons:StageUpFragment>
+                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
+                                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Entities to Models"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </actions:ActionCall>
+                            </queries:Path>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <models:Model xmlns:models="http://lang.whole.org/Models">
+                                        <models:SimpleName value="EntitiesExample"/>
+                                        <models:TypeRelations initialCapacity="0"/>
+                                        <models:ModelDeclarations initialCapacity="7">
+                                        <models:SimpleEntity>
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="E1"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:Features initialCapacity="6">
+                                        <models:Feature>
+                                        <models:FeatureModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="StringData"/>
+                                        <models:SimpleName value="stringProp"/>
+                                        <commons:Resolver/>
+                                        </models:Feature>
+                                        <models:Feature>
+                                        <models:FeatureModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="DateData"/>
+                                        <models:SimpleName value="dateProp"/>
+                                        <commons:Resolver/>
+                                        </models:Feature>
+                                        <models:Feature>
+                                        <models:FeatureModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="BooleanData"/>
+                                        <models:SimpleName value="booleanProp"/>
+                                        <commons:Resolver/>
+                                        </models:Feature>
+                                        <models:Feature>
+                                        <models:FeatureModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="IntData"/>
+                                        <models:SimpleName value="intProp"/>
+                                        <commons:Resolver/>
+                                        </models:Feature>
+                                        <models:Feature>
+                                        <models:FeatureModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="FloatData"/>
+                                        <models:SimpleName value="floatProp"/>
+                                        <commons:Resolver/>
+                                        </models:Feature>
+                                        <models:Feature>
+                                        <models:FeatureModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="E2"/>
+                                        <models:SimpleName value="refProp"/>
+                                        <commons:Resolver/>
+                                        </models:Feature>
+                                        </models:Features>
+                                        </models:SimpleEntity>
+                                        <models:SimpleEntity>
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="E2"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:Features initialCapacity="2">
+                                        <models:Feature>
+                                        <models:FeatureModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="StringData"/>
+                                        <models:SimpleName value="make"/>
+                                        <commons:Resolver/>
+                                        </models:Feature>
+                                        <models:Feature>
+                                        <models:FeatureModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="StringData"/>
+                                        <models:SimpleName value="model"/>
+                                        <commons:Resolver/>
+                                        </models:Feature>
+                                        </models:Features>
+                                        </models:SimpleEntity>
+                                        <models:DataEntity>
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="StringData"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="String"/>
+                                        </models:DataEntity>
+                                        <models:DataEntity>
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="DateData"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="java.util.Date"/>
+                                        </models:DataEntity>
+                                        <models:DataEntity>
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="BooleanData"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="boolean"/>
+                                        </models:DataEntity>
+                                        <models:DataEntity>
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="IntData"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="int"/>
+                                        </models:DataEntity>
+                                        <models:DataEntity>
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="FloatData"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="float"/>
+                                        </models:DataEntity>
+                                        </models:ModelDeclarations>
+                                        <models:Namespace value="org.whole.crossexamples.lwc11"/>
+                                        <commons:Resolver/>
+                                        <models:URI value="whole:org.whole.crossexamples.lwc11:EntitiesExample"/>
+                                    </models:Model>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                    </tests:TestStatements>
+                </tests:Test>
+                <tests:Test>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="testRDBGenerator"/>
+                    <tests:TestStatements initialCapacity="1">
+                        <tests:AssertThat>
+                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <entities:Module xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <entities:Entities initialCapacity="2">
+                                        <entities:Entity>
+                                        <entities:Name value="E1"/>
+                                        <entities:Properties initialCapacity="6">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="stringProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="date"/>
+                                        <entities:Name value="dateProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="boolean"/>
+                                        <entities:Name value="booleanProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="int"/>
+                                        <entities:Name value="intProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="float"/>
+                                        <entities:Name value="floatProp"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:Name value="E2"/>
+                                        <entities:Name value="refProp"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        <entities:Entity>
+                                        <entities:Name value="E2"/>
+                                        <entities:Properties initialCapacity="2">
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="make"/>
+                                        </entities:Property>
+                                        <entities:Property>
+                                        <entities:PrimitiveType value="string"/>
+                                        <entities:Name value="model"/>
+                                        </entities:Property>
+                                        </entities:Properties>
+                                        </entities:Entity>
+                                        </entities:Entities>
+                                    </entities:Module>
+                                </commons:StageUpFragment>
+                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
+                                    <actions:Label value="whole:org.whole.crossexamples.lwc11:EntitiesActions#Entities to RDB"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </actions:ActionCall>
+                            </queries:Path>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <rdb:Database xmlns:rdb="http://lang.whole.org/RDB">
+                                        <rdb:URI value="whole:org.whole.crossexamples.lwc11.EntitiesExample:EntitiesExample:1.0.0"/>
+                                        <rdb:Namespace value="org.whole.crossexamples.lwc11.EntitiesExample"/>
+                                        <rdb:Schemas initialCapacity="1">
+                                        <rdb:Schema>
+                                        <rdb:StringData value="EntitiesExample"/>
+                                        <commons:Resolver/>
+                                        <rdb:Tables initialCapacity="2">
+                                        <rdb:Table>
+                                        <rdb:StringData value="E1"/>
+                                        <commons:Resolver/>
+                                        <rdb:Columns initialCapacity="7">
+                                        <rdb:Column>
+                                        <rdb:StringData value="PK_ID"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="INTEGER"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        <rdb:Column>
+                                        <rdb:StringData value="stringProp"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="VARCHAR"/>
+                                        <rdb:IntData value="256"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        <rdb:Column>
+                                        <rdb:StringData value="dateProp"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="DATE"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        <rdb:Column>
+                                        <rdb:StringData value="booleanProp"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="BOOLEAN"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        <rdb:Column>
+                                        <rdb:StringData value="intProp"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="INTEGER"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        <rdb:Column>
+                                        <rdb:StringData value="floatProp"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="FLOAT"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        <rdb:Column>
+                                        <rdb:StringData value="refProp_REF"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="INTEGER"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        </rdb:Columns>
+                                        <rdb:PrimaryKey>
+                                        <commons:Resolver/>
+                                        <rdb:IdMethod value="IDENTITY"/>
+                                        <rdb:ColumnNames initialCapacity="1">
+                                        <rdb:StringData value="PK_ID"/>
+                                        </rdb:ColumnNames>
+                                        </rdb:PrimaryKey>
+                                        <rdb:ForeignKeys initialCapacity="1">
+                                        <rdb:ForeignKey>
+                                        <commons:Resolver/>
+                                        <rdb:StringData value="E2"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:ColumnReferences initialCapacity="1">
+                                        <rdb:ColumnReference>
+                                        <rdb:StringData value="refProp_REF"/>
+                                        <rdb:StringData value="PK_ID"/>
+                                        </rdb:ColumnReference>
+                                        </rdb:ColumnReferences>
+                                        </rdb:ForeignKey>
+                                        </rdb:ForeignKeys>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Table>
+                                        <rdb:Table>
+                                        <rdb:StringData value="E2"/>
+                                        <commons:Resolver/>
+                                        <rdb:Columns initialCapacity="3">
+                                        <rdb:Column>
+                                        <rdb:StringData value="PK_ID"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="INTEGER"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        <rdb:Column>
+                                        <rdb:StringData value="make"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="VARCHAR"/>
+                                        <rdb:IntData value="256"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        <rdb:Column>
+                                        <rdb:StringData value="model"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <rdb:Type value="VARCHAR"/>
+                                        <rdb:IntData value="256"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Column>
+                                        </rdb:Columns>
+                                        <rdb:PrimaryKey>
+                                        <commons:Resolver/>
+                                        <rdb:IdMethod value="IDENTITY"/>
+                                        <rdb:ColumnNames initialCapacity="1">
+                                        <rdb:StringData value="PK_ID"/>
+                                        </rdb:ColumnNames>
+                                        </rdb:PrimaryKey>
+                                        <rdb:ForeignKeys initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </rdb:Table>
+                                        </rdb:Tables>
+                                        </rdb:Schema>
+                                        </rdb:Schemas>
+                                    </rdb:Database>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                    </tests:TestStatements>
+                </tests:Test>
+            </tests:Tests>
+        </tests:TestCase>
+    </tests:TestCases>
+</tests:TestSuite>

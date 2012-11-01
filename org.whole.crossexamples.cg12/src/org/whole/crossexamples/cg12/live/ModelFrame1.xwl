@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<frames:Frame xmlns:frames="http://lang.whole.org/Frames">
+    <frames:URI value="whole:org.whole.crossexamples.cg12.live:ModelFrame1"/>
+    <frames:Namespace value="org.whole.crossexamples.cg12.live"/>
+    <frames:Name value="ModelFrame1"/>
+    <frames:Version value="1"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <models:Model xmlns:models="http://lang.whole.org/Models">
+        <models:SimpleName value="Model"/>
+        <models:TypeRelations initialCapacity="0"/>
+        <models:ModelDeclarations initialCapacity="1">
+            <models:SimpleEntity>
+                <models:EntityModifiers initialCapacity="0"/>
+                <models:SimpleName value="EntityName1"/>
+                <models:Types initialCapacity="0"/>
+                <models:Features initialCapacity="1">
+                    <models:Feature>
+                        <models:FeatureModifiers initialCapacity="0"/>
+                        <models:SimpleName value="Type"/>
+                        <models:SimpleName value="name"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </models:Feature>
+                </models:Features>
+            </models:SimpleEntity>
+        </models:ModelDeclarations>
+        <models:Namespace value="org.whole.crossexamples.cg12.live"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <models:URI value="whole:org.whole.crossexamples.cg12.live:Model1"/>
+    </models:Model>
+</frames:Frame>

@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<grammars:Grammar xmlns:grammars="http://lang.whole.org/Grammars">
+    <grammars:Name value="Instances"/>
+    <grammars:LanguageDescriptor>
+        <grammars:URI value="http://lwc11.crossexamples.whole.org/instances"/>
+        <grammars:Namespace value="org.whole.crossexamples.lwc11.entities"/>
+        <grammars:Name value="Instances"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </grammars:LanguageDescriptor>
+    <grammars:NonTerminal value="Instances"/>
+    <grammars:LiteralTerminal>
+        <grammars:RegExp value="[ \n\r\t]*"/>
+        <grammars:Category value="SEPARATOR"/>
+        <grammars:Literal value=""/>
+    </grammars:LiteralTerminal>
+    <grammars:Productions initialCapacity="0"/>
+    <grammars:Productions initialCapacity="3">
+        <grammars:Production>
+            <grammars:NonTerminal value="Instances"/>
+            <grammars:Repeat>
+                <grammars:Size value="0"/>
+                <grammars:Unbounded/>
+                <grammars:NewLine/>
+                <grammars:Production>
+                    <grammars:NonTerminal value="Instance"/>
+                    <grammars:Concatenate initialCapacity="10">
+                        <grammars:As>
+                            <grammars:NonTerminal value="Name"/>
+                            <grammars:Name value="type"/>
+                        </grammars:As>
+                        <grammars:Space/>
+                        <grammars:NonTerminal value="Name"/>
+                        <grammars:Space/>
+                        <grammars:LiteralTerminal>
+                            <grammars:RegExp value="="/>
+                            <grammars:Category value="OPERATOR"/>
+                            <grammars:Literal value="="/>
+                        </grammars:LiteralTerminal>
+                        <grammars:Space/>
+                        <grammars:LiteralTerminal>
+                            <grammars:RegExp value="\Q{\E"/>
+                            <grammars:Category value="PARENTHESIS"/>
+                            <grammars:Literal value="{"/>
+                        </grammars:LiteralTerminal>
+                        <grammars:NewLine/>
+                        <grammars:As>
+                            <grammars:Repeat>
+                                <grammars:Size value="0"/>
+                                <grammars:Unbounded/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <grammars:Production>
+                                    <grammars:NonTerminal value="Property"/>
+                                    <grammars:Concatenate initialCapacity="7">
+                                        <grammars:Indent/>
+                                        <grammars:NonTerminal value="Name"/>
+                                        <grammars:Space/>
+                                        <grammars:LiteralTerminal>
+                                        <grammars:RegExp value="="/>
+                                        <grammars:Category value="OPERATOR"/>
+                                        <grammars:Literal value="="/>
+                                        </grammars:LiteralTerminal>
+                                        <grammars:Space/>
+                                        <grammars:NonTerminal value="Value"/>
+                                        <grammars:NewLine/>
+                                    </grammars:Concatenate>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </grammars:Production>
+                            </grammars:Repeat>
+                            <grammars:Name value="properties"/>
+                        </grammars:As>
+                        <grammars:LiteralTerminal>
+                            <grammars:RegExp value="}"/>
+                            <grammars:Category value="PARENTHESIS"/>
+                            <grammars:Literal value="}"/>
+                        </grammars:LiteralTerminal>
+                    </grammars:Concatenate>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </grammars:Production>
+            </grammars:Repeat>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Value"/>
+            <grammars:Choose initialCapacity="6">
+                <grammars:NonTerminal value="Name"/>
+                <grammars:Concatenate initialCapacity="1">
+                    <grammars:Production>
+                        <grammars:NonTerminal value="StringLiteral"/>
+                        <grammars:Concatenate initialCapacity="3">
+                            <grammars:LiteralTerminal>
+                                <grammars:RegExp value="&quot;"/>
+                                <grammars:Category value="PARENTHESIS"/>
+                                <grammars:Literal value="\&quot;"/>
+                            </grammars:LiteralTerminal>
+                            <grammars:DataTerminal>
+                                <grammars:RegExp value="[^&quot;]*"/>
+                                <grammars:Category value="LITERAL"/>
+                                <grammars:Format value="%s"/>
+                            </grammars:DataTerminal>
+                            <grammars:LiteralTerminal>
+                                <grammars:RegExp value="&quot;"/>
+                                <grammars:Category value="PARENTHESIS"/>
+                                <grammars:Literal value="\&quot;"/>
+                            </grammars:LiteralTerminal>
+                        </grammars:Concatenate>
+                        <grammars:DataType value="STRING"/>
+                    </grammars:Production>
+                </grammars:Concatenate>
+                <grammars:Production>
+                    <grammars:NonTerminal value="DateLiteral"/>
+                    <grammars:DataTerminal>
+                        <grammars:RegExp value="\d{2}.\d{2}.\d{4}"/>
+                        <grammars:Category value="LITERAL"/>
+                        <grammars:Format value="%s"/>
+                    </grammars:DataTerminal>
+                    <grammars:DataType value="DATE"/>
+                </grammars:Production>
+                <grammars:Production>
+                    <grammars:NonTerminal value="IntLiteral"/>
+                    <grammars:DataTerminal>
+                        <grammars:RegExp value="([-+]?([0-9]++))"/>
+                        <grammars:Category value="LITERAL"/>
+                        <grammars:Format value="%d"/>
+                    </grammars:DataTerminal>
+                    <grammars:DataType value="INT"/>
+                </grammars:Production>
+                <grammars:Production>
+                    <grammars:NonTerminal value="FloatLiteral"/>
+                    <grammars:DataTerminal>
+                        <grammars:RegExp value="([-+]?([0-9]++(\.[0-9]*+)?)|(\.[0-9]++))"/>
+                        <grammars:Category value="LITERAL"/>
+                        <grammars:Format value="%f"/>
+                    </grammars:DataTerminal>
+                    <grammars:DataType value="FLOAT"/>
+                </grammars:Production>
+                <grammars:Production>
+                    <grammars:NonTerminal value="BooleanLiteral"/>
+                    <grammars:DataTerminal>
+                        <grammars:RegExp value="true|false"/>
+                        <grammars:Category value="LITERAL"/>
+                        <grammars:Format value="%b"/>
+                    </grammars:DataTerminal>
+                    <grammars:DataType value="BOOLEAN"/>
+                </grammars:Production>
+            </grammars:Choose>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Name"/>
+            <grammars:DataTerminal>
+                <grammars:RegExp value="[a-zA-Z_][a-zA-Z_0-9]*"/>
+                <grammars:Category value="IDENTIFIER"/>
+                <grammars:Format value="%s"/>
+            </grammars:DataTerminal>
+            <grammars:DataType value="STRING"/>
+        </grammars:Production>
+    </grammars:Productions>
+    <grammars:URI value="http://lwc11.crossexamples.whole.org/instancesGrammar"/>
+    <grammars:Namespace value="org.whole.crossexamples.lwc11.instances"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</grammars:Grammar>

@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<semantics:SemanticTheory xmlns:semantics="http://lang.whole.org/Semantics">
+    <semantics:URI value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaPatterns"/>
+    <semantics:Namespace value="org.whole.crossexamples.hypersenses.metacomposition"/>
+    <semantics:Name value="MetaPatterns"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <semantics:SemanticFunctions initialCapacity="1">
+        <semantics:SemanticFunction>
+            <semantics:Name value="translateToSQL"/>
+            <semantics:FunctionType>
+                <semantics:LanguageType value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel"/>
+                <semantics:LanguageType value="http://lang.whole.org/Text"/>
+            </semantics:FunctionType>
+            <semantics:Rules initialCapacity="4">
+                <semantics:ExecutionRule>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <semantics:EntityType value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#TableScript"/>
+                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <semantics:WhereTemplate>
+                            <text:Document xmlns:text="http://lang.whole.org/Text" initialCapacity="2">
+                                <semantics:InlineTemplate>
+                                    <semantics:FunctionApplication>
+                                        <commons:Resolver/>
+                                        <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#tables"/>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                    </semantics:FunctionApplication>
+                                </semantics:InlineTemplate>
+                                <commons:InlineVariable>
+                                    <commons:VarType value="http://lang.whole.org/Text#IRow"/>
+                                    <commons:VarName value="alterTable"/>
+                                    <commons:Quantifier value="*"/>
+                                </commons:InlineVariable>
+                            </text:Document>
+                            <semantics:InputBindings initialCapacity="2">
+                                <semantics:InputBinding>
+                                    <semantics:Variable value="ctr"/>
+                                    <queries:IntLiteral xmlns:queries="http://lang.whole.org/Queries" value="0"/>
+                                </semantics:InputBinding>
+                                <semantics:InputBinding>
+                                    <semantics:Variable value="alterTable"/>
+                                    <semantics:FunctionApplication>
+                                        <commons:Resolver/>
+                                        <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#tables"/>
+                                        <queries:ChildStep/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#foreignKeys"/>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                    </semantics:FunctionApplication>
+                                </semantics:InputBinding>
+                            </semantics:InputBindings>
+                        </semantics:WhereTemplate>
+                    </commons:StageUpFragment>
+                </semantics:ExecutionRule>
+                <semantics:ExecutionRule>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <semantics:EntityType value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#Table"/>
+                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <text:Document xmlns:text="http://lang.whole.org/Text" initialCapacity="9">
+                            <text:TextSeparator value=""/>
+                            <text:Row initialCapacity="2">
+                                <text:Text value="CREATE TABLE "/>
+                                <commons:Variable>
+                                    <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                    <commons:VarName value="name"/>
+                                    <commons:Quantifier value="!"/>
+                                </commons:Variable>
+                            </text:Row>
+                            <text:Row initialCapacity="1">
+                                <text:Text value="{"/>
+                            </text:Row>
+                            <text:Indent value="1"/>
+                            <text:Row initialCapacity="2">
+                                <commons:Variable>
+                                    <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                    <commons:VarName value="name"/>
+                                    <commons:Quantifier value="!"/>
+                                </commons:Variable>
+                                <text:Text value="_ID NUMBER(10) NOT NULL,"/>
+                            </text:Row>
+                            <semantics:FunctionApplication>
+                                <commons:Resolver/>
+                                <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#columns"/>
+                                    <queries:ChildStep/>
+                                </queries:Path>
+                                <commons:Resolver/>
+                                <commons:Resolver/>
+                            </semantics:FunctionApplication>
+                            <text:Row initialCapacity="5">
+                                <text:Text value="CONSTRAINT "/>
+                                <commons:Variable>
+                                    <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                    <commons:VarName value="name"/>
+                                    <commons:Quantifier value="!"/>
+                                </commons:Variable>
+                                <text:Text value="_PK PRIMARY KEY ("/>
+                                <commons:Variable>
+                                    <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                    <commons:VarName value="name"/>
+                                    <commons:Quantifier value="!"/>
+                                </commons:Variable>
+                                <text:Text value="_ID)"/>
+                            </text:Row>
+                            <text:Indent value="-1"/>
+                            <text:Row initialCapacity="1">
+                                <text:Text value="};"/>
+                            </text:Row>
+                        </text:Document>
+                    </commons:StageUpFragment>
+                </semantics:ExecutionRule>
+                <semantics:ExecutionRule>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <semantics:EntityType value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#Column"/>
+                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="3">
+                            <commons:Variable>
+                                <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                <commons:VarName value="name"/>
+                                <commons:Quantifier value="!"/>
+                            </commons:Variable>
+                            <semantics:ChooseTemplate initialCapacity="3">
+                                <semantics:IfTemplate>
+                                    <text:Text value="VARCHAR2(400)"/>
+                                    <queries:Equals xmlns:queries="http://lang.whole.org/Queries">
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#datatype"/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="string"/>
+                                    </queries:Equals>
+                                </semantics:IfTemplate>
+                                <semantics:IfTemplate>
+                                    <text:Text value="NUMBER(10)"/>
+                                    <queries:Equals xmlns:queries="http://lang.whole.org/Queries">
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#datatype"/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="int"/>
+                                    </queries:Equals>
+                                </semantics:IfTemplate>
+                                <semantics:IfTemplate>
+                                    <text:Text value="DATE"/>
+                                    <queries:Equals xmlns:queries="http://lang.whole.org/Queries">
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#datatype"/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="datetime"/>
+                                    </queries:Equals>
+                                </semantics:IfTemplate>
+                            </semantics:ChooseTemplate>
+                            <text:Text value=","/>
+                        </text:Row>
+                    </commons:StageUpFragment>
+                </semantics:ExecutionRule>
+                <semantics:ExecutionRule>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <semantics:EntityType value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#ForeignKey"/>
+                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <semantics:WhereTemplate>
+                            <text:Document xmlns:text="http://lang.whole.org/Text" initialCapacity="6">
+                                <text:TextSeparator value=""/>
+                                <text:Row initialCapacity="7">
+                                    <text:Text value="ALTER TABLE "/>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="parentTable"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                    <text:Text value=" ADD "/>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="refTable"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                    <text:Text value="_FK"/>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="recursive"/>
+                                        <commons:Quantifier value="*"/>
+                                    </commons:Variable>
+                                    <text:Text value=" NUMBER(10);"/>
+                                </text:Row>
+                                <text:Row initialCapacity="2">
+                                    <text:Text value="ALTER TABLE "/>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="parentTable"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                </text:Row>
+                                <text:Row initialCapacity="3">
+                                    <text:Text value="  ADD CONSTRAINT FK_CONSTR_"/>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="refTable"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="recursive"/>
+                                        <commons:Quantifier value="?"/>
+                                    </commons:Variable>
+                                </text:Row>
+                                <text:Row initialCapacity="5">
+                                    <text:Text value="  FOREIGN KEY ("/>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="refTable"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                    <text:Text value="_FK"/>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="recursive"/>
+                                        <commons:Quantifier value="?"/>
+                                    </commons:Variable>
+                                    <text:Text value=")"/>
+                                </text:Row>
+                                <text:Row initialCapacity="5">
+                                    <text:Text value="  REFERENCES "/>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="refTable"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                    <text:Text value="("/>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="refTable"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                    <text:Text value="_ID);"/>
+                                </text:Row>
+                            </text:Document>
+                            <semantics:InputBindings initialCapacity="2">
+                                <semantics:InputBinding>
+                                    <semantics:Variable value="parentTable"/>
+                                    <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:AncestorStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#Table"/>
+                                        </queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.hypersenses.metacomposition:MetaModel#name"/>
+                                    </queries:Path>
+                                </semantics:InputBinding>
+                                <semantics:InputBinding>
+                                    <semantics:Variable value="recursive"/>
+                                    <semantics:IfTemplate>
+                                        <semantics:InlineTemplate>
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="2">
+                                        <text:Text value="_RECURSIVE_"/>
+                                        <commons:StageDownFragment>
+                                        <semantics:TypeCast>
+                                        <semantics:EntityType value="http://lang.whole.org/Text#Text"/>
+                                        <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                        <queries:PointwiseUpdate>
+                                        <queries:VariableRefStep value="ctr"/>
+                                        <queries:Addition>
+                                        <queries:Singleton>
+                                        <queries:VariableRefStep value="ctr"/>
+                                        </queries:Singleton>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:Addition>
+                                        </queries:PointwiseUpdate>
+                                        <queries:VariableRefStep value="ctr"/>
+                                        </queries:Block>
+                                        </semantics:TypeCast>
+                                        </commons:StageDownFragment>
+                                        </text:Row>
+                                        </semantics:InlineTemplate>
+                                        <queries:Equals xmlns:queries="http://lang.whole.org/Queries">
+                                        <queries:VariableRefStep value="refTable"/>
+                                        <queries:VariableRefStep value="parentTable"/>
+                                        </queries:Equals>
+                                    </semantics:IfTemplate>
+                                </semantics:InputBinding>
+                            </semantics:InputBindings>
+                        </semantics:WhereTemplate>
+                    </commons:StageUpFragment>
+                </semantics:ExecutionRule>
+            </semantics:Rules>
+        </semantics:SemanticFunction>
+    </semantics:SemanticFunctions>
+</semantics:SemanticTheory>

@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<models:Model xmlns:models="http://lang.whole.org/Models">
+    <models:SimpleName value="SnippetModel"/>
+    <models:TypeRelations initialCapacity="3">
+        <models:SubtypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="MyItem"/>
+            </models:Types>
+            <models:EntityType value="whole:com.metatis.activebook:ActiveBook#SheetItem"/>
+        </models:SubtypesOf>
+        <models:SubtypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="MyTools"/>
+            </models:Types>
+            <models:EntityType value="whole:com.metatis.activebook:ActiveBook#Tools"/>
+        </models:SubtypesOf>
+        <models:SupertypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Colors"/>
+            </models:Types>
+            <models:EntityType value="whole:com.metatis.activebook:ActiveBook#Colors"/>
+        </models:SupertypesOf>
+    </models:TypeRelations>
+    <models:ModelDeclarations initialCapacity="8">
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="EntityName"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="0"/>
+        </models:SimpleEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="MyItem"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Int"/>
+                    <models:SimpleName value="val"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Name"/>
+            <models:Types initialCapacity="0"/>
+            <models:DataType value="String"/>
+        </models:DataEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Int"/>
+            <models:Types initialCapacity="0"/>
+            <models:DataType value="int"/>
+        </models:DataEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="1">
+                <models:EntityModifier value="abstract"/>
+            </models:EntityModifiers>
+            <models:SimpleName value="Brush"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Colors"/>
+                    <models:SimpleName value="yourColors"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="IntData"/>
+                    <models:SimpleName value="thickness"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Pen"/>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Brush"/>
+            </models:Types>
+            <models:Features initialCapacity="0"/>
+        </models:SimpleEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Hiliter"/>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Brush"/>
+            </models:Types>
+            <models:Features initialCapacity="0"/>
+        </models:SimpleEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="MyTools"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Pen"/>
+                    <models:SimpleName value="pen"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Hiliter"/>
+                    <models:SimpleName value="hiliter"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+    </models:ModelDeclarations>
+    <models:Namespace value="org.whole.crossexamples.cg12"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <models:URI value="whole:org.whole.crossexamples.cg12:SnippetModel"/>
+</models:Model>

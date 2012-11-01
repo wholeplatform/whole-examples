@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+    <workflows:Text value="sequence"/>
+    <workflows:FlowObjects initialCapacity="3">
+        <workflows:AssignActivity>
+            <workflows:Text value="assignactivity"/>
+            <workflows:Assignments initialCapacity="1">
+                <workflows:Assign>
+                    <workflows:Variable value="model1"/>
+                    <frames:ReusePoint xmlns:frames="http://lang.whole.org/Frames">
+                        <frames:URI value="whole:org.whole.crossexamples.cg12.live:ModelFrame2"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </frames:ReusePoint>
+                </workflows:Assign>
+            </workflows:Assignments>
+        </workflows:AssignActivity>
+        <workflows:Breakpoint>
+            <workflows:Text value="breakpoint"/>
+            <workflows:BooleanLiteral value="false"/>
+            <workflows:IntLiteral value="0"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <workflows:ConditionTest value="TRUE"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:Breakpoint>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy"/>
+            <workflows:Variable value="model1"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+    </workflows:FlowObjects>
+</workflows:Sequence>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+    <workflows:Text value="deploy all lwc11 resources"/>
+    <workflows:FlowObjects initialCapacity="11">
+        <workflows:LoadModel>
+            <workflows:Text value="load Entities grammar"/>
+            <workflows:Variable value="entitiesGrammar"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org/whole/crossexamples/lwc11/EntitiesGrammar.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy Entities grammar"/>
+            <workflows:Variable value="entitiesGrammar"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+        <workflows:LoadModel>
+            <workflows:Text value="load Entities Actions"/>
+            <workflows:Variable value="entitiesActions"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org/whole/crossexamples/lwc11/EntitiesActions.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy Entities Actions"/>
+            <workflows:Variable value="entitiesActions"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+        <workflows:LoadModel>
+            <workflows:Text value="load Instances grammar"/>
+            <workflows:Variable value="instancesGrammar"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org/whole/crossexamples/lwc11/InstancesGrammar.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy Instances grammar"/>
+            <workflows:Variable value="instancesGrammar"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+        <workflows:InvokeJavaClassMethod>
+            <workflows:Text value="deploy Instances datatype parser"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <workflows:StringLiteral value="org.whole.crossexamples.lwc11.InstancesDataTypeParser"/>
+            <workflows:StringLiteral value="install(java.lang.String)"/>
+            <workflows:Expressions initialCapacity="1">
+                <queries:StringLiteral xmlns:queries="http://lang.whole.org/Queries" value="http://lwc11.crossexamples.whole.org/instances"/>
+            </workflows:Expressions>
+        </workflows:InvokeJavaClassMethod>
+        <workflows:LoadModel>
+            <workflows:Text value="load Instances Actions"/>
+            <workflows:Variable value="instancesActions"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org/whole/crossexamples/lwc11/InstancesActions.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy Instances Actions"/>
+            <workflows:Variable value="instancesActions"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+        <workflows:LoadModel>
+            <workflows:Text value="load Entities Example"/>
+            <workflows:Variable value="entitiesExample"/>
+            <workflows:StringLiteral value="org.whole.lang.grammars.codebase.GrammarsPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org/whole/crossexamples/lwc11/examples/EntitiesExample.txt"/>
+            <workflows:Assignments initialCapacity="1">
+                <workflows:Assign>
+                    <workflows:Variable value="grammarURI"/>
+                    <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                        <queries:VariableRefStep value="entitiesGrammar"/>
+                        <queries:FeatureStep value="http://lang.whole.org/Grammars#uri"/>
+                    </queries:Path>
+                </workflows:Assign>
+            </workflows:Assignments>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="interpret Entities Example"/>
+            <workflows:Variable value="entitiesExample"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+    </workflows:FlowObjects>
+</workflows:Sequence>

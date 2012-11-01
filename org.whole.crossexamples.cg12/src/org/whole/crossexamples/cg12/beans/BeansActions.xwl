@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.crossexamples.cg12.beans:BeansActions"/>
+    <actions:Namespace value="org.whole.crossexamples.cg12.beans"/>
+    <actions:Name value="BeansActions"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:ToolbarActions>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="3">
+            <actions:GuardedAction>
+                <actions:Label value="Migrate Beans 1 to 2"/>
+                <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                    <semantics:Name value="whole:org.whole.crossexamples.cg12.beans:BeansSemantics#migrateBeans"/>
+                    <queries:VariableRefStep xmlns:queries="http://lang.whole.org/Queries" value="primarySelectedEntity"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </semantics:FunctionApplication>
+                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Filter>
+                        <queries:VariableRefStep value="primarySelectedEntity"/>
+                        <queries:LanguageTest value="whole:org.whole.crossexamples.cg12.beans:BeansModel-10"/>
+                    </queries:Filter>
+                </queries:ExpressionTest>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Migrate Beans 1 to 2 (handmade)"/>
+                <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                    <semantics:Name value="whole:org.whole.crossexamples.cg12.beans:BeansSemantics#migrateBeansByHand"/>
+                    <queries:VariableRefStep xmlns:queries="http://lang.whole.org/Queries" value="primarySelectedEntity"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </semantics:FunctionApplication>
+                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Filter>
+                        <queries:VariableRefStep value="primarySelectedEntity"/>
+                        <queries:LanguageTest value="whole:org.whole.crossexamples.cg12.beans:BeansModel-10"/>
+                    </queries:Filter>
+                </queries:ExpressionTest>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="test domain clone"/>
+                <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                    <semantics:Name value="whole:org.whole.crossexamples.cg12.beans:BeansSemantics#clone"/>
+                    <queries:VariableRefStep xmlns:queries="http://lang.whole.org/Queries" value="primarySelectedEntity"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </semantics:FunctionApplication>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>

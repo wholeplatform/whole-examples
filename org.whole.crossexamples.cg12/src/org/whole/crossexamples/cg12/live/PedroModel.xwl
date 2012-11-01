@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<models:Model xmlns:models="http://lang.whole.org/Models">
+    <models:SimpleName value="Pedro"/>
+    <models:TypeRelations initialCapacity="0"/>
+    <models:ModelDeclarations initialCapacity="7">
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Package"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Classes"/>
+                    <models:SimpleName value="classes"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Classes"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="1">
+                <models:ComponentModifier value="unique"/>
+            </models:ComponentModifiers>
+            <models:SimpleName value="Class"/>
+        </models:CompositeEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Class"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="1">
+                        <models:FeatureModifier value="id"/>
+                    </models:FeatureModifiers>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Attributes"/>
+                    <models:SimpleName value="attributes"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Attributes"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="1">
+                <models:ComponentModifier value="ordered"/>
+            </models:ComponentModifiers>
+            <models:SimpleName value="Attribute"/>
+        </models:CompositeEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Attribute"/>
+            <models:Types initialCapacity="0"/>
+            <models:Features initialCapacity="3">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Modifier"/>
+                    <models:SimpleName value="modifier"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Name"/>
+                    <models:SimpleName value="type"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Name"/>
+            <models:Types initialCapacity="0"/>
+            <models:DataType value="String"/>
+        </models:DataEntity>
+        <models:EnumEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Modifier"/>
+            <models:Types initialCapacity="0"/>
+            <models:EnumValues initialCapacity="2">
+                <models:EnumValue value="HAS"/>
+                <models:EnumValue value="REF"/>
+            </models:EnumValues>
+        </models:EnumEntity>
+    </models:ModelDeclarations>
+    <models:Namespace value="org.whole.crossexamples.cg12.live"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <models:URI value="whole:org.whole.crossexamples.cg12.live:PedroModel"/>
+</models:Model>

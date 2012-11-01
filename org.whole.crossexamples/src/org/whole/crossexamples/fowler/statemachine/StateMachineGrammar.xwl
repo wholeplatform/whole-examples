@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<grammars:Grammar xmlns:grammars="http://lang.whole.org/Grammars">
+    <grammars:Name value="StateMachine"/>
+    <grammars:LanguageDescriptor>
+        <grammars:URI value="http://fowler.crossexamples.whole.org/statemachine"/>
+        <grammars:Namespace value="org.whole.crossexamples.fowler.statemachine"/>
+        <grammars:Name value="StateMachine"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </grammars:LanguageDescriptor>
+    <grammars:NonTerminal value="StateMachine"/>
+    <grammars:LiteralTerminal>
+        <grammars:RegExp value="[ \n\r\t]*"/>
+        <grammars:Category value="SEPARATOR"/>
+        <grammars:Literal value=""/>
+    </grammars:LiteralTerminal>
+    <grammars:Productions initialCapacity="0"/>
+    <grammars:Productions initialCapacity="4">
+        <grammars:Production>
+            <grammars:NonTerminal value="StateMachine"/>
+            <grammars:Concatenate initialCapacity="16">
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="events"/>
+                    <grammars:Category value="KEYWORD"/>
+                    <grammars:Literal value="events"/>
+                </grammars:LiteralTerminal>
+                <grammars:NewLine/>
+                <grammars:As>
+                    <grammars:Repeat>
+                        <grammars:Size value="0"/>
+                        <grammars:Unbounded/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <grammars:Production>
+                            <grammars:NonTerminal value="Event"/>
+                            <grammars:Concatenate initialCapacity="5">
+                                <grammars:Indent/>
+                                <grammars:As>
+                                    <grammars:NonTerminal value="ID"/>
+                                    <grammars:Name value="name"/>
+                                </grammars:As>
+                                <grammars:Indent/>
+                                <grammars:As>
+                                    <grammars:NonTerminal value="ID"/>
+                                    <grammars:Name value="code"/>
+                                </grammars:As>
+                                <grammars:NewLine/>
+                            </grammars:Concatenate>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </grammars:Production>
+                    </grammars:Repeat>
+                    <grammars:Name value="events"/>
+                </grammars:As>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="end"/>
+                    <grammars:Category value="KEYWORD"/>
+                    <grammars:Literal value="end"/>
+                </grammars:LiteralTerminal>
+                <grammars:NewLine/>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="resetEvents"/>
+                    <grammars:Category value="KEYWORD"/>
+                    <grammars:Literal value="resetEvents"/>
+                </grammars:LiteralTerminal>
+                <grammars:NewLine/>
+                <grammars:As>
+                    <grammars:Repeat>
+                        <grammars:Size value="0"/>
+                        <grammars:Unbounded/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <grammars:Concatenate initialCapacity="3">
+                            <grammars:Indent/>
+                            <grammars:NonTerminal value="ID"/>
+                            <grammars:NewLine/>
+                        </grammars:Concatenate>
+                    </grammars:Repeat>
+                    <grammars:Name value="resetEvents"/>
+                </grammars:As>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="end"/>
+                    <grammars:Category value="KEYWORD"/>
+                    <grammars:Literal value="end"/>
+                </grammars:LiteralTerminal>
+                <grammars:NewLine/>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="commands"/>
+                    <grammars:Category value="KEYWORD"/>
+                    <grammars:Literal value="commands"/>
+                </grammars:LiteralTerminal>
+                <grammars:NewLine/>
+                <grammars:As>
+                    <grammars:Repeat>
+                        <grammars:Size value="0"/>
+                        <grammars:Unbounded/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <grammars:Production>
+                            <grammars:NonTerminal value="Command"/>
+                            <grammars:Concatenate initialCapacity="5">
+                                <grammars:Indent/>
+                                <grammars:As>
+                                    <grammars:NonTerminal value="ID"/>
+                                    <grammars:Name value="name"/>
+                                </grammars:As>
+                                <grammars:Indent/>
+                                <grammars:As>
+                                    <grammars:NonTerminal value="ID"/>
+                                    <grammars:Name value="code"/>
+                                </grammars:As>
+                                <grammars:NewLine/>
+                            </grammars:Concatenate>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </grammars:Production>
+                    </grammars:Repeat>
+                    <grammars:Name value="commands"/>
+                </grammars:As>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="end"/>
+                    <grammars:Category value="KEYWORD"/>
+                    <grammars:Literal value="end"/>
+                </grammars:LiteralTerminal>
+                <grammars:NewLine/>
+                <grammars:As>
+                    <grammars:Repeat>
+                        <grammars:Size value="0"/>
+                        <grammars:Unbounded/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <grammars:NonTerminal value="State"/>
+                    </grammars:Repeat>
+                    <grammars:Name value="states"/>
+                </grammars:As>
+            </grammars:Concatenate>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="State"/>
+            <grammars:Concatenate initialCapacity="8">
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="state"/>
+                    <grammars:Category value="KEYWORD"/>
+                    <grammars:Literal value="state"/>
+                </grammars:LiteralTerminal>
+                <grammars:Space/>
+                <grammars:As>
+                    <grammars:NonTerminal value="ID"/>
+                    <grammars:Name value="name"/>
+                </grammars:As>
+                <grammars:NewLine/>
+                <grammars:Optional>
+                    <grammars:As>
+                        <grammars:Concatenate initialCapacity="7">
+                            <grammars:Indent/>
+                            <grammars:LiteralTerminal>
+                                <grammars:RegExp value="actions"/>
+                                <grammars:Category value="KEYWORD"/>
+                                <grammars:Literal value="actions"/>
+                            </grammars:LiteralTerminal>
+                            <grammars:Space/>
+                            <grammars:LiteralTerminal>
+                                <grammars:RegExp value="\Q{\E"/>
+                                <grammars:Category value="PARENTHESIS"/>
+                                <grammars:Literal value="{"/>
+                            </grammars:LiteralTerminal>
+                            <grammars:Repeat>
+                                <grammars:Size value="0"/>
+                                <grammars:Unbounded/>
+                                <grammars:Space/>
+                                <grammars:NonTerminal value="ID"/>
+                            </grammars:Repeat>
+                            <grammars:LiteralTerminal>
+                                <grammars:RegExp value="}"/>
+                                <grammars:Category value="PARENTHESIS"/>
+                                <grammars:Literal value="}"/>
+                            </grammars:LiteralTerminal>
+                            <grammars:NewLine/>
+                        </grammars:Concatenate>
+                        <grammars:Name value="actions"/>
+                    </grammars:As>
+                </grammars:Optional>
+                <grammars:As>
+                    <grammars:Repeat>
+                        <grammars:Size value="0"/>
+                        <grammars:Unbounded/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <grammars:NonTerminal value="Transition"/>
+                    </grammars:Repeat>
+                    <grammars:Name value="transitions"/>
+                </grammars:As>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="end"/>
+                    <grammars:Category value="KEYWORD"/>
+                    <grammars:Literal value="end"/>
+                </grammars:LiteralTerminal>
+                <grammars:NewLine/>
+            </grammars:Concatenate>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="Transition"/>
+            <grammars:Concatenate initialCapacity="7">
+                <grammars:Indent/>
+                <grammars:As>
+                    <grammars:NonTerminal value="ID"/>
+                    <grammars:Name value="event"/>
+                </grammars:As>
+                <grammars:Space/>
+                <grammars:LiteralTerminal>
+                    <grammars:RegExp value="=&gt;"/>
+                    <grammars:Category value="OPERATOR"/>
+                    <grammars:Literal value="=&gt;"/>
+                </grammars:LiteralTerminal>
+                <grammars:Space/>
+                <grammars:As>
+                    <grammars:NonTerminal value="ID"/>
+                    <grammars:Name value="state"/>
+                </grammars:As>
+                <grammars:NewLine/>
+            </grammars:Concatenate>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+        <grammars:Production>
+            <grammars:NonTerminal value="ID"/>
+            <grammars:When>
+                <grammars:Not>
+                    <grammars:LiteralTerminal>
+                        <grammars:RegExp value="end"/>
+                        <grammars:Category value="DELIMITER"/>
+                        <grammars:Literal value="end"/>
+                    </grammars:LiteralTerminal>
+                </grammars:Not>
+                <grammars:DataTerminal>
+                    <grammars:RegExp value="[a-zA-Z][a-zA-Z0-9]*"/>
+                    <grammars:Category value="IDENTIFIER"/>
+                    <grammars:Format value="%s"/>
+                </grammars:DataTerminal>
+            </grammars:When>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </grammars:Production>
+    </grammars:Productions>
+    <grammars:URI value="http://fowler.crossexamples.whole.org/statemachineGrammar"/>
+    <grammars:Namespace value="org.whole.crossexamples.fowler.statemachine"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <grammars:Literal value="\t"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</grammars:Grammar>

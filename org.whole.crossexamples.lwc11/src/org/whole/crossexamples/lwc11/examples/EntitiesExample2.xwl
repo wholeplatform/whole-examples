@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<entities:Module xmlns:entities="http://lwc11.crossexamples.whole.org/entities">
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <entities:Entities initialCapacity="2">
+        <entities:Entity>
+            <entities:Name value="Person"/>
+            <entities:Properties initialCapacity="5">
+                <entities:Property>
+                    <entities:PrimitiveType value="string"/>
+                    <entities:Name value="name"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </entities:Property>
+                <entities:Property>
+                    <entities:PrimitiveType value="string"/>
+                    <entities:Name value="firstName"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </entities:Property>
+                <entities:Property>
+                    <entities:PrimitiveType value="date"/>
+                    <entities:Name value="birthDate"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </entities:Property>
+                <entities:Property>
+                    <entities:Name value="int"/>
+                    <entities:Name value="age"/>
+                    <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <java:MethodInvocation xmlns:java="http://lang.whole.org/Java">
+                            <java:MethodInvocation>
+                                <java:QualifiedName value="org.joda.time.Years"/>
+                                <java:Types initialCapacity="0"/>
+                                <java:SimpleName value="yearsBetween"/>
+                                <java:Arguments initialCapacity="2">
+                                    <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedType value="org.joda.time.DateTime"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                    </java:ClassInstanceCreation>
+                                    <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedType value="org.joda.time.DateTime"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="birthDate"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getTime"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver/>
+                                    </java:ClassInstanceCreation>
+                                </java:Arguments>
+                            </java:MethodInvocation>
+                            <java:Types initialCapacity="0"/>
+                            <java:SimpleName value="getYears"/>
+                            <java:Arguments initialCapacity="0"/>
+                        </java:MethodInvocation>
+                    </commons:SameStageFragment>
+                </entities:Property>
+                <entities:Property>
+                    <entities:Name value="Car"/>
+                    <entities:Name value="ownedCar"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </entities:Property>
+            </entities:Properties>
+        </entities:Entity>
+        <entities:Entity>
+            <entities:Name value="Car"/>
+            <entities:Properties initialCapacity="2">
+                <entities:Property>
+                    <entities:PrimitiveType value="string"/>
+                    <entities:Name value="make"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </entities:Property>
+                <entities:Property>
+                    <entities:PrimitiveType value="string"/>
+                    <entities:Name value="model"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </entities:Property>
+            </entities:Properties>
+        </entities:Entity>
+    </entities:Entities>
+</entities:Module>

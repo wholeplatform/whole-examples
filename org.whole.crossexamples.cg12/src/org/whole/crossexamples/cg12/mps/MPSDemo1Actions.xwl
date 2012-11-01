@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.crossexamples.cg12.mps:MPSDemo1Actions"/>
+    <actions:Namespace value="org.whole.crossexamples.cg12.mps"/>
+    <actions:Name value="MPSDemo1Actions"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:URI value="http://lang.whole.org/Java"/>
+    <actions:ToolbarActions>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <actions:SimpleAction>
+            <actions:Label value="Artifacts Generator"/>
+            <queries:Select xmlns:queries="http://lang.whole.org/Queries">
+                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                        <commons:Resolver/>
+                        <artifacts:Projects initialCapacity="1">
+                            <artifacts:Project>
+                                <commons:Variable>
+                                    <commons:VarType value="http://lang.whole.org/Artifacts#ProjectName"/>
+                                    <commons:VarName value="projectName"/>
+                                    <commons:Quantifier value="!"/>
+                                </commons:Variable>
+                                <artifacts:Natures initialCapacity="0"/>
+                                <commons:Resolver/>
+                                <artifacts:Artifacts initialCapacity="1">
+                                    <artifacts:FolderArtifact>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#FolderName"/>
+                                        <commons:VarName value="sourceFolderName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#PackageName"/>
+                                        <commons:VarName value="javaPackageName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#Name"/>
+                                        <commons:VarName value="javaClassName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#CompilationUnit"/>
+                                        <commons:VarName value="javaClass"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                    </artifacts:FolderArtifact>
+                                </artifacts:Artifacts>
+                                <commons:Resolver/>
+                            </artifacts:Project>
+                        </artifacts:Projects>
+                    </artifacts:Workspace>
+                </commons:StageUpFragment>
+                <queries:SelfStep/>
+                <queries:Sequence initialCapacity="3">
+                    <queries:Path initialCapacity="2">
+                        <queries:FeatureStep value="http://lang.whole.org/Java#package"/>
+                        <queries:Filter>
+                            <queries:FeatureStep value="http://lang.whole.org/Java#name"/>
+                            <queries:VariableTest value="javaPackageName"/>
+                        </queries:Filter>
+                    </queries:Path>
+                    <queries:Path initialCapacity="3">
+                        <queries:FeatureStep value="http://lang.whole.org/Java#types"/>
+                        <queries:Filter>
+                            <queries:ChildStep/>
+                            <queries:IndexTest>
+                                <queries:IntLiteral value="0"/>
+                            </queries:IndexTest>
+                        </queries:Filter>
+                        <queries:Filter>
+                            <queries:FeatureStep value="http://lang.whole.org/Java#name"/>
+                            <queries:VariableTest value="javaClassName"/>
+                        </queries:Filter>
+                    </queries:Path>
+                    <queries:Filter>
+                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                            <semantics:Name value="whole:org.whole.crossexamples.cg12.mps:MPSDemo1Semantics#reduceToJava"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                        <queries:VariableTest value="javaClass"/>
+                    </queries:Filter>
+                </queries:Sequence>
+                <queries:TemplateNames/>
+            </queries:Select>
+        </actions:SimpleAction>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="1">
+            <actions:GuardedAction>
+                <actions:Label value="Reduce to Java"/>
+                <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                    <semantics:Name value="whole:org.whole.crossexamples.cg12.mps:MPSDemo1Semantics#reduceToJava"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </semantics:FunctionApplication>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>
