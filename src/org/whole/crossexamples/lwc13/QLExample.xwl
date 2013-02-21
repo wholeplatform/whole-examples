@@ -5,19 +5,19 @@
         <ql:Question>
             <ql:Name value="hasSoldHouse"/>
             <ql:Text value="Did you sell a house in 2010?"/>
-            <ql:Type value="BOOLEAN"/>
+            <ql:PrimitiveType value="BOOLEAN"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </ql:Question>
         <ql:Question>
             <ql:Name value="hasBoughtHouse"/>
             <ql:Text value="Did you buy a house in 2010?"/>
-            <ql:Type value="BOOLEAN"/>
+            <ql:PrimitiveType value="BOOLEAN"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </ql:Question>
         <ql:Question>
             <ql:Name value="hasMaintLoan"/>
             <ql:Text value="Did you enter a loan for maintenance/reconstruction?"/>
-            <ql:Type value="BOOLEAN"/>
+            <ql:PrimitiveType value="BOOLEAN"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </ql:Question>
         <ql:ConditionalQuestions>
@@ -26,19 +26,19 @@
                 <ql:Question>
                     <ql:Name value="sellingPrice"/>
                     <ql:Text value="Price the house was sold for:"/>
-                    <ql:Type value="MONEY"/>
+                    <ql:PrimitiveType value="MONEY"/>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                 </ql:Question>
                 <ql:Question>
                     <ql:Name value="privateDebt"/>
                     <ql:Text value="Private debts for sold house:"/>
-                    <ql:Type value="MONEY"/>
+                    <ql:PrimitiveType value="MONEY"/>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                 </ql:Question>
                 <ql:Question>
                     <ql:Name value="valueResidue"/>
                     <ql:Text value="Value Residue:"/>
-                    <ql:Type value="MONEY"/>
+                    <ql:PrimitiveType value="MONEY"/>
                     <math:Subtraction xmlns:math="http://lang.whole.org/Math">
                         <ql:Name value="sellingPrice"/>
                         <ql:Name value="privateDebt"/>
