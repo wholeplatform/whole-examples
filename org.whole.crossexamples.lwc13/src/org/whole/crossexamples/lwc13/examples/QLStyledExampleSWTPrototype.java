@@ -13,11 +13,12 @@ import org.whole.crossexamples.lwc13.ui.swt.SWTUtils;
 import org.whole.crossexamples.lwc13.ui.swt.SectionControl;
 import org.whole.crossexamples.lwc13.ui.swt.StringControl;
 
-public class QLExample extends AbstractQuestionnaire {
+public class QLStyledExampleSWTPrototype extends AbstractQuestionnaire {
 	protected SectionControl section1;
 	protected StringControl firstName;
 	protected StringControl lastName;
 	protected DateControl birthDate;
+	protected SectionControl section2;
 	protected BooleanControl hasSoldHouse;
 	protected BooleanControl hasBoughtHouse;
 	protected BooleanControl hasMaintLoan;
@@ -26,7 +27,7 @@ public class QLExample extends AbstractQuestionnaire {
 	protected MoneyControl privateDebt;
 	protected ExpressionControl valueResidue;
 
-	public QLExample() {
+	public QLStyledExampleSWTPrototype() {
 		super("Box1HouseOwning");
 		show(new Notifier());
 	}
@@ -48,8 +49,8 @@ public class QLExample extends AbstractQuestionnaire {
 		lastName.setStyle(getStyle("greeny"));
 		birthDate = new DateControl(peekComposite(), "Birth date:", getNotifier());
 		popComposite();
-		section1 = new SectionControl(peekComposite(), "Main questionnaire", getStyle("H1"));
-		pushComposite(section1.getComposite());
+		section2 = new SectionControl(peekComposite(), "Main questionnaire", getStyle("H1"));
+		pushComposite(section2.getComposite());
 		hasSoldHouse = new BooleanControl(peekComposite(), "Did you sell a house in 2010?", getNotifier());
 		hasBoughtHouse = new BooleanControl(peekComposite(), "Did you buy a house in 2010?", getNotifier());
 		hasMaintLoan = new BooleanControl(peekComposite(), "Did you enter a loan for maintenance/reconstruction?", getNotifier());
@@ -66,7 +67,7 @@ public class QLExample extends AbstractQuestionnaire {
 		SWTUtils.runApplication(new Runnable() {
 			@Override
 			public void run() {
-				new QLExample();
+				new QLStyledExampleSWTPrototype();
 			}
 		});
 	}

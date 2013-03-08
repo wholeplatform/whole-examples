@@ -1,0 +1,888 @@
+<?xml version="1.0"?>
+<patterns:PatternLanguage xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
+    <patterns:URI value="whole:org.whole.crossexamples.lwc13:QLSWTPatterns"/>
+    <patterns:Namespace value="org.whole.crossexamples.lwc13"/>
+    <patterns:Name value="QLSWTPatterns"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <patterns:Patterns initialCapacity="2">
+        <patterns:Pattern>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="Form"/>
+            <patterns:TemplatePoint>
+                <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                    <java:PackageDeclaration>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <java:QualifiedName value="org.whole.crossexamples.lwc13.examples"/>
+                    </java:PackageDeclaration>
+                    <java:ImportDeclarations initialCapacity="12">
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.AbstractQuestionnaire"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.BooleanControl"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.ColorConstants"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.ConditionalControl"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.DateControl"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.ExpressionControl"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.FontStyle"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.MoneyControl"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.QuestionType"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.SWTUtils"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.SectionControl"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                        <java:ImportDeclaration>
+                            <java:QualifiedName value="org.whole.crossexamples.lwc13.ui.swt.StringControl"/>
+                            <java:ImportModifier value="false"/>
+                            <java:ImportModifier value="false"/>
+                        </java:ImportDeclaration>
+                    </java:ImportDeclarations>
+                    <java:TypeDeclarations initialCapacity="1">
+                        <java:ClassDeclaration>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <java:ExtendedModifiers initialCapacity="1">
+                                <java:Modifier value="public"/>
+                            </java:ExtendedModifiers>
+                            <java:SimpleName value="QLExample"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <java:SimpleType value="AbstractQuestionnaire"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <java:BodyDeclarations initialCapacity="15">
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="SectionControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="section1"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="StringControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="firstName"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="StringControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="lastName"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="DateControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="birthDate"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="BooleanControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="hasSoldHouse"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="BooleanControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="hasBoughtHouse"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="BooleanControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="hasMaintLoan"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="ConditionalControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="conditional1"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="MoneyControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="sellingPrice"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="MoneyControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="privateDebt"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:FieldDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleType value="ExpressionControl"/>
+                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="valueResidue"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                    </java:VariableDeclarationFragments>
+                                </java:FieldDeclaration>
+                                <java:ConstructorDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                    </java:ExtendedModifiers>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:SimpleName value="QLExample"/>
+                                    <java:Parameters initialCapacity="0"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:Block initialCapacity="2">
+                                        <java:SuperConstructorInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:StringLiteral value="Box1HouseOwning"/>
+                                        </java:Arguments>
+                                        </java:SuperConstructorInvocation>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="show"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="Notifier"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                    </java:Block>
+                                </java:ConstructorDeclaration>
+                                <java:ClassDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleName value="Notifier"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:Types initialCapacity="1">
+                                        <java:SimpleType value="Runnable"/>
+                                    </java:Types>
+                                    <java:BodyDeclarations initialCapacity="1">
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:ExtendedModifiers initialCapacity="2">
+                                        <java:MarkerAnnotation>
+                                        <java:SimpleName value="Override"/>
+                                        </java:MarkerAnnotation>
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="run"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Block initialCapacity="2">
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="conditional1"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setVisible"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:InfixExpression>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="hasSoldHouse"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getValue"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:InfixOperator value="||"/>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="hasMaintLoan"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getValue"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:Expressions initialCapacity="0"/>
+                                        </java:InfixExpression>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="valueResidue"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="update"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:InfixExpression>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="sellingPrice"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getValue"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:InfixOperator value="-"/>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="privateDebt"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getValue"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:Expressions initialCapacity="0"/>
+                                        </java:InfixExpression>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                    </java:BodyDeclarations>
+                                </java:ClassDeclaration>
+                                <java:MethodDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="protected"/>
+                                    </java:ExtendedModifiers>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:PrimitiveType value="void"/>
+                                    <java:SimpleName value="createControls"/>
+                                    <java:Parameters initialCapacity="0"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:Block initialCapacity="20">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="section1"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="SectionControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="General information"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="defineStyle"/>
+                                        <java:Arguments initialCapacity="4">
+                                        <java:StringLiteral value="H1"/>
+                                        <java:QualifiedName value="FontStyle.ITALIC"/>
+                                        <java:ByteLiteral value="18"/>
+                                        <java:QualifiedName value="ColorConstants.BLUE"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="pushComposite"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="section1"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="firstName"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="StringControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="First name:"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getNotifier"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="firstName"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setStyle"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="defineStyle"/>
+                                        <java:Arguments initialCapacity="4">
+                                        <java:StringLiteral value="greeny"/>
+                                        <java:NullLiteral/>
+                                        <java:NullLiteral/>
+                                        <java:QualifiedName value="ColorConstants.GREEN"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="lastName"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="StringControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="Last name:"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getNotifier"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="lastName"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setStyle"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getStyle"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:StringLiteral value="greeny"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="birthDate"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="DateControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="Birth date:"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getNotifier"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="popComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="section1"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="SectionControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="Main questionnaire"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getStyle"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:StringLiteral value="H1"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="pushComposite"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="section1"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="hasSoldHouse"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="BooleanControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="Did you sell a house in 2010?"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getNotifier"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="hasBoughtHouse"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="BooleanControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="Did you buy a house in 2010?"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getNotifier"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="hasMaintLoan"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="BooleanControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="Did you enter a loan for maintenance/reconstruction?"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getNotifier"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="conditional1"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="ConditionalControl"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="pushComposite"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="conditional1"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="sellingPrice"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="MoneyControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="Price the house was sold for:"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getNotifier"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="privateDebt"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="MoneyControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="Private debts for sold house:"/>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="getNotifier"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:SimpleName value="valueResidue"/>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="ExpressionControl"/>
+                                        <java:Arguments initialCapacity="3">
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="peekComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        <java:StringLiteral value="Value Residue:"/>
+                                        <java:QualifiedName value="QuestionType.MONEY"/>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="popComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="popComposite"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                    </java:Block>
+                                </java:MethodDeclaration>
+                                <java:MethodDeclaration>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:ExtendedModifiers initialCapacity="2">
+                                        <java:Modifier value="public"/>
+                                        <java:Modifier value="static"/>
+                                    </java:ExtendedModifiers>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:PrimitiveType value="void"/>
+                                    <java:SimpleName value="main"/>
+                                    <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:ArrayType>
+                                        <java:SimpleType value="String"/>
+                                        </java:ArrayType>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="args"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:SingleVariableDeclaration>
+                                    </java:Parameters>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="SWTUtils"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="runApplication"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="Runnable"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:AnonymousClassDeclaration initialCapacity="1">
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:ExtendedModifiers initialCapacity="2">
+                                        <java:MarkerAnnotation>
+                                        <java:SimpleName value="Override"/>
+                                        </java:MarkerAnnotation>
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="run"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="QLExample"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:AnonymousClassDeclaration>
+                                        </java:ClassInstanceCreation>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                    </java:Block>
+                                </java:MethodDeclaration>
+                            </java:BodyDeclarations>
+                        </java:ClassDeclaration>
+                    </java:TypeDeclarations>
+                </java:CompilationUnit>
+            </patterns:TemplatePoint>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </patterns:Pattern>
+        <patterns:Pattern>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="Session"/>
+            <patterns:TemplatePoint>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </patterns:TemplatePoint>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </patterns:Pattern>
+    </patterns:Patterns>
+</patterns:PatternLanguage>
