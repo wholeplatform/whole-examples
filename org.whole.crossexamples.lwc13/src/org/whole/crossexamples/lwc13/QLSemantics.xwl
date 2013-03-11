@@ -4,7 +4,7 @@
     <semantics:Namespace value="org.whole.crossexamples.lwc13"/>
     <semantics:Name value="QL"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <semantics:SemanticFunctions initialCapacity="2">
+    <semantics:SemanticFunctions initialCapacity="4">
         <semantics:SemanticFunction>
             <semantics:Name value="toArtifacts"/>
             <semantics:FunctionType>
@@ -15,15 +15,70 @@
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Form"/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="2">
+                        <queries:Names initialCapacity="4">
+                            <queries:Name value="modelName"/>
+                            <queries:Name value="modelsModel"/>
                             <queries:Name value="javaSWTClassName"/>
                             <queries:Name value="javaSWTModel"/>
                         </queries:Names>
-                        <queries:Block initialCapacity="5">
+                        <queries:Block initialCapacity="8">
                             <queries:Filter>
                                 <queries:VariableRefStep value="packageArtifactsPoint"/>
                                 <queries:VariableTest value="artifactsPoint"/>
                             </queries:Filter>
+                            <queries:Filter>
+                                <queries:Addition>
+                                    <queries:VariableRefStep value="fileName"/>
+                                    <queries:StringLiteral value="Model"/>
+                                </queries:Addition>
+                                <queries:VariableTest value="modelName"/>
+                            </queries:Filter>
+                            <queries:Path initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <artifacts:FileArtifact xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <artifacts:NameWithExtension>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Artifacts#Name"/>
+                                        <commons:VarName value="modelName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <artifacts:Extension value="xwl"/>
+                                        </artifacts:NameWithExtension>
+                                        <artifacts:Metadata>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <artifacts:PersistenceKitId value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+                                        </artifacts:Metadata>
+                                        <commons:StageUpFragment>
+                                        <commons:StageDownFragment>
+                                        <commons:StageDownFragment>
+                                        <queries:Filter>
+                                        <commons:StageUpFragment>
+                                        <commons:Resolver/>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="modelsModel"/>
+                                        </queries:Filter>
+                                        </commons:StageDownFragment>
+                                        </commons:StageDownFragment>
+                                        </commons:StageUpFragment>
+                                    </artifacts:FileArtifact>
+                                </commons:StageUpFragment>
+                                <queries:Sequence initialCapacity="1">
+                                    <queries:PointwiseInsert>
+                                        <queries:Placement value="INTO"/>
+                                        <queries:VariableRefStep value="artifactsPoint"/>
+                                        <queries:SelfStep/>
+                                    </queries:PointwiseInsert>
+                                </queries:Sequence>
+                            </queries:Path>
+                            <semantics:FunctionApplication>
+                                <semantics:Name value="toModels"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </semantics:FunctionApplication>
                             <queries:Filter>
                                 <queries:Addition>
                                     <queries:VariableRefStep value="fileName"/>
@@ -84,12 +139,396 @@
             </queries:Choose>
         </semantics:SemanticFunction>
         <semantics:SemanticFunction>
+            <semantics:Name value="toModels"/>
+            <semantics:FunctionType>
+                <semantics:AnyType/>
+                <semantics:AnyType/>
+            </semantics:FunctionType>
+            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="7">
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Form"/>
+                    <queries:Scope>
+                        <queries:Names initialCapacity="5">
+                            <queries:Name value="modelUri"/>
+                            <queries:Name value="modelNamespace"/>
+                            <queries:Name value="modelName"/>
+                            <queries:Name value="modelTypeRelationsPoint"/>
+                            <queries:Name value="modelDeclarartionsPoint"/>
+                        </queries:Names>
+                        <queries:Block initialCapacity="6">
+                            <queries:Filter>
+                                <queries:Addition>
+                                    <queries:Addition>
+                                        <queries:StringLiteral value="whole:"/>
+                                        <queries:VariableRefStep value="packageName"/>
+                                    </queries:Addition>
+                                    <queries:Addition>
+                                        <queries:StringLiteral value=":"/>
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="fileName"/>
+                                        <queries:StringLiteral value="Model"/>
+                                        </queries:Addition>
+                                    </queries:Addition>
+                                </queries:Addition>
+                                <queries:VariableTest value="modelUri"/>
+                            </queries:Filter>
+                            <queries:Filter>
+                                <queries:VariableRefStep value="packageName"/>
+                                <queries:VariableTest value="modelNamespace"/>
+                            </queries:Filter>
+                            <queries:Filter>
+                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#name"/>
+                                <queries:VariableTest value="modelName"/>
+                            </queries:Filter>
+                            <queries:Path initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <models:Model xmlns:models="http://lang.whole.org/Models">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Models#SimpleName"/>
+                                        <commons:VarName value="modelName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:StageDownFragment>
+                                        <queries:Filter>
+                                        <commons:StageUpFragment>
+                                        <models:TypeRelations initialCapacity="0"/>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="modelTypeRelationsPoint"/>
+                                        </queries:Filter>
+                                        </commons:StageDownFragment>
+                                        <commons:StageDownFragment>
+                                        <queries:Filter>
+                                        <commons:StageUpFragment>
+                                        <models:ModelDeclarations initialCapacity="1">
+                                        <models:SimpleEntity>
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <commons:StageDownFragment>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#name"/>
+                                        </commons:StageDownFragment>
+                                        <models:Types initialCapacity="0"/>
+                                        <commons:StageDownFragment>
+                                        <queries:Filter>
+                                        <commons:StageUpFragment>
+                                        <models:Features initialCapacity="0"/>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="featuresPoint"/>
+                                        </queries:Filter>
+                                        </commons:StageDownFragment>
+                                        </models:SimpleEntity>
+                                        </models:ModelDeclarations>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="modelDeclarartionsPoint"/>
+                                        </queries:Filter>
+                                        </commons:StageDownFragment>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Models#Namespace"/>
+                                        <commons:VarName value="modelNamespace"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Models#URI"/>
+                                        <commons:VarName value="modelUri"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                    </models:Model>
+                                </commons:StageUpFragment>
+                                <queries:Sequence initialCapacity="1">
+                                    <queries:PointwiseUpdate>
+                                        <queries:VariableRefStep value="modelsModel"/>
+                                        <queries:SelfStep/>
+                                    </queries:PointwiseUpdate>
+                                </queries:Sequence>
+                            </queries:Path>
+                            <semantics:FunctionApplication>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#questions"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </semantics:FunctionApplication>
+                            <queries:VoidLiteral/>
+                        </queries:Block>
+                    </queries:Scope>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Question"/>
+                    <queries:Block initialCapacity="3">
+                        <queries:Path initialCapacity="2">
+                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <models:Feature xmlns:models="http://lang.whole.org/Models">
+                                    <models:FeatureModifiers initialCapacity="1">
+                                        <commons:StageDownFragment>
+                                        <queries:If>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
+                                        <queries:KindTest value="IMPL"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        <commons:StageUpFragment>
+                                        <models:FeatureModifier value="derived"/>
+                                        </commons:StageUpFragment>
+                                        </queries:If>
+                                        </commons:StageDownFragment>
+                                    </models:FeatureModifiers>
+                                    <commons:StageDownFragment>
+                                        <queries:Filter>
+                                        <commons:StageUpFragment>
+                                        <commons:Resolver/>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="typePoint"/>
+                                        </queries:Filter>
+                                    </commons:StageDownFragment>
+                                    <commons:StageDownFragment>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#name"/>
+                                    </commons:StageDownFragment>
+                                    <commons:Resolver/>
+                                </models:Feature>
+                            </commons:StageUpFragment>
+                            <queries:Sequence initialCapacity="1">
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="featuresPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
+                            </queries:Sequence>
+                        </queries:Path>
+                        <semantics:FunctionApplication>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#type"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Name"/>
+                    <queries:Block initialCapacity="2">
+                        <queries:PointwiseUpdate>
+                            <queries:VariableRefStep value="typePoint"/>
+                            <queries:SelfStep/>
+                        </queries:PointwiseUpdate>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#PrimitiveType"/>
+                    <queries:Block initialCapacity="2">
+                        <queries:Path initialCapacity="2">
+                            <queries:Choose initialCapacity="5">
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="self"/>
+                                        <queries:StringLiteral value="BOOLEAN"/>
+                                        </queries:Equals>
+                                    </queries:ExpressionTest>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <models:DataEntity xmlns:models="http://lang.whole.org/Models">
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="BooleanType"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="boolean"/>
+                                        </models:DataEntity>
+                                    </commons:StageUpFragment>
+                                </queries:If>
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="self"/>
+                                        <queries:StringLiteral value="STRING"/>
+                                        </queries:Equals>
+                                    </queries:ExpressionTest>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <models:DataEntity xmlns:models="http://lang.whole.org/Models">
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="StringType"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="String"/>
+                                        </models:DataEntity>
+                                    </commons:StageUpFragment>
+                                </queries:If>
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="self"/>
+                                        <queries:StringLiteral value="INTEGER"/>
+                                        </queries:Equals>
+                                    </queries:ExpressionTest>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <models:DataEntity xmlns:models="http://lang.whole.org/Models">
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="IntegerType"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="int"/>
+                                        </models:DataEntity>
+                                    </commons:StageUpFragment>
+                                </queries:If>
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="self"/>
+                                        <queries:StringLiteral value="DATE"/>
+                                        </queries:Equals>
+                                    </queries:ExpressionTest>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <models:DataEntity xmlns:models="http://lang.whole.org/Models">
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="DateType"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="java.util.Date"/>
+                                        </models:DataEntity>
+                                    </commons:StageUpFragment>
+                                </queries:If>
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="self"/>
+                                        <queries:StringLiteral value="MONEY"/>
+                                        </queries:Equals>
+                                    </queries:ExpressionTest>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <models:DataEntity xmlns:models="http://lang.whole.org/Models">
+                                        <models:EntityModifiers initialCapacity="0"/>
+                                        <models:SimpleName value="MoneyType"/>
+                                        <models:Types initialCapacity="0"/>
+                                        <models:DataType value="double"/>
+                                        </models:DataEntity>
+                                    </commons:StageUpFragment>
+                                </queries:If>
+                            </queries:Choose>
+                            <queries:Sequence initialCapacity="2">
+                                <queries:PointwiseUpdate>
+                                    <queries:VariableRefStep value="typePoint"/>
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#name"/>
+                                </queries:PointwiseUpdate>
+                                <semantics:FunctionApplication>
+                                    <semantics:Name value="atModelDeclarationsPoint"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </semantics:FunctionApplication>
+                            </queries:Sequence>
+                        </queries:Path>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Range"/>
+                    <queries:Block initialCapacity="2">
+                        <queries:Path initialCapacity="2">
+                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <models:DataEntity xmlns:models="http://lang.whole.org/Models">
+                                    <models:EntityModifiers initialCapacity="0"/>
+                                    <models:SimpleName value="RangeType"/>
+                                    <models:Types initialCapacity="0"/>
+                                    <models:DataType value="int"/>
+                                </models:DataEntity>
+                            </commons:StageUpFragment>
+                            <queries:Sequence initialCapacity="2">
+                                <queries:PointwiseUpdate>
+                                    <queries:VariableRefStep value="typePoint"/>
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#name"/>
+                                </queries:PointwiseUpdate>
+                                <semantics:FunctionApplication>
+                                    <semantics:Name value="atModelDeclarationsPoint"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </semantics:FunctionApplication>
+                            </queries:Sequence>
+                        </queries:Path>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Enumeration"/>
+                    <queries:Block initialCapacity="2">
+                        <queries:Path initialCapacity="2">
+                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <models:EnumEntity xmlns:models="http://lang.whole.org/Models">
+                                    <models:EntityModifiers initialCapacity="0"/>
+                                    <commons:StageDownFragment>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#name"/>
+                                    </commons:StageDownFragment>
+                                    <models:Types initialCapacity="0"/>
+                                    <models:EnumValues initialCapacity="1">
+                                        <commons:StageDownFragment>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#values"/>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        </commons:StageDownFragment>
+                                    </models:EnumValues>
+                                </models:EnumEntity>
+                            </commons:StageUpFragment>
+                            <queries:Sequence initialCapacity="2">
+                                <queries:PointwiseUpdate>
+                                    <queries:VariableRefStep value="typePoint"/>
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#name"/>
+                                </queries:PointwiseUpdate>
+                                <semantics:FunctionApplication>
+                                    <semantics:Name value="atModelDeclarationsPoint"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </semantics:FunctionApplication>
+                            </queries:Sequence>
+                        </queries:Path>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:Do>
+                    <semantics:FunctionApplication>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <queries:ChildStep/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                </queries:Do>
+            </queries:Choose>
+        </semantics:SemanticFunction>
+        <semantics:SemanticFunction>
+            <semantics:Name value="atModelDeclarationsPoint"/>
+            <semantics:FunctionType>
+                <semantics:AnyType/>
+                <semantics:AnyType/>
+            </semantics:FunctionType>
+            <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Names initialCapacity="1">
+                    <queries:Name value="entityName"/>
+                </queries:Names>
+                <queries:Block initialCapacity="2">
+                    <queries:Filter>
+                        <queries:FeatureStep value="http://lang.whole.org/Models#name"/>
+                        <queries:VariableTest value="entityName"/>
+                    </queries:Filter>
+                    <queries:Choose initialCapacity="2">
+                        <queries:Path initialCapacity="3">
+                            <queries:VariableRefStep value="modelDeclarartionsPoint"/>
+                            <queries:ChildStep/>
+                            <queries:Filter>
+                                <queries:FeatureStep value="http://lang.whole.org/Models#name"/>
+                                <queries:VariableTest value="entityName"/>
+                            </queries:Filter>
+                        </queries:Path>
+                        <queries:PointwiseInsert>
+                            <queries:Placement value="INTO"/>
+                            <queries:VariableRefStep value="modelDeclarartionsPoint"/>
+                            <queries:SelfStep/>
+                        </queries:PointwiseInsert>
+                    </queries:Choose>
+                </queries:Block>
+            </queries:Scope>
+        </semantics:SemanticFunction>
+        <semantics:SemanticFunction>
             <semantics:Name value="toJavaSWTModel"/>
             <semantics:FunctionType>
                 <semantics:AnyType/>
                 <semantics:AnyType/>
             </semantics:FunctionType>
-            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Form"/>
                     <queries:Block initialCapacity="2">
@@ -982,7 +1421,29 @@
                         </queries:Path>
                     </queries:Block>
                 </queries:If>
-                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#SequentialQuestions"/>
+                    <semantics:FunctionApplication>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <queries:ChildStep/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#ConditionalQuestions"/>
+                    <queries:Block initialCapacity="2">
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Block>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Question"/>
+                    <queries:Block initialCapacity="2">
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Block>
+                </queries:If>
             </queries:Choose>
         </semantics:SemanticFunction>
     </semantics:SemanticFunctions>

@@ -24,7 +24,33 @@
         <actions:MenuActions initialCapacity="0"/>
         <actions:MenuActions initialCapacity="0"/>
         <actions:MenuActions initialCapacity="0"/>
-        <actions:MenuActions initialCapacity="2">
+        <actions:MenuActions initialCapacity="3">
+            <actions:GuardedAction>
+                <actions:Label value="Derive Models"/>
+                <queries:Select xmlns:queries="http://lang.whole.org/Queries">
+                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="1">
+                            <commons:StageDownFragment>
+                                <queries:Filter>
+                                    <commons:StageUpFragment>
+                                        <commons:Resolver/>
+                                    </commons:StageUpFragment>
+                                    <queries:VariableTest value="modelsModel"/>
+                                </queries:Filter>
+                            </commons:StageDownFragment>
+                        </misc:Misc>
+                    </commons:StageUpFragment>
+                    <queries:SelfStep/>
+                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                        <semantics:Name value="whole:org.whole.crossexamples.lwc13:QLSemantics#toModels"/>
+                        <queries:VariableRefStep value="primarySelectedEntity"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                    <queries:TemplateNames/>
+                </queries:Select>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
             <actions:GuardedAction>
                 <actions:Label value="Derive Java SWT Model"/>
                 <queries:Select xmlns:queries="http://lang.whole.org/Queries">
