@@ -12,14 +12,15 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.whole.lang.model.IEntity;
 
 public class MoneyControl extends AbstractValued<Double> {
 	protected NumberFormat format;
 	protected Label labelControl;
 	protected Text text;
 
-	public MoneyControl(Composite parent, String label, Runnable notifier) {
-		super(parent, label, .0, notifier);
+	public MoneyControl(Composite parent, String label, Runnable notifier, Style style) {
+		super(parent, label, .0, notifier, style);
 
 		format = NumberFormat.getCurrencyInstance();
 	
@@ -29,7 +30,7 @@ public class MoneyControl extends AbstractValued<Double> {
 
 		text = new Text(parent, SWT.BORDER | SWT.RIGHT);
 		GridData layoutData = new GridData(SWT.LEFT, SWT.TOP, true, false);
-		layoutData.minimumWidth = 150;
+		layoutData.minimumWidth = 300;
 		text.setLayoutData(layoutData);
 		text.setText(format.format(getValue()));
 		text.addKeyListener(new KeyAdapter() {
@@ -58,6 +59,14 @@ public class MoneyControl extends AbstractValued<Double> {
 				});
 			}
 		});
+		if (style != null)
+			setStyle(style);
+	}
+
+	@Override
+	public void setValue(IEntity value) {
+		super.setValue(value);
+		unparse(getValue());
 	}
 
 	public void setStyle(Style style) {

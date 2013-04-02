@@ -25,7 +25,7 @@ public class ExpressionControl extends AbstractLabeled {
 
 		text = new Text(parent, SWT.READ_ONLY | SWT.BORDER | (questionType.isNumeric()  ? SWT.RIGHT : SWT.NONE));
 		GridData layoutData = new GridData(SWT.LEFT, SWT.TOP, true, false);
-		layoutData.minimumWidth = 150;
+		layoutData.minimumWidth = 300;
 		text.setLayoutData(layoutData);
 	}
 

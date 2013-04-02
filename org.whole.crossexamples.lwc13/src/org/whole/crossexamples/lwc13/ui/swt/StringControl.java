@@ -7,17 +7,19 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.whole.lang.model.IEntity;
 
 public class StringControl extends AbstractValued<String> {
 	protected Label labelControl;
-	public StringControl(Composite parent, String label, Runnable notifier) {
-		super(parent, label, "", notifier);
+	protected Text text;
+	public StringControl(Composite parent, String label, Runnable notifier, Style style) {
+		super(parent, label, "", notifier, style);
 	
 		labelControl = new Label(parent, SWT.NONE);
 		labelControl.setText(getLabel());
 		labelControl.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, false));
 
-		final Text text = new Text(parent, SWT.BORDER);
+		text = new Text(parent, SWT.BORDER);
 		GridData layoutData = new GridData(SWT.LEFT, SWT.TOP, true, false);
 		layoutData.minimumWidth = 300;
 		text.setLayoutData(layoutData);
@@ -29,6 +31,14 @@ public class StringControl extends AbstractValued<String> {
 				notifyChanged();
 			}
 		});
+		if (style != null)
+			setStyle(style);
+	}
+	
+	@Override
+	public void setValue(IEntity value) {
+		super.setValue(value);
+		text.setText(getValue());
 	}
 
 	public void setStyle(Style style) {

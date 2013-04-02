@@ -11,7 +11,7 @@
                 <qls:Color value="BLUE"/>
                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             </qls:StyleDef>
-            <ql:SequentialQuestions initialCapacity="3">
+            <ql:SequentialQuestions initialCapacity="2">
                 <qls:WithStyle>
                     <qls:StyleDef>
                         <qls:Name value="greeny"/>
@@ -20,21 +20,41 @@
                         <qls:Color value="GREEN"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </qls:StyleDef>
-                    <ql:Question>
-                        <ql:Name value="firstName"/>
-                        <ql:Text value="First name:"/>
-                        <ql:PrimitiveType value="STRING"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </ql:Question>
-                </qls:WithStyle>
-                <qls:WithStyle>
-                    <qls:Name value="greeny"/>
-                    <ql:Question>
-                        <ql:Name value="lastName"/>
-                        <ql:Text value="Last name:"/>
-                        <ql:PrimitiveType value="STRING"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </ql:Question>
+                    <ql:SequentialQuestions initialCapacity="3">
+                        <ql:Question>
+                            <ql:Name value="firstName"/>
+                            <ql:Text value="First name:"/>
+                            <ql:PrimitiveType value="STRING"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </ql:Question>
+                        <qls:WithStyle>
+                            <qls:StyleDef>
+                                <qls:Name value="name"/>
+                                <qls:FontStyle value="BOLD"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </qls:StyleDef>
+                            <ql:Question>
+                                <ql:Name value="lastName"/>
+                                <ql:Text value="Last name:"/>
+                                <ql:PrimitiveType value="STRING"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </ql:Question>
+                        </qls:WithStyle>
+                        <ql:Question>
+                            <ql:Name value="fullName"/>
+                            <ql:Text value="Full name:"/>
+                            <ql:PrimitiveType value="STRING"/>
+                            <math:Addition xmlns:math="http://lang.whole.org/Math" initialCapacity="5">
+                                <ql:Name value="firstName"/>
+                                <queries:StringLiteral xmlns:queries="http://lang.whole.org/Queries" value=" "/>
+                                <ql:Name value="lastName"/>
+                                <queries:StringLiteral xmlns:queries="http://lang.whole.org/Queries" value=" "/>
+                                <queries:DateLiteral xmlns:queries="http://lang.whole.org/Queries" value="2013-03-29T16:34:09.693Z"/>
+                            </math:Addition>
+                        </ql:Question>
+                    </ql:SequentialQuestions>
                 </qls:WithStyle>
                 <ql:Question>
                     <ql:Name value="birthDate"/>
@@ -48,12 +68,15 @@
             <qls:Text value="Main questionnaire"/>
             <qls:Name value="H1"/>
             <ql:SequentialQuestions initialCapacity="4">
-                <ql:Question>
-                    <ql:Name value="hasSoldHouse"/>
-                    <ql:Text value="Did you sell a house in 2010?"/>
-                    <ql:PrimitiveType value="BOOLEAN"/>
-                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                </ql:Question>
+                <qls:WithStyle>
+                    <qls:Name value="greeny"/>
+                    <ql:Question>
+                        <ql:Name value="hasSoldHouse"/>
+                        <ql:Text value="Did you sell a house in 2010?"/>
+                        <ql:PrimitiveType value="BOOLEAN"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </ql:Question>
+                </qls:WithStyle>
                 <ql:Question>
                     <ql:Name value="hasBoughtHouse"/>
                     <ql:Text value="Did you buy a house in 2010?"/>

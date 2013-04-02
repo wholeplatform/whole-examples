@@ -11,9 +11,9 @@ public class ConditionalControl {
 		this.composite = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout(2, false);
 		layout.horizontalSpacing = layout.verticalSpacing = 5;
-		composite.setLayout(layout);
-		composite.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, false, 2, 1));
-		composite.setVisible(false);
+		this.composite.setLayout(layout);
+		this.composite.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, false, 2, 1));
+		setVisible(false);
 	}
 
 	public Composite getComposite() {
@@ -21,7 +21,11 @@ public class ConditionalControl {
 	}
 
 	public void setVisible(boolean visible) {
-		if (!composite.isDisposed())
+		if (!composite.isDisposed()) {
+			GridData data = (GridData) composite.getLayoutData();
+		    data.exclude = !visible;
 			composite.setVisible(visible);
+			composite.getShell().pack();
+		}
 	}
 }

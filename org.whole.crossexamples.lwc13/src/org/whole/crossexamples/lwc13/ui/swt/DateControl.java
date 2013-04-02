@@ -13,14 +13,15 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.DateTime;
 import org.eclipse.swt.widgets.Label;
+import org.whole.lang.model.IEntity;
 
 public class DateControl extends AbstractValued<Date> {
 	protected NumberFormat format;
 	protected Label labelControl;
 	protected DateTime dateTime;
 
-	public DateControl(Composite parent, String label, Runnable notifier) {
-		super(parent, label, new Date(), notifier);
+	public DateControl(Composite parent, String label, Runnable notifier, Style style) {
+		super(parent, label, new Date(), notifier, style);
 	
 		format = NumberFormat.getIntegerInstance();
 
@@ -32,35 +33,43 @@ public class DateControl extends AbstractValued<Date> {
 		GridData layoutData = new GridData(SWT.LEFT, SWT.TOP, true, false);
 		layoutData.minimumWidth = 150;
 		dateTime.setLayoutData(layoutData);
-		unparse();
+		unparse(getValue());
 		dateTime.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				try {
-					parse();
+					setValue(parse());
 					notifyChanged();
 				} catch (Exception e) {
 				}
 			}
 		});
+		if (style != null)
+			setStyle(style);
+	}
+
+	@Override
+	public void setValue(IEntity value) {
+		super.setValue(value);
+		unparse(getValue());
 	}
 
 	public void setStyle(Style style) {
 		style.apply(labelControl);
 	}
 
-	protected void unparse() {
+	protected void unparse(Date date) {
 		Calendar calendar = GregorianCalendar.getInstance();
-		calendar.setTime(getValue());
+		calendar.setTime(date);
 		dateTime.setDay(calendar.get(Calendar.DAY_OF_MONTH));
 		dateTime.setMonth(calendar.get(Calendar.MONTH));
 		dateTime.setYear(calendar.get(Calendar.YEAR));
 	}
-	protected void parse() throws ParseException {
+	protected Date parse() throws ParseException {
 		Calendar calendar = GregorianCalendar.getInstance();
 		calendar.set(Calendar.DAY_OF_MONTH, dateTime.getDay());
 		calendar.set(Calendar.MONTH, dateTime.getMonth());
 		calendar.set(Calendar.YEAR, dateTime.getYear());
-		setValue(calendar.getTime());
+		return calendar.getTime();
 	}
 }

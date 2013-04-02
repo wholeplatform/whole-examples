@@ -29,4 +29,10 @@ public class Style {
 		control.setFont(new Font(control.getDisplay(), fontData));
 		control.setForeground(color);
 	}
+
+	public Style merge(Style toMerge) {
+		return new Style(toMerge.style != null ? toMerge.style : style,
+				toMerge.size != null ? toMerge.size : size,
+						toMerge.color != null ? toMerge.color : color);
+	}
 }
