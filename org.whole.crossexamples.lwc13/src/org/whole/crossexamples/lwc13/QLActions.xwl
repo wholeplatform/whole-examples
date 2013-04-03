@@ -27,91 +27,106 @@
         <actions:MenuActions initialCapacity="3">
             <actions:GuardedAction>
                 <actions:Label value="Derive Models"/>
-                <queries:Select xmlns:queries="http://lang.whole.org/Queries">
-                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                        <misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="1">
-                            <commons:StageDownFragment>
-                                <queries:Filter>
-                                    <commons:StageUpFragment>
+                <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Names initialCapacity="1">
+                        <queries:Name value="modelsModel"/>
+                    </queries:Names>
+                    <queries:Select>
+                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="1">
+                                <commons:StageDownFragment>
+                                    <queries:Filter>
+                                        <commons:StageUpFragment>
                                         <commons:Resolver/>
-                                    </commons:StageUpFragment>
-                                    <queries:VariableTest value="modelsModel"/>
-                                </queries:Filter>
-                            </commons:StageDownFragment>
-                        </misc:Misc>
-                    </commons:StageUpFragment>
-                    <queries:SelfStep/>
-                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
-                        <semantics:Name value="whole:org.whole.crossexamples.lwc13:QLSemantics#toModels"/>
-                        <queries:VariableRefStep value="primarySelectedEntity"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </semantics:FunctionApplication>
-                    <queries:TemplateNames/>
-                </queries:Select>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="modelsModel"/>
+                                    </queries:Filter>
+                                </commons:StageDownFragment>
+                            </misc:Misc>
+                        </commons:StageUpFragment>
+                        <queries:SelfStep/>
+                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                            <semantics:Name value="whole:org.whole.crossexamples.lwc13:QLSemantics#toModels"/>
+                            <queries:VariableRefStep value="primarySelectedEntity"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                        <queries:TemplateNames/>
+                    </queries:Select>
+                </queries:Scope>
                 <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
             <actions:GuardedAction>
                 <actions:Label value="Derive Java SWT Model"/>
-                <queries:Select xmlns:queries="http://lang.whole.org/Queries">
-                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                        <misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="1">
-                            <commons:StageDownFragment>
-                                <queries:Filter>
-                                    <commons:StageUpFragment>
+                <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Names initialCapacity="1">
+                        <queries:Name value="javaSWTModel"/>
+                    </queries:Names>
+                    <queries:Select>
+                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="1">
+                                <commons:StageDownFragment>
+                                    <queries:Filter>
+                                        <commons:StageUpFragment>
                                         <commons:Resolver/>
-                                    </commons:StageUpFragment>
-                                    <queries:VariableTest value="javaSWTModel"/>
-                                </queries:Filter>
-                            </commons:StageDownFragment>
-                        </misc:Misc>
-                    </commons:StageUpFragment>
-                    <queries:SelfStep/>
-                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
-                        <semantics:Name value="whole:org.whole.crossexamples.lwc13:QLSemantics#toJavaSWTModel"/>
-                        <queries:VariableRefStep value="primarySelectedEntity"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </semantics:FunctionApplication>
-                    <queries:TemplateNames/>
-                </queries:Select>
+                                        </commons:StageUpFragment>
+                                        <queries:VariableTest value="javaSWTModel"/>
+                                    </queries:Filter>
+                                </commons:StageDownFragment>
+                            </misc:Misc>
+                        </commons:StageUpFragment>
+                        <queries:SelfStep/>
+                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                            <semantics:Name value="whole:org.whole.crossexamples.lwc13:QLSemantics#toJavaSWTModel"/>
+                            <queries:VariableRefStep value="primarySelectedEntity"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                        <queries:TemplateNames/>
+                    </queries:Select>
+                </queries:Scope>
                 <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
             <actions:GuardedAction>
                 <actions:Label value="Translate to Artifacts"/>
-                <queries:Select xmlns:queries="http://lang.whole.org/Queries">
-                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                        <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
-                            <commons:Resolver/>
-                            <artifacts:Projects initialCapacity="1">
-                                <artifacts:Project>
-                                    <commons:Resolver/>
-                                    <artifacts:Natures initialCapacity="1">
+                <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Names initialCapacity="1">
+                        <queries:Name value="artifactsPoint"/>
+                    </queries:Names>
+                    <queries:Select>
+                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                <commons:Resolver/>
+                                <artifacts:Projects initialCapacity="1">
+                                    <artifacts:Project>
                                         <commons:Resolver/>
-                                    </artifacts:Natures>
-                                    <commons:Resolver/>
-                                    <commons:StageDownFragment>
+                                        <artifacts:Natures initialCapacity="1">
+                                        <commons:Resolver/>
+                                        </artifacts:Natures>
+                                        <commons:Resolver/>
+                                        <commons:StageDownFragment>
                                         <queries:Filter>
                                         <commons:StageUpFragment>
                                         <artifacts:Artifacts initialCapacity="0"/>
                                         </commons:StageUpFragment>
                                         <queries:VariableTest value="artifactsPoint"/>
                                         </queries:Filter>
-                                    </commons:StageDownFragment>
-                                    <commons:Resolver/>
-                                </artifacts:Project>
-                            </artifacts:Projects>
-                        </artifacts:Workspace>
-                    </commons:StageUpFragment>
-                    <queries:SelfStep/>
-                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
-                        <semantics:Name value="whole:org.whole.crossexamples.lwc13:QLSemantics#toArtifacts"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </semantics:FunctionApplication>
-                    <queries:TemplateNames/>
-                </queries:Select>
+                                        </commons:StageDownFragment>
+                                        <commons:Resolver/>
+                                    </artifacts:Project>
+                                </artifacts:Projects>
+                            </artifacts:Workspace>
+                        </commons:StageUpFragment>
+                        <queries:SelfStep/>
+                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                            <semantics:Name value="whole:org.whole.crossexamples.lwc13:QLSemantics#toArtifacts"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                        <queries:TemplateNames/>
+                    </queries:Select>
+                </queries:Scope>
                 <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
         </actions:MenuActions>

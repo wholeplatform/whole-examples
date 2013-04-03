@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+    <workflows:Text value="deploy all lwc11 resources"/>
+    <workflows:FlowObjects initialCapacity="8">
+        <workflows:LoadModel>
+            <workflows:Text value="load QLModel"/>
+            <workflows:Variable value="qlModel"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org/whole/crossexamples/lwc13/QLModel.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy QLModel"/>
+            <workflows:Variable value="qlModel"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+        <workflows:LoadModel>
+            <workflows:Text value="load QLSModel"/>
+            <workflows:Variable value="qlsModel"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org/whole/crossexamples/lwc13/QLSModel.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy QLSModel"/>
+            <workflows:Variable value="qlsModel"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+        <workflows:LoadModel>
+            <workflows:Text value="load QLSemantics"/>
+            <workflows:Variable value="qlSemantics"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org/whole/crossexamples/lwc13/QLSemantics.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy QLSemantics"/>
+            <workflows:Variable value="qlSemantics"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+        <workflows:LoadModel>
+            <workflows:Text value="load QLActions"/>
+            <workflows:Variable value="qlActions"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org/whole/crossexamples/lwc13/QLActions.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy QLActions"/>
+            <workflows:Variable value="qlActions"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+    </workflows:FlowObjects>
+</workflows:Sequence>

@@ -1862,13 +1862,20 @@
                     </queries:Scope>
                 </queries:If>
                 <queries:If>
-                    <queries:Or initialCapacity="6">
+                    <queries:Or initialCapacity="13">
                         <queries:TypeTest value="http://lang.whole.org/Math#Addition"/>
                         <queries:TypeTest value="http://lang.whole.org/Math#Multiplication"/>
                         <queries:TypeTest value="http://lang.whole.org/Math#Subtraction"/>
                         <queries:TypeTest value="http://lang.whole.org/Math#Division"/>
+                        <queries:TypeTest value="http://lang.whole.org/Math#Remainder"/>
                         <queries:TypeTest value="http://lang.whole.org/Math#Or"/>
                         <queries:TypeTest value="http://lang.whole.org/Math#And"/>
+                        <queries:TypeTest value="http://lang.whole.org/Math#Equal"/>
+                        <queries:TypeTest value="http://lang.whole.org/Math#NotEquals"/>
+                        <queries:TypeTest value="http://lang.whole.org/Math#LessThan"/>
+                        <queries:TypeTest value="http://lang.whole.org/Math#LessOrEqual"/>
+                        <queries:TypeTest value="http://lang.whole.org/Math#GreaterThan"/>
+                        <queries:TypeTest value="http://lang.whole.org/Math#GreaterOrEqual"/>
                     </queries:Or>
                     <queries:Scope>
                         <queries:Names initialCapacity="3">
@@ -1889,7 +1896,7 @@
                                         </queries:Filter>
                                         </commons:StageDownFragment>
                                         <commons:StageDownFragment>
-                                        <queries:Choose initialCapacity="6">
+                                        <queries:Choose initialCapacity="13">
                                         <queries:If>
                                         <queries:TypeTest value="http://lang.whole.org/Math#Addition"/>
                                         <commons:StageUpFragment>
@@ -1915,6 +1922,12 @@
                                         </commons:StageUpFragment>
                                         </queries:If>
                                         <queries:If>
+                                        <queries:TypeTest value="http://lang.whole.org/Math#Remainder"/>
+                                        <commons:StageUpFragment>
+                                        <java:InfixOperator value="%"/>
+                                        </commons:StageUpFragment>
+                                        </queries:If>
+                                        <queries:If>
                                         <queries:TypeTest value="http://lang.whole.org/Math#Or"/>
                                         <commons:StageUpFragment>
                                         <java:InfixOperator value="||"/>
@@ -1924,6 +1937,42 @@
                                         <queries:TypeTest value="http://lang.whole.org/Math#And"/>
                                         <commons:StageUpFragment>
                                         <java:InfixOperator value="&amp;&amp;"/>
+                                        </commons:StageUpFragment>
+                                        </queries:If>
+                                        <queries:If>
+                                        <queries:TypeTest value="http://lang.whole.org/Math#Equal"/>
+                                        <commons:StageUpFragment>
+                                        <java:InfixOperator value="=="/>
+                                        </commons:StageUpFragment>
+                                        </queries:If>
+                                        <queries:If>
+                                        <queries:TypeTest value="http://lang.whole.org/Math#NotEquals"/>
+                                        <commons:StageUpFragment>
+                                        <java:InfixOperator value="!="/>
+                                        </commons:StageUpFragment>
+                                        </queries:If>
+                                        <queries:If>
+                                        <queries:TypeTest value="http://lang.whole.org/Math#LessThan"/>
+                                        <commons:StageUpFragment>
+                                        <java:InfixOperator value="&lt;"/>
+                                        </commons:StageUpFragment>
+                                        </queries:If>
+                                        <queries:If>
+                                        <queries:TypeTest value="http://lang.whole.org/Math#LessOrEqual"/>
+                                        <commons:StageUpFragment>
+                                        <java:InfixOperator value="&lt;="/>
+                                        </commons:StageUpFragment>
+                                        </queries:If>
+                                        <queries:If>
+                                        <queries:TypeTest value="http://lang.whole.org/Math#GreaterThan"/>
+                                        <commons:StageUpFragment>
+                                        <java:InfixOperator value="&gt;"/>
+                                        </commons:StageUpFragment>
+                                        </queries:If>
+                                        <queries:If>
+                                        <queries:TypeTest value="http://lang.whole.org/Math#GreaterOrEqual"/>
+                                        <commons:StageUpFragment>
+                                        <java:InfixOperator value="&gt;="/>
                                         </commons:StageUpFragment>
                                         </queries:If>
                                         </queries:Choose>

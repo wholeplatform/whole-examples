@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<box1houseowning:Box1HouseOwning xmlns:box1houseowning="whole:org.whole.crossexamples.lwc13.examples:QLStyledExampleModel">
+    <box1houseowning:StringType value="Riccardo"/>
+    <box1houseowning:StringType value="Solmi"/>
+    <box1houseowning:StringType value="Riccardo Solmi"/>
+    <box1houseowning:DateType value="2013-03-08T16:00:45.760Z"/>
+    <box1houseowning:BooleanType value="true"/>
+    <box1houseowning:BooleanType value="false"/>
+    <box1houseowning:BooleanType value="false"/>
+    <box1houseowning:MoneyType value="200000.0"/>
+    <box1houseowning:MoneyType value="50000.0"/>
+    <box1houseowning:MoneyType value="150000.0"/>
+</box1houseowning:Box1HouseOwning>

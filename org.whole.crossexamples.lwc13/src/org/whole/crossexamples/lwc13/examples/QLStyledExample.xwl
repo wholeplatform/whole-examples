@@ -46,12 +46,10 @@
                             <ql:Name value="fullName"/>
                             <ql:Text value="Full name:"/>
                             <ql:PrimitiveType value="STRING"/>
-                            <math:Addition xmlns:math="http://lang.whole.org/Math" initialCapacity="5">
+                            <math:Addition xmlns:math="http://lang.whole.org/Math" initialCapacity="3">
                                 <ql:Name value="firstName"/>
                                 <queries:StringLiteral xmlns:queries="http://lang.whole.org/Queries" value=" "/>
                                 <ql:Name value="lastName"/>
-                                <queries:StringLiteral xmlns:queries="http://lang.whole.org/Queries" value=" "/>
-                                <queries:DateLiteral xmlns:queries="http://lang.whole.org/Queries" value="2013-03-29T16:34:09.693Z"/>
                             </math:Addition>
                         </ql:Question>
                     </ql:SequentialQuestions>
@@ -90,10 +88,7 @@
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                 </ql:Question>
                 <ql:ConditionalQuestions>
-                    <math:Or xmlns:math="http://lang.whole.org/Math" initialCapacity="2">
-                        <ql:Name value="hasSoldHouse"/>
-                        <ql:Name value="hasMaintLoan"/>
-                    </math:Or>
+                    <ql:Name value="hasSoldHouse"/>
                     <ql:SequentialQuestions initialCapacity="3">
                         <ql:Question>
                             <ql:Name value="sellingPrice"/>
@@ -107,15 +102,21 @@
                             <ql:PrimitiveType value="MONEY"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         </ql:Question>
-                        <ql:Question>
-                            <ql:Name value="valueResidue"/>
-                            <ql:Text value="Value Residue:"/>
-                            <ql:PrimitiveType value="MONEY"/>
-                            <math:Subtraction xmlns:math="http://lang.whole.org/Math">
+                        <ql:ConditionalQuestions>
+                            <math:GreaterThan xmlns:math="http://lang.whole.org/Math" initialCapacity="2">
                                 <ql:Name value="sellingPrice"/>
                                 <ql:Name value="privateDebt"/>
-                            </math:Subtraction>
-                        </ql:Question>
+                            </math:GreaterThan>
+                            <ql:Question>
+                                <ql:Name value="valueResidue"/>
+                                <ql:Text value="Value Residue:"/>
+                                <ql:PrimitiveType value="MONEY"/>
+                                <math:Subtraction xmlns:math="http://lang.whole.org/Math">
+                                    <ql:Name value="sellingPrice"/>
+                                    <ql:Name value="privateDebt"/>
+                                </math:Subtraction>
+                            </ql:Question>
+                        </ql:ConditionalQuestions>
                     </ql:SequentialQuestions>
                 </ql:ConditionalQuestions>
             </ql:SequentialQuestions>
