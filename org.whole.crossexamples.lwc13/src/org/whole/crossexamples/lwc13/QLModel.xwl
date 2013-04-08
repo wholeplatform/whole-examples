@@ -122,8 +122,7 @@
         <models:DataEntity>
             <models:EntityModifiers initialCapacity="0"/>
             <models:SimpleName value="Name"/>
-            <models:Types initialCapacity="2">
-                <models:SimpleName value="Type"/>
+            <models:Types initialCapacity="1">
                 <models:SimpleName value="Expression"/>
             </models:Types>
             <models:DataType value="String"/>

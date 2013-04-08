@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc13:QLModel">
-    <ql:Name value="Box1HouseOwning"/>
+    <ql:Name value="Box1HouseOwningStyled"/>
     <ql:SequentialQuestions initialCapacity="2">
         <qls:Section xmlns:qls="whole:org.whole.crossexamples.lwc13:QLSModel">
             <qls:Text value="General information"/>
             <qls:StyleDef>
                 <qls:Name value="H1"/>
-                <qls:FontStyle value="ITALIC"/>
+                <qls:FontStyle value="BOLD"/>
                 <qls:FontSize value="18"/>
                 <qls:Color value="BLUE"/>
                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -14,10 +14,10 @@
             <ql:SequentialQuestions initialCapacity="2">
                 <qls:WithStyle>
                     <qls:StyleDef>
-                        <qls:Name value="greeny"/>
+                        <qls:Name value="red"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        <qls:Color value="GREEN"/>
+                        <qls:Color value="RED"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </qls:StyleDef>
                     <ql:SequentialQuestions initialCapacity="3">
@@ -29,7 +29,7 @@
                         </ql:Question>
                         <qls:WithStyle>
                             <qls:StyleDef>
-                                <qls:Name value="name"/>
+                                <qls:Name value="bold"/>
                                 <qls:FontStyle value="BOLD"/>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -54,12 +54,25 @@
                         </ql:Question>
                     </ql:SequentialQuestions>
                 </qls:WithStyle>
-                <ql:Question>
-                    <ql:Name value="birthDate"/>
-                    <ql:Text value="Birth date:"/>
-                    <ql:PrimitiveType value="DATE"/>
-                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                </ql:Question>
+                <qls:Section>
+                    <qls:Text value="Application Info"/>
+                    <qls:StyleDef>
+                        <qls:Name value="H2"/>
+                        <qls:FontStyle value="BOLD"/>
+                        <qls:FontSize value="14"/>
+                        <qls:Color value="BLUE"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </qls:StyleDef>
+                    <qls:WithStyle>
+                        <qls:Name value="red"/>
+                        <ql:Question>
+                            <ql:Name value="applicationDate"/>
+                            <ql:Text value="Application date:"/>
+                            <ql:PrimitiveType value="DATE"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </ql:Question>
+                    </qls:WithStyle>
+                </qls:Section>
             </ql:SequentialQuestions>
         </qls:Section>
         <qls:Section xmlns:qls="whole:org.whole.crossexamples.lwc13:QLSModel">
@@ -67,7 +80,7 @@
             <qls:Name value="H1"/>
             <ql:SequentialQuestions initialCapacity="4">
                 <qls:WithStyle>
-                    <qls:Name value="greeny"/>
+                    <qls:Name value="red"/>
                     <ql:Question>
                         <ql:Name value="hasSoldHouse"/>
                         <ql:Text value="Did you sell a house in 2010?"/>

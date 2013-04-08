@@ -6,7 +6,88 @@
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
     <actions:URI value="whole:org.whole.crossexamples.lwc13:QLModel"/>
     <actions:ToolbarActions>
-        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <actions:SimpleAction>
+            <actions:Label value="Validator"/>
+            <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Names initialCapacity="4">
+                    <queries:Name value="addError"/>
+                    <queries:Name value="addWarning"/>
+                    <queries:Name value="typeMap"/>
+                    <queries:Name value="styleSet"/>
+                </queries:Names>
+                <queries:Block initialCapacity="6">
+                    <queries:QueryDeclaration>
+                        <queries:Name value="addError"/>
+                        <queries:Names initialCapacity="2">
+                            <queries:Name value="message"/>
+                            <queries:Name value="location"/>
+                        </queries:Names>
+                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="addError"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:Variable value="decorationManager"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="org.whole.lang.operations.IDecorationManager"/>
+                            <workflows:StringLiteral value="addError(org.whole.lang.model.IEntity, java.lang.String, java.lang.String)"/>
+                            <workflows:Expressions initialCapacity="3">
+                                <workflows:Variable value="self"/>
+                                <workflows:Variable value="message"/>
+                                <workflows:Variable value="location"/>
+                            </workflows:Expressions>
+                        </workflows:InvokeJavaInstanceMethod>
+                    </queries:QueryDeclaration>
+                    <queries:QueryDeclaration>
+                        <queries:Name value="addWarning"/>
+                        <queries:Names initialCapacity="2">
+                            <queries:Name value="message"/>
+                            <queries:Name value="location"/>
+                        </queries:Names>
+                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="addWarning"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:Variable value="decorationManager"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="org.whole.lang.operations.IDecorationManager"/>
+                            <workflows:StringLiteral value="addWarning(org.whole.lang.model.IEntity, java.lang.String, java.lang.String)"/>
+                            <workflows:Expressions initialCapacity="3">
+                                <workflows:Variable value="self"/>
+                                <workflows:Variable value="message"/>
+                                <workflows:Variable value="location"/>
+                            </workflows:Expressions>
+                        </workflows:InvokeJavaInstanceMethod>
+                    </queries:QueryDeclaration>
+                    <queries:Filter>
+                        <workflows:CreateJavaClassInstance xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="create map"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="java.util.HashMap"/>
+                            <workflows:StringLiteral value="HashMap()"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </workflows:CreateJavaClassInstance>
+                        <queries:VariableTest value="typeMap"/>
+                    </queries:Filter>
+                    <queries:Filter>
+                        <workflows:CreateJavaClassInstance xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="create set"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="java.util.HashSet"/>
+                            <workflows:StringLiteral value="HashSet()"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </workflows:CreateJavaClassInstance>
+                        <queries:VariableTest value="styleSet"/>
+                    </queries:Filter>
+                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                        <semantics:Name value="whole:org.whole.crossexamples.lwc13:QLSemantics#validate"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                    <queries:VoidLiteral/>
+                </queries:Block>
+            </queries:Scope>
+        </actions:SimpleAction>
         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>

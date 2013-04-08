@@ -4,7 +4,156 @@
     <semantics:Namespace value="org.whole.crossexamples.lwc13"/>
     <semantics:Name value="QL"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <semantics:SemanticFunctions initialCapacity="5">
+    <semantics:SemanticFunctions initialCapacity="6">
+        <semantics:SemanticFunction>
+            <semantics:Name value="validate"/>
+            <semantics:FunctionType>
+                <semantics:AnyType/>
+                <semantics:AnyType/>
+            </semantics:FunctionType>
+            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="6">
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Form"/>
+                    <queries:Block initialCapacity="2">
+                        <semantics:FunctionApplication>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#questions"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Question"/>
+                    <queries:Block initialCapacity="3">
+                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="typeMap.put(name, type)"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:Variable value="typeMap"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="java.util.Map"/>
+                            <workflows:StringLiteral value="put(java.lang.Object, java.lang.Object)"/>
+                            <workflows:Expressions initialCapacity="2">
+                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#name"/>
+                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#type"/>
+                            </workflows:Expressions>
+                        </workflows:InvokeJavaInstanceMethod>
+                        <semantics:FunctionApplication>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Name"/>
+                    <queries:Block initialCapacity="2">
+                        <queries:If>
+                            <queries:And initialCapacity="2">
+                                <queries:Or initialCapacity="2">
+                                    <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
+                                    <queries:Not>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:ParentStep/>
+                                        <queries:SubtypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Questions"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                    </queries:Not>
+                                </queries:Or>
+                                <queries:Not>
+                                    <queries:ExpressionTest>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="typeMap.containsKey(self)"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="typeMap"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="java.util.Map"/>
+                                        <workflows:StringLiteral value="containsKey(java.lang.Object)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:Variable value="self"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                    </queries:ExpressionTest>
+                                </queries:Not>
+                            </queries:And>
+                            <queries:Call>
+                                <queries:Name value="addError"/>
+                                <queries:Expressions initialCapacity="2">
+                                    <queries:StringLiteral value="Unknown question name"/>
+                                    <queries:SelfStep/>
+                                </queries:Expressions>
+                            </queries:Call>
+                        </queries:If>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLSModel#StyleDef"/>
+                    <queries:Block initialCapacity="2">
+                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="styleSet.add(name, type)"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:Variable value="styleSet"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="java.util.Set"/>
+                            <workflows:StringLiteral value="add(java.lang.Object)"/>
+                            <workflows:Expressions initialCapacity="1">
+                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLSModel#name"/>
+                            </workflows:Expressions>
+                        </workflows:InvokeJavaInstanceMethod>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLSModel#Name"/>
+                    <queries:Block initialCapacity="2">
+                        <queries:If>
+                            <queries:And initialCapacity="2">
+                                <queries:Or initialCapacity="2">
+                                    <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc13:QLSModel#titleStyle"/>
+                                    <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc13:QLSModel#style"/>
+                                </queries:Or>
+                                <queries:Not>
+                                    <queries:ExpressionTest>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="styleSet.contains(self)"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="styleSet"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="java.util.Set"/>
+                                        <workflows:StringLiteral value="contains(java.lang.Object)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:Variable value="self"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                    </queries:ExpressionTest>
+                                </queries:Not>
+                            </queries:And>
+                            <queries:Call>
+                                <queries:Name value="addError"/>
+                                <queries:Expressions initialCapacity="2">
+                                    <queries:StringLiteral value="Unknown style name"/>
+                                    <queries:SelfStep/>
+                                </queries:Expressions>
+                            </queries:Call>
+                        </queries:If>
+                        <queries:VoidLiteral/>
+                    </queries:Block>
+                </queries:If>
+                <queries:Do>
+                    <semantics:FunctionApplication>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <queries:ChildStep/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                </queries:Do>
+            </queries:Choose>
+        </semantics:SemanticFunction>
         <semantics:SemanticFunction>
             <semantics:Name value="toArtifacts"/>
             <semantics:FunctionType>
@@ -844,7 +993,12 @@
                                         <java:Types initialCapacity="0"/>
                                         <java:SimpleName value="valueOf"/>
                                         <java:Arguments initialCapacity="1">
-                                        <java:StringLiteral value="Box1HouseOwning"/>
+                                        <commons:StageDownFragment>
+                                        <semantics:TypeCast>
+                                        <semantics:EntityType value="http://lang.whole.org/Java#StringLiteral"/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#name"/>
+                                        </semantics:TypeCast>
+                                        </commons:StageDownFragment>
                                         </java:Arguments>
                                         </java:MethodInvocation>
                                         </java:Arguments>

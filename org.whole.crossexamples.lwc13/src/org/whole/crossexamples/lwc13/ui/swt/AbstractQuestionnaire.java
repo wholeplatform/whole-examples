@@ -55,6 +55,7 @@ public abstract class AbstractQuestionnaire {
 		shell.setText(title);
 		shell.setBounds(200, 200, 600, 800);
 		shell.pack();
+		shell.forceActive();
 		return shell;
 	}
 
