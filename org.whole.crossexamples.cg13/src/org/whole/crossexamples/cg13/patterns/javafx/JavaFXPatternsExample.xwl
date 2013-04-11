@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<javafxpatterns:Application xmlns:javafxpatterns="whole:org.whole.crossexamples.cg13.patterns.javafx:JavaFXPatternsModel">
+    <artifacts:Name xmlns:artifacts="http://lang.whole.org/Artifacts" value="org.whole.crossexamples.cg13.javafx"/>
+    <artifacts:Name xmlns:artifacts="http://lang.whole.org/Artifacts" value="org.whole.crossexamples.cg13.patterns.javafx.fxbeans"/>
+    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="JavaFXExampleApplication"/>
+    <java:StringLiteral xmlns:java="http://lang.whole.org/Java" value="JavaFX Example Application"/>
+    <javafxpatterns:Models initialCapacity="1">
+        <javafxpatterns:FXBeanModelArtifact>
+            <artifacts:Name xmlns:artifacts="http://lang.whole.org/Artifacts" value="org.whole.crossexamples.cg13.patterns.javafx.fxbeans"/>
+            <javafxpatterns:FXBeansArtifacts initialCapacity="2">
+                <javafxpatterns:FXBeanArtifact>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Rectangle"/>
+                    <javafxpatterns:Properties initialCapacity="3">
+                        <javafxpatterns:Property>
+                            <javafxpatterns:CommonlyUsed/>
+                            <java:PrimitiveType xmlns:java="http://lang.whole.org/Java" value="double"/>
+                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="width"/>
+                            <java:ByteLiteral xmlns:java="http://lang.whole.org/Java" value="20"/>
+                        </javafxpatterns:Property>
+                        <javafxpatterns:Property>
+                            <javafxpatterns:CommonlyUsed/>
+                            <java:PrimitiveType xmlns:java="http://lang.whole.org/Java" value="double"/>
+                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="height"/>
+                            <java:ByteLiteral xmlns:java="http://lang.whole.org/Java" value="30"/>
+                        </javafxpatterns:Property>
+                        <javafxpatterns:Property>
+                            <javafxpatterns:CommonlyUsed/>
+                            <java:PrimitiveType xmlns:java="http://lang.whole.org/Java" value="double"/>
+                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="area"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </javafxpatterns:Property>
+                    </javafxpatterns:Properties>
+                </javafxpatterns:FXBeanArtifact>
+                <javafxpatterns:FXBeanArtifact>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Balloon"/>
+                    <javafxpatterns:Properties initialCapacity="4">
+                        <javafxpatterns:Property>
+                            <javafxpatterns:CommonlyUsed/>
+                            <java:PrimitiveType xmlns:java="http://lang.whole.org/Java" value="double"/>
+                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="radius"/>
+                            <java:ByteLiteral xmlns:java="http://lang.whole.org/Java" value="20"/>
+                        </javafxpatterns:Property>
+                        <javafxpatterns:Property>
+                            <javafxpatterns:CommonlyUsed/>
+                            <java:QualifiedType xmlns:java="http://lang.whole.org/Java" value="javafx.scene.paint.Color"/>
+                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="color"/>
+                            <java:QualifiedName xmlns:java="http://lang.whole.org/Java" value="javafx.scene.paint.Color.RED"/>
+                        </javafxpatterns:Property>
+                        <javafxpatterns:Property>
+                            <javafxpatterns:RarelyUsed/>
+                            <java:PrimitiveType xmlns:java="http://lang.whole.org/Java" value="double"/>
+                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="radius2"/>
+                            <java:ByteLiteral xmlns:java="http://lang.whole.org/Java" value="20"/>
+                        </javafxpatterns:Property>
+                        <javafxpatterns:Property>
+                            <javafxpatterns:SimplyUsed/>
+                            <java:PrimitiveType xmlns:java="http://lang.whole.org/Java" value="double"/>
+                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="radius3"/>
+                            <java:ByteLiteral xmlns:java="http://lang.whole.org/Java" value="20"/>
+                        </javafxpatterns:Property>
+                    </javafxpatterns:Properties>
+                </javafxpatterns:FXBeanArtifact>
+            </javafxpatterns:FXBeansArtifacts>
+        </javafxpatterns:FXBeanModelArtifact>
+    </javafxpatterns:Models>
+</javafxpatterns:Application>

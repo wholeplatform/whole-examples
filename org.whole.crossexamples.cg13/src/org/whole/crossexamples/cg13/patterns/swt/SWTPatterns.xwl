@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+<patterns:PatternLanguage xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
+    <patterns:URI value="whole:org.whole.spl.assets:SWTPatterns"/>
+    <patterns:Namespace value="org.whole.spl.assets"/>
+    <patterns:Name value="SWTPatterns"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <patterns:Patterns initialCapacity="3">
+        <patterns:Pattern>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="Bundle"/>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="1">
+                    <patterns:JoinPointDeclaration>
+                        <patterns:Name value="packageArtifactsPoint"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:JoinPointDeclaration>
+                </patterns:Declarations>
+                <patterns:SequencePoint initialCapacity="2">
+                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <artifacts:Projects initialCapacity="1">
+                            <artifacts:Project>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <artifacts:Natures initialCapacity="1">
+                <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
+            </artifacts:Natures>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <patterns:JoinPoint>
+                                    <patterns:Name value="packageArtifactsPoint"/>
+                                    <artifacts:Artifacts initialCapacity="0"/>
+                                </patterns:JoinPoint>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </artifacts:Project>
+                        </artifacts:Projects>
+                    </artifacts:Workspace>
+                    <patterns:Slot>
+                        <patterns:Name value="application"/>
+                        <patterns:BooleanValue value="false"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <patterns:Name value="Application"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:Slot>
+                </patterns:SequencePoint>
+            </patterns:ScopePoint>
+        </patterns:Pattern>
+        <patterns:Pattern>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="Application"/>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="1">
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="nameGenerator"/>
+                        <workflows:CreateJavaClassInstance xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="createFreshNameGenerator"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                            <workflows:StringLiteral value="FreshNameGenerator()"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </workflows:CreateJavaClassInstance>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                </patterns:Declarations>
+                <patterns:ResultPoint>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <artifacts:FileArtifact xmlns:artifacts="http://lang.whole.org/Artifacts">
+                        <artifacts:NameWithExtension>
+                            <patterns:Slot>
+                                <patterns:Name value="name"/>
+                                <patterns:BooleanValue value="false"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Artifacts#Name"/>
+                            </patterns:Slot>
+                            <artifacts:Extension value="java"/>
+                        </artifacts:NameWithExtension>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                <java:PackageDeclaration>
+                                    <commons:Resolver/>
+                                    <commons:Resolver/>
+                                    <java:QualifiedName value="org.whole.crossexamples.cg13.patterns.swt"/>
+                                </java:PackageDeclaration>
+                                <java:ImportDeclarations initialCapacity="3">
+                                    <java:ImportDeclaration>
+                                        <java:QualifiedName value="org.eclipse.swt.SWT"/>
+                                        <java:ImportModifier value="false"/>
+                                        <java:ImportModifier value="false"/>
+                                    </java:ImportDeclaration>
+                                    <java:ImportDeclaration>
+                                        <java:QualifiedName value="org.eclipse.swt.layout"/>
+                                        <java:ImportModifier value="true"/>
+                                        <java:ImportModifier value="false"/>
+                                    </java:ImportDeclaration>
+                                    <java:ImportDeclaration>
+                                        <java:QualifiedName value="org.eclipse.swt.widgets"/>
+                                        <java:ImportModifier value="true"/>
+                                        <java:ImportModifier value="false"/>
+                                    </java:ImportDeclaration>
+                                </java:ImportDeclarations>
+                                <java:TypeDeclarations initialCapacity="1">
+                                    <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </patterns:Slot>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:BodyDeclarations initialCapacity="1">
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="2">
+                                        <java:Modifier value="public"/>
+                                        <java:Modifier value="static"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="main"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ArrayType>
+                                        <java:SimpleType value="String"/>
+                                        </java:ArrayType>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="args"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="4">
+                                        <java:VariableDeclarationStatement>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Display"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="display"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Display"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:VariableDeclarationStatement>
+                                        <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="1">
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="statementPoint"/>
+                                        <commons:Resolver/>
+                                        </patterns:JoinPointDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:SequencePoint initialCapacity="2">
+                                        <patterns:InsertionPoint>
+                                        <patterns:Name value="statementPoint"/>
+                                        </patterns:InsertionPoint>
+                                        <patterns:Slot>
+                                        <patterns:Name value="shells"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver/>
+                                        <patterns:Repetition>
+                                        <patterns:Name value="Shells"/>
+                                        <patterns:Name value="Shell"/>
+                                        </patterns:Repetition>
+                                        <commons:Resolver/>
+                                        </patterns:Slot>
+                                        </patterns:SequencePoint>
+                                        </patterns:ScopePoint>
+                                        <java:WhileStatement>
+                                        <java:PrefixExpression>
+                                        <java:PrefixOperator value="!"/>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="shell"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="isDisposed"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:PrefixExpression>
+                                        <java:IfStatement>
+                                        <java:PrefixExpression>
+                                        <java:PrefixOperator value="!"/>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="display"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="readAndDispatch"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:PrefixExpression>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="display"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="sleep"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <commons:Resolver/>
+                                        </java:IfStatement>
+                                        </java:WhileStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="display"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="dispose"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                    </java:ClassDeclaration>
+                                </java:TypeDeclarations>
+                            </java:CompilationUnit>
+                        </commons:StageUpFragment>
+                    </artifacts:FileArtifact>
+                    <patterns:Insert>
+                        <patterns:Placement value="AFTER_LAST_CHILD"/>
+                        <patterns:JoinPointStep value="packageArtifactsPoint"/>
+                    </patterns:Insert>
+                </patterns:ResultPoint>
+            </patterns:ScopePoint>
+        </patterns:Pattern>
+        <patterns:Pattern>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="Shell"/>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="1">
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="widgetName"/>
+                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="nextFreshName"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:Variable value="nameGenerator"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                            <workflows:StringLiteral value="nextFreshName(java.lang.String)"/>
+                            <workflows:Expressions initialCapacity="1">
+                                <workflows:StringLiteral value="shell"/>
+                            </workflows:Expressions>
+                        </workflows:InvokeJavaInstanceMethod>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                </patterns:Declarations>
+                <patterns:ResultPoint>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <patterns:InlinePoint>
+                        <java:Block xmlns:java="http://lang.whole.org/Java" initialCapacity="5">
+                            <java:VariableDeclarationStatement>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <java:SimpleType value="Shell"/>
+                                <java:VariableDeclarationFragments initialCapacity="1">
+                                    <java:VariableDeclarationFragment>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="widgetName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        </patterns:VariablePoint>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:SimpleType value="Shell"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="display"/>
+                                        </java:Arguments>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                    </java:VariableDeclarationFragment>
+                                </java:VariableDeclarationFragments>
+                            </java:VariableDeclarationStatement>
+                            <patterns:ConditionPoint>
+                                <patterns:SlotsDefined/>
+                                <java:ExpressionStatement>
+                                    <java:MethodInvocation>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="widgetName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        </patterns:VariablePoint>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setText"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <patterns:Slot>
+                                        <patterns:Name value="title"/>
+                                        <patterns:BooleanValue value="true"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        </java:Arguments>
+                                    </java:MethodInvocation>
+                                </java:ExpressionStatement>
+                            </patterns:ConditionPoint>
+                            <patterns:ConditionPoint>
+                                <patterns:SlotsDefined/>
+                                <java:ExpressionStatement>
+                                    <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="2">
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="statementPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPointDeclaration>
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="expressionPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPointDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:SequencePoint initialCapacity="2">
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="statementPoint"/>
+                                        <java:MethodInvocation>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="widgetName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        </patterns:VariablePoint>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="setLayout"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="expressionPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPoint>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </patterns:JoinPoint>
+                                        <patterns:Slot>
+                                        <patterns:Name value="layout"/>
+                                        <patterns:BooleanValue value="true"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        </patterns:SequencePoint>
+                                    </patterns:ScopePoint>
+                                </java:ExpressionStatement>
+                            </patterns:ConditionPoint>
+                            <patterns:ScopePoint>
+                                <patterns:Declarations initialCapacity="1">
+                                    <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="statementPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </patterns:JoinPointDeclaration>
+                                </patterns:Declarations>
+                                <patterns:SequencePoint initialCapacity="2">
+                                    <patterns:InsertionPoint>
+                                        <patterns:Name value="statementPoint"/>
+                                    </patterns:InsertionPoint>
+                                    <patterns:Slot>
+                                        <patterns:Name value="controls"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <patterns:Repetition>
+                                        <patterns:Name value="Controls"/>
+                                        <patterns:Name value="Control"/>
+                                        </patterns:Repetition>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </patterns:Slot>
+                                </patterns:SequencePoint>
+                            </patterns:ScopePoint>
+                            <java:ExpressionStatement>
+                                <java:MethodInvocation>
+                                    <patterns:VariablePoint>
+                                        <patterns:Name value="widgetName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                    </patterns:VariablePoint>
+                                    <java:Types initialCapacity="0"/>
+                                    <java:SimpleName value="open"/>
+                                    <java:Arguments initialCapacity="0"/>
+                                </java:MethodInvocation>
+                            </java:ExpressionStatement>
+                        </java:Block>
+                    </patterns:InlinePoint>
+                    <patterns:Insert>
+                        <patterns:Placement value="BEFORE"/>
+                        <patterns:JoinPointStep value="statementPoint"/>
+                    </patterns:Insert>
+                </patterns:ResultPoint>
+            </patterns:ScopePoint>
+        </patterns:Pattern>
+    </patterns:Patterns>
+</patterns:PatternLanguage>

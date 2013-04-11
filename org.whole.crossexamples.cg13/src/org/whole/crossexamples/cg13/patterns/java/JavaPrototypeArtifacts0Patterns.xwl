@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<patterns:PatternLanguage xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
+    <patterns:URI value="whole:org.whole.crossexamples.cg13.patterns.java:JavaPrototypeArtifacts0Patterns"/>
+    <patterns:Namespace value="org.whole.crossexamples.cg13.patterns.java"/>
+    <patterns:Name value="JavaPrototypeArtifacts0"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <patterns:Patterns initialCapacity="1">
+        <patterns:Pattern>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="JavaProject"/>
+            <patterns:TemplatePoint>
+                <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <artifacts:Projects initialCapacity="1">
+                        <artifacts:Project>
+                            <patterns:Slot>
+                                <patterns:Name value="name"/>
+                                <patterns:BooleanValue value="false"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Artifacts#Name"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </patterns:Slot>
+                            <artifacts:Natures initialCapacity="1">
+                                <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
+                            </artifacts:Natures>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <artifacts:Artifacts initialCapacity="3">
+                                <artifacts:FolderArtifact>
+                                    <artifacts:Name value="src"/>
+                                    <artifacts:Metadata>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <artifacts:Attributes initialCapacity="1">
+                                        <artifacts:Attribute value="source"/>
+                                        </artifacts:Attributes>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </artifacts:Metadata>
+                                    <patterns:Slot>
+                                        <patterns:Name value="artifacts"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </patterns:Slot>
+                                </artifacts:FolderArtifact>
+                                <artifacts:FileArtifact>
+                                    <artifacts:Name value=".classpath"/>
+                                    <artifacts:Metadata>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <artifacts:PersistenceKitId value="org.whole.lang.xml.codebase.XmlSourcePersistenceKit"/>
+                                    </artifacts:Metadata>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <wxml:Document xmlns:wxml="http://lang.whole.org/Xml">
+                                        <wxml:Prolog>
+                                        <wxml:XMLDecl>
+                                        <wxml:Version value="1.0"/>
+                                        <wxml:Encoding value="UTF-8"/>
+                                        <wxml:Standalone value="false"/>
+                                        </wxml:XMLDecl>
+                                        <commons:Resolver/>
+                                        <wxml:Misc initialCapacity="0"/>
+                                        </wxml:Prolog>
+                                        <wxml:Element>
+                                        <wxml:Name value="classpath"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="4">
+                                        <wxml:Element>
+                                        <wxml:Name value="classpathentry"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="kind"/>
+                                        <wxml:Value value="src"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="path"/>
+                                        <wxml:Value value="src"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <wxml:Content initialCapacity="0"/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="classpathentry"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="kind"/>
+                                        <wxml:Value value="con"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="path"/>
+                                        <wxml:Value value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <wxml:Content initialCapacity="0"/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="classpathentry"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="kind"/>
+                                        <wxml:Value value="con"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="path"/>
+                                        <wxml:Value value="org.whole.lang.ide.WHOLERT_CONTAINER"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <wxml:Content initialCapacity="0"/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="classpathentry"/>
+                                        <wxml:Attributes initialCapacity="2">
+                                        <wxml:Attribute>
+                                        <wxml:Name value="kind"/>
+                                        <wxml:Value value="output"/>
+                                        </wxml:Attribute>
+                                        <wxml:Attribute>
+                                        <wxml:Name value="path"/>
+                                        <wxml:Value value="bin"/>
+                                        </wxml:Attribute>
+                                        </wxml:Attributes>
+                                        <wxml:Content initialCapacity="0"/>
+                                        </wxml:Element>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        </wxml:Document>
+                                    </commons:StageUpFragment>
+                                </artifacts:FileArtifact>
+                                <artifacts:FileArtifact>
+                                    <artifacts:Name value=".project"/>
+                                    <artifacts:Metadata>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <artifacts:PersistenceKitId value="org.whole.lang.xml.codebase.XmlSourcePersistenceKit"/>
+                                    </artifacts:Metadata>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <wxml:Document xmlns:wxml="http://lang.whole.org/Xml">
+                                        <wxml:Prolog>
+                                        <wxml:XMLDecl>
+                                        <wxml:Version value="1.0"/>
+                                        <wxml:Encoding value="UTF-8"/>
+                                        <wxml:Standalone value="false"/>
+                                        </wxml:XMLDecl>
+                                        <commons:Resolver/>
+                                        <wxml:Misc initialCapacity="0"/>
+                                        </wxml:Prolog>
+                                        <wxml:Element>
+                                        <wxml:Name value="projectDescription"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="5">
+                                        <wxml:Element>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="1">
+                                        <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Artifacts#Name"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Xml#CharData"/>
+                                        </patterns:Slot>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="comment"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="0"/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="projects"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="0"/>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="buildSpec"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="1">
+                                        <wxml:Element>
+                                        <wxml:Name value="buildCommand"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="2">
+                                        <wxml:Element>
+                                        <wxml:Name value="name"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="1">
+                                        <wxml:CharData value="org.eclipse.jdt.core.javabuilder"/>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="arguments"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="0"/>
+                                        </wxml:Element>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        <wxml:Element>
+                                        <wxml:Name value="natures"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="1">
+                                        <wxml:Element>
+                                        <wxml:Name value="nature"/>
+                                        <wxml:Attributes initialCapacity="0"/>
+                                        <wxml:Content initialCapacity="1">
+                                        <wxml:CharData value="org.eclipse.jdt.core.javanature"/>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        </wxml:Content>
+                                        </wxml:Element>
+                                        </wxml:Document>
+                                    </commons:StageUpFragment>
+                                </artifacts:FileArtifact>
+                            </artifacts:Artifacts>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </artifacts:Project>
+                    </artifacts:Projects>
+                </artifacts:Workspace>
+            </patterns:TemplatePoint>
+        </patterns:Pattern>
+    </patterns:Patterns>
+</patterns:PatternLanguage>

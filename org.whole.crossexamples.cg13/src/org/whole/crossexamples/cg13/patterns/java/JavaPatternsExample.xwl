@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <artifacts:Projects initialCapacity="1">
+        <artifacts:Project>
+            <artifacts:Name value="org.whole.crossexamples.cg13.java"/>
+            <artifacts:Natures initialCapacity="1">
+                <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
+            </artifacts:Natures>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <artifacts:Artifacts initialCapacity="1">
+                <artifacts:FolderArtifact>
+                    <artifacts:Name value="src"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <artifacts:Artifacts initialCapacity="2">
+                        <artifacts:PackageArtifact>
+                            <artifacts:Name value="org.whole.crossexamples.cg13.patterns.java.beans"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <artifacts:Artifacts initialCapacity="3">
+                                <artifacts:FileArtifact>
+                                    <artifacts:NameWithExtension>
+                                        <artifacts:Name value="Person"/>
+                                        <artifacts:Extension value="java"/>
+                                    </artifacts:NameWithExtension>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <javapatterns:CompilationUnitDecorator xmlns:javapatterns="whole:org.whole.crossexamples.cg13.patterns.java:JavaPatternsModel">
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedName value="org.whole.crossexamples.cg13.patterns.java.beans"/>
+                                        </java:PackageDeclaration>
+                                        <javapatterns:ImportDeclarationsPoint>
+                                        <java:ImportDeclarations initialCapacity="1">
+                                        <java:ImportDeclaration>
+                                        <java:QualifiedName value="a.b.C"/>
+                                        <java:ImportModifier value="false"/>
+                                        <java:ImportModifier value="false"/>
+                                        </java:ImportDeclaration>
+                                        </java:ImportDeclarations>
+                                        </javapatterns:ImportDeclarationsPoint>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="Person"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:BodyDeclarations initialCapacity="6">
+                                        <javapatterns:Property>
+                                        <java:SimpleType value="String"/>
+                                        <java:SimpleName value="name"/>
+                                        </javapatterns:Property>
+                                        <javapatterns:Property>
+                                        <java:SimpleType value="String"/>
+                                        <java:SimpleName value="firstName"/>
+                                        </javapatterns:Property>
+                                        <javapatterns:Property>
+                                        <java:QualifiedType value="java.util.Date"/>
+                                        <java:SimpleName value="birthDate"/>
+                                        </javapatterns:Property>
+                                        <javapatterns:Field>
+                                        <java:SimpleType value="Car"/>
+                                        <java:SimpleName value="ownedCar"/>
+                                        </javapatterns:Field>
+                                        <javapatterns:Accessors>
+                                        <java:SimpleType value="Car"/>
+                                        <java:SimpleName value="ownedCar"/>
+                                        </javapatterns:Accessors>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Person"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
+                                        </java:ConstructorDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:ClassDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </javapatterns:CompilationUnitDecorator>
+                                    </commons:StageUpFragment>
+                                </artifacts:FileArtifact>
+                                <artifacts:FileArtifact>
+                                    <artifacts:NameWithExtension>
+                                        <artifacts:Name value="Car"/>
+                                        <artifacts:Extension value="java"/>
+                                    </artifacts:NameWithExtension>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <javapatterns:JavaBean xmlns:javapatterns="whole:org.whole.crossexamples.cg13.patterns.java:JavaPatternsModel">
+                                        <java:QualifiedName xmlns:java="http://lang.whole.org/Java" value="org.whole.crossexamples.cg13.patterns.java.beans"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Car"/>
+                                        <javapatterns:Properties initialCapacity="3">
+                                        <javapatterns:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="make"/>
+                                        </javapatterns:Property>
+                                        <javapatterns:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="model"/>
+                                        </javapatterns:Property>
+                                        <javapatterns:Property>
+                                        <java:QualifiedType xmlns:java="http://lang.whole.org/Java" value="java.util.Date"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="date"/>
+                                        </javapatterns:Property>
+                                        </javapatterns:Properties>
+                                        </javapatterns:JavaBean>
+                                    </commons:StageUpFragment>
+                                </artifacts:FileArtifact>
+                                <javapatterns:JavaBeanArtifact xmlns:javapatterns="whole:org.whole.crossexamples.cg13.patterns.java:JavaPatternsModel">
+                                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="CarArtifact"/>
+                                    <javapatterns:Properties initialCapacity="3">
+                                        <javapatterns:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="make"/>
+                                        </javapatterns:Property>
+                                        <javapatterns:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="model"/>
+                                        </javapatterns:Property>
+                                        <javapatterns:Property>
+                                        <java:QualifiedType xmlns:java="http://lang.whole.org/Java" value="java.util.Date"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="date"/>
+                                        </javapatterns:Property>
+                                    </javapatterns:Properties>
+                                </javapatterns:JavaBeanArtifact>
+                            </artifacts:Artifacts>
+                        </artifacts:PackageArtifact>
+                        <javapatterns:JavaBeanModelArtifact xmlns:javapatterns="whole:org.whole.crossexamples.cg13.patterns.java:JavaPatternsModel">
+                            <artifacts:Name value="org.whole.crossexamples.cg13.patterns.java.beansmodel"/>
+                            <javapatterns:JavaBeanArtifacts initialCapacity="2">
+                                <javapatterns:JavaBeanArtifact>
+                                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="CarArtifact"/>
+                                    <javapatterns:Properties initialCapacity="3">
+                                        <javapatterns:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="make"/>
+                                        </javapatterns:Property>
+                                        <javapatterns:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="model"/>
+                                        </javapatterns:Property>
+                                        <javapatterns:Property>
+                                        <java:QualifiedType xmlns:java="http://lang.whole.org/Java" value="java.util.Date"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="date"/>
+                                        </javapatterns:Property>
+                                    </javapatterns:Properties>
+                                </javapatterns:JavaBeanArtifact>
+                                <javapatterns:JavaBeanArtifact>
+                                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="PCArtifact"/>
+                                    <javapatterns:Properties initialCapacity="1">
+                                        <javapatterns:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="model"/>
+                                        </javapatterns:Property>
+                                    </javapatterns:Properties>
+                                </javapatterns:JavaBeanArtifact>
+                            </javapatterns:JavaBeanArtifacts>
+                        </javapatterns:JavaBeanModelArtifact>
+                    </artifacts:Artifacts>
+                </artifacts:FolderArtifact>
+            </artifacts:Artifacts>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </artifacts:Project>
+    </artifacts:Projects>
+</artifacts:Workspace>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<swtpatterns:Bundle xmlns:swtpatterns="whole:org.whole.spl.assets:SWTPatternsModel">
+    <swtpatterns:Application>
+        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MySWTApp"/>
+        <swtpatterns:Shells initialCapacity="1">
+            <swtpatterns:Shell>
+                <java:StringLiteral xmlns:java="http://lang.whole.org/Java" value="Shell title"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <swtpatterns:Controls initialCapacity="0"/>
+            </swtpatterns:Shell>
+        </swtpatterns:Shells>
+    </swtpatterns:Application>
+</swtpatterns:Bundle>
