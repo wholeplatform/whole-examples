@@ -79,35 +79,7 @@
                                     <java:Types initialCapacity="1">
                                         <java:SimpleType value="Statement"/>
                                     </java:Types>
-                                    <java:BodyDeclarations initialCapacity="11">
-                                        <java:FieldDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="private"/>
-                                        </java:ExtendedModifiers>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:VariableDeclarationFragments initialCapacity="1">
-                                        <java:VariableDeclarationFragment>
-                                        <java:SimpleName value="condition"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        </java:VariableDeclarationFragment>
-                                        </java:VariableDeclarationFragments>
-                                        </java:FieldDeclaration>
-                                        <java:FieldDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="private"/>
-                                        </java:ExtendedModifiers>
-                                        <java:SimpleType value="Statement"/>
-                                        <java:VariableDeclarationFragments initialCapacity="1">
-                                        <java:VariableDeclarationFragment>
-                                        <java:SimpleName value="trueBody"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        </java:VariableDeclarationFragment>
-                                        </java:VariableDeclarationFragments>
-                                        </java:FieldDeclaration>
+                                    <java:BodyDeclarations initialCapacity="7">
                                         <java:FieldDeclaration>
                                         <commons:Resolver/>
                                         <java:ExtendedModifiers initialCapacity="1">
@@ -141,23 +113,7 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="If"/>
-                                        <java:Parameters initialCapacity="3">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="condition"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Statement"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="trueBody"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
+                                        <java:Parameters initialCapacity="1">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
                                         <java:SimpleType value="Statement"/>
@@ -169,31 +125,7 @@
                                         </java:Parameters>
                                         <commons:Resolver/>
                                         <commons:Resolver/>
-                                        <java:Block initialCapacity="3">
-                                        <java:ExpressionStatement>
-                                        <java:Assignment>
-                                        <java:FieldAccess>
-                                        <java:ThisExpression>
-                                        <commons:Resolver/>
-                                        </java:ThisExpression>
-                                        <java:SimpleName value="condition"/>
-                                        </java:FieldAccess>
-                                        <java:AssignmentOperator value="="/>
-                                        <java:SimpleName value="condition"/>
-                                        </java:Assignment>
-                                        </java:ExpressionStatement>
-                                        <java:ExpressionStatement>
-                                        <java:Assignment>
-                                        <java:FieldAccess>
-                                        <java:ThisExpression>
-                                        <commons:Resolver/>
-                                        </java:ThisExpression>
-                                        <java:SimpleName value="trueBody"/>
-                                        </java:FieldAccess>
-                                        <java:AssignmentOperator value="="/>
-                                        <java:SimpleName value="trueBody"/>
-                                        </java:Assignment>
-                                        </java:ExpressionStatement>
+                                        <java:Block initialCapacity="1">
                                         <java:ExpressionStatement>
                                         <java:Assignment>
                                         <java:FieldAccess>
@@ -208,6 +140,14 @@
                                         </java:ExpressionStatement>
                                         </java:Block>
                                         </java:ConstructorDeclaration>
+                                        <javaprototypeartifacts1:Property xmlns:javaprototypeartifacts1="whole:org.whole.crossexamples.cg13.patterns.java:JavaPrototypeArtifacts1PatternsModel">
+                                        <java:SimpleType value="Expression"/>
+                                        <java:SimpleName value="condition"/>
+                                        </javaprototypeartifacts1:Property>
+                                        <javaprototypeartifacts1:Property xmlns:javaprototypeartifacts1="whole:org.whole.crossexamples.cg13.patterns.java:JavaPrototypeArtifacts1PatternsModel">
+                                        <java:SimpleType value="Statement"/>
+                                        <java:SimpleName value="trueBody"/>
+                                        </javaprototypeartifacts1:Property>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
                                         <java:ExtendedModifiers initialCapacity="1">
@@ -256,110 +196,6 @@
                                         </java:FieldAccess>
                                         <java:AssignmentOperator value="="/>
                                         <java:SimpleName value="falseBody"/>
-                                        </java:Assignment>
-                                        </java:ExpressionStatement>
-                                        </java:Block>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:SimpleName value="getCondition"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
-                                        <java:ReturnStatement>
-                                        <java:SimpleName value="condition"/>
-                                        </java:ReturnStatement>
-                                        </java:Block>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:PrimitiveType value="void"/>
-                                        <java:SimpleName value="setCondition"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="condition"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
-                                        <java:ExpressionStatement>
-                                        <java:Assignment>
-                                        <java:FieldAccess>
-                                        <java:ThisExpression>
-                                        <commons:Resolver/>
-                                        </java:ThisExpression>
-                                        <java:SimpleName value="condition"/>
-                                        </java:FieldAccess>
-                                        <java:AssignmentOperator value="="/>
-                                        <java:SimpleName value="condition"/>
-                                        </java:Assignment>
-                                        </java:ExpressionStatement>
-                                        </java:Block>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Statement"/>
-                                        <java:SimpleName value="getTrueBody"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
-                                        <java:ReturnStatement>
-                                        <java:SimpleName value="trueBody"/>
-                                        </java:ReturnStatement>
-                                        </java:Block>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:PrimitiveType value="void"/>
-                                        <java:SimpleName value="setTrueBody"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Statement"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="trueBody"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
-                                        <java:ExpressionStatement>
-                                        <java:Assignment>
-                                        <java:FieldAccess>
-                                        <java:ThisExpression>
-                                        <commons:Resolver/>
-                                        </java:ThisExpression>
-                                        <java:SimpleName value="trueBody"/>
-                                        </java:FieldAccess>
-                                        <java:AssignmentOperator value="="/>
-                                        <java:SimpleName value="trueBody"/>
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
