@@ -135,8 +135,8 @@
                 </modulespatterns:ReuseEntity>
             </models:SimpleEntity>
         </models:ModelDeclarations>
+        <models:Namespace value="namespace"/>
         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <models:URI value="uRI"/>
     </models:Model>
 </misc:Misc>
