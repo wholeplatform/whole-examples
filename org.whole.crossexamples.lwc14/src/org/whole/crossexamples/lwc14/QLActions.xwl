@@ -122,7 +122,7 @@
         </actions:SimpleAction>
     </actions:ToolbarActions>
     <actions:ContextMenuActions>
-        <actions:MenuActions initialCapacity="1">
+        <actions:MenuActions initialCapacity="3">
             <actions:GuardedAction>
                 <actions:Label value="Generate Binary Search Questionnaire"/>
                 <queries:PointwiseUpdate xmlns:queries="http://lang.whole.org/Queries">
@@ -134,10 +134,32 @@
                 </queries:PointwiseUpdate>
                 <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Generate Binary Search Questionnaire To Reuse"/>
+                <queries:PointwiseUpdate xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:SelfStep/>
+                    <actions:ActionCall>
+                        <actions:Label value="whole:org.whole.crossexamples.lwc14:QLActions#Derive Binary Search Questionnaire To Reuse"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </actions:ActionCall>
+                </queries:PointwiseUpdate>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Generate Binary Search Questionnaire With Reuse"/>
+                <queries:PointwiseUpdate xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:SelfStep/>
+                    <actions:ActionCall>
+                        <actions:Label value="whole:org.whole.crossexamples.lwc14:QLActions#Derive Binary Search Questionnaire With Reuse"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </actions:ActionCall>
+                </queries:PointwiseUpdate>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
         </actions:MenuActions>
         <actions:MenuActions initialCapacity="0"/>
         <actions:MenuActions initialCapacity="0"/>
-        <actions:MenuActions initialCapacity="4">
+        <actions:MenuActions initialCapacity="6">
             <actions:GuardedAction>
                 <actions:Label value="Derive Binary Search Questionnaire"/>
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
@@ -345,6 +367,601 @@
                                     <queries:Expressions initialCapacity="2">
                                         <queries:VariableRefStep value="min"/>
                                         <queries:VariableRefStep value="max"/>
+                                    </queries:Expressions>
+                                </queries:Call>
+                                <queries:VariableTest value="questions"/>
+                            </queries:Filter>
+                            <queries:TemplateNames/>
+                        </queries:Select>
+                    </queries:Block>
+                </queries:Scope>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Derive Binary Search Questionnaire To Reuse"/>
+                <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Names initialCapacity="5">
+                        <queries:Name value="generateQuestions"/>
+                        <queries:Name value="nameGenerator"/>
+                        <queries:Name value="min"/>
+                        <queries:Name value="max"/>
+                        <queries:Name value="questions"/>
+                    </queries:Names>
+                    <queries:Block initialCapacity="4">
+                        <queries:QueryDeclaration>
+                            <queries:Name value="generateQuestions"/>
+                            <queries:Names initialCapacity="4">
+                                <queries:Name value="min"/>
+                                <queries:Name value="max"/>
+                                <queries:Name value="middle"/>
+                                <queries:Name value="name"/>
+                            </queries:Names>
+                            <queries:Choose initialCapacity="2">
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:GreaterOrEquals>
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:VariableRefStep value="max"/>
+                                        </queries:GreaterOrEquals>
+                                    </queries:ExpressionTest>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <ql:SequentialQuestions xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel" initialCapacity="2">
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
+                                        <commons:StageDownFragment>
+                                        <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <semantics:EntityType value="whole:org.whole.crossexamples.lwc14:QLSModel#Text"/>
+                                        <queries:VariableRefStep value="min"/>
+                                        </semantics:TypeCast>
+                                        </commons:StageDownFragment>
+                                        </ql:SequentialQuestions>
+                                    </commons:StageUpFragment>
+                                </queries:If>
+                                <queries:Do>
+                                    <queries:Block initialCapacity="3">
+                                        <queries:Filter>
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:Division>
+                                        <queries:Subtraction>
+                                        <queries:VariableRefStep value="max"/>
+                                        <queries:VariableRefStep value="min"/>
+                                        </queries:Subtraction>
+                                        <queries:IntLiteral value="2"/>
+                                        </queries:Division>
+                                        </queries:Addition>
+                                        <queries:VariableTest value="middle"/>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="nextFreshName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="nameGenerator"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                                        <workflows:StringLiteral value="nextFreshName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:StringLiteral value="question"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        <queries:VariableTest value="name"/>
+                                        </queries:Filter>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <ql:SequentialQuestions xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel" initialCapacity="3">
+                                        <ql:Question>
+                                        <commons:Variable>
+                                        <commons:VarType value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:StageDownFragment>
+                                        <queries:Choose initialCapacity="2">
+                                        <queries:If>
+                                        <queries:ExpressionTest>
+                                        <math:Equals xmlns:math="http://lang.whole.org/Math" initialCapacity="2">
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:VariableRefStep value="middle"/>
+                                        </math:Equals>
+                                        </queries:ExpressionTest>
+                                        <workflows:CreateEntity xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="create stage down"/>
+                                        <commons:Resolver/>
+                                        <workflows:Registry value="DEFAULT"/>
+                                        <workflows:StringLiteral value="http://lang.whole.org/Commons#StageDownFragment"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <commons:StageUpFragment>
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="3">
+                                        <text:Text value="is the answer"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="min"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <text:Text value="?"/>
+                                        </text:Row>
+                                        </commons:StageUpFragment>
+                                        </workflows:Expressions>
+                                        </workflows:CreateEntity>
+                                        </queries:If>
+                                        <queries:Do>
+                                        <workflows:CreateEntity xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="create stage down"/>
+                                        <commons:Resolver/>
+                                        <workflows:Registry value="DEFAULT"/>
+                                        <workflows:StringLiteral value="http://lang.whole.org/Commons#StageDownFragment"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <commons:StageUpFragment>
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="5">
+                                        <text:Text value="is the answer between"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="min"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <text:Text value="and"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="middle"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <text:Text value="?"/>
+                                        </text:Row>
+                                        </commons:StageUpFragment>
+                                        </workflows:Expressions>
+                                        </workflows:CreateEntity>
+                                        </queries:Do>
+                                        </queries:Choose>
+                                        </commons:StageDownFragment>
+                                        <ql:PrimitiveType value="BOOLEAN"/>
+                                        <commons:Resolver/>
+                                        </ql:Question>
+                                        <ql:ConditionalQuestions>
+                                        <commons:Variable>
+                                        <commons:VarType value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:StageDownFragment>
+                                        <queries:Call>
+                                        <queries:Name value="generateQuestions"/>
+                                        <queries:Expressions initialCapacity="2">
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:VariableRefStep value="middle"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                        </commons:StageDownFragment>
+                                        </ql:ConditionalQuestions>
+                                        <ql:ConditionalQuestions>
+                                        <math:Not xmlns:math="http://lang.whole.org/Math">
+                                        <commons:Variable>
+                                        <commons:VarType value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </math:Not>
+                                        <commons:StageDownFragment>
+                                        <queries:Call>
+                                        <queries:Name value="generateQuestions"/>
+                                        <queries:Expressions initialCapacity="2">
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="middle"/>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:Addition>
+                                        <queries:VariableRefStep value="max"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                        </commons:StageDownFragment>
+                                        </ql:ConditionalQuestions>
+                                        </ql:SequentialQuestions>
+                                        </commons:StageUpFragment>
+                                    </queries:Block>
+                                </queries:Do>
+                            </queries:Choose>
+                        </queries:QueryDeclaration>
+                        <queries:Filter>
+                            <workflows:CreateJavaClassInstance xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="createFreshNameGenerator"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                                <workflows:StringLiteral value="FreshNameGenerator()"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </workflows:CreateJavaClassInstance>
+                            <queries:VariableTest value="nameGenerator"/>
+                        </queries:Filter>
+                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="Configure interval"/>
+                                <workflows:Text value="Choose min and max values"/>
+                                <workflows:Assignments initialCapacity="2">
+                                    <workflows:Assign>
+                                        <workflows:Variable value="min"/>
+                                        <queries:IntLiteral value="1"/>
+                                    </workflows:Assign>
+                                    <workflows:Assign>
+                                        <workflows:Variable value="max"/>
+                                        <queries:IntLiteral value="1024"/>
+                                    </workflows:Assign>
+                                </workflows:Assignments>
+                                <commons:Resolver/>
+                            </workflows:Task>
+                        </commons:SameStageFragment>
+                        <queries:Select>
+                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
+                                    <ql:Name value="Binary Search Tree"/>
+                                    <commons:Variable>
+                                        <commons:VarType value="whole:org.whole.crossexamples.lwc14:QLModel#Questions"/>
+                                        <commons:VarName value="questions"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                </ql:Form>
+                            </commons:StageUpFragment>
+                            <queries:SelfStep/>
+                            <queries:Filter>
+                                <queries:Call>
+                                    <queries:Name value="generateQuestions"/>
+                                    <queries:Expressions initialCapacity="2">
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:VariableRefStep value="max"/>
+                                    </queries:Expressions>
+                                </queries:Call>
+                                <queries:VariableTest value="questions"/>
+                            </queries:Filter>
+                            <queries:TemplateNames/>
+                        </queries:Select>
+                    </queries:Block>
+                </queries:Scope>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Derive Binary Search Questionnaire With Reuse"/>
+                <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Names initialCapacity="5">
+                        <queries:Name value="generateQuestions"/>
+                        <queries:Name value="nameGenerator"/>
+                        <queries:Name value="min"/>
+                        <queries:Name value="max"/>
+                        <queries:Name value="questions"/>
+                    </queries:Names>
+                    <queries:Block initialCapacity="4">
+                        <queries:QueryDeclaration>
+                            <queries:Name value="generateQuestions"/>
+                            <queries:Names initialCapacity="5">
+                                <queries:Name value="min"/>
+                                <queries:Name value="max"/>
+                                <queries:Name value="width"/>
+                                <queries:Name value="middle"/>
+                                <queries:Name value="name"/>
+                            </queries:Names>
+                            <queries:Choose initialCapacity="2">
+                                <queries:If>
+                                    <queries:ExpressionTest>
+                                        <queries:LessOrEquals>
+                                        <queries:Addition>
+                                        <queries:Subtraction>
+                                        <queries:VariableRefStep value="max"/>
+                                        <queries:VariableRefStep value="min"/>
+                                        </queries:Subtraction>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:Addition>
+                                        <queries:VariableRefStep value="width"/>
+                                        </queries:LessOrEquals>
+                                    </queries:ExpressionTest>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <reusables:Reuse xmlns:reusables="whole:org.whole.lang.reusables:ReusablesModel">
+                                        <reusables:Resource>
+                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <commons:Resolver/>
+                                        </reusables:Resource>
+                                        <commons:Resolver/>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
+                                        <queries:Block initialCapacity="4">
+                                        <queries:CartesianUpdate>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:DescendantStep/>
+                                        <queries:Choose initialCapacity="2">
+                                        <queries:Path initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Question"/>
+                                        </queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#name"/>
+                                        </queries:Path>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#ConditionalQuestions"/>
+                                        </queries:Filter>
+                                        <queries:Choose initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        </queries:Filter>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lang.whole.org/Math#expression"/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        </queries:Filter>
+                                        </queries:Path>
+                                        </queries:Choose>
+                                        </queries:Path>
+                                        </queries:Choose>
+                                        </queries:Path>
+                                        <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <semantics:EntityType value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        <queries:Addition>
+                                        <queries:Singleton>
+                                        <queries:SelfStep/>
+                                        </queries:Singleton>
+                                        <queries:Addition>
+                                        <queries:StringLiteral value="_gen"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Text#Text"/>
+                                        <commons:VarName value="min"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </queries:Addition>
+                                        </queries:Addition>
+                                        </semantics:TypeCast>
+                                        </queries:CartesianUpdate>
+                                        <queries:CartesianUpdate>
+                                        <queries:Path initialCapacity="5">
+                                        <queries:DescendantStep/>
+                                        <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Question"/>
+                                        </queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#label"/>
+                                        <queries:FeatureStep value="http://lang.whole.org/Commons#rootEntity"/>
+                                        <queries:Sequence initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:ChildStep/>
+                                        <queries:IndexTest>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:IndexTest>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <queries:ChildStep/>
+                                        <queries:IndexTest>
+                                        <queries:IntLiteral value="3"/>
+                                        </queries:IndexTest>
+                                        </queries:Filter>
+                                        </queries:Sequence>
+                                        </queries:Path>
+                                        <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <semantics:EntityType value="http://lang.whole.org/Text#Text"/>
+                                        <queries:Addition>
+                                        <queries:Singleton>
+                                        <semantics:TypeCast>
+                                        <semantics:EntityType value="http://lang.whole.org/Queries#IntLiteral"/>
+                                        <queries:SelfStep/>
+                                        </semantics:TypeCast>
+                                        </queries:Singleton>
+                                        <commons:StageDownFragment>
+                                        <queries:Subtraction>
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:Subtraction>
+                                        </commons:StageDownFragment>
+                                        </queries:Addition>
+                                        </semantics:TypeCast>
+                                        </queries:CartesianUpdate>
+                                        <queries:CartesianUpdate>
+                                        <queries:Path initialCapacity="4">
+                                        <queries:DescendantStep/>
+                                        <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#ConditionalQuestions"/>
+                                        </queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
+                                        <queries:Filter>
+                                        <queries:ChildStep/>
+                                        <queries:And initialCapacity="2">
+                                        <queries:IndexTest>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:IndexTest>
+                                        <queries:KindTest value="DATA"/>
+                                        </queries:And>
+                                        </queries:Filter>
+                                        </queries:Path>
+                                        <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <semantics:EntityType value="whole:org.whole.crossexamples.lwc14:QLSModel#Text"/>
+                                        <queries:Addition>
+                                        <queries:Singleton>
+                                        <semantics:TypeCast>
+                                        <semantics:EntityType value="http://lang.whole.org/Queries#IntLiteral"/>
+                                        <queries:SelfStep/>
+                                        </semantics:TypeCast>
+                                        </queries:Singleton>
+                                        <commons:StageDownFragment>
+                                        <queries:Subtraction>
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:Subtraction>
+                                        </commons:StageDownFragment>
+                                        </queries:Addition>
+                                        </semantics:TypeCast>
+                                        </queries:CartesianUpdate>
+                                        <queries:SelfStep/>
+                                        </queries:Block>
+                                        </queries:Path>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </reusables:Reuse>
+                                    </commons:StageUpFragment>
+                                </queries:If>
+                                <queries:Do>
+                                    <queries:Block initialCapacity="3">
+                                        <queries:Filter>
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:Division>
+                                        <queries:Subtraction>
+                                        <queries:VariableRefStep value="max"/>
+                                        <queries:VariableRefStep value="min"/>
+                                        </queries:Subtraction>
+                                        <queries:IntLiteral value="2"/>
+                                        </queries:Division>
+                                        </queries:Addition>
+                                        <queries:VariableTest value="middle"/>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="nextFreshName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="nameGenerator"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                                        <workflows:StringLiteral value="nextFreshName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:StringLiteral value="question"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        <queries:VariableTest value="name"/>
+                                        </queries:Filter>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <ql:SequentialQuestions xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel" initialCapacity="3">
+                                        <ql:Question>
+                                        <commons:Variable>
+                                        <commons:VarType value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:StageDownFragment>
+                                        <queries:Choose initialCapacity="2">
+                                        <queries:If>
+                                        <queries:ExpressionTest>
+                                        <math:Equals xmlns:math="http://lang.whole.org/Math" initialCapacity="2">
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:VariableRefStep value="middle"/>
+                                        </math:Equals>
+                                        </queries:ExpressionTest>
+                                        <queries:Addition>
+                                        <queries:StringLiteral value="is the answer "/>
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:StringLiteral value="?"/>
+                                        </queries:Addition>
+                                        </queries:Addition>
+                                        </queries:If>
+                                        <queries:Do>
+                                        <queries:Addition>
+                                        <queries:StringLiteral value="is the answer between "/>
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:Addition>
+                                        <queries:StringLiteral value=" and "/>
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="middle"/>
+                                        <queries:StringLiteral value=" ?"/>
+                                        </queries:Addition>
+                                        </queries:Addition>
+                                        </queries:Addition>
+                                        </queries:Addition>
+                                        </queries:Do>
+                                        </queries:Choose>
+                                        </commons:StageDownFragment>
+                                        <ql:PrimitiveType value="BOOLEAN"/>
+                                        <commons:Resolver/>
+                                        </ql:Question>
+                                        <ql:ConditionalQuestions>
+                                        <commons:Variable>
+                                        <commons:VarType value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:StageDownFragment>
+                                        <queries:Call>
+                                        <queries:Name value="generateQuestions"/>
+                                        <queries:Expressions initialCapacity="3">
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:VariableRefStep value="middle"/>
+                                        <queries:VariableRefStep value="width"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                        </commons:StageDownFragment>
+                                        </ql:ConditionalQuestions>
+                                        <ql:ConditionalQuestions>
+                                        <math:Not xmlns:math="http://lang.whole.org/Math">
+                                        <commons:Variable>
+                                        <commons:VarType value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </math:Not>
+                                        <commons:StageDownFragment>
+                                        <queries:Call>
+                                        <queries:Name value="generateQuestions"/>
+                                        <queries:Expressions initialCapacity="3">
+                                        <queries:Addition>
+                                        <queries:VariableRefStep value="middle"/>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:Addition>
+                                        <queries:VariableRefStep value="max"/>
+                                        <queries:VariableRefStep value="width"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                        </commons:StageDownFragment>
+                                        </ql:ConditionalQuestions>
+                                        </ql:SequentialQuestions>
+                                        </commons:StageUpFragment>
+                                    </queries:Block>
+                                </queries:Do>
+                            </queries:Choose>
+                        </queries:QueryDeclaration>
+                        <queries:Filter>
+                            <workflows:CreateJavaClassInstance xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="createFreshNameGenerator"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                                <workflows:StringLiteral value="FreshNameGenerator()"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </workflows:CreateJavaClassInstance>
+                            <queries:VariableTest value="nameGenerator"/>
+                        </queries:Filter>
+                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="Configure interval"/>
+                                <workflows:Text value="Choose min and max values"/>
+                                <workflows:Assignments initialCapacity="3">
+                                    <workflows:Assign>
+                                        <workflows:Variable value="min"/>
+                                        <queries:IntLiteral value="1"/>
+                                    </workflows:Assign>
+                                    <workflows:Assign>
+                                        <workflows:Variable value="max"/>
+                                        <queries:IntLiteral value="1024"/>
+                                    </workflows:Assign>
+                                    <workflows:Assign>
+                                        <workflows:Variable value="width"/>
+                                        <queries:IntLiteral value="32"/>
+                                    </workflows:Assign>
+                                </workflows:Assignments>
+                                <commons:Resolver/>
+                            </workflows:Task>
+                        </commons:SameStageFragment>
+                        <queries:Select>
+                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
+                                    <ql:Name value="Binary Search Tree"/>
+                                    <commons:Variable>
+                                        <commons:VarType value="whole:org.whole.crossexamples.lwc14:QLModel#Questions"/>
+                                        <commons:VarName value="questions"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                </ql:Form>
+                            </commons:StageUpFragment>
+                            <queries:SelfStep/>
+                            <queries:Filter>
+                                <queries:Call>
+                                    <queries:Name value="generateQuestions"/>
+                                    <queries:Expressions initialCapacity="3">
+                                        <queries:VariableRefStep value="min"/>
+                                        <queries:VariableRefStep value="max"/>
+                                        <queries:VariableRefStep value="width"/>
                                     </queries:Expressions>
                                 </queries:Call>
                                 <queries:VariableTest value="questions"/>
