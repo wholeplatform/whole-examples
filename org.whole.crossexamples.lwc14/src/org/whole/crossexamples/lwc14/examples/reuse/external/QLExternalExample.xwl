@@ -13,7 +13,7 @@
                 <ql:Name value="question"/>
                 <reusables:Reuse>
                     <reusables:Resource>
-                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/reuse/a_outer/QLOuterExamplePart1.xwl"/>
+                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/reuse/external/QLExternalExamplePart1.xwl"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </reusables:Resource>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -28,7 +28,7 @@
                 </math:Not>
                 <reusables:Reuse>
                     <reusables:Resource>
-                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/reuse/a_outer/QLOuterExamplePart1.xwl"/>
+                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/reuse/external/QLExternalExamplePart1.xwl"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </reusables:Resource>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
