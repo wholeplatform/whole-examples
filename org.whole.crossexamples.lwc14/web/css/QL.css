@@ -1,0 +1,68 @@
+body {
+    background-color: #ccc;
+    color: #21759b;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button:disabled {
+    color: grey;
+}
+
+#container {
+    padding: 20px;
+    margin: 20px;
+    background: #000;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#menu ul {
+    list-style-type: none;
+    background-image: url(../img/navi_bg.png);
+    height: 80px;
+    width: 800px;
+    margin: auto;
+}
+
+#menu li {
+    float: left;
+}
+
+#menu ul a {
+    background-image: url(../img/navi_bg_divider.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 32px;
+    padding-left: 32px;
+    display: block;
+    line-height: 80px;
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 21px;
+    color: #371C1C;
+}
+
+#menu ul a:hover {
+    color: #FFF;
+}
+
+#QL-content {
+    color: #ffffff
+}
+
+QL-content .formcontainer {
+    padding: 20px;
+    background-color: #ccc;
+}
+#QL-content ol {
+    list-style-type: none;
+}
+
+#QL-content input, select {
+    margin: 6px;
+}

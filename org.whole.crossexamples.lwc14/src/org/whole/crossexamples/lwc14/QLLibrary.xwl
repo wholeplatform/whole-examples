@@ -1,0 +1,1743 @@
+<?xml version="1.0"?>
+<reusables:Adapt xmlns:reusables="whole:org.whole.lang.reusables:ReusablesModel">
+    <patterns:Library xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
+        <patterns:URI value="whole:org.whole.crossexamples.lwc14:QLLibrary"/>
+        <patterns:Namespace value="org.whole.crossexamples.lwc14"/>
+        <patterns:Name value="QLLibrary"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <patterns:Declarations initialCapacity="5">
+            <patterns:FunctionDeclaration>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <patterns:Name value="validate"/>
+                <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="6">
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Form"/>
+                        <queries:Block initialCapacity="2">
+                            <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </semantics:FunctionApplication>
+                            <queries:VoidLiteral/>
+                        </queries:Block>
+                    </queries:If>
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Question"/>
+                        <queries:Block initialCapacity="3">
+                            <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="typeMap.put(name, type)"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:Variable value="typeMap"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="java.util.Map"/>
+                                <workflows:StringLiteral value="put(java.lang.Object, java.lang.Object)"/>
+                                <workflows:Expressions initialCapacity="2">
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#name"/>
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#type"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaInstanceMethod>
+                            <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#expression"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </semantics:FunctionApplication>
+                            <queries:VoidLiteral/>
+                        </queries:Block>
+                    </queries:If>
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                        <queries:Block initialCapacity="2">
+                            <queries:If>
+                                <queries:And initialCapacity="2">
+                                    <queries:Or initialCapacity="3">
+                                        <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc14:QLModel#expression"/>
+                                        <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:ParentStep/>
+                                        <queries:LanguageTest value="http://lang.whole.org/Math"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                    </queries:Or>
+                                    <queries:Not>
+                                        <queries:ExpressionTest>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="typeMap.containsKey(self)"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="typeMap"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="java.util.Map"/>
+                                        <workflows:StringLiteral value="containsKey(java.lang.Object)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:Variable value="self"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        </queries:ExpressionTest>
+                                    </queries:Not>
+                                </queries:And>
+                                <queries:Call>
+                                    <queries:Name value="addError"/>
+                                    <queries:Expressions initialCapacity="2">
+                                        <queries:StringLiteral value="Unknown question name"/>
+                                        <queries:SelfStep/>
+                                    </queries:Expressions>
+                                </queries:Call>
+                            </queries:If>
+                            <queries:VoidLiteral/>
+                        </queries:Block>
+                    </queries:If>
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLSModel#StyleDef"/>
+                        <queries:Block initialCapacity="2">
+                            <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="styleSet.add(name, type)"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:Variable value="styleSet"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="java.util.Set"/>
+                                <workflows:StringLiteral value="add(java.lang.Object)"/>
+                                <workflows:Expressions initialCapacity="1">
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#name"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaInstanceMethod>
+                            <queries:VoidLiteral/>
+                        </queries:Block>
+                    </queries:If>
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLSModel#Name"/>
+                        <queries:Block initialCapacity="2">
+                            <queries:If>
+                                <queries:And initialCapacity="2">
+                                    <queries:Or initialCapacity="2">
+                                        <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc14:QLSModel#titleStyle"/>
+                                        <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc14:QLSModel#style"/>
+                                    </queries:Or>
+                                    <queries:Not>
+                                        <queries:ExpressionTest>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="styleSet.contains(self)"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="styleSet"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="java.util.Set"/>
+                                        <workflows:StringLiteral value="contains(java.lang.Object)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:Variable value="self"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        </queries:ExpressionTest>
+                                    </queries:Not>
+                                </queries:And>
+                                <queries:Call>
+                                    <queries:Name value="addError"/>
+                                    <queries:Expressions initialCapacity="2">
+                                        <queries:StringLiteral value="Unknown style name"/>
+                                        <queries:SelfStep/>
+                                    </queries:Expressions>
+                                </queries:Call>
+                            </queries:If>
+                            <queries:VoidLiteral/>
+                        </queries:Block>
+                    </queries:If>
+                    <queries:Do>
+                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <queries:ChildStep/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                    </queries:Do>
+                </queries:Choose>
+            </patterns:FunctionDeclaration>
+            <patterns:FunctionDeclaration>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <patterns:Name value="toArtifacts"/>
+                <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="1">
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Form"/>
+                        <patterns:ScopePoint>
+                            <patterns:Declarations initialCapacity="1">
+                                <patterns:JoinPointDeclaration>
+                                    <patterns:Name value="projectArtifactsPoint"/>
+                                    <queries:VariableRefStep value="projectArtifactsPoint"/>
+                                </patterns:JoinPointDeclaration>
+                            </patterns:Declarations>
+                            <patterns:ResultPoint>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <patterns:ScopePoint>
+                                    <patterns:Declarations initialCapacity="2">
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="cssPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPointDeclaration>
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="programPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPointDeclaration>
+                                    </patterns:Declarations>
+                                    <patterns:SequencePoint initialCapacity="3">
+                                        <patterns:TemplatePoint>
+                                        <artifacts:FolderArtifact xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <artifacts:Name value="web"/>
+                                        <artifacts:Metadata>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <artifacts:PersistenceKitId value="org.whole.lang.text.codebase.TextSourcePersistenceKit"/>
+                                        </artifacts:Metadata>
+                                        <artifacts:Artifacts initialCapacity="3">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="fileName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariablePoint>
+                                        <artifacts:Extension value="html"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <text:Document xmlns:text="http://lang.whole.org/Text" initialCapacity="29">
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&lt;!DOCTYPE html&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&lt;html&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&lt;head&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;meta charset=&quot;UTF-8&quot;&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;title&gt;Questionnaire - reference implementation&lt;/title&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;link href=&quot;css/QL.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; /&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="4">
+                                        <text:TextSeparator value=""/>
+                                        <text:Text value="&#9;&#9;&lt;link href=&quot;css/"/>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="fileName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Text#Text"/>
+                                        </patterns:VariablePoint>
+                                        <text:Text value=".css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; /&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;script type=&quot;text/javascript&quot; src=&quot;js/libs/jquery-latest.min.js&quot;&gt;&lt;/script&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;script type=&quot;text/javascript&quot; src=&quot;js/libs/jquery-ui.min.js&quot;&gt;&lt;/script&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;script type=&quot;text/javascript&quot; src=&quot;js/libs/underscore-min.js&quot;&gt;&lt;/script&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;script type=&quot;text/javascript&quot; src=&quot;js/libs/autoNumeric-1.9.17.js&quot;&gt;&lt;/script&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;link href=&quot;css/jquery-ui.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; /&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;script type=&quot;text/javascript&quot;&gt;QLrt = {};&lt;/script&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;script type=&quot;text/javascript&quot; src=&quot;js/framework/util.js&quot;&gt;&lt;/script&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;script type=&quot;text/javascript&quot; src=&quot;js/framework/structural-widgets.js&quot;&gt;&lt;/script&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;script type=&quot;text/javascript&quot; src=&quot;js/framework/value-widgets.js&quot;&gt;&lt;/script&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value=""/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&#9;&lt;!-- The following runs (&amp; chooses) the example from the QL challenge text: --&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="4">
+                                        <text:TextSeparator value=""/>
+                                        <text:Text value="&#9;&#9;&lt;script type=&quot;text/javascript&quot; src=&quot;js/impl/"/>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="fileName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Text#Text"/>
+                                        </patterns:VariablePoint>
+                                        <text:Text value=".js&quot;&gt;&lt;/script&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;&lt;/head&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&lt;body&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&lt;div id=&quot;container&quot;&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="    &lt;h1&gt;Questionnaire&lt;/h1&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value=""/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="    &lt;div id=&quot;QL-content&quot;&gt;&lt;/div&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&lt;/div&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&lt;/body&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&lt;/html&gt;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value=""/>
+                                        </text:Row>
+                                        </text:Document>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="css"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="fileName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariablePoint>
+                                        <artifacts:Extension value="css"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="cssPoint"/>
+                                        <commons:Resolver/>
+                                        </patterns:JoinPoint>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="js"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="impl"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="fileName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariablePoint>
+                                        <artifacts:Extension value="js"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="programPoint"/>
+                                        <commons:Resolver/>
+                                        </patterns:JoinPoint>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </patterns:TemplatePoint>
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <semantics:Name value="toCSS"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <semantics:Name value="toJavaScript"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                    </patterns:SequencePoint>
+                                </patterns:ScopePoint>
+                                <patterns:Insert>
+                                    <patterns:Placement value="AFTER_LAST_CHILD"/>
+                                    <patterns:JoinPointStep value="projectArtifactsPoint"/>
+                                </patterns:Insert>
+                            </patterns:ResultPoint>
+                        </patterns:ScopePoint>
+                    </queries:If>
+                </queries:Choose>
+            </patterns:FunctionDeclaration>
+            <patterns:FunctionDeclaration>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <patterns:Name value="toJavaScript"/>
+                <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
+                    <queries:If>
+                        <queries:LanguageTest value="whole:org.whole.crossexamples.lwc14:QLModel"/>
+                        <queries:Choose initialCapacity="8">
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Form"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="4">
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="nameGenerator"/>
+                                        <workflows:CreateJavaClassInstance xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="new FreshNameGenerator()"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                                        <workflows:StringLiteral value="FreshNameGenerator()"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </workflows:CreateJavaClassInstance>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="container"/>
+                                        <queries:StringLiteral value="form"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="className"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="widgetDeclarationPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPointDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:SequencePoint initialCapacity="2">
+                                        <patterns:TemplatePoint>
+                                        <javascript:Program xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <javascript:Statements initialCapacity="1">
+                                        <javascript:ExpressionStatement>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:CallExpression>
+                                        <javascript:Identifier value="$"/>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:Identifier value="document"/>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        <javascript:Identifier value="ready"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:FunctionExpression>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <javascript:Statements initialCapacity="4">
+                                        <javascript:VariableDeclaration>
+                                        <javascript:VariableDeclarationKind value="var"/>
+                                        <javascript:VariableInitializers initialCapacity="1">
+                                        <javascript:VariableInitializer>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="container"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:NewExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:Identifier value="QLrt"/>
+                                        <javascript:Identifier value="FormWidget"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:ObjectLiteral>
+                                        <javascript:BooleanData value="false"/>
+                                        <javascript:ObjectProperties initialCapacity="2">
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="name"/>
+                                        <javascript:StringLiteral>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#name"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#StringData"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:StringData value="&quot;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:ObjectProperty>
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="submitCallback"/>
+                                        <javascript:Identifier value="persist"/>
+                                        </javascript:ObjectProperty>
+                                        </javascript:ObjectProperties>
+                                        </javascript:ObjectLiteral>
+                                        </javascript:Expressions>
+                                        </javascript:NewExpression>
+                                        </javascript:VariableInitializer>
+                                        </javascript:VariableInitializers>
+                                        </javascript:VariableDeclaration>
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="widgetDeclarationPoint"/>
+                                        <javascript:ExpressionStatement>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:CallExpression>
+                                        <javascript:Identifier value="$"/>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:StringLiteral>
+                                        <javascript:StringData value="#QL-content"/>
+                                        <javascript:StringData value="&apos;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        <javascript:Identifier value="append"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="container"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:Identifier value="domElement"/>
+                                        </javascript:StaticMemberExpression>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </javascript:CallExpression>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:ExpressionStatement>
+                                        </patterns:JoinPoint>
+                                        <javascript:ExpressionStatement>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="container"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:Identifier value="activate"/>
+                                        </javascript:StaticMemberExpression>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </javascript:CallExpression>
+                                        </javascript:ExpressionStatement>
+                                        <javascript:FunctionDeclaration>
+                                        <javascript:Identifier value="persist"/>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:Identifier value="data"/>
+                                        </javascript:Expressions>
+                                        <javascript:Statements initialCapacity="1">
+                                        <javascript:ExpressionStatement>
+                                        <javascript:AssignmentExpression>
+                                        <javascript:ComputedMemberExpression>
+                                        <javascript:Identifier value="localStorage"/>
+                                        <javascript:StringLiteral>
+                                        <javascript:StringData value="QL-persist"/>
+                                        <javascript:StringData value="&apos;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:ComputedMemberExpression>
+                                        <javascript:AssignmentOperator value="="/>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:Identifier value="JSON"/>
+                                        <javascript:Identifier value="stringify"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:Identifier value="data"/>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:AssignmentExpression>
+                                        </javascript:ExpressionStatement>
+                                        </javascript:Statements>
+                                        </javascript:FunctionDeclaration>
+                                        </javascript:Statements>
+                                        </javascript:FunctionExpression>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:ExpressionStatement>
+                                        </javascript:Statements>
+                                        </javascript:Program>
+                                        </patterns:TemplatePoint>
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:SequencePoint>
+                                    </patterns:ScopePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="AROUND"/>
+                                        <patterns:JoinPointStep value="programPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#SequentialQuestions"/>
+                                <patterns:DerivationPoint>
+                                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:ChildStep/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </semantics:FunctionApplication>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </patterns:DerivationPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#ConditionalQuestions"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="2">
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="conditionalName"/>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="nameGenerator.nextFreshName(&quot;group&quot;)"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="nameGenerator"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                                        <workflows:StringLiteral value="nextFreshName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:StringLiteral value="group"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="lazyEvaluationPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPointDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:SequencePoint initialCapacity="3">
+                                        <patterns:TemplatePoint>
+                                        <javascript:VariableDeclaration xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <javascript:VariableDeclarationKind value="var"/>
+                                        <javascript:VariableInitializers initialCapacity="1">
+                                        <javascript:VariableInitializer>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="conditionalName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:NewExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:Identifier value="QLrt"/>
+                                        <javascript:Identifier value="ConditionalGroupWidget"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="lazyEvaluationPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPoint>
+                                        </javascript:Expressions>
+                                        </javascript:NewExpression>
+                                        <javascript:Identifier value="appendTo"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="container"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:VariableInitializer>
+                                        </javascript:VariableInitializers>
+                                        </javascript:VariableDeclaration>
+                                        </patterns:TemplatePoint>
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <semantics:Name value="lazyEvaluation"/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="1">
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="container"/>
+                                        <queries:VariableRefStep value="conditionalName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:SequencePoint initialCapacity="1">
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:SequencePoint>
+                                        </patterns:ScopePoint>
+                                        </patterns:SequencePoint>
+                                    </patterns:ScopePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="BEFORE"/>
+                                        <patterns:JoinPointStep value="widgetDeclarationPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Question"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="2">
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="typePoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPointDeclaration>
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="lazyEvaluationPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPointDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:SequencePoint initialCapacity="3">
+                                        <patterns:TemplatePoint>
+                                        <patterns:SequencePoint initialCapacity="2">
+                                        <javascript:VariableDeclaration xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <javascript:VariableDeclarationKind value="var"/>
+                                        <javascript:VariableInitializers initialCapacity="1">
+                                        <javascript:VariableInitializer>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#name"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:NewExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:Identifier value="QLrt"/>
+                                        <javascript:Identifier value="SimpleFormElementWidget"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:ObjectLiteral>
+                                        <javascript:BooleanData value="false"/>
+                                        <javascript:ObjectProperties initialCapacity="3">
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="name"/>
+                                        <javascript:StringLiteral>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#name"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:StringData value="&quot;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:ObjectProperty>
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="label"/>
+                                        <javascript:StringLiteral>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#label"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:StringData value="&quot;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:ObjectProperty>
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="valueWidget"/>
+                                        <javascript:NewExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:Identifier value="QLrt"/>
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="typePoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPoint>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:SelectionPoint initialCapacity="2">
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#expression"/>
+                                        <queries:KindTest value="IMPL"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="lazyEvaluationPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPoint>
+                                        </patterns:ConditionPoint>
+                                        <patterns:ConditionPoint>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <patterns:DerivationPoint>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#type"/>
+                                        <queries:Choose initialCapacity="2">
+                                        <queries:If>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Enumeration"/>
+                                        <patterns:TemplatePoint>
+                                        <javascript:ArrayLiteral>
+                                        <javascript:BooleanData value="false"/>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:DerivationPoint>
+                                        <patterns:IterationPoint>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#values"/>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        <patterns:TemplatePoint>
+                                        <javascript:StringLiteral>
+                                        <patterns:DerivationPoint>
+                                        <queries:SelfStep/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:StringData value="&quot;"/>
+                                        </javascript:StringLiteral>
+                                        </patterns:TemplatePoint>
+                                        </patterns:IterationPoint>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        </javascript:Expressions>
+                                        </javascript:ArrayLiteral>
+                                        </patterns:TemplatePoint>
+                                        </queries:If>
+                                        <queries:If>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Range"/>
+                                        <patterns:TemplatePoint>
+                                        <javascript:ObjectLiteral>
+                                        <javascript:BooleanData value="false"/>
+                                        <javascript:ObjectProperties initialCapacity="3">
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="min"/>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#start"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#NumberLiteral"/>
+                                        </patterns:DerivationPoint>
+                                        </javascript:ObjectProperty>
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="max"/>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#end"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#NumberLiteral"/>
+                                        </patterns:DerivationPoint>
+                                        </javascript:ObjectProperty>
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="type"/>
+                                        <javascript:StringLiteral>
+                                        <javascript:StringData value="integer"/>
+                                        <javascript:StringData value="&apos;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:ObjectProperty>
+                                        </javascript:ObjectProperties>
+                                        </javascript:ObjectLiteral>
+                                        </patterns:TemplatePoint>
+                                        </queries:If>
+                                        </queries:Choose>
+                                        </queries:Path>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:ConditionPoint>
+                                        </patterns:SelectionPoint>
+                                        </javascript:Expressions>
+                                        </javascript:NewExpression>
+                                        </javascript:ObjectProperty>
+                                        </javascript:ObjectProperties>
+                                        </javascript:ObjectLiteral>
+                                        </javascript:Expressions>
+                                        </javascript:NewExpression>
+                                        <javascript:Identifier value="appendTo"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="container"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:VariableInitializer>
+                                        </javascript:VariableInitializers>
+                                        </javascript:VariableDeclaration>
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Path initialCapacity="1">
+                                        <queries:VariableRefStep value="className"/>
+                                        </queries:Path>
+                                        </queries:ExpressionTest>
+                                        <javascript:ExpressionStatement xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#name"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:Identifier value="domElement"/>
+                                        </javascript:StaticMemberExpression>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </javascript:CallExpression>
+                                        <javascript:Identifier value="addClass"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:StringLiteral>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="className"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#StringData"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:StringData value="&apos;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:ExpressionStatement>
+                                        </patterns:ConditionPoint>
+                                        </patterns:SequencePoint>
+                                        </patterns:TemplatePoint>
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#expression"/>
+                                        <queries:KindTest value="IMPL"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <semantics:Name value="lazyEvaluation"/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#expression"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:ConditionPoint>
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#type"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:SequencePoint>
+                                    </patterns:ScopePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="BEFORE"/>
+                                        <patterns:JoinPointStep value="widgetDeclarationPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#PrimitiveType"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="1">
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="type"/>
+                                        <queries:SelfStep/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:TemplatePoint>
+                                        <patterns:SelectionPoint initialCapacity="6">
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="type"/>
+                                        <queries:StringLiteral value="BOOLEAN"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="BooleanValueWidget"/>
+                                        </patterns:ConditionPoint>
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="type"/>
+                                        <queries:StringLiteral value="STRING"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="StringValueWidget"/>
+                                        </patterns:ConditionPoint>
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="type"/>
+                                        <queries:StringLiteral value="INTEGER"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="IntegerValueWidget"/>
+                                        </patterns:ConditionPoint>
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="type"/>
+                                        <queries:StringLiteral value="DECIMAL"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="DecimalValueWidget"/>
+                                        </patterns:ConditionPoint>
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="type"/>
+                                        <queries:StringLiteral value="DATE"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="DateValueWidget"/>
+                                        </patterns:ConditionPoint>
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="type"/>
+                                        <queries:StringLiteral value="MONEY"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="MoneyValueWidget"/>
+                                        </patterns:ConditionPoint>
+                                        </patterns:SelectionPoint>
+                                        </patterns:TemplatePoint>
+                                    </patterns:ScopePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="AROUND"/>
+                                        <patterns:JoinPointStep value="typePoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Enumeration"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:TemplatePoint>
+                                        <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="EnumValueWidget"/>
+                                    </patterns:TemplatePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="AROUND"/>
+                                        <patterns:JoinPointStep value="typePoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Range"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:TemplatePoint>
+                                        <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="RangeValueWidget"/>
+                                    </patterns:TemplatePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="AROUND"/>
+                                        <patterns:JoinPointStep value="typePoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:DerivationPoint>
+                                        <queries:SelfStep/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                    </patterns:DerivationPoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="AROUND"/>
+                                        <patterns:JoinPointStep value="expressionPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                        </queries:Choose>
+                    </queries:If>
+                    <queries:If>
+                        <queries:LanguageTest value="http://lang.whole.org/Queries"/>
+                        <queries:Choose initialCapacity="3">
+                            <queries:If>
+                                <queries:TypeTest value="http://lang.whole.org/Queries#VoidLiteral"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:TemplatePoint>
+                                        <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="undefined"/>
+                                    </patterns:TemplatePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="AROUND"/>
+                                        <patterns:JoinPointStep value="expressionPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="http://lang.whole.org/Queries#StringLiteral"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:TemplatePoint>
+                                        <javascript:StringLiteral xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <patterns:DerivationPoint>
+                                        <queries:SelfStep/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:StringData value="&quot;"/>
+                                        </javascript:StringLiteral>
+                                    </patterns:TemplatePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="AROUND"/>
+                                        <patterns:JoinPointStep value="expressionPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="http://lang.whole.org/Queries#DateLiteral"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:TemplatePoint>
+                                        <javascript:ExpressionStatement xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <javascript:NewExpression>
+                                        <javascript:Identifier value="Date"/>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="self.getTime()"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="self"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="java.util.Date"/>
+                                        <workflows:StringLiteral value="getTime()"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        </javascript:Expressions>
+                                        </javascript:NewExpression>
+                                        </javascript:ExpressionStatement>
+                                    </patterns:TemplatePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="AROUND"/>
+                                        <patterns:JoinPointStep value="expressionPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                        </queries:Choose>
+                    </queries:If>
+                    <queries:If>
+                        <queries:LanguageTest value="http://lang.whole.org/Math"/>
+                        <queries:Choose initialCapacity="1">
+                            <reusables:Reuse>
+                                <reusables:Resource>
+                                    <reusables:ClassPathURI value="org/whole/lang/math/MathLibrary.xwl"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </reusables:Resource>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <queries:Path initialCapacity="4">
+                                    <queries:FeatureStep value="whole:org.whole.lang.patterns:PatternsModel#declarations"/>
+                                    <queries:Filter>
+                                        <queries:ChildStep/>
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:Singleton>
+                                        <queries:FeatureStep value="whole:org.whole.lang.patterns:PatternsModel#name"/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="toJavaScript"/>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                    </queries:Filter>
+                                    <queries:FeatureStep value="whole:org.whole.lang.patterns:PatternsModel#body"/>
+                                    <queries:ChildStep/>
+                                </queries:Path>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </reusables:Reuse>
+                        </queries:Choose>
+                    </queries:If>
+                    <queries:If>
+                        <queries:LanguageTest value="whole:org.whole.crossexamples.lwc14:QLSModel"/>
+                        <queries:Choose initialCapacity="3">
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLSModel#Section"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="1">
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="sectionName"/>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="nameGenerator.nextFreshName(&quot;section&quot;)"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="nameGenerator"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                                        <workflows:StringLiteral value="nextFreshName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:StringLiteral value="section"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:SequencePoint initialCapacity="2">
+                                        <patterns:TemplatePoint>
+                                        <patterns:SequencePoint initialCapacity="2">
+                                        <javascript:VariableDeclaration xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <javascript:VariableDeclarationKind value="var"/>
+                                        <javascript:VariableInitializers initialCapacity="1">
+                                        <javascript:VariableInitializer>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="sectionName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:NewExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:Identifier value="QLrt"/>
+                                        <javascript:Identifier value="SectionWidget"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:ObjectLiteral>
+                                        <javascript:BooleanData value="false"/>
+                                        <javascript:ObjectProperties initialCapacity="2">
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="name"/>
+                                        <javascript:StringLiteral>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="sectionName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#StringData"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:StringData value="&quot;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:ObjectProperty>
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="label"/>
+                                        <javascript:StringLiteral>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#title"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:StringData value="&quot;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:ObjectProperty>
+                                        </javascript:ObjectProperties>
+                                        </javascript:ObjectLiteral>
+                                        </javascript:Expressions>
+                                        </javascript:NewExpression>
+                                        <javascript:Identifier value="appendTo"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="container"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:VariableInitializer>
+                                        </javascript:VariableInitializers>
+                                        </javascript:VariableDeclaration>
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#titleStyle"/>
+                                        <queries:KindTest value="IMPL"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        <javascript:ExpressionStatement xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="sectionName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:Identifier value="domElement"/>
+                                        </javascript:StaticMemberExpression>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </javascript:CallExpression>
+                                        <javascript:Identifier value="addClass"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:StringLiteral>
+                                        <patterns:DerivationPoint>
+                                        <queries:Choose initialCapacity="2">
+                                        <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#titleStyle"/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#name"/>
+                                        </queries:Path>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#titleStyle"/>
+                                        </queries:Choose>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:StringData value="&apos;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:ExpressionStatement>
+                                        </patterns:ConditionPoint>
+                                        </patterns:SequencePoint>
+                                        </patterns:TemplatePoint>
+                                        <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="1">
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="container"/>
+                                        <queries:VariableRefStep value="sectionName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:SequencePoint initialCapacity="1">
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#questions"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:SequencePoint>
+                                        </patterns:ScopePoint>
+                                        </patterns:SequencePoint>
+                                    </patterns:ScopePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="BEFORE"/>
+                                        <patterns:JoinPointStep value="widgetDeclarationPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLSModel#Text"/>
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:ScopePoint>
+                                        <patterns:Declarations initialCapacity="1">
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="textName"/>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="nameGenerator.nextFreshName(&quot;text&quot;)"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="nameGenerator"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.FreshNameGenerator"/>
+                                        <workflows:StringLiteral value="nextFreshName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:StringLiteral value="text"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                        </patterns:Declarations>
+                                        <patterns:TemplatePoint>
+                                        <patterns:SequencePoint initialCapacity="2">
+                                        <javascript:VariableDeclaration xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <javascript:VariableDeclarationKind value="var"/>
+                                        <javascript:VariableInitializers initialCapacity="1">
+                                        <javascript:VariableInitializer>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="textName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:NewExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:Identifier value="QLrt"/>
+                                        <javascript:Identifier value="TextWidget"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:ObjectLiteral>
+                                        <javascript:BooleanData value="false"/>
+                                        <javascript:ObjectProperties initialCapacity="2">
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="name"/>
+                                        <javascript:StringLiteral>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="textName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#StringData"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:StringData value="&quot;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:ObjectProperty>
+                                        <javascript:ObjectProperty>
+                                        <javascript:Identifier value="text"/>
+                                        <javascript:StringLiteral>
+                                        <patterns:DerivationPoint>
+                                        <queries:SelfStep/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                        <javascript:StringData value="&quot;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:ObjectProperty>
+                                        </javascript:ObjectProperties>
+                                        </javascript:ObjectLiteral>
+                                        </javascript:Expressions>
+                                        </javascript:NewExpression>
+                                        <javascript:Identifier value="appendTo"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="container"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:VariableInitializer>
+                                        </javascript:VariableInitializers>
+                                        </javascript:VariableDeclaration>
+                                        <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Path initialCapacity="1">
+                                        <queries:VariableRefStep value="className"/>
+                                        </queries:Path>
+                                        </queries:ExpressionTest>
+                                        <javascript:ExpressionStatement xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <javascript:CallExpression>
+                                        <javascript:StaticMemberExpression>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="textName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:Identifier value="domElement"/>
+                                        </javascript:StaticMemberExpression>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </javascript:CallExpression>
+                                        <javascript:Identifier value="addClass"/>
+                                        </javascript:StaticMemberExpression>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <javascript:StringLiteral>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="className"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#StringData"/>
+                                        </patterns:VariablePoint>
+                                        <javascript:StringData value="&apos;"/>
+                                        </javascript:StringLiteral>
+                                        </javascript:Expressions>
+                                        </javascript:CallExpression>
+                                        </javascript:ExpressionStatement>
+                                        </patterns:ConditionPoint>
+                                        </patterns:SequencePoint>
+                                        </patterns:TemplatePoint>
+                                    </patterns:ScopePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="BEFORE"/>
+                                        <patterns:JoinPointStep value="widgetDeclarationPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLSModel#WithStyle"/>
+                                <patterns:ScopePoint>
+                                    <patterns:Declarations initialCapacity="1">
+                                        <patterns:VariableDeclaration>
+                                        <patterns:Name value="className"/>
+                                        <queries:Choose initialCapacity="2">
+                                        <queries:Path initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#style"/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLSModel#StyleDef"/>
+                                        </queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#name"/>
+                                        </queries:Path>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#style"/>
+                                        </queries:Choose>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:VariableDeclaration>
+                                    </patterns:Declarations>
+                                    <patterns:SequencePoint initialCapacity="1">
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#questions"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
+                                    </patterns:SequencePoint>
+                                </patterns:ScopePoint>
+                            </queries:If>
+                        </queries:Choose>
+                    </queries:If>
+                </queries:Choose>
+            </patterns:FunctionDeclaration>
+            <patterns:FunctionDeclaration>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <patterns:Name value="lazyEvaluation"/>
+                <patterns:ResultPoint>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <patterns:ScopePoint>
+                        <patterns:Declarations initialCapacity="2">
+                            <patterns:FunctionDeclaration>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <patterns:Name value="distinctNames"/>
+                                <queries:Filter xmlns:queries="http://lang.whole.org/Queries">
+                                    <queries:DescendantOrSelfStep/>
+                                    <queries:And initialCapacity="2">
+                                        <queries:DistinctTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:DistinctTest>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                    </queries:And>
+                                </queries:Filter>
+                            </patterns:FunctionDeclaration>
+                            <patterns:JoinPointDeclaration>
+                                <patterns:Name value="expressionPoint"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </patterns:JoinPointDeclaration>
+                        </patterns:Declarations>
+                        <patterns:SequencePoint initialCapacity="2">
+                            <patterns:TemplatePoint>
+                                <javascript:NewExpression xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                                    <javascript:StaticMemberExpression>
+                                        <javascript:Identifier value="QLrt"/>
+                                        <javascript:Identifier value="LazyValue"/>
+                                    </javascript:StaticMemberExpression>
+                                    <javascript:Expressions initialCapacity="2">
+                                        <javascript:FunctionExpression>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <javascript:Statements initialCapacity="1">
+                                        <javascript:ReturnStatement>
+                                        <javascript:ArrayLiteral>
+                                        <javascript:BooleanData value="false"/>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:DerivationPoint>
+                                        <patterns:FunctionApplicationPoint>
+                                        <patterns:Name value="distinctNames"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:FunctionApplicationPoint>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:DerivationPoint>
+                                        </javascript:Expressions>
+                                        </javascript:ArrayLiteral>
+                                        </javascript:ReturnStatement>
+                                        </javascript:Statements>
+                                        </javascript:FunctionExpression>
+                                        <javascript:FunctionExpression>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:DerivationPoint>
+                                        <patterns:FunctionApplicationPoint>
+                                        <patterns:Name value="distinctNames"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:FunctionApplicationPoint>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:DerivationPoint>
+                                        </javascript:Expressions>
+                                        <javascript:Statements initialCapacity="1">
+                                        <javascript:ReturnStatement>
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="expressionPoint"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:JoinPoint>
+                                        </javascript:ReturnStatement>
+                                        </javascript:Statements>
+                                        </javascript:FunctionExpression>
+                                    </javascript:Expressions>
+                                </javascript:NewExpression>
+                            </patterns:TemplatePoint>
+                            <patterns:DerivationPoint>
+                                <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                    <semantics:Name value="toJavaScript"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </semantics:FunctionApplication>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </patterns:DerivationPoint>
+                        </patterns:SequencePoint>
+                    </patterns:ScopePoint>
+                    <patterns:Insert>
+                        <patterns:Placement value="AROUND"/>
+                        <patterns:JoinPointStep value="lazyEvaluationPoint"/>
+                    </patterns:Insert>
+                </patterns:ResultPoint>
+            </patterns:FunctionDeclaration>
+            <patterns:FunctionDeclaration>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                <patterns:Name value="toCSS"/>
+                <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Form"/>
+                        <patterns:ScopePoint>
+                            <patterns:Declarations initialCapacity="1">
+                                <patterns:JoinPointDeclaration>
+                                    <patterns:Name value="cssDeclarationPoint"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </patterns:JoinPointDeclaration>
+                            </patterns:Declarations>
+                            <patterns:SequencePoint initialCapacity="2">
+                                <patterns:ResultPoint>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:TemplatePoint>
+                                        <text:Document xmlns:text="http://lang.whole.org/Text" initialCapacity="7">
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="#QL-content section {"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;margin-left: 2em;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;margin-top: 0.5em;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="&#9;margin-bottom: 0.5em;"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value="}"/>
+                                        </text:Row>
+                                        <text:Row initialCapacity="1">
+                                        <text:Text value=""/>
+                                        </text:Row>
+                                        <patterns:InsertionPoint>
+                                        <patterns:Name value="cssDeclarationPoint"/>
+                                        </patterns:InsertionPoint>
+                                        </text:Document>
+                                    </patterns:TemplatePoint>
+                                    <patterns:Insert>
+                                        <patterns:Placement value="AROUND"/>
+                                        <patterns:JoinPointStep value="cssPoint"/>
+                                    </patterns:Insert>
+                                </patterns:ResultPoint>
+                                <patterns:DerivationPoint>
+                                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:Filter>
+                                        <queries:DescendantStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLSModel#StyleDef"/>
+                                        </queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </semantics:FunctionApplication>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </patterns:DerivationPoint>
+                            </patterns:SequencePoint>
+                        </patterns:ScopePoint>
+                    </queries:If>
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLSModel#StyleDef"/>
+                        <patterns:ResultPoint>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <patterns:TemplatePoint>
+                                <patterns:SequencePoint initialCapacity="7">
+                                    <patterns:SelectionPoint initialCapacity="2">
+                                        <patterns:ConditionPoint>
+                                        <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc14:QLSModel#titleStyle"/>
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="4">
+                                        <text:TextSeparator value=""/>
+                                        <text:Text value="section."/>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#name"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Text#Text"/>
+                                        </patterns:DerivationPoint>
+                                        <text:Text value=" h1 {"/>
+                                        </text:Row>
+                                        </patterns:ConditionPoint>
+                                        <patterns:ConditionPoint>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="4">
+                                        <text:TextSeparator value=""/>
+                                        <text:Text value="div."/>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#name"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Text#Text"/>
+                                        </patterns:DerivationPoint>
+                                        <text:Text value=" label {"/>
+                                        </text:Row>
+                                        </patterns:ConditionPoint>
+                                    </patterns:SelectionPoint>
+                                    <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#fontStyle"/>
+                                        <queries:Or initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <patterns:TemplatePoint>
+                                        <qls:FontStyle xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="ITALIC"/>
+                                        </patterns:TemplatePoint>
+                                        </queries:ExpressionTest>
+                                        <queries:ExpressionTest>
+                                        <patterns:TemplatePoint>
+                                        <qls:FontStyle xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="BOLD_ITALIC"/>
+                                        </patterns:TemplatePoint>
+                                        </queries:ExpressionTest>
+                                        </queries:Or>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="1">
+                                        <text:Text value="&#9;font-style: italic;"/>
+                                        </text:Row>
+                                    </patterns:ConditionPoint>
+                                    <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#fontStyle"/>
+                                        <queries:Or initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <patterns:TemplatePoint>
+                                        <qls:FontStyle xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="BOLD"/>
+                                        </patterns:TemplatePoint>
+                                        </queries:ExpressionTest>
+                                        <queries:ExpressionTest>
+                                        <patterns:TemplatePoint>
+                                        <qls:FontStyle xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="BOLD_ITALIC"/>
+                                        </patterns:TemplatePoint>
+                                        </queries:ExpressionTest>
+                                        </queries:Or>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="1">
+                                        <text:Text value="&#9;font-weight: bold;"/>
+                                        </text:Row>
+                                    </patterns:ConditionPoint>
+                                    <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#fontSize"/>
+                                        <queries:KindTest value="IMPL"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="4">
+                                        <text:TextSeparator value=""/>
+                                        <text:Text value="&#9;font-size: "/>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#fontSize"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Text#Text"/>
+                                        </patterns:DerivationPoint>
+                                        <text:Text value="pt;"/>
+                                        </text:Row>
+                                    </patterns:ConditionPoint>
+                                    <patterns:ConditionPoint>
+                                        <queries:ExpressionTest>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#color"/>
+                                        <queries:KindTest value="IMPL"/>
+                                        </queries:Filter>
+                                        </queries:ExpressionTest>
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="4">
+                                        <text:TextSeparator value=""/>
+                                        <text:Text value="&#9;color: "/>
+                                        <patterns:DerivationPoint>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#color"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Text#Text"/>
+                                        </patterns:DerivationPoint>
+                                        <text:Text value=";"/>
+                                        </text:Row>
+                                    </patterns:ConditionPoint>
+                                    <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="1">
+                                        <text:Text value="}"/>
+                                    </text:Row>
+                                    <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="1">
+                                        <text:Text value=""/>
+                                    </text:Row>
+                                </patterns:SequencePoint>
+                            </patterns:TemplatePoint>
+                            <patterns:Insert>
+                                <patterns:Placement value="BEFORE"/>
+                                <patterns:JoinPointStep value="cssDeclarationPoint"/>
+                            </patterns:Insert>
+                        </patterns:ResultPoint>
+                    </queries:If>
+                </queries:Choose>
+            </patterns:FunctionDeclaration>
+        </patterns:Declarations>
+    </patterns:Library>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</reusables:Adapt>

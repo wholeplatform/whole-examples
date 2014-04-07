@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
+    <ql:Name value="Widgets gallery"/>
+    <ql:SequentialQuestions initialCapacity="13">
+        <ql:Question>
+            <ql:Name value="stringValue"/>
+            <ql:Text value="String value:"/>
+            <ql:PrimitiveType value="STRING"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="stringValueDefined"/>
+            <ql:Text value="string defined?"/>
+            <ql:PrimitiveType value="BOOLEAN"/>
+            <math:NotEquals xmlns:math="http://lang.whole.org/Math">
+                <ql:Name value="stringValue"/>
+                <queries:VoidLiteral xmlns:queries="http://lang.whole.org/Queries"/>
+            </math:NotEquals>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="enumValue"/>
+            <ql:Text value="Enum value - Quality:"/>
+            <ql:Enumeration>
+                <ql:Name value="qualityEnum"/>
+                <ql:Names initialCapacity="3">
+                    <ql:Name value="good"/>
+                    <ql:Name value="bad"/>
+                    <ql:Name value="don&apos;t know"/>
+                </ql:Names>
+            </ql:Enumeration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="enumValueDefined"/>
+            <ql:Text value="enum choice defined?"/>
+            <ql:PrimitiveType value="BOOLEAN"/>
+            <math:NotEquals xmlns:math="http://lang.whole.org/Math">
+                <ql:Name value="enumValue"/>
+                <queries:VoidLiteral xmlns:queries="http://lang.whole.org/Queries"/>
+            </math:NotEquals>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="enumChoice"/>
+            <ql:Text value="enum choice:"/>
+            <ql:PrimitiveType value="STRING"/>
+            <ql:Name value="enumValue"/>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="dateValue"/>
+            <ql:Text value="Date value:"/>
+            <ql:PrimitiveType value="DATE"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="dateValueDefined"/>
+            <ql:Text value="date value defined?"/>
+            <ql:PrimitiveType value="BOOLEAN"/>
+            <math:NotEquals xmlns:math="http://lang.whole.org/Math">
+                <ql:Name value="dateValue"/>
+                <queries:VoidLiteral xmlns:queries="http://lang.whole.org/Queries"/>
+            </math:NotEquals>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="integerValue"/>
+            <ql:Text value="Integer value:"/>
+            <ql:PrimitiveType value="INTEGER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="integerValueDefined"/>
+            <ql:Text value="integer value defined?"/>
+            <ql:PrimitiveType value="BOOLEAN"/>
+            <math:NotEquals xmlns:math="http://lang.whole.org/Math">
+                <ql:Name value="integerValue"/>
+                <queries:VoidLiteral xmlns:queries="http://lang.whole.org/Queries"/>
+            </math:NotEquals>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="decimalValue"/>
+            <ql:Text value="Decimal value:"/>
+            <ql:PrimitiveType value="DECIMAL"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="decimalValueDefined"/>
+            <ql:Text value="decimal value defined?"/>
+            <ql:PrimitiveType value="BOOLEAN"/>
+            <math:NotEquals xmlns:math="http://lang.whole.org/Math">
+                <ql:Name value="decimalValue"/>
+                <queries:VoidLiteral xmlns:queries="http://lang.whole.org/Queries"/>
+            </math:NotEquals>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="integerRangeValue"/>
+            <ql:Text value="Integer range value:"/>
+            <ql:Range>
+                <math:Integer xmlns:math="http://lang.whole.org/Math" value="0"/>
+                <math:Integer xmlns:math="http://lang.whole.org/Math" value="10"/>
+            </ql:Range>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </ql:Question>
+        <ql:Question>
+            <ql:Name value="integerRangeValueDefined"/>
+            <ql:Text value="integer range value"/>
+            <ql:PrimitiveType value="INTEGER"/>
+            <ql:Name value="integerRangeValue"/>
+        </ql:Question>
+    </ql:SequentialQuestions>
+</ql:Form>

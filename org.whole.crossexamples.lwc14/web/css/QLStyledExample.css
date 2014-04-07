@@ -1,0 +1,29 @@
+#QL-content section {
+	margin-left: 2em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+section.H1 h1 {
+	font-weight: bold;
+	font-size: 18pt;
+	color: BLUE;
+}
+
+div.red label {
+	color: RED;
+}
+
+div.bold label {
+	font-weight: bold;
+}
+
+section.H2 h1 {
+	font-weight: bold;
+	font-size: 14pt;
+	color: BLUE;
+}
+
+div.green label {
+	color: GREEN;
+}
