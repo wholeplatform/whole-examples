@@ -96,12 +96,29 @@
         </actions:SimpleAction>
         <actions:SimpleAction>
             <actions:Label value="Artifacts Generator"/>
-            <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
-                <semantics:Name value="whole:org.whole.crossexamples.lwc14:QLLibrarySemantics#toArtifacts"/>
-                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-            </semantics:FunctionApplication>
+            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                <queries:If>
+                    <queries:Not>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Form"/>
+                    </queries:Not>
+                    <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="No suitable form"/>
+                            <workflows:Text value="Can generate only Form entities!"/>
+                            <commons:Resolver/>
+                            <commons:Resolver/>
+                        </workflows:Task>
+                    </commons:SameStageFragment>
+                </queries:If>
+                <queries:Do>
+                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                        <semantics:Name value="whole:org.whole.crossexamples.lwc14:QLLibrarySemantics#toArtifacts"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                </queries:Do>
+            </queries:Choose>
         </actions:SimpleAction>
     </actions:ToolbarActions>
     <actions:ContextMenuActions>

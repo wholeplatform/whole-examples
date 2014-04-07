@@ -1,72 +1,70 @@
 <?xml version="1.0"?>
-<ql:ConditionalQuestions xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
-    <math:Not xmlns:math="http://lang.whole.org/Math">
-        <ql:Name value="question"/>
-    </math:Not>
+<ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
+    <ql:Name value="Sub Module 1"/>
     <ql:SequentialQuestions initialCapacity="3">
         <ql:Question>
-            <ql:Name value="question8"/>
-            <ql:Text value="is the answer between 9 and 12 ?"/>
+            <ql:Name value="question1"/>
+            <ql:Text value="is the answer between 1 and 4 ?"/>
             <ql:PrimitiveType value="BOOLEAN"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </ql:Question>
         <ql:ConditionalQuestions>
-            <ql:Name value="question8"/>
+            <ql:Name value="question1"/>
             <ql:SequentialQuestions initialCapacity="3">
                 <ql:Question>
-                    <ql:Name value="question9"/>
-                    <ql:Text value="is the answer between 9 and 10 ?"/>
+                    <ql:Name value="question2"/>
+                    <ql:Text value="is the answer between 1 and 2 ?"/>
                     <ql:PrimitiveType value="BOOLEAN"/>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                 </ql:Question>
                 <ql:ConditionalQuestions>
-                    <ql:Name value="question9"/>
+                    <ql:Name value="question2"/>
                     <ql:SequentialQuestions initialCapacity="3">
                         <ql:Question>
-                            <ql:Name value="question10"/>
-                            <ql:Text value="is the answer 9?"/>
+                            <ql:Name value="question3"/>
+                            <ql:Text value="is the answer 1?"/>
                             <ql:PrimitiveType value="BOOLEAN"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         </ql:Question>
                         <ql:ConditionalQuestions>
-                            <ql:Name value="question10"/>
+                            <ql:Name value="question3"/>
                             <ql:SequentialQuestions initialCapacity="1">
-                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 9!"/>
+                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 1!"/>
                             </ql:SequentialQuestions>
                         </ql:ConditionalQuestions>
                         <ql:ConditionalQuestions>
                             <math:Not xmlns:math="http://lang.whole.org/Math">
-                                <ql:Name value="question10"/>
+                                <ql:Name value="question3"/>
                             </math:Not>
                             <ql:SequentialQuestions initialCapacity="1">
-                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 10!"/>
+                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 2!"/>
                             </ql:SequentialQuestions>
                         </ql:ConditionalQuestions>
                     </ql:SequentialQuestions>
                 </ql:ConditionalQuestions>
                 <ql:ConditionalQuestions>
                     <math:Not xmlns:math="http://lang.whole.org/Math">
-                        <ql:Name value="question9"/>
+                        <ql:Name value="question2"/>
                     </math:Not>
                     <ql:SequentialQuestions initialCapacity="3">
                         <ql:Question>
-                            <ql:Name value="question11"/>
-                            <ql:Text value="is the answer 11?"/>
+                            <ql:Name value="question4"/>
+                            <ql:Text value="is the answer 3?"/>
                             <ql:PrimitiveType value="BOOLEAN"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         </ql:Question>
                         <ql:ConditionalQuestions>
-                            <ql:Name value="question11"/>
+                            <ql:Name value="question4"/>
                             <ql:SequentialQuestions initialCapacity="1">
-                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 11!"/>
+                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 3!"/>
                             </ql:SequentialQuestions>
                         </ql:ConditionalQuestions>
                         <ql:ConditionalQuestions>
                             <math:Not xmlns:math="http://lang.whole.org/Math">
-                                <ql:Name value="question11"/>
+                                <ql:Name value="question4"/>
                             </math:Not>
                             <ql:SequentialQuestions initialCapacity="1">
-                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 12!"/>
+                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 4!"/>
                             </ql:SequentialQuestions>
                         </ql:ConditionalQuestions>
                     </ql:SequentialQuestions>
@@ -75,63 +73,63 @@
         </ql:ConditionalQuestions>
         <ql:ConditionalQuestions>
             <math:Not xmlns:math="http://lang.whole.org/Math">
-                <ql:Name value="question8"/>
+                <ql:Name value="question1"/>
             </math:Not>
             <ql:SequentialQuestions initialCapacity="3">
                 <ql:Question>
-                    <ql:Name value="question12"/>
-                    <ql:Text value="is the answer between 13 and 14 ?"/>
+                    <ql:Name value="question5"/>
+                    <ql:Text value="is the answer between 5 and 6 ?"/>
                     <ql:PrimitiveType value="BOOLEAN"/>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                 </ql:Question>
                 <ql:ConditionalQuestions>
-                    <ql:Name value="question12"/>
+                    <ql:Name value="question5"/>
                     <ql:SequentialQuestions initialCapacity="3">
                         <ql:Question>
-                            <ql:Name value="question13"/>
-                            <ql:Text value="is the answer 13?"/>
+                            <ql:Name value="question6"/>
+                            <ql:Text value="is the answer 5?"/>
                             <ql:PrimitiveType value="BOOLEAN"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         </ql:Question>
                         <ql:ConditionalQuestions>
-                            <ql:Name value="question13"/>
+                            <ql:Name value="question6"/>
                             <ql:SequentialQuestions initialCapacity="1">
-                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 13!"/>
+                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 5!"/>
                             </ql:SequentialQuestions>
                         </ql:ConditionalQuestions>
                         <ql:ConditionalQuestions>
                             <math:Not xmlns:math="http://lang.whole.org/Math">
-                                <ql:Name value="question13"/>
+                                <ql:Name value="question6"/>
                             </math:Not>
                             <ql:SequentialQuestions initialCapacity="1">
-                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 14!"/>
+                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 6!"/>
                             </ql:SequentialQuestions>
                         </ql:ConditionalQuestions>
                     </ql:SequentialQuestions>
                 </ql:ConditionalQuestions>
                 <ql:ConditionalQuestions>
                     <math:Not xmlns:math="http://lang.whole.org/Math">
-                        <ql:Name value="question12"/>
+                        <ql:Name value="question5"/>
                     </math:Not>
                     <ql:SequentialQuestions initialCapacity="3">
                         <ql:Question>
-                            <ql:Name value="question14"/>
-                            <ql:Text value="is the answer 15?"/>
+                            <ql:Name value="question7"/>
+                            <ql:Text value="is the answer 7?"/>
                             <ql:PrimitiveType value="BOOLEAN"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         </ql:Question>
                         <ql:ConditionalQuestions>
-                            <ql:Name value="question14"/>
+                            <ql:Name value="question7"/>
                             <ql:SequentialQuestions initialCapacity="1">
-                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 15!"/>
+                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 7!"/>
                             </ql:SequentialQuestions>
                         </ql:ConditionalQuestions>
                         <ql:ConditionalQuestions>
                             <math:Not xmlns:math="http://lang.whole.org/Math">
-                                <ql:Name value="question14"/>
+                                <ql:Name value="question7"/>
                             </math:Not>
                             <ql:SequentialQuestions initialCapacity="1">
-                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 16!"/>
+                                <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is 8!"/>
                             </ql:SequentialQuestions>
                         </ql:ConditionalQuestions>
                     </ql:SequentialQuestions>
@@ -139,4 +137,4 @@
             </ql:SequentialQuestions>
         </ql:ConditionalQuestions>
     </ql:SequentialQuestions>
-</ql:ConditionalQuestions>
+</ql:Form>

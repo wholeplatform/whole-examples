@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<reusables:Adapt xmlns:reusables="whole:org.whole.lang.reusables:ReusablesModel">
+    <ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
+        <ql:Name value="Binary Search Tree"/>
+        <ql:SequentialQuestions initialCapacity="3">
+            <ql:Question>
+                <ql:Name value="question"/>
+                <ql:Text value="is the answer between 1 and 8 ?"/>
+                <ql:PrimitiveType value="BOOLEAN"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </ql:Question>
+            <ql:ConditionalQuestions>
+                <ql:Name value="question"/>
+                <reusables:Include>
+                    <reusables:Resource>
+                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/include/QLIncludeExamplePart1.xwl"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </reusables:Resource>
+                </reusables:Include>
+            </ql:ConditionalQuestions>
+            <ql:ConditionalQuestions>
+                <math:Not xmlns:math="http://lang.whole.org/Math">
+                    <ql:Name value="question"/>
+                </math:Not>
+                <reusables:Include>
+                    <reusables:Resource>
+                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/include/QLIncludeExamplePart2.xwl"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </reusables:Resource>
+                </reusables:Include>
+            </ql:ConditionalQuestions>
+        </ql:SequentialQuestions>
+    </ql:Form>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</reusables:Adapt>

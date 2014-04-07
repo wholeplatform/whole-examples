@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<reusables:Adapt xmlns:reusables="whole:org.whole.lang.reusables:ReusablesModel">
+    <ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
+        <ql:Name value="Binary Search Tree"/>
+        <ql:SequentialQuestions initialCapacity="3">
+            <ql:Question>
+                <ql:Name value="question"/>
+                <ql:Text value="is the answer between 1 and 8 ?"/>
+                <ql:PrimitiveType value="BOOLEAN"/>
+                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            </ql:Question>
+            <ql:ConditionalQuestions>
+                <ql:Name value="question"/>
+                <ql:SequentialQuestions initialCapacity="3">
+                    <ql:Question>
+                        <ql:Name value="question1"/>
+                        <commons:StageDownFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="5">
+                                <text:Text value="is the answer between"/>
+                                <text:Text value="1"/>
+                                <text:Text value="and"/>
+                                <text:Text value="4"/>
+                                <text:Text value="?"/>
+                            </text:Row>
+                        </commons:StageDownFragment>
+                        <ql:PrimitiveType value="BOOLEAN"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </ql:Question>
+                    <ql:ConditionalQuestions>
+                        <ql:Name value="question1"/>
+                        <ql:SequentialQuestions initialCapacity="3">
+                            <ql:Question>
+                                <ql:Name value="question2"/>
+                                <commons:StageDownFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="5">
+                                        <text:Text value="is the answer between"/>
+                                        <text:Text value="1"/>
+                                        <text:Text value="and"/>
+                                        <text:Text value="2"/>
+                                        <text:Text value="?"/>
+                                    </text:Row>
+                                </commons:StageDownFragment>
+                                <ql:PrimitiveType value="BOOLEAN"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </ql:Question>
+                            <ql:ConditionalQuestions>
+                                <ql:Name value="question2"/>
+                                <ql:SequentialQuestions initialCapacity="3">
+                                    <ql:Question>
+                                        <ql:Name value="question3"/>
+                                        <commons:StageDownFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="3">
+                                        <text:Text value="is the answer"/>
+                                        <text:Text value="1"/>
+                                        <text:Text value="?"/>
+                                        </text:Row>
+                                        </commons:StageDownFragment>
+                                        <ql:PrimitiveType value="BOOLEAN"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </ql:Question>
+                                    <ql:ConditionalQuestions>
+                                        <ql:Name value="question3"/>
+                                        <ql:SequentialQuestions initialCapacity="2">
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="1"/>
+                                        </ql:SequentialQuestions>
+                                    </ql:ConditionalQuestions>
+                                    <ql:ConditionalQuestions>
+                                        <math:Not xmlns:math="http://lang.whole.org/Math">
+                                        <ql:Name value="question3"/>
+                                        </math:Not>
+                                        <ql:SequentialQuestions initialCapacity="2">
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="2"/>
+                                        </ql:SequentialQuestions>
+                                    </ql:ConditionalQuestions>
+                                </ql:SequentialQuestions>
+                            </ql:ConditionalQuestions>
+                            <ql:ConditionalQuestions>
+                                <math:Not xmlns:math="http://lang.whole.org/Math">
+                                    <ql:Name value="question2"/>
+                                </math:Not>
+                                <ql:SequentialQuestions initialCapacity="3">
+                                    <ql:Question>
+                                        <ql:Name value="question4"/>
+                                        <commons:StageDownFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="3">
+                                        <text:Text value="is the answer"/>
+                                        <text:Text value="3"/>
+                                        <text:Text value="?"/>
+                                        </text:Row>
+                                        </commons:StageDownFragment>
+                                        <ql:PrimitiveType value="BOOLEAN"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </ql:Question>
+                                    <ql:ConditionalQuestions>
+                                        <ql:Name value="question4"/>
+                                        <ql:SequentialQuestions initialCapacity="2">
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="3"/>
+                                        </ql:SequentialQuestions>
+                                    </ql:ConditionalQuestions>
+                                    <ql:ConditionalQuestions>
+                                        <math:Not xmlns:math="http://lang.whole.org/Math">
+                                        <ql:Name value="question4"/>
+                                        </math:Not>
+                                        <ql:SequentialQuestions initialCapacity="2">
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="4"/>
+                                        </ql:SequentialQuestions>
+                                    </ql:ConditionalQuestions>
+                                </ql:SequentialQuestions>
+                            </ql:ConditionalQuestions>
+                        </ql:SequentialQuestions>
+                    </ql:ConditionalQuestions>
+                    <ql:ConditionalQuestions>
+                        <math:Not xmlns:math="http://lang.whole.org/Math">
+                            <ql:Name value="question1"/>
+                        </math:Not>
+                        <ql:SequentialQuestions initialCapacity="3">
+                            <ql:Question>
+                                <ql:Name value="question5"/>
+                                <commons:StageDownFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="5">
+                                        <text:Text value="is the answer between"/>
+                                        <text:Text value="5"/>
+                                        <text:Text value="and"/>
+                                        <text:Text value="6"/>
+                                        <text:Text value="?"/>
+                                    </text:Row>
+                                </commons:StageDownFragment>
+                                <ql:PrimitiveType value="BOOLEAN"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </ql:Question>
+                            <ql:ConditionalQuestions>
+                                <ql:Name value="question5"/>
+                                <ql:SequentialQuestions initialCapacity="3">
+                                    <ql:Question>
+                                        <ql:Name value="question6"/>
+                                        <commons:StageDownFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="3">
+                                        <text:Text value="is the answer"/>
+                                        <text:Text value="5"/>
+                                        <text:Text value="?"/>
+                                        </text:Row>
+                                        </commons:StageDownFragment>
+                                        <ql:PrimitiveType value="BOOLEAN"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </ql:Question>
+                                    <ql:ConditionalQuestions>
+                                        <ql:Name value="question6"/>
+                                        <ql:SequentialQuestions initialCapacity="2">
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="5"/>
+                                        </ql:SequentialQuestions>
+                                    </ql:ConditionalQuestions>
+                                    <ql:ConditionalQuestions>
+                                        <math:Not xmlns:math="http://lang.whole.org/Math">
+                                        <ql:Name value="question6"/>
+                                        </math:Not>
+                                        <ql:SequentialQuestions initialCapacity="2">
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="6"/>
+                                        </ql:SequentialQuestions>
+                                    </ql:ConditionalQuestions>
+                                </ql:SequentialQuestions>
+                            </ql:ConditionalQuestions>
+                            <ql:ConditionalQuestions>
+                                <math:Not xmlns:math="http://lang.whole.org/Math">
+                                    <ql:Name value="question5"/>
+                                </math:Not>
+                                <ql:SequentialQuestions initialCapacity="3">
+                                    <ql:Question>
+                                        <ql:Name value="question7"/>
+                                        <commons:StageDownFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="3">
+                                        <text:Text value="is the answer"/>
+                                        <text:Text value="7"/>
+                                        <text:Text value="?"/>
+                                        </text:Row>
+                                        </commons:StageDownFragment>
+                                        <ql:PrimitiveType value="BOOLEAN"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </ql:Question>
+                                    <ql:ConditionalQuestions>
+                                        <ql:Name value="question7"/>
+                                        <ql:SequentialQuestions initialCapacity="2">
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="7"/>
+                                        </ql:SequentialQuestions>
+                                    </ql:ConditionalQuestions>
+                                    <ql:ConditionalQuestions>
+                                        <math:Not xmlns:math="http://lang.whole.org/Math">
+                                        <ql:Name value="question7"/>
+                                        </math:Not>
+                                        <ql:SequentialQuestions initialCapacity="2">
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
+                                        <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="8"/>
+                                        </ql:SequentialQuestions>
+                                    </ql:ConditionalQuestions>
+                                </ql:SequentialQuestions>
+                            </ql:ConditionalQuestions>
+                        </ql:SequentialQuestions>
+                    </ql:ConditionalQuestions>
+                </ql:SequentialQuestions>
+            </ql:ConditionalQuestions>
+            <ql:ConditionalQuestions>
+                <math:Not xmlns:math="http://lang.whole.org/Math">
+                    <ql:Name value="question"/>
+                </math:Not>
+                <reusables:Reuse>
+                    <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
+                        <queries:ParentStep/>
+                        <queries:ParentStep/>
+                        <queries:Filter>
+                            <queries:ChildStep/>
+                            <queries:IndexTest>
+                                <queries:IntLiteral value="1"/>
+                            </queries:IndexTest>
+                        </queries:Filter>
+                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="clone"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
+                            <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
+                            <workflows:Expressions initialCapacity="1">
+                                <queries:SelfStep/>
+                            </workflows:Expressions>
+                        </workflows:InvokeJavaClassMethod>
+                    </queries:Path>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
+                        <queries:Block initialCapacity="4">
+                            <queries:CartesianUpdate>
+                                <queries:Path initialCapacity="2">
+                                    <queries:DescendantStep/>
+                                    <queries:Choose initialCapacity="2">
+                                        <queries:Path initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Question"/>
+                                        </queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#name"/>
+                                        </queries:Path>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#ConditionalQuestions"/>
+                                        </queries:Filter>
+                                        <queries:Choose initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        </queries:Filter>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lang.whole.org/Math#expression"/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        </queries:Filter>
+                                        </queries:Path>
+                                        </queries:Choose>
+                                        </queries:Path>
+                                    </queries:Choose>
+                                </queries:Path>
+                                <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
+                                    <semantics:EntityType value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                    <queries:Addition>
+                                        <queries:Singleton>
+                                        <queries:SelfStep/>
+                                        </queries:Singleton>
+                                        <queries:StringLiteral value="_gen"/>
+                                    </queries:Addition>
+                                </semantics:TypeCast>
+                            </queries:CartesianUpdate>
+                            <queries:CartesianUpdate>
+                                <queries:Path initialCapacity="5">
+                                    <queries:DescendantStep/>
+                                    <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Question"/>
+                                    </queries:Filter>
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#label"/>
+                                    <queries:FeatureStep value="http://lang.whole.org/Commons#rootEntity"/>
+                                    <queries:Sequence initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:ChildStep/>
+                                        <queries:IndexTest>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:IndexTest>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <queries:ChildStep/>
+                                        <queries:IndexTest>
+                                        <queries:IntLiteral value="3"/>
+                                        </queries:IndexTest>
+                                        </queries:Filter>
+                                    </queries:Sequence>
+                                </queries:Path>
+                                <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
+                                    <semantics:EntityType value="http://lang.whole.org/Text#Text"/>
+                                    <queries:Addition>
+                                        <queries:Singleton>
+                                        <semantics:TypeCast>
+                                        <semantics:EntityType value="http://lang.whole.org/Queries#IntLiteral"/>
+                                        <queries:SelfStep/>
+                                        </semantics:TypeCast>
+                                        </queries:Singleton>
+                                        <queries:IntLiteral value="8"/>
+                                    </queries:Addition>
+                                </semantics:TypeCast>
+                            </queries:CartesianUpdate>
+                            <queries:CartesianUpdate>
+                                <queries:Path initialCapacity="4">
+                                    <queries:DescendantStep/>
+                                    <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#ConditionalQuestions"/>
+                                    </queries:Filter>
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
+                                    <queries:Filter>
+                                        <queries:ChildStep/>
+                                        <queries:And initialCapacity="2">
+                                        <queries:IndexTest>
+                                        <queries:IntLiteral value="1"/>
+                                        </queries:IndexTest>
+                                        <queries:KindTest value="DATA"/>
+                                        </queries:And>
+                                    </queries:Filter>
+                                </queries:Path>
+                                <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
+                                    <semantics:EntityType value="whole:org.whole.crossexamples.lwc14:QLSModel#Text"/>
+                                    <queries:Addition>
+                                        <queries:Singleton>
+                                        <semantics:TypeCast>
+                                        <semantics:EntityType value="http://lang.whole.org/Queries#IntLiteral"/>
+                                        <queries:SelfStep/>
+                                        </semantics:TypeCast>
+                                        </queries:Singleton>
+                                        <queries:IntLiteral value="8"/>
+                                    </queries:Addition>
+                                </semantics:TypeCast>
+                            </queries:CartesianUpdate>
+                            <queries:SelfStep/>
+                        </queries:Block>
+                    </queries:Path>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </reusables:Reuse>
+            </ql:ConditionalQuestions>
+        </ql:SequentialQuestions>
+    </ql:Form>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</reusables:Adapt>
