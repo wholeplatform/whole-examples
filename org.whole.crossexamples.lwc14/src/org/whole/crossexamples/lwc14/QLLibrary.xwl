@@ -935,73 +935,58 @@
                                 <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#PrimitiveType"/>
                                 <patterns:ResultPoint>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <patterns:ScopePoint>
-                                        <patterns:Declarations initialCapacity="1">
-                                        <patterns:VariableDeclaration>
-                                        <patterns:Name value="type"/>
-                                        <queries:SelfStep/>
-                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </patterns:VariableDeclaration>
-                                        </patterns:Declarations>
-                                        <patterns:TemplatePoint>
+                                    <patterns:TemplatePoint>
                                         <patterns:SelectionPoint initialCapacity="6">
                                         <patterns:ConditionPoint>
                                         <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="type"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="BOOLEAN"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                         </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="BooleanValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
                                         <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="type"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="STRING"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                         </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="StringValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
                                         <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="type"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="INTEGER"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                         </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="IntegerValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
                                         <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="type"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="DECIMAL"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                         </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="DecimalValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
                                         <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="type"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="DATE"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                         </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="DateValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
                                         <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="type"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="MONEY"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                         </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="MoneyValueWidget"/>
                                         </patterns:ConditionPoint>
                                         </patterns:SelectionPoint>
-                                        </patterns:TemplatePoint>
-                                    </patterns:ScopePoint>
+                                    </patterns:TemplatePoint>
                                     <patterns:Insert>
                                         <patterns:Placement value="AROUND"/>
                                         <patterns:JoinPointStep value="typePoint"/>

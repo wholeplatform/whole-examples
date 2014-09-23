@@ -468,10 +468,9 @@
                             <queries:Choose initialCapacity="5">
                                 <queries:If>
                                     <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="BOOLEAN"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                     </queries:ExpressionTest>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
@@ -484,10 +483,9 @@
                                 </queries:If>
                                 <queries:If>
                                     <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="STRING"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                     </queries:ExpressionTest>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
@@ -500,10 +498,9 @@
                                 </queries:If>
                                 <queries:If>
                                     <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="INTEGER"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                     </queries:ExpressionTest>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
@@ -516,10 +513,9 @@
                                 </queries:If>
                                 <queries:If>
                                     <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="DATE"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                     </queries:ExpressionTest>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
@@ -532,10 +528,9 @@
                                 </queries:If>
                                 <queries:If>
                                     <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="MONEY"/>
-                                        </queries:Equals>
+                                        </queries:EqualsStep>
                                     </queries:ExpressionTest>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
