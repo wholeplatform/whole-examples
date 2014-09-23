@@ -4,20 +4,20 @@
     <patterns:Namespace value="org.whole.crossexamples.cg13.patterns.java"/>
     <patterns:Name value="JavaPrototypeArtifacts1"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <patterns:Patterns initialCapacity="3">
+    <patterns:Patterns initialCapacity="4">
         <patterns:Pattern>
             <patterns:ResultTypes initialCapacity="1">
                 <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#BodyDeclaration"/>
             </patterns:ResultTypes>
             <patterns:Name value="Property"/>
-            <patterns:TemplatePoint>
-                <patterns:ScopePoint>
-                    <patterns:Declarations initialCapacity="1">
-                        <patterns:JoinPointDeclaration>
-                            <patterns:Name value="propertyPoint"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        </patterns:JoinPointDeclaration>
-                    </patterns:Declarations>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="1">
+                    <patterns:JoinPointDeclaration>
+                        <patterns:Name value="propertyPoint"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:JoinPointDeclaration>
+                </patterns:Declarations>
+                <patterns:TemplatePoint>
                     <patterns:SequencePoint initialCapacity="6">
                         <patterns:InsertionPoint>
                             <patterns:Name value="propertyPoint"/>
@@ -254,8 +254,8 @@
                             </patterns:Insert>
                         </patterns:ResultPoint>
                     </patterns:SequencePoint>
-                </patterns:ScopePoint>
-            </patterns:TemplatePoint>
+                </patterns:TemplatePoint>
+            </patterns:ScopePoint>
         </patterns:Pattern>
         <patterns:Pattern>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -367,10 +367,7 @@
                                         <patterns:Name value="properties"/>
                                         <patterns:BooleanValue value="false"/>
                                         <commons:Resolver/>
-                                        <patterns:Repetition>
-                                        <patterns:Name value="Properties"/>
                                         <patterns:Name value="Property"/>
-                                        </patterns:Repetition>
                                         <commons:Resolver/>
                                         </patterns:Slot>
                                     </java:BodyDeclarations>
@@ -381,31 +378,40 @@
                 </artifacts:FileArtifact>
             </patterns:TemplatePoint>
         </patterns:Pattern>
+        <patterns:Repetition>
+            <patterns:Name value="Properties"/>
+            <patterns:Name value="Property"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </patterns:Repetition>
         <patterns:Pattern>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <patterns:Name value="JavaBeanModelArtifact"/>
-            <artifacts:PackageArtifact xmlns:artifacts="http://lang.whole.org/Artifacts">
-                <patterns:Slot>
-                    <patterns:Name value="packageName"/>
-                    <patterns:BooleanValue value="false"/>
-                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                </patterns:Slot>
-                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                <artifacts:Artifacts initialCapacity="1">
+            <patterns:TemplatePoint>
+                <artifacts:PackageArtifact xmlns:artifacts="http://lang.whole.org/Artifacts">
                     <patterns:Slot>
-                        <patterns:Name value="javaBeans"/>
+                        <patterns:Name value="packageName"/>
                         <patterns:BooleanValue value="false"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        <patterns:Repetition>
-                            <patterns:Name value="JavaBeanArtifacts"/>
-                            <patterns:Name value="JavaBeanArtifact"/>
-                        </patterns:Repetition>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </patterns:Slot>
-                </artifacts:Artifacts>
-            </artifacts:PackageArtifact>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <artifacts:Artifacts initialCapacity="1">
+                        <patterns:Slot>
+                            <patterns:Name value="javaBeans"/>
+                            <patterns:BooleanValue value="false"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <patterns:Repetition>
+                                <patterns:Name value="JavaBeanArtifacts"/>
+                                <patterns:Name value="JavaBeanArtifact"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </patterns:Repetition>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </patterns:Slot>
+                    </artifacts:Artifacts>
+                </artifacts:PackageArtifact>
+            </patterns:TemplatePoint>
         </patterns:Pattern>
     </patterns:Patterns>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
 </patterns:PatternLanguage>
