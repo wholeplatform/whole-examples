@@ -1482,10 +1482,10 @@
                                         <javascript:BooleanData value="false"/>
                                         <javascript:Expressions initialCapacity="1">
                                         <patterns:DerivationPoint>
-                                        <patterns:FunctionApplicationPoint>
+                                        <patterns:FunctionPoint>
                                         <patterns:Name value="distinctNames"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </patterns:FunctionApplicationPoint>
+                                        </patterns:FunctionPoint>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
                                         </patterns:DerivationPoint>
                                         </javascript:Expressions>
@@ -1497,10 +1497,10 @@
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <javascript:Expressions initialCapacity="1">
                                         <patterns:DerivationPoint>
-                                        <patterns:FunctionApplicationPoint>
+                                        <patterns:FunctionPoint>
                                         <patterns:Name value="distinctNames"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </patterns:FunctionApplicationPoint>
+                                        </patterns:FunctionPoint>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
                                         </patterns:DerivationPoint>
                                         </javascript:Expressions>
