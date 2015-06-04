@@ -2777,9 +2777,9 @@ public class CodeGenerationTestTemplateManager extends AbstractTemplateManager {
                 b0.XMLDecl_();
                 b0.Version("1.0");
                 b0.Encoding("UTF-8");
-                b0.Standalone(false);
-                b0._XMLDecl();
                 org.whole.lang.commons.builders.ICommonsBuilder b1 = (org.whole.lang.commons.builders.ICommonsBuilder) op.wGetBuilder(org.whole.lang.commons.reflect.CommonsLanguageKit.URI);
+                b1.Resolver();
+                b0._XMLDecl();
                 b1.Resolver();
                 b1.Resolver();
                 b0._Prolog();
@@ -2940,7 +2940,7 @@ public class CodeGenerationTestTemplateManager extends AbstractTemplateManager {
                 b1.XMLDecl_();
                 b1.Version("1.0");
                 b1.Encoding("UTF-8");
-                b1.Standalone(false);
+                b0.Resolver();
                 b1._XMLDecl();
                 b0.Resolver();
                 b0.Resolver();
