@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<patterns:PatternLanguage xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
+    <patterns:URI value="whole:org.whole.crossexamples.lwc14.widgets:QLJSPatterns"/>
+    <patterns:Namespace value="org.whole.crossexamples.lwc14.widgets"/>
+    <patterns:Name value="QLJSPatterns"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <patterns:Patterns initialCapacity="2">
+        <patterns:Pattern>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="BooleanValueWidget"/>
+            <patterns:TemplatePoint>
+                <javascript:NewExpression xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                    <javascript:StaticMemberExpression>
+                        <javascript:Identifier value="QLrt"/>
+                        <javascript:Identifier value="BooleanValueWidget"/>
+                    </javascript:StaticMemberExpression>
+                    <javascript:Expressions initialCapacity="1">
+                        <patterns:Slot>
+                            <patterns:Name value="lazyExpression"/>
+                            <patterns:BooleanValue value="true"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <patterns:Name value="LazyValue"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </patterns:Slot>
+                    </javascript:Expressions>
+                </javascript:NewExpression>
+            </patterns:TemplatePoint>
+        </patterns:Pattern>
+        <patterns:Pattern>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="LazyValue"/>
+            <patterns:TemplatePoint>
+                <javascript:NewExpression xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
+                    <javascript:StaticMemberExpression>
+                        <javascript:Identifier value="QLrt"/>
+                        <javascript:Identifier value="LazyValue"/>
+                    </javascript:StaticMemberExpression>
+                    <javascript:Expressions initialCapacity="2">
+                        <javascript:FunctionExpression>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <javascript:Statements initialCapacity="1">
+                                <javascript:ReturnStatement>
+                                    <javascript:ArrayLiteral>
+                                        <javascript:BooleanData value="false"/>
+                                        <javascript:Expressions initialCapacity="1">
+                                        <patterns:Slot>
+                                        <patterns:Name value="names"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <patterns:Repetition>
+                                        <patterns:Name value="Names"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:Repetition>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        </javascript:Expressions>
+                                    </javascript:ArrayLiteral>
+                                </javascript:ReturnStatement>
+                            </javascript:Statements>
+                        </javascript:FunctionExpression>
+                        <javascript:FunctionExpression>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <javascript:Expressions initialCapacity="1">
+                                <patterns:Slot>
+                                    <patterns:Name value="names"/>
+                                    <patterns:BooleanValue value="false"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <patterns:Name value="Names"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </patterns:Slot>
+                            </javascript:Expressions>
+                            <javascript:Statements initialCapacity="1">
+                                <javascript:ReturnStatement>
+                                    <patterns:Slot>
+                                        <patterns:Name value="expression"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </patterns:Slot>
+                                </javascript:ReturnStatement>
+                            </javascript:Statements>
+                        </javascript:FunctionExpression>
+                    </javascript:Expressions>
+                </javascript:NewExpression>
+            </patterns:TemplatePoint>
+        </patterns:Pattern>
+    </patterns:Patterns>
+</patterns:PatternLanguage>

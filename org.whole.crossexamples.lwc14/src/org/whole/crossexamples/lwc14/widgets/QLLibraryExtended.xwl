@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<reusables:Adapt xmlns:reusables="whole:org.whole.lang.reusables:ReusablesModel">
+    <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+        <reusables:Reuse>
+            <reusables:Resource>
+                <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/QLLibrary.xwl"/>
+                <commons:Resolver/>
+            </reusables:Resource>
+            <commons:Resolver/>
+            <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                <queries:PointwiseUpdate>
+                    <queries:Path initialCapacity="3">
+                        <queries:FeatureStep value="whole:org.whole.lang.reusables:ReusablesModel#original"/>
+                        <queries:FeatureStep value="whole:org.whole.lang.patterns:PatternsModel#declarations"/>
+                        <queries:Filter>
+                            <queries:ChildStep/>
+                            <queries:IndexTest>
+                                <queries:IntLiteral value="3"/>
+                            </queries:IndexTest>
+                        </queries:Filter>
+                    </queries:Path>
+                    <commons:StageUpFragment>
+                        <patterns:FunctionDeclaration xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
+                            <commons:Resolver/>
+                            <patterns:Name value="lazyEvaluation"/>
+                            <patterns:ResultPoint>
+                                <commons:Resolver/>
+                                <patterns:ScopePoint>
+                                    <patterns:Declarations initialCapacity="2">
+                                        <patterns:FunctionDeclaration>
+                                        <commons:Resolver/>
+                                        <patterns:Name value="distinctNames"/>
+                                        <queries:Filter>
+                                        <queries:DescendantOrSelfStep/>
+                                        <queries:And initialCapacity="2">
+                                        <queries:DistinctTest>
+                                        <commons:Resolver/>
+                                        </queries:DistinctTest>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        </queries:And>
+                                        </queries:Filter>
+                                        </patterns:FunctionDeclaration>
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="expressionPoint"/>
+                                        <commons:Resolver/>
+                                        </patterns:JoinPointDeclaration>
+                                    </patterns:Declarations>
+                                    <patterns:SequencePoint initialCapacity="2">
+                                        <patterns:TemplatePoint>
+                                        <qljspatterns:LazyValue xmlns:qljspatterns="whole:org.whole.crossexamples.lwc14.widgets:QLJSPatternsModel">
+                                        <qljspatterns:Names initialCapacity="1">
+                                        <patterns:DerivationPoint>
+                                        <patterns:FunctionPoint>
+                                        <patterns:Name value="distinctNames"/>
+                                        <commons:Resolver/>
+                                        </patterns:FunctionPoint>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
+                                        </patterns:DerivationPoint>
+                                        </qljspatterns:Names>
+                                        <patterns:JoinPoint>
+                                        <patterns:Name value="expressionPoint"/>
+                                        <commons:Resolver/>
+                                        </patterns:JoinPoint>
+                                        </qljspatterns:LazyValue>
+                                        </patterns:TemplatePoint>
+                                        <patterns:DerivationPoint>
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <semantics:Name value="toJavaScript"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </semantics:FunctionApplication>
+                                        <commons:Resolver/>
+                                        </patterns:DerivationPoint>
+                                    </patterns:SequencePoint>
+                                </patterns:ScopePoint>
+                                <patterns:Insert>
+                                    <patterns:Placement value="AROUND"/>
+                                    <patterns:JoinPointStep value="lazyEvaluationPoint"/>
+                                </patterns:Insert>
+                            </patterns:ResultPoint>
+                        </patterns:FunctionDeclaration>
+                    </commons:StageUpFragment>
+                </queries:PointwiseUpdate>
+                <queries:PointwiseUpdate>
+                    <queries:Path initialCapacity="1">
+                        <queries:FeatureStep value="whole:org.whole.lang.reusables:ReusablesModel#adapter"/>
+                    </queries:Path>
+                    <commons:StageUpFragment>
+                        <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
+                            <actions:Label value="whole:org.whole.crossexamples.lwc14.widgets:QLJSPatternsGuestActions#Expand QLJSPatterns Patterns"/>
+                            <commons:Resolver/>
+                        </actions:ActionCall>
+                    </commons:StageUpFragment>
+                </queries:PointwiseUpdate>
+                <queries:SelfStep/>
+            </queries:Block>
+            <commons:Resolver/>
+            <commons:Resolver/>
+        </reusables:Reuse>
+    </commons:SameStageFragment>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</reusables:Adapt>
