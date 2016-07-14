@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.whole.crossexample.lwc16 ; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.ui.views,
+ org.whole.lang,
+ org.whole.langs.legacy,
+ org.whole.langs.legacy.op,
+ org.whole.langs.core,
+ org.whole.langs.core.op,
+ org.whole.langs.db,
+ org.whole.langs.db.op,
+ org.whole.lang.ui,
+ org.whole.langs.legacy.ui,
+ org.whole.langs.core.ui,
+ org.whole.lang.ui.notations,
+ org.whole.lang.gen
+Bundle-ActivationPolicy: lazy
+Eclipse-RegisterBuddy: org.whole.lang
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
