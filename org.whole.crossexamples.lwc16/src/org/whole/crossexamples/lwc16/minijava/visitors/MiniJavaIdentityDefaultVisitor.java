@@ -120,6 +120,11 @@ public class MiniJavaIdentityDefaultVisitor extends MiniJavaIdentityVisitor {
 		visit((Expression) entity);
 	}
 
+	public void visit(ParenthesizedExpression entity) {
+		visit((IMiniJavaEntity) entity);
+		visit((Expression) entity);
+	}
+
 	public void visit(ArrayAccess entity) {
 		visit((IMiniJavaEntity) entity);
 		visit((Expression) entity);

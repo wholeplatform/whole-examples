@@ -79,6 +79,9 @@ public class MiniJavaIdentityVisitor extends AbstractVisitor implements IMiniJav
 	public void visit(NotExpression entity) {
 	}
 
+	public void visit(ParenthesizedExpression entity) {
+	}
+
 	public void visit(ArrayAccess entity) {
 	}
 

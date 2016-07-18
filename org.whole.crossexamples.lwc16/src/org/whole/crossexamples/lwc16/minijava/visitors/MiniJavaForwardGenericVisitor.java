@@ -106,6 +106,10 @@ public class MiniJavaForwardGenericVisitor extends AbstractUnaryVisitor<IVisitor
 		wGetVisitor1().visit(entity);
 	}
 
+	public void visit(ParenthesizedExpression entity) {
+		wGetVisitor1().visit(entity);
+	}
+
 	public void visit(ArrayAccess entity) {
 		wGetVisitor1().visit(entity);
 	}

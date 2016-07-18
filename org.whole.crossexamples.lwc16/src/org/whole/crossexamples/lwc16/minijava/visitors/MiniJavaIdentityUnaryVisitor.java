@@ -89,6 +89,9 @@ public class MiniJavaIdentityUnaryVisitor<V extends IVisitor> extends AbstractUn
 	public void visit(NotExpression entity) {
 	}
 
+	public void visit(ParenthesizedExpression entity) {
+	}
+
 	public void visit(ArrayAccess entity) {
 	}
 

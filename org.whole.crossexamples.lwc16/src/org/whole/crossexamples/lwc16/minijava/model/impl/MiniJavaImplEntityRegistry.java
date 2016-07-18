@@ -34,6 +34,7 @@ public class MiniJavaImplEntityRegistry extends AbstractEntityRegistry {
 		put(new InfixExpressionImpl());
 		put(new InfixOperatorImpl());
 		put(new NotExpressionImpl());
+		put(new ParenthesizedExpressionImpl());
 		put(new ArrayAccessImpl());
 		put(new ArrayLengthImpl());
 		put(new MethodInvocationImpl());

@@ -163,6 +163,9 @@ public class MiniJavaGenericBuilderAdapter extends GenericIdentityBuilder {
 		case MiniJavaEntityDescriptorEnum.NotExpression_ord:
 			specificBuilder.NotExpression();
 			break;
+		case MiniJavaEntityDescriptorEnum.ParenthesizedExpression_ord:
+			specificBuilder.ParenthesizedExpression();
+			break;
 		case MiniJavaEntityDescriptorEnum.ArrayAccess_ord:
 			specificBuilder.ArrayAccess();
 			break;
@@ -249,6 +252,9 @@ public class MiniJavaGenericBuilderAdapter extends GenericIdentityBuilder {
 		case MiniJavaEntityDescriptorEnum.NotExpression_ord:
 			specificBuilder.NotExpression_();
 			break;
+		case MiniJavaEntityDescriptorEnum.ParenthesizedExpression_ord:
+			specificBuilder.ParenthesizedExpression_();
+			break;
 		case MiniJavaEntityDescriptorEnum.ArrayAccess_ord:
 			specificBuilder.ArrayAccess_();
 			break;
@@ -334,6 +340,9 @@ public class MiniJavaGenericBuilderAdapter extends GenericIdentityBuilder {
 			break;
 		case MiniJavaEntityDescriptorEnum.NotExpression_ord:
 			specificBuilder._NotExpression();
+			break;
+		case MiniJavaEntityDescriptorEnum.ParenthesizedExpression_ord:
+			specificBuilder._ParenthesizedExpression();
 			break;
 		case MiniJavaEntityDescriptorEnum.ArrayAccess_ord:
 			specificBuilder._ArrayAccess();

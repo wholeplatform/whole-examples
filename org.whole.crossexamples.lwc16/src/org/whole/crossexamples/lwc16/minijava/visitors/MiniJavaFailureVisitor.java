@@ -101,6 +101,10 @@ public class MiniJavaFailureVisitor extends MiniJavaIdentityVisitor {
 		throw new VisitException();
 	}
 
+	public void visit(ParenthesizedExpression entity) {
+		throw new VisitException();
+	}
+
 	public void visit(ArrayAccess entity) {
 		throw new VisitException();
 	}

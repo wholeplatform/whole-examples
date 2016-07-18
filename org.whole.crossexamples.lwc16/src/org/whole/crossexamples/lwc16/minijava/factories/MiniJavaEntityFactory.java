@@ -253,6 +253,14 @@ public class MiniJavaEntityFactory extends GenericEntityFactory {
 		return create(MiniJavaEntityDescriptorEnum.NotExpression, expression);
 	}
 
+	public ParenthesizedExpression createParenthesizedExpression() {
+		return create(MiniJavaEntityDescriptorEnum.ParenthesizedExpression);
+	}
+
+	public ParenthesizedExpression createParenthesizedExpression(Expression expression) {
+		return create(MiniJavaEntityDescriptorEnum.ParenthesizedExpression, expression);
+	}
+
 	public ArrayAccess createArrayAccess() {
 		return create(MiniJavaEntityDescriptorEnum.ArrayAccess);
 	}

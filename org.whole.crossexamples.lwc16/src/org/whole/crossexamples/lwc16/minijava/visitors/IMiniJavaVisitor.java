@@ -52,6 +52,8 @@ public interface IMiniJavaVisitor extends IVisitor {
 
 	public void visit(NotExpression entity);
 
+	public void visit(ParenthesizedExpression entity);
+
 	public void visit(ArrayAccess entity);
 
 	public void visit(ArrayLength entity);

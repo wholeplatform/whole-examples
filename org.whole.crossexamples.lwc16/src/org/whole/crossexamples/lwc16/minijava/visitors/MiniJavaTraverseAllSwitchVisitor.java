@@ -105,6 +105,10 @@ public class MiniJavaTraverseAllSwitchVisitor extends MiniJavaIdentityUnaryVisit
 		wGetVisitor1().visit(entity.getExpression());
 	}
 
+	public void visit(ParenthesizedExpression entity) {
+		wGetVisitor1().visit(entity.getExpression());
+	}
+
 	public void visit(ArrayAccess entity) {
 		wGetVisitor1().visit(entity.getArray());
 		wGetVisitor1().visit(entity.getIndex());

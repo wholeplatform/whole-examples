@@ -110,6 +110,10 @@ public class MiniJavaForwardStrategyVisitor extends GenericForwardStrategyVisito
 		wGetStrategy().visit(entity);
 	}
 
+	public void visit(ParenthesizedExpression entity) {
+		wGetStrategy().visit(entity);
+	}
+
 	public void visit(ArrayAccess entity) {
 		wGetStrategy().visit(entity);
 	}

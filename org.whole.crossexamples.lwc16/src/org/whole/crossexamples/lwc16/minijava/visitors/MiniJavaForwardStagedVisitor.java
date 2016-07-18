@@ -95,6 +95,10 @@ public class MiniJavaForwardStagedVisitor extends MiniJavaIdentityVisitor {
 		stagedVisit(entity);
 	}
 
+	public void visit(ParenthesizedExpression entity) {
+		stagedVisit(entity);
+	}
+
 	public void visit(ArrayAccess entity) {
 		stagedVisit(entity);
 	}

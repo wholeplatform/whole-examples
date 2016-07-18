@@ -35,15 +35,16 @@ public class MiniJavaEntityDescriptorEnum extends EntityDescriptorEnum {
 	public static final int InfixExpression_ord = 22;
 	public static final int InfixOperator_ord = 23;
 	public static final int NotExpression_ord = 24;
-	public static final int ArrayAccess_ord = 25;
-	public static final int ArrayLength_ord = 26;
-	public static final int MethodInvocation_ord = 27;
-	public static final int Arguments_ord = 28;
-	public static final int BooleanLiteral_ord = 29;
-	public static final int IntLiteral_ord = 30;
-	public static final int ThisExpression_ord = 31;
-	public static final int ArrayCreation_ord = 32;
-	public static final int ClassInstanceCreation_ord = 33;
+	public static final int ParenthesizedExpression_ord = 25;
+	public static final int ArrayAccess_ord = 26;
+	public static final int ArrayLength_ord = 27;
+	public static final int MethodInvocation_ord = 28;
+	public static final int Arguments_ord = 29;
+	public static final int BooleanLiteral_ord = 30;
+	public static final int IntLiteral_ord = 31;
+	public static final int ThisExpression_ord = 32;
+	public static final int ArrayCreation_ord = 33;
+	public static final int ClassInstanceCreation_ord = 34;
 	public static final MiniJavaEntityDescriptorEnum instance = new MiniJavaEntityDescriptorEnum();
 	public static final EntityDescriptor<Program> Program = (EntityDescriptor<Program>) instance.valueOf(Program_ord);
 	public static final EntityDescriptor<MainClass> MainClass = (EntityDescriptor<MainClass>) instance
@@ -90,6 +91,8 @@ public class MiniJavaEntityDescriptorEnum extends EntityDescriptorEnum {
 			.valueOf(InfixOperator_ord);
 	public static final EntityDescriptor<NotExpression> NotExpression = (EntityDescriptor<NotExpression>) instance
 			.valueOf(NotExpression_ord);
+	public static final EntityDescriptor<ParenthesizedExpression> ParenthesizedExpression = (EntityDescriptor<ParenthesizedExpression>) instance
+			.valueOf(ParenthesizedExpression_ord);
 	public static final EntityDescriptor<ArrayAccess> ArrayAccess = (EntityDescriptor<ArrayAccess>) instance
 			.valueOf(ArrayAccess_ord);
 	public static final EntityDescriptor<ArrayLength> ArrayLength = (EntityDescriptor<ArrayLength>) instance
@@ -173,15 +176,18 @@ public class MiniJavaEntityDescriptorEnum extends EntityDescriptorEnum {
 				.withFeature(MiniJavaFeatureDescriptorEnum.name, Identifier_ord)
 				.withFeature(MiniJavaFeatureDescriptorEnum.index, Expression_ord)
 				.withFeature(MiniJavaFeatureDescriptorEnum.expression, Expression_ord);
-		putSimpleEntity(Expression_ord, "Expression", Expression.class, true, ClassInstanceCreation_ord,
-				ThisExpression_ord, ArrayAccess_ord, Identifier_ord, BooleanLiteral_ord, InfixExpression_ord,
-				ArrayCreation_ord, ArrayLength_ord, NotExpression_ord, MethodInvocation_ord, IntLiteral_ord);
+		putSimpleEntity(Expression_ord, "Expression", Expression.class, true, ParenthesizedExpression_ord,
+				ClassInstanceCreation_ord, ThisExpression_ord, ArrayAccess_ord, Identifier_ord, BooleanLiteral_ord,
+				InfixExpression_ord, ArrayCreation_ord, ArrayLength_ord, NotExpression_ord, MethodInvocation_ord,
+				IntLiteral_ord);
 		putSimpleEntity(InfixExpression_ord, "InfixExpression", InfixExpression.class, false)
 				.withFeature(MiniJavaFeatureDescriptorEnum.leftOperand, Expression_ord)
 				.withFeature(MiniJavaFeatureDescriptorEnum.operator, InfixOperator_ord)
 				.withFeature(MiniJavaFeatureDescriptorEnum.rightOperand, Expression_ord);
 		putDataEntity(InfixOperator_ord, "InfixOperator", InfixOperator.class, false, InfixOperatorEnum.Value.class);
 		putSimpleEntity(NotExpression_ord, "NotExpression", NotExpression.class, false)
+				.withFeature(MiniJavaFeatureDescriptorEnum.expression, Expression_ord);
+		putSimpleEntity(ParenthesizedExpression_ord, "ParenthesizedExpression", ParenthesizedExpression.class, false)
 				.withFeature(MiniJavaFeatureDescriptorEnum.expression, Expression_ord);
 		putSimpleEntity(ArrayAccess_ord, "ArrayAccess", ArrayAccess.class, false)
 				.withFeature(MiniJavaFeatureDescriptorEnum.array, Expression_ord)

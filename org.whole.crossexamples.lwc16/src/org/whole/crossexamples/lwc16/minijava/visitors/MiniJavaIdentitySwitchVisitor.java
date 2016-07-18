@@ -78,6 +78,9 @@ public abstract class MiniJavaIdentitySwitchVisitor extends AbstractVisitor impl
 		case MiniJavaEntityDescriptorEnum.NotExpression_ord:
 			visit((NotExpression) entity);
 			break;
+		case MiniJavaEntityDescriptorEnum.ParenthesizedExpression_ord:
+			visit((ParenthesizedExpression) entity);
+			break;
 		case MiniJavaEntityDescriptorEnum.ArrayAccess_ord:
 			visit((ArrayAccess) entity);
 			break;

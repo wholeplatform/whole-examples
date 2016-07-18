@@ -195,6 +195,12 @@ public interface IMiniJavaBuilder extends IBuilder {
 
 	public void _NotExpression();
 
+	public void ParenthesizedExpression();
+
+	public void ParenthesizedExpression_();
+
+	public void _ParenthesizedExpression();
+
 	public void ArrayAccess();
 
 	public void ArrayAccess_();

@@ -394,6 +394,18 @@ public class MiniJavaSpecificBuilderAdapter extends GenericBuilderContext implem
 		_wEntity(MiniJavaEntityDescriptorEnum.NotExpression);
 	}
 
+	public void ParenthesizedExpression() {
+		wEntity(MiniJavaEntityDescriptorEnum.ParenthesizedExpression);
+	}
+
+	public void ParenthesizedExpression_() {
+		wEntity_(MiniJavaEntityDescriptorEnum.ParenthesizedExpression);
+	}
+
+	public void _ParenthesizedExpression() {
+		_wEntity(MiniJavaEntityDescriptorEnum.ParenthesizedExpression);
+	}
+
 	public void ArrayAccess() {
 		wEntity(MiniJavaEntityDescriptorEnum.ArrayAccess);
 	}

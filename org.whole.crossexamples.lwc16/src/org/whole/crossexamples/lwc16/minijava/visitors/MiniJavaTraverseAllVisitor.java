@@ -110,6 +110,10 @@ public class MiniJavaTraverseAllVisitor extends MiniJavaIdentityUnaryVisitor<IMi
 		entity.getExpression().accept(wGetVisitor1());
 	}
 
+	public void visit(ParenthesizedExpression entity) {
+		entity.getExpression().accept(wGetVisitor1());
+	}
+
 	public void visit(ArrayAccess entity) {
 		entity.getArray().accept(wGetVisitor1());
 		entity.getIndex().accept(wGetVisitor1());

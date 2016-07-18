@@ -37,6 +37,7 @@ public class MiniJavaAdaptersEntityRegistry extends AbstractEntityRegistry {
 		put(new InfixExpressionAdapter());
 		put(new InfixOperatorAdapter());
 		put(new NotExpressionAdapter());
+		put(new ParenthesizedExpressionAdapter());
 		put(new ArrayAccessAdapter());
 		put(new ArrayLengthAdapter());
 		put(new MethodInvocationAdapter());
