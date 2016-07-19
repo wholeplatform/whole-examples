@@ -1,7 +1,13 @@
 <?xml version="1.0"?>
 <models:Model xmlns:models="http://lang.whole.org/Models">
     <models:SimpleName value="Metadata"/>
-    <models:TypeRelations initialCapacity="2">
+    <models:TypeRelations initialCapacity="3">
+        <models:SupertypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="IText"/>
+            </models:Types>
+            <models:AnyType/>
+        </models:SupertypesOf>
         <models:SupertypesOf>
             <models:Types initialCapacity="1">
                 <models:SimpleName value="Annotable"/>
@@ -15,7 +21,7 @@
             <models:AnyType/>
         </models:SubtypesOf>
     </models:TypeRelations>
-    <models:ModelDeclarations initialCapacity="7">
+    <models:ModelDeclarations initialCapacity="11">
         <models:SimpleEntity>
             <models:EntityModifiers initialCapacity="1">
                 <models:EntityModifier value="abstract"/>
@@ -94,6 +100,47 @@
             <models:SimpleName value="Number"/>
             <models:Types initialCapacity="0"/>
             <models:DataType value="int"/>
+        </models:DataEntity>
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Comment"/>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Annotation"/>
+            </models:Types>
+            <models:Features initialCapacity="1">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Paragraphs"/>
+                    <models:SimpleName value="paragraphs"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Paragraphs"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="1">
+                <models:ComponentModifier value="ordered"/>
+            </models:ComponentModifiers>
+            <models:SimpleName value="Paragraph"/>
+        </models:CompositeEntity>
+        <models:CompositeEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Paragraph"/>
+            <models:Types initialCapacity="0"/>
+            <models:ComponentModifiers initialCapacity="1">
+                <models:ComponentModifier value="ordered"/>
+            </models:ComponentModifiers>
+            <models:SimpleName value="IText"/>
+        </models:CompositeEntity>
+        <models:DataEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="Text"/>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="IText"/>
+            </models:Types>
+            <models:DataType value="String"/>
         </models:DataEntity>
     </models:ModelDeclarations>
     <models:Namespace value="org.whole.crossexamples.lwc16.metadata"/>
