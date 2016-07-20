@@ -22,7 +22,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.whole.crossexamples.lwc16.minijava.model.NotExpression;
-import org.whole.crossexamples.lwc16.minijava.ui.figure.NotExpressionFigure;
+import org.whole.crossexamples.lwc16.minijava.ui.figures.NotExpressionFigure;
 import org.whole.lang.model.IEntity;
 import org.whole.lang.ui.editparts.AbstractContentPanePart;
 

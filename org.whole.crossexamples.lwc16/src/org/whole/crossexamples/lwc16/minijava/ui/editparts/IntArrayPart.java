@@ -18,7 +18,7 @@
 package org.whole.crossexamples.lwc16.minijava.ui.editparts;
 
 import org.eclipse.draw2d.IFigure;
-import org.whole.crossexamples.lwc16.minijava.ui.figure.IntArrayFigure;
+import org.whole.crossexamples.lwc16.minijava.ui.figures.IntArrayFigure;
 import org.whole.lang.ui.editparts.AbstractPart;
 
 /**

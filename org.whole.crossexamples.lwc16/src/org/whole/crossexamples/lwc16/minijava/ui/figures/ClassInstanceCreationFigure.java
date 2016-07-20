@@ -15,21 +15,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with the Whole Platform. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.whole.crossexamples.lwc16.minijava.ui.figure;
+package org.whole.crossexamples.lwc16.minijava.ui.figures;
 
 import org.whole.lang.ui.figures.ContentPaneFigure;
-import org.whole.lang.ui.layout.ColumnLayout;
+import org.whole.lang.ui.layout.RowLayout;
 
 /**
  *  @author Enrico Persiani
  */
-public class ProgramFigure extends ContentPaneFigure {
+public class ClassInstanceCreationFigure extends ContentPaneFigure {
 
-	public ProgramFigure() {
-		super(new ColumnLayout());
-		initContentPanes(2);
-
+	public ClassInstanceCreationFigure() {
+		super(new RowLayout().withSpacing(4));
+		initContentPanes(1);
+		addKeyword("new ");
 		add(createContentPane(0));
-		add(createContentPane(1));
+		addContentLight("()");
 	}
 }

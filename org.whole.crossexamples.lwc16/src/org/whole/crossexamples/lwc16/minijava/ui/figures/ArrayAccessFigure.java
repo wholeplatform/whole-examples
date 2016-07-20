@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with the Whole Platform. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.whole.crossexamples.lwc16.minijava.ui.figure;
+package org.whole.crossexamples.lwc16.minijava.ui.figures;
 
 import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.layout.RowLayout;
@@ -23,12 +23,14 @@ import org.whole.lang.ui.layout.RowLayout;
 /**
  *  @author Enrico Persiani
  */
-public class ArrayLengthFigure extends ContentPaneFigure {
+public class ArrayAccessFigure extends ContentPaneFigure {
 
-	public ArrayLengthFigure() {
+	public ArrayAccessFigure() {
 		super(new RowLayout().withSpacing(4));
-		initContentPanes(1);
+		initContentPanes(2);
 		add(createContentPane(0));
-		addContent(".length");
+		addContentLight("[");
+		add(createContentPane(1));
+		addContentLight("]");
 	}
 }

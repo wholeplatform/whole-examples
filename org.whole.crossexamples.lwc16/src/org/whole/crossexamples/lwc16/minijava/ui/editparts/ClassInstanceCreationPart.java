@@ -22,7 +22,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.whole.crossexamples.lwc16.minijava.model.ClassInstanceCreation;
-import org.whole.crossexamples.lwc16.minijava.ui.figure.ClassInstanceCreationFigure;
+import org.whole.crossexamples.lwc16.minijava.ui.figures.ClassInstanceCreationFigure;
 import org.whole.lang.model.IEntity;
 import org.whole.lang.ui.editparts.AbstractContentPanePart;
 

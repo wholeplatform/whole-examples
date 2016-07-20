@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with the Whole Platform. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.whole.crossexamples.lwc16.minijava.ui.figure;
+package org.whole.crossexamples.lwc16.minijava.ui.figures;
 
 import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.layout.RowLayout;

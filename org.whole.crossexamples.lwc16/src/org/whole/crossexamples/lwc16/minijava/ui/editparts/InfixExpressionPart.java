@@ -24,7 +24,7 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.whole.crossexamples.lwc16.minijava.model.InfixExpression;
 import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaFeatureDescriptorEnum;
-import org.whole.crossexamples.lwc16.minijava.ui.figure.InfixExpressionFigure;
+import org.whole.crossexamples.lwc16.minijava.ui.figures.InfixExpressionFigure;
 import org.whole.lang.model.IEntity;
 import org.whole.lang.ui.editparts.AbstractContentPanePart;
 

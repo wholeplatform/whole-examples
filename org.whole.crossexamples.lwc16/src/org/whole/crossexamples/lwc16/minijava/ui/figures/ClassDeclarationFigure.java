@@ -15,22 +15,34 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with the Whole Platform. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.whole.crossexamples.lwc16.minijava.ui.figure;
+package org.whole.crossexamples.lwc16.minijava.ui.figures;
 
+import org.eclipse.draw2d.MarginBorder;
 import org.whole.lang.ui.figures.ContentPaneFigure;
+import org.whole.lang.ui.figures.EntityFigure;
+import org.whole.lang.ui.layout.ColumnLayout;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
  *  @author Enrico Persiani
  */
-public class ArrayAccessFigure extends ContentPaneFigure {
+public class ClassDeclarationFigure extends ContentPaneFigure {
 
-	public ArrayAccessFigure() {
-		super(new RowLayout().withSpacing(4));
-		initContentPanes(2);
-		add(createContentPane(0));
-		addContentLight("[");
-		add(createContentPane(1));
-		addContentLight("]");
+	public ClassDeclarationFigure() {
+		super(new ColumnLayout());
+		initContentPanes(4);
+
+		EntityFigure row;
+		add(row = new EntityFigure(new RowLayout().withSpacing(4)));
+		row.addKeyword("class");
+		row.add(createContentPane(0));
+		row.addKeyword("extends");
+		row.add(createContentPane(1));
+		row.addContentLight("{");
+
+		add(createContentPane(2, new MarginBorder(0,16,0,0)));
+		add(createContentPane(3, new MarginBorder(0,16,0,0)));
+
+		addContentLight("}");
 	}
 }

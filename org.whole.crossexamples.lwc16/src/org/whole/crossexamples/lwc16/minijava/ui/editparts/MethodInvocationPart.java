@@ -22,7 +22,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.whole.crossexamples.lwc16.minijava.model.MethodInvocation;
-import org.whole.crossexamples.lwc16.minijava.ui.figure.MethodInvocationFigure;
+import org.whole.crossexamples.lwc16.minijava.ui.figures.MethodInvocationFigure;
 import org.whole.lang.model.IEntity;
 import org.whole.lang.ui.editparts.AbstractContentPanePart;
 
