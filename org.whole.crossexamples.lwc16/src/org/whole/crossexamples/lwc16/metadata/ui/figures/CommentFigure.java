@@ -15,30 +15,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with the Whole Platform. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.whole.crossexamples.lwc16;
+package org.whole.crossexamples.lwc16.metadata.ui.figures;
 
-import org.whole.crossexamples.lwc16.metadata.reflect.MetadataLanguageDeployer;
-import org.whole.crossexamples.lwc16.metadata.ui.MetadataUIDeployer;
-import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaLanguageDeployer;
-import org.whole.crossexamples.lwc16.minijava.ui.MiniJavaUIDeployer;
-import org.whole.lang.reflect.AbstractSuiteDeployer;
-import org.whole.lang.reflect.IDeployer;
+import org.whole.lang.ui.figures.ContentPaneFigure;
+import org.whole.lang.ui.layout.ColumnLayout;
 
 /**
- * @author Enrico Persiani
+ *  @generator Whole
  */
-public class LWC16Deployer  extends AbstractSuiteDeployer {
-	public int getDeployLevel() {
-		return IDeployer.LEVEL_LANGUAGE_EXTENSION;
-	}
+public class CommentFigure extends ContentPaneFigure {
 
-	@SuppressWarnings("unchecked")
-	public LWC16Deployer() {
-		super(
-			MiniJavaLanguageDeployer.class,
-			MiniJavaUIDeployer.class,
-			MetadataLanguageDeployer.class,
-			MetadataUIDeployer.class
-		);
+	public CommentFigure() {
+		super(new ColumnLayout());
+		initContentPanes(1);
+		addContentLighter("/*");
+		add(createContentPane(0));
+		addContentLighter("*/");
 	}
 }

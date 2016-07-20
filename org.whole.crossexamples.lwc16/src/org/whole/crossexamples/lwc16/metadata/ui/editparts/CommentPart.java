@@ -15,30 +15,29 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with the Whole Platform. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.whole.crossexamples.lwc16;
+package org.whole.crossexamples.lwc16.metadata.ui.editparts;
 
-import org.whole.crossexamples.lwc16.metadata.reflect.MetadataLanguageDeployer;
-import org.whole.crossexamples.lwc16.metadata.ui.MetadataUIDeployer;
-import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaLanguageDeployer;
-import org.whole.crossexamples.lwc16.minijava.ui.MiniJavaUIDeployer;
-import org.whole.lang.reflect.AbstractSuiteDeployer;
-import org.whole.lang.reflect.IDeployer;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.draw2d.IFigure;
+import org.whole.crossexamples.lwc16.metadata.model.Comment;
+import org.whole.crossexamples.lwc16.metadata.ui.figures.CommentFigure;
+import org.whole.lang.model.IEntity;
+import org.whole.lang.ui.editparts.AbstractContentPanePart;
 
 /**
- * @author Enrico Persiani
+ * @generator Whole
  */
-public class LWC16Deployer  extends AbstractSuiteDeployer {
-	public int getDeployLevel() {
-		return IDeployer.LEVEL_LANGUAGE_EXTENSION;
+public class CommentPart extends AbstractContentPanePart {
+	protected IFigure createFigure() {
+		return new CommentFigure();
 	}
 
-	@SuppressWarnings("unchecked")
-	public LWC16Deployer() {
-		super(
-			MiniJavaLanguageDeployer.class,
-			MiniJavaUIDeployer.class,
-			MetadataLanguageDeployer.class,
-			MetadataUIDeployer.class
-		);
+	protected List<IEntity> getModelSpecificChildren() {
+		Comment entity = getModelEntity();
+		List<IEntity> list = new ArrayList<IEntity>(1);
+		list.add(entity.getParagraphs());
+		return list;
 	}
 }
