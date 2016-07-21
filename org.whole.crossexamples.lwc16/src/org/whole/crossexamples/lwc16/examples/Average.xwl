@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<minijava:Program xmlns:minijava="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel">
+    <minijava:MainClass>
+        <minijava:Identifier value="AverageMain"/>
+        <minijava:Identifier value="args"/>
+        <minijava:PrintlnStatement>
+            <minijava:MethodInvocation>
+                <minijava:ClassInstanceCreation>
+                    <minijava:Identifier value="Average"/>
+                </minijava:ClassInstanceCreation>
+                <minijava:Identifier value="calculate"/>
+                <minijava:Arguments initialCapacity="0"/>
+            </minijava:MethodInvocation>
+        </minijava:PrintlnStatement>
+    </minijava:MainClass>
+    <minijava:ClassDeclarations initialCapacity="1">
+        <minijava:ClassDeclaration>
+            <minijava:Identifier value="Average"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <minijava:MethodDeclarations initialCapacity="1">
+                <minijava:MethodDeclaration>
+                    <minijava:Int/>
+                    <minijava:Identifier value="calculate"/>
+                    <minijava:VariableDeclarations initialCapacity="1">
+                        <minijava:VariableDeclaration>
+                            <minijava:IntArray/>
+                            <minijava:Identifier value="values"/>
+                        </minijava:VariableDeclaration>
+                    </minijava:VariableDeclarations>
+                    <minijava:VariableDeclarations initialCapacity="1">
+                        <minijava:VariableDeclaration>
+                            <minijava:Int/>
+                            <minijava:Identifier value="size"/>
+                        </minijava:VariableDeclaration>
+                    </minijava:VariableDeclarations>
+                    <minijava:Statements initialCapacity="1">
+                        <minijava:VariableAssignment>
+                            <minijava:Identifier value="size"/>
+                            <minijava:ArrayLength>
+                                <minijava:Identifier value="values"/>
+                            </minijava:ArrayLength>
+                        </minijava:VariableAssignment>
+                    </minijava:Statements>
+                    <math:Division xmlns:math="http://lang.whole.org/Math">
+                        <minijava_math:Summation xmlns:minijava_math="whole:org.whole.crossexamples.lwc16.mjmath:MiniJavaMathExtensionModel">
+                            <minijava:Identifier value="i"/>
+                            <minijava:IntLiteral value="0"/>
+                            <minijava:Identifier value="size"/>
+                            <minijava:ArrayAccess>
+                                <minijava:Identifier value="values"/>
+                                <minijava:Identifier value="i"/>
+                            </minijava:ArrayAccess>
+                        </minijava_math:Summation>
+                        <minijava:Identifier value="size"/>
+                    </math:Division>
+                </minijava:MethodDeclaration>
+            </minijava:MethodDeclarations>
+        </minijava:ClassDeclaration>
+    </minijava:ClassDeclarations>
+</minijava:Program>

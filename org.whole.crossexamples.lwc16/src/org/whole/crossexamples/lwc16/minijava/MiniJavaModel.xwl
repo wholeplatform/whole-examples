@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
 <models:Model xmlns:models="http://lang.whole.org/Models">
     <models:SimpleName value="MiniJava"/>
-    <models:TypeRelations initialCapacity="0"/>
+    <models:TypeRelations initialCapacity="1">
+        <models:TypeAliasOf>
+            <models:SimpleName value="Expression"/>
+            <models:EntityType value="http://lang.whole.org/Math#Expression"/>
+        </models:TypeAliasOf>
+    </models:TypeRelations>
     <models:ModelDeclarations initialCapacity="35">
         <models:SimpleEntity>
             <models:EntityModifiers initialCapacity="0"/>
