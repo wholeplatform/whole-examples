@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<models:Model xmlns:models="http://lang.whole.org/Models">
+    <models:SimpleName value="MJCFlow"/>
+    <models:TypeRelations initialCapacity="2">
+        <models:TypeAliasOf>
+            <models:SimpleName value="Statement"/>
+            <models:EntityType value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Statement"/>
+        </models:TypeAliasOf>
+        <models:TypeAliasOf>
+            <models:SimpleName value="Expression"/>
+            <models:EntityType value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Expression"/>
+        </models:TypeAliasOf>
+    </models:TypeRelations>
+    <models:ModelDeclarations initialCapacity="1">
+        <models:SimpleEntity>
+            <models:EntityModifiers initialCapacity="0"/>
+            <models:SimpleName value="UnlessStatement"/>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Statement"/>
+            </models:Types>
+            <models:Features initialCapacity="2">
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Expression"/>
+                    <models:SimpleName value="expression"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+                <models:Feature>
+                    <models:FeatureModifiers initialCapacity="0"/>
+                    <models:SimpleName value="Statement"/>
+                    <models:SimpleName value="statement"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </models:Feature>
+            </models:Features>
+        </models:SimpleEntity>
+    </models:ModelDeclarations>
+    <models:Namespace value="org.whole.crossexamples.lwc16.mjcflow"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <models:URI value="whole:org.whole.crossexamples.lwc16.mjcflow:MiniJavaControlFlowExtensionModel"/>
+</models:Model>
