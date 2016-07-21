@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <models:Model xmlns:models="http://lang.whole.org/Models">
-    <models:SimpleName value="MiniJava Math"/>
+    <models:SimpleName value="MJMath"/>
     <models:TypeRelations initialCapacity="3">
         <models:TypeAliasOf>
             <models:SimpleName value="Identifier"/>

@@ -207,4 +207,8 @@ public class MiniJavaEntityDescriptorEnum extends EntityDescriptorEnum {
 		putSimpleEntity(ClassInstanceCreation_ord, "ClassInstanceCreation", ClassInstanceCreation.class, false)
 				.withFeature(MiniJavaFeatureDescriptorEnum.name, Identifier_ord);
 	}
+
+	protected void initForeignTypeRelations() {
+		setAliasOf(true, "http://lang.whole.org/Math#Expression", Expression_ord);
+	}
 }
