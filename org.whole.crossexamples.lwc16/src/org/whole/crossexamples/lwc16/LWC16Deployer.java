@@ -21,6 +21,10 @@ import org.whole.crossexamples.lwc16.metadata.reflect.MetadataLanguageDeployer;
 import org.whole.crossexamples.lwc16.metadata.ui.MetadataUIDeployer;
 import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaLanguageDeployer;
 import org.whole.crossexamples.lwc16.minijava.ui.MiniJavaUIDeployer;
+import org.whole.crossexamples.lwc16.mjcflow.reflect.MJCFlowLanguageDeployer;
+import org.whole.crossexamples.lwc16.mjcflow.ui.MJCFlowUIDeployer;
+import org.whole.crossexamples.lwc16.mjmath.reflect.MJMathLanguageDeployer;
+import org.whole.crossexamples.lwc16.mjmath.ui.MJMathUIDeployer;
 import org.whole.lang.reflect.AbstractSuiteDeployer;
 import org.whole.lang.reflect.IDeployer;
 
@@ -38,7 +42,11 @@ public class LWC16Deployer  extends AbstractSuiteDeployer {
 			MiniJavaLanguageDeployer.class,
 			MiniJavaUIDeployer.class,
 			MetadataLanguageDeployer.class,
-			MetadataUIDeployer.class
+			MetadataUIDeployer.class,
+			MJCFlowLanguageDeployer.class,
+			MJCFlowUIDeployer.class,
+			MJMathLanguageDeployer.class,
+			MJMathUIDeployer.class
 		);
 	}
 }
