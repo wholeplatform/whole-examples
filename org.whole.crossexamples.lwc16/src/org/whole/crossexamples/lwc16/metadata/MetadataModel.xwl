@@ -4,12 +4,6 @@
     <models:TypeRelations initialCapacity="3">
         <models:SupertypesOf>
             <models:Types initialCapacity="1">
-                <models:SimpleName value="IText"/>
-            </models:Types>
-            <models:AnyType/>
-        </models:SupertypesOf>
-        <models:SupertypesOf>
-            <models:Types initialCapacity="1">
                 <models:SimpleName value="Annotable"/>
             </models:Types>
             <models:AnyType/>
@@ -20,6 +14,12 @@
             </models:Types>
             <models:AnyType/>
         </models:SubtypesOf>
+        <models:SupertypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="IText"/>
+            </models:Types>
+            <models:AnyType/>
+        </models:SupertypesOf>
     </models:TypeRelations>
     <models:ModelDeclarations initialCapacity="11">
         <models:SimpleEntity>

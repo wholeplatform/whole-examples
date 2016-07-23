@@ -1,7 +1,20 @@
 <?xml version="1.0"?>
 <models:Model xmlns:models="http://lang.whole.org/Models">
-    <models:SimpleName value="MetadataAspect"/>
-    <models:TypeRelations initialCapacity="0"/>
+    <models:SimpleName value="Metadata"/>
+    <models:TypeRelations initialCapacity="2">
+        <models:SupertypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Annotable"/>
+            </models:Types>
+            <models:AnyType/>
+        </models:SupertypesOf>
+        <models:SubtypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Metadata"/>
+            </models:Types>
+            <models:AnyType/>
+        </models:SubtypesOf>
+    </models:TypeRelations>
     <models:ModelDeclarations initialCapacity="7">
         <models:SimpleEntity>
             <models:EntityModifiers initialCapacity="1">
@@ -9,16 +22,7 @@
             </models:EntityModifiers>
             <models:SimpleName value="Annotable"/>
             <models:Types initialCapacity="0"/>
-            <models:Features initialCapacity="1">
-                <models:Feature>
-                    <models:FeatureModifiers initialCapacity="1">
-                        <models:FeatureModifier value="reference"/>
-                    </models:FeatureModifiers>
-                    <models:SimpleName value="Metadata"/>
-                    <models:SimpleName value="metadata"/>
-                    <models:SimpleName value="annotable"/>
-                </models:Feature>
-            </models:Features>
+            <models:Features initialCapacity="0"/>
         </models:SimpleEntity>
         <models:SimpleEntity>
             <models:EntityModifiers initialCapacity="0"/>
@@ -26,12 +30,10 @@
             <models:Types initialCapacity="0"/>
             <models:Features initialCapacity="2">
                 <models:Feature>
-                    <models:FeatureModifiers initialCapacity="1">
-                        <models:FeatureModifier value="reference"/>
-                    </models:FeatureModifiers>
+                    <models:FeatureModifiers initialCapacity="0"/>
                     <models:SimpleName value="Annotable"/>
                     <models:SimpleName value="annotable"/>
-                    <models:SimpleName value="metadata"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                 </models:Feature>
                 <models:Feature>
                     <models:FeatureModifiers initialCapacity="0"/>
@@ -96,5 +98,5 @@
     </models:ModelDeclarations>
     <models:Namespace value="org.whole.crossexamples.lwc16.variants.metadata"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <models:URI value="whole:org.whole.crossexamples.lwc16.variants:MetadataAspect"/>
+    <models:URI value="whole:org.whole.crossexamples.lwc16.variants:MetadataModel"/>
 </models:Model>
