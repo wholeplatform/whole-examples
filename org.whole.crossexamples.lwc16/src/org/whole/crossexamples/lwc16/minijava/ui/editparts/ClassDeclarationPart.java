@@ -17,21 +17,37 @@
  */
 package org.whole.crossexamples.lwc16.minijava.ui.editparts;
 
+import java.beans.PropertyChangeEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.whole.crossexamples.lwc16.minijava.model.ClassDeclaration;
+import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaFeatureDescriptorEnum;
 import org.whole.crossexamples.lwc16.minijava.ui.figures.ClassDeclarationFigure;
 import org.whole.lang.model.IEntity;
 import org.whole.lang.ui.editparts.AbstractContentPanePart;
+import org.whole.lang.util.EntityUtils;
 
 /**
- * @author Enrico Persiani
+ * @generator Whole
  */
 public class ClassDeclarationPart extends AbstractContentPanePart {
 	protected IFigure createFigure() {
 		return new ClassDeclarationFigure();
+	}
+
+	protected void propertyChangeUI(PropertyChangeEvent evt) {
+		super.propertyChangeUI(evt);
+
+		if (evt.getPropertyName().equals(MiniJavaFeatureDescriptorEnum.superclassName.getName()))
+			refreshVisuals();
+	}
+	protected void refreshVisuals() {
+		super.refreshVisuals();
+
+		ClassDeclaration entity = getModelEntity();
+		((ClassDeclarationFigure) getFigure()).hideExtends(EntityUtils.isResolver(entity.getSuperclassName()));		
 	}
 
 	protected List<IEntity> getModelSpecificChildren() {

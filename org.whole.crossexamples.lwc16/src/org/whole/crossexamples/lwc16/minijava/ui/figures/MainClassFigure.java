@@ -20,12 +20,11 @@ package org.whole.crossexamples.lwc16.minijava.ui.figures;
 import org.eclipse.draw2d.MarginBorder;
 import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.figures.EntityFigure;
-import org.whole.lang.ui.figures.EntityLabel;
 import org.whole.lang.ui.layout.ColumnLayout;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class MainClassFigure extends ContentPaneFigure {
 
@@ -34,25 +33,22 @@ public class MainClassFigure extends ContentPaneFigure {
 		initContentPanes(3);
 
 		EntityFigure row;
-		add(row = new EntityFigure(new RowLayout().withSpacing(4)));
-		row.addKeyword("class");
+		add(row = new EntityFigure(new RowLayout()));
+		row.addKeyword("class ");
 		row.add(createContentPane(0));
-		row.addContentLight("{");
+		row.addContentLight(" {");
 
-		add(row = new EntityFigure(new RowLayout().withSpacing(4)));
-		row.setBorder(new MarginBorder(0,16,0,0));
+		add(row = new EntityFigure(new RowLayout().withMarginLeft(16)));
 		row.addKeyword("public static void main");
 		row.addContentLight("(");
 		row.addContent("String");
-		row.addContentLight("[]");
+		row.addContentLight("[] ");
 		row.add(createContentPane(1));
 		row.addContentLight(")");
-		row.addContentLight("{");
+		row.addContentLight(" {");
 
 		add(createContentPane(2, new MarginBorder(0,32,0,0)));
-		EntityLabel curlyClose = addContentLight("}");
-		curlyClose.setBorder(new MarginBorder(0,16,0,0));
-
+		addContentLight("}").setBorder(new MarginBorder(0,16,0,0));
 		addContentLight("}");
 	}
 }

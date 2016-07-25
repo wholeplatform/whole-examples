@@ -21,12 +21,12 @@ import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class ArrayLengthFigure extends ContentPaneFigure {
 
 	public ArrayLengthFigure() {
-		super(new RowLayout().withSpacing(4));
+		super(new RowLayout());
 		initContentPanes(1);
 		add(createContentPane(0));
 		addContent(".length");

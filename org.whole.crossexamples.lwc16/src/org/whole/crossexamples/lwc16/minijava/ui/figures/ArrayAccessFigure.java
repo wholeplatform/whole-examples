@@ -21,12 +21,12 @@ import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class ArrayAccessFigure extends ContentPaneFigure {
 
 	public ArrayAccessFigure() {
-		super(new RowLayout().withSpacing(4));
+		super(new RowLayout());
 		initContentPanes(2);
 		add(createContentPane(0));
 		addContentLight("[");

@@ -24,7 +24,7 @@ import org.whole.lang.ui.layout.ColumnLayout;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class MethodDeclarationFigure extends ContentPaneFigure {
 
@@ -33,23 +33,23 @@ public class MethodDeclarationFigure extends ContentPaneFigure {
 		initContentPanes(6);
 
 		EntityFigure row;
-		add(row = new EntityFigure(new RowLayout().withSpacing(4)));
-		row.addKeyword("public");
+		add(row = new EntityFigure(new RowLayout()));
+		row.addKeyword("public ");
 		row.add(createContentPane(0));
+		row.addContentLight(" ");
 		row.add(createContentPane(1));
 		row.addContentLight("(");
 		row.add(createContentPane(2));
 		row.addContentLight(")");
-		row.addContentLight("{");
+		row.addContentLight(" {");
 
 		add(createContentPane(3, new MarginBorder(0,16,0,0)));
 		add(createContentPane(4, new MarginBorder(0,16,0,0)));
 
-		add(row = new EntityFigure(new RowLayout().withSpacing(4)));
-		row.setBorder(new MarginBorder(0,16,0,0));
-		row.addKeyword("return");
+		add(row = new EntityFigure(new RowLayout()));
+		row.addKeyword("return ").setBorder(new MarginBorder(0,16,0,0));
 		row.add(createContentPane(5));
-		row.addContent(";");
+		row.addContentLighter(";");
 
 		addContentLight("}");
 	}

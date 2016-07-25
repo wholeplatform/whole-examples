@@ -22,6 +22,7 @@ import org.whole.crossexamples.lwc16.metadata.model.*;
 import org.whole.crossexamples.lwc16.metadata.visitors.MetadataIdentityDefaultVisitor;
 import org.whole.lang.model.adapters.IEntityAdapter;
 import org.whole.lang.ui.editparts.CompositeColumnPart;
+import org.whole.lang.ui.editparts.ContentLightTextualEntityPart;
 import org.whole.lang.ui.editparts.IEditPartFactory;
 import org.whole.lang.ui.editparts.PlaceHolderPart;
 import org.whole.lang.ui.notations.text.editparts.DefaultTextualPartFactory;
@@ -73,5 +74,9 @@ public class MetadataTextualPartFactoryVisitor extends MetadataIdentityDefaultVi
 
 	public void visit(Paragraph entity) {
 		part = new ParagraphPart();
+	}
+
+	public void visit(Text entity) {
+		part = new ContentLightTextualEntityPart();
 	}
 }

@@ -21,18 +21,19 @@ import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class ArrayElementAssignmentFigure extends ContentPaneFigure {
 
 	public ArrayElementAssignmentFigure() {
-		super(new RowLayout().withSpacing(4));
+		super(new RowLayout());
 		initContentPanes(3);
 		add(createContentPane(0));
 		addContentLight("[");
 		add(createContentPane(1));
 		addContentLight("]");
-		addContent("=");
+		addContent(" = ");
 		add(createContentPane(2));
+		addContentLighter(";");
 	}
 }

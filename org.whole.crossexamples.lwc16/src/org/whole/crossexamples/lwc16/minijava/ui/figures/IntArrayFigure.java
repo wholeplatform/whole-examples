@@ -21,12 +21,12 @@ import org.whole.lang.ui.figures.EntityFigure;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class IntArrayFigure extends EntityFigure {
 
 	public IntArrayFigure() {
-		super(new RowLayout().withSpacing(4));
+		super(new RowLayout());
 		addKeyword("int");
 		addContentLight("[]");
 	}

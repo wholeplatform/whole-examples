@@ -25,7 +25,7 @@ import org.whole.lang.ui.layout.ColumnLayout;
  */
 public class MetadataFigure extends ContentPaneFigure {
 	public MetadataFigure() {
-		super(new ColumnLayout().withSpacing(4));
+		super(new ColumnLayout().withMarginTop(4));
 		initContentPanes(2);
 
 		add(createContentPane(0));

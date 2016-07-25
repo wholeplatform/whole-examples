@@ -17,11 +17,15 @@
  */
 package org.whole.crossexamples.lwc16.minijava.ui.editparts;
 
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.EditPart;
 import org.whole.crossexamples.lwc16.minijava.model.*;
 import org.whole.crossexamples.lwc16.minijava.model.Boolean;
+import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaFeatureDescriptorEnum;
 import org.whole.crossexamples.lwc16.minijava.visitors.MiniJavaIdentityDefaultVisitor;
+import org.whole.lang.model.IEntity;
 import org.whole.lang.model.adapters.IEntityAdapter;
+import org.whole.lang.ui.editparts.AbstractPart;
 import org.whole.lang.ui.editparts.CommaSeparatedCompositeFlowPart;
 import org.whole.lang.ui.editparts.CompositeColumnPart;
 import org.whole.lang.ui.editparts.IEditPartFactory;
@@ -29,10 +33,13 @@ import org.whole.lang.ui.editparts.KeywordDataEntityPart;
 import org.whole.lang.ui.editparts.ContentDataEntityPart;
 import org.whole.lang.ui.editparts.ContentTextualEntityPart;
 import org.whole.lang.ui.editparts.PlaceHolderPart;
+import org.whole.lang.ui.figures.LabelFactory;
+import org.whole.lang.ui.figures.PairContentPaneFigure;
 import org.whole.lang.ui.notations.text.editparts.DefaultTextualPartFactory;
+import org.whole.lang.util.EntityUtils;
 
 /** 
- * @author Enrico Persiani
+ * @generator Whole
  */
 public class MiniJavaTextualPartFactoryVisitor extends MiniJavaIdentityDefaultVisitor implements IEditPartFactory {
 	protected EditPart part, context;
@@ -67,7 +74,15 @@ public class MiniJavaTextualPartFactoryVisitor extends MiniJavaIdentityDefaultVi
 	}
 
 	public void visit(VariableDeclaration entity) {
-		part = new VariableDeclarationPart();
+		if (context instanceof CompositeColumnPart)
+			part = new VariableDeclarationPart();
+		else
+			part = new VariableDeclarationPart() {
+				@Override
+				protected IFigure createFigure() {
+					return new PairContentPaneFigure(8);
+				}
+			};
 	}
 
 	public void visit(MethodDeclaration entity) {
@@ -139,7 +154,27 @@ public class MiniJavaTextualPartFactoryVisitor extends MiniJavaIdentityDefaultVi
 	}
 
 	public void visit(InfixOperator entity) {
-		part = new ContentDataEntityPart();
+		part = new AbstractPart() {
+			@Override
+			protected IFigure createFigure() {
+				return LabelFactory.createContentLight(getInfixOperator(entity));
+			}
+		};
+	}
+	public static String getInfixOperator(InfixOperator entity) {
+		switch (entity.getValue().getOrdinal()) {
+		case InfixOperatorEnum.plus_ord:
+			return "+";
+		case InfixOperatorEnum.minus_ord:
+			return "-";
+		case InfixOperatorEnum.times_ord:
+			return "*";
+		case InfixOperatorEnum.less_ord:
+			return "<";
+		case InfixOperatorEnum.and_ord:
+		default:
+			return "&&";
+		}
 	}
 
 	public void visit(Boolean entity) {
@@ -163,6 +198,13 @@ public class MiniJavaTextualPartFactoryVisitor extends MiniJavaIdentityDefaultVi
 	}
 	
 	public void visit(VariableDeclarations entity) {
+		if (EntityUtils.hasParent(entity)) {
+			IEntity parent = entity.wGetParent();
+			if (parent.wGet(MiniJavaFeatureDescriptorEnum.parameters) == entity) {
+				part = new CommaSeparatedCompositeFlowPart();
+				return;
+			}
+		}
 		part = new CompositeColumnPart();
 	}
 

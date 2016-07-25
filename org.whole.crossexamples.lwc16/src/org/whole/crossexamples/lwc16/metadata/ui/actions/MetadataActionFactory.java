@@ -26,6 +26,7 @@ import org.whole.lang.text.ui.actions.BackspaceAction;
 import org.whole.lang.text.ui.actions.DeleteAction;
 import org.whole.lang.text.ui.actions.NewlineAction;
 import org.whole.lang.text.ui.actions.SplitOnCaretAction;
+import org.whole.lang.ui.actions.EnablerPredicateFactory;
 import org.whole.lang.ui.editor.ActionFactory;
 
 /** 
@@ -39,6 +40,13 @@ public class MetadataActionFactory extends ActionFactory {
 		return SingletonHolder.instance;
 	}
 	private MetadataActionFactory() {
+	}
+
+	public Object[][] wrapActions() {
+		EnablerPredicateFactory pf = EnablerPredicateFactory.instance;
+		return new Object[][] {
+			{pf.assignableTo(MetadataEntityDescriptorEnum.Annotable), MetadataEntityDescriptorEnum.Metadata, "Metadata", wrapIn0}
+		};
 	}
 
 	public Object[][] textActions() {

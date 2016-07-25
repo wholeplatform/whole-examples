@@ -25,12 +25,12 @@ import org.whole.lang.ui.layout.RowLayout;
  */
 public class RevisionFigure extends ContentPaneFigure {
 	public RevisionFigure() {
-		super(new RowLayout().withSpacing(4));
+		super(new RowLayout());
 		initContentPanes(2);
 
-		addKeyword("@revision");
+		addContentLight("@revision ");
 		add(createContentPane(0));
-		addKeyword(".");
+		addContentLight(".");
 		add(createContentPane(1));
 	}
 }

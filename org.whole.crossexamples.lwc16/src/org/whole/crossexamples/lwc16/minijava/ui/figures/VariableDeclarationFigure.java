@@ -21,15 +21,16 @@ import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class VariableDeclarationFigure extends ContentPaneFigure {
 
 	public VariableDeclarationFigure() {
-		super(new RowLayout().withSpacing(4));
+		super(new RowLayout());
 		initContentPanes(2);
 		add(createContentPane(0));
+		addContent(" ");
 		add(createContentPane(1));
-		addContent(";");
+		addContentLighter(";");
 	}
 }

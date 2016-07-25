@@ -2,13 +2,15 @@
 <models:Model xmlns:models="http://lang.whole.org/Models">
     <models:SimpleName value="Comments"/>
     <models:TypeRelations initialCapacity="2">
-        <models:TypeAliasOf>
-            <models:SimpleName value="Annotation"/>
+        <models:SubtypesOf>
+            <models:Types initialCapacity="1">
+                <models:SimpleName value="Comment"/>
+            </models:Types>
             <models:EntityType value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Annotation"/>
-        </models:TypeAliasOf>
+        </models:SubtypesOf>
         <models:SupertypesOf>
             <models:Types initialCapacity="1">
-                <models:SimpleName value="IText"/>
+                <models:SimpleName value="Text"/>
             </models:Types>
             <models:AnyType/>
         </models:SupertypesOf>
@@ -17,9 +19,7 @@
         <models:SimpleEntity>
             <models:EntityModifiers initialCapacity="0"/>
             <models:SimpleName value="Comment"/>
-            <models:Types initialCapacity="1">
-                <models:SimpleName value="Annotation"/>
-            </models:Types>
+            <models:Types initialCapacity="0"/>
             <models:Features initialCapacity="1">
                 <models:Feature>
                     <models:FeatureModifiers initialCapacity="0"/>
@@ -45,14 +45,12 @@
             <models:ComponentModifiers initialCapacity="1">
                 <models:ComponentModifier value="ordered"/>
             </models:ComponentModifiers>
-            <models:SimpleName value="IText"/>
+            <models:SimpleName value="Text"/>
         </models:CompositeEntity>
         <models:DataEntity>
             <models:EntityModifiers initialCapacity="0"/>
             <models:SimpleName value="Text"/>
-            <models:Types initialCapacity="1">
-                <models:SimpleName value="IText"/>
-            </models:Types>
+            <models:Types initialCapacity="0"/>
             <models:DataType value="String"/>
         </models:DataEntity>
     </models:ModelDeclarations>

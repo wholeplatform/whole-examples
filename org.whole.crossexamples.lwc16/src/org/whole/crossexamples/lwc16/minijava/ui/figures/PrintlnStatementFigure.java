@@ -21,17 +21,17 @@ import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class PrintlnStatementFigure extends ContentPaneFigure {
 
 	public PrintlnStatementFigure() {
-		super(new RowLayout().withSpacing(4));
+		super(new RowLayout());
 		initContentPanes(1);
 		addContent("System.out.println");
 		addContentLight("(");
 		add(createContentPane(0));
 		addContentLight(")");
-		addContent(";");
+		addContentLighter(";");
 	}
 }

@@ -20,29 +20,36 @@ package org.whole.crossexamples.lwc16.minijava.ui.figures;
 import org.eclipse.draw2d.MarginBorder;
 import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.figures.EntityFigure;
+import org.whole.lang.ui.figures.IEntityFigure;
 import org.whole.lang.ui.layout.ColumnLayout;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class ClassDeclarationFigure extends ContentPaneFigure {
+	private IEntityFigure extendsFigure;
 
 	public ClassDeclarationFigure() {
 		super(new ColumnLayout());
 		initContentPanes(4);
 
 		EntityFigure row;
-		add(row = new EntityFigure(new RowLayout().withSpacing(4)));
-		row.addKeyword("class");
+		add(row = new EntityFigure(new RowLayout()));
+		row.addKeyword("class ");
 		row.add(createContentPane(0));
-		row.addKeyword("extends");
+		row.addKeyword(" ");
+		extendsFigure = row.addKeyword("extends ");
 		row.add(createContentPane(1));
-		row.addContentLight("{");
+		row.addContentLight(" {");
 
 		add(createContentPane(2, new MarginBorder(0,16,0,0)));
 		add(createContentPane(3, new MarginBorder(0,16,0,0)));
 
 		addContentLight("}");
+	}
+
+	public void hideExtends(boolean value) {
+		extendsFigure.setVisible(!value);
 	}
 }

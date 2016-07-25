@@ -18,7 +18,6 @@
 package org.whole.crossexamples.lwc16.minijava.ui.figures;
 
 import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.swt.graphics.Color;
 import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.figures.FigurePrefs;
@@ -26,10 +25,9 @@ import org.whole.lang.ui.figures.RoundBracketsBorder;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- * @author Enrico Persiani
+ * @generator Whole
  */
 public class InfixExpressionFigure extends ContentPaneFigure {
-	private IFigure operand;
 	private boolean showLeftParentheses;
 	private boolean showRightParentheses;
 
@@ -38,10 +36,7 @@ public class InfixExpressionFigure extends ContentPaneFigure {
 		initContentPanes(3);
 
 		add(createContentPane(0));
-
-		operand = createContentPane(1);
-		add(operand);
-
+		add(createContentPane(1));
 		add(createContentPane(2));
 	}
 

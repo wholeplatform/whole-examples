@@ -21,7 +21,7 @@ import org.whole.lang.ui.figures.ContentPaneFigure;
 import org.whole.lang.ui.layout.ColumnLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class ProgramFigure extends ContentPaneFigure {
 

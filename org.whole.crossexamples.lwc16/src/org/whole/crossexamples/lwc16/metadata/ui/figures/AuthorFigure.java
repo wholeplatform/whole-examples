@@ -26,10 +26,10 @@ import org.whole.lang.ui.layout.RowLayout;
  */
 public class AuthorFigure extends NodeFigure {
 	public AuthorFigure() {
-		super(new RowLayout().withSpacing(4));
+		super(new RowLayout());
 		initContentPanes(1);
 
-		addKeyword("@author");
+		addContentLight("@author ");
 		add(createContentPane(0, LabelFactory.createLiteral()));
 	}
 }

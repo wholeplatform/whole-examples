@@ -24,7 +24,7 @@ import org.whole.lang.ui.layout.ColumnLayout;
 import org.whole.lang.ui.layout.RowLayout;
 
 /**
- *  @author Enrico Persiani
+ *  @generator Whole
  */
 public class WhileStatementFigure extends ContentPaneFigure {
 
@@ -32,12 +32,12 @@ public class WhileStatementFigure extends ContentPaneFigure {
 		super(new ColumnLayout());
 		initContentPanes(2);
 		EntityFigure row;
-		add(row = new EntityFigure(new RowLayout().withSpacing(4)));
-		row.addKeyword("while");
+		add(row = new EntityFigure(new RowLayout()));
+		row.addKeyword("while ");
 		row.addContentLight("(");
 		row.add(createContentPane(0));
 		row.addContentLight(")");
-		row.addContentLighter("{");
+		row.addContentLighter(" {");
 		add(createContentPane(1, new MarginBorder(0,16,0,0)));
 		addContentLighter("}");
 	}
