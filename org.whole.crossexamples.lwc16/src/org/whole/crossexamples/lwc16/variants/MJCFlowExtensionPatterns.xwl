@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<patterns:PatternLanguage xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
+    <patterns:URI value="whole:org.whole.crossexamples.lwc16.mjcflow:MJCFlowExtensionPatterns"/>
+    <patterns:Namespace value="org.whole.crossexamples.lwc16.mjcflow"/>
+    <patterns:Name value="MJCFlow"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <patterns:Patterns initialCapacity="1">
+        <patterns:Pattern>
+            <patterns:ResultTypes initialCapacity="1">
+                <patterns:Name value="Statement"/>
+            </patterns:ResultTypes>
+            <patterns:Name value="UnlessStatement"/>
+            <patterns:TemplatePoint>
+                <minijava:IfStatement xmlns:minijava="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel">
+                    <patterns:Slot>
+                        <patterns:Name value="expression"/>
+                        <patterns:BooleanValue value="false"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:Slot>
+                    <minijava:Block initialCapacity="0"/>
+                    <patterns:Slot>
+                        <patterns:Name value="statement"/>
+                        <patterns:BooleanValue value="false"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:Slot>
+                </minijava:IfStatement>
+            </patterns:TemplatePoint>
+        </patterns:Pattern>
+    </patterns:Patterns>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+</patterns:PatternLanguage>
