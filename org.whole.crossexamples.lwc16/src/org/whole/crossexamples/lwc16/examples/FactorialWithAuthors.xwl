@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<minijava:Program xmlns:minijava="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel">
+    <metadata:Metadata xmlns:metadata="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel">
+        <minijava:MainClass>
+            <minijava:Identifier value="Factorial"/>
+            <minijava:Identifier value="args"/>
+            <minijava:PrintlnStatement>
+                <minijava:MethodInvocation>
+                    <minijava:ClassInstanceCreation>
+                        <minijava:Identifier value="Fac"/>
+                    </minijava:ClassInstanceCreation>
+                    <minijava:Identifier value="computeFac"/>
+                    <minijava:Arguments initialCapacity="1">
+                        <minijava:IntLiteral value="10"/>
+                    </minijava:Arguments>
+                </minijava:MethodInvocation>
+            </minijava:PrintlnStatement>
+        </minijava:MainClass>
+        <metadata:Annotations initialCapacity="3">
+            <metadata:Author value="Riccardo&#9;"/>
+            <metadata:Author value="Enrico"/>
+            <metadata:Revision>
+                <metadata:Number value="1"/>
+                <metadata:Number value="0"/>
+            </metadata:Revision>
+        </metadata:Annotations>
+    </metadata:Metadata>
+    <minijava:ClassDeclarations initialCapacity="1">
+        <minijava:ClassDeclaration>
+            <minijava:Identifier value="Fac"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <minijava:MethodDeclarations initialCapacity="1">
+                <metadata:Metadata xmlns:metadata="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel">
+                    <minijava:MethodDeclaration>
+                        <minijava:Int/>
+                        <minijava:Identifier value="computeFac"/>
+                        <minijava:VariableDeclarations initialCapacity="1">
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="num"/>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:VariableDeclarations initialCapacity="1">
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="num_aux"/>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:Statements initialCapacity="1">
+                            <minijava:IfStatement>
+                                <minijava:InfixExpression>
+                                    <minijava:Identifier value="num"/>
+                                    <minijava:InfixOperator value="less"/>
+                                    <minijava:IntLiteral value="1"/>
+                                </minijava:InfixExpression>
+                                <minijava:VariableAssignment>
+                                    <minijava:Identifier value="num_aux"/>
+                                    <minijava:IntLiteral value="1"/>
+                                </minijava:VariableAssignment>
+                                <minijava:VariableAssignment>
+                                    <minijava:Identifier value="num_aux"/>
+                                    <minijava:InfixExpression>
+                                        <minijava:Identifier value="num"/>
+                                        <minijava:InfixOperator value="times"/>
+                                        <minijava:MethodInvocation>
+                                        <minijava:ThisExpression/>
+                                        <minijava:Identifier value="computeFac"/>
+                                        <minijava:Arguments initialCapacity="1">
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="num"/>
+                                        <minijava:InfixOperator value="minus"/>
+                                        <minijava:IntLiteral value="1"/>
+                                        </minijava:InfixExpression>
+                                        </minijava:Arguments>
+                                        </minijava:MethodInvocation>
+                                    </minijava:InfixExpression>
+                                </minijava:VariableAssignment>
+                            </minijava:IfStatement>
+                        </minijava:Statements>
+                        <minijava:Identifier value="num_aux"/>
+                    </minijava:MethodDeclaration>
+                    <metadata:Annotations initialCapacity="1">
+                        <metadata:Author value="Riccardo"/>
+                    </metadata:Annotations>
+                </metadata:Metadata>
+            </minijava:MethodDeclarations>
+        </minijava:ClassDeclaration>
+    </minijava:ClassDeclarations>
+</minijava:Program>

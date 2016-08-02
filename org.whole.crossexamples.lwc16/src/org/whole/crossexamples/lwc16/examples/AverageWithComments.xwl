@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<minijava:Program xmlns:minijava="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel">
+    <minijava:MainClass>
+        <minijava:Identifier value="AverageMain"/>
+        <minijava:Identifier value="args"/>
+        <minijava:PrintlnStatement>
+            <minijava:MethodInvocation>
+                <minijava:ClassInstanceCreation>
+                    <minijava:Identifier value="Average"/>
+                </minijava:ClassInstanceCreation>
+                <minijava:Identifier value="calculate"/>
+                <minijava:Arguments initialCapacity="1">
+                    <minijava:MethodInvocation>
+                        <minijava:ClassInstanceCreation>
+                            <minijava:Identifier value="Average"/>
+                        </minijava:ClassInstanceCreation>
+                        <minijava:Identifier value="seqOf"/>
+                        <minijava:Arguments initialCapacity="1">
+                            <minijava:IntLiteral value="10"/>
+                        </minijava:Arguments>
+                    </minijava:MethodInvocation>
+                </minijava:Arguments>
+            </minijava:MethodInvocation>
+        </minijava:PrintlnStatement>
+    </minijava:MainClass>
+    <minijava:ClassDeclarations initialCapacity="1">
+        <minijava:ClassDeclaration>
+            <minijava:Identifier value="Average"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <minijava:MethodDeclarations initialCapacity="3">
+                <minijava:MethodDeclaration>
+                    <minijava:Int/>
+                    <minijava:Identifier value="calculate"/>
+                    <minijava:VariableDeclarations initialCapacity="1">
+                        <minijava:VariableDeclaration>
+                            <minijava:IntArray/>
+                            <minijava:Identifier value="values"/>
+                        </minijava:VariableDeclaration>
+                    </minijava:VariableDeclarations>
+                    <minijava:VariableDeclarations initialCapacity="1">
+                        <minijava:VariableDeclaration>
+                            <minijava:Int/>
+                            <minijava:Identifier value="size"/>
+                        </minijava:VariableDeclaration>
+                    </minijava:VariableDeclarations>
+                    <minijava:Statements initialCapacity="1">
+                        <minijava:VariableAssignment>
+                            <minijava:Identifier value="size"/>
+                            <minijava:ArrayLength>
+                                <minijava:Identifier value="values"/>
+                            </minijava:ArrayLength>
+                        </minijava:VariableAssignment>
+                    </minijava:Statements>
+                    <math:Division xmlns:math="http://lang.whole.org/Math">
+                        <mjmath:Summation xmlns:mjmath="whole:org.whole.crossexamples.lwc16.mjmath:MiniJavaMathExtensionModel">
+                            <minijava:Identifier value="i"/>
+                            <minijava:IntLiteral value="0"/>
+                            <minijava:Identifier value="size"/>
+                            <minijava:ArrayAccess>
+                                <minijava:Identifier value="values"/>
+                                <minijava:Identifier value="i"/>
+                            </minijava:ArrayAccess>
+                        </mjmath:Summation>
+                        <minijava:Identifier value="size"/>
+                    </math:Division>
+                </minijava:MethodDeclaration>
+                <minijava:MethodDeclaration>
+                    <minijava:Int/>
+                    <minijava:Identifier value="calculateUnless"/>
+                    <minijava:VariableDeclarations initialCapacity="1">
+                        <minijava:VariableDeclaration>
+                            <minijava:IntArray/>
+                            <minijava:Identifier value="values"/>
+                        </minijava:VariableDeclaration>
+                    </minijava:VariableDeclarations>
+                    <minijava:VariableDeclarations initialCapacity="1">
+                        <minijava:VariableDeclaration>
+                            <minijava:Int/>
+                            <minijava:Identifier value="result"/>
+                        </minijava:VariableDeclaration>
+                    </minijava:VariableDeclarations>
+                    <minijava:Statements initialCapacity="2">
+                        <minijava:VariableAssignment>
+                            <minijava:Identifier value="result"/>
+                            <minijava:IntLiteral value="0"/>
+                        </minijava:VariableAssignment>
+                        <metadata:Metadata xmlns:metadata="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel">
+                            <mjcflow:UnlessStatement xmlns:mjcflow="whole:org.whole.crossexamples.lwc16.mjcflow:MiniJavaControlFlowExtensionModel">
+                                <minijava:InfixExpression>
+                                    <minijava:ArrayLength>
+                                        <minijava:Identifier value="values"/>
+                                    </minijava:ArrayLength>
+                                    <minijava:InfixOperator value="less"/>
+                                    <minijava:IntLiteral value="1"/>
+                                </minijava:InfixExpression>
+                                <minijava:VariableAssignment>
+                                    <minijava:Identifier value="result"/>
+                                    <minijava:MethodInvocation>
+                                        <minijava:ThisExpression/>
+                                        <minijava:Identifier value="calculate"/>
+                                        <minijava:Arguments initialCapacity="1">
+                                        <minijava:Identifier value="values"/>
+                                        </minijava:Arguments>
+                                    </minijava:MethodInvocation>
+                                </minijava:VariableAssignment>
+                            </mjcflow:UnlessStatement>
+                            <metadata:Annotations initialCapacity="1">
+                                <metadata:Comment>
+                                    <metadata:Paragraphs initialCapacity="1">
+                                        <metadata:Paragraph initialCapacity="21">
+                                        <metadata:Text value="When"/>
+                                        <metadata:Text value="the"/>
+                                        <metadata:Text value="predicate"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:ArrayLength>
+                                        <minijava:Identifier value="values"/>
+                                        </minijava:ArrayLength>
+                                        <minijava:InfixOperator value="less"/>
+                                        <minijava:IntLiteral value="1"/>
+                                        </minijava:InfixExpression>
+                                        <metadata:Text value="is"/>
+                                        <metadata:Text value="true"/>
+                                        <metadata:Text value="we"/>
+                                        <metadata:Text value="avoid"/>
+                                        <metadata:Text value="to"/>
+                                        <metadata:Text value="call"/>
+                                        <metadata:Text value="the"/>
+                                        <minijava:Identifier value="calculate"/>
+                                        <metadata:Text value="method"/>
+                                        <metadata:Text value="otherwise"/>
+                                        <metadata:Text value="we"/>
+                                        <metadata:Text value="get"/>
+                                        <metadata:Text value="a"/>
+                                        <metadata:Text value="divide"/>
+                                        <metadata:Text value="by"/>
+                                        <metadata:Text value="zero"/>
+                                        <metadata:Text value="exception."/>
+                                        </metadata:Paragraph>
+                                    </metadata:Paragraphs>
+                                </metadata:Comment>
+                            </metadata:Annotations>
+                        </metadata:Metadata>
+                    </minijava:Statements>
+                    <minijava:Identifier value="result"/>
+                </minijava:MethodDeclaration>
+                <minijava:MethodDeclaration>
+                    <minijava:IntArray/>
+                    <minijava:Identifier value="seqOf"/>
+                    <minijava:VariableDeclarations initialCapacity="1">
+                        <minijava:VariableDeclaration>
+                            <minijava:Int/>
+                            <minijava:Identifier value="size"/>
+                        </minijava:VariableDeclaration>
+                    </minijava:VariableDeclarations>
+                    <minijava:VariableDeclarations initialCapacity="2">
+                        <minijava:VariableDeclaration>
+                            <minijava:Int/>
+                            <minijava:Identifier value="i"/>
+                        </minijava:VariableDeclaration>
+                        <minijava:VariableDeclaration>
+                            <minijava:Int/>
+                            <minijava:Identifier value="seq"/>
+                        </minijava:VariableDeclaration>
+                    </minijava:VariableDeclarations>
+                    <minijava:Statements initialCapacity="2">
+                        <minijava:VariableAssignment>
+                            <minijava:Identifier value="i"/>
+                            <minijava:IntLiteral value="0"/>
+                        </minijava:VariableAssignment>
+                        <minijava:WhileStatement>
+                            <minijava:InfixExpression>
+                                <minijava:Identifier value="i"/>
+                                <minijava:InfixOperator value="less"/>
+                                <minijava:Identifier value="size"/>
+                            </minijava:InfixExpression>
+                            <minijava:Block initialCapacity="2">
+                                <minijava:ArrayElementAssignment>
+                                    <minijava:Identifier value="seq"/>
+                                    <minijava:Identifier value="i"/>
+                                    <minijava:InfixExpression>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixOperator value="plus"/>
+                                        <minijava:IntLiteral value="1"/>
+                                    </minijava:InfixExpression>
+                                </minijava:ArrayElementAssignment>
+                                <minijava:VariableAssignment>
+                                    <minijava:Identifier value="i"/>
+                                    <minijava:InfixExpression>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixOperator value="plus"/>
+                                        <minijava:IntLiteral value="1"/>
+                                    </minijava:InfixExpression>
+                                </minijava:VariableAssignment>
+                            </minijava:Block>
+                        </minijava:WhileStatement>
+                    </minijava:Statements>
+                    <minijava:Identifier value="seq"/>
+                </minijava:MethodDeclaration>
+            </minijava:MethodDeclarations>
+        </minijava:ClassDeclaration>
+    </minijava:ClassDeclarations>
+</minijava:Program>
