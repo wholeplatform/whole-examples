@@ -52,5 +52,5 @@
     </models:ModelDeclarations>
     <models:Namespace value="org.whole.crossexamples.lwc16.mjmath"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <models:URI value="whole:org.whole.crossexamples.lwc16.mjmath:MiniJavaMathExtensionModel"/>
+    <models:URI value="whole:org.whole.crossexamples.lwc16.mjmath:MJMathExtensionModel"/>
 </models:Model>

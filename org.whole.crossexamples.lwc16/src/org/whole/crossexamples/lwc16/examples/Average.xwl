@@ -53,7 +53,7 @@
                         </minijava:VariableAssignment>
                     </minijava:Statements>
                     <math:Division xmlns:math="http://lang.whole.org/Math">
-                        <mjmath:Summation xmlns:mjmath="whole:org.whole.crossexamples.lwc16.mjmath:MiniJavaMathExtensionModel">
+                        <mjmath:Summation xmlns:mjmath="whole:org.whole.crossexamples.lwc16.mjmath:MJMathExtensionModel">
                             <minijava:Identifier value="i"/>
                             <minijava:IntLiteral value="0"/>
                             <minijava:Identifier value="size"/>
@@ -85,7 +85,7 @@
                             <minijava:Identifier value="result"/>
                             <minijava:IntLiteral value="0"/>
                         </minijava:VariableAssignment>
-                        <mjcflow:UnlessStatement xmlns:mjcflow="whole:org.whole.crossexamples.lwc16.mjcflow:MiniJavaControlFlowExtensionModel">
+                        <mjcflow:UnlessStatement xmlns:mjcflow="whole:org.whole.crossexamples.lwc16.mjcflow:MJCFlowExtensionModel">
                             <minijava:InfixExpression>
                                 <minijava:ArrayLength>
                                     <minijava:Identifier value="values"/>

@@ -36,5 +36,5 @@
     </models:ModelDeclarations>
     <models:Namespace value="org.whole.crossexamples.lwc16.mjcflow"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <models:URI value="whole:org.whole.crossexamples.lwc16.mjcflow:MiniJavaControlFlowExtensionModel"/>
+    <models:URI value="whole:org.whole.crossexamples.lwc16.mjcflow:MJCFlowExtensionModel"/>
 </models:Model>

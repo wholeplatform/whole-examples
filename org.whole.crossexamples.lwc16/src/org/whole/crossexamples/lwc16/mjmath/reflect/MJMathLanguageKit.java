@@ -13,7 +13,7 @@ import org.whole.lang.templates.ITemplateManager;
  * @generator Whole
  */
 public class MJMathLanguageKit extends AbstractLanguageKit {
-	public static final String URI = "whole:org.whole.crossexamples.lwc16.mjmath:MiniJavaMathExtensionModel";
+	public static final String URI = "whole:org.whole.crossexamples.lwc16.mjmath:MJMathExtensionModel";
 
 	public String getURI() {
 		return URI;

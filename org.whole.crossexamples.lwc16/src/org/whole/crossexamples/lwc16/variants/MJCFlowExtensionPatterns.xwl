@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <patterns:PatternLanguage xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
-    <patterns:URI value="whole:org.whole.crossexamples.lwc16.mjcflow:MJCFlowExtensionPatterns"/>
-    <patterns:Namespace value="org.whole.crossexamples.lwc16.mjcflow"/>
+    <patterns:URI value="whole:org.whole.crossexamples.lwc16.variants:MJCFlowExtensionPatterns"/>
+    <patterns:Namespace value="org.whole.crossexamples.lwc16.variants.mjcflow"/>
     <patterns:Name value="MJCFlow"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
     <patterns:Patterns initialCapacity="1">

@@ -13,7 +13,7 @@ import org.whole.lang.templates.ITemplateManager;
  * @generator Whole
  */
 public class MJCFlowLanguageKit extends AbstractLanguageKit {
-	public static final String URI = "whole:org.whole.crossexamples.lwc16.mjcflow:MiniJavaControlFlowExtensionModel";
+	public static final String URI = "whole:org.whole.crossexamples.lwc16.mjcflow:MJCFlowExtensionModel";
 
 	public String getURI() {
 		return URI;
