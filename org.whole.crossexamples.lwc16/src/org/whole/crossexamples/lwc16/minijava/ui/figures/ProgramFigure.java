@@ -26,7 +26,7 @@ import org.whole.lang.ui.layout.ColumnLayout;
 public class ProgramFigure extends ContentPaneFigure {
 
 	public ProgramFigure() {
-		super(new ColumnLayout());
+		super(new ColumnLayout().withMargin(8));
 		initContentPanes(2);
 
 		add(createContentPane(0));
