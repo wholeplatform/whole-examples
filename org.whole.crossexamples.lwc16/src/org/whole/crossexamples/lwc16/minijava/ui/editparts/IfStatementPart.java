@@ -25,7 +25,6 @@ import org.whole.crossexamples.lwc16.minijava.model.IfStatement;
 import org.whole.lang.java.ui.figures.IfStatementFigure;
 import org.whole.lang.model.IEntity;
 import org.whole.lang.ui.editparts.AbstractContentPanePart;
-import org.whole.lang.util.EntityUtils;
 
 /**
  * @author Enrico Persiani
@@ -40,17 +39,10 @@ public class IfStatementPart extends AbstractContentPanePart {
 	}
 
 	protected List<IEntity> getModelSpecificChildren() {
-		refreshElseStatement();
 		List<IEntity> list = new ArrayList<IEntity>(3);
 		list.add(getIfStatement().getExpression());
 		list.add(getIfStatement().getThenStatement());
 		list.add(getIfStatement().getElseStatement());
 		return list;
-	}
-
-	private void refreshElseStatement() {
-		IfStatementFigure ifStatementFigure = (IfStatementFigure) getFigure();
-		ifStatementFigure.showElseStatement(
-				!EntityUtils.isResolver(getIfStatement().getElseStatement()));
 	}
 }
