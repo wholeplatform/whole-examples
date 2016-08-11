@@ -17,8 +17,11 @@
  */
 package org.whole.crossexamples.lwc16.metadata.ui;
 
+import org.whole.lang.codebase.ClasspathPersistenceProvider;
+import org.whole.lang.operations.InterpreterOperation;
 import org.whole.lang.reflect.AbstractLanguageExtensionDeployer;
 import org.whole.lang.reflect.ReflectionFactory;
+import org.whole.lang.xml.codebase.XmlBuilderPersistenceKit;
 
 /** 
  * @generator Whole
@@ -26,6 +29,14 @@ import org.whole.lang.reflect.ReflectionFactory;
 public class MetadataUIDeployer extends AbstractLanguageExtensionDeployer {
 	public void deploy(ReflectionFactory platform) {
 		platform.addEditorKit(MetadataTextualEditorKit.ID);
+		try {
+			InterpreterOperation.interpret(XmlBuilderPersistenceKit.instance().readModel(
+					new ClasspathPersistenceProvider("org/whole/crossexamples/lwc16/metadata/MetadataActions.xwl")));
+			InterpreterOperation.interpret(XmlBuilderPersistenceKit.instance().readModel(
+					new ClasspathPersistenceProvider("org/whole/crossexamples/lwc16/metadata/MetadataGuestActions.xwl")));
+		} catch (Exception e) {
+			throw new IllegalStateException(e);
+		}
 	}
 
 	public void undeploy(ReflectionFactory platform) {

@@ -13,34 +13,47 @@
         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
     </actions:ToolbarActions>
     <actions:ContextMenuActions>
-        <actions:MenuActions initialCapacity="1">
+        <actions:MenuActions initialCapacity="2">
             <actions:GuardedAction>
                 <actions:Label value="Add Model Authors"/>
-                <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="1">
-                        <queries:Name value="authors"/>
-                    </queries:Names>
-                    <queries:Sequence initialCapacity="3">
-                        <queries:PointwiseUpdate>
-                            <queries:Filter>
-                                <queries:SelfStep/>
-                                <queries:Not>
-                                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Metadata"/>
-                                </queries:Not>
-                            </queries:Filter>
-                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                <metadata:Metadata xmlns:metadata="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel">
-                                    <commons:StageDownFragment>
-                                        <queries:SelfStep/>
-                                    </commons:StageDownFragment>
-                                    <metadata:Annotations initialCapacity="0"/>
-                                </metadata:Metadata>
-                            </commons:StageUpFragment>
-                        </queries:PointwiseUpdate>
+                <queries:Sequence xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                    <queries:PointwiseUpdate>
                         <queries:Filter>
-                            <queries:Except>
-                                <queries:Expressions initialCapacity="2">
-                                    <queries:Filter>
+                            <queries:SelfStep/>
+                            <queries:Not>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Metadata"/>
+                            </queries:Not>
+                        </queries:Filter>
+                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <metadata:Metadata xmlns:metadata="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel">
+                                <commons:StageDownFragment>
+                                    <queries:SelfStep/>
+                                </commons:StageDownFragment>
+                                <metadata:Annotations initialCapacity="0"/>
+                            </metadata:Metadata>
+                        </commons:StageUpFragment>
+                    </queries:PointwiseUpdate>
+                    <actions:ActionCall>
+                        <actions:Label value="whole:org.whole.crossexamples.lwc16.metadata:MetadataGuestActions#Add Nested Authors"/>
+                        <queries:RootStep/>
+                    </actions:ActionCall>
+                </queries:Sequence>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Add Nested Authors"/>
+                <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                    <queries:VariableRefStep value="selectedEntities"/>
+                    <queries:ChildStep/>
+                    <queries:Scope>
+                        <queries:Names initialCapacity="1">
+                            <queries:Name value="authors"/>
+                        </queries:Names>
+                        <queries:Sequence initialCapacity="2">
+                            <queries:Filter>
+                                <queries:Except>
+                                    <queries:Expressions initialCapacity="2">
+                                        <queries:Filter>
                                         <queries:DescendantStep/>
                                         <queries:And initialCapacity="2">
                                         <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
@@ -48,33 +61,39 @@
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </queries:DistinctTest>
                                         </queries:And>
-                                    </queries:Filter>
-                                    <queries:Path initialCapacity="2">
+                                        </queries:Filter>
+                                        <queries:Path initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#annotations"/>
                                         <queries:Filter>
                                         <queries:ChildStep/>
                                         <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
                                         </queries:Filter>
-                                    </queries:Path>
-                                </queries:Expressions>
-                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            </queries:Except>
-                            <queries:VariableTest value="authors"/>
-                        </queries:Filter>
-                        <queries:CartesianInsert>
-                            <queries:Placement value="INTO"/>
-                            <queries:Path initialCapacity="2">
-                                <queries:RootStep/>
-                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#annotations"/>
-                            </queries:Path>
-                            <queries:Path initialCapacity="2">
-                                <queries:VariableRefStep value="authors"/>
-                                <queries:ChildStep/>
-                            </queries:Path>
-                        </queries:CartesianInsert>
-                    </queries:Sequence>
-                </queries:Scope>
-                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+                                        </queries:Path>
+                                    </queries:Expressions>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Except>
+                                <queries:VariableTest value="authors"/>
+                            </queries:Filter>
+                            <queries:CartesianInsert>
+                                <queries:Placement value="INTO"/>
+                                <queries:Path initialCapacity="1">
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#annotations"/>
+                                </queries:Path>
+                                <queries:Path initialCapacity="2">
+                                    <queries:VariableRefStep value="authors"/>
+                                    <queries:ChildStep/>
+                                </queries:Path>
+                            </queries:CartesianInsert>
+                        </queries:Sequence>
+                    </queries:Scope>
+                </queries:Path>
+                <queries:Every xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Path initialCapacity="2">
+                        <queries:VariableRefStep value="selectedEntities"/>
+                        <queries:ChildStep/>
+                    </queries:Path>
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Metadata"/>
+                </queries:Every>
             </actions:GuardedAction>
         </actions:MenuActions>
         <actions:MenuActions initialCapacity="0"/>
