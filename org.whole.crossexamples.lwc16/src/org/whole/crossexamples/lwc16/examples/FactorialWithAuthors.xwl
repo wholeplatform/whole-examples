@@ -17,7 +17,7 @@
             </minijava:PrintlnStatement>
         </minijava:MainClass>
         <metadata:Annotations initialCapacity="3">
-            <metadata:Author value="Riccardo&#9;"/>
+            <metadata:Author value="Tijs"/>
             <metadata:Author value="Enrico"/>
             <metadata:Revision>
                 <metadata:Number value="1"/>
