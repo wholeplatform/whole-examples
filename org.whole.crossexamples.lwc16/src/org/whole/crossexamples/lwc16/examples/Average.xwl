@@ -38,10 +38,14 @@
                             <minijava:Identifier value="values"/>
                         </minijava:VariableDeclaration>
                     </minijava:VariableDeclarations>
-                    <minijava:VariableDeclarations initialCapacity="1">
+                    <minijava:VariableDeclarations initialCapacity="2">
                         <minijava:VariableDeclaration>
                             <minijava:Int/>
                             <minijava:Identifier value="size"/>
+                        </minijava:VariableDeclaration>
+                        <minijava:VariableDeclaration>
+                            <minijava:Int/>
+                            <minijava:Identifier value="i"/>
                         </minijava:VariableDeclaration>
                     </minijava:VariableDeclarations>
                     <minijava:Statements initialCapacity="1">
