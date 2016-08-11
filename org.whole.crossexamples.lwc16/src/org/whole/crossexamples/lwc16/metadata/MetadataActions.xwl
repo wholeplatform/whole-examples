@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.crossexamples.lwc16.metadata:MetadataActions"/>
+    <actions:Namespace value="org.whole.crossexamples.lwc16.metadata"/>
+    <actions:Name value="Metadata"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:URI value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel"/>
+    <actions:ToolbarActions>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:SimpleAction>
+            <actions:Label value="Value assist"/>
+            <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Names initialCapacity="2">
+                    <queries:Name value="action"/>
+                    <queries:Name value="author"/>
+                </queries:Names>
+                <queries:Path initialCapacity="2">
+                    <queries:VariableRefStep value="primarySelectedEntity"/>
+                    <queries:Choose initialCapacity="1">
+                        <queries:Select>
+                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <actions:Actions initialCapacity="1">
+                                    <actions:GroupAction>
+                                        <commons:Resolver/>
+                                        <actions:Text value="Author"/>
+                                        <actions:Hierarchical>
+                                        <actions:FullName/>
+                                        <actions:Size value="10"/>
+                                        </actions:Hierarchical>
+                                        <actions:Actions initialCapacity="1">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Actions#Action"/>
+                                        <commons:VarName value="action"/>
+                                        <commons:Quantifier value="*"/>
+                                        </commons:Variable>
+                                        </actions:Actions>
+                                    </actions:GroupAction>
+                                </actions:Actions>
+                            </commons:StageUpFragment>
+                            <queries:Or initialCapacity="2">
+                                <queries:AtTypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
+                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
+                            </queries:Or>
+                            <queries:Select>
+                                <queries:Filter>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <actions:PerformAction>
+                                        <commons:Resolver/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Actions#Text"/>
+                                        <commons:VarName value="author"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <actions:ActionKind value="REPLACE"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <commons:Variable>
+                                        <commons:VarType value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
+                                        <commons:VarName value="author"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </commons:StageUpFragment>
+                                        </actions:PerformAction>
+                                    </commons:StageUpFragment>
+                                    <queries:VariableTest value="action"/>
+                                </queries:Filter>
+                                <queries:Path initialCapacity="3">
+                                    <queries:RootStep/>
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#annotations"/>
+                                    <queries:Filter>
+                                        <queries:ChildStep/>
+                                        <queries:And initialCapacity="3">
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
+                                        <queries:Not>
+                                        <queries:VariableTest value="primarySelectedEntity"/>
+                                        </queries:Not>
+                                        <queries:VariableTest value="author"/>
+                                        </queries:And>
+                                    </queries:Filter>
+                                </queries:Path>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <queries:TemplateNames/>
+                            </queries:Select>
+                            <queries:TemplateNames/>
+                        </queries:Select>
+                    </queries:Choose>
+                </queries:Path>
+            </queries:Scope>
+        </actions:SimpleAction>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>
