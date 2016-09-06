@@ -48,6 +48,6 @@ public class MiniJavaTextualEditorKit extends AbstractEditorKit {
 	}
 
 	public boolean canApply(ILanguageKit languageKit) {
-		return languageKit.getURI().equals(MiniJavaLanguageKit.URI) && !languageKit.isDynamic();
+		return languageKit.getURI().equals(MiniJavaLanguageKit.URI) && isStaticAndCurrent(languageKit);
 	}
 }

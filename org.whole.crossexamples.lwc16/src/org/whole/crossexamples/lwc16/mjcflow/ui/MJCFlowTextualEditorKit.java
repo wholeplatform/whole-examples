@@ -48,6 +48,6 @@ public class MJCFlowTextualEditorKit extends AbstractEditorKit {
 	}
 
 	public boolean canApply(ILanguageKit languageKit) {
-		return languageKit.getURI().equals(MJCFlowLanguageKit.URI) && !languageKit.isDynamic();
+		return languageKit.getURI().equals(MJCFlowLanguageKit.URI) && isStaticAndCurrent(languageKit);
 	}
 }

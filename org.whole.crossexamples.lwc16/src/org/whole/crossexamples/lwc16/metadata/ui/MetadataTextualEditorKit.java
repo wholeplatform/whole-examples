@@ -52,7 +52,7 @@ public class MetadataTextualEditorKit extends AbstractEditorKit {
 	}
 
 	public boolean canApply(ILanguageKit languageKit) {
-		return languageKit.getURI().equals(MetadataLanguageKit.URI) && !languageKit.isDynamic();
+		return languageKit.getURI().equals(MetadataLanguageKit.URI) && isStaticAndCurrent(languageKit);
 	}
 
 	@Override

@@ -48,6 +48,6 @@ public class MJMathEditorKit extends AbstractEditorKit {
 	}
 
 	public boolean canApply(ILanguageKit languageKit) {
-		return languageKit.getURI().equals(MJMathLanguageKit.URI) && !languageKit.isDynamic();
+		return languageKit.getURI().equals(MJMathLanguageKit.URI) && isStaticAndCurrent(languageKit);
 	}
 }
