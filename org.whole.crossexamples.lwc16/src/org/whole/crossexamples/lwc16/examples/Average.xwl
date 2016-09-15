@@ -126,7 +126,7 @@
                             <minijava:Identifier value="i"/>
                         </minijava:VariableDeclaration>
                         <minijava:VariableDeclaration>
-                            <minijava:Int/>
+                            <minijava:IntArray/>
                             <minijava:Identifier value="seq"/>
                         </minijava:VariableDeclaration>
                     </minijava:VariableDeclarations>

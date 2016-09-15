@@ -28,43 +28,87 @@
             <minijava:Identifier value="Average"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-            <minijava:MethodDeclarations initialCapacity="3">
-                <minijava:MethodDeclaration>
-                    <minijava:Int/>
-                    <minijava:Identifier value="calculate"/>
-                    <minijava:VariableDeclarations initialCapacity="1">
-                        <minijava:VariableDeclaration>
-                            <minijava:IntArray/>
-                            <minijava:Identifier value="values"/>
-                        </minijava:VariableDeclaration>
-                    </minijava:VariableDeclarations>
-                    <minijava:VariableDeclarations initialCapacity="1">
-                        <minijava:VariableDeclaration>
-                            <minijava:Int/>
-                            <minijava:Identifier value="size"/>
-                        </minijava:VariableDeclaration>
-                    </minijava:VariableDeclarations>
-                    <minijava:Statements initialCapacity="1">
-                        <minijava:VariableAssignment>
-                            <minijava:Identifier value="size"/>
-                            <minijava:ArrayLength>
+            <minijava:MethodDeclarations initialCapacity="5">
+                <metadata:Metadata xmlns:metadata="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel">
+                    <minijava:MethodDeclaration>
+                        <minijava:Int/>
+                        <minijava:Identifier value="calculate"/>
+                        <minijava:VariableDeclarations initialCapacity="1">
+                            <minijava:VariableDeclaration>
+                                <minijava:IntArray/>
                                 <minijava:Identifier value="values"/>
-                            </minijava:ArrayLength>
-                        </minijava:VariableAssignment>
-                    </minijava:Statements>
-                    <math:Division xmlns:math="http://lang.whole.org/Math">
-                        <mjmath:Summation xmlns:mjmath="whole:org.whole.crossexamples.lwc16.mjmath:MJMathExtensionModel">
-                            <minijava:Identifier value="i"/>
-                            <minijava:IntLiteral value="0"/>
-                            <minijava:Identifier value="size"/>
-                            <minijava:ArrayAccess>
-                                <minijava:Identifier value="values"/>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:VariableDeclarations initialCapacity="2">
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="size"/>
+                            </minijava:VariableDeclaration>
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
                                 <minijava:Identifier value="i"/>
-                            </minijava:ArrayAccess>
-                        </mjmath:Summation>
-                        <minijava:Identifier value="size"/>
-                    </math:Division>
-                </minijava:MethodDeclaration>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:Statements initialCapacity="1">
+                            <minijava:VariableAssignment>
+                                <minijava:Identifier value="size"/>
+                                <minijava:ArrayLength>
+                                    <minijava:Identifier value="values"/>
+                                </minijava:ArrayLength>
+                            </minijava:VariableAssignment>
+                        </minijava:Statements>
+                        <math:Division xmlns:math="http://lang.whole.org/Math">
+                            <mjmath:Summation xmlns:mjmath="whole:org.whole.crossexamples.lwc16.mjmath:MJMathExtensionModel">
+                                <minijava:Identifier value="i"/>
+                                <minijava:IntLiteral value="0"/>
+                                <minijava:Identifier value="size"/>
+                                <minijava:ArrayAccess>
+                                    <minijava:Identifier value="values"/>
+                                    <minijava:Identifier value="i"/>
+                                </minijava:ArrayAccess>
+                            </mjmath:Summation>
+                            <minijava:Identifier value="size"/>
+                        </math:Division>
+                    </minijava:MethodDeclaration>
+                    <metadata:Annotations initialCapacity="1">
+                        <metadata:Comment>
+                            <metadata:Paragraphs initialCapacity="1">
+                                <metadata:Paragraph initialCapacity="19">
+                                    <metadata:Text value="When"/>
+                                    <metadata:Text value="the"/>
+                                    <minijava:Identifier value="values"/>
+                                    <metadata:Text value="array"/>
+                                    <metadata:Text value="is"/>
+                                    <metadata:Text value="empty,"/>
+                                    <metadata:Text value="this"/>
+                                    <metadata:Text value="method"/>
+                                    <metadata:Text value="throws"/>
+                                    <metadata:Text value="an"/>
+                                    <metadata:Text value="exception"/>
+                                    <metadata:Text value="since"/>
+                                    <metadata:Text value="the"/>
+                                    <metadata:Text value="calculated"/>
+                                    <metadata:Text value="expression"/>
+                                    <metadata:Text value="reduces"/>
+                                    <metadata:Text value="to"/>
+                                    <math:Division xmlns:math="http://lang.whole.org/Math">
+                                        <mjmath:Summation xmlns:mjmath="whole:org.whole.crossexamples.lwc16.mjmath:MJMathExtensionModel">
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:IntLiteral value="0"/>
+                                        <minijava:IntLiteral value="0"/>
+                                        <minijava:ArrayAccess>
+                                        <minijava:Identifier value="values"/>
+                                        <minijava:Identifier value="i"/>
+                                        </minijava:ArrayAccess>
+                                        </mjmath:Summation>
+                                        <minijava:IntLiteral value="0"/>
+                                    </math:Division>
+                                    <metadata:Text value="."/>
+                                </metadata:Paragraph>
+                            </metadata:Paragraphs>
+                        </metadata:Comment>
+                    </metadata:Annotations>
+                </metadata:Metadata>
                 <minijava:MethodDeclaration>
                     <minijava:Int/>
                     <minijava:Identifier value="calculateUnless"/>
@@ -159,7 +203,7 @@
                             <minijava:Identifier value="i"/>
                         </minijava:VariableDeclaration>
                         <minijava:VariableDeclaration>
-                            <minijava:Int/>
+                            <minijava:IntArray/>
                             <minijava:Identifier value="seq"/>
                         </minijava:VariableDeclaration>
                     </minijava:VariableDeclarations>
@@ -197,6 +241,234 @@
                     </minijava:Statements>
                     <minijava:Identifier value="seq"/>
                 </minijava:MethodDeclaration>
+                <metadata:Metadata xmlns:metadata="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel">
+                    <minijava:MethodDeclaration>
+                        <minijava:Int/>
+                        <minijava:Identifier value="summation"/>
+                        <minijava:VariableDeclarations initialCapacity="1">
+                            <minijava:VariableDeclaration>
+                                <minijava:IntArray/>
+                                <minijava:Identifier value="values"/>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:VariableDeclarations initialCapacity="3">
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="size"/>
+                            </minijava:VariableDeclaration>
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="i"/>
+                            </minijava:VariableDeclaration>
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="sum"/>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:Statements initialCapacity="4">
+                            <minijava:VariableAssignment>
+                                <minijava:Identifier value="size"/>
+                                <minijava:ArrayLength>
+                                    <minijava:Identifier value="values"/>
+                                </minijava:ArrayLength>
+                            </minijava:VariableAssignment>
+                            <minijava:VariableAssignment>
+                                <minijava:Identifier value="i"/>
+                                <minijava:IntLiteral value="0"/>
+                            </minijava:VariableAssignment>
+                            <minijava:VariableAssignment>
+                                <minijava:Identifier value="sum"/>
+                                <minijava:IntLiteral value="0"/>
+                            </minijava:VariableAssignment>
+                            <minijava:WhileStatement>
+                                <minijava:InfixExpression>
+                                    <minijava:Identifier value="i"/>
+                                    <minijava:InfixOperator value="less"/>
+                                    <minijava:Identifier value="size"/>
+                                </minijava:InfixExpression>
+                                <minijava:Block initialCapacity="2">
+                                    <minijava:VariableAssignment>
+                                        <minijava:Identifier value="sum"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="sum"/>
+                                        <minijava:InfixOperator value="plus"/>
+                                        <minijava:ArrayAccess>
+                                        <minijava:Identifier value="values"/>
+                                        <minijava:Identifier value="i"/>
+                                        </minijava:ArrayAccess>
+                                        </minijava:InfixExpression>
+                                    </minijava:VariableAssignment>
+                                    <minijava:VariableAssignment>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixOperator value="plus"/>
+                                        <minijava:IntLiteral value="1"/>
+                                        </minijava:InfixExpression>
+                                    </minijava:VariableAssignment>
+                                </minijava:Block>
+                            </minijava:WhileStatement>
+                        </minijava:Statements>
+                        <minijava:Identifier value="sum"/>
+                    </minijava:MethodDeclaration>
+                    <metadata:Annotations initialCapacity="1">
+                        <metadata:Comment>
+                            <metadata:Paragraphs initialCapacity="1">
+                                <metadata:Paragraph initialCapacity="10">
+                                    <metadata:Text value="This"/>
+                                    <metadata:Text value="method"/>
+                                    <metadata:Text value="calculates"/>
+                                    <mjmath:Summation xmlns:mjmath="whole:org.whole.crossexamples.lwc16.mjmath:MJMathExtensionModel">
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:IntLiteral value="0"/>
+                                        <minijava:Identifier value="size"/>
+                                        <minijava:ArrayAccess>
+                                        <minijava:Identifier value="values"/>
+                                        <minijava:Identifier value="i"/>
+                                        </minijava:ArrayAccess>
+                                    </mjmath:Summation>
+                                    <metadata:Text value="using"/>
+                                    <metadata:Text value="only"/>
+                                    <metadata:Text value="native"/>
+                                    <metadata:Text value="MiniJava"/>
+                                    <metadata:Text value="language"/>
+                                    <metadata:Text value="constructs."/>
+                                </metadata:Paragraph>
+                            </metadata:Paragraphs>
+                        </metadata:Comment>
+                    </metadata:Annotations>
+                </metadata:Metadata>
+                <metadata:Metadata xmlns:metadata="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel">
+                    <minijava:MethodDeclaration>
+                        <minijava:Int/>
+                        <minijava:Identifier value="exponentiation"/>
+                        <minijava:VariableDeclarations initialCapacity="2">
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="base"/>
+                            </minijava:VariableDeclaration>
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="exponent"/>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:VariableDeclarations initialCapacity="2">
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="exp"/>
+                            </minijava:VariableDeclaration>
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="i"/>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:Statements initialCapacity="3">
+                            <minijava:VariableAssignment>
+                                <minijava:Identifier value="exp"/>
+                                <minijava:IntLiteral value="1"/>
+                            </minijava:VariableAssignment>
+                            <minijava:VariableAssignment>
+                                <minijava:Identifier value="i"/>
+                                <minijava:IntLiteral value="0"/>
+                            </minijava:VariableAssignment>
+                            <minijava:WhileStatement>
+                                <minijava:InfixExpression>
+                                    <minijava:Identifier value="i"/>
+                                    <minijava:InfixOperator value="less"/>
+                                    <minijava:Identifier value="exponent"/>
+                                </minijava:InfixExpression>
+                                <minijava:Block initialCapacity="2">
+                                    <minijava:VariableAssignment>
+                                        <minijava:Identifier value="exp"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="exp"/>
+                                        <minijava:InfixOperator value="times"/>
+                                        <minijava:Identifier value="base"/>
+                                        </minijava:InfixExpression>
+                                    </minijava:VariableAssignment>
+                                    <minijava:VariableAssignment>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixOperator value="plus"/>
+                                        <minijava:IntLiteral value="1"/>
+                                        </minijava:InfixExpression>
+                                    </minijava:VariableAssignment>
+                                </minijava:Block>
+                            </minijava:WhileStatement>
+                        </minijava:Statements>
+                        <minijava:Identifier value="exp"/>
+                    </minijava:MethodDeclaration>
+                    <metadata:Annotations initialCapacity="1">
+                        <metadata:Comment>
+                            <metadata:Paragraphs initialCapacity="2">
+                                <metadata:Paragraph initialCapacity="10">
+                                    <metadata:Text value="This"/>
+                                    <metadata:Text value="method"/>
+                                    <metadata:Text value="calculates"/>
+                                    <math:Exponentiation xmlns:math="http://lang.whole.org/Math">
+                                        <minijava:Identifier value="base"/>
+                                        <minijava:Identifier value="exponent"/>
+                                    </math:Exponentiation>
+                                    <metadata:Text value="using"/>
+                                    <metadata:Text value="only"/>
+                                    <metadata:Text value="native"/>
+                                    <metadata:Text value="MiniJava"/>
+                                    <metadata:Text value="language"/>
+                                    <metadata:Text value="constructs."/>
+                                </metadata:Paragraph>
+                                <metadata:Paragraph initialCapacity="12">
+                                    <metadata:Text value="The"/>
+                                    <metadata:Text value="while"/>
+                                    <metadata:Text value="loop"/>
+                                    <metadata:Text value="can"/>
+                                    <metadata:Text value="be"/>
+                                    <metadata:Text value="diagrammed"/>
+                                    <metadata:Text value="as"/>
+                                    <workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="Exponentiation"/>
+                                        <workflows:FlowObjects initialCapacity="1">
+                                        <workflows:WhileLoop>
+                                        <workflows:Text value="whileloop"/>
+                                        <workflows:TestTime value="before"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixOperator value="less"/>
+                                        <minijava:Identifier value="exponent"/>
+                                        </minijava:InfixExpression>
+                                        <workflows:AssignActivity>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Assignments initialCapacity="2">
+                                        <workflows:Assign>
+                                        <workflows:Variable value="exp"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="exp"/>
+                                        <minijava:InfixOperator value="times"/>
+                                        <minijava:Identifier value="base"/>
+                                        </minijava:InfixExpression>
+                                        </workflows:Assign>
+                                        <workflows:Assign>
+                                        <workflows:Variable value="i"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixOperator value="plus"/>
+                                        <minijava:IntLiteral value="1"/>
+                                        </minijava:InfixExpression>
+                                        </workflows:Assign>
+                                        </workflows:Assignments>
+                                        </workflows:AssignActivity>
+                                        </workflows:WhileLoop>
+                                        </workflows:FlowObjects>
+                                    </workflows:Sequence>
+                                    <metadata:Text value="using"/>
+                                    <metadata:Text value="the"/>
+                                    <metadata:Text value="Workflows"/>
+                                    <metadata:Text value="language."/>
+                                </metadata:Paragraph>
+                            </metadata:Paragraphs>
+                        </metadata:Comment>
+                    </metadata:Annotations>
+                </metadata:Metadata>
             </minijava:MethodDeclarations>
         </minijava:ClassDeclaration>
     </minijava:ClassDeclarations>
