@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<patterns:Library xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
+    <patterns:URI value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrary"/>
+    <patterns:Namespace value="org.whole.crossexamples.lwc16.minijava"/>
+    <patterns:Name value="MiniJava"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <patterns:Declarations initialCapacity="8">
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="declarations"/>
+            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                <queries:Filter>
+                    <queries:AncestorOrSelfStep/>
+                    <queries:Or initialCapacity="2">
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#MethodDeclaration"/>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#ClassDeclaration"/>
+                    </queries:Or>
+                </queries:Filter>
+                <queries:Sequence initialCapacity="2">
+                    <queries:Path initialCapacity="2">
+                        <queries:Sequence initialCapacity="2">
+                            <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#variables"/>
+                            <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#parameters"/>
+                        </queries:Sequence>
+                        <queries:ChildStep/>
+                    </queries:Path>
+                    <queries:SelfStep/>
+                </queries:Sequence>
+            </queries:Path>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="declaration"/>
+            <queries:Filter xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Filter>
+                    <patterns:FunctionStep value="declarations"/>
+                    <queries:ExpressionTest>
+                        <queries:Filter>
+                            <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#name"/>
+                            <queries:ExpressionTest>
+                                <queries:EqualsStep>
+                                    <queries:VariableRefStep value="name"/>
+                                </queries:EqualsStep>
+                            </queries:ExpressionTest>
+                        </queries:Filter>
+                    </queries:ExpressionTest>
+                </queries:Filter>
+                <queries:IndexTest>
+                    <queries:IntLiteral value="0"/>
+                </queries:IndexTest>
+            </queries:Filter>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="classDeclaration"/>
+            <queries:Filter xmlns:queries="http://lang.whole.org/Queries">
+                <patterns:FunctionStep value="declarations"/>
+                <queries:And initialCapacity="2">
+                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#ClassDeclaration"/>
+                    <queries:ExpressionTest>
+                        <queries:Equals>
+                            <queries:Singleton>
+                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#name"/>
+                            </queries:Singleton>
+                            <queries:VariableRefStep value="name"/>
+                        </queries:Equals>
+                    </queries:ExpressionTest>
+                </queries:And>
+            </queries:Filter>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="methodDeclaration"/>
+            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                <patterns:FunctionStep value="declarations"/>
+                <queries:Filter>
+                    <queries:ChildStep/>
+                    <queries:And initialCapacity="2">
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#MethodDeclaration"/>
+                        <queries:ExpressionTest>
+                            <queries:Equals>
+                                <queries:Singleton>
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#name"/>
+                                </queries:Singleton>
+                                <queries:VariableRefStep value="name"/>
+                            </queries:Equals>
+                        </queries:ExpressionTest>
+                    </queries:And>
+                </queries:Filter>
+            </queries:Path>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="variableDeclaration"/>
+            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                <patterns:FunctionStep value="declarations"/>
+                <queries:Filter>
+                    <queries:ChildStep/>
+                    <queries:And initialCapacity="2">
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#VariableDeclaration"/>
+                        <queries:ExpressionTest>
+                            <queries:Equals>
+                                <queries:Singleton>
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#name"/>
+                                </queries:Singleton>
+                                <queries:VariableRefStep value="name"/>
+                            </queries:Equals>
+                        </queries:ExpressionTest>
+                    </queries:And>
+                </queries:Filter>
+            </queries:Path>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="declarationScope"/>
+            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                <queries:Choose initialCapacity="3">
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#ClassDeclaration"/>
+                        <queries:Filter>
+                            <queries:AncestorStep/>
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Program"/>
+                        </queries:Filter>
+                    </queries:If>
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#MethodDeclaration"/>
+                        <queries:Filter>
+                            <queries:AncestorStep/>
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#ClassDeclaration"/>
+                        </queries:Filter>
+                    </queries:If>
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#VariableDeclaration"/>
+                        <queries:Filter>
+                            <queries:AncestorStep/>
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#MethodDeclaration"/>
+                        </queries:Filter>
+                    </queries:If>
+                </queries:Choose>
+                <queries:Choose initialCapacity="2">
+                    <queries:Filter>
+                        <queries:AncestorStep/>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Metadata"/>
+                    </queries:Filter>
+                    <queries:SelfStep/>
+                </queries:Choose>
+            </queries:Path>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="occurrences"/>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="1">
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="name"/>
+                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                </patterns:Declarations>
+                <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                    <patterns:FunctionStep value="declaration"/>
+                    <patterns:FunctionStep value="declarationScope"/>
+                    <queries:Filter>
+                        <queries:DescendantStep/>
+                        <queries:And initialCapacity="2">
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
+                            <queries:ExpressionTest>
+                                <queries:EqualsStep>
+                                    <queries:VariableRefStep value="name"/>
+                                </queries:EqualsStep>
+                            </queries:ExpressionTest>
+                        </queries:And>
+                    </queries:Filter>
+                </queries:Path>
+            </patterns:ScopePoint>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="rename"/>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="1">
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="name"/>
+                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                </patterns:Declarations>
+                <queries:CartesianUpdate xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Path initialCapacity="2">
+                        <patterns:FunctionStep value="occurrences"/>
+                        <queries:SelfStep/>
+                    </queries:Path>
+                    <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
+                        <semantics:EntityType value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
+                        <queries:VariableRefStep value="newName"/>
+                    </semantics:TypeCast>
+                </queries:CartesianUpdate>
+            </patterns:ScopePoint>
+        </patterns:FunctionDeclaration>
+    </patterns:Declarations>
+</patterns:Library>

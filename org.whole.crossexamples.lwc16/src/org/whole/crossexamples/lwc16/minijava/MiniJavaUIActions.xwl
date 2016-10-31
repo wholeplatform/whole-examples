@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaUIActions"/>
+    <actions:Namespace value="org.whole.crossexamples.lwc16.minijava"/>
+    <actions:Name value="MiniJava"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:ToolbarActions>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="1">
+            <actions:GuardedAction>
+                <actions:Label value="Rename"/>
+                <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Names initialCapacity="3">
+                        <queries:Name value="newNameTemp"/>
+                        <queries:Name value="newName"/>
+                        <queries:Name value="factory"/>
+                    </queries:Names>
+                    <queries:Block initialCapacity="2">
+                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="sequence"/>
+                                <workflows:FlowObjects initialCapacity="3">
+                                    <workflows:InvokeJavaClassMethod>
+                                        <workflows:Text value="Configure a custom dialog factory"/>
+                                        <workflows:Variable value="factory"/>
+                                        <commons:Resolver/>
+                                        <workflows:StringLiteral value="org.whole.lang.workflows.ui.dialogs.ChangeValueDialogFactory"/>
+                                        <workflows:StringLiteral value="instance()"/>
+                                        <commons:Resolver/>
+                                    </workflows:InvokeJavaClassMethod>
+                                    <workflows:AssignActivity>
+                                        <workflows:Text value="assignactivity"/>
+                                        <workflows:Assignments initialCapacity="1">
+                                        <workflows:Assign>
+                                        <workflows:Variable value="newNameTemp"/>
+                                        <workflows:StringLiteral value="name"/>
+                                        </workflows:Assign>
+                                        </workflows:Assignments>
+                                    </workflows:AssignActivity>
+                                    <workflows:Task>
+                                        <workflows:Text value="Rename refactoring"/>
+                                        <workflows:Text value="New name"/>
+                                        <workflows:Assignments initialCapacity="1">
+                                        <workflows:Assign>
+                                        <workflows:Variable value="newName"/>
+                                        <workflows:Variable value="newNameTemp"/>
+                                        </workflows:Assign>
+                                        </workflows:Assignments>
+                                        <workflows:Variable value="factory"/>
+                                    </workflows:Task>
+                                </workflows:FlowObjects>
+                            </workflows:Sequence>
+                        </commons:SameStageFragment>
+                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                            <semantics:Name value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics#rename"/>
+                            <queries:Path initialCapacity="2">
+                                <queries:VariableRefStep value="selectedEntities"/>
+                                <queries:ChildStep/>
+                            </queries:Path>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                    </queries:Block>
+                </queries:Scope>
+                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Path initialCapacity="2">
+                        <queries:VariableRefStep value="selectedEntities"/>
+                        <queries:Filter>
+                            <queries:ChildStep/>
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
+                        </queries:Filter>
+                    </queries:Path>
+                </queries:ExpressionTest>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="2">
+            <actions:GuardedAction>
+                <actions:Label value="Show declarations in scope"/>
+                <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="1">
+                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                        <semantics:Name value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics#declarations"/>
+                        <queries:Path initialCapacity="2">
+                            <queries:VariableRefStep value="selectedEntities"/>
+                            <queries:ChildStep/>
+                        </queries:Path>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                </queries:Block>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Occurrences"/>
+                <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="1">
+                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                        <semantics:Name value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics#occurrences"/>
+                        <queries:Path initialCapacity="2">
+                            <queries:VariableRefStep value="selectedEntities"/>
+                            <queries:ChildStep/>
+                        </queries:Path>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                </queries:Block>
+                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Path initialCapacity="2">
+                        <queries:VariableRefStep value="selectedEntities"/>
+                        <queries:Filter>
+                            <queries:ChildStep/>
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
+                        </queries:Filter>
+                    </queries:Path>
+                </queries:ExpressionTest>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>
