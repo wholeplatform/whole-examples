@@ -17,15 +17,16 @@
  */
 package org.whole.crossexamples.lwc16.metadata.ui.actions;
 
-import org.eclipse.jface.bindings.keys.IKeyLookup;
-import org.eclipse.jface.bindings.keys.KeyLookupFactory;
-import org.eclipse.jface.bindings.keys.KeySequence;
-import org.eclipse.jface.bindings.keys.KeyStroke;
 import org.whole.crossexamples.lwc16.metadata.reflect.MetadataEntityDescriptorEnum;
-import org.whole.lang.text.ui.actions.BackspaceAction;
-import org.whole.lang.text.ui.actions.DeleteAction;
-import org.whole.lang.text.ui.actions.NewlineAction;
-import org.whole.lang.text.ui.actions.SplitOnCaretAction;
+import org.whole.lang.e4.ui.actions.ArrowDownAction;
+import org.whole.lang.e4.ui.actions.ArrowLeftAction;
+import org.whole.lang.e4.ui.actions.ArrowRightAction;
+import org.whole.lang.e4.ui.actions.ArrowUpAction;
+import org.whole.lang.e4.ui.actions.BackspaceAction;
+import org.whole.lang.e4.ui.actions.DeleteAction;
+import org.whole.lang.e4.ui.actions.NewlineAction;
+import org.whole.lang.e4.ui.actions.SplitOnCaretAction;
+import org.whole.lang.e4.ui.util.E4Utils;
 import org.whole.lang.ui.actions.EnablerPredicateFactory;
 import org.whole.lang.ui.editor.ActionFactory;
 
@@ -50,29 +51,9 @@ public class MetadataActionFactory extends ActionFactory {
 	}
 
 	public Object[][] textActions() {
-		IKeyLookup keyLookup = KeyLookupFactory.getDefault();
-
-		int spaceKey = keyLookup.formalKeyLookup(IKeyLookup.SPACE_NAME);
-		KeyStroke spaceKeyStroke = KeyStroke.getInstance(spaceKey);
-		KeySequence spaceKeySequence = KeySequence.getInstance(spaceKeyStroke);
-
-		int returnKey = keyLookup.formalKeyLookup(IKeyLookup.RETURN_NAME);
-		KeyStroke returnKeyStroke = KeyStroke.getInstance(returnKey);
-		KeySequence returnKeySequence = KeySequence.getInstance(returnKeyStroke);
-
-		int backspaceKey = keyLookup.formalKeyLookup(IKeyLookup.BACKSPACE_NAME);
-		KeyStroke backspaceKeyStroke = KeyStroke.getInstance(backspaceKey);
-		KeySequence backspaceKeySequence = KeySequence.getInstance(backspaceKeyStroke);
-
-		int deleteKey = keyLookup.formalKeyLookup(IKeyLookup.DELETE_NAME);
-		KeyStroke deleteKeyStroke = KeyStroke.getInstance(deleteKey);
-		KeySequence deleteKeySequence = KeySequence.getInstance(deleteKeyStroke);
 
 		return new Object[][] {
-				{ spaceKeySequence, MetadataEntityDescriptorEnum.Text, SplitOnCaretAction.class },
-				{ returnKeySequence, MetadataEntityDescriptorEnum.Text, NewlineAction.class },
-				{ backspaceKeySequence, MetadataEntityDescriptorEnum.Text, BackspaceAction.class },
-				{ deleteKeySequence, MetadataEntityDescriptorEnum.Text, DeleteAction.class },
+			{ E4Utils.lookupSpace(), MetadataEntityDescriptorEnum.Text, SplitOnCaretAction.class },
 		}; 
 	}
 }
