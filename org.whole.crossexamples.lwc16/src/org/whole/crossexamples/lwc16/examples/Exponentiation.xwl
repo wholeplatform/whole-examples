@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<minijava:Program xmlns:minijava="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel">
+    <minijava:MainClass>
+        <minijava:Identifier value="ExponentiationMain"/>
+        <minijava:Identifier value="args"/>
+        <minijava:PrintlnStatement>
+            <minijava:MethodInvocation>
+                <minijava:ClassInstanceCreation>
+                    <minijava:Identifier value="Exponentiation"/>
+                </minijava:ClassInstanceCreation>
+                <minijava:Identifier value="exponentiation"/>
+                <minijava:Arguments initialCapacity="1">
+                    <minijava:MethodInvocation>
+                        <minijava:ClassInstanceCreation>
+                            <minijava:Identifier value="Average"/>
+                        </minijava:ClassInstanceCreation>
+                        <minijava:Identifier value="seqOf"/>
+                        <minijava:Arguments initialCapacity="1">
+                            <minijava:IntLiteral value="10"/>
+                        </minijava:Arguments>
+                    </minijava:MethodInvocation>
+                </minijava:Arguments>
+            </minijava:MethodInvocation>
+        </minijava:PrintlnStatement>
+    </minijava:MainClass>
+    <minijava:ClassDeclarations initialCapacity="1">
+        <minijava:ClassDeclaration>
+            <minijava:Identifier value="Exponentiation"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <minijava:MethodDeclarations initialCapacity="1">
+                <metadata:Metadata xmlns:metadata="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel">
+                    <minijava:MethodDeclaration>
+                        <minijava:Int/>
+                        <minijava:Identifier value="exponentiation"/>
+                        <minijava:VariableDeclarations initialCapacity="2">
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="base"/>
+                            </minijava:VariableDeclaration>
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="exponent"/>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:VariableDeclarations initialCapacity="2">
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="exp"/>
+                            </minijava:VariableDeclaration>
+                            <minijava:VariableDeclaration>
+                                <minijava:Int/>
+                                <minijava:Identifier value="i"/>
+                            </minijava:VariableDeclaration>
+                        </minijava:VariableDeclarations>
+                        <minijava:Statements initialCapacity="3">
+                            <minijava:VariableAssignment>
+                                <minijava:Identifier value="exp"/>
+                                <minijava:IntLiteral value="1"/>
+                            </minijava:VariableAssignment>
+                            <minijava:VariableAssignment>
+                                <minijava:Identifier value="i"/>
+                                <minijava:IntLiteral value="0"/>
+                            </minijava:VariableAssignment>
+                            <minijava:WhileStatement>
+                                <minijava:InfixExpression>
+                                    <minijava:Identifier value="i"/>
+                                    <minijava:InfixOperator value="less"/>
+                                    <minijava:Identifier value="exponent"/>
+                                </minijava:InfixExpression>
+                                <minijava:Block initialCapacity="2">
+                                    <minijava:VariableAssignment>
+                                        <minijava:Identifier value="exp"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="exp"/>
+                                        <minijava:InfixOperator value="times"/>
+                                        <minijava:Identifier value="base"/>
+                                        </minijava:InfixExpression>
+                                    </minijava:VariableAssignment>
+                                    <minijava:VariableAssignment>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixOperator value="plus"/>
+                                        <minijava:IntLiteral value="1"/>
+                                        </minijava:InfixExpression>
+                                    </minijava:VariableAssignment>
+                                </minijava:Block>
+                            </minijava:WhileStatement>
+                        </minijava:Statements>
+                        <minijava:Identifier value="exp"/>
+                    </minijava:MethodDeclaration>
+                    <metadata:Annotations initialCapacity="1">
+                        <metadata:Comment>
+                            <metadata:Paragraphs initialCapacity="2">
+                                <metadata:Paragraph initialCapacity="10">
+                                    <metadata:Text value="This"/>
+                                    <metadata:Text value="method"/>
+                                    <metadata:Text value="calculates"/>
+                                    <math:Exponentiation xmlns:math="http://lang.whole.org/Math">
+                                        <minijava:Identifier value="base"/>
+                                        <minijava:Identifier value="exponent"/>
+                                    </math:Exponentiation>
+                                    <metadata:Text value="using"/>
+                                    <metadata:Text value="only"/>
+                                    <metadata:Text value="native"/>
+                                    <metadata:Text value="MiniJava"/>
+                                    <metadata:Text value="language"/>
+                                    <metadata:Text value="constructs."/>
+                                </metadata:Paragraph>
+                                <metadata:Paragraph initialCapacity="12">
+                                    <metadata:Text value="The"/>
+                                    <metadata:Text value="while"/>
+                                    <metadata:Text value="loop"/>
+                                    <metadata:Text value="can"/>
+                                    <metadata:Text value="be"/>
+                                    <metadata:Text value="diagrammed"/>
+                                    <metadata:Text value="as"/>
+                                    <workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="Exponentiation"/>
+                                        <workflows:FlowObjects initialCapacity="1">
+                                        <workflows:WhileLoop>
+                                        <workflows:Text value="whileloop"/>
+                                        <workflows:TestTime value="before"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixOperator value="less"/>
+                                        <minijava:Identifier value="exponent"/>
+                                        </minijava:InfixExpression>
+                                        <workflows:AssignActivity>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Assignments initialCapacity="2">
+                                        <workflows:Assign>
+                                        <workflows:Variable value="exp"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="exp"/>
+                                        <minijava:InfixOperator value="times"/>
+                                        <minijava:Identifier value="base"/>
+                                        </minijava:InfixExpression>
+                                        </workflows:Assign>
+                                        <workflows:Assign>
+                                        <workflows:Variable value="i"/>
+                                        <minijava:InfixExpression>
+                                        <minijava:Identifier value="i"/>
+                                        <minijava:InfixOperator value="plus"/>
+                                        <minijava:IntLiteral value="1"/>
+                                        </minijava:InfixExpression>
+                                        </workflows:Assign>
+                                        </workflows:Assignments>
+                                        </workflows:AssignActivity>
+                                        </workflows:WhileLoop>
+                                        </workflows:FlowObjects>
+                                    </workflows:Sequence>
+                                    <metadata:Text value="using"/>
+                                    <metadata:Text value="the"/>
+                                    <metadata:Text value="Workflows"/>
+                                    <metadata:Text value="language."/>
+                                </metadata:Paragraph>
+                            </metadata:Paragraphs>
+                        </metadata:Comment>
+                    </metadata:Annotations>
+                </metadata:Metadata>
+            </minijava:MethodDeclarations>
+        </minijava:ClassDeclaration>
+    </minijava:ClassDeclarations>
+</minijava:Program>

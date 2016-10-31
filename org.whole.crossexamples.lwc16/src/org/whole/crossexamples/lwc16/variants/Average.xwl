@@ -49,7 +49,7 @@
                             <minijava:Identifier value="result"/>
                             <minijava:IntLiteral value="0"/>
                         </minijava:VariableAssignment>
-                        <mjcflow:UnlessStatement xmlns:mjcflow="whole:org.whole.crossexamples.lwc16.mjcflow:MJCFlowExtensionModel">
+                        <mjcflow:UnlessStatement xmlns:mjcflow="whole:org.whole.crossexamples.lwc16.variants:MJCFlowExtensionPatternsModel">
                             <minijava:InfixExpression>
                                 <minijava:ArrayLength>
                                     <minijava:Identifier value="values"/>

@@ -38,38 +38,36 @@
                             <minijava:Identifier value="values"/>
                         </minijava:VariableDeclaration>
                     </minijava:VariableDeclarations>
-                    <minijava:VariableDeclarations initialCapacity="1">
+                    <minijava:VariableDeclarations initialCapacity="2">
                         <minijava:VariableDeclaration>
                             <minijava:Int/>
-                            <minijava:Identifier value="result"/>
+                            <minijava:Identifier value="size"/>
+                        </minijava:VariableDeclaration>
+                        <minijava:VariableDeclaration>
+                            <minijava:Int/>
+                            <minijava:Identifier value="i"/>
                         </minijava:VariableDeclaration>
                     </minijava:VariableDeclarations>
-                    <minijava:Statements initialCapacity="2">
+                    <minijava:Statements initialCapacity="1">
                         <minijava:VariableAssignment>
-                            <minijava:Identifier value="result"/>
-                            <minijava:IntLiteral value="0"/>
+                            <minijava:Identifier value="size"/>
+                            <minijava:ArrayLength>
+                                <minijava:Identifier value="values"/>
+                            </minijava:ArrayLength>
                         </minijava:VariableAssignment>
-                        <mjcflow:UnlessStatement xmlns:mjcflow="whole:org.whole.crossexamples.lwc16.mjcflow:MJCFlowExtensionModel">
-                            <minijava:InfixExpression>
-                                <minijava:ArrayLength>
-                                    <minijava:Identifier value="values"/>
-                                </minijava:ArrayLength>
-                                <minijava:InfixOperator value="less"/>
-                                <minijava:IntLiteral value="1"/>
-                            </minijava:InfixExpression>
-                            <minijava:VariableAssignment>
-                                <minijava:Identifier value="result"/>
-                                <minijava:MethodInvocation>
-                                    <minijava:ThisExpression/>
-                                    <minijava:Identifier value="calculate"/>
-                                    <minijava:Arguments initialCapacity="1">
-                                        <minijava:Identifier value="values"/>
-                                    </minijava:Arguments>
-                                </minijava:MethodInvocation>
-                            </minijava:VariableAssignment>
-                        </mjcflow:UnlessStatement>
                     </minijava:Statements>
-                    <minijava:Identifier value="result"/>
+                    <math:Division xmlns:math="http://lang.whole.org/Math">
+                        <mjmath:Summation xmlns:mjmath="whole:org.whole.crossexamples.lwc16.mjmath:MJMathExtensionModel">
+                            <minijava:Identifier value="i"/>
+                            <minijava:IntLiteral value="0"/>
+                            <minijava:Identifier value="size"/>
+                            <minijava:ArrayAccess>
+                                <minijava:Identifier value="values"/>
+                                <minijava:Identifier value="i"/>
+                            </minijava:ArrayAccess>
+                        </mjmath:Summation>
+                        <minijava:Identifier value="size"/>
+                    </math:Division>
                 </minijava:MethodDeclaration>
                 <minijava:MethodDeclaration>
                     <minijava:IntArray/>
