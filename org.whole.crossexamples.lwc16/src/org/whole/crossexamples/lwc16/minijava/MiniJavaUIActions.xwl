@@ -18,8 +18,9 @@
             <actions:GuardedAction>
                 <actions:Label value="Rename"/>
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="3">
+                    <queries:Names initialCapacity="4">
                         <queries:Name value="newNameTemp"/>
+                        <queries:Name value="oldName"/>
                         <queries:Name value="newName"/>
                         <queries:Name value="factory"/>
                     </queries:Names>
@@ -36,22 +37,29 @@
                                         <workflows:StringLiteral value="instance()"/>
                                         <commons:Resolver/>
                                     </workflows:InvokeJavaClassMethod>
-                                    <workflows:AssignActivity>
-                                        <workflows:Text value="assignactivity"/>
-                                        <workflows:Assignments initialCapacity="1">
-                                        <workflows:Assign>
-                                        <workflows:Variable value="newNameTemp"/>
-                                        <workflows:StringLiteral value="name"/>
-                                        </workflows:Assign>
-                                        </workflows:Assignments>
-                                    </workflows:AssignActivity>
+                                    <workflows:InvokeJavaClassMethod>
+                                        <workflows:Text value="clone oldName"/>
+                                        <workflows:Variable value="oldName"/>
+                                        <commons:Resolver/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
+                                        <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <workflows:Variable value="primarySelectedEntity"/>
+                                        </workflows:Expressions>
+                                    </workflows:InvokeJavaClassMethod>
                                     <workflows:Task>
                                         <workflows:Text value="Rename refactoring"/>
                                         <workflows:Text value="New name"/>
                                         <workflows:Assignments initialCapacity="1">
                                         <workflows:Assign>
                                         <workflows:Variable value="newName"/>
-                                        <workflows:Variable value="newNameTemp"/>
+                                        <commons:StageUpFragment>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Workflows#StringLiteral"/>
+                                        <commons:VarName value="oldName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </commons:StageUpFragment>
                                         </workflows:Assign>
                                         </workflows:Assignments>
                                         <workflows:Variable value="factory"/>
