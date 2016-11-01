@@ -31,6 +31,8 @@ public class MiniJavaUIDeployer extends AbstractLanguageExtensionDeployer {
 		platform.addEditorKit(MiniJavaTextualEditorKit.ID);
 		try {
 			InterpreterOperation.interpret(XmlBuilderPersistenceKit.instance().readModel(
+					new ClasspathPersistenceProvider("org/whole/crossexamples/lwc16/minijava/MiniJavaLibrary.xwl")));
+			InterpreterOperation.interpret(XmlBuilderPersistenceKit.instance().readModel(
 					new ClasspathPersistenceProvider("org/whole/crossexamples/lwc16/minijava/MiniJavaUIActions.xwl")));
 		} catch (Exception e) {
 			throw new IllegalStateException(e);
