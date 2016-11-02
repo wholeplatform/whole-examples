@@ -1036,9 +1036,9 @@
                                         <java:SimpleName value="load"/>
                                         <java:Parameters initialCapacity="0"/>
                                         <commons:Resolver/>
-                                        <java:Names initialCapacity="1">
-                                        <java:SimpleName value="Exception"/>
-                                        </java:Names>
+                                        <java:Types initialCapacity="1">
+                                        <java:SimpleType value="Exception"/>
+                                        </java:Types>
                                         <java:Block initialCapacity="3">
                                         <java:VariableDeclarationStatement>
                                         <commons:Resolver/>
@@ -1164,9 +1164,9 @@
                                         <java:SimpleName value="save"/>
                                         <java:Parameters initialCapacity="0"/>
                                         <commons:Resolver/>
-                                        <java:Names initialCapacity="1">
-                                        <java:SimpleName value="Exception"/>
-                                        </java:Names>
+                                        <java:Types initialCapacity="1">
+                                        <java:SimpleType value="Exception"/>
+                                        </java:Types>
                                         <java:Block initialCapacity="6">
                                         <java:VariableDeclarationStatement>
                                         <commons:Resolver/>
@@ -2614,9 +2614,9 @@
                                         <java:SimpleName value="load"/>
                                         <java:Parameters initialCapacity="0"/>
                                         <commons:Resolver/>
-                                        <java:Names initialCapacity="1">
-                                        <java:SimpleName value="Exception"/>
-                                        </java:Names>
+                                        <java:Types initialCapacity="1">
+                                        <java:SimpleType value="Exception"/>
+                                        </java:Types>
                                         <java:Block initialCapacity="3">
                                         <java:VariableDeclarationStatement>
                                         <commons:Resolver/>
@@ -2778,9 +2778,9 @@
                                         <java:SimpleName value="save"/>
                                         <java:Parameters initialCapacity="0"/>
                                         <commons:Resolver/>
-                                        <java:Names initialCapacity="1">
-                                        <java:SimpleName value="Exception"/>
-                                        </java:Names>
+                                        <java:Types initialCapacity="1">
+                                        <java:SimpleType value="Exception"/>
+                                        </java:Types>
                                         <java:Block initialCapacity="6">
                                         <java:VariableDeclarationStatement>
                                         <commons:Resolver/>
