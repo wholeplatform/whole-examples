@@ -19,7 +19,9 @@ package org.whole.crossexamples.lwc16;
 
 import org.whole.crossexamples.lwc16.metadata.reflect.MetadataLanguageDeployer;
 import org.whole.crossexamples.lwc16.metadata.ui.MetadataUIDeployer;
+import org.whole.crossexamples.lwc16.minijava.events.MiniJavaReactionsHandler;
 import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaLanguageDeployer;
+import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaLanguageKit;
 import org.whole.crossexamples.lwc16.minijava.ui.MiniJavaUIDeployer;
 import org.whole.crossexamples.lwc16.mjcflow.reflect.MJCFlowLanguageDeployer;
 import org.whole.crossexamples.lwc16.mjcflow.ui.MJCFlowUIDeployer;
@@ -49,4 +51,10 @@ public class LWC16Deployer  extends AbstractSuiteDeployer {
 			MJMathUIDeployer.class
 		);
 	}
+
+	public void deploy(org.whole.lang.reflect.ReflectionFactory platform) {
+		super.deploy(platform);
+
+		platform.addReactionsHandler(MiniJavaLanguageKit.URI, new MiniJavaReactionsHandler());
+	};
 }

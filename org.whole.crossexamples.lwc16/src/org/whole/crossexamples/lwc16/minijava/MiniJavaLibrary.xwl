@@ -35,24 +35,36 @@
         <patterns:FunctionDeclaration>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <patterns:Name value="declaration"/>
-            <queries:Filter xmlns:queries="http://lang.whole.org/Queries">
-                <queries:Filter>
-                    <patterns:FunctionStep value="declarations"/>
-                    <queries:ExpressionTest>
-                        <queries:Filter>
-                            <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#name"/>
-                            <queries:ExpressionTest>
-                                <queries:EqualsStep>
-                                    <queries:VariableRefStep value="name"/>
-                                </queries:EqualsStep>
-                            </queries:ExpressionTest>
-                        </queries:Filter>
-                    </queries:ExpressionTest>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="1">
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="source"/>
+                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                </patterns:Declarations>
+                <queries:Filter xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Filter>
+                        <patterns:FunctionStep value="declarations"/>
+                        <queries:ExpressionTest>
+                            <queries:Filter>
+                                <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#name"/>
+                                <queries:Or initialCapacity="2">
+                                    <queries:ExpressionTest>
+                                        <queries:EqualsStep>
+                                        <queries:VariableRefStep value="name"/>
+                                        </queries:EqualsStep>
+                                    </queries:ExpressionTest>
+                                    <queries:VariableTest value="source"/>
+                                </queries:Or>
+                            </queries:Filter>
+                        </queries:ExpressionTest>
+                    </queries:Filter>
+                    <queries:IndexTest>
+                        <queries:IntLiteral value="0"/>
+                    </queries:IndexTest>
                 </queries:Filter>
-                <queries:IndexTest>
-                    <queries:IntLiteral value="0"/>
-                </queries:IndexTest>
-            </queries:Filter>
+            </patterns:ScopePoint>
         </patterns:FunctionDeclaration>
         <patterns:FunctionDeclaration>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -93,56 +105,38 @@
         <patterns:FunctionDeclaration>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <patterns:Name value="occurrences"/>
-            <patterns:ScopePoint>
-                <patterns:Declarations initialCapacity="1">
-                    <patterns:VariableDeclaration>
-                        <patterns:Name value="name"/>
-                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </patterns:VariableDeclaration>
-                </patterns:Declarations>
-                <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
-                    <patterns:FunctionStep value="declaration"/>
-                    <patterns:FunctionStep value="declarationScope"/>
-                    <queries:Filter>
-                        <queries:DescendantStep/>
-                        <queries:And initialCapacity="2">
-                            <queries:Or initialCapacity="2">
-                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
-                                <queries:TypeTest value="http://lang.whole.org/Workflows#Variable"/>
-                            </queries:Or>
-                            <queries:ExpressionTest>
-                                <queries:EqualsStep>
-                                    <queries:VariableRefStep value="name"/>
-                                </queries:EqualsStep>
-                            </queries:ExpressionTest>
-                        </queries:And>
-                    </queries:Filter>
-                </queries:Path>
-            </patterns:ScopePoint>
+            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                <patterns:FunctionStep value="declaration"/>
+                <patterns:FunctionStep value="declarationScope"/>
+                <queries:Filter>
+                    <queries:DescendantStep/>
+                    <queries:And initialCapacity="2">
+                        <queries:Or initialCapacity="2">
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
+                            <queries:TypeTest value="http://lang.whole.org/Workflows#Variable"/>
+                        </queries:Or>
+                        <queries:ExpressionTest>
+                            <queries:EqualsStep>
+                                <queries:VariableRefStep value="name"/>
+                            </queries:EqualsStep>
+                        </queries:ExpressionTest>
+                    </queries:And>
+                </queries:Filter>
+            </queries:Path>
         </patterns:FunctionDeclaration>
         <patterns:FunctionDeclaration>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <patterns:Name value="rename"/>
-            <patterns:ScopePoint>
-                <patterns:Declarations initialCapacity="1">
-                    <patterns:VariableDeclaration>
-                        <patterns:Name value="name"/>
-                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </patterns:VariableDeclaration>
-                </patterns:Declarations>
-                <queries:CartesianUpdate xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Path initialCapacity="2">
-                        <patterns:FunctionStep value="occurrences"/>
-                        <queries:SelfStep/>
-                    </queries:Path>
-                    <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
-                        <semantics:EntityType value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
-                        <queries:VariableRefStep value="newName"/>
-                    </semantics:TypeCast>
-                </queries:CartesianUpdate>
-            </patterns:ScopePoint>
+            <queries:CartesianUpdate xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Path initialCapacity="2">
+                    <patterns:FunctionStep value="occurrences"/>
+                    <queries:SelfStep/>
+                </queries:Path>
+                <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
+                    <semantics:EntityType value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
+                    <queries:VariableRefStep value="newName"/>
+                </semantics:TypeCast>
+            </queries:CartesianUpdate>
         </patterns:FunctionDeclaration>
     </patterns:Declarations>
 </patterns:Library>

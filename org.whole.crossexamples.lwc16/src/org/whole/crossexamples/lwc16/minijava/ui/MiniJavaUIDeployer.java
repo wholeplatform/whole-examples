@@ -19,19 +19,19 @@ package org.whole.crossexamples.lwc16.minijava.ui;
 
 import org.whole.lang.codebase.ClasspathPersistenceProvider;
 import org.whole.lang.operations.InterpreterOperation;
-import org.whole.lang.reflect.AbstractLanguageExtensionDeployer;
+import org.whole.lang.reflect.AbstractContributionExtensionDeployer;
 import org.whole.lang.reflect.ReflectionFactory;
 import org.whole.lang.xml.codebase.XmlBuilderPersistenceKit;
 
 /** 
  * @author Enrico Persiani
  */
-public class MiniJavaUIDeployer extends AbstractLanguageExtensionDeployer {
+public class MiniJavaUIDeployer extends AbstractContributionExtensionDeployer { //LanguageExtensionDeployer {
 	public void deploy(ReflectionFactory platform) {
 		platform.addEditorKit(MiniJavaTextualEditorKit.ID);
 		try {
 			InterpreterOperation.interpret(XmlBuilderPersistenceKit.instance().readModel(
-					new ClasspathPersistenceProvider("org/whole/crossexamples/lwc16/minijava/MiniJavaLibrary.xwl")));
+					new ClasspathPersistenceProvider("org/whole/crossexamples/lwc16/minijava/MiniJavaSemantics.xwl")));
 			InterpreterOperation.interpret(XmlBuilderPersistenceKit.instance().readModel(
 					new ClasspathPersistenceProvider("org/whole/crossexamples/lwc16/minijava/MiniJavaUIActions.xwl")));
 		} catch (Exception e) {

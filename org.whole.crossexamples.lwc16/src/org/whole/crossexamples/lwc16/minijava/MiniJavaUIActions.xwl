@@ -20,7 +20,7 @@
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
                     <queries:Names initialCapacity="4">
                         <queries:Name value="newNameTemp"/>
-                        <queries:Name value="oldName"/>
+                        <queries:Name value="name"/>
                         <queries:Name value="newName"/>
                         <queries:Name value="factory"/>
                     </queries:Names>
@@ -39,7 +39,7 @@
                                     </workflows:InvokeJavaClassMethod>
                                     <workflows:InvokeJavaClassMethod>
                                         <workflows:Text value="clone oldName"/>
-                                        <workflows:Variable value="oldName"/>
+                                        <workflows:Variable value="name"/>
                                         <commons:Resolver/>
                                         <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
                                         <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
@@ -56,7 +56,7 @@
                                         <commons:StageUpFragment>
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Workflows#StringLiteral"/>
-                                        <commons:VarName value="oldName"/>
+                                        <commons:VarName value="name"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         </commons:StageUpFragment>

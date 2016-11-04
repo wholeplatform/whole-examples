@@ -19,24 +19,56 @@ package org.whole.crossexamples.lwc16.minijava.ui.editparts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.EditPart;
-import org.whole.crossexamples.lwc16.minijava.model.*;
+import org.whole.crossexamples.lwc16.minijava.model.Arguments;
+import org.whole.crossexamples.lwc16.minijava.model.ArrayAccess;
+import org.whole.crossexamples.lwc16.minijava.model.ArrayCreation;
+import org.whole.crossexamples.lwc16.minijava.model.ArrayElementAssignment;
+import org.whole.crossexamples.lwc16.minijava.model.ArrayLength;
+import org.whole.crossexamples.lwc16.minijava.model.Block;
 import org.whole.crossexamples.lwc16.minijava.model.Boolean;
+import org.whole.crossexamples.lwc16.minijava.model.BooleanLiteral;
+import org.whole.crossexamples.lwc16.minijava.model.ClassDeclaration;
+import org.whole.crossexamples.lwc16.minijava.model.ClassDeclarations;
+import org.whole.crossexamples.lwc16.minijava.model.ClassInstanceCreation;
+import org.whole.crossexamples.lwc16.minijava.model.IMiniJavaEntity;
+import org.whole.crossexamples.lwc16.minijava.model.Identifier;
+import org.whole.crossexamples.lwc16.minijava.model.IfStatement;
+import org.whole.crossexamples.lwc16.minijava.model.InfixExpression;
+import org.whole.crossexamples.lwc16.minijava.model.InfixOperator;
+import org.whole.crossexamples.lwc16.minijava.model.InfixOperatorEnum;
+import org.whole.crossexamples.lwc16.minijava.model.Int;
+import org.whole.crossexamples.lwc16.minijava.model.IntArray;
+import org.whole.crossexamples.lwc16.minijava.model.IntLiteral;
+import org.whole.crossexamples.lwc16.minijava.model.MainClass;
+import org.whole.crossexamples.lwc16.minijava.model.MethodDeclaration;
+import org.whole.crossexamples.lwc16.minijava.model.MethodDeclarations;
+import org.whole.crossexamples.lwc16.minijava.model.MethodInvocation;
+import org.whole.crossexamples.lwc16.minijava.model.NotExpression;
+import org.whole.crossexamples.lwc16.minijava.model.ParenthesizedExpression;
+import org.whole.crossexamples.lwc16.minijava.model.PrintlnStatement;
+import org.whole.crossexamples.lwc16.minijava.model.Program;
+import org.whole.crossexamples.lwc16.minijava.model.Statements;
+import org.whole.crossexamples.lwc16.minijava.model.ThisExpression;
+import org.whole.crossexamples.lwc16.minijava.model.VariableAssignment;
+import org.whole.crossexamples.lwc16.minijava.model.VariableDeclaration;
+import org.whole.crossexamples.lwc16.minijava.model.VariableDeclarations;
+import org.whole.crossexamples.lwc16.minijava.model.WhileStatement;
+import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaEntityDescriptorEnum;
 import org.whole.crossexamples.lwc16.minijava.reflect.MiniJavaFeatureDescriptorEnum;
 import org.whole.crossexamples.lwc16.minijava.visitors.MiniJavaIdentityDefaultVisitor;
-import org.whole.lang.model.IEntity;
+import org.whole.lang.matchers.Matcher;
 import org.whole.lang.model.adapters.IEntityAdapter;
 import org.whole.lang.ui.editparts.AbstractPart;
 import org.whole.lang.ui.editparts.CommaSeparatedCompositeFlowPart;
 import org.whole.lang.ui.editparts.CompositeColumnPart;
-import org.whole.lang.ui.editparts.IEditPartFactory;
-import org.whole.lang.ui.editparts.KeywordDataEntityPart;
 import org.whole.lang.ui.editparts.ContentDataEntityPart;
 import org.whole.lang.ui.editparts.ContentTextualEntityPart;
+import org.whole.lang.ui.editparts.IEditPartFactory;
+import org.whole.lang.ui.editparts.KeywordDataEntityPart;
 import org.whole.lang.ui.editparts.PlaceHolderPart;
 import org.whole.lang.ui.figures.LabelFactory;
 import org.whole.lang.ui.figures.PairContentPaneFigure;
 import org.whole.lang.ui.notations.text.editparts.DefaultTextualPartFactory;
-import org.whole.lang.util.EntityUtils;
 
 /** 
  * @generator Whole
@@ -198,14 +230,10 @@ public class MiniJavaTextualPartFactoryVisitor extends MiniJavaIdentityDefaultVi
 	}
 	
 	public void visit(VariableDeclarations entity) {
-		if (EntityUtils.hasParent(entity)) {
-			IEntity parent = entity.wGetParent();
-			if (parent.wGet(MiniJavaFeatureDescriptorEnum.parameters) == entity) {
-				part = new CommaSeparatedCompositeFlowPart();
-				return;
-			}
-		}
-		part = new CompositeColumnPart();
+		if (Matcher.matchAtEntityFeature(MiniJavaEntityDescriptorEnum.MethodDeclaration, MiniJavaFeatureDescriptorEnum.parameters, entity)) {
+			part = new CommaSeparatedCompositeFlowPart();
+		} else
+			part = new CompositeColumnPart();
 	}
 
 	public void visit(MethodDeclarations entity) {
