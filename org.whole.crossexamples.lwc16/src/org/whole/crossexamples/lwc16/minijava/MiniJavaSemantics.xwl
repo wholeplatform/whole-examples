@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<semantics:SemanticTheory xmlns:semantics="http://lang.whole.org/Semantics">
+    <semantics:URI value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics"/>
+    <semantics:Namespace value="org.whole.crossexamples.lwc16.minijava"/>
+    <semantics:Name value="MiniJava"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <semantics:SemanticFunctions initialCapacity="5">
+        <semantics:SemanticFunction>
+            <semantics:Name value="declarations"/>
+            <semantics:FunctionType>
+                <semantics:AnyType/>
+                <semantics:AnyType/>
+            </semantics:FunctionType>
+            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                <queries:AncestorOrSelfStep/>
+                <queries:Filter>
+                    <queries:Choose initialCapacity="2">
+                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#annotable"/>
+                        <queries:SelfStep/>
+                    </queries:Choose>
+                    <queries:Or initialCapacity="2">
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#MethodDeclaration"/>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#ClassDeclaration"/>
+                    </queries:Or>
+                </queries:Filter>
+                <queries:Sequence initialCapacity="2">
+                    <queries:Path initialCapacity="2">
+                        <queries:Sequence initialCapacity="2">
+                            <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#variables"/>
+                            <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#parameters"/>
+                        </queries:Sequence>
+                        <queries:ChildStep/>
+                    </queries:Path>
+                    <queries:SelfStep/>
+                </queries:Sequence>
+            </queries:Path>
+        </semantics:SemanticFunction>
+        <semantics:SemanticFunction>
+            <semantics:Name value="declaration"/>
+            <semantics:FunctionType>
+                <semantics:AnyType/>
+                <semantics:AnyType/>
+            </semantics:FunctionType>
+            <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Names initialCapacity="1">
+                    <queries:Name value="source"/>
+                </queries:Names>
+                <queries:Block initialCapacity="2">
+                    <queries:Filter>
+                        <queries:SelfStep/>
+                        <queries:VariableTest value="source"/>
+                    </queries:Filter>
+                    <queries:Filter>
+                        <queries:Filter>
+                            <semantics:FunctionApplication>
+                                <semantics:Name value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics#declarations"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </semantics:FunctionApplication>
+                            <queries:ExpressionTest>
+                                <queries:Filter>
+                                    <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#name"/>
+                                    <queries:Or initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <queries:EqualsStep>
+                                        <queries:VariableRefStep value="name"/>
+                                        </queries:EqualsStep>
+                                        </queries:ExpressionTest>
+                                        <queries:VariableTest value="source"/>
+                                    </queries:Or>
+                                </queries:Filter>
+                            </queries:ExpressionTest>
+                        </queries:Filter>
+                        <queries:IndexTest>
+                            <queries:IntLiteral value="0"/>
+                        </queries:IndexTest>
+                    </queries:Filter>
+                </queries:Block>
+            </queries:Scope>
+        </semantics:SemanticFunction>
+        <semantics:SemanticFunction>
+            <semantics:Name value="declarationScope"/>
+            <semantics:FunctionType>
+                <semantics:AnyType/>
+                <semantics:AnyType/>
+            </semantics:FunctionType>
+            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                <queries:Choose initialCapacity="3">
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#VariableDeclaration"/>
+                        <queries:Filter>
+                            <queries:AncestorStep/>
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#MethodDeclaration"/>
+                        </queries:Filter>
+                    </queries:If>
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#MethodDeclaration"/>
+                        <queries:Filter>
+                            <queries:AncestorStep/>
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#ClassDeclaration"/>
+                        </queries:Filter>
+                    </queries:If>
+                    <queries:If>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#ClassDeclaration"/>
+                        <queries:Filter>
+                            <queries:AncestorStep/>
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Program"/>
+                        </queries:Filter>
+                    </queries:If>
+                </queries:Choose>
+                <queries:Choose initialCapacity="2">
+                    <queries:Filter>
+                        <queries:ParentStep/>
+                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Metadata"/>
+                    </queries:Filter>
+                    <queries:SelfStep/>
+                </queries:Choose>
+            </queries:Path>
+        </semantics:SemanticFunction>
+        <semantics:SemanticFunction>
+            <semantics:Name value="occurrences"/>
+            <semantics:FunctionType>
+                <semantics:AnyType/>
+                <semantics:AnyType/>
+            </semantics:FunctionType>
+            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                <semantics:FunctionApplication>
+                    <semantics:Name value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics#declaration"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </semantics:FunctionApplication>
+                <semantics:FunctionApplication>
+                    <semantics:Name value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics#declarationScope"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </semantics:FunctionApplication>
+                <queries:Filter>
+                    <queries:DescendantStep/>
+                    <queries:And initialCapacity="2">
+                        <queries:Or initialCapacity="2">
+                            <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
+                            <queries:TypeTest value="http://lang.whole.org/Workflows#Variable"/>
+                        </queries:Or>
+                        <queries:ExpressionTest>
+                            <queries:EqualsStep>
+                                <queries:VariableRefStep value="name"/>
+                            </queries:EqualsStep>
+                        </queries:ExpressionTest>
+                    </queries:And>
+                </queries:Filter>
+            </queries:Path>
+        </semantics:SemanticFunction>
+        <semantics:SemanticFunction>
+            <semantics:Name value="rename"/>
+            <semantics:FunctionType>
+                <semantics:AnyType/>
+                <semantics:AnyType/>
+            </semantics:FunctionType>
+            <queries:CartesianUpdate xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Path initialCapacity="2">
+                    <semantics:FunctionApplication>
+                        <semantics:Name value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics#occurrences"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                    <queries:SelfStep/>
+                </queries:Path>
+                <semantics:TypeCast>
+                    <semantics:EntityType value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
+                    <queries:VariableRefStep value="newName"/>
+                </semantics:TypeCast>
+            </queries:CartesianUpdate>
+        </semantics:SemanticFunction>
+    </semantics:SemanticFunctions>
+</semantics:SemanticTheory>
