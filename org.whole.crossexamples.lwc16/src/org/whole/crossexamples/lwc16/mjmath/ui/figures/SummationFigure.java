@@ -35,7 +35,7 @@ public class SummationFigure extends ContentPaneFigure {
 		EntityFigure column = new EntityFigure(new ColumnLayout().withMinorAlignment(Alignment.CENTER));
 
 		column.add(createContentPane(0));
-		column.add(LabelFactory.createContentLargeMath("\u2211"));
+		column.add(LabelFactory.createSymbolLargeContent("\u2211"));
 
 		EntityFigure row = new EntityFigure(new RowLayout().withSpacing(4));
 		row.add(createContentPane(1));
