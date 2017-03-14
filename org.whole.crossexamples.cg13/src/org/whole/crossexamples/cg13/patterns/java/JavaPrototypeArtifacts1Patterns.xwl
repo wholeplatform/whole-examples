@@ -138,6 +138,7 @@
                                     </patterns:Slot>
                                     <java:ExtraDimensions value="0"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 </java:SingleVariableDeclaration>
                             </java:Parameters>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -189,6 +190,7 @@
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 </patterns:Slot>
                                 <java:ExtraDimensions value="0"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             </java:SingleVariableDeclaration>
                             <patterns:Insert>
@@ -367,7 +369,7 @@
                                         <patterns:Name value="properties"/>
                                         <patterns:BooleanValue value="false"/>
                                         <commons:Resolver/>
-                                        <patterns:Name value="Property"/>
+                                        <patterns:Name value="Properties"/>
                                         <commons:Resolver/>
                                         </patterns:Slot>
                                     </java:BodyDeclarations>

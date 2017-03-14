@@ -1,58 +1,246 @@
 <?xml version="1.0"?>
 <javaprototypeartifacts0:JavaProject xmlns:javaprototypeartifacts0="whole:org.whole.crossexamples.cg13.patterns.java:JavaPrototypeArtifacts0PatternsModel">
     <artifacts:Name xmlns:artifacts="http://lang.whole.org/Artifacts" value="org.whole.crossexamples.cg13.java"/>
-    <artifacts:Artifacts xmlns:artifacts="http://lang.whole.org/Artifacts" initialCapacity="2">
-        <javaprototypeartifacts1:JavaBeanModelArtifact xmlns:javaprototypeartifacts1="whole:org.whole.crossexamples.cg13.patterns.java:JavaPrototypeArtifacts1PatternsModel">
-            <artifacts:Name value="org.whole.crossexamples.cg13.gen"/>
-            <javaprototypeartifacts1:JavaBeanArtifacts initialCapacity="2">
-                <javaprototypeartifacts1:JavaBeanArtifact>
-                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Multiplication"/>
-                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
-                    <javaprototypeartifacts1:Properties initialCapacity="2">
-                        <javaprototypeartifacts1:Property>
-                            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
-                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
-                        </javaprototypeartifacts1:Property>
-                        <javaprototypeartifacts1:Property>
-                            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
-                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
-                        </javaprototypeartifacts1:Property>
-                    </javaprototypeartifacts1:Properties>
-                </javaprototypeartifacts1:JavaBeanArtifact>
-                <javaprototypeartifacts1:JavaBeanArtifact>
-                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="If"/>
-                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
-                    <javaprototypeartifacts1:Properties initialCapacity="2">
-                        <javaprototypeartifacts1:Property>
-                            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
-                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="condition"/>
-                        </javaprototypeartifacts1:Property>
-                        <javaprototypeartifacts1:Property>
-                            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
-                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="trueBody"/>
-                        </javaprototypeartifacts1:Property>
-                    </javaprototypeartifacts1:Properties>
-                </javaprototypeartifacts1:JavaBeanArtifact>
-            </javaprototypeartifacts1:JavaBeanArtifacts>
-        </javaprototypeartifacts1:JavaBeanModelArtifact>
+    <artifacts:Artifacts xmlns:artifacts="http://lang.whole.org/Artifacts" initialCapacity="1">
         <artifacts:PackageArtifact>
             <artifacts:Name value="org.whole.crossexamples.cg13.java"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <artifacts:Artifacts initialCapacity="24">
-                <javaprototypeartifacts1:JavaBeanArtifact xmlns:javaprototypeartifacts1="whole:org.whole.crossexamples.cg13.patterns.java:JavaPrototypeArtifacts1PatternsModel">
-                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Multiplication"/>
-                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
-                    <javaprototypeartifacts1:Properties initialCapacity="2">
-                        <javaprototypeartifacts1:Property>
-                            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
-                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
-                        </javaprototypeartifacts1:Property>
-                        <javaprototypeartifacts1:Property>
-                            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
-                            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
-                        </javaprototypeartifacts1:Property>
-                    </javaprototypeartifacts1:Properties>
-                </javaprototypeartifacts1:JavaBeanArtifact>
+                <artifacts:FileArtifact>
+                    <artifacts:NameWithExtension>
+                        <artifacts:Name value="Multiplication"/>
+                        <artifacts:Extension value="java"/>
+                    </artifacts:NameWithExtension>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                            <java:PackageDeclaration>
+                                <commons:Resolver/>
+                                <commons:Resolver/>
+                                <java:QualifiedName value="org.whole.crossexamples.cg13.prototypes.java"/>
+                            </java:PackageDeclaration>
+                            <java:ImportDeclarations initialCapacity="0"/>
+                            <java:TypeDeclarations initialCapacity="1">
+                                <java:ClassDeclaration>
+                                    <commons:Resolver/>
+                                    <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                    </java:ExtendedModifiers>
+                                    <java:SimpleName value="Multiplication"/>
+                                    <commons:Resolver/>
+                                    <commons:Resolver/>
+                                    <java:Types initialCapacity="1">
+                                        <java:SimpleType value="Expression"/>
+                                    </java:Types>
+                                    <java:BodyDeclarations initialCapacity="8">
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="exp1"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="exp2"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Multiplication"/>
+                                        <java:Parameters initialCapacity="2">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="exp1"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="exp2"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="2">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="exp1"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="exp1"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="exp2"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="exp2"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Multiplication"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
+                                        </java:ConstructorDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:SimpleName value="getExp1"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="exp1"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setExp1"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="exp1"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="exp1"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="exp1"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:SimpleName value="getExp2"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="exp2"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setExp2"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="exp2"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="exp2"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="exp2"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                    </java:BodyDeclarations>
+                                </java:ClassDeclaration>
+                            </java:TypeDeclarations>
+                        </java:CompilationUnit>
+                    </commons:StageUpFragment>
+                </artifacts:FileArtifact>
                 <artifacts:FileArtifact>
                     <artifacts:NameWithExtension>
                         <artifacts:Name value="If"/>
@@ -79,7 +267,35 @@
                                     <java:Types initialCapacity="1">
                                         <java:SimpleType value="Statement"/>
                                     </java:Types>
-                                    <java:BodyDeclarations initialCapacity="7">
+                                    <java:BodyDeclarations initialCapacity="11">
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="condition"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
+                                        <java:FieldDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="Statement"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="trueBody"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:FieldDeclaration>
                                         <java:FieldDeclaration>
                                         <commons:Resolver/>
                                         <java:ExtendedModifiers initialCapacity="1">
@@ -101,19 +317,25 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="If"/>
-                                        <java:Parameters initialCapacity="0"/>
+                                        <java:Parameters initialCapacity="3">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="condition"/>
+                                        <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
                                         <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
+                                        </java:SingleVariableDeclaration>
+                                        <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
+                                        <java:SimpleType value="Statement"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="trueBody"/>
+                                        <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
-                                        <java:SimpleName value="If"/>
-                                        <java:Parameters initialCapacity="1">
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
                                         <java:SimpleType value="Statement"/>
@@ -121,11 +343,36 @@
                                         <java:SimpleName value="falseBody"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
                                         <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
+                                        <java:Block initialCapacity="3">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="condition"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="condition"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="trueBody"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="trueBody"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
                                         <java:ExpressionStatement>
                                         <java:Assignment>
                                         <java:FieldAccess>
@@ -140,14 +387,18 @@
                                         </java:ExpressionStatement>
                                         </java:Block>
                                         </java:ConstructorDeclaration>
-                                        <javaprototypeartifacts1:Property xmlns:javaprototypeartifacts1="whole:org.whole.crossexamples.cg13.patterns.java:JavaPrototypeArtifacts1PatternsModel">
-                                        <java:SimpleType value="Expression"/>
-                                        <java:SimpleName value="condition"/>
-                                        </javaprototypeartifacts1:Property>
-                                        <javaprototypeartifacts1:Property xmlns:javaprototypeartifacts1="whole:org.whole.crossexamples.cg13.patterns.java:JavaPrototypeArtifacts1PatternsModel">
-                                        <java:SimpleType value="Statement"/>
-                                        <java:SimpleName value="trueBody"/>
-                                        </javaprototypeartifacts1:Property>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="If"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
+                                        </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
                                         <java:ExtendedModifiers initialCapacity="1">
@@ -181,6 +432,7 @@
                                         <java:SimpleName value="falseBody"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -196,6 +448,112 @@
                                         </java:FieldAccess>
                                         <java:AssignmentOperator value="="/>
                                         <java:SimpleName value="falseBody"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:SimpleName value="getCondition"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="condition"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setCondition"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="condition"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="condition"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="condition"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Statement"/>
+                                        <java:SimpleName value="getTrueBody"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="trueBody"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="setTrueBody"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Statement"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="trueBody"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="trueBody"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="trueBody"/>
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
@@ -268,18 +626,6 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="Equals"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="Equals"/>
                                         <java:Parameters initialCapacity="2">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -288,6 +634,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -295,6 +642,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -326,6 +674,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Equals"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
@@ -359,6 +719,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -411,6 +772,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -479,6 +841,7 @@
                                         <java:SimpleName value="value"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -544,6 +907,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="value"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -632,18 +996,6 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="GreaterThan"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="GreaterThan"/>
                                         <java:Parameters initialCapacity="2">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -652,6 +1004,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -659,6 +1012,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -690,6 +1044,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="GreaterThan"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
@@ -723,6 +1089,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -775,6 +1142,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -908,18 +1276,6 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="Division"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="Division"/>
                                         <java:Parameters initialCapacity="2">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -928,6 +1284,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -935,6 +1292,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -966,6 +1324,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Division"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
@@ -999,6 +1369,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1051,6 +1422,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1173,6 +1545,7 @@
                                         <java:SimpleName value="value"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -1201,6 +1574,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="val"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1267,6 +1641,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="value"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1355,18 +1730,6 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="Or"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="Or"/>
                                         <java:Parameters initialCapacity="2">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -1375,6 +1738,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -1382,6 +1746,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1413,6 +1778,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Or"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
@@ -1446,6 +1823,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1498,6 +1876,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1586,18 +1965,6 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="While"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="While"/>
                                         <java:Parameters initialCapacity="2">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -1606,6 +1973,7 @@
                                         <java:SimpleName value="condition"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -1613,6 +1981,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="trueBody"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1644,6 +2013,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="While"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
@@ -1677,6 +2058,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="condition"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1729,6 +2111,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="trueBody"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1875,18 +2258,6 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="And"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="And"/>
                                         <java:Parameters initialCapacity="2">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -1895,6 +2266,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -1902,6 +2274,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1933,6 +2306,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="And"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
@@ -1966,6 +2351,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2018,6 +2404,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2101,7 +2488,7 @@
                                     <java:Types initialCapacity="1">
                                         <java:SimpleType value="Statement"/>
                                     </java:Types>
-                                    <java:BodyDeclarations initialCapacity="7">
+                                    <java:BodyDeclarations initialCapacity="8">
                                         <java:ConstructorDeclaration>
                                         <commons:Resolver/>
                                         <java:ExtendedModifiers initialCapacity="1">
@@ -2117,6 +2504,7 @@
                                         <java:SimpleName value="variable"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -2124,6 +2512,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="expression"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2155,6 +2544,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Assignment"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:FieldDeclaration>
                                         <commons:Resolver/>
@@ -2202,6 +2603,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="variable"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2268,6 +2670,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="expression"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2356,18 +2759,6 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="Addition"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="Addition"/>
                                         <java:Parameters initialCapacity="2">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -2376,6 +2767,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -2383,6 +2775,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2414,6 +2807,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Addition"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
@@ -2447,6 +2852,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2499,6 +2905,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2577,6 +2984,7 @@
                                         <java:Varargs value="true"/>
                                         <java:SimpleName value="statements"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2666,6 +3074,7 @@
                                         <java:SimpleName value="children"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -2748,18 +3157,6 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="Subtraction"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="Subtraction"/>
                                         <java:Parameters initialCapacity="2">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -2768,6 +3165,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -2775,6 +3173,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2806,6 +3205,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Subtraction"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
@@ -2839,6 +3250,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2892,6 +3304,7 @@
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -2943,7 +3356,7 @@
                                     <java:Types initialCapacity="1">
                                         <java:SimpleType value="Expression"/>
                                     </java:Types>
-                                    <java:BodyDeclarations initialCapacity="4">
+                                    <java:BodyDeclarations initialCapacity="5">
                                         <java:ConstructorDeclaration>
                                         <commons:Resolver/>
                                         <java:ExtendedModifiers initialCapacity="1">
@@ -2958,6 +3371,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="name"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -2977,6 +3391,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Variable"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:FieldDeclaration>
                                         <commons:Resolver/>
@@ -3024,6 +3450,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="name"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -3112,18 +3539,6 @@
                                         </java:ExtendedModifiers>
                                         <commons:Resolver/>
                                         <java:SimpleName value="LessThan"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="LessThan"/>
                                         <java:Parameters initialCapacity="2">
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -3132,6 +3547,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -3139,6 +3555,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -3170,6 +3587,18 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </java:Block>
+                                        </java:ConstructorDeclaration>
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="LessThan"/>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="0"/>
                                         </java:ConstructorDeclaration>
                                         <java:MethodDeclaration>
                                         <commons:Resolver/>
@@ -3203,6 +3632,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -3256,6 +3686,7 @@
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -3308,6 +3739,41 @@
                                         <java:SimpleType value="Expression"/>
                                     </java:Types>
                                     <java:BodyDeclarations initialCapacity="5">
+                                        <java:ConstructorDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="Not"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="exp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <java:SimpleName value="exp"/>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <java:SimpleName value="exp"/>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:ConstructorDeclaration>
                                         <java:ConstructorDeclaration>
                                         <commons:Resolver/>
                                         <java:ExtendedModifiers initialCapacity="1">
@@ -3367,6 +3833,7 @@
                                         <java:SimpleName value="exp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -3386,40 +3853,6 @@
                                         </java:ExpressionStatement>
                                         </java:Block>
                                         </java:MethodDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleName value="Not"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="exp"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
-                                        <java:ExpressionStatement>
-                                        <java:Assignment>
-                                        <java:FieldAccess>
-                                        <java:ThisExpression>
-                                        <commons:Resolver/>
-                                        </java:ThisExpression>
-                                        <java:SimpleName value="exp"/>
-                                        </java:FieldAccess>
-                                        <java:AssignmentOperator value="="/>
-                                        <java:SimpleName value="exp"/>
-                                        </java:Assignment>
-                                        </java:ExpressionStatement>
-                                        </java:Block>
-                                        </java:ConstructorDeclaration>
                                     </java:BodyDeclarations>
                                 </java:ClassDeclaration>
                             </java:TypeDeclarations>
@@ -3548,6 +3981,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="f"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -3715,6 +4149,7 @@
                                         <java:SimpleName value="args"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -3791,6 +4226,7 @@
                                         <java:SimpleName value="exp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -3798,6 +4234,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="stm"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -3821,6 +4258,7 @@
                                         <java:SimpleName value="exp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -3829,6 +4267,7 @@
                                         <java:SimpleName value="thenStm"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -3836,6 +4275,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="elseStm"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -3872,6 +4312,7 @@
                                         <java:SimpleName value="var"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -3879,6 +4320,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -3902,6 +4344,7 @@
                                         <java:SimpleName value="stms"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -3923,6 +4366,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="val"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -3946,6 +4390,7 @@
                                         <java:SimpleName value="val"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -3967,6 +4412,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="name"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -3990,6 +4436,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -3997,6 +4444,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4020,6 +4468,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4027,6 +4476,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4050,6 +4500,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4057,6 +4508,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4080,6 +4532,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4087,6 +4540,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4110,6 +4564,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4117,6 +4572,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4140,6 +4596,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4147,6 +4604,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4170,6 +4628,7 @@
                                         <java:SimpleName value="exp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -4192,6 +4651,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4199,6 +4659,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4222,6 +4683,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4229,6 +4691,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4252,6 +4715,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4259,6 +4723,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4418,6 +4883,7 @@
                                         <java:SimpleName value="exp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4425,6 +4891,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="stm"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4461,6 +4928,7 @@
                                         <java:SimpleName value="exp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4469,6 +4937,7 @@
                                         <java:SimpleName value="thenStm"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4476,6 +4945,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="elseStm"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4573,6 +5043,7 @@
                                         <java:SimpleName value="var"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4580,6 +5051,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4626,6 +5098,7 @@
                                         <java:SimpleName value="stms"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -4660,6 +5133,7 @@
                                         <java:SimpleName value="val"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -4692,6 +5166,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="val"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4727,6 +5202,7 @@
                                         <java:SimpleName value="name"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -4761,6 +5237,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4768,6 +5245,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4804,6 +5282,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4811,6 +5290,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4847,6 +5327,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4854,6 +5335,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4890,6 +5372,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4897,6 +5380,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4933,6 +5417,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4940,6 +5425,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -4976,6 +5462,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -4983,6 +5470,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -5019,6 +5507,7 @@
                                         <java:SimpleName value="exp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -5053,6 +5542,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -5060,6 +5550,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -5096,6 +5587,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -5103,6 +5595,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -5139,6 +5632,7 @@
                                         <java:SimpleName value="exp1"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:SingleVariableDeclaration>
                                         <commons:Resolver/>
@@ -5146,6 +5640,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="exp2"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
