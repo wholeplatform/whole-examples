@@ -12,10 +12,10 @@
             <ql:ConditionalQuestions>
                 <ql:Name value="question"/>
                 <reusables:Include>
-                    <reusables:Resource>
-                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/include/QLIncludeExamplePart1.xwl"/>
+                    <reusables:Workspace>
+                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/include/QLIncludeExamplePart1.xwl"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </reusables:Resource>
+                    </reusables:Workspace>
                 </reusables:Include>
             </ql:ConditionalQuestions>
             <ql:ConditionalQuestions>
@@ -23,10 +23,10 @@
                     <ql:Name value="question"/>
                 </math:Not>
                 <reusables:Include>
-                    <reusables:Resource>
-                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/include/QLIncludeExamplePart2.xwl"/>
+                    <reusables:Workspace>
+                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/include/QLIncludeExamplePart2.xwl"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </reusables:Resource>
+                    </reusables:Workspace>
                 </reusables:Include>
             </ql:ConditionalQuestions>
         </ql:SequentialQuestions>

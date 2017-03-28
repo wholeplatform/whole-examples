@@ -1104,10 +1104,10 @@
                         <queries:LanguageTest value="http://lang.whole.org/Math"/>
                         <queries:Choose initialCapacity="1">
                             <reusables:Reuse>
-                                <reusables:Resource>
-                                    <reusables:ClassPathURI value="org/whole/lang/math/MathLibrary.xwl"/>
+                                <reusables:Classpath>
+                                    <reusables:PathName value="org/whole/lang/math/MathLibrary.xwl"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                </reusables:Resource>
+                                </reusables:Classpath>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <queries:Path initialCapacity="4">
                                     <queries:FeatureStep value="whole:org.whole.lang.patterns:PatternsModel#declarations"/>

@@ -48,10 +48,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question4"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -181,10 +181,10 @@
                                         <ql:Name value="question4"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -325,10 +325,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question5"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -458,10 +458,10 @@
                                         <ql:Name value="question5"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -613,10 +613,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question7"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -746,10 +746,10 @@
                                         <ql:Name value="question7"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -890,10 +890,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question8"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -1023,10 +1023,10 @@
                                         <ql:Name value="question8"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -1189,10 +1189,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question11"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -1322,10 +1322,10 @@
                                         <ql:Name value="question11"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -1466,10 +1466,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question12"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -1599,10 +1599,10 @@
                                         <ql:Name value="question12"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -1754,10 +1754,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question14"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -1887,10 +1887,10 @@
                                         <ql:Name value="question14"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -2031,10 +2031,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question15"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -2164,10 +2164,10 @@
                                         <ql:Name value="question15"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -2341,10 +2341,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question19"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -2474,10 +2474,10 @@
                                         <ql:Name value="question19"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -2618,10 +2618,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question20"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -2751,10 +2751,10 @@
                                         <ql:Name value="question20"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -2906,10 +2906,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question22"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -3039,10 +3039,10 @@
                                         <ql:Name value="question22"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -3183,10 +3183,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question23"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -3316,10 +3316,10 @@
                                         <ql:Name value="question23"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -3482,10 +3482,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question26"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -3615,10 +3615,10 @@
                                         <ql:Name value="question26"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -3759,10 +3759,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question27"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -3892,10 +3892,10 @@
                                         <ql:Name value="question27"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -4047,10 +4047,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question29"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -4180,10 +4180,10 @@
                                         <ql:Name value="question29"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -4324,10 +4324,10 @@
                                         <ql:ConditionalQuestions>
                                         <ql:Name value="question30"/>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
@@ -4457,10 +4457,10 @@
                                         <ql:Name value="question30"/>
                                         </math:Not>
                                         <reusables:Reuse>
-                                        <reusables:Resource>
-                                        <reusables:WorkspacePath value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
+                                        <reusables:Workspace>
+                                        <reusables:PathName value="/org.whole.crossexamples.lwc14/src/org/whole/crossexamples/lwc14/examples/QLBinaryToReuse.xwl"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </reusables:Resource>
+                                        </reusables:Workspace>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
