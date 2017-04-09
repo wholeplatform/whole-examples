@@ -209,26 +209,29 @@
                     <ql:Name value="question"/>
                 </math:Not>
                 <reusables:Reuse>
-                    <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
-                        <queries:ParentStep/>
-                        <queries:ParentStep/>
-                        <queries:Filter>
-                            <queries:ChildStep/>
-                            <queries:IndexTest>
-                                <queries:IntLiteral value="1"/>
-                            </queries:IndexTest>
-                        </queries:Filter>
-                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                            <workflows:Text value="clone"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                            <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                            <workflows:Expressions initialCapacity="1">
-                                <queries:SelfStep/>
-                            </workflows:Expressions>
-                        </workflows:InvokeJavaClassMethod>
-                    </queries:Path>
+                    <reusables:Model>
+                        <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
+                            <queries:ParentStep/>
+                            <queries:ParentStep/>
+                            <queries:Filter>
+                                <queries:ChildStep/>
+                                <queries:IndexTest>
+                                    <queries:IntLiteral value="1"/>
+                                </queries:IndexTest>
+                            </queries:Filter>
+                            <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="clone"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
+                                <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
+                                <workflows:Expressions initialCapacity="1">
+                                    <queries:SelfStep/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaClassMethod>
+                        </queries:Path>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </reusables:Model>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
