@@ -21,15 +21,17 @@
                     <queries:VariableRefStep value="selectedEntities"/>
                     <queries:DescendantOrSelfStep/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="4">
+                        <queries:Names initialCapacity="6">
                             <queries:Name value="type"/>
                             <queries:Name value="name"/>
-                            <queries:Name value="derivedName"/>
+                            <queries:Name value="getterName"/>
                             <queries:Name value="getter"/>
+                            <queries:Name value="setterName"/>
+                            <queries:Name value="setter"/>
                         </queries:Names>
                         <queries:Choose initialCapacity="1">
                             <queries:If>
-                                <queries:And initialCapacity="2">
+                                <queries:And initialCapacity="3">
                                     <queries:ExpressionTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
@@ -75,7 +77,7 @@
                                         </commons:Variable>
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
-                                        <commons:VarName value="derivedName"/>
+                                        <commons:VarName value="getterName"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         <java:Parameters initialCapacity="0"/>
@@ -95,7 +97,7 @@
                                         </queries:ExpressionTest>
                                         <queries:ExpressionTest>
                                         <queries:Equals>
-                                        <queries:VariableRefStep value="derivedName"/>
+                                        <queries:VariableRefStep value="getterName"/>
                                         <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="getterName"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -113,8 +115,92 @@
                                         </queries:Filter>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     </queries:Some>
+                                    <queries:Some>
+                                        <queries:Filter>
+                                        <queries:FollowingSiblingStep/>
+                                        <queries:And initialCapacity="3">
+                                        <queries:ExpressionTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="setterName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Type"/>
+                                        <commons:VarName value="type"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:Varargs value="false"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
+                                        <java:ThisExpression>
+                                        <commons:Resolver/>
+                                        </java:ThisExpression>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </commons:StageUpFragment>
+                                        </queries:ExpressionTest>
+                                        <queries:ExpressionTest>
+                                        <queries:Equals>
+                                        <queries:VariableRefStep value="setterName"/>
+                                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="setterName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                        <workflows:StringLiteral value="setterName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <queries:VariableRefStep value="name"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaClassMethod>
+                                        </queries:Equals>
+                                        </queries:ExpressionTest>
+                                        <queries:VariableTest value="setter"/>
+                                        </queries:And>
+                                        </queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
                                 </queries:And>
-                                <queries:Sequence initialCapacity="2">
+                                <queries:Sequence initialCapacity="3">
                                     <queries:CartesianUpdate>
                                         <queries:Path initialCapacity="1">
                                         <queries:SelfStep/>
@@ -138,6 +224,9 @@
                                     </queries:CartesianUpdate>
                                     <queries:Delete>
                                         <queries:VariableRefStep value="getter"/>
+                                    </queries:Delete>
+                                    <queries:Delete>
+                                        <queries:VariableRefStep value="setter"/>
                                     </queries:Delete>
                                 </queries:Sequence>
                             </queries:If>
