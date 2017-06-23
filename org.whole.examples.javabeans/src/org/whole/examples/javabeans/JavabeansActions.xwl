@@ -4,7 +4,7 @@
     <actions:Namespace value="org.whole.examples.javabeans"/>
     <actions:Name value="Javabeans"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <actions:URI value="http://lang.whole.org/Java"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
     <actions:ToolbarActions>
         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -17,26 +17,24 @@
         <actions:MenuActions initialCapacity="1">
             <actions:GuardedAction>
                 <actions:Label value="Replace with patterns"/>
-                <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="2">
-                        <queries:Name value="type"/>
-                        <queries:Name value="name"/>
-                    </queries:Names>
-                    <queries:Block initialCapacity="2">
-                        <queries:Path initialCapacity="2">
-                            <queries:VariableRefStep value="primarySelectedEntity"/>
-                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
-                                    <commons:Resolver/>
-                                    <java:ExtendedModifiers initialCapacity="1">
+                <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                    <queries:VariableRefStep value="selectedEntities"/>
+                    <queries:DescendantOrSelfStep/>
+                    <queries:Choose initialCapacity="1">
+                        <queries:If>
+                            <queries:ExpressionTest>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
                                         <java:Modifier value="private"/>
-                                    </java:ExtendedModifiers>
-                                    <commons:Variable>
+                                        </java:ExtendedModifiers>
+                                        <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Java#Type"/>
                                         <commons:VarName value="type"/>
                                         <commons:Quantifier value="!"/>
-                                    </commons:Variable>
-                                    <java:VariableDeclarationFragments initialCapacity="1">
+                                        </commons:Variable>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
                                         <java:VariableDeclarationFragment>
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
@@ -46,18 +44,17 @@
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
                                         </java:VariableDeclarationFragment>
-                                    </java:VariableDeclarationFragments>
-                                </java:FieldDeclaration>
-                            </commons:StageUpFragment>
-                        </queries:Path>
-                        <queries:CartesianUpdate>
-                            <queries:Path initialCapacity="2">
-                                <queries:VariableRefStep value="primarySelectedEntity"/>
-                                <queries:SelfStep/>
-                            </queries:Path>
-                            <queries:Block initialCapacity="1">
-                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                    <javabeans:Field xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
+                                        </java:VariableDeclarationFragments>
+                                    </java:FieldDeclaration>
+                                </commons:StageUpFragment>
+                            </queries:ExpressionTest>
+                            <queries:CartesianUpdate>
+                                <queries:Path initialCapacity="1">
+                                    <queries:SelfStep/>
+                                </queries:Path>
+                                <queries:Block initialCapacity="1">
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <javabeans:Field xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Java#Type"/>
                                         <commons:VarName value="type"/>
@@ -68,16 +65,14 @@
                                         <commons:VarName value="name"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
-                                    </javabeans:Field>
-                                </commons:StageUpFragment>
-                            </queries:Block>
-                        </queries:CartesianUpdate>
-                    </queries:Block>
-                </queries:Scope>
-                <queries:Some xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:VariableRefStep value="primarySelectedEntity"/>
-                    <queries:TypeTest value="http://lang.whole.org/Java#FieldDeclaration"/>
-                </queries:Some>
+                                        </javabeans:Field>
+                                    </commons:StageUpFragment>
+                                </queries:Block>
+                            </queries:CartesianUpdate>
+                        </queries:If>
+                    </queries:Choose>
+                </queries:Path>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
         </actions:MenuActions>
         <actions:MenuActions initialCapacity="0"/>
