@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<javabeans:JavaBeanModelArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
+    <artifacts:Name xmlns:artifacts="http://lang.whole.org/Artifacts" value="org.whole.examples.javabeans.example"/>
+    <javabeans:JavaBeanArtifacts initialCapacity="14">
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Addition"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Subtraction"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Multiplication"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Division"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Equals"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="GreaterThan"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="LessThan"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="And"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Or"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Not"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="1">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+            <javabeans:Properties initialCapacity="1">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="name"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="If"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+            <javabeans:Properties initialCapacity="3">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="condition"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="trueBody"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="falseBody"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="While"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="condition"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="trueBody"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+        <javabeans:JavaBeanArtifact>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Assignment"/>
+            <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+            <javabeans:Properties initialCapacity="2">
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="variable"/>
+                </javabeans:Property>
+                <javabeans:Property>
+                    <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                    <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="expression"/>
+                </javabeans:Property>
+            </javabeans:Properties>
+        </javabeans:JavaBeanArtifact>
+    </javabeans:JavaBeanArtifacts>
+</javabeans:JavaBeanModelArtifact>
