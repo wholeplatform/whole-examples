@@ -57,7 +57,7 @@
                             </queries:Path>
                             <queries:Block initialCapacity="1">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                    <javabeans:Field xmlns:javabeans="whole:org.whole.crossexamples.javabeans:JavabeansPatternsModel">
+                                    <javabeans:Field xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Java#Type"/>
                                         <commons:VarName value="type"/>

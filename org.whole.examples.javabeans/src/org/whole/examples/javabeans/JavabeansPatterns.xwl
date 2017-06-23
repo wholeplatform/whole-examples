@@ -16,7 +16,7 @@
                             <patterns:Name value="packageName"/>
                             <patterns:BooleanValue value="false"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Artifacts#Name"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         </patterns:Slot>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
