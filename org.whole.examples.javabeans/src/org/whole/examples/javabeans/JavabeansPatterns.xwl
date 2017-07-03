@@ -4,7 +4,7 @@
     <patterns:Namespace value="org.whole.examples.javabeans"/>
     <patterns:Name value="Javabeans"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <patterns:Patterns initialCapacity="6">
+    <patterns:Patterns initialCapacity="10">
         <patterns:Pattern>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <patterns:Name value="JavaBeanModelArtifact"/>
@@ -59,7 +59,7 @@
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Artifacts#Name"/>
                                         </patterns:VariablePoint>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        <artifacts:Artifacts initialCapacity="2">
+                                        <artifacts:Artifacts initialCapacity="3">
                                         <patterns:Slot>
                                         <patterns:Name value="javaBeans"/>
                                         <patterns:BooleanValue value="false"/>
@@ -132,6 +132,13 @@
                                         </queries:Scope>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </patterns:DerivationPoint>
+                                        <patterns:Slot>
+                                        <patterns:Name value="patterns"/>
+                                        <patterns:BooleanValue value="true"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <patterns:Name value="ModelPatterns"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
                                         </artifacts:Artifacts>
                                         </artifacts:PackageArtifact>
                                         </artifacts:Artifacts>
@@ -141,6 +148,303 @@
                             </artifacts:Project>
                         </artifacts:Projects>
                     </artifacts:Workspace>
+                </patterns:TemplatePoint>
+            </patterns:ScopePoint>
+        </patterns:Pattern>
+        <patterns:Repetition>
+            <patterns:Name value="ModelPatterns"/>
+            <patterns:Name value="ModelPattern"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </patterns:Repetition>
+        <patterns:Pattern>
+            <patterns:ResultTypes initialCapacity="1">
+                <patterns:Name value="ModelPattern"/>
+            </patterns:ResultTypes>
+            <patterns:Name value="AbstractFactoryArtifact"/>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="2">
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="name"/>
+                        <patterns:Slot>
+                            <patterns:Name value="factoryName"/>
+                            <patterns:BooleanValue value="true"/>
+                            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <queries:If>
+                                    <queries:KindTest value="RESOLVER"/>
+                                    <queries:Choose initialCapacity="2">
+                                        <queries:If>
+                                        <queries:Some>
+                                        <queries:VariableRefStep value="modelName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
+                                        <queries:VariableRefStep value="modelName"/>
+                                        </queries:If>
+                                        <queries:Do>
+                                        <queries:StringLiteral value=""/>
+                                        </queries:Do>
+                                    </queries:Choose>
+                                </queries:If>
+                                <queries:Do>
+                                    <queries:SelfStep/>
+                                </queries:Do>
+                            </queries:Choose>
+                            <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </patterns:Slot>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="abstractFactoryName"/>
+                        <queries:Addition xmlns:queries="http://lang.whole.org/Queries">
+                            <queries:VariableRefStep value="name"/>
+                            <queries:StringLiteral value="Factory"/>
+                        </queries:Addition>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                </patterns:Declarations>
+                <patterns:TemplatePoint>
+                    <artifacts:FileArtifact xmlns:artifacts="http://lang.whole.org/Artifacts">
+                        <artifacts:NameWithExtension>
+                            <patterns:VariablePoint>
+                                <patterns:Name value="abstractFactoryName"/>
+                                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Artifacts#Name"/>
+                            </patterns:VariablePoint>
+                            <artifacts:Extension value="java"/>
+                        </artifacts:NameWithExtension>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                <java:PackageDeclaration>
+                                    <commons:Resolver/>
+                                    <commons:Resolver/>
+                                    <patterns:DerivationPoint>
+                                        <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                                        <queries:Path initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:AncestorStep/>
+                                        <queries:TypeTest value="http://lang.whole.org/Artifacts#PackageArtifact"/>
+                                        </queries:Filter>
+                                        <queries:FeatureStep value="http://lang.whole.org/Artifacts#name"/>
+                                        </queries:Path>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:AncestorStep/>
+                                        <patterns:PatternTypeTest value="JavaBeanModelArtifact"/>
+                                        </queries:Filter>
+                                        <patterns:SlotStep value="packageName"/>
+                                        </queries:Path>
+                                        <queries:VariableRefStep value="packageName"/>
+                                        </queries:Choose>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#QualifiedName"/>
+                                    </patterns:DerivationPoint>
+                                </java:PackageDeclaration>
+                                <java:ImportDeclarations initialCapacity="0"/>
+                                <java:TypeDeclarations initialCapacity="1">
+                                    <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="abstractFactoryName"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        </patterns:VariablePoint>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:BodyDeclarations initialCapacity="1">
+                                        <patterns:SelectionPoint initialCapacity="2">
+                                        <patterns:ConditionPoint>
+                                        <patterns:SlotsDefined/>
+                                        <patterns:Slot>
+                                        <patterns:Name value="factoryMethods"/>
+                                        <patterns:BooleanValue value="true"/>
+                                        <commons:Resolver/>
+                                        <patterns:Name value="FactoryMethods"/>
+                                        <commons:Resolver/>
+                                        </patterns:Slot>
+                                        </patterns:ConditionPoint>
+                                        <patterns:ConditionPoint>
+                                        <commons:Resolver/>
+                                        <patterns:DerivationPoint>
+                                        <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
+                                        <queries:Filter>
+                                        <queries:AncestorStep/>
+                                        <patterns:PatternTypeTest value="JavaBeanModelArtifact"/>
+                                        </queries:Filter>
+                                        <patterns:SlotStep value="javaBeans"/>
+                                        <queries:ChildStep/>
+                                        <patterns:PatternApplication>
+                                        <patterns:Name value="FactoryMethod"/>
+                                        <patterns:Arguments initialCapacity="3">
+                                        <patterns:Binding>
+                                        <patterns:Name value="productType"/>
+                                        <patterns:DerivationPoint>
+                                        <patterns:SlotStep value="name"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:Binding>
+                                        <patterns:Binding>
+                                        <patterns:Name value="resultType"/>
+                                        <patterns:DerivationPoint>
+                                        <patterns:SlotStep value="superType"/>
+                                        <commons:Resolver/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:Binding>
+                                        <patterns:Binding>
+                                        <patterns:Name value="parameters"/>
+                                        <patterns:DerivationPoint>
+                                        <patterns:SlotStep value="properties"/>
+                                        <commons:Resolver/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:Binding>
+                                        </patterns:Arguments>
+                                        </patterns:PatternApplication>
+                                        </queries:Path>
+                                        <commons:Resolver/>
+                                        </patterns:DerivationPoint>
+                                        </patterns:ConditionPoint>
+                                        </patterns:SelectionPoint>
+                                        </java:BodyDeclarations>
+                                    </java:ClassDeclaration>
+                                </java:TypeDeclarations>
+                            </java:CompilationUnit>
+                        </commons:StageUpFragment>
+                    </artifacts:FileArtifact>
+                </patterns:TemplatePoint>
+            </patterns:ScopePoint>
+        </patterns:Pattern>
+        <patterns:Repetition>
+            <patterns:Name value="FactoryMethods"/>
+            <patterns:Name value="FactoryMethod"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </patterns:Repetition>
+        <patterns:Pattern>
+            <patterns:ResultTypes initialCapacity="1">
+                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#BodyDeclaration"/>
+            </patterns:ResultTypes>
+            <patterns:Name value="FactoryMethod"/>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="6">
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="productType"/>
+                        <patterns:Slot>
+                            <patterns:Name value="productType"/>
+                            <patterns:BooleanValue value="false"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </patterns:Slot>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="resultType"/>
+                        <patterns:Slot>
+                            <patterns:Name value="resultType"/>
+                            <patterns:BooleanValue value="true"/>
+                            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <queries:If>
+                                    <queries:KindTest value="RESOLVER"/>
+                                    <queries:VariableRefStep value="productType"/>
+                                </queries:If>
+                                <queries:Do>
+                                    <queries:SelfStep/>
+                                </queries:Do>
+                            </queries:Choose>
+                            <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </patterns:Slot>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="factoryMethodName"/>
+                        <queries:Addition xmlns:queries="http://lang.whole.org/Queries">
+                            <queries:StringLiteral value="create"/>
+                            <queries:VariableRefStep value="productType"/>
+                        </queries:Addition>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="productVar"/>
+                        <queries:StringLiteral xmlns:queries="http://lang.whole.org/Queries" value="product"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                    <patterns:JoinPointDeclaration>
+                        <patterns:Name value="initializationPoint"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:JoinPointDeclaration>
+                    <patterns:JoinPointDeclaration>
+                        <patterns:Name value="parameterPoint"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:JoinPointDeclaration>
+                </patterns:Declarations>
+                <patterns:TemplatePoint>
+                    <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <java:ExtendedModifiers initialCapacity="1">
+                            <java:Modifier value="public"/>
+                        </java:ExtendedModifiers>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <patterns:VariablePoint>
+                            <patterns:Name value="resultType"/>
+                            <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                        </patterns:VariablePoint>
+                        <patterns:VariablePoint>
+                            <patterns:Name value="factoryMethodName"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </patterns:VariablePoint>
+                        <java:Parameters initialCapacity="1">
+                            <patterns:InsertionPoint>
+                                <patterns:Name value="parameterPoint"/>
+                            </patterns:InsertionPoint>
+                        </java:Parameters>
+                        <java:ExtraDimensions value="0"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <java:Block initialCapacity="4">
+                            <java:VariableDeclarationStatement>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <patterns:VariablePoint>
+                                    <patterns:Name value="productType"/>
+                                    <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                </patterns:VariablePoint>
+                                <java:VariableDeclarationFragments initialCapacity="1">
+                                    <java:VariableDeclarationFragment>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="productVar"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        </patterns:VariablePoint>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="productType"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                        </patterns:VariablePoint>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:ClassInstanceCreation>
+                                    </java:VariableDeclarationFragment>
+                                </java:VariableDeclarationFragments>
+                            </java:VariableDeclarationStatement>
+                            <patterns:InsertionPoint>
+                                <patterns:Name value="initializationPoint"/>
+                            </patterns:InsertionPoint>
+                            <patterns:Slot>
+                                <patterns:Name value="parameters"/>
+                                <patterns:BooleanValue value="true"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <patterns:Name value="Properties"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </patterns:Slot>
+                            <java:ReturnStatement>
+                                <patterns:VariablePoint>
+                                    <patterns:Name value="productVar"/>
+                                    <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                </patterns:VariablePoint>
+                            </java:ReturnStatement>
+                        </java:Block>
+                    </java:MethodDeclaration>
                 </patterns:TemplatePoint>
             </patterns:ScopePoint>
         </patterns:Pattern>
@@ -171,7 +475,7 @@
                                 <commons:Resolver/>
                                 <commons:Resolver/>
                                 <patterns:DerivationPoint>
-                                    <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                    <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
                                         <queries:Path initialCapacity="2">
                                         <queries:Filter>
                                         <queries:AncestorStep/>
@@ -186,27 +490,35 @@
                                         </queries:Filter>
                                         <patterns:SlotStep value="packageName"/>
                                         </queries:Path>
+                                        <queries:VariableRefStep value="packageName"/>
                                     </queries:Choose>
                                     <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#QualifiedName"/>
                                 </patterns:DerivationPoint>
                             </java:PackageDeclaration>
                             <java:ImportDeclarations initialCapacity="0"/>
                             <java:TypeDeclarations initialCapacity="1">
-                                <java:ClassDeclaration>
-                                    <commons:Resolver/>
-                                    <java:ExtendedModifiers initialCapacity="1">
+                                <patterns:ScopePoint>
+                                    <patterns:Declarations initialCapacity="1">
+                                        <patterns:JoinPointDeclaration>
+                                        <patterns:Name value="declarationPoint"/>
+                                        <commons:Resolver/>
+                                        </patterns:JoinPointDeclaration>
+                                    </patterns:Declarations>
+                                    <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
                                         <java:Modifier value="public"/>
-                                    </java:ExtendedModifiers>
-                                    <patterns:Slot>
+                                        </java:ExtendedModifiers>
+                                        <patterns:Slot>
                                         <patterns:Name value="name"/>
                                         <patterns:BooleanValue value="false"/>
                                         <commons:Resolver/>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
                                         <commons:Resolver/>
-                                    </patterns:Slot>
-                                    <commons:Resolver/>
-                                    <commons:Resolver/>
-                                    <java:Types initialCapacity="1">
+                                        </patterns:Slot>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:Types initialCapacity="1">
                                         <patterns:Slot>
                                         <patterns:Name value="superType"/>
                                         <patterns:BooleanValue value="true"/>
@@ -217,44 +529,11 @@
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
                                         <commons:Resolver/>
                                         </patterns:Slot>
-                                    </java:Types>
-                                    <java:BodyDeclarations initialCapacity="3">
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <patterns:Slot>
-                                        <patterns:Name value="name"/>
-                                        <patterns:BooleanValue value="false"/>
-                                        <commons:Resolver/>
-                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
-                                        <commons:Resolver/>
-                                        </patterns:Slot>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
-                                        <java:ConstructorDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <patterns:Slot>
-                                        <patterns:Name value="name"/>
-                                        <patterns:BooleanValue value="false"/>
-                                        <commons:Resolver/>
-                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
-                                        <commons:Resolver/>
-                                        </patterns:Slot>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="0"/>
-                                        </java:ConstructorDeclaration>
+                                        </java:Types>
+                                        <java:BodyDeclarations initialCapacity="2">
+                                        <patterns:InsertionPoint>
+                                        <patterns:Name value="declarationPoint"/>
+                                        </patterns:InsertionPoint>
                                         <patterns:Slot>
                                         <patterns:Name value="properties"/>
                                         <patterns:BooleanValue value="false"/>
@@ -262,8 +541,9 @@
                                         <patterns:Name value="Properties"/>
                                         <commons:Resolver/>
                                         </patterns:Slot>
-                                    </java:BodyDeclarations>
-                                </java:ClassDeclaration>
+                                        </java:BodyDeclarations>
+                                    </java:ClassDeclaration>
+                                </patterns:ScopePoint>
                             </java:TypeDeclarations>
                         </java:CompilationUnit>
                     </commons:StageUpFragment>
@@ -280,20 +560,11 @@
                 <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#BodyDeclaration"/>
             </patterns:ResultTypes>
             <patterns:Name value="Property"/>
-            <patterns:ScopePoint>
-                <patterns:Declarations initialCapacity="1">
-                    <patterns:JoinPointDeclaration>
-                        <patterns:Name value="propertyPoint"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </patterns:JoinPointDeclaration>
-                </patterns:Declarations>
-                <patterns:TemplatePoint>
-                    <patterns:SequencePoint initialCapacity="6">
-                        <patterns:InsertionPoint>
-                            <patterns:Name value="propertyPoint"/>
-                        </patterns:InsertionPoint>
-                        <patterns:JoinPoint>
-                            <patterns:Name value="fieldPoint"/>
+            <patterns:SelectionPoint initialCapacity="2">
+                <patterns:ConditionPoint>
+                    <queries:AtTypeTest xmlns:queries="http://lang.whole.org/Queries" value="http://lang.whole.org/Java#BodyDeclaration"/>
+                    <patterns:TemplatePoint>
+                        <patterns:SequencePoint initialCapacity="3">
                             <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <java:ExtendedModifiers initialCapacity="1">
@@ -320,102 +591,101 @@
                                     </java:VariableDeclarationFragment>
                                 </java:VariableDeclarationFragments>
                             </java:FieldDeclaration>
-                        </patterns:JoinPoint>
-                        <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <java:ExtendedModifiers initialCapacity="1">
-                                <java:Modifier value="public"/>
-                            </java:ExtendedModifiers>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <patterns:Slot>
-                                <patterns:Name value="type"/>
-                                <patterns:BooleanValue value="false"/>
+                            <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                <java:ExtendedModifiers initialCapacity="1">
+                                    <java:Modifier value="public"/>
+                                </java:ExtendedModifiers>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            </patterns:Slot>
-                            <patterns:Slot>
-                                <patterns:Name value="name"/>
-                                <patterns:BooleanValue value="false"/>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="getterName"/>
+                                <patterns:Slot>
+                                    <patterns:Name value="type"/>
+                                    <patterns:BooleanValue value="false"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
-                                    <workflows:StringLiteral value="getterName(java.lang.String)"/>
-                                    <workflows:Expressions initialCapacity="1">
+                                </patterns:Slot>
+                                <patterns:Slot>
+                                    <patterns:Name value="name"/>
+                                    <patterns:BooleanValue value="false"/>
+                                    <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="getterName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                        <workflows:StringLiteral value="getterName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
                                         <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
-                                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        </workflows:Expressions>
+                                    </workflows:InvokeJavaClassMethod>
+                                    <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </patterns:Slot>
+                                <java:Parameters initialCapacity="0"/>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            </patterns:Slot>
-                            <java:Parameters initialCapacity="0"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <java:Block initialCapacity="1">
-                                <java:ReturnStatement>
-                                    <patterns:Slot>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <java:Block initialCapacity="1">
+                                    <java:ReturnStatement>
+                                        <patterns:Slot>
                                         <patterns:Name value="name"/>
                                         <patterns:BooleanValue value="false"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    </patterns:Slot>
-                                </java:ReturnStatement>
-                            </java:Block>
-                        </java:MethodDeclaration>
-                        <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <java:ExtendedModifiers initialCapacity="1">
-                                <java:Modifier value="public"/>
-                            </java:ExtendedModifiers>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <java:PrimitiveType value="void"/>
-                            <patterns:Slot>
-                                <patterns:Name value="name"/>
-                                <patterns:BooleanValue value="false"/>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="setterName"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
-                                    <workflows:StringLiteral value="setterName(java.lang.String)"/>
-                                    <workflows:Expressions initialCapacity="1">
-                                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
-                                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        </patterns:Slot>
+                                    </java:ReturnStatement>
+                                </java:Block>
+                            </java:MethodDeclaration>
+                            <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            </patterns:Slot>
-                            <java:Parameters initialCapacity="1">
-                                <java:SingleVariableDeclaration>
+                                <java:ExtendedModifiers initialCapacity="1">
+                                    <java:Modifier value="public"/>
+                                </java:ExtendedModifiers>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <java:PrimitiveType value="void"/>
+                                <patterns:Slot>
+                                    <patterns:Name value="name"/>
+                                    <patterns:BooleanValue value="false"/>
+                                    <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="setterName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                        <workflows:StringLiteral value="setterName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
+                                        </workflows:Expressions>
+                                    </workflows:InvokeJavaClassMethod>
+                                    <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <patterns:Slot>
+                                </patterns:Slot>
+                                <java:Parameters initialCapacity="1">
+                                    <java:SingleVariableDeclaration>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <patterns:Slot>
                                         <patterns:Name value="type"/>
                                         <patterns:BooleanValue value="false"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    </patterns:Slot>
-                                    <java:Varargs value="false"/>
-                                    <patterns:Slot>
+                                        </patterns:Slot>
+                                        <java:Varargs value="false"/>
+                                        <patterns:Slot>
                                         <patterns:Name value="name"/>
                                         <patterns:BooleanValue value="false"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    </patterns:Slot>
-                                    <java:ExtraDimensions value="0"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                </java:SingleVariableDeclaration>
-                            </java:Parameters>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <java:Block initialCapacity="1">
-                                <java:ExpressionStatement>
-                                    <java:Assignment>
+                                        </patterns:Slot>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </java:SingleVariableDeclaration>
+                                </java:Parameters>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <java:Block initialCapacity="1">
+                                    <java:ExpressionStatement>
+                                        <java:Assignment>
                                         <java:FieldAccess>
                                         <java:ThisExpression>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -436,56 +706,217 @@
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </patterns:Slot>
-                                    </java:Assignment>
-                                </java:ExpressionStatement>
-                            </java:Block>
-                        </java:MethodDeclaration>
+                                        </java:Assignment>
+                                    </java:ExpressionStatement>
+                                </java:Block>
+                            </java:MethodDeclaration>
+                        </patterns:SequencePoint>
+                    </patterns:TemplatePoint>
+                </patterns:ConditionPoint>
+                <patterns:ConditionPoint>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <patterns:SequencePoint initialCapacity="3">
                         <patterns:ResultPoint>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <java:SingleVariableDeclaration xmlns:java="http://lang.whole.org/Java">
-                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                <patterns:Slot>
-                                    <patterns:Name value="type"/>
-                                    <patterns:BooleanValue value="false"/>
+                            <patterns:TemplatePoint>
+                                <java:SingleVariableDeclaration xmlns:java="http://lang.whole.org/Java">
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                    <patterns:Slot>
+                                        <patterns:Name value="type"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </patterns:Slot>
+                                    <java:Varargs value="false"/>
+                                    <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </patterns:Slot>
+                                    <java:ExtraDimensions value="0"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                </patterns:Slot>
-                                <java:Varargs value="false"/>
-                                <patterns:Slot>
-                                    <patterns:Name value="name"/>
-                                    <patterns:BooleanValue value="false"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                </patterns:Slot>
-                                <java:ExtraDimensions value="0"/>
-                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            </java:SingleVariableDeclaration>
+                                </java:SingleVariableDeclaration>
+                            </patterns:TemplatePoint>
+                            <patterns:SequencePoint initialCapacity="1">
+                                <patterns:Insert>
+                                    <patterns:Placement value="BEFORE"/>
+                                    <patterns:JoinPointStep value="parameterPoint"/>
+                                </patterns:Insert>
+                            </patterns:SequencePoint>
+                        </patterns:ResultPoint>
+                        <patterns:ResultPoint>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <patterns:TemplatePoint>
+                                <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
+                                    <java:MethodInvocation>
+                                        <patterns:VariablePoint>
+                                        <patterns:Name value="productVar"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        </patterns:VariablePoint>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="setterName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                        <workflows:StringLiteral value="setterName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaClassMethod>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        <java:Arguments initialCapacity="1">
+                                        <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        </java:Arguments>
+                                    </java:MethodInvocation>
+                                </java:ExpressionStatement>
+                            </patterns:TemplatePoint>
                             <patterns:Insert>
-                                <patterns:Placement value="AFTER_LAST_CHILD"/>
-                                <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
-                                    <patterns:JoinPointStep value="fieldPoint"/>
-                                    <queries:ParentStep/>
-                                    <queries:Filter>
-                                        <queries:Filter>
-                                        <queries:ChildStep/>
-                                        <queries:TypeTest value="http://lang.whole.org/Java#ConstructorDeclaration"/>
-                                        </queries:Filter>
-                                        <queries:IndexTest>
-                                        <queries:IntLiteral value="0"/>
-                                        </queries:IndexTest>
-                                    </queries:Filter>
-                                    <queries:FeatureStep value="http://lang.whole.org/Java#parameters"/>
-                                </queries:Path>
+                                <patterns:Placement value="BEFORE"/>
+                                <patterns:JoinPointStep value="initializationPoint"/>
                             </patterns:Insert>
                         </patterns:ResultPoint>
                         <patterns:ResultPoint>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
-                                <java:Assignment>
-                                    <java:FieldAccess>
+                            <patterns:TemplatePoint>
+                                <patterns:SequencePoint initialCapacity="3">
+                                    <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="private"/>
+                                        </java:ExtendedModifiers>
+                                        <patterns:Slot>
+                                        <patterns:Name value="type"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                    </java:FieldDeclaration>
+                                    <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <patterns:Slot>
+                                        <patterns:Name value="type"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="getterName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                        <workflows:StringLiteral value="getterName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaClassMethod>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        <java:Parameters initialCapacity="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ReturnStatement>
+                                        <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                    </java:MethodDeclaration>
+                                    <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:PrimitiveType value="void"/>
+                                        <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="setterName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                        <workflows:StringLiteral value="setterName(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaClassMethod>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <patterns:Slot>
+                                        <patterns:Name value="type"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        <java:Varargs value="false"/>
+                                        <patterns:Slot>
+                                        <patterns:Name value="name"/>
+                                        <patterns:BooleanValue value="false"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:Slot>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:Block initialCapacity="1">
+                                        <java:ExpressionStatement>
+                                        <java:Assignment>
+                                        <java:FieldAccess>
                                         <java:ThisExpression>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </java:ThisExpression>
@@ -496,38 +927,29 @@
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </patterns:Slot>
-                                    </java:FieldAccess>
-                                    <java:AssignmentOperator value="="/>
-                                    <patterns:Slot>
+                                        </java:FieldAccess>
+                                        <java:AssignmentOperator value="="/>
+                                        <patterns:Slot>
                                         <patterns:Name value="name"/>
                                         <patterns:BooleanValue value="false"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    </patterns:Slot>
-                                </java:Assignment>
-                            </java:ExpressionStatement>
+                                        </patterns:Slot>
+                                        </java:Assignment>
+                                        </java:ExpressionStatement>
+                                        </java:Block>
+                                    </java:MethodDeclaration>
+                                </patterns:SequencePoint>
+                            </patterns:TemplatePoint>
                             <patterns:Insert>
-                                <patterns:Placement value="AFTER_LAST_CHILD"/>
-                                <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
-                                    <patterns:JoinPointStep value="propertyPoint"/>
-                                    <queries:ParentStep/>
-                                    <queries:Filter>
-                                        <queries:Filter>
-                                        <queries:ChildStep/>
-                                        <queries:TypeTest value="http://lang.whole.org/Java#ConstructorDeclaration"/>
-                                        </queries:Filter>
-                                        <queries:IndexTest>
-                                        <queries:IntLiteral value="0"/>
-                                        </queries:IndexTest>
-                                    </queries:Filter>
-                                    <queries:FeatureStep value="http://lang.whole.org/Java#body"/>
-                                </queries:Path>
+                                <patterns:Placement value="BEFORE"/>
+                                <patterns:JoinPointStep value="declarationPoint"/>
                             </patterns:Insert>
                         </patterns:ResultPoint>
                     </patterns:SequencePoint>
-                </patterns:TemplatePoint>
-            </patterns:ScopePoint>
+                </patterns:ConditionPoint>
+            </patterns:SelectionPoint>
         </patterns:Pattern>
         <patterns:Pattern>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
