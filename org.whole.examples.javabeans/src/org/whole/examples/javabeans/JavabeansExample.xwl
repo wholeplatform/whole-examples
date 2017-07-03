@@ -195,10 +195,13 @@
             </javabeans:Properties>
         </javabeans:JavaBeanArtifact>
     </javabeans:JavaBeanArtifacts>
-    <javabeans:ModelPatterns initialCapacity="1">
+    <javabeans:ModelPatterns initialCapacity="2">
         <javabeans:AbstractFactoryArtifact>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </javabeans:AbstractFactoryArtifact>
+        <javabeans:VisitorArtifact>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </javabeans:VisitorArtifact>
     </javabeans:ModelPatterns>
 </javabeans:JavaBeanModelArtifact>
