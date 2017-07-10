@@ -1246,7 +1246,17 @@
                     <queries:Choose initialCapacity="3">
                         <queries:If>
                             <queries:TypeTest value="http://lang.whole.org/Java#SimpleName"/>
-                            <queries:SelfStep/>
+                            <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="setterName"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                <workflows:StringLiteral value="removeSuffix(java.lang.String, java.lang.String)"/>
+                                <workflows:Expressions initialCapacity="2">
+                                    <queries:SelfStep/>
+                                    <queries:StringLiteral value="Visitor"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaClassMethod>
                         </queries:If>
                         <queries:If>
                             <queries:Some>
