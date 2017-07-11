@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+    <workflows:Text value="deploy all Javabeans resources"/>
+    <workflows:FlowObjects initialCapacity="6">
+        <workflows:LoadModel>
+            <workflows:Text value="load Patterns"/>
+            <workflows:Variable value="beansPatterns"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org\whole\examples\javabeans\JavabeansPatterns.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy Patterns"/>
+            <workflows:Variable value="beansPatterns"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+        <workflows:LoadModel>
+            <workflows:Text value="load Library"/>
+            <workflows:Variable value="beansLibrary"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org\whole\examples\javabeans\JavabeansLibrary.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy Library"/>
+            <workflows:Variable value="beansLibrary"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+        <workflows:LoadModel>
+            <workflows:Text value="load Actions"/>
+            <workflows:Variable value="beansActions"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org\whole\examples\javabeans\JavabeansActions.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy Actions"/>
+            <workflows:Variable value="beansActions"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
+    </workflows:FlowObjects>
+</workflows:Sequence>

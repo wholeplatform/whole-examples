@@ -14,13 +14,26 @@
     </actions:ToolbarActions>
     <actions:ContextMenuActions>
         <actions:MenuActions initialCapacity="0"/>
-        <actions:MenuActions initialCapacity="1">
+        <actions:MenuActions initialCapacity="2">
             <actions:GuardedAction>
                 <actions:Label value="Replace with patterns"/>
                 <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                     <queries:VariableRefStep value="selectedEntities"/>
                     <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                         <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansLibrarySemantics#replaceWithAllPatterns"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </semantics:FunctionApplication>
+                </queries:Path>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="Replace with code patterns"/>
+                <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                    <queries:VariableRefStep value="selectedEntities"/>
+                    <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                        <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansLibrarySemantics#replaceWithCodePatterns"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>

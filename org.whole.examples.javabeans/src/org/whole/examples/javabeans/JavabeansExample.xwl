@@ -197,11 +197,11 @@
     </javabeans:JavaBeanArtifacts>
     <javabeans:ModelPatterns initialCapacity="2">
         <javabeans:AbstractFactoryArtifact>
-            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangFactory"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </javabeans:AbstractFactoryArtifact>
         <javabeans:VisitorArtifact>
-            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangVisitor"/>
         </javabeans:VisitorArtifact>
     </javabeans:ModelPatterns>
 </javabeans:JavaBeanModelArtifact>
