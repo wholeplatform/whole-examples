@@ -981,7 +981,7 @@
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 </patterns:Slot>
                                 <java:Parameters initialCapacity="0"/>
-                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:ExtraDimensions value="0"/>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <java:Block initialCapacity="1">
                                     <java:ReturnStatement>
@@ -1211,7 +1211,7 @@
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </patterns:Slot>
                                         <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <java:ExtraDimensions value="0"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <java:Block initialCapacity="1">
                                         <java:ReturnStatement>

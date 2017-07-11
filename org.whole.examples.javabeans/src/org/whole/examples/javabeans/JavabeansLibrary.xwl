@@ -84,7 +84,7 @@
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         <java:Parameters initialCapacity="0"/>
-                                        <commons:Resolver/>
+                                        <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
                                         <java:Block initialCapacity="1">
                                         <java:ReturnStatement>
