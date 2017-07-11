@@ -57,7 +57,7 @@
                                         </java:FieldDeclaration>
                                         </commons:StageUpFragment>
                                         </queries:ExpressionTest>
-                                        <queries:Block initialCapacity="3">
+                                        <queries:Block initialCapacity="2">
                                         <queries:Delete>
                                         <queries:Path initialCapacity="2">
                                         <queries:ParentStep/>
@@ -199,7 +199,6 @@
                                         <queries:Path initialCapacity="1">
                                         <queries:SelfStep/>
                                         </queries:Path>
-                                        <queries:Block initialCapacity="1">
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <javabeans:Property xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <commons:Variable>
@@ -214,9 +213,7 @@
                                         </commons:Variable>
                                         </javabeans:Property>
                                         </commons:StageUpFragment>
-                                        </queries:Block>
                                         </queries:CartesianUpdate>
-                                        <queries:VoidLiteral/>
                                         </queries:Block>
                                     </queries:If>
                                     <queries:If>
@@ -263,7 +260,6 @@
                                         <queries:TypeTest value="whole:org.whole.examples.javabeans:JavabeansPatternsModel#Property"/>
                                         </queries:Every>
                                         </queries:And>
-                                        <queries:Block initialCapacity="2">
                                         <queries:CartesianUpdate>
                                         <queries:Path initialCapacity="2">
                                         <queries:Filter>
@@ -272,7 +268,6 @@
                                         </queries:Filter>
                                         <queries:SelfStep/>
                                         </queries:Path>
-                                        <queries:Block initialCapacity="1">
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <javabeans:JavaBeanArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <commons:Variable>
@@ -297,10 +292,7 @@
                                         </javabeans:Properties>
                                         </javabeans:JavaBeanArtifact>
                                         </commons:StageUpFragment>
-                                        </queries:Block>
                                         </queries:CartesianUpdate>
-                                        <queries:VoidLiteral/>
-                                        </queries:Block>
                                     </queries:If>
                                     <queries:If>
                                         <queries:And initialCapacity="2">
@@ -344,10 +336,8 @@
                                         </queries:Or>
                                         </queries:Every>
                                         </queries:And>
-                                        <queries:Block initialCapacity="2">
                                         <queries:CartesianUpdate>
                                         <queries:SelfStep/>
-                                        <queries:Block initialCapacity="1">
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <javabeans:JavaBeanModelArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <commons:Variable>
@@ -383,10 +373,7 @@
                                         </javabeans:ModelPatterns>
                                         </javabeans:JavaBeanModelArtifact>
                                         </commons:StageUpFragment>
-                                        </queries:Block>
                                         </queries:CartesianUpdate>
-                                        <queries:VoidLiteral/>
-                                        </queries:Block>
                                     </queries:If>
                                 </queries:Choose>
                             </queries:Scope>
@@ -445,7 +432,6 @@
                                         </workflows:InvokeJavaInstanceMethod>
                                         </queries:ExpressionTest>
                                         </queries:And>
-                                        <queries:Block initialCapacity="2">
                                         <queries:CartesianUpdate>
                                         <queries:Path initialCapacity="2">
                                         <queries:Filter>
@@ -454,7 +440,6 @@
                                         </queries:Filter>
                                         <queries:SelfStep/>
                                         </queries:Path>
-                                        <queries:Block initialCapacity="1">
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <javabeans:VisitorArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <commons:Variable>
@@ -464,10 +449,7 @@
                                         </commons:Variable>
                                         </javabeans:VisitorArtifact>
                                         </commons:StageUpFragment>
-                                        </queries:Block>
                                         </queries:CartesianUpdate>
-                                        <queries:VoidLiteral/>
-                                        </queries:Block>
                                     </queries:If>
                                     <queries:If>
                                         <queries:And initialCapacity="2">
@@ -557,7 +539,7 @@
                                         </queries:Or>
                                         </queries:Some>
                                         </queries:And>
-                                        <queries:Block initialCapacity="3">
+                                        <queries:Block initialCapacity="2">
                                         <workflows:Breakpoint xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="breakpoint"/>
                                         <workflows:BooleanLiteral value="false"/>
@@ -569,7 +551,6 @@
                                         <queries:Delete>
                                         <queries:SelfStep/>
                                         </queries:Delete>
-                                        <queries:VoidLiteral/>
                                         </queries:Block>
                                     </queries:If>
                                     <queries:If>
@@ -625,12 +606,9 @@
                                         </java:MethodDeclaration>
                                         </commons:StageUpFragment>
                                         </queries:ExpressionTest>
-                                        <queries:Block initialCapacity="2">
                                         <queries:Delete>
                                         <queries:SelfStep/>
                                         </queries:Delete>
-                                        <queries:VoidLiteral/>
-                                        </queries:Block>
                                     </queries:If>
                                     <queries:If>
                                         <queries:And initialCapacity="2">
@@ -671,7 +649,6 @@
                                         </workflows:InvokeJavaInstanceMethod>
                                         </queries:ExpressionTest>
                                         </queries:And>
-                                        <queries:Block initialCapacity="2">
                                         <queries:CartesianUpdate>
                                         <queries:Path initialCapacity="2">
                                         <queries:Filter>
@@ -680,7 +657,6 @@
                                         </queries:Filter>
                                         <queries:SelfStep/>
                                         </queries:Path>
-                                        <queries:Block initialCapacity="1">
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <javabeans:AbstractFactoryArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <commons:Variable>
@@ -691,10 +667,7 @@
                                         <commons:Resolver/>
                                         </javabeans:AbstractFactoryArtifact>
                                         </commons:StageUpFragment>
-                                        </queries:Block>
                                         </queries:CartesianUpdate>
-                                        <queries:VoidLiteral/>
-                                        </queries:Block>
                                     </queries:If>
                                 </queries:Choose>
                             </queries:Scope>
