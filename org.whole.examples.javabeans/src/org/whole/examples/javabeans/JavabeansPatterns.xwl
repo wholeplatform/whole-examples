@@ -4,7 +4,7 @@
     <patterns:Namespace value="org.whole.examples.javabeans"/>
     <patterns:Name value="Javabeans"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <patterns:Patterns initialCapacity="14">
+    <patterns:Patterns initialCapacity="15">
         <patterns:Pattern>
             <patterns:ResultTypes initialCapacity="1">
                 <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Artifacts#PackageArtifact"/>
@@ -283,12 +283,11 @@
                     </patterns:VariableDeclaration>
                     <patterns:VariableDeclaration>
                         <patterns:Name value="visitorName"/>
-                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
-                            <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansPatternsSemantics#visitorName"/>
+                        <patterns:FunctionPoint>
+                            <patterns:Name value="visitorName"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             <queries:VariableRefStep xmlns:queries="http://lang.whole.org/Queries" value="name"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        </semantics:FunctionApplication>
+                        </patterns:FunctionPoint>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </patterns:VariableDeclaration>
                 </patterns:Declarations>
@@ -307,26 +306,11 @@
                                 <java:PackageDeclaration>
                                     <commons:Resolver/>
                                     <commons:Resolver/>
-                                    <patterns:DerivationPoint>
-                                        <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
-                                        <queries:Path initialCapacity="2">
-                                        <queries:Filter>
-                                        <queries:AncestorStep/>
-                                        <queries:TypeTest value="http://lang.whole.org/Artifacts#PackageArtifact"/>
-                                        </queries:Filter>
-                                        <queries:FeatureStep value="http://lang.whole.org/Artifacts#name"/>
-                                        </queries:Path>
-                                        <queries:Path initialCapacity="2">
-                                        <queries:Filter>
-                                        <queries:AncestorStep/>
-                                        <patterns:PatternTypeTest value="JavaBeanModelArtifact"/>
-                                        </queries:Filter>
-                                        <patterns:SlotStep value="packageName"/>
-                                        </queries:Path>
-                                        <queries:VariableRefStep value="packageName"/>
-                                        </queries:Choose>
+                                    <patterns:FunctionPoint>
+                                        <patterns:Name value="packageName"/>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#QualifiedName"/>
-                                    </patterns:DerivationPoint>
+                                        <commons:Resolver/>
+                                    </patterns:FunctionPoint>
                                 </java:PackageDeclaration>
                                 <java:ImportDeclarations initialCapacity="0"/>
                                 <java:TypeDeclarations initialCapacity="1">
@@ -342,6 +326,19 @@
                                         <commons:Resolver/>
                                         <commons:Resolver/>
                                         <java:BodyDeclarations initialCapacity="1">
+                                        <patterns:SelectionPoint initialCapacity="2">
+                                        <patterns:ConditionPoint>
+                                        <patterns:SlotsDefined/>
+                                        <patterns:Slot>
+                                        <patterns:Name value="visitMethods"/>
+                                        <patterns:BooleanValue value="true"/>
+                                        <commons:Resolver/>
+                                        <patterns:Name value="VisitMethods"/>
+                                        <commons:Resolver/>
+                                        </patterns:Slot>
+                                        </patterns:ConditionPoint>
+                                        <patterns:ConditionPoint>
+                                        <commons:Resolver/>
                                         <patterns:DerivationPoint>
                                         <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
                                         <queries:Filter>
@@ -365,6 +362,8 @@
                                         </queries:Path>
                                         <commons:Resolver/>
                                         </patterns:DerivationPoint>
+                                        </patterns:ConditionPoint>
+                                        </patterns:SelectionPoint>
                                         </java:BodyDeclarations>
                                     </java:InterfaceDeclaration>
                                 </java:TypeDeclarations>
@@ -374,6 +373,11 @@
                 </patterns:TemplatePoint>
             </patterns:ScopePoint>
         </patterns:Pattern>
+        <patterns:Repetition>
+            <patterns:Name value="VisitMethods"/>
+            <patterns:Name value="VisitMethod"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </patterns:Repetition>
         <patterns:Pattern>
             <patterns:ResultTypes initialCapacity="1">
                 <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#BodyDeclaration"/>
@@ -500,12 +504,11 @@
                     </patterns:VariableDeclaration>
                     <patterns:VariableDeclaration>
                         <patterns:Name value="abstractFactoryName"/>
-                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
-                            <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansPatternsSemantics#factoryName"/>
+                        <patterns:FunctionPoint>
+                            <patterns:Name value="factoryName"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             <queries:VariableRefStep xmlns:queries="http://lang.whole.org/Queries" value="name"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        </semantics:FunctionApplication>
+                        </patterns:FunctionPoint>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </patterns:VariableDeclaration>
                 </patterns:Declarations>
@@ -524,26 +527,11 @@
                                 <java:PackageDeclaration>
                                     <commons:Resolver/>
                                     <commons:Resolver/>
-                                    <patterns:DerivationPoint>
-                                        <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
-                                        <queries:Path initialCapacity="2">
-                                        <queries:Filter>
-                                        <queries:AncestorStep/>
-                                        <queries:TypeTest value="http://lang.whole.org/Artifacts#PackageArtifact"/>
-                                        </queries:Filter>
-                                        <queries:FeatureStep value="http://lang.whole.org/Artifacts#name"/>
-                                        </queries:Path>
-                                        <queries:Path initialCapacity="2">
-                                        <queries:Filter>
-                                        <queries:AncestorStep/>
-                                        <patterns:PatternTypeTest value="JavaBeanModelArtifact"/>
-                                        </queries:Filter>
-                                        <patterns:SlotStep value="packageName"/>
-                                        </queries:Path>
-                                        <queries:VariableRefStep value="packageName"/>
-                                        </queries:Choose>
+                                    <patterns:FunctionPoint>
+                                        <patterns:Name value="packageName"/>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#QualifiedName"/>
-                                    </patterns:DerivationPoint>
+                                        <commons:Resolver/>
+                                    </patterns:FunctionPoint>
                                 </java:PackageDeclaration>
                                 <java:ImportDeclarations initialCapacity="0"/>
                                 <java:TypeDeclarations initialCapacity="1">
@@ -781,26 +769,11 @@
                             <java:PackageDeclaration>
                                 <commons:Resolver/>
                                 <commons:Resolver/>
-                                <patterns:DerivationPoint>
-                                    <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
-                                        <queries:Path initialCapacity="2">
-                                        <queries:Filter>
-                                        <queries:AncestorStep/>
-                                        <queries:TypeTest value="http://lang.whole.org/Artifacts#PackageArtifact"/>
-                                        </queries:Filter>
-                                        <queries:FeatureStep value="http://lang.whole.org/Artifacts#name"/>
-                                        </queries:Path>
-                                        <queries:Path initialCapacity="2">
-                                        <queries:Filter>
-                                        <queries:AncestorStep/>
-                                        <patterns:PatternTypeTest value="JavaBeanModelArtifact"/>
-                                        </queries:Filter>
-                                        <patterns:SlotStep value="packageName"/>
-                                        </queries:Path>
-                                        <queries:VariableRefStep value="packageName"/>
-                                    </queries:Choose>
+                                <patterns:FunctionPoint>
+                                    <patterns:Name value="packageName"/>
                                     <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#QualifiedName"/>
-                                </patterns:DerivationPoint>
+                                    <commons:Resolver/>
+                                </patterns:FunctionPoint>
                             </java:PackageDeclaration>
                             <java:ImportDeclarations initialCapacity="0"/>
                             <java:TypeDeclarations initialCapacity="1">
@@ -981,7 +954,7 @@
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 </patterns:Slot>
                                 <java:Parameters initialCapacity="0"/>
-                                        <java:ExtraDimensions value="0"/>
+                                <java:ExtraDimensions value="0"/>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <java:Block initialCapacity="1">
                                     <java:ReturnStatement>
@@ -1344,11 +1317,30 @@
             </patterns:TemplatePoint>
         </patterns:Pattern>
     </patterns:Patterns>
-    <patterns:Declarations initialCapacity="2">
+    <patterns:Declarations initialCapacity="3">
         <patterns:FunctionDeclaration>
-            <patterns:ResultTypes initialCapacity="1">
-                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
-            </patterns:ResultTypes>
+            <patterns:ResultTypes initialCapacity="0"/>
+            <patterns:Name value="packageName"/>
+            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                <queries:Path initialCapacity="2">
+                    <queries:Filter>
+                        <queries:AncestorStep/>
+                        <queries:TypeTest value="http://lang.whole.org/Artifacts#PackageArtifact"/>
+                    </queries:Filter>
+                    <queries:FeatureStep value="http://lang.whole.org/Artifacts#name"/>
+                </queries:Path>
+                <queries:Path initialCapacity="2">
+                    <queries:Filter>
+                        <queries:AncestorStep/>
+                        <patterns:PatternTypeTest value="JavaBeanModelArtifact"/>
+                    </queries:Filter>
+                    <patterns:SlotStep value="packageName"/>
+                </queries:Path>
+                <queries:VariableRefStep value="packageName"/>
+            </queries:Choose>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <patterns:ResultTypes initialCapacity="0"/>
             <patterns:Name value="visitorName"/>
             <queries:Addition xmlns:queries="http://lang.whole.org/Queries">
                 <queries:Singleton>
@@ -1383,9 +1375,7 @@
             </queries:Addition>
         </patterns:FunctionDeclaration>
         <patterns:FunctionDeclaration>
-            <patterns:ResultTypes initialCapacity="1">
-                <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
-            </patterns:ResultTypes>
+            <patterns:ResultTypes initialCapacity="0"/>
             <patterns:Name value="factoryName"/>
             <queries:Addition xmlns:queries="http://lang.whole.org/Queries">
                 <queries:Singleton>

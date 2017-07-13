@@ -384,18 +384,22 @@
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             </queries:Some>
                             <queries:Scope>
-                                <queries:Names initialCapacity="7">
+                                <queries:Names initialCapacity="11">
                                     <queries:Name value="factoryName"/>
+                                    <queries:Name value="factoryMethodName"/>
+                                    <queries:Name value="parameters"/>
+                                    <queries:Name value="body"/>
                                     <queries:Name value="bodyDeclarations"/>
-                                    <queries:Name value="visitorName"/>
                                     <queries:Name value="visitorType"/>
+                                    <queries:Name value="visitorName"/>
                                     <queries:Name value="beanType"/>
-                                    <queries:Name value="__name0__"/>
-                                    <queries:Name value="__name1__"/>
+                                    <queries:Name value="beanName"/>
+                                    <queries:Name value="type"/>
+                                    <queries:Name value="name"/>
                                 </queries:Names>
-                                <queries:Choose initialCapacity="4">
+                                <queries:Choose initialCapacity="6">
                                     <queries:If>
-                                        <queries:And initialCapacity="2">
+                                        <queries:And initialCapacity="3">
                                         <queries:ExpressionTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:InterfaceDeclaration xmlns:java="http://lang.whole.org/Java">
@@ -431,6 +435,18 @@
                                         </workflows:Expressions>
                                         </workflows:InvokeJavaInstanceMethod>
                                         </queries:ExpressionTest>
+                                        <queries:Every>
+                                        <queries:Path initialCapacity="2">
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:VariableRefStep value="bodyDeclarations"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        <queries:TypeTest value="whole:org.whole.examples.javabeans:JavabeansPatternsModel#VisitMethod"/>
+                                        </queries:Every>
                                         </queries:And>
                                         <queries:CartesianUpdate>
                                         <queries:Path initialCapacity="2">
@@ -447,7 +463,68 @@
                                         <commons:VarName value="visitorName"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
+                                        <javabeans:VisitMethods initialCapacity="1">
+                                        <commons:StageDownFragment>
+                                        <queries:Delete>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:VariableRefStep value="bodyDeclarations"/>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        </queries:Delete>
+                                        </commons:StageDownFragment>
+                                        </javabeans:VisitMethods>
                                         </javabeans:VisitorArtifact>
+                                        </commons:StageUpFragment>
+                                        </queries:CartesianUpdate>
+                                    </queries:If>
+                                    <queries:If>
+                                        <queries:ExpressionTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Type"/>
+                                        <commons:VarName value="beanType"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:Varargs value="false"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="beanName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        </commons:StageUpFragment>
+                                        </queries:ExpressionTest>
+                                        <queries:CartesianUpdate>
+                                        <queries:Path initialCapacity="1">
+                                        <queries:SelfStep/>
+                                        </queries:Path>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <javabeans:VisitMethod xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="beanType"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </javabeans:VisitMethod>
                                         </commons:StageUpFragment>
                                         </queries:CartesianUpdate>
                                     </queries:If>
@@ -474,7 +551,7 @@
                                         <java:Varargs value="false"/>
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
-                                        <commons:VarName value="__name1__"/>
+                                        <commons:VarName value="visitorName"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         <java:ExtraDimensions value="0"/>
@@ -489,7 +566,7 @@
                                         <java:MethodInvocation>
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
-                                        <commons:VarName value="__name1__"/>
+                                        <commons:VarName value="visitorName"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         <commons:Resolver/>
@@ -575,7 +652,7 @@
                                         <java:Varargs value="false"/>
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
-                                        <commons:VarName value="__name1__"/>
+                                        <commons:VarName value="visitorName"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         <java:ExtraDimensions value="0"/>
@@ -590,7 +667,7 @@
                                         <java:MethodInvocation>
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
-                                        <commons:VarName value="__name1__"/>
+                                        <commons:VarName value="visitorName"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         <commons:Resolver/>
@@ -611,7 +688,7 @@
                                         </queries:Delete>
                                     </queries:If>
                                     <queries:If>
-                                        <queries:And initialCapacity="2">
+                                        <queries:And initialCapacity="3">
                                         <queries:ExpressionTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ClassDeclaration xmlns:java="http://lang.whole.org/Java">
@@ -648,6 +725,18 @@
                                         </workflows:Expressions>
                                         </workflows:InvokeJavaInstanceMethod>
                                         </queries:ExpressionTest>
+                                        <queries:Every>
+                                        <queries:Path initialCapacity="2">
+                                        <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <queries:VariableRefStep value="bodyDeclarations"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </semantics:FunctionApplication>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        <queries:TypeTest value="whole:org.whole.examples.javabeans:JavabeansPatternsModel#FactoryMethod"/>
+                                        </queries:Every>
                                         </queries:And>
                                         <queries:CartesianUpdate>
                                         <queries:Path initialCapacity="2">
@@ -660,12 +749,132 @@
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <javabeans:AbstractFactoryArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <commons:Variable>
-                                        <commons:VarType value="whole:org.whole.examples.javabeans:JavabeansPatternsModel#SimpleName"/>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
                                         <commons:VarName value="factoryName"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
-                                        <commons:Resolver/>
+                                        <javabeans:FactoryMethods initialCapacity="1">
+                                        <commons:StageDownFragment>
+                                        <queries:Delete>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:VariableRefStep value="bodyDeclarations"/>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        </queries:Delete>
+                                        </commons:StageDownFragment>
+                                        </javabeans:FactoryMethods>
                                         </javabeans:AbstractFactoryArtifact>
+                                        </commons:StageUpFragment>
+                                        </queries:CartesianUpdate>
+                                    </queries:If>
+                                    <queries:If>
+                                        <queries:And initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Type"/>
+                                        <commons:VarName value="beanType"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="factoryMethodName"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Parameters"/>
+                                        <commons:VarName value="parameters"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Block"/>
+                                        <commons:VarName value="body"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </java:MethodDeclaration>
+                                        </commons:StageUpFragment>
+                                        </queries:ExpressionTest>
+                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="isFactoryMethodName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:Variable value="factoryMethodName"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <workflows:StringLiteral value="java.lang.String"/>
+                                        <workflows:StringLiteral value="startsWith(java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="1">
+                                        <queries:StringLiteral value="create"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaInstanceMethod>
+                                        </queries:And>
+                                        <queries:CartesianUpdate>
+                                        <queries:Path initialCapacity="1">
+                                        <queries:SelfStep/>
+                                        </queries:Path>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <javabeans:FactoryMethod xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
+                                        <patterns:DerivationPoint>
+                                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <workflows:Text value="productName"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                        <workflows:StringLiteral value="removePrefix(java.lang.String, java.lang.String)"/>
+                                        <workflows:Expressions initialCapacity="2">
+                                        <workflows:Variable value="factoryMethodName"/>
+                                        <queries:StringLiteral value="create"/>
+                                        </workflows:Expressions>
+                                        </workflows:InvokeJavaClassMethod>
+                                        <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
+                                        </patterns:DerivationPoint>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleType"/>
+                                        <commons:VarName value="beanType"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <javabeans:Properties initialCapacity="1">
+                                        <commons:StageDownFragment>
+                                        <queries:Select>
+                                        <commons:StageUpFragment>
+                                        <javabeans:Property>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#Type"/>
+                                        <commons:VarName value="type"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                        <commons:VarName value="name"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </javabeans:Property>
+                                        </commons:StageUpFragment>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:VariableRefStep value="parameters"/>
+                                        <queries:ChildStep/>
+                                        </queries:Path>
+                                        <queries:Sequence initialCapacity="2">
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lang.whole.org/Java#type"/>
+                                        <queries:VariableTest value="type"/>
+                                        </queries:Filter>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://lang.whole.org/Java#name"/>
+                                        <queries:VariableTest value="name"/>
+                                        </queries:Filter>
+                                        </queries:Sequence>
+                                        <queries:TemplateNames/>
+                                        </queries:Select>
+                                        </commons:StageDownFragment>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
                                         </commons:StageUpFragment>
                                         </queries:CartesianUpdate>
                                     </queries:If>

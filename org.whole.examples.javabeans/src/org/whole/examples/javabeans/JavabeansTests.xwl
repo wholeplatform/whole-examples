@@ -12,7 +12,622 @@
             <tests:Name value="PatternsExpansionTest"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <tests:Aspects initialCapacity="0"/>
-            <tests:Tests initialCapacity="5">
+            <tests:Tests initialCapacity="7">
+                <tests:Test>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="testVisitMethod"/>
+                    <tests:TestStatements initialCapacity="1">
+                        <tests:AssertThat>
+                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <commons:Resolver/>
+                                        <artifacts:Projects initialCapacity="1">
+                                        <artifacts:Project>
+                                        <artifacts:Name value="org.whole.examples.javabeans"/>
+                                        <artifacts:Natures initialCapacity="1">
+                                        <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
+                                        </artifacts:Natures>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="src"/>
+                                        <artifacts:Metadata>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <artifacts:Attributes initialCapacity="1">
+                                        <artifacts:Attribute value="source"/>
+                                        </artifacts:Attributes>
+                                        <commons:Resolver/>
+                                        </artifacts:Metadata>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <artifacts:Name value="org.whole.examples.javabeans.example"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <artifacts:Name value="MyLangVisitor"/>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedName value="org.whole.examples.javabeans.example"/>
+                                        </java:PackageDeclaration>
+                                        <java:ImportDeclarations initialCapacity="0"/>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:InterfaceDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="MyLangVisitor"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:BodyDeclarations initialCapacity="5">
+                                        <javabeans:VisitMethod xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
+                                        <java:SimpleName value="Addition"/>
+                                        </javabeans:VisitMethod>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Not"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Variable"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <javabeans:VisitMethod xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
+                                        <java:SimpleName value="While"/>
+                                        </javabeans:VisitMethod>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Assignment"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:InterfaceDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        <commons:Resolver/>
+                                        </artifacts:Project>
+                                        </artifacts:Projects>
+                                    </artifacts:Workspace>
+                                </commons:StageUpFragment>
+                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
+                                    <actions:Label value="whole:org.whole.examples.javabeans:JavabeansPatternsGuestActions#Expand Javabeans Patterns"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </actions:ActionCall>
+                            </queries:Path>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <commons:Resolver/>
+                                        <artifacts:Projects initialCapacity="1">
+                                        <artifacts:Project>
+                                        <artifacts:Name value="org.whole.examples.javabeans"/>
+                                        <artifacts:Natures initialCapacity="1">
+                                        <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
+                                        </artifacts:Natures>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="src"/>
+                                        <artifacts:Metadata>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <artifacts:Attributes initialCapacity="1">
+                                        <artifacts:Attribute value="source"/>
+                                        </artifacts:Attributes>
+                                        <commons:Resolver/>
+                                        </artifacts:Metadata>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <artifacts:Name value="org.whole.examples.javabeans.example"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <artifacts:Name value="MyLangVisitor"/>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedName value="org.whole.examples.javabeans.example"/>
+                                        </java:PackageDeclaration>
+                                        <java:ImportDeclarations initialCapacity="0"/>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:InterfaceDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="MyLangVisitor"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:BodyDeclarations initialCapacity="5">
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Addition"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Not"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Variable"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="While"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Assignment"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:InterfaceDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        <commons:Resolver/>
+                                        </artifacts:Project>
+                                        </artifacts:Projects>
+                                    </artifacts:Workspace>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                    </tests:TestStatements>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                </tests:Test>
+                <tests:Test>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <tests:Name value="testVisitor"/>
+                    <tests:TestStatements initialCapacity="1">
+                        <tests:AssertThat>
+                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <commons:Resolver/>
+                                        <artifacts:Projects initialCapacity="1">
+                                        <artifacts:Project>
+                                        <artifacts:Name value="org.whole.examples.javabeans"/>
+                                        <artifacts:Natures initialCapacity="1">
+                                        <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
+                                        </artifacts:Natures>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="src"/>
+                                        <artifacts:Metadata>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <artifacts:Attributes initialCapacity="1">
+                                        <artifacts:Attribute value="source"/>
+                                        </artifacts:Attributes>
+                                        <commons:Resolver/>
+                                        </artifacts:Metadata>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <artifacts:Name value="org.whole.examples.javabeans.example"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <javabeans:VisitorArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangVisitor"/>
+                                        <javabeans:VisitMethods initialCapacity="5">
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Addition"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Not"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="While"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Assignment"/>
+                                        </javabeans:VisitMethod>
+                                        </javabeans:VisitMethods>
+                                        </javabeans:VisitorArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        <commons:Resolver/>
+                                        </artifacts:Project>
+                                        </artifacts:Projects>
+                                    </artifacts:Workspace>
+                                </commons:StageUpFragment>
+                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
+                                    <actions:Label value="whole:org.whole.examples.javabeans:JavabeansPatternsGuestActions#Expand Javabeans Patterns"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </actions:ActionCall>
+                            </queries:Path>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <commons:Resolver/>
+                                        <artifacts:Projects initialCapacity="1">
+                                        <artifacts:Project>
+                                        <artifacts:Name value="org.whole.examples.javabeans"/>
+                                        <artifacts:Natures initialCapacity="1">
+                                        <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
+                                        </artifacts:Natures>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="src"/>
+                                        <artifacts:Metadata>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <artifacts:Attributes initialCapacity="1">
+                                        <artifacts:Attribute value="source"/>
+                                        </artifacts:Attributes>
+                                        <commons:Resolver/>
+                                        </artifacts:Metadata>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <artifacts:Name value="org.whole.examples.javabeans.example"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <artifacts:Name value="MyLangVisitor"/>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedName value="org.whole.examples.javabeans.example"/>
+                                        </java:PackageDeclaration>
+                                        <java:ImportDeclarations initialCapacity="0"/>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:InterfaceDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="MyLangVisitor"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:BodyDeclarations initialCapacity="5">
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Addition"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Not"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Variable"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="While"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:PrimitiveType value="void"/>
+                                        <java:SimpleName value="visit"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Assignment"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="bean"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:InterfaceDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        <commons:Resolver/>
+                                        </artifacts:Project>
+                                        </artifacts:Projects>
+                                    </artifacts:Workspace>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                    </tests:TestStatements>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                </tests:Test>
                 <tests:Test>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <tests:Name value="testFactoryMethod"/>
@@ -3405,6 +4020,7 @@
                                         <javabeans:ModelPatterns initialCapacity="1">
                                         <javabeans:VisitorArtifact>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </javabeans:VisitorArtifact>
                                         </javabeans:ModelPatterns>
                                     </javabeans:JavaBeanModelArtifact>
@@ -4611,6 +5227,7 @@
                                         </javabeans:AbstractFactoryArtifact>
                                         <javabeans:VisitorArtifact>
                                         <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLang"/>
+                                        <commons:Resolver/>
                                         </javabeans:VisitorArtifact>
                                         </javabeans:ModelPatterns>
                                     </javabeans:JavaBeanModelArtifact>
@@ -6112,7 +6729,7 @@
                 </tests:Test>
             </tests:Tests>
             <tests:Results>
-                <tests:IntLiteral value="5"/>
+                <tests:IntLiteral value="7"/>
                 <tests:IntLiteral value="0"/>
                 <tests:IntLiteral value="0"/>
             </tests:Results>
@@ -7620,11 +8237,11 @@
                     </workflows:AssignActivity>
                 </tests:BeforeTestCase>
             </tests:Aspects>
-            <tests:Tests initialCapacity="5">
+            <tests:Tests initialCapacity="4">
                 <tests:Test>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <tests:Name value="testCodePatterns"/>
-                    <tests:TestStatements initialCapacity="4">
+                    <tests:TestStatements initialCapacity="3">
                         <tests:AssertThat>
                             <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -7824,210 +8441,6 @@
                                         <java:SimpleType value="Expression"/>
                                         <java:SimpleName value="exp2"/>
                                         </javabeans:Property>
-                                        </java:BodyDeclarations>
-                                        </java:ClassDeclaration>
-                                        </java:TypeDeclarations>
-                                    </java:CompilationUnit>
-                                </commons:StageUpFragment>
-                            </tests:Matches>
-                        </tests:AssertThat>
-                        <tests:AssertThat>
-                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
-                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                    <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
-                                        <java:PackageDeclaration>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:QualifiedName value="org.whole.examples.javabeans.example"/>
-                                        </java:PackageDeclaration>
-                                        <java:ImportDeclarations initialCapacity="0"/>
-                                        <java:TypeDeclarations initialCapacity="1">
-                                        <java:ClassDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <java:SimpleName value="Addition"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Types initialCapacity="1">
-                                        <java:SimpleType value="Expression"/>
-                                        </java:Types>
-                                        <java:BodyDeclarations initialCapacity="2">
-                                        <javabeans:Property xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
-                                        <java:SimpleType value="Expression"/>
-                                        <java:SimpleName value="exp1"/>
-                                        </javabeans:Property>
-                                        <javabeans:Property xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
-                                        <java:SimpleType value="Expression"/>
-                                        <java:SimpleName value="exp2"/>
-                                        </javabeans:Property>
-                                        </java:BodyDeclarations>
-                                        </java:ClassDeclaration>
-                                        </java:TypeDeclarations>
-                                    </java:CompilationUnit>
-                                </commons:StageUpFragment>
-                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
-                                    <actions:Label value="whole:org.whole.examples.javabeans:JavabeansPatternsGuestActions#Expand Javabeans Patterns"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                </actions:ActionCall>
-                            </queries:Path>
-                            <tests:Matches>
-                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                    <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
-                                        <java:PackageDeclaration>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:QualifiedName value="org.whole.examples.javabeans.example"/>
-                                        </java:PackageDeclaration>
-                                        <java:ImportDeclarations initialCapacity="0"/>
-                                        <java:TypeDeclarations initialCapacity="1">
-                                        <java:ClassDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <java:SimpleName value="Addition"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:Types initialCapacity="1">
-                                        <java:SimpleType value="Expression"/>
-                                        </java:Types>
-                                        <java:BodyDeclarations initialCapacity="6">
-                                        <java:FieldDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="private"/>
-                                        </java:ExtendedModifiers>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:VariableDeclarationFragments initialCapacity="1">
-                                        <java:VariableDeclarationFragment>
-                                        <java:SimpleName value="exp1"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        </java:VariableDeclarationFragment>
-                                        </java:VariableDeclarationFragments>
-                                        </java:FieldDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:SimpleName value="getExp1"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
-                                        <java:ReturnStatement>
-                                        <java:SimpleName value="exp1"/>
-                                        </java:ReturnStatement>
-                                        </java:Block>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:PrimitiveType value="void"/>
-                                        <java:SimpleName value="setExp1"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="exp1"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
-                                        <java:ExpressionStatement>
-                                        <java:Assignment>
-                                        <java:FieldAccess>
-                                        <java:ThisExpression>
-                                        <commons:Resolver/>
-                                        </java:ThisExpression>
-                                        <java:SimpleName value="exp1"/>
-                                        </java:FieldAccess>
-                                        <java:AssignmentOperator value="="/>
-                                        <java:SimpleName value="exp1"/>
-                                        </java:Assignment>
-                                        </java:ExpressionStatement>
-                                        </java:Block>
-                                        </java:MethodDeclaration>
-                                        <java:FieldDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="private"/>
-                                        </java:ExtendedModifiers>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:VariableDeclarationFragments initialCapacity="1">
-                                        <java:VariableDeclarationFragment>
-                                        <java:SimpleName value="exp2"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        </java:VariableDeclarationFragment>
-                                        </java:VariableDeclarationFragments>
-                                        </java:FieldDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:SimpleName value="getExp2"/>
-                                        <java:Parameters initialCapacity="0"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
-                                        <java:ReturnStatement>
-                                        <java:SimpleName value="exp2"/>
-                                        </java:ReturnStatement>
-                                        </java:Block>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:PrimitiveType value="void"/>
-                                        <java:SimpleName value="setExp2"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Expression"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="exp2"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <java:Block initialCapacity="1">
-                                        <java:ExpressionStatement>
-                                        <java:Assignment>
-                                        <java:FieldAccess>
-                                        <java:ThisExpression>
-                                        <commons:Resolver/>
-                                        </java:ThisExpression>
-                                        <java:SimpleName value="exp2"/>
-                                        </java:FieldAccess>
-                                        <java:AssignmentOperator value="="/>
-                                        <java:SimpleName value="exp2"/>
-                                        </java:Assignment>
-                                        </java:ExpressionStatement>
-                                        </java:Block>
-                                        </java:MethodDeclaration>
                                         </java:BodyDeclarations>
                                         </java:ClassDeclaration>
                                         </java:TypeDeclarations>
@@ -9257,7 +9670,7 @@
                 <tests:Test>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <tests:Name value="testDesignPatterns"/>
-                    <tests:TestStatements initialCapacity="2">
+                    <tests:TestStatements initialCapacity="3">
                         <tests:AssertThat>
                             <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -9479,7 +9892,535 @@
                                         <artifacts:Artifacts initialCapacity="1">
                                         <javabeans:VisitorArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangVisitor"/>
+                                        <javabeans:VisitMethods initialCapacity="5">
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Addition"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Not"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="While"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Assignment"/>
+                                        </javabeans:VisitMethod>
+                                        </javabeans:VisitMethods>
                                         </javabeans:VisitorArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        <commons:Resolver/>
+                                        </artifacts:Project>
+                                        </artifacts:Projects>
+                                    </artifacts:Workspace>
+                                </commons:StageUpFragment>
+                            </tests:Matches>
+                        </tests:AssertThat>
+                        <tests:AssertThat>
+                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <commons:Resolver/>
+                                        <artifacts:Projects initialCapacity="1">
+                                        <artifacts:Project>
+                                        <artifacts:Name value="org.whole.examples.javabeans"/>
+                                        <artifacts:Natures initialCapacity="1">
+                                        <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
+                                        </artifacts:Natures>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="src"/>
+                                        <artifacts:Metadata>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <artifacts:Attributes initialCapacity="1">
+                                        <artifacts:Attribute value="source"/>
+                                        </artifacts:Attributes>
+                                        <commons:Resolver/>
+                                        </artifacts:Metadata>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <artifacts:Name value="org.whole.examples.javabeans.example"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FileArtifact>
+                                        <artifacts:NameWithExtension>
+                                        <artifacts:Name value="MyLangFactory"/>
+                                        <artifacts:Extension value="java"/>
+                                        </artifacts:NameWithExtension>
+                                        <commons:Resolver/>
+                                        <commons:StageUpFragment>
+                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:PackageDeclaration>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:QualifiedName value="org.whole.examples.javabeans.example"/>
+                                        </java:PackageDeclaration>
+                                        <java:ImportDeclarations initialCapacity="0"/>
+                                        <java:TypeDeclarations initialCapacity="1">
+                                        <java:ClassDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <java:SimpleName value="MyLangFactory"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:BodyDeclarations initialCapacity="5">
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:SimpleName value="createAddition"/>
+                                        <java:Parameters initialCapacity="2">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="exp1"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="exp2"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="4">
+                                        <java:VariableDeclarationStatement>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Addition"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="product"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Addition"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:VariableDeclarationStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="product"/>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="setExp1"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="exp1"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="product"/>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="setExp2"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="exp2"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="product"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:SimpleName value="createNot"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="exp"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="3">
+                                        <java:VariableDeclarationStatement>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Not"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="product"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Not"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:VariableDeclarationStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="product"/>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="setExp"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="exp"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="product"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:SimpleName value="createVariable"/>
+                                        <java:Parameters initialCapacity="1">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="String"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="name"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="3">
+                                        <java:VariableDeclarationStatement>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Variable"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="product"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Variable"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:VariableDeclarationStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="product"/>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="setName"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="name"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="product"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Statement"/>
+                                        <java:SimpleName value="createWhile"/>
+                                        <java:Parameters initialCapacity="2">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="condition"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Statement"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="trueBody"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="4">
+                                        <java:VariableDeclarationStatement>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="While"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="product"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="While"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:VariableDeclarationStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="product"/>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="setCondition"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="condition"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="product"/>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="setTrueBody"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="trueBody"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="product"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        <java:MethodDeclaration>
+                                        <commons:Resolver/>
+                                        <java:ExtendedModifiers initialCapacity="1">
+                                        <java:Modifier value="public"/>
+                                        </java:ExtendedModifiers>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Statement"/>
+                                        <java:SimpleName value="createAssignment"/>
+                                        <java:Parameters initialCapacity="2">
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Variable"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="variable"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        <java:SingleVariableDeclaration>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Expression"/>
+                                        <java:Varargs value="false"/>
+                                        <java:SimpleName value="expression"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:SingleVariableDeclaration>
+                                        </java:Parameters>
+                                        <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
+                                        <java:Block initialCapacity="4">
+                                        <java:VariableDeclarationStatement>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Assignment"/>
+                                        <java:VariableDeclarationFragments initialCapacity="1">
+                                        <java:VariableDeclarationFragment>
+                                        <java:SimpleName value="product"/>
+                                        <java:ExtraDimensions value="0"/>
+                                        <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Assignment"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </java:ClassInstanceCreation>
+                                        </java:VariableDeclarationFragment>
+                                        </java:VariableDeclarationFragments>
+                                        </java:VariableDeclarationStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="product"/>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="setVariable"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="variable"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ExpressionStatement>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="product"/>
+                                        <commons:Resolver/>
+                                        <java:SimpleName value="setExpression"/>
+                                        <java:Arguments initialCapacity="1">
+                                        <java:SimpleName value="expression"/>
+                                        </java:Arguments>
+                                        </java:MethodInvocation>
+                                        </java:ExpressionStatement>
+                                        <java:ReturnStatement>
+                                        <java:SimpleName value="product"/>
+                                        </java:ReturnStatement>
+                                        </java:Block>
+                                        </java:MethodDeclaration>
+                                        </java:BodyDeclarations>
+                                        </java:ClassDeclaration>
+                                        </java:TypeDeclarations>
+                                        </java:CompilationUnit>
+                                        </commons:StageUpFragment>
+                                        </artifacts:FileArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:PackageArtifact>
+                                        </artifacts:Artifacts>
+                                        </artifacts:FolderArtifact>
+                                        </artifacts:Artifacts>
+                                        <commons:Resolver/>
+                                        </artifacts:Project>
+                                        </artifacts:Projects>
+                                    </artifacts:Workspace>
+                                </commons:StageUpFragment>
+                                <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
+                                    <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansLibrarySemantics#replaceWithDesignPatterns"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </semantics:FunctionApplication>
+                            </queries:Path>
+                            <tests:Matches>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
+                                        <commons:Resolver/>
+                                        <artifacts:Projects initialCapacity="1">
+                                        <artifacts:Project>
+                                        <artifacts:Name value="org.whole.examples.javabeans"/>
+                                        <artifacts:Natures initialCapacity="1">
+                                        <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
+                                        </artifacts:Natures>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:FolderArtifact>
+                                        <artifacts:Name value="src"/>
+                                        <artifacts:Metadata>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <artifacts:Attributes initialCapacity="1">
+                                        <artifacts:Attribute value="source"/>
+                                        </artifacts:Attributes>
+                                        <commons:Resolver/>
+                                        </artifacts:Metadata>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <artifacts:PackageArtifact>
+                                        <artifacts:Name value="org.whole.examples.javabeans.example"/>
+                                        <commons:Resolver/>
+                                        <artifacts:Artifacts initialCapacity="1">
+                                        <javabeans:AbstractFactoryArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangFactory"/>
+                                        <javabeans:FactoryMethods initialCapacity="5">
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Addition"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <javabeans:Properties initialCapacity="2">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                                        </javabeans:Property>
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Not"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <javabeans:Properties initialCapacity="1">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <javabeans:Properties initialCapacity="1">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="name"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="While"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                                        <javabeans:Properties initialCapacity="2">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="condition"/>
+                                        </javabeans:Property>
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="trueBody"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Assignment"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                                        <javabeans:Properties initialCapacity="2">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="variable"/>
+                                        </javabeans:Property>
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="expression"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        </javabeans:FactoryMethods>
+                                        </javabeans:AbstractFactoryArtifact>
                                         </artifacts:Artifacts>
                                         </artifacts:PackageArtifact>
                                         </artifacts:Artifacts>
@@ -10301,10 +11242,90 @@
                                         </artifacts:FileArtifact>
                                         <javabeans:AbstractFactoryArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangFactory"/>
-                                        <commons:Resolver/>
+                                        <javabeans:FactoryMethods initialCapacity="5">
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Addition"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <javabeans:Properties initialCapacity="2">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                                        </javabeans:Property>
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Not"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <javabeans:Properties initialCapacity="1">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <javabeans:Properties initialCapacity="1">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="name"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="While"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                                        <javabeans:Properties initialCapacity="2">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="condition"/>
+                                        </javabeans:Property>
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="trueBody"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Assignment"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                                        <javabeans:Properties initialCapacity="2">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="variable"/>
+                                        </javabeans:Property>
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="expression"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        </javabeans:FactoryMethods>
                                         </javabeans:AbstractFactoryArtifact>
                                         <javabeans:VisitorArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
                                         <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangVisitor"/>
+                                        <javabeans:VisitMethods initialCapacity="5">
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Addition"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Not"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="While"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Assignment"/>
+                                        </javabeans:VisitMethod>
+                                        </javabeans:VisitMethods>
                                         </javabeans:VisitorArtifact>
                                         </artifacts:Artifacts>
                                         </artifacts:PackageArtifact>
@@ -10323,254 +11344,6 @@
                         <tests:Outcome value="SUCCESS"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </tests:Result>
-                    <tests:Result>
-                        <tests:Outcome value="SUCCESS"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    </tests:Result>
-                </tests:Test>
-                <tests:Test>
-                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    <tests:Name value="testDesignPatternsFIXME"/>
-                    <tests:TestStatements initialCapacity="1">
-                        <tests:AssertThat>
-                            <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
-                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
-                                        <commons:Resolver/>
-                                        <artifacts:Projects initialCapacity="1">
-                                        <artifacts:Project>
-                                        <artifacts:Name value="org.whole.examples.javabeans"/>
-                                        <artifacts:Natures initialCapacity="1">
-                                        <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
-                                        </artifacts:Natures>
-                                        <commons:Resolver/>
-                                        <artifacts:Artifacts initialCapacity="1">
-                                        <artifacts:FolderArtifact>
-                                        <artifacts:Name value="src"/>
-                                        <artifacts:Metadata>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <artifacts:Attributes initialCapacity="1">
-                                        <artifacts:Attribute value="source"/>
-                                        </artifacts:Attributes>
-                                        <commons:Resolver/>
-                                        </artifacts:Metadata>
-                                        <artifacts:Artifacts initialCapacity="1">
-                                        <artifacts:PackageArtifact>
-                                        <artifacts:Name value="org.whole.examples.javabeans.example"/>
-                                        <commons:Resolver/>
-                                        <artifacts:Artifacts initialCapacity="1">
-                                        <javabeans:VisitorArtifact xmlns:javabeans="whole:org.whole.examples.javabeans:JavabeansPatternsModel">
-                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangVisitor"/>
-                                        </javabeans:VisitorArtifact>
-                                        </artifacts:Artifacts>
-                                        </artifacts:PackageArtifact>
-                                        </artifacts:Artifacts>
-                                        </artifacts:FolderArtifact>
-                                        </artifacts:Artifacts>
-                                        <commons:Resolver/>
-                                        </artifacts:Project>
-                                        </artifacts:Projects>
-                                    </artifacts:Workspace>
-                                </commons:StageUpFragment>
-                                <actions:ActionCall xmlns:actions="http://lang.whole.org/Actions">
-                                    <actions:Label value="whole:org.whole.examples.javabeans:JavabeansPatternsGuestActions#Expand Javabeans Patterns"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                </actions:ActionCall>
-                            </queries:Path>
-                            <tests:Matches>
-                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                    <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">
-                                        <commons:Resolver/>
-                                        <artifacts:Projects initialCapacity="1">
-                                        <artifacts:Project>
-                                        <artifacts:Name value="org.whole.examples.javabeans"/>
-                                        <artifacts:Natures initialCapacity="1">
-                                        <artifacts:Nature value="org.eclipse.jdt.core.javanature"/>
-                                        </artifacts:Natures>
-                                        <commons:Resolver/>
-                                        <artifacts:Artifacts initialCapacity="1">
-                                        <artifacts:FolderArtifact>
-                                        <artifacts:Name value="src"/>
-                                        <artifacts:Metadata>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <artifacts:Attributes initialCapacity="1">
-                                        <artifacts:Attribute value="source"/>
-                                        </artifacts:Attributes>
-                                        <commons:Resolver/>
-                                        </artifacts:Metadata>
-                                        <artifacts:Artifacts initialCapacity="1">
-                                        <artifacts:PackageArtifact>
-                                        <artifacts:Name value="org.whole.examples.javabeans.example"/>
-                                        <commons:Resolver/>
-                                        <artifacts:Artifacts initialCapacity="1">
-                                        <artifacts:FileArtifact>
-                                        <artifacts:NameWithExtension>
-                                        <artifacts:Name value="MyLangVisitor"/>
-                                        <artifacts:Extension value="java"/>
-                                        </artifacts:NameWithExtension>
-                                        <commons:Resolver/>
-                                        <commons:StageUpFragment>
-                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
-                                        <java:PackageDeclaration>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:QualifiedName value="org.whole.examples.javabeans.example"/>
-                                        </java:PackageDeclaration>
-                                        <java:ImportDeclarations initialCapacity="0"/>
-                                        <java:TypeDeclarations initialCapacity="1">
-                                        <java:InterfaceDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <java:SimpleName value="MyLangVisitor"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <java:BodyDeclarations initialCapacity="5">
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:PrimitiveType value="void"/>
-                                        <java:SimpleName value="visit"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Addition"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="bean"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:PrimitiveType value="void"/>
-                                        <java:SimpleName value="visit"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Not"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="bean"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:PrimitiveType value="void"/>
-                                        <java:SimpleName value="visit"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Variable"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="bean"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:PrimitiveType value="void"/>
-                                        <java:SimpleName value="visit"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="While"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="bean"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:MethodDeclaration>
-                                        <java:MethodDeclaration>
-                                        <commons:Resolver/>
-                                        <java:ExtendedModifiers initialCapacity="1">
-                                        <java:Modifier value="public"/>
-                                        </java:ExtendedModifiers>
-                                        <commons:Resolver/>
-                                        <java:PrimitiveType value="void"/>
-                                        <java:SimpleName value="visit"/>
-                                        <java:Parameters initialCapacity="1">
-                                        <java:SingleVariableDeclaration>
-                                        <commons:Resolver/>
-                                        <java:SimpleType value="Assignment"/>
-                                        <java:Varargs value="false"/>
-                                        <java:SimpleName value="bean"/>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:SingleVariableDeclaration>
-                                        </java:Parameters>
-                                        <java:ExtraDimensions value="0"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        </java:MethodDeclaration>
-                                        </java:BodyDeclarations>
-                                        </java:InterfaceDeclaration>
-                                        </java:TypeDeclarations>
-                                        </java:CompilationUnit>
-                                        </commons:StageUpFragment>
-                                        </artifacts:FileArtifact>
-                                        </artifacts:Artifacts>
-                                        </artifacts:PackageArtifact>
-                                        </artifacts:Artifacts>
-                                        </artifacts:FolderArtifact>
-                                        </artifacts:Artifacts>
-                                        <commons:Resolver/>
-                                        </artifacts:Project>
-                                        </artifacts:Projects>
-                                    </artifacts:Workspace>
-                                </commons:StageUpFragment>
-                            </tests:Matches>
-                        </tests:AssertThat>
-                    </tests:TestStatements>
-                    <tests:Result>
-                        <tests:Outcome value="FAILURE"/>
-                        <tests:StringLiteral value="/testCases/1/tests/2/body/0"/>
-                        <tests:StringLiteral value="Workspace {    metadata: &#13;&#10;    projects: Projects [&#13;&#10;        Project {&#13;&#10;            name: Name(org.whole.examples.javabeans)&#13;&#10;            natures: Natures [&#13;&#10;                Nature(org.eclipse.jdt.core.javanature)&#13;&#10;            ]&#13;&#10;            metadata: &#13;&#10;            artifacts: Artifacts [&#13;&#10;                FolderArtifact {&#13;&#10;                    name: Name(src)&#13;&#10;                    metadata: Metadata {&#13;&#10;                        copyright: &#13;&#10;                        license: &#13;&#10;                        author: &#13;&#10;                        attributes: Attributes [&#13;&#10;                            Attribute(source)&#13;&#10;                        ]&#13;&#10;                        persistenceKitId: &#13;&#10;                    }&#13;&#10;                    artifacts: Artifacts [&#13;&#10;                        PackageArtifact {&#13;&#10;                            name: Name(org.whole.examples.javabeans.example)&#13;&#10;                            metadata: &#13;&#10;                            artifacts: Artifacts [&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(MyLangVisitor)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public interface MyLangVisitor {&#13;&#10;                                    ||&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                            ]&#13;&#10;                        }&#13;&#10;                    ]&#13;&#10;                }&#13;&#10;            ]&#13;&#10;            locationURI: &#13;&#10;        }&#13;&#10;    ]&#13;&#10;}&#13;&#10; matches [[Artifacts+1&#13;&#10;||  Workspace {&#13;&#10;||      metadata: &#13;&#10;||      projects: Projects [&#13;&#10;||          Project {&#13;&#10;||              name: Name(org.whole.examples.javabeans)&#13;&#10;||              natures: Natures [&#13;&#10;||                  Nature(org.eclipse.jdt.core.javanature)&#13;&#10;||              ]&#13;&#10;||              metadata: &#13;&#10;||              artifacts: Artifacts [&#13;&#10;||                  FolderArtifact {&#13;&#10;||                      name: Name(src)&#13;&#10;||                      metadata: Metadata {&#13;&#10;||                          copyright: &#13;&#10;||                          license: &#13;&#10;||                          author: &#13;&#10;||                          attributes: Attributes [&#13;&#10;||                              Attribute(source)&#13;&#10;||                          ]&#13;&#10;||                          persistenceKitId: &#13;&#10;||                      }&#13;&#10;||                      artifacts: Artifacts [&#13;&#10;||                          PackageArtifact {&#13;&#10;||                              name: Name(org.whole.examples.javabeans.example)&#13;&#10;||                              metadata: &#13;&#10;||                              artifacts: Artifacts [&#13;&#10;||                                  FileArtifact {&#13;&#10;||                                      name: NameWithExtension {&#13;&#10;||                                          name: Name(MyLangVisitor)&#13;&#10;||                                          extension: Extension(java)&#13;&#10;||                                      }&#13;&#10;||                                      metadata: &#13;&#10;||                                      content: [[Java+1&#13;&#10;||                                      ||  package org.whole.examples.javabeans.example;&#13;&#10;||                                      ||&#13;&#10;||                                      ||&#13;&#10;||                                      ||  public interface MyLangVisitor {&#13;&#10;||                                      ||&#13;&#10;||                                      ||&#13;&#10;||                                      ||      public void visit(Addition bean);&#13;&#10;||                                      ||&#13;&#10;||                                      ||      public void visit(Not bean);&#13;&#10;||                                      ||&#13;&#10;||                                      ||      public void visit(Variable bean);&#13;&#10;||                                      ||&#13;&#10;||                                      ||      public void visit(While bean);&#13;&#10;||                                      ||&#13;&#10;||                                      ||      public void visit(Assignment bean);&#13;&#10;||                                      ||  }&#13;&#10;||                                      ]]&#13;&#10;||                                  }&#13;&#10;||                              ]&#13;&#10;||                          }&#13;&#10;||                      ]&#13;&#10;||                  }&#13;&#10;||              ]&#13;&#10;||              locationURI: &#13;&#10;||          }&#13;&#10;||      ]&#13;&#10;||  }&#13;&#10;]]"/>
                     </tests:Result>
                     <tests:Result>
                         <tests:Outcome value="SUCCESS"/>
@@ -10725,10 +11498,90 @@
                                         <javabeans:ModelPatterns initialCapacity="2">
                                         <javabeans:AbstractFactoryArtifact>
                                         <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangFactory"/>
-                                        <commons:Resolver/>
+                                        <javabeans:FactoryMethods initialCapacity="5">
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Addition"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <javabeans:Properties initialCapacity="2">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp1"/>
+                                        </javabeans:Property>
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp2"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Not"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <javabeans:Properties initialCapacity="1">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="exp"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <javabeans:Properties initialCapacity="1">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="String"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="name"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="While"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                                        <javabeans:Properties initialCapacity="2">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="condition"/>
+                                        </javabeans:Property>
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="trueBody"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        <javabeans:FactoryMethod>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Assignment"/>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Statement"/>
+                                        <javabeans:Properties initialCapacity="2">
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="variable"/>
+                                        </javabeans:Property>
+                                        <javabeans:Property>
+                                        <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="Expression"/>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="expression"/>
+                                        </javabeans:Property>
+                                        </javabeans:Properties>
+                                        </javabeans:FactoryMethod>
+                                        </javabeans:FactoryMethods>
                                         </javabeans:AbstractFactoryArtifact>
                                         <javabeans:VisitorArtifact>
                                         <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="MyLangVisitor"/>
+                                        <javabeans:VisitMethods initialCapacity="5">
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Addition"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Not"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Variable"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="While"/>
+                                        </javabeans:VisitMethod>
+                                        <javabeans:VisitMethod>
+                                        <java:SimpleName xmlns:java="http://lang.whole.org/Java" value="Assignment"/>
+                                        </javabeans:VisitMethod>
+                                        </javabeans:VisitMethods>
                                         </javabeans:VisitorArtifact>
                                         </javabeans:ModelPatterns>
                                         </javabeans:JavaBeanModelArtifact>
@@ -10821,8 +11674,8 @@
                     </tests:TestStatements>
                     <tests:Result>
                         <tests:Outcome value="FAILURE"/>
-                        <tests:StringLiteral value="/testCases/1/tests/4/body/0"/>
-                        <tests:StringLiteral value="Workspace {    metadata: &#13;&#10;    projects: Projects [&#13;&#10;        Project {&#13;&#10;            name: Name(org.whole.examples.javabeans)&#13;&#10;            natures: Natures [&#13;&#10;                Nature(org.eclipse.jdt.core.javanature)&#13;&#10;            ]&#13;&#10;            metadata: &#13;&#10;            artifacts: Artifacts [&#13;&#10;                FolderArtifact {&#13;&#10;                    name: Name(src)&#13;&#10;                    metadata: Metadata {&#13;&#10;                        copyright: &#13;&#10;                        license: &#13;&#10;                        author: &#13;&#10;                        attributes: Attributes [&#13;&#10;                            Attribute(source)&#13;&#10;                        ]&#13;&#10;                        persistenceKitId: &#13;&#10;                    }&#13;&#10;                    artifacts: Artifacts [&#13;&#10;                        PackageArtifact {&#13;&#10;                            name: Name(org.whole.examples.javabeans.example)&#13;&#10;                            metadata: &#13;&#10;                            artifacts: Artifacts [&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(Addition)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public class Addition implements Expression {&#13;&#10;                                    ||      private Expression exp1;&#13;&#10;                                    ||&#13;&#10;                                    ||      public Expression getExp1() {&#13;&#10;                                    ||          return exp1;&#13;&#10;                                    ||      }&#13;&#10;                                    ||&#13;&#10;                                    ||      public void setExp1(Expression exp1) {&#13;&#10;                                    ||          this.exp1 = exp1;&#13;&#10;                                    ||      }&#13;&#10;                                    ||      private Expression exp2;&#13;&#10;                                    ||&#13;&#10;                                    ||      public Expression getExp2() {&#13;&#10;                                    ||          return exp2;&#13;&#10;                                    ||      }&#13;&#10;                                    ||&#13;&#10;                                    ||      public void setExp2(Expression exp2) {&#13;&#10;                                    ||          this.exp2 = exp2;&#13;&#10;                                    ||      }&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(Not)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public class Not implements Expression {&#13;&#10;                                    ||      private Expression exp;&#13;&#10;                                    ||&#13;&#10;                                    ||      public Expression getExp() {&#13;&#10;                                    ||          return exp;&#13;&#10;                                    ||      }&#13;&#10;                                    ||&#13;&#10;                                    ||      public void setExp(Expression exp) {&#13;&#10;                                    ||          this.exp = exp;&#13;&#10;                                    ||      }&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(Variable)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public class Variable implements Expression {&#13;&#10;                                    ||      private String name;&#13;&#10;                                    ||&#13;&#10;                                    ||      public String getName() {&#13;&#10;                                    ||          return name;&#13;&#10;                                    ||      }&#13;&#10;                                    ||&#13;&#10;                                    ||      public void setName(String name) {&#13;&#10;                                    ||          this.name = name;&#13;&#10;                                    ||      }&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(While)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public class While implements Statement {&#13;&#10;                                    ||      private Expression condition;&#13;&#10;                                    ||&#13;&#10;                                    ||      public Expression getCondition() {&#13;&#10;                                    ||          return condition;&#13;&#10;                                    ||      }&#13;&#10;                                    ||&#13;&#10;                                    ||      public void setCondition(Expression condition) {&#13;&#10;                                    ||          this.condition = condition;&#13;&#10;                                    ||      }&#13;&#10;                                    ||      private Statement trueBody;&#13;&#10;                                    ||&#13;&#10;                                    ||      public Statement getTrueBody() {&#13;&#10;                                    ||          return trueBody;&#13;&#10;                                    ||      }&#13;&#10;                                    ||&#13;&#10;                                    ||      public void setTrueBody(Statement trueBody) {&#13;&#10;                                    ||          this.trueBody = trueBody;&#13;&#10;                                    ||      }&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(Assignment)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public class Assignment implements Statement {&#13;&#10;                                    ||      private Variable variable;&#13;&#10;                                    ||&#13;&#10;                                    ||      public Variable getVariable() {&#13;&#10;                                    ||          return variable;&#13;&#10;                                    ||      }&#13;&#10;                                    ||&#13;&#10;                                    ||      public void setVariable(Variable variable) {&#13;&#10;                                    ||          this.variable = variable;&#13;&#10;                                    ||      }&#13;&#10;                                    ||      private Expression expression;&#13;&#10;                                    ||&#13;&#10;                                    ||      public Expression getExpression() {&#13;&#10;                                    ||          return expression;&#13;&#10;                                    ||      }&#13;&#10;                                    ||&#13;&#10;                                    ||      public void setExpression(Expression expression) {&#13;&#10;                                    ||          this.expression = expression;&#13;&#10;                                    ||      }&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(Expression)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public interface Expression {&#13;&#10;                                    ||&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(Statement)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public interface Statement {&#13;&#10;                                    ||&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(MyLangFactory)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public class MyLangFactory {&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                                FileArtifact {&#13;&#10;                                    name: NameWithExtension {&#13;&#10;                                        name: Name(MyLangVisitor)&#13;&#10;                                        extension: Extension(java)&#13;&#10;                                    }&#13;&#10;                                    metadata: &#13;&#10;                                    content: [[Java+1&#13;&#10;                                    ||  package org.whole.examples.javabeans.example;&#13;&#10;                                    ||&#13;&#10;                                    ||&#13;&#10;                                    ||  public interface MyLangVisitor {&#13;&#10;                                    ||&#13;&#10;                                    ||  }&#13;&#10;                                    ]]&#13;&#10;                                }&#13;&#10;                            ]&#13;&#10;                        }&#13;&#10;                    ]&#13;&#10;                }&#13;&#10;            ]&#13;&#10;            locationURI: &#13;&#10;        }&#13;&#10;    ]&#13;&#10;}&#13;&#10; matches $artifactsModel"/>
+                        <tests:StringLiteral value="/testCases/1/tests/3/body/0"/>
+                        <tests:StringLiteral value="Workspace {&#10;    metadata: &#10;    projects: Projects [&#10;        Project {&#10;            name: Name(org.whole.examples.javabeans)&#10;            natures: Natures [&#10;                Nature(org.eclipse.jdt.core.javanature)&#10;            ]&#10;            metadata: &#10;            artifacts: Artifacts [&#10;                FolderArtifact {&#10;                    name: Name(src)&#10;                    metadata: Metadata {&#10;                        copyright: &#10;                        license: &#10;                        author: &#10;                        attributes: Attributes [&#10;                            Attribute(source)&#10;                        ]&#10;                        persistenceKitId: &#10;                    }&#10;                    artifacts: Artifacts [&#10;                        PackageArtifact {&#10;                            name: Name(org.whole.examples.javabeans.example)&#10;                            metadata: &#10;                            artifacts: Artifacts [&#10;                                FileArtifact {&#10;                                    name: NameWithExtension {&#10;                                        name: Name(Addition)&#10;                                        extension: Extension(java)&#10;                                    }&#10;                                    metadata: &#10;                                    content: [[Java+1&#10;                                    ||  package org.whole.examples.javabeans.example;&#10;                                    ||&#10;                                    ||&#10;                                    ||  public class Addition implements Expression {&#10;                                    ||      private Expression exp1;&#10;                                    ||&#10;                                    ||      public Expression getExp1() {&#10;                                    ||          return exp1;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public void setExp1(Expression exp1) {&#10;                                    ||          this.exp1 = exp1;&#10;                                    ||      }&#10;                                    ||      private Expression exp2;&#10;                                    ||&#10;                                    ||      public Expression getExp2() {&#10;                                    ||          return exp2;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public void setExp2(Expression exp2) {&#10;                                    ||          this.exp2 = exp2;&#10;                                    ||      }&#10;                                    ||  }&#10;                                    ]]&#10;                                }&#10;                                FileArtifact {&#10;                                    name: NameWithExtension {&#10;                                        name: Name(Not)&#10;                                        extension: Extension(java)&#10;                                    }&#10;                                    metadata: &#10;                                    content: [[Java+1&#10;                                    ||  package org.whole.examples.javabeans.example;&#10;                                    ||&#10;                                    ||&#10;                                    ||  public class Not implements Expression {&#10;                                    ||      private Expression exp;&#10;                                    ||&#10;                                    ||      public Expression getExp() {&#10;                                    ||          return exp;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public void setExp(Expression exp) {&#10;                                    ||          this.exp = exp;&#10;                                    ||      }&#10;                                    ||  }&#10;                                    ]]&#10;                                }&#10;                                FileArtifact {&#10;                                    name: NameWithExtension {&#10;                                        name: Name(Variable)&#10;                                        extension: Extension(java)&#10;                                    }&#10;                                    metadata: &#10;                                    content: [[Java+1&#10;                                    ||  package org.whole.examples.javabeans.example;&#10;                                    ||&#10;                                    ||&#10;                                    ||  public class Variable implements Expression {&#10;                                    ||      private String name;&#10;                                    ||&#10;                                    ||      public String getName() {&#10;                                    ||          return name;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public void setName(String name) {&#10;                                    ||          this.name = name;&#10;                                    ||      }&#10;                                    ||  }&#10;                                    ]]&#10;                                }&#10;                                FileArtifact {&#10;                                    name: NameWithExtension {&#10;                                        name: Name(While)&#10;                                        extension: Extension(java)&#10;                                    }&#10;                                    metadata: &#10;                                    content: [[Java+1&#10;                                    ||  package org.whole.examples.javabeans.example;&#10;                                    ||&#10;                                    ||&#10;                                    ||  public class While implements Statement {&#10;                                    ||      private Expression condition;&#10;                                    ||&#10;                                    ||      public Expression getCondition() {&#10;                                    ||          return condition;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public void setCondition(Expression condition) {&#10;                                    ||          this.condition = condition;&#10;                                    ||      }&#10;                                    ||      private Statement trueBody;&#10;                                    ||&#10;                                    ||      public Statement getTrueBody() {&#10;                                    ||          return trueBody;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public void setTrueBody(Statement trueBody) {&#10;                                    ||          this.trueBody = trueBody;&#10;                                    ||      }&#10;                                    ||  }&#10;                                    ]]&#10;                                }&#10;                                FileArtifact {&#10;                                    name: NameWithExtension {&#10;                                        name: Name(Assignment)&#10;                                        extension: Extension(java)&#10;                                    }&#10;                                    metadata: &#10;                                    content: [[Java+1&#10;                                    ||  package org.whole.examples.javabeans.example;&#10;                                    ||&#10;                                    ||&#10;                                    ||  public class Assignment implements Statement {&#10;                                    ||      private Variable variable;&#10;                                    ||&#10;                                    ||      public Variable getVariable() {&#10;                                    ||          return variable;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public void setVariable(Variable variable) {&#10;                                    ||          this.variable = variable;&#10;                                    ||      }&#10;                                    ||      private Expression expression;&#10;                                    ||&#10;                                    ||      public Expression getExpression() {&#10;                                    ||          return expression;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public void setExpression(Expression expression) {&#10;                                    ||          this.expression = expression;&#10;                                    ||      }&#10;                                    ||  }&#10;                                    ]]&#10;                                }&#10;                                FileArtifact {&#10;                                    name: NameWithExtension {&#10;                                        name: Name(Expression)&#10;                                        extension: Extension(java)&#10;                                    }&#10;                                    metadata: &#10;                                    content: [[Java+1&#10;                                    ||  package org.whole.examples.javabeans.example;&#10;                                    ||&#10;                                    ||&#10;                                    ||  public interface Expression {&#10;                                    ||&#10;                                    ||  }&#10;                                    ]]&#10;                                }&#10;                                FileArtifact {&#10;                                    name: NameWithExtension {&#10;                                        name: Name(Statement)&#10;                                        extension: Extension(java)&#10;                                    }&#10;                                    metadata: &#10;                                    content: [[Java+1&#10;                                    ||  package org.whole.examples.javabeans.example;&#10;                                    ||&#10;                                    ||&#10;                                    ||  public interface Statement {&#10;                                    ||&#10;                                    ||  }&#10;                                    ]]&#10;                                }&#10;                                FileArtifact {&#10;                                    name: NameWithExtension {&#10;                                        name: Name(MyLangFactory)&#10;                                        extension: Extension(java)&#10;                                    }&#10;                                    metadata: &#10;                                    content: [[Java+1&#10;                                    ||  package org.whole.examples.javabeans.example;&#10;                                    ||&#10;                                    ||&#10;                                    ||  public class MyLangFactory {&#10;                                    ||&#10;                                    ||      public Expression createAddition(Expression exp1, Expression exp2) {&#10;                                    ||          Addition product = new Addition();&#10;                                    ||          product.setExp1(exp1);&#10;                                    ||          product.setExp2(exp2);&#10;                                    ||          return product;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public Expression createNot(Expression exp) {&#10;                                    ||          Not product = new Not();&#10;                                    ||          product.setExp(exp);&#10;                                    ||          return product;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public Expression createVariable(String name) {&#10;                                    ||          Variable product = new Variable();&#10;                                    ||          product.setName(name);&#10;                                    ||          return product;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public Statement createWhile(Expression condition, Statement trueBody) {&#10;                                    ||          While product = new While();&#10;                                    ||          product.setCondition(condition);&#10;                                    ||          product.setTrueBody(trueBody);&#10;                                    ||          return product;&#10;                                    ||      }&#10;                                    ||&#10;                                    ||      public Statement createAssignment(Variable variable, Expression expression) {&#10;                                    ||          Assignment product = new Assignment();&#10;                                    ||          product.setVariable(variable);&#10;                                    ||          product.setExpression(expression);&#10;                                    ||          return product;&#10;                                    ||      }&#10;                                    ||  }&#10;                                    ]]&#10;                                }&#10;                                FileArtifact {&#10;                                    name: NameWithExtension {&#10;                                        name: Name(MyLangVisitor)&#10;                                        extension: Extension(java)&#10;                                    }&#10;                                    metadata: &#10;                                    content: [[Java+1&#10;                                    ||  package org.whole.examples.javabeans.example;&#10;                                    ||&#10;                                    ||&#10;                                    ||  public interface MyLangVisitor {&#10;                                    ||&#10;                                    ||&#10;                                    ||      public void visit(Addition bean);&#10;                                    ||&#10;                                    ||      public void visit(Not bean);&#10;                                    ||&#10;                                    ||      public void visit(Variable bean);&#10;                                    ||&#10;                                    ||      public void visit(While bean);&#10;                                    ||&#10;                                    ||      public void visit(Assignment bean);&#10;                                    ||  }&#10;                                    ]]&#10;                                }&#10;                            ]&#10;                        }&#10;                    ]&#10;                }&#10;            ]&#10;            locationURI: &#10;        }&#10;    ]&#10;} matches $artifactsModel"/>
                     </tests:Result>
                     <tests:Result>
                         <tests:Outcome value="SUCCESS"/>
@@ -10833,7 +11686,7 @@
             </tests:Tests>
             <tests:Results>
                 <tests:IntLiteral value="3"/>
-                <tests:IntLiteral value="2"/>
+                <tests:IntLiteral value="1"/>
                 <tests:IntLiteral value="0"/>
             </tests:Results>
             <tests:Results>
@@ -10844,8 +11697,8 @@
         </tests:TestCase>
     </tests:TestCases>
     <tests:Results>
-        <tests:IntLiteral value="8"/>
-        <tests:IntLiteral value="2"/>
+        <tests:IntLiteral value="10"/>
+        <tests:IntLiteral value="1"/>
         <tests:IntLiteral value="0"/>
     </tests:Results>
     <tests:Results>
