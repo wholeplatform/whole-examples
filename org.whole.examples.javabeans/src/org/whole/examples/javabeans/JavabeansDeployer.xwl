@@ -7,7 +7,7 @@
             <workflows:Variable value="beansPatterns"/>
             <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
             <workflows:ResourceKind value="CLASSPATH"/>
-            <workflows:StringLiteral value="org\whole\examples\javabeans\JavabeansPatterns.xwl"/>
+            <workflows:StringLiteral value="org/whole/examples/javabeans/JavabeansPatterns.xwl"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </workflows:LoadModel>
         <workflows:InvokeOperation>
@@ -21,7 +21,7 @@
             <workflows:Variable value="beansLibrary"/>
             <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
             <workflows:ResourceKind value="CLASSPATH"/>
-            <workflows:StringLiteral value="org\whole\examples\javabeans\JavabeansLibrary.xwl"/>
+            <workflows:StringLiteral value="org/whole/examples/javabeans/JavabeansLibrary.xwl"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </workflows:LoadModel>
         <workflows:InvokeOperation>
@@ -35,7 +35,7 @@
             <workflows:Variable value="beansActions"/>
             <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
             <workflows:ResourceKind value="CLASSPATH"/>
-            <workflows:StringLiteral value="org\whole\examples\javabeans\JavabeansActions.xwl"/>
+            <workflows:StringLiteral value="org/whole/examples/javabeans/JavabeansActions.xwl"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </workflows:LoadModel>
         <workflows:InvokeOperation>
