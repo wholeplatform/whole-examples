@@ -31,7 +31,7 @@
                                 </queries:Names>
                                 <queries:Choose initialCapacity="3">
                                     <queries:If>
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -56,7 +56,7 @@
                                         </java:VariableDeclarationFragments>
                                         </java:FieldDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <queries:Block initialCapacity="2">
                                         <queries:Delete>
                                         <queries:Path initialCapacity="2">
@@ -65,7 +65,7 @@
                                         <queries:ChildStep/>
                                         <queries:Or initialCapacity="2">
                                         <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -97,8 +97,7 @@
                                         </java:Block>
                                         </java:MethodDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <queries:Equals>
                                         <queries:VariableRefStep value="getterName"/>
                                         <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
@@ -112,10 +111,9 @@
                                         </workflows:Expressions>
                                         </workflows:InvokeJavaClassMethod>
                                         </queries:Equals>
-                                        </queries:ExpressionTest>
                                         </queries:And>
                                         <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -174,8 +172,7 @@
                                         </java:Block>
                                         </java:MethodDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <queries:Equals>
                                         <queries:VariableRefStep value="setterName"/>
                                         <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
@@ -189,7 +186,6 @@
                                         </workflows:Expressions>
                                         </workflows:InvokeJavaClassMethod>
                                         </queries:Equals>
-                                        </queries:ExpressionTest>
                                         </queries:And>
                                         </queries:Or>
                                         </queries:Filter>
@@ -218,7 +214,7 @@
                                     </queries:If>
                                     <queries:If>
                                         <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ClassDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -246,7 +242,7 @@
                                         </commons:Variable>
                                         </java:ClassDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <queries:Every>
                                         <queries:Path initialCapacity="2">
                                         <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
@@ -296,7 +292,7 @@
                                     </queries:If>
                                     <queries:If>
                                         <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <artifacts:PackageArtifact xmlns:artifacts="http://lang.whole.org/Artifacts">
                                         <commons:Variable>
@@ -312,7 +308,7 @@
                                         </commons:Variable>
                                         </artifacts:PackageArtifact>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <queries:Every>
                                         <queries:Path initialCapacity="2">
                                         <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
@@ -400,7 +396,7 @@
                                 <queries:Choose initialCapacity="6">
                                     <queries:If>
                                         <queries:And initialCapacity="3">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:InterfaceDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -421,8 +417,7 @@
                                         </commons:Variable>
                                         </java:InterfaceDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="isVisitorName"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -434,7 +429,6 @@
                                         <queries:StringLiteral value="Visitor"/>
                                         </workflows:Expressions>
                                         </workflows:InvokeJavaInstanceMethod>
-                                        </queries:ExpressionTest>
                                         <queries:Every>
                                         <queries:Path initialCapacity="2">
                                         <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
@@ -478,7 +472,7 @@
                                         </queries:CartesianUpdate>
                                     </queries:If>
                                     <queries:If>
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -512,7 +506,7 @@
                                         <commons:Resolver/>
                                         </java:MethodDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <queries:CartesianUpdate>
                                         <queries:Path initialCapacity="1">
                                         <queries:SelfStep/>
@@ -530,7 +524,7 @@
                                     </queries:If>
                                     <queries:If>
                                         <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -581,7 +575,7 @@
                                         </java:Block>
                                         </java:MethodDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <queries:Some>
                                         <queries:Path initialCapacity="2">
                                         <queries:Filter>
@@ -593,25 +587,21 @@
                                         <queries:Or initialCapacity="2">
                                         <queries:And initialCapacity="2">
                                         <queries:TypeTest value="http://lang.whole.org/Java#ClassDeclaration"/>
-                                        <queries:ExpressionTest>
                                         <queries:Equals>
                                         <queries:Singleton>
                                         <queries:FeatureStep value="http://lang.whole.org/Java#name"/>
                                         </queries:Singleton>
                                         <queries:VariableRefStep value="visitorType"/>
                                         </queries:Equals>
-                                        </queries:ExpressionTest>
                                         </queries:And>
                                         <queries:And initialCapacity="2">
                                         <queries:TypeTest value="whole:org.whole.examples.javabeans:JavabeansPatternsModel#VisitorArtifact"/>
-                                        <queries:ExpressionTest>
                                         <queries:Equals>
                                         <queries:Singleton>
                                         <queries:FeatureStep value="whole:org.whole.examples.javabeans:JavabeansPatternsModel#name"/>
                                         </queries:Singleton>
                                         <queries:VariableRefStep value="visitorType"/>
                                         </queries:Equals>
-                                        </queries:ExpressionTest>
                                         </queries:And>
                                         </queries:Or>
                                         </queries:Some>
@@ -631,7 +621,7 @@
                                         </queries:Block>
                                     </queries:If>
                                     <queries:If>
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -682,14 +672,14 @@
                                         </java:Block>
                                         </java:MethodDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <queries:Delete>
                                         <queries:SelfStep/>
                                         </queries:Delete>
                                     </queries:If>
                                     <queries:If>
                                         <queries:And initialCapacity="3">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ClassDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -711,8 +701,7 @@
                                         </commons:Variable>
                                         </java:ClassDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="isFactoryName"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -724,7 +713,6 @@
                                         <queries:StringLiteral value="Factory"/>
                                         </workflows:Expressions>
                                         </workflows:InvokeJavaInstanceMethod>
-                                        </queries:ExpressionTest>
                                         <queries:Every>
                                         <queries:Path initialCapacity="2">
                                         <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
@@ -769,7 +757,7 @@
                                     </queries:If>
                                     <queries:If>
                                         <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:MethodDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -801,7 +789,7 @@
                                         </commons:Variable>
                                         </java:MethodDeclaration>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="isFactoryMethodName"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
