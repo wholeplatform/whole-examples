@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+    <queries:QueryDeclaration>
+        <queries:Name value="cleanup"/>
+        <queries:Names initialCapacity="4">
+            <queries:Name value="entity"/>
+            <queries:Name value="template"/>
+            <queries:Name value="stepExpression"/>
+            <queries:Name value="predicate"/>
+        </queries:Names>
+        <queries:Path initialCapacity="2">
+            <queries:Choose initialCapacity="2">
+                <queries:If>
+                    <queries:And initialCapacity="2">
+                        <queries:MatchTest>
+                            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <queries:ExpressionTest>
+                                    <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Queries#PathExpression"/>
+                                        <commons:VarName value="entity"/>
+                                        <commons:Quantifier value="!"/>
+                                    </commons:Variable>
+                                </queries:ExpressionTest>
+                            </commons:StageUpFragment>
+                        </queries:MatchTest>
+                        <queries:VariableTest value="template"/>
+                    </queries:And>
+                    <queries:Path initialCapacity="2">
+                        <queries:VariableRefStep value="entity"/>
+                        <queries:Choose initialCapacity="5">
+                            <queries:If>
+                                <queries:TypeTest value="http://lang.whole.org/Commons#StageUpFragment"/>
+                                <queries:CartesianUpdate>
+                                    <queries:Path initialCapacity="1">
+                                        <queries:VariableRefStep value="template"/>
+                                    </queries:Path>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <queries:MatchTest>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Commons#StageUpFragment"/>
+                                        <commons:VarName value="entity"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </queries:MatchTest>
+                                    </commons:StageUpFragment>
+                                </queries:CartesianUpdate>
+                            </queries:If>
+                            <queries:If>
+                                <queries:TypeTest value="http://lang.whole.org/Queries#Singleton"/>
+                                <queries:CartesianUpdate>
+                                    <queries:Path initialCapacity="1">
+                                        <queries:VariableRefStep value="template"/>
+                                    </queries:Path>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Queries#Singleton"/>
+                                        <commons:VarName value="entity"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                    </commons:StageUpFragment>
+                                </queries:CartesianUpdate>
+                            </queries:If>
+                            <queries:If>
+                                <queries:ExtendedSubtypeTest value="http://lang.whole.org/Queries#Expression"/>
+                                <queries:CartesianUpdate>
+                                    <queries:Path initialCapacity="1">
+                                        <queries:VariableRefStep value="template"/>
+                                    </queries:Path>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Queries#Expression"/>
+                                        <commons:VarName value="entity"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                    </commons:StageUpFragment>
+                                </queries:CartesianUpdate>
+                            </queries:If>
+                            <queries:If>
+                                <queries:And initialCapacity="2">
+                                    <queries:LanguageTest value="http://lang.whole.org/Queries"/>
+                                    <queries:Not>
+                                        <queries:TypeTest value="http://lang.whole.org/Queries#Call"/>
+                                    </queries:Not>
+                                </queries:And>
+                                <queries:CartesianUpdate>
+                                    <queries:Path initialCapacity="1">
+                                        <queries:VariableRefStep value="template"/>
+                                    </queries:Path>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <queries:Some>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Queries#PathExpression"/>
+                                        <commons:VarName value="entity"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Resolver/>
+                                        </queries:Some>
+                                    </commons:StageUpFragment>
+                                </queries:CartesianUpdate>
+                            </queries:If>
+                            <queries:Do>
+                                <queries:VariableRefStep value="template"/>
+                            </queries:Do>
+                        </queries:Choose>
+                    </queries:Path>
+                </queries:If>
+                <queries:Do>
+                    <queries:SelfStep/>
+                </queries:Do>
+            </queries:Choose>
+            <queries:Block initialCapacity="2">
+                <queries:Path initialCapacity="2">
+                    <queries:ChildStep/>
+                    <queries:Call>
+                        <queries:Name value="cleanup"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Call>
+                </queries:Path>
+                <queries:SelfStep/>
+            </queries:Block>
+        </queries:Path>
+    </queries:QueryDeclaration>
+    <queries:Call>
+        <queries:Name value="cleanup"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </queries:Call>
+</queries:Block>
