@@ -18,6 +18,7 @@
 package org.whole.examples.batchprocessor;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,9 +61,9 @@ public class JavaBuilderFilter extends AbstractFileFilter {
 
 	protected List<String> getInitialLines(File file) {
 		List<String> lines = new ArrayList<String>(maxLines);
-		try {
+		try (FileInputStream fis = FileUtils.openInputStream(file)) {
 			int count = 0;
-			LineIterator iterator = IOUtils.lineIterator(FileUtils.openInputStream(file), Charset.defaultCharset());
+			LineIterator iterator = IOUtils.lineIterator(fis, Charset.defaultCharset());
 			while (iterator.hasNext() && count++ < maxLines) {
 				lines.add(iterator.next());
 			}

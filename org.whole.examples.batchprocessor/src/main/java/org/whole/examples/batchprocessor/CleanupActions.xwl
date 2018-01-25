@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.examples.batchprocessor:CleanupActions"/>
+    <actions:Namespace value="org.whole.examples.batchprocessor"/>
+    <actions:Name value="Cleanup"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:ToolbarActions>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="1">
+            <actions:GuardedAction>
+                <actions:Label value="Apply cleanup"/>
+                <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:FreshNames initialCapacity="1">
+                        <queries:Name value="cleanup"/>
+                    </queries:FreshNames>
+                    <queries:Block initialCapacity="2">
+                        <workflows:LoadModel xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="loadmodel"/>
+                            <workflows:Variable value="cleanup"/>
+                            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+                            <workflows:ResourceKind value="WORKSPACE"/>
+                            <workflows:StringLiteral value="/org.whole.examples.batchprocessor/QueriesCleanup.xwl"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </workflows:LoadModel>
+                        <queries:Call>
+                            <queries:Name value="cleanup"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </queries:Call>
+                    </queries:Block>
+                </queries:Scope>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>
