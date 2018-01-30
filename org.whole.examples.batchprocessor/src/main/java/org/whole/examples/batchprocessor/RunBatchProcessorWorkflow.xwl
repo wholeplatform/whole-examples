@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
+    <workflows:Text value="sequence"/>
+    <workflows:FlowObjects initialCapacity="2">
+        <workflows:InvokeJavaClassMethod>
+            <workflows:Text value="setUserClassLoader"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <workflows:StringLiteral value="org.whole.lang.reflect.ReflectionFactory"/>
+            <workflows:StringLiteral value="setUserClassLoader(java.lang.ClassLoader)"/>
+            <workflows:Expressions initialCapacity="1">
+                <workflows:Variable value="classLoader"/>
+            </workflows:Expressions>
+        </workflows:InvokeJavaClassMethod>
+        <workflows:InvokeJavaClassMethod>
+            <workflows:Text value="Run BatchProcessor"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <workflows:StringLiteral value="org.whole.examples.batchprocessor.BatchProcessorApplication"/>
+            <workflows:StringLiteral value="run(java.lang.String, java.lang.String, boolean)"/>
+            <workflows:Expressions initialCapacity="3">
+                <queries:Addition xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:VariableRefStep value="projectLocation"/>
+                    <queries:StringLiteral value="/input"/>
+                </queries:Addition>
+                <queries:Addition xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:VariableRefStep value="projectLocation"/>
+                    <queries:StringLiteral value="/QueriesNamesCleanup.xwl"/>
+                </queries:Addition>
+                <workflows:BooleanLiteral value="false"/>
+            </workflows:Expressions>
+        </workflows:InvokeJavaClassMethod>
+    </workflows:FlowObjects>
+</workflows:Sequence>

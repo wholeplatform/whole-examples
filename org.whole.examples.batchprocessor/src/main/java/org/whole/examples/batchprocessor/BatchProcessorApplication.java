@@ -54,21 +54,25 @@ public class BatchProcessorApplication {
 			argsIndex += 1;
 			useResult = true;
 		}
-		
-		File modelsDir = new File(args[argsIndex++]);
+
+		System.exit(run(args[argsIndex], args[argsIndex+1], useResult));
+	}
+
+	public static int run(String modelsDirPath, String behaviorFilePath, boolean useResult) {
+		File modelsDir = new File(modelsDirPath);
 		if (!modelsDir.exists() || !modelsDir.isDirectory()) {
 			System.err.println("<models-dir> either doesn't exist or is not a directory");
-			System.exit(3);
+			return 3;
 		}
 
 		ReflectionFactory.deployWholePlatform();
 		IEntity behavior = null;
 		try {
-			File behaviorFile = new File(args[argsIndex++]);
+			File behaviorFile = new File(behaviorFilePath);
 			behavior = getPersistenceKit(behaviorFile.getName()).readModel(new FilePersistenceProvider(behaviorFile));
 		} catch (Exception e) {
 			System.err.println("<behavior-file> either doesn't exist or is not a valid whole model");
-			System.exit(2);
+			return 2;
 		}
 
 		Iterator<File> iterateFiles = FileUtils.iterateFiles(modelsDir, 
@@ -105,6 +109,7 @@ public class BatchProcessorApplication {
 				System.out.println("failed.");
 			}
 		}
+		return 0;
 	}
 
 	public static IPersistenceKit getPersistenceKit(String fileName) {
