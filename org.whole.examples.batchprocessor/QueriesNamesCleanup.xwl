@@ -6,9 +6,10 @@
     <queries:Block initialCapacity="2">
         <queries:QueryDeclaration>
             <queries:Name value="cleanup"/>
-            <queries:Names initialCapacity="10">
+            <queries:Names initialCapacity="11">
                 <queries:Name value="entity"/>
                 <queries:Name value="template"/>
+                <queries:Name value="pathExpression"/>
                 <queries:Name value="stepExpression"/>
                 <queries:Name value="predicate"/>
                 <queries:Name value="names"/>
@@ -19,7 +20,7 @@
                 <queries:Name value="clearClause"/>
             </queries:Names>
             <queries:Path initialCapacity="2">
-                <queries:Choose initialCapacity="3">
+                <queries:Choose initialCapacity="4">
                     <queries:If>
                         <queries:And initialCapacity="2">
                             <queries:MatchTest>
@@ -134,6 +135,28 @@
                                     </commons:Variable>
                                 </queries:Select>
                             </commons:StageUpFragment>
+                        </queries:CartesianUpdate>
+                    </queries:If>
+                    <queries:If>
+                        <queries:And initialCapacity="2">
+                            <queries:MatchTest>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <queries:Sequence initialCapacity="1">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://lang.whole.org/Queries#PathExpression"/>
+                                        <commons:VarName value="pathExpression"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                    </queries:Sequence>
+                                </commons:StageUpFragment>
+                            </queries:MatchTest>
+                            <queries:VariableTest value="template"/>
+                        </queries:And>
+                        <queries:CartesianUpdate>
+                            <queries:Path initialCapacity="1">
+                                <queries:VariableRefStep value="template"/>
+                            </queries:Path>
+                            <queries:VariableRefStep value="pathExpression"/>
                         </queries:CartesianUpdate>
                     </queries:If>
                     <queries:Do>
