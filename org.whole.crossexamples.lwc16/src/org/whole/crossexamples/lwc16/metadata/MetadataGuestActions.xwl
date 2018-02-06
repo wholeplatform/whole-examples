@@ -46,9 +46,9 @@
                     <queries:VariableRefStep value="selectedEntities"/>
                     <queries:ChildStep/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="1">
+                        <queries:FreshNames initialCapacity="1">
                             <queries:Name value="authors"/>
-                        </queries:Names>
+                        </queries:FreshNames>
                         <queries:Sequence initialCapacity="2">
                             <queries:Filter>
                                 <queries:Except>

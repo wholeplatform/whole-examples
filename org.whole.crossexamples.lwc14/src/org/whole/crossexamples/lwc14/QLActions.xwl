@@ -9,12 +9,12 @@
         <actions:SimpleAction>
             <actions:Label value="Validator"/>
             <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                <queries:Names initialCapacity="4">
+                <queries:FreshNames initialCapacity="4">
                     <queries:Name value="addError"/>
                     <queries:Name value="addWarning"/>
                     <queries:Name value="typeMap"/>
                     <queries:Name value="styleSet"/>
-                </queries:Names>
+                </queries:FreshNames>
                 <queries:Block initialCapacity="6">
                     <queries:QueryDeclaration>
                         <queries:Name value="addError"/>
@@ -163,13 +163,13 @@
             <actions:GuardedAction>
                 <actions:Label value="Derive Binary Search Questionnaire"/>
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="5">
+                    <queries:FreshNames initialCapacity="5">
                         <queries:Name value="generateQuestions"/>
                         <queries:Name value="nameGenerator"/>
                         <queries:Name value="min"/>
                         <queries:Name value="max"/>
                         <queries:Name value="questions"/>
-                    </queries:Names>
+                    </queries:FreshNames>
                     <queries:Block initialCapacity="4">
                         <queries:QueryDeclaration>
                             <queries:Name value="generateQuestions"/>
@@ -380,13 +380,13 @@
             <actions:GuardedAction>
                 <actions:Label value="Derive Binary Search Questionnaire To Reuse"/>
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="5">
+                    <queries:FreshNames initialCapacity="5">
                         <queries:Name value="generateQuestions"/>
                         <queries:Name value="nameGenerator"/>
                         <queries:Name value="min"/>
                         <queries:Name value="max"/>
                         <queries:Name value="questions"/>
-                    </queries:Names>
+                    </queries:FreshNames>
                     <queries:Block initialCapacity="4">
                         <queries:QueryDeclaration>
                             <queries:Name value="generateQuestions"/>
@@ -616,13 +616,13 @@
             <actions:GuardedAction>
                 <actions:Label value="Derive Binary Search Questionnaire With Reuse"/>
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="5">
+                    <queries:FreshNames initialCapacity="5">
                         <queries:Name value="generateQuestions"/>
                         <queries:Name value="nameGenerator"/>
                         <queries:Name value="min"/>
                         <queries:Name value="max"/>
                         <queries:Name value="questions"/>
-                    </queries:Names>
+                    </queries:FreshNames>
                     <queries:Block initialCapacity="4">
                         <queries:QueryDeclaration>
                             <queries:Name value="generateQuestions"/>
@@ -975,9 +975,9 @@
             <actions:GuardedAction>
                 <actions:Label value="Derive JavaScript Model"/>
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="1">
+                    <queries:FreshNames initialCapacity="1">
                         <queries:Name value="javaScriptModel"/>
-                    </queries:Names>
+                    </queries:FreshNames>
                     <queries:Select>
                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                             <misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="1">
@@ -1006,9 +1006,9 @@
             <actions:GuardedAction>
                 <actions:Label value="Derive CSS Model"/>
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="1">
+                    <queries:FreshNames initialCapacity="1">
                         <queries:Name value="cssModel"/>
-                    </queries:Names>
+                    </queries:FreshNames>
                     <queries:Select>
                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                             <misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="1">
@@ -1037,9 +1037,9 @@
             <actions:GuardedAction>
                 <actions:Label value="Translate to Artifacts"/>
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="1">
+                    <queries:FreshNames initialCapacity="1">
                         <queries:Name value="artifactsPoint"/>
-                    </queries:Names>
+                    </queries:FreshNames>
                     <queries:Select>
                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                             <artifacts:Workspace xmlns:artifacts="http://lang.whole.org/Artifacts">

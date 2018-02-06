@@ -21,10 +21,10 @@
         <actions:SimpleAction>
             <actions:Label value="Value assist"/>
             <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                <queries:Names initialCapacity="2">
+                <queries:FreshNames initialCapacity="2">
                     <queries:Name value="action"/>
                     <queries:Name value="author"/>
-                </queries:Names>
+                </queries:FreshNames>
                 <queries:Path initialCapacity="2">
                     <queries:VariableRefStep value="primarySelectedEntity"/>
                     <queries:Choose initialCapacity="1">
@@ -48,10 +48,13 @@
                                     </actions:GroupAction>
                                 </actions:Actions>
                             </commons:StageUpFragment>
-                            <queries:Or initialCapacity="2">
-                                <queries:AtTypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
-                                <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
-                            </queries:Or>
+                            <queries:Filter>
+                                <queries:SelfStep/>
+                                <queries:Or initialCapacity="2">
+                                    <queries:AtTypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
+                                    <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.metadata:MetadataModel#Author"/>
+                                </queries:Or>
+                            </queries:Filter>
                             <queries:Select>
                                 <queries:Filter>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">

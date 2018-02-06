@@ -18,7 +18,7 @@
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             </queries:Some>
                             <queries:Scope>
-                                <queries:Names initialCapacity="9">
+                                <queries:FreshNames initialCapacity="9">
                                     <queries:Name value="type"/>
                                     <queries:Name value="name"/>
                                     <queries:Name value="getterName"/>
@@ -28,7 +28,7 @@
                                     <queries:Name value="bodyDeclarations"/>
                                     <queries:Name value="beanModelPackage"/>
                                     <queries:Name value="artifacts"/>
-                                </queries:Names>
+                                </queries:FreshNames>
                                 <queries:Choose initialCapacity="3">
                                     <queries:If>
                                         <queries:MatchTest>
@@ -380,7 +380,7 @@
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             </queries:Some>
                             <queries:Scope>
-                                <queries:Names initialCapacity="11">
+                                <queries:FreshNames initialCapacity="11">
                                     <queries:Name value="factoryName"/>
                                     <queries:Name value="factoryMethodName"/>
                                     <queries:Name value="parameters"/>
@@ -392,7 +392,7 @@
                                     <queries:Name value="beanName"/>
                                     <queries:Name value="type"/>
                                     <queries:Name value="name"/>
-                                </queries:Names>
+                                </queries:FreshNames>
                                 <queries:Choose initialCapacity="6">
                                     <queries:If>
                                         <queries:And initialCapacity="3">
