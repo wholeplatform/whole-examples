@@ -18,12 +18,12 @@
             <actions:GuardedAction>
                 <actions:Label value="Rename"/>
                 <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:Names initialCapacity="4">
+                    <queries:FreshNames initialCapacity="4">
                         <queries:Name value="newNameTemp"/>
                         <queries:Name value="name"/>
                         <queries:Name value="newName"/>
                         <queries:Name value="factory"/>
-                    </queries:Names>
+                    </queries:FreshNames>
                     <queries:Block initialCapacity="2">
                         <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
                             <workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">

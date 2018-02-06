@@ -165,12 +165,10 @@
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:PedroModel#attributes"/>
                                         <queries:ChildStep/>
                                     </queries:Path>
-                                    <queries:Sequence initialCapacity="1">
-                                        <queries:Filter>
+                                    <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:PedroModel#name"/>
                                         <queries:VariableTest value="aname"/>
-                                        </queries:Filter>
-                                    </queries:Sequence>
+                                    </queries:Filter>
                                     <queries:TemplateNames/>
                                 </queries:Select>
                             </queries:Sequence>

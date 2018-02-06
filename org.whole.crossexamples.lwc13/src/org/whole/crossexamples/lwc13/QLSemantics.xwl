@@ -164,12 +164,12 @@
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Form"/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="4">
+                        <queries:FreshNames initialCapacity="4">
                             <queries:Name value="modelName"/>
                             <queries:Name value="modelsModel"/>
                             <queries:Name value="javaSWTClassName"/>
                             <queries:Name value="javaSWTModel"/>
-                        </queries:Names>
+                        </queries:FreshNames>
                         <queries:Block initialCapacity="8">
                             <queries:Filter>
                                 <queries:VariableRefStep value="packageArtifactsPoint"/>
@@ -214,13 +214,11 @@
                                         </commons:StageUpFragment>
                                     </artifacts:FileArtifact>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="artifactsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="artifactsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <semantics:FunctionApplication>
                                 <semantics:Name value="toModels"/>
@@ -267,13 +265,11 @@
                                         </commons:StageUpFragment>
                                     </artifacts:FileArtifact>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="artifactsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="artifactsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <semantics:FunctionApplication>
                                 <semantics:Name value="toJavaSWTModel"/>
@@ -297,13 +293,13 @@
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Form"/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="5">
+                        <queries:FreshNames initialCapacity="5">
                             <queries:Name value="modelUri"/>
                             <queries:Name value="modelNamespace"/>
                             <queries:Name value="modelName"/>
                             <queries:Name value="modelTypeRelationsPoint"/>
                             <queries:Name value="modelDeclarartionsPoint"/>
-                        </queries:Names>
+                        </queries:FreshNames>
                         <queries:Block initialCapacity="6">
                             <queries:Filter>
                                 <queries:Addition>
@@ -382,12 +378,10 @@
                                         </commons:Variable>
                                     </models:Model>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseUpdate>
-                                        <queries:VariableRefStep value="modelsModel"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseUpdate>
-                                </queries:Sequence>
+                                <queries:PointwiseUpdate>
+                                    <queries:VariableRefStep value="modelsModel"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseUpdate>
                             </queries:Path>
                             <semantics:FunctionApplication>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -434,13 +428,11 @@
                                     <commons:Resolver/>
                                 </models:Feature>
                             </commons:StageUpFragment>
-                            <queries:Sequence initialCapacity="1">
-                                <queries:PointwiseInsert>
-                                    <queries:Placement value="INTO"/>
-                                    <queries:VariableRefStep value="featuresPoint"/>
-                                    <queries:SelfStep/>
-                                </queries:PointwiseInsert>
-                            </queries:Sequence>
+                            <queries:PointwiseInsert>
+                                <queries:Placement value="INTO"/>
+                                <queries:VariableRefStep value="featuresPoint"/>
+                                <queries:SelfStep/>
+                            </queries:PointwiseInsert>
                         </queries:Path>
                         <semantics:FunctionApplication>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -640,9 +632,9 @@
                 <semantics:AnyType/>
             </semantics:FunctionType>
             <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                <queries:Names initialCapacity="1">
+                <queries:FreshNames initialCapacity="1">
                     <queries:Name value="entityName"/>
-                </queries:Names>
+                </queries:FreshNames>
                 <queries:Block initialCapacity="2">
                     <queries:Filter>
                         <queries:FeatureStep value="http://lang.whole.org/Models#name"/>
@@ -676,7 +668,7 @@
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Form"/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="7">
+                        <queries:FreshNames initialCapacity="7">
                             <queries:Name value="nameGenerator"/>
                             <queries:Name value="fieldUpdatersPoint"/>
                             <queries:Name value="fieldInitializationsPoint"/>
@@ -684,7 +676,7 @@
                             <queries:Name value="marshallStatementPoint"/>
                             <queries:Name value="methodDeclarations"/>
                             <queries:Name value="declarartionsPoint"/>
-                        </queries:Names>
+                        </queries:FreshNames>
                         <queries:Block initialCapacity="8">
                             <queries:Filter>
                                 <queries:Addition>
@@ -1083,6 +1075,7 @@
                                         <java:SimpleName value="args"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -1226,12 +1219,10 @@
                                         </java:TypeDeclarations>
                                     </java:CompilationUnit>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseUpdate>
-                                        <queries:VariableRefStep value="javaSWTModel"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseUpdate>
-                                </queries:Sequence>
+                                <queries:PointwiseUpdate>
+                                    <queries:VariableRefStep value="javaSWTModel"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseUpdate>
                             </queries:Path>
                             <semantics:FunctionApplication>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -1241,18 +1232,14 @@
                             </semantics:FunctionApplication>
                             <queries:Path initialCapacity="3">
                                 <queries:VariableRefStep value="methodDeclarations"/>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:Delete>
-                                        <queries:ChildStep/>
-                                    </queries:Delete>
-                                </queries:Sequence>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="declarationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:Delete>
+                                    <queries:ChildStep/>
+                                </queries:Delete>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="declarationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:VoidLiteral/>
                         </queries:Block>
@@ -1270,10 +1257,10 @@
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#ConditionalQuestions"/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="2">
+                        <queries:FreshNames initialCapacity="2">
                             <queries:Name value="conditionalName"/>
                             <queries:Name value="expressionPoint"/>
-                        </queries:Names>
+                        </queries:FreshNames>
                         <queries:Block initialCapacity="8">
                             <queries:Filter>
                                 <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
@@ -1323,13 +1310,11 @@
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     </semantics:FunctionApplication>
                                 </queries:Sequence>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="fieldUpdatersPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="fieldUpdatersPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:Path initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -1352,13 +1337,11 @@
                                         </java:VariableDeclarationFragments>
                                     </java:FieldDeclaration>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="declarationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="declarationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:Path initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -1387,13 +1370,11 @@
                                         </java:Assignment>
                                     </java:ExpressionStatement>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="fieldInitializationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="fieldInitializationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:Path initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -1417,13 +1398,11 @@
                                         </java:MethodInvocation>
                                     </java:ExpressionStatement>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="fieldInitializationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="fieldInitializationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <semantics:FunctionApplication>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -1442,13 +1421,11 @@
                                         </java:MethodInvocation>
                                     </java:ExpressionStatement>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="fieldInitializationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="fieldInitializationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:VoidLiteral/>
                         </queries:Block>
@@ -1468,9 +1445,9 @@
                                 </queries:ExpressionTest>
                             </queries:Filter>
                             <queries:Scope>
-                                <queries:Names initialCapacity="1">
+                                <queries:FreshNames initialCapacity="1">
                                     <queries:Name value="expressionPoint"/>
-                                </queries:Names>
+                                </queries:FreshNames>
                                 <queries:Sequence initialCapacity="2">
                                     <queries:Do>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -1506,19 +1483,17 @@
                                     </semantics:FunctionApplication>
                                 </queries:Sequence>
                             </queries:Scope>
-                            <queries:Sequence initialCapacity="1">
-                                <queries:PointwiseInsert>
-                                    <queries:Placement value="INTO"/>
-                                    <queries:VariableRefStep value="fieldUpdatersPoint"/>
-                                    <queries:SelfStep/>
-                                </queries:PointwiseInsert>
-                            </queries:Sequence>
+                            <queries:PointwiseInsert>
+                                <queries:Placement value="INTO"/>
+                                <queries:VariableRefStep value="fieldUpdatersPoint"/>
+                                <queries:SelfStep/>
+                            </queries:PointwiseInsert>
                         </queries:Path>
                         <queries:Path initialCapacity="2">
                             <queries:Scope>
-                                <queries:Names initialCapacity="1">
+                                <queries:FreshNames initialCapacity="1">
                                     <queries:Name value="typePoint"/>
-                                </queries:Names>
+                                </queries:FreshNames>
                                 <queries:Choose initialCapacity="2">
                                     <queries:If>
                                         <queries:ExpressionTest>
@@ -1583,19 +1558,17 @@
                                     </queries:Do>
                                 </queries:Choose>
                             </queries:Scope>
-                            <queries:Sequence initialCapacity="1">
-                                <queries:PointwiseInsert>
-                                    <queries:Placement value="INTO"/>
-                                    <queries:VariableRefStep value="declarationsPoint"/>
-                                    <queries:SelfStep/>
-                                </queries:PointwiseInsert>
-                            </queries:Sequence>
+                            <queries:PointwiseInsert>
+                                <queries:Placement value="INTO"/>
+                                <queries:VariableRefStep value="declarationsPoint"/>
+                                <queries:SelfStep/>
+                            </queries:PointwiseInsert>
                         </queries:Path>
                         <queries:Path initialCapacity="2">
                             <queries:Scope>
-                                <queries:Names initialCapacity="1">
+                                <queries:FreshNames initialCapacity="1">
                                     <queries:Name value="typePoint"/>
-                                </queries:Names>
+                                </queries:FreshNames>
                                 <queries:Choose initialCapacity="2">
                                     <queries:If>
                                         <queries:ExpressionTest>
@@ -1713,25 +1686,22 @@
                                     </queries:Do>
                                 </queries:Choose>
                             </queries:Scope>
-                            <queries:Sequence initialCapacity="1">
-                                <queries:PointwiseInsert>
-                                    <queries:Placement value="INTO"/>
-                                    <queries:VariableRefStep value="fieldInitializationsPoint"/>
-                                    <queries:SelfStep/>
-                                </queries:PointwiseInsert>
-                            </queries:Sequence>
+                            <queries:PointwiseInsert>
+                                <queries:Placement value="INTO"/>
+                                <queries:VariableRefStep value="fieldInitializationsPoint"/>
+                                <queries:SelfStep/>
+                            </queries:PointwiseInsert>
                         </queries:Path>
                         <queries:Path initialCapacity="2">
-                            <queries:Sequence initialCapacity="1">
-                                <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:Filter>
+                            <queries:If>
+                                <queries:ExpressionTest>
+                                    <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
                                         <queries:KindTest value="RESOLVER"/>
-                                        </queries:Filter>
-                                    </queries:ExpressionTest>
-                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                        <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
+                                    </queries:Filter>
+                                </queries:ExpressionTest>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:MethodInvocation>
                                         <commons:Resolver/>
                                         <java:Types initialCapacity="0"/>
@@ -1752,23 +1722,20 @@
                                         </commons:StageDownFragment>
                                         </java:Arguments>
                                         </java:MethodInvocation>
-                                        </java:ExpressionStatement>
-                                    </commons:StageUpFragment>
-                                </queries:If>
-                            </queries:Sequence>
-                            <queries:Sequence initialCapacity="1">
-                                <queries:PointwiseInsert>
-                                    <queries:Placement value="INTO"/>
-                                    <queries:VariableRefStep value="unmarshallStatementPoint"/>
-                                    <queries:SelfStep/>
-                                </queries:PointwiseInsert>
-                            </queries:Sequence>
+                                    </java:ExpressionStatement>
+                                </commons:StageUpFragment>
+                            </queries:If>
+                            <queries:PointwiseInsert>
+                                <queries:Placement value="INTO"/>
+                                <queries:VariableRefStep value="unmarshallStatementPoint"/>
+                                <queries:SelfStep/>
+                            </queries:PointwiseInsert>
                         </queries:Path>
                         <queries:Path initialCapacity="2">
                             <queries:Scope>
-                                <queries:Names initialCapacity="1">
+                                <queries:FreshNames initialCapacity="1">
                                     <queries:Name value="expressionPoint"/>
-                                </queries:Names>
+                                </queries:FreshNames>
                                 <queries:Choose initialCapacity="2">
                                     <queries:If>
                                         <queries:ExpressionTest>
@@ -1840,13 +1807,11 @@
                                     </queries:Do>
                                 </queries:Choose>
                             </queries:Scope>
-                            <queries:Sequence initialCapacity="1">
-                                <queries:PointwiseInsert>
-                                    <queries:Placement value="INTO"/>
-                                    <queries:VariableRefStep value="marshallStatementPoint"/>
-                                    <queries:SelfStep/>
-                                </queries:PointwiseInsert>
-                            </queries:Sequence>
+                            <queries:PointwiseInsert>
+                                <queries:Placement value="INTO"/>
+                                <queries:VariableRefStep value="marshallStatementPoint"/>
+                                <queries:SelfStep/>
+                            </queries:PointwiseInsert>
                         </queries:Path>
                         <queries:VoidLiteral/>
                     </queries:Block>
@@ -1912,12 +1877,10 @@
                                     </commons:StageUpFragment>
                                 </queries:If>
                             </queries:Choose>
-                            <queries:Sequence initialCapacity="1">
-                                <queries:PointwiseUpdate>
-                                    <queries:VariableRefStep value="typePoint"/>
-                                    <queries:SelfStep/>
-                                </queries:PointwiseUpdate>
-                            </queries:Sequence>
+                            <queries:PointwiseUpdate>
+                                <queries:VariableRefStep value="typePoint"/>
+                                <queries:SelfStep/>
+                            </queries:PointwiseUpdate>
                         </queries:Path>
                         <queries:VoidLiteral/>
                     </queries:Block>
@@ -1955,9 +1918,9 @@
                         <queries:TypeTest value="http://lang.whole.org/Math#Not"/>
                     </queries:Or>
                     <queries:Scope>
-                        <queries:Names initialCapacity="1">
+                        <queries:FreshNames initialCapacity="1">
                             <queries:Name value="expressionPoint"/>
-                        </queries:Names>
+                        </queries:FreshNames>
                         <queries:Block initialCapacity="3">
                             <queries:Path initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -2027,11 +1990,11 @@
                         <queries:TypeTest value="http://lang.whole.org/Math#GreaterOrEqual"/>
                     </queries:Or>
                     <queries:Scope>
-                        <queries:Names initialCapacity="3">
+                        <queries:FreshNames initialCapacity="3">
                             <queries:Name value="left"/>
                             <queries:Name value="right"/>
                             <queries:Name value="others"/>
-                        </queries:Names>
+                        </queries:FreshNames>
                         <queries:Block initialCapacity="5">
                             <queries:Path initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -2152,10 +2115,10 @@
                                 </semantics:FunctionApplication>
                             </queries:Path>
                             <queries:Scope>
-                                <queries:Names initialCapacity="2">
+                                <queries:FreshNames initialCapacity="2">
                                     <queries:Name value="expressionPoint"/>
                                     <queries:Name value="expressionsPoint"/>
-                                </queries:Names>
+                                </queries:FreshNames>
                                 <queries:Sequence initialCapacity="2">
                                     <queries:Filter>
                                         <queries:VariableRefStep value="left"/>
@@ -2175,10 +2138,10 @@
                                 </queries:Sequence>
                             </queries:Scope>
                             <queries:Scope>
-                                <queries:Names initialCapacity="2">
+                                <queries:FreshNames initialCapacity="2">
                                     <queries:Name value="expressionPoint"/>
                                     <queries:Name value="expressionsPoint"/>
-                                </queries:Names>
+                                </queries:FreshNames>
                                 <queries:Sequence initialCapacity="2">
                                     <queries:Filter>
                                         <queries:VariableRefStep value="right"/>
@@ -2198,10 +2161,10 @@
                                 </queries:Sequence>
                             </queries:Scope>
                             <queries:Scope>
-                                <queries:Names initialCapacity="2">
+                                <queries:FreshNames initialCapacity="2">
                                     <queries:Name value="expressionPoint"/>
                                     <queries:Name value="expressionsPoint"/>
-                                </queries:Names>
+                                </queries:FreshNames>
                                 <queries:Sequence initialCapacity="2">
                                     <queries:Filter>
                                         <queries:VariableRefStep value="others"/>
@@ -2344,10 +2307,10 @@
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLSModel#Section"/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="2">
+                        <queries:FreshNames initialCapacity="2">
                             <queries:Name value="sectionName"/>
                             <queries:Name value="stylePoint"/>
-                        </queries:Names>
+                        </queries:FreshNames>
                         <queries:Block initialCapacity="7">
                             <queries:Filter>
                                 <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
@@ -2384,13 +2347,11 @@
                                         </java:VariableDeclarationFragments>
                                     </java:FieldDeclaration>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="declarationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="declarationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:Path initialCapacity="2">
                                 <queries:Sequence initialCapacity="2">
@@ -2442,13 +2403,11 @@
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     </semantics:FunctionApplication>
                                 </queries:Sequence>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="fieldInitializationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="fieldInitializationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:Path initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -2472,13 +2431,11 @@
                                         </java:MethodInvocation>
                                     </java:ExpressionStatement>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="fieldInitializationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="fieldInitializationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <semantics:FunctionApplication>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -2497,13 +2454,11 @@
                                         </java:MethodInvocation>
                                     </java:ExpressionStatement>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="fieldInitializationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="fieldInitializationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:VoidLiteral/>
                         </queries:Block>
@@ -2512,9 +2467,9 @@
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLSModel#WithStyle"/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="1">
+                        <queries:FreshNames initialCapacity="1">
                             <queries:Name value="stylePoint"/>
-                        </queries:Names>
+                        </queries:FreshNames>
                         <queries:Block initialCapacity="4">
                             <queries:Path initialCapacity="2">
                                 <queries:Sequence initialCapacity="2">
@@ -2544,13 +2499,11 @@
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     </semantics:FunctionApplication>
                                 </queries:Sequence>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="fieldInitializationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="fieldInitializationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <semantics:FunctionApplication>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -2569,13 +2522,11 @@
                                         </java:MethodInvocation>
                                     </java:ExpressionStatement>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="fieldInitializationsPoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="fieldInitializationsPoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:VoidLiteral/>
                         </queries:Block>
@@ -2584,7 +2535,7 @@
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLSModel#StyleDef"/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="0"/>
+                        <queries:FreshNames initialCapacity="0"/>
                         <queries:Block initialCapacity="2">
                             <queries:Path initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -2659,13 +2610,11 @@
                                         </java:Arguments>
                                     </java:MethodInvocation>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="stylePoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="stylePoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:VoidLiteral/>
                         </queries:Block>
@@ -2674,7 +2623,7 @@
                 <queries:If>
                     <queries:TypeTest value="whole:org.whole.crossexamples.lwc13:QLSModel#Name"/>
                     <queries:Scope>
-                        <queries:Names initialCapacity="0"/>
+                        <queries:FreshNames initialCapacity="0"/>
                         <queries:Block initialCapacity="2">
                             <queries:Path initialCapacity="2">
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -2692,13 +2641,11 @@
                                         </java:Arguments>
                                     </java:MethodInvocation>
                                 </commons:StageUpFragment>
-                                <queries:Sequence initialCapacity="1">
-                                    <queries:PointwiseInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:VariableRefStep value="stylePoint"/>
-                                        <queries:SelfStep/>
-                                    </queries:PointwiseInsert>
-                                </queries:Sequence>
+                                <queries:PointwiseInsert>
+                                    <queries:Placement value="INTO"/>
+                                    <queries:VariableRefStep value="stylePoint"/>
+                                    <queries:SelfStep/>
+                                </queries:PointwiseInsert>
                             </queries:Path>
                             <queries:VoidLiteral/>
                         </queries:Block>
@@ -2719,12 +2666,10 @@
                             <queries:VariableRefStep value="expressionPoint"/>
                         </queries:Path>
                     </queries:ExpressionTest>
-                    <queries:Sequence initialCapacity="1">
-                        <queries:PointwiseUpdate>
-                            <queries:VariableRefStep value="expressionPoint"/>
-                            <queries:SelfStep/>
-                        </queries:PointwiseUpdate>
-                    </queries:Sequence>
+                    <queries:PointwiseUpdate>
+                        <queries:VariableRefStep value="expressionPoint"/>
+                        <queries:SelfStep/>
+                    </queries:PointwiseUpdate>
                 </queries:If>
                 <queries:If>
                     <queries:ExpressionTest>
@@ -2732,13 +2677,11 @@
                             <queries:VariableRefStep value="expressionsPoint"/>
                         </queries:Path>
                     </queries:ExpressionTest>
-                    <queries:Sequence initialCapacity="1">
-                        <queries:PointwiseInsert>
-                            <queries:Placement value="INTO"/>
-                            <queries:VariableRefStep value="expressionsPoint"/>
-                            <queries:SelfStep/>
-                        </queries:PointwiseInsert>
-                    </queries:Sequence>
+                    <queries:PointwiseInsert>
+                        <queries:Placement value="INTO"/>
+                        <queries:VariableRefStep value="expressionsPoint"/>
+                        <queries:SelfStep/>
+                    </queries:PointwiseInsert>
                 </queries:If>
             </queries:Choose>
         </semantics:SemanticFunction>

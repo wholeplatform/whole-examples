@@ -42,9 +42,9 @@
                 <semantics:AnyType/>
             </semantics:FunctionType>
             <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                <queries:Names initialCapacity="1">
+                <queries:FreshNames initialCapacity="1">
                     <queries:Name value="source"/>
-                </queries:Names>
+                </queries:FreshNames>
                 <queries:Block initialCapacity="2">
                     <queries:Filter>
                         <queries:SelfStep/>

@@ -44,9 +44,9 @@
                                     </patterns:Slot>
                                     <patterns:DerivationPoint>
                                         <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                                        <queries:Names initialCapacity="1">
+                                        <queries:FreshNames initialCapacity="1">
                                         <queries:Name value="interfaceName"/>
-                                        </queries:Names>
+                                        </queries:FreshNames>
                                         <queries:Select>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <artifacts:FileArtifact>
@@ -167,9 +167,9 @@
                                         </patterns:Slot>
                                         <patterns:DerivationPoint>
                                         <queries:Scope xmlns:queries="http://lang.whole.org/Queries">
-                                        <queries:Names initialCapacity="1">
+                                        <queries:FreshNames initialCapacity="1">
                                         <queries:Name value="interfaceName"/>
-                                        </queries:Names>
+                                        </queries:FreshNames>
                                         <queries:Select>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <artifacts:FileArtifact>
