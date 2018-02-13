@@ -22,7 +22,7 @@
             <queries:Path initialCapacity="2">
                 <queries:Choose initialCapacity="4">
                     <queries:If>
-                        <queries:And initialCapacity="2">
+                        <queries:And initialCapacity="3">
                             <queries:MatchTest>
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                     <queries:Scope>
@@ -39,6 +39,10 @@
                                     </queries:Scope>
                                 </commons:StageUpFragment>
                             </queries:MatchTest>
+                            <queries:Some>
+                                <queries:VariableRefStep value="names"/>
+                                <queries:TypeTest value="http://lang.whole.org/Queries#Names"/>
+                            </queries:Some>
                             <queries:VariableTest value="template"/>
                         </queries:And>
                         <queries:CartesianUpdate>
@@ -75,7 +79,7 @@
                         </queries:CartesianUpdate>
                     </queries:If>
                     <queries:If>
-                        <queries:And initialCapacity="2">
+                        <queries:And initialCapacity="3">
                             <queries:MatchTest>
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                     <queries:Select>
@@ -102,6 +106,10 @@
                                     </queries:Select>
                                 </commons:StageUpFragment>
                             </queries:MatchTest>
+                            <queries:Some>
+                                <queries:VariableRefStep value="fromClause"/>
+                                <queries:LanguageTest value="http://lang.whole.org/Queries"/>
+                            </queries:Some>
                             <queries:VariableTest value="template"/>
                         </queries:And>
                         <queries:CartesianUpdate>
@@ -138,7 +146,7 @@
                         </queries:CartesianUpdate>
                     </queries:If>
                     <queries:If>
-                        <queries:And initialCapacity="2">
+                        <queries:And initialCapacity="3">
                             <queries:MatchTest>
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                     <queries:Sequence initialCapacity="1">
@@ -150,6 +158,12 @@
                                     </queries:Sequence>
                                 </commons:StageUpFragment>
                             </queries:MatchTest>
+                            <queries:Some>
+                                <queries:VariableRefStep value="fromClause"/>
+                                <queries:Not>
+                                    <queries:LanguageTest value="http://lang.whole.org/Commons"/>
+                                </queries:Not>
+                            </queries:Some>
                             <queries:VariableTest value="template"/>
                         </queries:And>
                         <queries:CartesianUpdate>
