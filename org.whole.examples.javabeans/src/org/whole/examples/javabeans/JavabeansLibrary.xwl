@@ -4,7 +4,7 @@
     <patterns:Namespace value="org.whole.examples.javabeans"/>
     <patterns:Name value="Javabeans"/>
     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-    <patterns:Declarations initialCapacity="4">
+    <patterns:Declarations initialCapacity="5">
         <patterns:FunctionDeclaration>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
             <patterns:Name value="replaceWithPatterns"/>
@@ -916,6 +916,34 @@
                 </patterns:Declarations>
                 <patterns:FunctionStep value="replaceWithPatterns"/>
             </patterns:ScopePoint>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="fieldPattern"/>
+            <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
+                    <commons:Resolver/>
+                    <java:ExtendedModifiers initialCapacity="1">
+                        <java:Modifier value="private"/>
+                    </java:ExtendedModifiers>
+                    <commons:Variable>
+                        <commons:VarType value="http://lang.whole.org/Java#Type"/>
+                        <commons:VarName value="type"/>
+                        <commons:Quantifier value="!"/>
+                    </commons:Variable>
+                    <java:VariableDeclarationFragments initialCapacity="1">
+                        <java:VariableDeclarationFragment>
+                            <commons:Variable>
+                                <commons:VarType value="http://lang.whole.org/Java#SimpleName"/>
+                                <commons:VarName value="name"/>
+                                <commons:Quantifier value="!"/>
+                            </commons:Variable>
+                            <java:ExtraDimensions value="0"/>
+                            <commons:Resolver/>
+                        </java:VariableDeclarationFragment>
+                    </java:VariableDeclarationFragments>
+                </java:FieldDeclaration>
+            </commons:StageUpFragment>
         </patterns:FunctionDeclaration>
     </patterns:Declarations>
 </patterns:Library>
