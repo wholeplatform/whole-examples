@@ -167,11 +167,11 @@
                 </queries:Do>
             </queries:Choose>
         </queries:Path>
-        <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+        <queries:Some xmlns:queries="http://lang.whole.org/Queries">
             <queries:Filter>
                 <queries:VariableRefStep value="primarySelectedEntity"/>
                 <queries:SubtypeTest value="http://lang.whole.org/Semantics#AbstractVariable"/>
             </queries:Filter>
-        </queries:ExpressionTest>
+        </queries:Some>
     </actions:GuardedAction>
 </misc:Misc>

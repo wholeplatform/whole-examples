@@ -75,12 +75,13 @@
                         </semantics:FunctionApplication>
                     </queries:Block>
                 </queries:Scope>
-                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Some xmlns:queries="http://lang.whole.org/Queries">
                     <queries:Filter>
                         <queries:VariableRefStep value="primarySelectedEntity"/>
                         <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
                     </queries:Filter>
-                </queries:ExpressionTest>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </queries:Some>
             </actions:GuardedAction>
         </actions:MenuActions>
         <actions:MenuActions initialCapacity="0"/>

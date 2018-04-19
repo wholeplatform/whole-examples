@@ -25,12 +25,13 @@
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                 </semantics:FunctionApplication>
-                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Some xmlns:queries="http://lang.whole.org/Queries">
                     <queries:Filter>
                         <queries:VariableRefStep value="primarySelectedEntity"/>
                         <queries:LanguageTest value="whole:org.whole.crossexamples.cg12.beans:BeansModel-10"/>
                     </queries:Filter>
-                </queries:ExpressionTest>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </queries:Some>
             </actions:GuardedAction>
             <actions:GuardedAction>
                 <actions:Label value="Migrate Beans 1 to 2 (handmade)"/>
@@ -40,12 +41,13 @@
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                 </semantics:FunctionApplication>
-                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Some xmlns:queries="http://lang.whole.org/Queries">
                     <queries:Filter>
                         <queries:VariableRefStep value="primarySelectedEntity"/>
                         <queries:LanguageTest value="whole:org.whole.crossexamples.cg12.beans:BeansModel-10"/>
                     </queries:Filter>
-                </queries:ExpressionTest>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                </queries:Some>
             </actions:GuardedAction>
             <actions:GuardedAction>
                 <actions:Label value="test domain clone"/>
