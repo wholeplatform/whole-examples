@@ -57,22 +57,19 @@
                     <queries:If>
                         <queries:And initialCapacity="3">
                             <queries:TypeTest value="http://lwc11.crossexamples.whole.org/entities#Property"/>
-                            <queries:ExpressionTest>
+                            <queries:Some>
                                 <queries:Filter>
                                     <queries:FeatureStep value="name"/>
                                     <queries:VariableTest value="name"/>
                                 </queries:Filter>
-                            </queries:ExpressionTest>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </queries:Some>
                             <queries:Some>
                                 <queries:PrecedingSiblingStep/>
-                                <queries:ExpressionTest>
-                                    <queries:Equals>
-                                        <queries:Singleton>
-                                        <queries:FeatureStep value="name"/>
-                                        </queries:Singleton>
-                                        <queries:VariableRefStep value="name"/>
-                                    </queries:Equals>
-                                </queries:ExpressionTest>
+                                <queries:Equals>
+                                    <queries:FeatureStep value="name"/>
+                                    <queries:VariableRefStep value="name"/>
+                                </queries:Equals>
                             </queries:Some>
                         </queries:And>
                         <queries:Call>
@@ -106,24 +103,23 @@
                     <queries:If>
                         <queries:And initialCapacity="3">
                             <queries:TypeTest value="http://lwc11.crossexamples.whole.org/entities#Property"/>
-                            <queries:ExpressionTest>
+                            <queries:Some>
                                 <queries:Filter>
                                     <queries:FeatureStep value="name"/>
                                     <queries:VariableTest value="name"/>
                                 </queries:Filter>
-                            </queries:ExpressionTest>
-                            <queries:ExpressionTest>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="isUpperCap"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
-                                    <workflows:StringLiteral value="isUpperCap(java.lang.String)"/>
-                                    <workflows:Expressions initialCapacity="1">
-                                        <workflows:Variable value="name"/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
-                            </queries:ExpressionTest>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </queries:Some>
+                            <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="isUpperCap"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                <workflows:StringLiteral value="isUpperCap(java.lang.String)"/>
+                                <workflows:Expressions initialCapacity="1">
+                                    <workflows:Variable value="name"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaClassMethod>
                         </queries:And>
                         <queries:Call>
                             <queries:Name value="addWarning"/>
@@ -156,24 +152,23 @@
                     <queries:If>
                         <queries:And initialCapacity="3">
                             <queries:TypeTest value="http://lwc11.crossexamples.whole.org/entities#Entity"/>
-                            <queries:ExpressionTest>
+                            <queries:Some>
                                 <queries:Filter>
                                     <queries:FeatureStep value="name"/>
                                     <queries:VariableTest value="name"/>
                                 </queries:Filter>
-                            </queries:ExpressionTest>
-                            <queries:ExpressionTest>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="isLowerCap"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
-                                    <workflows:StringLiteral value="isLowerCap(java.lang.String)"/>
-                                    <workflows:Expressions initialCapacity="1">
-                                        <workflows:Variable value="name"/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
-                            </queries:ExpressionTest>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </queries:Some>
+                            <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="isLowerCap"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                <workflows:StringLiteral value="org.whole.lang.util.StringUtils"/>
+                                <workflows:StringLiteral value="isLowerCap(java.lang.String)"/>
+                                <workflows:Expressions initialCapacity="1">
+                                    <workflows:Variable value="name"/>
+                                </workflows:Expressions>
+                            </workflows:InvokeJavaClassMethod>
                         </queries:And>
                         <queries:Call>
                             <queries:Name value="addWarning"/>
@@ -226,12 +221,13 @@
                         <queries:DescendantOrSelfStep/>
                         <queries:And initialCapacity="2">
                             <queries:TypeTest value="Entity"/>
-                            <queries:ExpressionTest>
+                            <queries:Some>
                                 <queries:Filter>
                                     <queries:FeatureStep value="name"/>
                                     <queries:VariableTest value="name"/>
                                 </queries:Filter>
-                            </queries:ExpressionTest>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </queries:Some>
                         </queries:And>
                     </queries:Filter>
                     <queries:Block initialCapacity="2">
@@ -387,18 +383,19 @@
                             <queries:DescendantOrSelfStep/>
                             <queries:And initialCapacity="2">
                                 <queries:TypeTest value="Entity"/>
-                                <queries:ExpressionTest>
+                                <queries:Some>
                                     <queries:Filter>
                                         <queries:FeatureStep value="name"/>
                                         <queries:VariableTest value="beanName"/>
                                     </queries:Filter>
-                                </queries:ExpressionTest>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Some>
                             </queries:And>
                         </queries:Filter>
                         <queries:Select>
                             <queries:Choose initialCapacity="2">
                                 <queries:If>
-                                    <queries:ExpressionTest>
+                                    <queries:Some>
                                         <queries:Path initialCapacity="2">
                                         <queries:FeatureStep value="behavior"/>
                                         <queries:Filter>
@@ -412,7 +409,8 @@
                                         </queries:And>
                                         </queries:Filter>
                                         </queries:Path>
-                                    </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
                                     <queries:Filter>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:BodyDeclarations xmlns:java="http://lang.whole.org/Java" initialCapacity="1">
@@ -539,6 +537,7 @@
                                         </commons:Variable>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -577,12 +576,13 @@
                                 <queries:FeatureStep value="properties"/>
                                 <queries:Filter>
                                     <queries:ChildStep/>
-                                    <queries:ExpressionTest>
+                                    <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="name"/>
                                         <queries:VariableTest value="pname"/>
                                         </queries:Filter>
-                                    </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
                                 </queries:Filter>
                             </queries:Path>
                             <queries:Sequence initialCapacity="5">
@@ -599,28 +599,19 @@
                                     </workflows:Variables>
                                 </workflows:Breakpoint>
                                 <queries:Path initialCapacity="2">
-                                    <queries:Filter>
-                                        <queries:FeatureStep value="type"/>
-                                        <queries:VariableTest value="rtype"/>
-                                    </queries:Filter>
+                                    <queries:FeatureStep value="type"/>
                                     <queries:Filter>
                                         <queries:Choose initialCapacity="3">
                                         <queries:If>
-                                        <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="rtype"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="string"/>
-                                        </queries:Equals>
-                                        </queries:ExpressionTest>
+                                        </queries:EqualsStep>
                                         <queries:StringLiteral value="String"/>
                                         </queries:If>
                                         <queries:If>
-                                        <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="rtype"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="date"/>
-                                        </queries:Equals>
-                                        </queries:ExpressionTest>
+                                        </queries:EqualsStep>
                                         <queries:StringLiteral value="java.util.Date"/>
                                         </queries:If>
                                         <queries:Do>
@@ -695,9 +686,7 @@
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </queries:Call>
                 </queries:Block>
-                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:BooleanLiteral value="true"/>
-                </queries:ExpressionTest>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
         </actions:MenuActions>
         <actions:MenuActions initialCapacity="0"/>
@@ -742,12 +731,13 @@
                             <queries:DescendantOrSelfStep/>
                             <queries:And initialCapacity="2">
                                 <queries:TypeTest value="Entity"/>
-                                <queries:ExpressionTest>
+                                <queries:Some>
                                     <queries:Filter>
                                         <queries:FeatureStep value="name"/>
                                         <queries:VariableTest value="tableName"/>
                                     </queries:Filter>
-                                </queries:ExpressionTest>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Some>
                             </queries:And>
                         </queries:Filter>
                         <queries:Select>
@@ -773,18 +763,20 @@
                                 <queries:Filter>
                                     <queries:ChildStep/>
                                     <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="name"/>
                                         <queries:VariableTest value="name"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="type"/>
                                         <queries:VariableTest value="type"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                     </queries:And>
                                 </queries:Filter>
                             </queries:Path>
@@ -795,9 +787,7 @@
                     </queries:Select>
                     <queries:TemplateNames/>
                 </queries:Select>
-                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:BooleanLiteral value="true"/>
-                </queries:ExpressionTest>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
             <actions:GuardedAction>
                 <actions:Label value="Entities to XML"/>
@@ -857,12 +847,13 @@
                             <queries:DescendantOrSelfStep/>
                             <queries:And initialCapacity="2">
                                 <queries:TypeTest value="Entity"/>
-                                <queries:ExpressionTest>
+                                <queries:Some>
                                     <queries:Filter>
                                         <queries:FeatureStep value="name"/>
                                         <queries:VariableTest value="entityName"/>
                                     </queries:Filter>
-                                </queries:ExpressionTest>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Some>
                             </queries:And>
                         </queries:Filter>
                         <queries:Select>
@@ -898,18 +889,20 @@
                                 <queries:Filter>
                                     <queries:ChildStep/>
                                     <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="name"/>
                                         <queries:VariableTest value="name"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="type"/>
                                         <queries:VariableTest value="type"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                     </queries:And>
                                 </queries:Filter>
                             </queries:Path>
@@ -920,9 +913,7 @@
                     </queries:Select>
                     <queries:TemplateNames/>
                 </queries:Select>
-                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:BooleanLiteral value="true"/>
-                </queries:ExpressionTest>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
             <actions:GuardedAction>
                 <actions:Label value="Entities to Models"/>
@@ -1049,12 +1040,13 @@
                                     <queries:DescendantOrSelfStep/>
                                     <queries:And initialCapacity="2">
                                         <queries:TypeTest value="http://lwc11.crossexamples.whole.org/entities#Entity"/>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/entities#name"/>
                                         <queries:VariableTest value="entityName"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                     </queries:And>
                                 </queries:Filter>
                                 <queries:Select>
@@ -1081,12 +1073,13 @@
                                         <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/entities#properties"/>
                                         <queries:Filter>
                                         <queries:ChildStep/>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="http://lwc11.crossexamples.whole.org/entities#name"/>
                                         <queries:VariableTest value="name"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         </queries:Filter>
                                     </queries:Path>
                                     <queries:Path initialCapacity="2">
@@ -1134,32 +1127,25 @@
                                 </queries:Filter>
                                 <queries:Filter>
                                     <queries:DescendantStep/>
-                                    <queries:And initialCapacity="3">
+                                    <queries:And initialCapacity="2">
                                         <queries:TypeTest value="http://lwc11.crossexamples.whole.org/entities#PrimitiveType"/>
                                         <queries:DistinctTest>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </queries:DistinctTest>
-                                        <queries:VariableTest value="type"/>
                                     </queries:And>
                                 </queries:Filter>
                                 <queries:Filter>
                                     <queries:Choose initialCapacity="3">
                                         <queries:If>
-                                        <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="type"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="string"/>
-                                        </queries:Equals>
-                                        </queries:ExpressionTest>
+                                        </queries:EqualsStep>
                                         <queries:StringLiteral value="String"/>
                                         </queries:If>
                                         <queries:If>
-                                        <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="type"/>
+                                        <queries:EqualsStep>
                                         <queries:StringLiteral value="date"/>
-                                        </queries:Equals>
-                                        </queries:ExpressionTest>
+                                        </queries:EqualsStep>
                                         <queries:StringLiteral value="java.util.Date"/>
                                         </queries:If>
                                         <queries:Do>
@@ -1174,9 +1160,7 @@
                         <queries:TemplateNames/>
                     </queries:Select>
                 </queries:Block>
-                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:BooleanLiteral value="true"/>
-                </queries:ExpressionTest>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
             <actions:GuardedAction>
                 <actions:Label value="Entities to RDB"/>
@@ -1314,12 +1298,13 @@
                                 <queries:DescendantOrSelfStep/>
                                 <queries:And initialCapacity="2">
                                     <queries:TypeTest value="Entity"/>
-                                    <queries:ExpressionTest>
+                                    <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="name"/>
                                         <queries:VariableTest value="tableName"/>
                                         </queries:Filter>
-                                    </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
                                 </queries:And>
                             </queries:Filter>
                             <queries:Sequence initialCapacity="2">
@@ -1357,13 +1342,14 @@
                                         <queries:Filter>
                                         <queries:ChildStep/>
                                         <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="name"/>
                                         <queries:VariableTest value="name"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="type"/>
                                         <queries:And initialCapacity="2">
@@ -1371,7 +1357,8 @@
                                         <queries:VariableTest value="rtype"/>
                                         </queries:And>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         </queries:And>
                                         </queries:Filter>
                                     </queries:Path>
@@ -1379,21 +1366,17 @@
                                         <queries:Filter>
                                         <queries:Choose initialCapacity="3">
                                         <queries:If>
-                                        <queries:ExpressionTest>
                                         <queries:Equals>
                                         <queries:VariableRefStep value="rtype"/>
                                         <queries:StringLiteral value="string"/>
                                         </queries:Equals>
-                                        </queries:ExpressionTest>
                                         <queries:StringLiteral value="VARCHAR"/>
                                         </queries:If>
                                         <queries:If>
-                                        <queries:ExpressionTest>
                                         <queries:Equals>
                                         <queries:VariableRefStep value="rtype"/>
                                         <queries:StringLiteral value="int"/>
                                         </queries:Equals>
-                                        </queries:ExpressionTest>
                                         <queries:StringLiteral value="INTEGER"/>
                                         </queries:If>
                                         <queries:Do>
@@ -1403,12 +1386,10 @@
                                         <queries:VariableTest value="type"/>
                                         </queries:Filter>
                                         <queries:If>
-                                        <queries:ExpressionTest>
                                         <queries:Equals>
                                         <queries:VariableRefStep value="rtype"/>
                                         <queries:StringLiteral value="string"/>
                                         </queries:Equals>
-                                        </queries:ExpressionTest>
                                         <queries:Filter>
                                         <queries:IntLiteral value="256"/>
                                         <queries:VariableTest value="size"/>
@@ -1471,13 +1452,14 @@
                                         <queries:Filter>
                                         <queries:ChildStep/>
                                         <queries:And initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="name"/>
                                         <queries:VariableTest value="name"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="type"/>
                                         <queries:And initialCapacity="2">
@@ -1487,7 +1469,8 @@
                                         <queries:VariableTest value="targetTableName"/>
                                         </queries:And>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         </queries:And>
                                         </queries:Filter>
                                     </queries:Path>
@@ -1506,9 +1489,7 @@
                     </queries:Sequence>
                     <queries:TemplateNames/>
                 </queries:Select>
-                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:BooleanLiteral value="true"/>
-                </queries:ExpressionTest>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
         </actions:MenuActions>
         <actions:MenuActions initialCapacity="0"/>

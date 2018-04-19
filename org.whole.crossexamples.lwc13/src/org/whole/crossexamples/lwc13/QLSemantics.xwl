@@ -56,17 +56,17 @@
                                 <queries:Or initialCapacity="2">
                                     <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
                                     <queries:Not>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:ParentStep/>
                                         <queries:SubtypeTest value="whole:org.whole.crossexamples.lwc13:QLModel#Questions"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                     </queries:Not>
                                 </queries:Or>
                                 <queries:Not>
-                                    <queries:ExpressionTest>
-                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                    <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="typeMap.containsKey(self)"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <workflows:Variable value="typeMap"/>
@@ -76,8 +76,7 @@
                                         <workflows:Expressions initialCapacity="1">
                                         <workflows:Variable value="self"/>
                                         </workflows:Expressions>
-                                        </workflows:InvokeJavaInstanceMethod>
-                                    </queries:ExpressionTest>
+                                    </workflows:InvokeJavaInstanceMethod>
                                 </queries:Not>
                             </queries:And>
                             <queries:Call>
@@ -118,8 +117,7 @@
                                     <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc13:QLSModel#style"/>
                                 </queries:Or>
                                 <queries:Not>
-                                    <queries:ExpressionTest>
-                                        <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                                    <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="styleSet.contains(self)"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <workflows:Variable value="styleSet"/>
@@ -129,8 +127,7 @@
                                         <workflows:Expressions initialCapacity="1">
                                         <workflows:Variable value="self"/>
                                         </workflows:Expressions>
-                                        </workflows:InvokeJavaInstanceMethod>
-                                    </queries:ExpressionTest>
+                                    </workflows:InvokeJavaInstanceMethod>
                                 </queries:Not>
                             </queries:And>
                             <queries:Call>
@@ -402,12 +399,13 @@
                                     <models:FeatureModifiers initialCapacity="1">
                                         <commons:StageDownFragment>
                                         <queries:If>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
                                         <queries:KindTest value="IMPL"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver/>
+                                        </queries:Some>
                                         <commons:StageUpFragment>
                                         <models:FeatureModifier value="derived"/>
                                         </commons:StageUpFragment>
@@ -459,11 +457,9 @@
                         <queries:Path initialCapacity="2">
                             <queries:Choose initialCapacity="5">
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:EqualsStep>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="BOOLEAN"/>
-                                        </queries:EqualsStep>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
                                         <models:EntityModifiers initialCapacity="0"/>
@@ -474,11 +470,9 @@
                                     </commons:StageUpFragment>
                                 </queries:If>
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:EqualsStep>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="STRING"/>
-                                        </queries:EqualsStep>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
                                         <models:EntityModifiers initialCapacity="0"/>
@@ -489,11 +483,9 @@
                                     </commons:StageUpFragment>
                                 </queries:If>
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:EqualsStep>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="INTEGER"/>
-                                        </queries:EqualsStep>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
                                         <models:EntityModifiers initialCapacity="0"/>
@@ -504,11 +496,9 @@
                                     </commons:StageUpFragment>
                                 </queries:If>
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:EqualsStep>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="DATE"/>
-                                        </queries:EqualsStep>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
                                         <models:EntityModifiers initialCapacity="0"/>
@@ -519,11 +509,9 @@
                                     </commons:StageUpFragment>
                                 </queries:If>
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:EqualsStep>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="MONEY"/>
-                                        </queries:EqualsStep>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <models:DataEntity xmlns:models="http://lang.whole.org/Models">
                                         <models:EntityModifiers initialCapacity="0"/>
@@ -861,9 +849,7 @@
                                         <semantics:TypeCast>
                                         <semantics:EntityType value="http://lang.whole.org/Java#StringLiteral"/>
                                         <queries:Addition>
-                                        <queries:Singleton>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#name"/>
-                                        </queries:Singleton>
                                         <queries:StringLiteral value=".xwl"/>
                                         </queries:Addition>
                                         </semantics:TypeCast>
@@ -1022,9 +1008,7 @@
                                         <semantics:TypeCast>
                                         <semantics:EntityType value="http://lang.whole.org/Java#StringLiteral"/>
                                         <queries:Addition>
-                                        <queries:Singleton>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#name"/>
-                                        </queries:Singleton>
                                         <queries:StringLiteral value=".xwl"/>
                                         </queries:Addition>
                                         </semantics:TypeCast>
@@ -1278,8 +1262,7 @@
                             </queries:Filter>
                             <queries:Path initialCapacity="2">
                                 <queries:Sequence initialCapacity="2">
-                                    <queries:Do>
-                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:MethodInvocation>
                                         <commons:Variable>
@@ -1301,8 +1284,7 @@
                                         </java:Arguments>
                                         </java:MethodInvocation>
                                         </java:ExpressionStatement>
-                                        </commons:StageUpFragment>
-                                    </queries:Do>
+                                    </commons:StageUpFragment>
                                     <semantics:FunctionApplication>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#enablingCondition"/>
@@ -1437,12 +1419,13 @@
                         <queries:Path initialCapacity="3">
                             <queries:Filter>
                                 <queries:SelfStep/>
-                                <queries:ExpressionTest>
+                                <queries:Some>
                                     <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
                                         <queries:KindTest value="IMPL"/>
                                     </queries:Filter>
-                                </queries:ExpressionTest>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Some>
                             </queries:Filter>
                             <queries:Scope>
                                 <queries:FreshNames initialCapacity="1">
@@ -1496,12 +1479,13 @@
                                 </queries:FreshNames>
                                 <queries:Choose initialCapacity="2">
                                     <queries:If>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
                                         <queries:KindTest value="RESOLVER"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <queries:Sequence initialCapacity="2">
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
@@ -1571,12 +1555,13 @@
                                 </queries:FreshNames>
                                 <queries:Choose initialCapacity="2">
                                     <queries:If>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
                                         <queries:KindTest value="RESOLVER"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <queries:Sequence initialCapacity="2">
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
@@ -1694,12 +1679,13 @@
                         </queries:Path>
                         <queries:Path initialCapacity="2">
                             <queries:If>
-                                <queries:ExpressionTest>
+                                <queries:Some>
                                     <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
                                         <queries:KindTest value="RESOLVER"/>
                                     </queries:Filter>
-                                </queries:ExpressionTest>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Some>
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                     <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:MethodInvocation>
@@ -1738,12 +1724,13 @@
                                 </queries:FreshNames>
                                 <queries:Choose initialCapacity="2">
                                     <queries:If>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
                                         <queries:KindTest value="RESOLVER"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:MethodInvocation>
@@ -1822,56 +1809,41 @@
                         <queries:Path initialCapacity="2">
                             <queries:Choose initialCapacity="5">
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="BOOLEAN"/>
-                                        </queries:Equals>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="BooleanControl"/>
                                     </commons:StageUpFragment>
                                 </queries:If>
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="STRING"/>
-                                        </queries:Equals>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="StringControl"/>
                                     </commons:StageUpFragment>
                                 </queries:If>
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="INTEGER"/>
-                                        </queries:Equals>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="IntegerControl"/>
                                     </commons:StageUpFragment>
                                 </queries:If>
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="DATE"/>
-                                        </queries:Equals>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="DateControl"/>
                                     </commons:StageUpFragment>
                                 </queries:If>
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:Equals>
-                                        <queries:VariableRefStep value="self"/>
+                                    <queries:EqualsStep>
                                         <queries:StringLiteral value="MONEY"/>
-                                        </queries:Equals>
-                                    </queries:ExpressionTest>
+                                    </queries:EqualsStep>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:SimpleType xmlns:java="http://lang.whole.org/Java" value="MoneyControl"/>
                                     </commons:StageUpFragment>
@@ -2355,8 +2327,7 @@
                             </queries:Path>
                             <queries:Path initialCapacity="2">
                                 <queries:Sequence initialCapacity="2">
-                                    <queries:Do>
-                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:Assignment>
                                         <commons:Variable>
@@ -2394,8 +2365,7 @@
                                         </java:ClassInstanceCreation>
                                         </java:Assignment>
                                         </java:ExpressionStatement>
-                                        </commons:StageUpFragment>
-                                    </queries:Do>
+                                    </commons:StageUpFragment>
                                     <semantics:FunctionApplication>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLSModel#titleStyle"/>
@@ -2473,8 +2443,7 @@
                         <queries:Block initialCapacity="4">
                             <queries:Path initialCapacity="2">
                                 <queries:Sequence initialCapacity="2">
-                                    <queries:Do>
-                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:MethodInvocation>
                                         <commons:Resolver/>
@@ -2490,8 +2459,7 @@
                                         </commons:StageDownFragment>
                                         </java:MethodInvocation>
                                         </java:ExpressionStatement>
-                                        </commons:StageUpFragment>
-                                    </queries:Do>
+                                    </commons:StageUpFragment>
                                     <semantics:FunctionApplication>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLSModel#style"/>
@@ -2661,22 +2629,20 @@
             </semantics:FunctionType>
             <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
                 <queries:If>
-                    <queries:ExpressionTest>
-                        <queries:Path initialCapacity="1">
-                            <queries:VariableRefStep value="expressionPoint"/>
-                        </queries:Path>
-                    </queries:ExpressionTest>
+                    <queries:Some>
+                        <queries:VariableRefStep value="expressionPoint"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Some>
                     <queries:PointwiseUpdate>
                         <queries:VariableRefStep value="expressionPoint"/>
                         <queries:SelfStep/>
                     </queries:PointwiseUpdate>
                 </queries:If>
                 <queries:If>
-                    <queries:ExpressionTest>
-                        <queries:Path initialCapacity="1">
-                            <queries:VariableRefStep value="expressionsPoint"/>
-                        </queries:Path>
-                    </queries:ExpressionTest>
+                    <queries:Some>
+                        <queries:VariableRefStep value="expressionPoint"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Some>
                     <queries:PointwiseInsert>
                         <queries:Placement value="INTO"/>
                         <queries:VariableRefStep value="expressionsPoint"/>

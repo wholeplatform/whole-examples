@@ -841,12 +841,13 @@
                                         <queries:ChildStep/>
                                         <queries:And initialCapacity="2">
                                         <patterns:PatternTypeTest value="VisitorArtifact"/>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <patterns:SlotStep value="name"/>
                                         <queries:VariableTest value="name"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver/>
+                                        </queries:Some>
                                         </queries:And>
                                         </queries:Filter>
                                         </queries:Path>

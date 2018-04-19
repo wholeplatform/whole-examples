@@ -194,12 +194,13 @@
                                     <queries:VariableTest value="name"/>
                                 </queries:Filter>
                                 <queries:If>
-                                    <queries:ExpressionTest>
+                                    <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:AngeloModel#init"/>
                                         <queries:KindTest value="IMPL"/>
                                         </queries:Filter>
-                                    </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
                                     <queries:Filter>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <wxml:Attribute xmlns:wxml="http://lang.whole.org/Xml">
@@ -241,14 +242,15 @@
                                     <queries:ChildStep/>
                                     <queries:And initialCapacity="2">
                                         <queries:TypeTest value="whole:org.whole.crossexamples.cg12.live:AngeloModel#ProductionUnit"/>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:AngeloModel#init"/>
                                         <queries:Not>
                                         <queries:KindTest value="IMPL"/>
                                         </queries:Not>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                     </queries:And>
                                 </queries:Filter>
                             </queries:Path>
@@ -308,19 +310,20 @@
                                 <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:AngeloModel#units"/>
                                 <queries:Filter>
                                     <queries:ChildStep/>
-                                    <queries:ExpressionTest>
+                                    <queries:Some>
                                         <queries:Filter>
                                         <queries:Sequence initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:AngeloModel#init"/>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:AngeloModel#position"/>
                                         </queries:Sequence>
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <angelomodel:Position xmlns:angelomodel="whole:org.whole.crossexamples.cg12.live:AngeloModel" value="FORWARD"/>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         </queries:Filter>
-                                    </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
                                 </queries:Filter>
                             </queries:Path>
                             <queries:Sequence initialCapacity="1">
@@ -379,19 +382,20 @@
                                 <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:AngeloModel#units"/>
                                 <queries:Filter>
                                     <queries:ChildStep/>
-                                    <queries:ExpressionTest>
+                                    <queries:Some>
                                         <queries:Filter>
                                         <queries:Sequence initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:AngeloModel#init"/>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.cg12.live:AngeloModel#position"/>
                                         </queries:Sequence>
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <angelomodel:Position xmlns:angelomodel="whole:org.whole.crossexamples.cg12.live:AngeloModel" value="BACKWARD"/>
                                         </commons:StageUpFragment>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         </queries:Filter>
-                                    </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
                                 </queries:Filter>
                             </queries:Path>
                             <queries:Sequence initialCapacity="1">

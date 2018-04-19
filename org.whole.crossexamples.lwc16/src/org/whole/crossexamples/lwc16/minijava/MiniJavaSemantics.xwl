@@ -58,19 +58,18 @@
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             </semantics:FunctionApplication>
-                            <queries:ExpressionTest>
+                            <queries:Some>
                                 <queries:Filter>
                                     <queries:FeatureStep value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#name"/>
                                     <queries:Or initialCapacity="2">
-                                        <queries:ExpressionTest>
                                         <queries:EqualsStep>
                                         <queries:VariableRefStep value="name"/>
                                         </queries:EqualsStep>
-                                        </queries:ExpressionTest>
                                         <queries:VariableTest value="source"/>
                                     </queries:Or>
                                 </queries:Filter>
-                            </queries:ExpressionTest>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            </queries:Some>
                         </queries:Filter>
                         <queries:IndexTest>
                             <queries:IntLiteral value="0"/>
@@ -144,11 +143,9 @@
                             <queries:TypeTest value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaModel#Identifier"/>
                             <queries:TypeTest value="http://lang.whole.org/Workflows#Variable"/>
                         </queries:Or>
-                        <queries:ExpressionTest>
-                            <queries:EqualsStep>
-                                <queries:VariableRefStep value="name"/>
-                            </queries:EqualsStep>
-                        </queries:ExpressionTest>
+                        <queries:EqualsStep>
+                            <queries:VariableRefStep value="name"/>
+                        </queries:EqualsStep>
                     </queries:And>
                 </queries:Filter>
             </queries:Path>

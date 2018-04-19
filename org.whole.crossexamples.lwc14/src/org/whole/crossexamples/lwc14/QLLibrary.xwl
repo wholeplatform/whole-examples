@@ -54,15 +54,15 @@
                                     <queries:Or initialCapacity="3">
                                         <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc14:QLModel#expression"/>
                                         <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:ParentStep/>
                                         <queries:LanguageTest value="http://lang.whole.org/Math"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                     </queries:Or>
                                     <queries:Not>
-                                        <queries:ExpressionTest>
                                         <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="typeMap.containsKey(self)"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -74,7 +74,6 @@
                                         <workflows:Variable value="self"/>
                                         </workflows:Expressions>
                                         </workflows:InvokeJavaInstanceMethod>
-                                        </queries:ExpressionTest>
                                     </queries:Not>
                                 </queries:And>
                                 <queries:Call>
@@ -115,7 +114,6 @@
                                         <queries:AtFeatureTest value="whole:org.whole.crossexamples.lwc14:QLSModel#style"/>
                                     </queries:Or>
                                     <queries:Not>
-                                        <queries:ExpressionTest>
                                         <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="styleSet.contains(self)"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -127,7 +125,6 @@
                                         <workflows:Variable value="self"/>
                                         </workflows:Expressions>
                                         </workflows:InvokeJavaInstanceMethod>
-                                        </queries:ExpressionTest>
                                     </queries:Not>
                                 </queries:And>
                                 <queries:Call>
@@ -761,12 +758,13 @@
                                         <javascript:Expressions initialCapacity="1">
                                         <patterns:SelectionPoint initialCapacity="2">
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#expression"/>
                                         <queries:KindTest value="IMPL"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <patterns:JoinPoint>
                                         <patterns:Name value="lazyEvaluationPoint"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -863,11 +861,12 @@
                                         </javascript:VariableInitializers>
                                         </javascript:VariableDeclaration>
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Path initialCapacity="1">
                                         <queries:VariableRefStep value="className"/>
                                         </queries:Path>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <javascript:ExpressionStatement xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
                                         <javascript:CallExpression>
                                         <javascript:StaticMemberExpression>
@@ -898,12 +897,13 @@
                                         </patterns:SequencePoint>
                                         </patterns:TemplatePoint>
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#expression"/>
                                         <queries:KindTest value="IMPL"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <patterns:DerivationPoint>
                                         <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                                         <semantics:Name value="lazyEvaluation"/>
@@ -938,51 +938,39 @@
                                     <patterns:TemplatePoint>
                                         <patterns:SelectionPoint initialCapacity="6">
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
                                         <queries:EqualsStep>
                                         <queries:StringLiteral value="BOOLEAN"/>
                                         </queries:EqualsStep>
-                                        </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="BooleanValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
                                         <queries:EqualsStep>
                                         <queries:StringLiteral value="STRING"/>
                                         </queries:EqualsStep>
-                                        </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="StringValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
                                         <queries:EqualsStep>
                                         <queries:StringLiteral value="INTEGER"/>
                                         </queries:EqualsStep>
-                                        </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="IntegerValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
                                         <queries:EqualsStep>
                                         <queries:StringLiteral value="DECIMAL"/>
                                         </queries:EqualsStep>
-                                        </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="DecimalValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
                                         <queries:EqualsStep>
                                         <queries:StringLiteral value="DATE"/>
                                         </queries:EqualsStep>
-                                        </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="DateValueWidget"/>
                                         </patterns:ConditionPoint>
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
                                         <queries:EqualsStep>
                                         <queries:StringLiteral value="MONEY"/>
                                         </queries:EqualsStep>
-                                        </queries:ExpressionTest>
                                         <javascript:Identifier xmlns:javascript="whole:org.whole.lang.javascript:JavaScript" value="MoneyValueWidget"/>
                                         </patterns:ConditionPoint>
                                         </patterns:SelectionPoint>
@@ -1113,14 +1101,10 @@
                                     <queries:FeatureStep value="whole:org.whole.lang.patterns:PatternsModel#declarations"/>
                                     <queries:Filter>
                                         <queries:ChildStep/>
-                                        <queries:ExpressionTest>
                                         <queries:Equals>
-                                        <queries:Singleton>
                                         <queries:FeatureStep value="whole:org.whole.lang.patterns:PatternsModel#name"/>
-                                        </queries:Singleton>
                                         <queries:StringLiteral value="toJavaScript"/>
                                         </queries:Equals>
-                                        </queries:ExpressionTest>
                                     </queries:Filter>
                                     <queries:FeatureStep value="whole:org.whole.lang.patterns:PatternsModel#body"/>
                                     <queries:ChildStep/>
@@ -1214,12 +1198,13 @@
                                         </javascript:VariableInitializers>
                                         </javascript:VariableDeclaration>
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#titleStyle"/>
                                         <queries:KindTest value="IMPL"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <javascript:ExpressionStatement xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
                                         <javascript:CallExpression>
                                         <javascript:StaticMemberExpression>
@@ -1363,11 +1348,12 @@
                                         </javascript:VariableInitializers>
                                         </javascript:VariableDeclaration>
                                         <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Path initialCapacity="1">
                                         <queries:VariableRefStep value="className"/>
                                         </queries:Path>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <javascript:ExpressionStatement xmlns:javascript="whole:org.whole.lang.javascript:JavaScript">
                                         <javascript:CallExpression>
                                         <javascript:StaticMemberExpression>
@@ -1485,6 +1471,7 @@
                                         <patterns:FunctionPoint>
                                         <patterns:Name value="distinctNames"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </patterns:FunctionPoint>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
                                         </patterns:DerivationPoint>
@@ -1499,6 +1486,7 @@
                                         <patterns:DerivationPoint>
                                         <patterns:FunctionPoint>
                                         <patterns:Name value="distinctNames"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </patterns:FunctionPoint>
                                         <models:EntityType xmlns:models="http://lang.whole.org/Models" value="whole:org.whole.lang.javascript:JavaScript#Identifier"/>
@@ -1627,56 +1615,59 @@
                                         </patterns:ConditionPoint>
                                     </patterns:SelectionPoint>
                                     <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#fontStyle"/>
                                         <queries:Or initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <patterns:TemplatePoint>
                                         <qls:FontStyle xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="ITALIC"/>
                                         </patterns:TemplatePoint>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        </queries:MatchTest>
+                                        <queries:MatchTest>
                                         <patterns:TemplatePoint>
                                         <qls:FontStyle xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="BOLD_ITALIC"/>
                                         </patterns:TemplatePoint>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         </queries:Or>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="1">
                                         <text:Text value="&#9;font-style: italic;"/>
                                         </text:Row>
                                     </patterns:ConditionPoint>
                                     <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#fontStyle"/>
                                         <queries:Or initialCapacity="2">
-                                        <queries:ExpressionTest>
+                                        <queries:MatchTest>
                                         <patterns:TemplatePoint>
                                         <qls:FontStyle xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="BOLD"/>
                                         </patterns:TemplatePoint>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
+                                        </queries:MatchTest>
+                                        <queries:MatchTest>
                                         <patterns:TemplatePoint>
                                         <qls:FontStyle xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="BOLD_ITALIC"/>
                                         </patterns:TemplatePoint>
-                                        </queries:ExpressionTest>
+                                        </queries:MatchTest>
                                         </queries:Or>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="1">
                                         <text:Text value="&#9;font-weight: bold;"/>
                                         </text:Row>
                                     </patterns:ConditionPoint>
                                     <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#fontSize"/>
                                         <queries:KindTest value="IMPL"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="4">
                                         <text:TextSeparator value=""/>
                                         <text:Text value="&#9;font-size: "/>
@@ -1688,12 +1679,13 @@
                                         </text:Row>
                                     </patterns:ConditionPoint>
                                     <patterns:ConditionPoint>
-                                        <queries:ExpressionTest>
+                                        <queries:Some>
                                         <queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLSModel#color"/>
                                         <queries:KindTest value="IMPL"/>
                                         </queries:Filter>
-                                        </queries:ExpressionTest>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
                                         <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="4">
                                         <text:TextSeparator value=""/>
                                         <text:Text value="&#9;color: "/>

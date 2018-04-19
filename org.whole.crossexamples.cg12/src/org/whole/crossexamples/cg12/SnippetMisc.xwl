@@ -40,7 +40,7 @@
                     <queries:DescendantOrSelfStep/>
                     <queries:And initialCapacity="2">
                         <queries:TypeTest value="whole:com.metatis.activebook:ActiveBook#Page"/>
-                        <queries:ExpressionTest>
+                        <queries:MatchTest>
                             <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                 <activebook:Page xmlns:activebook="whole:com.metatis.activebook:ActiveBook">
                                     <activebook:IntData value="16"/>
@@ -51,7 +51,7 @@
                                     </commons:Variable>
                                 </activebook:Page>
                             </commons:StageUpFragment>
-                        </queries:ExpressionTest>
+                        </queries:MatchTest>
                     </queries:And>
                 </queries:Filter>
             </queries:Delete>
@@ -110,12 +110,10 @@
             </queries:Names>
             <queries:Choose initialCapacity="2">
                 <queries:If>
-                    <queries:ExpressionTest>
-                        <queries:LessOrEquals>
-                            <queries:VariableRefStep value="x"/>
-                            <queries:IntLiteral value="1"/>
-                        </queries:LessOrEquals>
-                    </queries:ExpressionTest>
+                    <queries:LessOrEquals>
+                        <queries:VariableRefStep value="x"/>
+                        <queries:IntLiteral value="1"/>
+                    </queries:LessOrEquals>
                     <queries:IntLiteral value="1"/>
                 </queries:If>
                 <queries:Do>
@@ -149,12 +147,12 @@
             <queries:VariableRefStep value="primarySelectedEntity"/>
             <queries:Choose initialCapacity="2">
                 <queries:If>
-                    <queries:ExpressionTest>
+                    <queries:Some>
                         <queries:Filter>
                             <queries:FeatureStep value="http://lang.whole.org/Semantics#index"/>
                             <queries:TypeTest value="http://lang.whole.org/Semantics#Num"/>
                         </queries:Filter>
-                    </queries:ExpressionTest>
+                    </queries:Some>
                     <queries:Addition>
                         <queries:Singleton>
                             <queries:FeatureStep value="http://lang.whole.org/Semantics#variable"/>

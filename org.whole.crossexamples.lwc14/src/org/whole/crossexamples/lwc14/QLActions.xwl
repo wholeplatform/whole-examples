@@ -181,12 +181,10 @@
                             </queries:Names>
                             <queries:Choose initialCapacity="2">
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:GreaterOrEquals>
+                                    <queries:GreaterOrEquals>
                                         <queries:VariableRefStep value="min"/>
                                         <queries:VariableRefStep value="max"/>
-                                        </queries:GreaterOrEquals>
-                                    </queries:ExpressionTest>
+                                    </queries:GreaterOrEquals>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <ql:SequentialQuestions xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel" initialCapacity="1">
                                         <commons:StageDownFragment>
@@ -244,12 +242,10 @@
                                         <commons:StageDownFragment>
                                         <queries:Choose initialCapacity="2">
                                         <queries:If>
-                                        <queries:ExpressionTest>
                                         <math:Equals xmlns:math="http://lang.whole.org/Math" initialCapacity="2">
                                         <queries:VariableRefStep value="min"/>
                                         <queries:VariableRefStep value="middle"/>
                                         </math:Equals>
-                                        </queries:ExpressionTest>
                                         <queries:Addition>
                                         <queries:StringLiteral value="is the answer "/>
                                         <queries:Addition>
@@ -398,12 +394,10 @@
                             </queries:Names>
                             <queries:Choose initialCapacity="2">
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:GreaterOrEquals>
+                                    <queries:GreaterOrEquals>
                                         <queries:VariableRefStep value="min"/>
                                         <queries:VariableRefStep value="max"/>
-                                        </queries:GreaterOrEquals>
-                                    </queries:ExpressionTest>
+                                    </queries:GreaterOrEquals>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <ql:SequentialQuestions xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel" initialCapacity="2">
                                         <qls:Text xmlns:qls="whole:org.whole.crossexamples.lwc14:QLSModel" value="the answer is:"/>
@@ -456,12 +450,10 @@
                                         <commons:StageDownFragment>
                                         <queries:Choose initialCapacity="2">
                                         <queries:If>
-                                        <queries:ExpressionTest>
                                         <math:Equals xmlns:math="http://lang.whole.org/Math" initialCapacity="2">
                                         <queries:VariableRefStep value="min"/>
                                         <queries:VariableRefStep value="middle"/>
                                         </math:Equals>
-                                        </queries:ExpressionTest>
                                         <workflows:CreateEntity xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="create stage down"/>
                                         <commons:Resolver/>
@@ -635,8 +627,7 @@
                             </queries:Names>
                             <queries:Choose initialCapacity="2">
                                 <queries:If>
-                                    <queries:ExpressionTest>
-                                        <queries:LessOrEquals>
+                                    <queries:LessOrEquals>
                                         <queries:Addition>
                                         <queries:Subtraction>
                                         <queries:VariableRefStep value="max"/>
@@ -645,8 +636,7 @@
                                         <queries:IntLiteral value="1"/>
                                         </queries:Addition>
                                         <queries:VariableRefStep value="width"/>
-                                        </queries:LessOrEquals>
-                                    </queries:ExpressionTest>
+                                    </queries:LessOrEquals>
                                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <reusables:Reuse xmlns:reusables="whole:org.whole.lang.reusables:ReusablesModel">
                                         <reusables:Workspace>
@@ -832,12 +822,10 @@
                                         <commons:StageDownFragment>
                                         <queries:Choose initialCapacity="2">
                                         <queries:If>
-                                        <queries:ExpressionTest>
                                         <math:Equals xmlns:math="http://lang.whole.org/Math" initialCapacity="2">
                                         <queries:VariableRefStep value="min"/>
                                         <queries:VariableRefStep value="middle"/>
                                         </math:Equals>
-                                        </queries:ExpressionTest>
                                         <queries:Addition>
                                         <queries:StringLiteral value="is the answer "/>
                                         <queries:Addition>

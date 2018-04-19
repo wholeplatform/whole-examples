@@ -39,24 +39,20 @@
                         </queries:Names>
                         <queries:Sequence initialCapacity="2">
                             <queries:If>
-                                <queries:ExpressionTest>
-                                    <queries:GreaterOrEquals>
-                                        <queries:VariableRefStep value="times"/>
-                                        <queries:IntLiteral value="1"/>
-                                    </queries:GreaterOrEquals>
-                                </queries:ExpressionTest>
+                                <queries:GreaterOrEquals>
+                                    <queries:VariableRefStep value="times"/>
+                                    <queries:IntLiteral value="1"/>
+                                </queries:GreaterOrEquals>
                                 <queries:Call>
                                     <queries:Name value="body"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 </queries:Call>
                             </queries:If>
                             <queries:If>
-                                <queries:ExpressionTest>
-                                    <queries:GreaterThan>
-                                        <queries:VariableRefStep value="times"/>
-                                        <queries:IntLiteral value="1"/>
-                                    </queries:GreaterThan>
-                                </queries:ExpressionTest>
+                                <queries:GreaterThan>
+                                    <queries:VariableRefStep value="times"/>
+                                    <queries:IntLiteral value="1"/>
+                                </queries:GreaterThan>
                                 <queries:Call>
                                     <queries:Name value="repeat"/>
                                     <queries:Expressions initialCapacity="2">
@@ -444,9 +440,7 @@
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </queries:Call>
                 </queries:Block>
-                <queries:ExpressionTest xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:BooleanLiteral value="true"/>
-                </queries:ExpressionTest>
+                <queries:BooleanLiteral xmlns:queries="http://lang.whole.org/Queries" value="true"/>
             </actions:GuardedAction>
         </actions:MenuActions>
         <actions:MenuActions initialCapacity="0"/>
