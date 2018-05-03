@@ -22,11 +22,9 @@ import org.whole.examples.dataintegration.motogp.MotoGP_TeamsActions;
 import org.whole.examples.dataintegration.motogp.MotoGP_TeamsCSVGrammar;
 import org.whole.examples.dataintegration.motogp.MotoGP_TeamsFLFGrammar;
 import org.whole.examples.dataintegration.xsd.DTAUSDeployer;
-import org.whole.examples.datatypes.RedBlackTreeActions;
 import org.whole.examples.datatypes.RedBlackTreeUIDeployer;
 import org.whole.examples.datatypes.redblacktree.reflect.RedBlackTreeLanguageDeployer;
 import org.whole.examples.javadocs.JavadocsActions;
-import org.whole.examples.lang.imp.ImpActions;
 import org.whole.examples.lang.imp.reflect.ImpLanguageDeployer;
 import org.whole.examples.lang.imp.ui.ImpUIDeployer;
 import org.whole.examples.patterns.JavaPatternsActions;
@@ -62,17 +60,17 @@ public class ExamplesContributionsDeployer extends AbstractSuiteDeployer {
 		try {
 			InterpreterOperation.interpret(XmlBuilderPersistenceKit.instance().readModel(
 					new ClasspathPersistenceProvider("org/whole/examples/lang/imp/ImpSemantics.xwl")));
+			InterpreterOperation.interpret(XmlBuilderPersistenceKit.instance().readModel(
+					new ClasspathPersistenceProvider("org/whole/examples/lang/imp/ImpActions.xwl")));
 		} catch (Exception e) {
 			throw new IllegalStateException(e);
 		}
 		InterpreterOperation.interpret(new AnnotationsActions().create());
-		InterpreterOperation.interpret(new ImpActions().create());
 		InterpreterOperation.interpret(new JavadocsActions().create());
 		InterpreterOperation.interpret(new JavaPatternsActions().create());
 		InterpreterOperation.interpret(new MotoGP_TeamsCSVGrammar().create());
 		InterpreterOperation.interpret(new MotoGP_TeamsFLFGrammar().create());
 		InterpreterOperation.interpret(new MotoGP_TeamsActions().create());
-		InterpreterOperation.interpret(new RedBlackTreeActions().create());
 		InterpreterOperation.interpret(new XmlActions().create());
 	}
 }

@@ -37,7 +37,7 @@ public class MiniJavaReactionsHandler extends IdentityEventHandler {
 	public void notifyChanged(IEntity source, FeatureDescriptor fd, IEntity oldValue, IEntity newValue) {
 		if (Matcher.match(MiniJavaEntityDescriptorEnum.Identifier, newValue)) {
 			//enforce naming conventions
-			if (!StringUtils.isValidJavaIdentifier(newValue.wStringValue())) {
+			if (!StringUtils.isValidJavaName(newValue.wStringValue())) {
 				source.wGetModel().getCompoundModel().getHistoryManager().setRollbackOnly();
 				return;
 			}
@@ -48,7 +48,7 @@ public class MiniJavaReactionsHandler extends IdentityEventHandler {
 	public void notifyChanged(IEntity source, FeatureDescriptor fd, String oldValue, String newValue) {
 		if (Matcher.match(MiniJavaEntityDescriptorEnum.Identifier, source)) {
 			//enforce naming conventions
-			if (!StringUtils.isValidJavaIdentifier(newValue)) {
+			if (!StringUtils.isValidJavaName(newValue)) {
 				source.wGetModel().getCompoundModel().getHistoryManager().setRollbackOnly();
 				return;
 			}

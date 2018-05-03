@@ -18,10 +18,8 @@
 package org.whole.examples.datatypes;
 
 import org.whole.examples.datatypes.redblacktree.reflect.RedBlackTreeLanguageDeployer;
-import org.whole.lang.operations.InterpreterOperation;
 import org.whole.lang.reflect.AbstractSuiteDeployer;
 import org.whole.lang.reflect.IDeployer;
-import org.whole.lang.reflect.ReflectionFactory;
 
 /**
  * @author Riccardo Solmi
@@ -37,10 +35,5 @@ public class RedBlackTreeDeployer extends AbstractSuiteDeployer {
 			RedBlackTreeLanguageDeployer.class,
 			RedBlackTreeUIDeployer.class
 		);
-	}
-
-	public void deploy(ReflectionFactory platform) {
-		super.deploy(platform);
-		InterpreterOperation.interpret(new RedBlackTreeActions().create());
 	}
 }

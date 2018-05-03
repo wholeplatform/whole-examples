@@ -1,10 +1,9 @@
 package org.whole.examples.datatypes.redblacktree.reflect;
 
-import org.whole.lang.templates.AbstractTemplateManager;
-import org.whole.lang.templates.AbstractTemplateFactory;
-import org.whole.examples.datatypes.RedBlackTreeExample;
 import org.whole.examples.datatypes.redblacktree.model.RBNode;
 import org.whole.lang.factories.GenericEntityFactory;
+import org.whole.lang.templates.AbstractTemplateFactory;
+import org.whole.lang.templates.AbstractTemplateManager;
 
 /** 
  * @generator Whole
@@ -25,6 +24,5 @@ public class RedBlackTreeTemplateManager extends AbstractTemplateManager {
 						.create(RedBlackTreeEntityDescriptorEnum.RBNode);
 			}
 		});
-		put("balanced example", new RedBlackTreeExample());
 	}
 }

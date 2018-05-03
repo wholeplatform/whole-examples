@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
     <workflows:Text value="sequence"/>
-    <workflows:FlowObjects initialCapacity="2">
+    <workflows:FlowObjects initialCapacity="4">
         <workflows:InvokeJavaClassMethod>
             <workflows:Text value="setUserClassLoader"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -22,5 +22,19 @@
                 <workflows:StringLiteral value="org.whole.examples.datatypes.RedBlackTreeDeployer"/>
             </workflows:Expressions>
         </workflows:InvokeJavaClassMethod>
+        <workflows:LoadModel>
+            <workflows:Text value="load Actions"/>
+            <workflows:Variable value="rbtActions"/>
+            <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
+            <workflows:ResourceKind value="CLASSPATH"/>
+            <workflows:StringLiteral value="org\whole\examples\datatypes\RedBlackTreeActions.xwl"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:LoadModel>
+        <workflows:InvokeOperation>
+            <workflows:Text value="deploy Actions"/>
+            <workflows:Variable value="rbtActions"/>
+            <workflows:Operation value="INTERPRETER"/>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        </workflows:InvokeOperation>
     </workflows:FlowObjects>
 </workflows:Sequence>

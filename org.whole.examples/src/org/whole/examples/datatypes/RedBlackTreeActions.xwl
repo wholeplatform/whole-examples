@@ -1,0 +1,1069 @@
+<?xml version="1.0"?>
+<actions:LanguageActionFactory xmlns:actions="http://lang.whole.org/Actions">
+    <actions:URI value="whole:org.whole.examples.datatypes:RedBlackTreeActions"/>
+    <actions:Namespace value="org.whole.examples.datatypes"/>
+    <actions:Name value="RedBlackTreeActions"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <actions:URI value="http://datatypes.examples.whole.org/RedBlackTree"/>
+    <actions:ToolbarActions>
+        <actions:SimpleAction>
+            <actions:Label value="validator"/>
+            <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="7">
+                <queries:QueryDeclaration>
+                    <queries:Name value="addError"/>
+                    <queries:Names initialCapacity="2">
+                        <queries:Name value="message"/>
+                        <queries:Name value="location"/>
+                    </queries:Names>
+                    <queries:Sequence initialCapacity="1">
+                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
+                                <java:MethodInvocation>
+                                    <java:SimpleName value="decorationManager"/>
+                                    <java:Types initialCapacity="0"/>
+                                    <java:SimpleName value="addError"/>
+                                    <java:Arguments initialCapacity="3">
+                                        <java:SimpleName value="self"/>
+                                        <java:SimpleName value="message"/>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="location"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="toString"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                    </java:Arguments>
+                                </java:MethodInvocation>
+                            </java:ExpressionStatement>
+                        </commons:SameStageFragment>
+                    </queries:Sequence>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="addWarning"/>
+                    <queries:Names initialCapacity="2">
+                        <queries:Name value="message"/>
+                        <queries:Name value="location"/>
+                    </queries:Names>
+                    <queries:Sequence initialCapacity="1">
+                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                            <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
+                                <java:MethodInvocation>
+                                    <java:SimpleName value="decorationManager"/>
+                                    <java:Types initialCapacity="0"/>
+                                    <java:SimpleName value="addWarning"/>
+                                    <java:Arguments initialCapacity="3">
+                                        <java:SimpleName value="node"/>
+                                        <java:SimpleName value="message"/>
+                                        <java:MethodInvocation>
+                                        <java:SimpleName value="location"/>
+                                        <java:Types initialCapacity="0"/>
+                                        <java:SimpleName value="toString"/>
+                                        <java:Arguments initialCapacity="0"/>
+                                        </java:MethodInvocation>
+                                    </java:Arguments>
+                                </java:MethodInvocation>
+                            </java:ExpressionStatement>
+                        </commons:SameStageFragment>
+                    </queries:Sequence>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="validateRootNode"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <queries:If>
+                        <queries:Some>
+                            <queries:Filter>
+                                <queries:FeatureStep value="color"/>
+                                <queries:MatchTest>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:Color xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree" value="RED"/>
+                                    </commons:StageUpFragment>
+                                </queries:MatchTest>
+                            </queries:Filter>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </queries:Some>
+                        <queries:Call>
+                            <queries:Name value="addError"/>
+                            <queries:Expressions initialCapacity="2">
+                                <queries:StringLiteral value="The tree root must be black"/>
+                                <queries:Singleton>
+                                    <queries:FeatureStep value="value"/>
+                                </queries:Singleton>
+                            </queries:Expressions>
+                        </queries:Call>
+                    </queries:If>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="validateRedNodes"/>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    <queries:Path initialCapacity="2">
+                        <queries:Filter>
+                            <queries:DescendantStep/>
+                            <queries:And initialCapacity="2">
+                                <queries:Some>
+                                    <queries:Filter>
+                                        <queries:FeatureStep value="color"/>
+                                        <queries:MatchTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:Color xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree" value="RED"/>
+                                        </commons:StageUpFragment>
+                                        </queries:MatchTest>
+                                    </queries:Filter>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Some>
+                                <queries:Some>
+                                    <queries:Path initialCapacity="2">
+                                        <queries:ParentStep/>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="color"/>
+                                        <queries:MatchTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:Color xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree" value="RED"/>
+                                        </commons:StageUpFragment>
+                                        </queries:MatchTest>
+                                        </queries:Filter>
+                                    </queries:Path>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Some>
+                            </queries:And>
+                        </queries:Filter>
+                        <queries:Call>
+                            <queries:Name value="addError"/>
+                            <queries:Expressions initialCapacity="2">
+                                <queries:StringLiteral value="The parent of a red node must be black"/>
+                                <queries:Singleton>
+                                    <queries:FeatureStep value="value"/>
+                                </queries:Singleton>
+                            </queries:Expressions>
+                        </queries:Call>
+                    </queries:Path>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="validateOrder"/>
+                    <queries:Names initialCapacity="1">
+                        <queries:Name value="value"/>
+                    </queries:Names>
+                    <queries:Block initialCapacity="2">
+                        <queries:QueryDeclaration>
+                            <queries:Name value="checkTreeValues"/>
+                            <queries:Names initialCapacity="3">
+                                <queries:Name value="minValue"/>
+                                <queries:Name value="maxValue"/>
+                                <queries:Name value="value"/>
+                            </queries:Names>
+                            <queries:Path initialCapacity="2">
+                                <queries:Filter>
+                                    <queries:SelfStep/>
+                                    <queries:Some>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="value"/>
+                                        <queries:VariableTest value="value"/>
+                                        </queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
+                                </queries:Filter>
+                                <queries:Sequence initialCapacity="3">
+                                    <queries:If>
+                                        <queries:Or initialCapacity="2">
+                                        <queries:ExpressionTest>
+                                        <queries:LessThan>
+                                        <queries:VariableRefStep value="value"/>
+                                        <queries:VariableRefStep value="minValue"/>
+                                        </queries:LessThan>
+                                        </queries:ExpressionTest>
+                                        <queries:ExpressionTest>
+                                        <queries:GreaterThan>
+                                        <queries:VariableRefStep value="value"/>
+                                        <queries:VariableRefStep value="maxValue"/>
+                                        </queries:GreaterThan>
+                                        </queries:ExpressionTest>
+                                        </queries:Or>
+                                        <queries:Call>
+                                        <queries:Name value="addError"/>
+                                        <queries:Expressions initialCapacity="2">
+                                        <queries:StringLiteral value="The value is not in order"/>
+                                        <queries:VariableRefStep value="value"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                    </queries:If>
+                                    <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="left"/>
+                                        <queries:Call>
+                                        <queries:Name value="checkTreeValues"/>
+                                        <queries:Expressions initialCapacity="2">
+                                        <queries:VariableRefStep value="minValue"/>
+                                        <queries:VariableRefStep value="value"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                    </queries:Path>
+                                    <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="right"/>
+                                        <queries:Call>
+                                        <queries:Name value="checkTreeValues"/>
+                                        <queries:Expressions initialCapacity="2">
+                                        <queries:VariableRefStep value="value"/>
+                                        <queries:VariableRefStep value="maxValue"/>
+                                        </queries:Expressions>
+                                        </queries:Call>
+                                    </queries:Path>
+                                </queries:Sequence>
+                            </queries:Path>
+                        </queries:QueryDeclaration>
+                        <queries:Path initialCapacity="2">
+                            <queries:Filter>
+                                <queries:SelfStep/>
+                                <queries:Some>
+                                    <queries:Filter>
+                                        <queries:FeatureStep value="value"/>
+                                        <queries:VariableTest value="value"/>
+                                    </queries:Filter>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Some>
+                            </queries:Filter>
+                            <queries:Sequence initialCapacity="2">
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="left"/>
+                                    <queries:Call>
+                                        <queries:Name value="checkTreeValues"/>
+                                        <queries:Expressions initialCapacity="2">
+                                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <java:FieldAccess xmlns:java="http://lang.whole.org/Java">
+                                        <java:SimpleName value="Integer"/>
+                                        <java:SimpleName value="MIN_VALUE"/>
+                                        </java:FieldAccess>
+                                        </commons:SameStageFragment>
+                                        <queries:VariableRefStep value="value"/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:Path>
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="right"/>
+                                    <queries:Call>
+                                        <queries:Name value="checkTreeValues"/>
+                                        <queries:Expressions initialCapacity="2">
+                                        <queries:VariableRefStep value="value"/>
+                                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <java:FieldAccess xmlns:java="http://lang.whole.org/Java">
+                                        <java:SimpleName value="Integer"/>
+                                        <java:SimpleName value="MAX_VALUE"/>
+                                        </java:FieldAccess>
+                                        </commons:SameStageFragment>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:Path>
+                            </queries:Sequence>
+                        </queries:Path>
+                    </queries:Block>
+                </queries:QueryDeclaration>
+                <queries:QueryDeclaration>
+                    <queries:Name value="validateBlackPaths"/>
+                    <queries:Names initialCapacity="2">
+                        <queries:Name value="size1"/>
+                        <queries:Name value="size2"/>
+                    </queries:Names>
+                    <queries:Block initialCapacity="4">
+                        <queries:Filter>
+                            <queries:Choose initialCapacity="2">
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="left"/>
+                                    <queries:Call>
+                                        <queries:Name value="validateBlackPaths"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Call>
+                                </queries:Path>
+                                <queries:IntLiteral value="0"/>
+                            </queries:Choose>
+                            <queries:VariableTest value="size1"/>
+                        </queries:Filter>
+                        <queries:Filter>
+                            <queries:Choose initialCapacity="2">
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="right"/>
+                                    <queries:Call>
+                                        <queries:Name value="validateBlackPaths"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Call>
+                                </queries:Path>
+                                <queries:IntLiteral value="0"/>
+                            </queries:Choose>
+                            <queries:VariableTest value="size2"/>
+                        </queries:Filter>
+                        <queries:If>
+                            <queries:ExpressionTest>
+                                <queries:NotEquals>
+                                    <queries:VariableRefStep value="size1"/>
+                                    <queries:VariableRefStep value="size2"/>
+                                </queries:NotEquals>
+                            </queries:ExpressionTest>
+                            <queries:Call>
+                                <queries:Name value="addError"/>
+                                <queries:Expressions initialCapacity="2">
+                                    <queries:StringLiteral value="Every simple path must have the same number of black nodes"/>
+                                    <queries:Singleton>
+                                        <queries:FeatureStep value="value"/>
+                                    </queries:Singleton>
+                                </queries:Expressions>
+                            </queries:Call>
+                        </queries:If>
+                        <queries:Choose initialCapacity="2">
+                            <queries:If>
+                                <queries:Some>
+                                    <queries:Filter>
+                                        <queries:FeatureStep value="color"/>
+                                        <queries:MatchTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:Color xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree" value="BLACK"/>
+                                        </commons:StageUpFragment>
+                                        </queries:MatchTest>
+                                    </queries:Filter>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Some>
+                                <queries:Addition>
+                                    <queries:VariableRefStep value="size1"/>
+                                    <queries:IntLiteral value="1"/>
+                                </queries:Addition>
+                            </queries:If>
+                            <queries:Do>
+                                <queries:VariableRefStep value="size1"/>
+                            </queries:Do>
+                        </queries:Choose>
+                    </queries:Block>
+                </queries:QueryDeclaration>
+                <queries:Sequence initialCapacity="4">
+                    <queries:Call>
+                        <queries:Name value="validateRootNode"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Call>
+                    <queries:Call>
+                        <queries:Name value="validateRedNodes"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Call>
+                    <queries:Call>
+                        <queries:Name value="validateOrder"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Call>
+                    <queries:Call>
+                        <queries:Name value="validateBlackPaths"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Call>
+                </queries:Sequence>
+            </queries:Block>
+        </actions:SimpleAction>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ToolbarActions>
+    <actions:ContextMenuActions>
+        <actions:MenuActions initialCapacity="3">
+            <actions:GuardedAction>
+                <actions:Label value="insert random value"/>
+                <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                    <queries:QueryDeclaration>
+                        <queries:Name value="insert"/>
+                        <queries:Names initialCapacity="2">
+                            <queries:Name value="value"/>
+                            <queries:Name value="nodeValue"/>
+                        </queries:Names>
+                        <queries:Choose initialCapacity="3">
+                            <queries:If>
+                                <queries:TypeTest value="http://lang.whole.org/Commons#Resolver"/>
+                                <queries:Path initialCapacity="2">
+                                    <queries:PointwiseUpdate>
+                                        <queries:SelfStep/>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:RBNode xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="value"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </redblacktree:RBNode>
+                                        </commons:StageUpFragment>
+                                    </queries:PointwiseUpdate>
+                                    <queries:Call>
+                                        <queries:Name value="balance"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Call>
+                                </queries:Path>
+                            </queries:If>
+                            <queries:If>
+                                <queries:LessThan>
+                                    <queries:VariableRefStep value="value"/>
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#value"/>
+                                </queries:LessThan>
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#left"/>
+                                    <queries:Call>
+                                        <queries:Name value="insert"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:VariableRefStep value="value"/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:Path>
+                            </queries:If>
+                            <queries:Do>
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#right"/>
+                                    <queries:Call>
+                                        <queries:Name value="insert"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:VariableRefStep value="value"/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:Path>
+                            </queries:Do>
+                        </queries:Choose>
+                    </queries:QueryDeclaration>
+                    <queries:QueryDeclaration>
+                        <queries:Name value="balance"/>
+                        <queries:Names initialCapacity="7">
+                            <queries:Name value="x"/>
+                            <queries:Name value="y"/>
+                            <queries:Name value="z"/>
+                            <queries:Name value="a"/>
+                            <queries:Name value="b"/>
+                            <queries:Name value="c"/>
+                            <queries:Name value="d"/>
+                        </queries:Names>
+                        <queries:Choose initialCapacity="2">
+                            <queries:PointwiseUpdate>
+                                <queries:Path initialCapacity="2">
+                                    <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:Some>
+                                        <queries:Filter>
+                                        <queries:ParentStep/>
+                                        <queries:SubtypeTest value="http://lang.whole.org/Commons#Fragment"/>
+                                        </queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
+                                    </queries:Filter>
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#color"/>
+                                </queries:Path>
+                                <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <redblacktree:Color xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree" value="BLACK"/>
+                                </commons:StageUpFragment>
+                            </queries:PointwiseUpdate>
+                            <queries:Path initialCapacity="2">
+                                <queries:ParentStep/>
+                                <queries:Choose initialCapacity="2">
+                                    <queries:If>
+                                        <queries:Some>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#color"/>
+                                        <queries:MatchTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:Color xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree" value="BLACK"/>
+                                        </commons:StageUpFragment>
+                                        </queries:MatchTest>
+                                        </queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
+                                        <queries:SelfStep/>
+                                    </queries:If>
+                                    <queries:Path initialCapacity="2">
+                                        <queries:ParentStep/>
+                                        <queries:Choose initialCapacity="2">
+                                        <queries:Path initialCapacity="2">
+                                        <queries:CartesianUpdate>
+                                        <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:MatchTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:RBNode xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="y"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="BLACK"/>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="x"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="a"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="b"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="z"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="c"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="d"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        </redblacktree:RBNode>
+                                        </commons:StageUpFragment>
+                                        </queries:MatchTest>
+                                        </queries:Filter>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:RBNode xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="y"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="x"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="BLACK"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="a"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="b"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="z"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="BLACK"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="c"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="d"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        </redblacktree:RBNode>
+                                        </commons:StageUpFragment>
+                                        </queries:CartesianUpdate>
+                                        <queries:Call>
+                                        <queries:Name value="balance"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Call>
+                                        </queries:Path>
+                                        <queries:CartesianUpdate>
+                                        <queries:Filter>
+                                        <queries:SelfStep/>
+                                        <queries:Or initialCapacity="2">
+                                        <queries:Or initialCapacity="2">
+                                        <queries:MatchTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:RBNode xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="z"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="BLACK"/>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="y"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="x"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="a"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="b"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="c"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="d"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        </commons:StageUpFragment>
+                                        </queries:MatchTest>
+                                        <queries:MatchTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:RBNode xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="z"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="BLACK"/>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="x"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="a"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="y"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="b"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="c"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        </redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="d"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        </commons:StageUpFragment>
+                                        </queries:MatchTest>
+                                        </queries:Or>
+                                        <queries:Or initialCapacity="2">
+                                        <queries:MatchTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:RBNode xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="x"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="BLACK"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="a"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="z"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="y"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="b"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="c"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="d"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        </redblacktree:RBNode>
+                                        </commons:StageUpFragment>
+                                        </queries:MatchTest>
+                                        <queries:MatchTest>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:RBNode xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="x"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="BLACK"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="a"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="y"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="b"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="z"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="c"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="d"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        </redblacktree:RBNode>
+                                        </redblacktree:RBNode>
+                                        </commons:StageUpFragment>
+                                        </queries:MatchTest>
+                                        </queries:Or>
+                                        </queries:Or>
+                                        </queries:Filter>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:RBNode xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="y"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="BLACK"/>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="x"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="a"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="b"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        <redblacktree:RBNode>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="z"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="c"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+                                        <commons:VarName value="d"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        </redblacktree:RBNode>
+                                        </redblacktree:RBNode>
+                                        </commons:StageUpFragment>
+                                        </queries:CartesianUpdate>
+                                        </queries:Choose>
+                                    </queries:Path>
+                                </queries:Choose>
+                            </queries:Path>
+                        </queries:Choose>
+                    </queries:QueryDeclaration>
+                    <queries:Call>
+                        <queries:Name value="insert"/>
+                        <queries:Expressions initialCapacity="1">
+                            <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <java:MethodInvocation xmlns:java="http://lang.whole.org/Java">
+                                    <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Random"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                    </java:ClassInstanceCreation>
+                                    <java:Types initialCapacity="0"/>
+                                    <java:SimpleName value="nextInt"/>
+                                    <java:Arguments initialCapacity="1">
+                                        <java:ShortLiteral value="99"/>
+                                    </java:Arguments>
+                                </java:MethodInvocation>
+                            </commons:SameStageFragment>
+                        </queries:Expressions>
+                    </queries:Call>
+                </queries:Block>
+                <queries:TypeTest xmlns:queries="http://lang.whole.org/Queries" value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="insert random value (unbalanced)"/>
+                <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                    <queries:QueryDeclaration>
+                        <queries:Name value="insert"/>
+                        <queries:Names initialCapacity="2">
+                            <queries:Name value="value"/>
+                            <queries:Name value="nodeValue"/>
+                        </queries:Names>
+                        <queries:Choose initialCapacity="3">
+                            <queries:If>
+                                <queries:TypeTest value="http://lang.whole.org/Commons#Resolver"/>
+                                <queries:Path initialCapacity="2">
+                                    <queries:PointwiseUpdate>
+                                        <queries:SelfStep/>
+                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                        <redblacktree:RBNode xmlns:redblacktree="http://datatypes.examples.whole.org/RedBlackTree">
+                                        <commons:Variable>
+                                        <commons:VarType value="http://datatypes.examples.whole.org/RedBlackTree#Value"/>
+                                        <commons:VarName value="value"/>
+                                        <commons:Quantifier value="!"/>
+                                        </commons:Variable>
+                                        <redblacktree:Color value="RED"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        </redblacktree:RBNode>
+                                        </commons:StageUpFragment>
+                                    </queries:PointwiseUpdate>
+                                    <queries:Call>
+                                        <queries:Name value="balance"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Call>
+                                </queries:Path>
+                            </queries:If>
+                            <queries:If>
+                                <queries:LessThan>
+                                    <queries:VariableRefStep value="value"/>
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#value"/>
+                                </queries:LessThan>
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#left"/>
+                                    <queries:Call>
+                                        <queries:Name value="insert"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:VariableRefStep value="value"/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:Path>
+                            </queries:If>
+                            <queries:Do>
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#right"/>
+                                    <queries:Call>
+                                        <queries:Name value="insert"/>
+                                        <queries:Expressions initialCapacity="1">
+                                        <queries:VariableRefStep value="value"/>
+                                        </queries:Expressions>
+                                    </queries:Call>
+                                </queries:Path>
+                            </queries:Do>
+                        </queries:Choose>
+                    </queries:QueryDeclaration>
+                    <queries:Call>
+                        <queries:Name value="insert"/>
+                        <queries:Expressions initialCapacity="1">
+                            <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
+                                <java:MethodInvocation xmlns:java="http://lang.whole.org/Java">
+                                    <java:ClassInstanceCreation>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                        <java:SimpleType value="Random"/>
+                                        <commons:Resolver/>
+                                        <commons:Resolver/>
+                                    </java:ClassInstanceCreation>
+                                    <java:Types initialCapacity="0"/>
+                                    <java:SimpleName value="nextInt"/>
+                                    <java:Arguments initialCapacity="1">
+                                        <java:ShortLiteral value="99"/>
+                                    </java:Arguments>
+                                </java:MethodInvocation>
+                            </commons:SameStageFragment>
+                        </queries:Expressions>
+                    </queries:Call>
+                </queries:Block>
+                <queries:TypeTest xmlns:queries="http://lang.whole.org/Queries" value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+            </actions:GuardedAction>
+            <actions:GuardedAction>
+                <actions:Label value="delete root value (unbalanced)"/>
+                <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                    <queries:QueryDeclaration>
+                        <queries:Name value="deleteRBNode"/>
+                        <queries:Names initialCapacity="1">
+                            <queries:Name value="succValue"/>
+                        </queries:Names>
+                        <queries:Choose initialCapacity="3">
+                            <queries:PointwiseUpdate>
+                                <queries:Filter>
+                                    <queries:SelfStep/>
+                                    <queries:Some>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#left"/>
+                                        <queries:TypeTest value="http://lang.whole.org/Commons#Resolver"/>
+                                        </queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
+                                </queries:Filter>
+                                <queries:Delete>
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#right"/>
+                                </queries:Delete>
+                            </queries:PointwiseUpdate>
+                            <queries:PointwiseUpdate>
+                                <queries:Filter>
+                                    <queries:SelfStep/>
+                                    <queries:Some>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#right"/>
+                                        <queries:TypeTest value="http://lang.whole.org/Commons#Resolver"/>
+                                        </queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Some>
+                                </queries:Filter>
+                                <queries:Delete>
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#left"/>
+                                </queries:Delete>
+                            </queries:PointwiseUpdate>
+                            <queries:Block initialCapacity="2">
+                                <queries:Path initialCapacity="3">
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#right"/>
+                                    <queries:Filter>
+                                        <queries:Call>
+                                        <queries:Name value="leftmostRBNode"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Call>
+                                        <queries:Some>
+                                        <queries:Filter>
+                                        <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#value"/>
+                                        <queries:VariableTest value="succValue"/>
+                                        </queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </queries:Some>
+                                    </queries:Filter>
+                                    <queries:Call>
+                                        <queries:Name value="deleteRBNode"/>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    </queries:Call>
+                                </queries:Path>
+                                <queries:PointwiseUpdate>
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#value"/>
+                                    <queries:VariableRefStep value="succValue"/>
+                                </queries:PointwiseUpdate>
+                            </queries:Block>
+                        </queries:Choose>
+                    </queries:QueryDeclaration>
+                    <queries:QueryDeclaration>
+                        <queries:Name value="leftmostRBNode"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <queries:Choose initialCapacity="2">
+                            <queries:Path initialCapacity="2">
+                                <queries:Filter>
+                                    <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#left"/>
+                                    <queries:KindTest value="IMPL"/>
+                                </queries:Filter>
+                                <queries:Call>
+                                    <queries:Name value="leftmostRBNode"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Call>
+                            </queries:Path>
+                            <queries:SelfStep/>
+                        </queries:Choose>
+                    </queries:QueryDeclaration>
+                    <queries:Call>
+                        <queries:Name value="deleteRBNode"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Call>
+                </queries:Block>
+                <queries:TypeTest xmlns:queries="http://lang.whole.org/Queries" value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="0"/>
+        <actions:MenuActions initialCapacity="1">
+            <actions:GuardedAction>
+                <actions:Label value="print values in order"/>
+                <queries:Block xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                    <queries:QueryDeclaration>
+                        <queries:Name value="printRBNode"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <queries:Sequence initialCapacity="3">
+                            <queries:Path initialCapacity="2">
+                                <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#left"/>
+                                <queries:Call>
+                                    <queries:Name value="printRBNode"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Call>
+                            </queries:Path>
+                            <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#value"/>
+                            <queries:Path initialCapacity="2">
+                                <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#right"/>
+                                <queries:Call>
+                                    <queries:Name value="printRBNode"/>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Call>
+                            </queries:Path>
+                        </queries:Sequence>
+                    </queries:QueryDeclaration>
+                    <queries:Call>
+                        <queries:Name value="printRBNode"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </queries:Call>
+                </queries:Block>
+                <queries:TypeTest xmlns:queries="http://lang.whole.org/Queries" value="http://datatypes.examples.whole.org/RedBlackTree#RBNode"/>
+            </actions:GuardedAction>
+        </actions:MenuActions>
+        <actions:MenuActions initialCapacity="0"/>
+        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    </actions:ContextMenuActions>
+</actions:LanguageActionFactory>
