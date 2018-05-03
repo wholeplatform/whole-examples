@@ -84,9 +84,7 @@
                             <queries:Name value="addError"/>
                             <queries:Expressions initialCapacity="2">
                                 <queries:StringLiteral value="The tree root must be black"/>
-                                <queries:Singleton>
-                                    <queries:FeatureStep value="value"/>
-                                </queries:Singleton>
+                                <queries:FeatureStep value="value"/>
                             </queries:Expressions>
                         </queries:Call>
                     </queries:If>
@@ -163,18 +161,14 @@
                                 <queries:Sequence initialCapacity="3">
                                     <queries:If>
                                         <queries:Or initialCapacity="2">
-                                        <queries:ExpressionTest>
                                         <queries:LessThan>
                                         <queries:VariableRefStep value="value"/>
                                         <queries:VariableRefStep value="minValue"/>
                                         </queries:LessThan>
-                                        </queries:ExpressionTest>
-                                        <queries:ExpressionTest>
                                         <queries:GreaterThan>
                                         <queries:VariableRefStep value="value"/>
                                         <queries:VariableRefStep value="maxValue"/>
                                         </queries:GreaterThan>
-                                        </queries:ExpressionTest>
                                         </queries:Or>
                                         <queries:Call>
                                         <queries:Name value="addError"/>
@@ -287,19 +281,15 @@
                             <queries:VariableTest value="size2"/>
                         </queries:Filter>
                         <queries:If>
-                            <queries:ExpressionTest>
-                                <queries:NotEquals>
-                                    <queries:VariableRefStep value="size1"/>
-                                    <queries:VariableRefStep value="size2"/>
-                                </queries:NotEquals>
-                            </queries:ExpressionTest>
+                            <queries:NotEquals>
+                                <queries:VariableRefStep value="size1"/>
+                                <queries:VariableRefStep value="size2"/>
+                            </queries:NotEquals>
                             <queries:Call>
                                 <queries:Name value="addError"/>
                                 <queries:Expressions initialCapacity="2">
                                     <queries:StringLiteral value="Every simple path must have the same number of black nodes"/>
-                                    <queries:Singleton>
-                                        <queries:FeatureStep value="value"/>
-                                    </queries:Singleton>
+                                    <queries:FeatureStep value="value"/>
                                 </queries:Expressions>
                             </queries:Call>
                         </queries:If>
