@@ -37,14 +37,10 @@ public class JavadocsActions extends AbstractTemplateFactory<org.whole.lang.acti
         b2.FeatureStep("tags");
         b2.Filter_();
         b2.ChildStep();
-        b2.ExpressionTest_();
         b2.Equals_();
-        b2.Singleton_();
         b2.FeatureStep("tagName");
-        b2._Singleton();
         b2.VariableRefStep("tagName");
         b2._Equals();
-        b2._ExpressionTest();
         b2._Filter();
         b2._Path();
         b2._QueryDeclaration();
@@ -158,6 +154,7 @@ public class JavadocsActions extends AbstractTemplateFactory<org.whole.lang.acti
         b4.SimpleName("args");
         b4.ExtraDimensions(0);
         b1.Resolver();
+        b1.Resolver();
         b4._SingleVariableDeclaration();
         b4._Parameters();
         b1.Resolver();
@@ -237,14 +234,7 @@ public class JavadocsActions extends AbstractTemplateFactory<org.whole.lang.acti
         b1.Resolver();
         b2._Call();
         b2._Block();
-        b2.ExpressionTest_();
-        b2.Path_(1);
-        b2.Filter_();
-        b2.SelfStep();
         b2.TypeTest("CompilationUnit");
-        b2._Filter();
-        b2._Path();
-        b2._ExpressionTest();
         b0._GuardedAction();
         b0._MenuActions();
         b0.MenuActions_(0);
