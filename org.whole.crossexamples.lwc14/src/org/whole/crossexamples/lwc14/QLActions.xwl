@@ -110,14 +110,15 @@
                         </workflows:Task>
                     </commons:SameStageFragment>
                 </queries:If>
-                <queries:Do>
+                <queries:If>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                         <semantics:Name value="whole:org.whole.crossexamples.lwc14:QLLibrarySemantics#toArtifacts"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </semantics:FunctionApplication>
-                </queries:Do>
+                </queries:If>
             </queries:Choose>
         </actions:SimpleAction>
     </actions:ToolbarActions>
@@ -202,9 +203,10 @@
                                         </ql:SequentialQuestions>
                                     </commons:StageUpFragment>
                                 </queries:If>
-                                <queries:Do>
+                                <queries:If>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     <queries:Block initialCapacity="3">
-                                        <queries:Filter>
+                                        <queries:Path initialCapacity="2">
                                         <queries:Addition>
                                         <queries:VariableRefStep value="min"/>
                                         <queries:Division>
@@ -215,8 +217,11 @@
                                         <queries:IntLiteral value="2"/>
                                         </queries:Division>
                                         </queries:Addition>
+                                        <queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:VariableTest value="middle"/>
                                         </queries:Filter>
+                                        </queries:Path>
                                         <queries:Filter>
                                         <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="nextFreshName"/>
@@ -254,7 +259,8 @@
                                         </queries:Addition>
                                         </queries:Addition>
                                         </queries:If>
-                                        <queries:Do>
+                                        <queries:If>
+                                        <commons:Resolver/>
                                         <queries:Addition>
                                         <queries:StringLiteral value="is the answer between "/>
                                         <queries:Addition>
@@ -268,7 +274,7 @@
                                         </queries:Addition>
                                         </queries:Addition>
                                         </queries:Addition>
-                                        </queries:Do>
+                                        </queries:If>
                                         </queries:Choose>
                                         </commons:StageDownFragment>
                                         <ql:PrimitiveType value="BOOLEAN"/>
@@ -314,7 +320,7 @@
                                         </ql:SequentialQuestions>
                                         </commons:StageUpFragment>
                                     </queries:Block>
-                                </queries:Do>
+                                </queries:If>
                             </queries:Choose>
                         </queries:QueryDeclaration>
                         <queries:Filter>
@@ -357,7 +363,7 @@
                                 </ql:Form>
                             </commons:StageUpFragment>
                             <queries:SelfStep/>
-                            <queries:Filter>
+                            <queries:Path initialCapacity="2">
                                 <queries:Call>
                                     <queries:Name value="generateQuestions"/>
                                     <queries:Expressions initialCapacity="2">
@@ -365,8 +371,11 @@
                                         <queries:VariableRefStep value="max"/>
                                     </queries:Expressions>
                                 </queries:Call>
-                                <queries:VariableTest value="questions"/>
-                            </queries:Filter>
+                                <queries:Filter>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <queries:VariableTest value="questions"/>
+                                </queries:Filter>
+                            </queries:Path>
                             <queries:TemplateNames/>
                         </queries:Select>
                     </queries:Block>
@@ -410,9 +419,10 @@
                                         </ql:SequentialQuestions>
                                     </commons:StageUpFragment>
                                 </queries:If>
-                                <queries:Do>
+                                <queries:If>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     <queries:Block initialCapacity="3">
-                                        <queries:Filter>
+                                        <queries:Path initialCapacity="2">
                                         <queries:Addition>
                                         <queries:VariableRefStep value="min"/>
                                         <queries:Division>
@@ -423,8 +433,11 @@
                                         <queries:IntLiteral value="2"/>
                                         </queries:Division>
                                         </queries:Addition>
+                                        <queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:VariableTest value="middle"/>
                                         </queries:Filter>
+                                        </queries:Path>
                                         <queries:Filter>
                                         <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="nextFreshName"/>
@@ -474,7 +487,8 @@
                                         </workflows:Expressions>
                                         </workflows:CreateEntity>
                                         </queries:If>
-                                        <queries:Do>
+                                        <queries:If>
+                                        <commons:Resolver/>
                                         <workflows:CreateEntity xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="create stage down"/>
                                         <commons:Resolver/>
@@ -500,7 +514,7 @@
                                         </commons:StageUpFragment>
                                         </workflows:Expressions>
                                         </workflows:CreateEntity>
-                                        </queries:Do>
+                                        </queries:If>
                                         </queries:Choose>
                                         </commons:StageDownFragment>
                                         <ql:PrimitiveType value="BOOLEAN"/>
@@ -546,7 +560,7 @@
                                         </ql:SequentialQuestions>
                                         </commons:StageUpFragment>
                                     </queries:Block>
-                                </queries:Do>
+                                </queries:If>
                             </queries:Choose>
                         </queries:QueryDeclaration>
                         <queries:Filter>
@@ -589,7 +603,7 @@
                                 </ql:Form>
                             </commons:StageUpFragment>
                             <queries:SelfStep/>
-                            <queries:Filter>
+                            <queries:Path initialCapacity="2">
                                 <queries:Call>
                                     <queries:Name value="generateQuestions"/>
                                     <queries:Expressions initialCapacity="2">
@@ -597,8 +611,11 @@
                                         <queries:VariableRefStep value="max"/>
                                     </queries:Expressions>
                                 </queries:Call>
-                                <queries:VariableTest value="questions"/>
-                            </queries:Filter>
+                                <queries:Filter>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <queries:VariableTest value="questions"/>
+                                </queries:Filter>
+                            </queries:Path>
                             <queries:TemplateNames/>
                         </queries:Select>
                     </queries:Block>
@@ -653,27 +670,33 @@
                                         <queries:Choose initialCapacity="2">
                                         <queries:Path initialCapacity="2">
                                         <queries:Filter>
-                                        <queries:SelfStep/>
+                                        <commons:Resolver/>
                                         <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Question"/>
                                         </queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#name"/>
                                         </queries:Path>
                                         <queries:Path initialCapacity="2">
                                         <queries:Filter>
-                                        <queries:SelfStep/>
+                                        <commons:Resolver/>
                                         <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#ConditionalQuestions"/>
                                         </queries:Filter>
                                         <queries:Choose initialCapacity="2">
-                                        <queries:Filter>
-                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
-                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
-                                        </queries:Filter>
                                         <queries:Path initialCapacity="2">
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
                                         <queries:Filter>
-                                        <queries:FeatureStep value="http://lang.whole.org/Math#expression"/>
+                                        <commons:Resolver/>
                                         <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
                                         </queries:Filter>
+                                        </queries:Path>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#enablingCondition"/>
+                                        <queries:Path initialCapacity="2">
+                                        <queries:FeatureStep value="http://lang.whole.org/Math#expression"/>
+                                        <queries:Filter>
+                                        <commons:Resolver/>
+                                        <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Name"/>
+                                        </queries:Filter>
+                                        </queries:Path>
                                         </queries:Path>
                                         </queries:Choose>
                                         </queries:Path>
@@ -700,24 +723,30 @@
                                         <queries:Path initialCapacity="5">
                                         <queries:DescendantStep/>
                                         <queries:Filter>
-                                        <queries:SelfStep/>
+                                        <commons:Resolver/>
                                         <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Question"/>
                                         </queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#label"/>
                                         <queries:FeatureStep value="http://lang.whole.org/Commons#rootEntity"/>
                                         <queries:Sequence initialCapacity="2">
-                                        <queries:Filter>
+                                        <queries:Path initialCapacity="2">
                                         <queries:ChildStep/>
+                                        <queries:Filter>
+                                        <commons:Resolver/>
                                         <queries:IndexTest>
                                         <queries:IntLiteral value="1"/>
                                         </queries:IndexTest>
                                         </queries:Filter>
-                                        <queries:Filter>
+                                        </queries:Path>
+                                        <queries:Path initialCapacity="2">
                                         <queries:ChildStep/>
+                                        <queries:Filter>
+                                        <commons:Resolver/>
                                         <queries:IndexTest>
                                         <queries:IntLiteral value="3"/>
                                         </queries:IndexTest>
                                         </queries:Filter>
+                                        </queries:Path>
                                         </queries:Sequence>
                                         </queries:Path>
                                         <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
@@ -742,12 +771,14 @@
                                         <queries:Path initialCapacity="4">
                                         <queries:DescendantStep/>
                                         <queries:Filter>
-                                        <queries:SelfStep/>
+                                        <commons:Resolver/>
                                         <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#ConditionalQuestions"/>
                                         </queries:Filter>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc14:QLModel#questions"/>
-                                        <queries:Filter>
+                                        <queries:Path initialCapacity="2">
                                         <queries:ChildStep/>
+                                        <queries:Filter>
+                                        <commons:Resolver/>
                                         <queries:And initialCapacity="2">
                                         <queries:IndexTest>
                                         <queries:IntLiteral value="1"/>
@@ -755,6 +786,7 @@
                                         <queries:KindTest value="DATA"/>
                                         </queries:And>
                                         </queries:Filter>
+                                        </queries:Path>
                                         </queries:Path>
                                         <semantics:TypeCast xmlns:semantics="http://lang.whole.org/Semantics">
                                         <semantics:EntityType value="whole:org.whole.crossexamples.lwc14:QLSModel#Text"/>
@@ -782,9 +814,10 @@
                                         </reusables:Reuse>
                                     </commons:StageUpFragment>
                                 </queries:If>
-                                <queries:Do>
+                                <queries:If>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     <queries:Block initialCapacity="3">
-                                        <queries:Filter>
+                                        <queries:Path initialCapacity="2">
                                         <queries:Addition>
                                         <queries:VariableRefStep value="min"/>
                                         <queries:Division>
@@ -795,8 +828,11 @@
                                         <queries:IntLiteral value="2"/>
                                         </queries:Division>
                                         </queries:Addition>
+                                        <queries:Filter>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:VariableTest value="middle"/>
                                         </queries:Filter>
+                                        </queries:Path>
                                         <queries:Filter>
                                         <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="nextFreshName"/>
@@ -834,7 +870,8 @@
                                         </queries:Addition>
                                         </queries:Addition>
                                         </queries:If>
-                                        <queries:Do>
+                                        <queries:If>
+                                        <commons:Resolver/>
                                         <queries:Addition>
                                         <queries:StringLiteral value="is the answer between "/>
                                         <queries:Addition>
@@ -848,7 +885,7 @@
                                         </queries:Addition>
                                         </queries:Addition>
                                         </queries:Addition>
-                                        </queries:Do>
+                                        </queries:If>
                                         </queries:Choose>
                                         </commons:StageDownFragment>
                                         <ql:PrimitiveType value="BOOLEAN"/>
@@ -896,7 +933,7 @@
                                         </ql:SequentialQuestions>
                                         </commons:StageUpFragment>
                                     </queries:Block>
-                                </queries:Do>
+                                </queries:If>
                             </queries:Choose>
                         </queries:QueryDeclaration>
                         <queries:Filter>
@@ -943,7 +980,7 @@
                                 </ql:Form>
                             </commons:StageUpFragment>
                             <queries:SelfStep/>
-                            <queries:Filter>
+                            <queries:Path initialCapacity="2">
                                 <queries:Call>
                                     <queries:Name value="generateQuestions"/>
                                     <queries:Expressions initialCapacity="3">
@@ -952,8 +989,11 @@
                                         <queries:VariableRefStep value="width"/>
                                     </queries:Expressions>
                                 </queries:Call>
-                                <queries:VariableTest value="questions"/>
-                            </queries:Filter>
+                                <queries:Filter>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                    <queries:VariableTest value="questions"/>
+                                </queries:Filter>
+                            </queries:Path>
                             <queries:TemplateNames/>
                         </queries:Select>
                     </queries:Block>

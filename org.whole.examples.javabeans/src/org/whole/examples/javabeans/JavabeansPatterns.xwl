@@ -488,14 +488,16 @@
                                         </queries:Some>
                                         <queries:VariableRefStep value="modelName"/>
                                         </queries:If>
-                                        <queries:Do>
+                                        <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:StringLiteral value=""/>
-                                        </queries:Do>
+                                        </queries:If>
                                     </queries:Choose>
                                 </queries:If>
-                                <queries:Do>
+                                <queries:If>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     <queries:SelfStep/>
-                                </queries:Do>
+                                </queries:If>
                             </queries:Choose>
                             <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleName"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -642,9 +644,10 @@
                                     <queries:KindTest value="RESOLVER"/>
                                     <queries:VariableRefStep value="productType"/>
                                 </queries:If>
-                                <queries:Do>
+                                <queries:If>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     <queries:SelfStep/>
-                                </queries:Do>
+                                </queries:If>
                             </queries:Choose>
                             <models:EntityType xmlns:models="http://lang.whole.org/Models" value="http://lang.whole.org/Java#SimpleType"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -1367,9 +1370,10 @@
                             </queries:Some>
                             <queries:VariableRefStep value="modelName"/>
                         </queries:If>
-                        <queries:Do>
+                        <queries:If>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             <queries:StringLiteral value=""/>
-                        </queries:Do>
+                        </queries:If>
                     </queries:Choose>
                 </queries:Singleton>
                 <queries:StringLiteral value="Visitor"/>
@@ -1402,9 +1406,10 @@
                             </queries:Some>
                             <queries:VariableRefStep value="modelName"/>
                         </queries:If>
-                        <queries:Do>
+                        <queries:If>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             <queries:StringLiteral value=""/>
-                        </queries:Do>
+                        </queries:If>
                     </queries:Choose>
                 </queries:Singleton>
                 <queries:StringLiteral value="Factory"/>

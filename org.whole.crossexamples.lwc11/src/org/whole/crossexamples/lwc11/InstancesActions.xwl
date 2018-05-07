@@ -366,14 +366,15 @@
                                         </queries:Expressions>
                                     </queries:Call>
                                 </queries:If>
-                                <queries:Do>
+                                <queries:If>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     <queries:Call>
                                         <queries:Name value="validatePropertyLiteralValue"/>
                                         <queries:Expressions initialCapacity="1">
                                         <queries:FeatureStep value="value"/>
                                         </queries:Expressions>
                                     </queries:Call>
-                                </queries:Do>
+                                </queries:If>
                             </queries:Choose>
                         </queries:Sequence>
                     </queries:Path>
@@ -678,7 +679,8 @@
                                 </queries:Some>
                                 <queries:VariableRefStep value="fileName"/>
                             </queries:If>
-                            <queries:Do>
+                            <queries:If>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                     <workflows:Text value="replaceInstancesWithEntities"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -691,7 +693,7 @@
                                         <workflows:StringLiteral value="Entities"/>
                                     </workflows:Expressions>
                                 </workflows:InvokeJavaInstanceMethod>
-                            </queries:Do>
+                            </queries:If>
                         </queries:Choose>
                         <queries:VariableTest value="modelName"/>
                     </queries:Filter>

@@ -138,14 +138,15 @@
                             <queries:VoidLiteral/>
                         </queries:Block>
                     </queries:If>
-                    <queries:Do>
+                    <queries:If>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             <queries:ChildStep/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         </semantics:FunctionApplication>
-                    </queries:Do>
+                    </queries:If>
                 </queries:Choose>
             </patterns:FunctionDeclaration>
             <patterns:FunctionDeclaration>

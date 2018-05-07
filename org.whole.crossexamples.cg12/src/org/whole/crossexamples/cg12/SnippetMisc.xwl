@@ -116,7 +116,8 @@
                     </queries:LessOrEquals>
                     <queries:IntLiteral value="1"/>
                 </queries:If>
-                <queries:Do>
+                <queries:If>
+                	<commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <queries:Multiplication>
                         <queries:VariableRefStep value="x"/>
                         <queries:Singleton>
@@ -131,7 +132,7 @@
                             </queries:Call>
                         </queries:Singleton>
                     </queries:Multiplication>
-                </queries:Do>
+                </queries:If>
             </queries:Choose>
         </queries:QueryDeclaration>
         <queries:Call>
@@ -162,9 +163,10 @@
                         </queries:Singleton>
                     </queries:Addition>
                 </queries:If>
-                <queries:Do>
+                <queries:If>
+	                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <queries:FeatureStep value="http://lang.whole.org/Semantics#variable"/>
-                </queries:Do>
+                </queries:If>
             </queries:Choose>
         </queries:Path>
         <queries:Some xmlns:queries="http://lang.whole.org/Queries">

@@ -141,14 +141,15 @@
                         <queries:VoidLiteral/>
                     </queries:Block>
                 </queries:If>
-                <queries:Do>
+                <queries:If>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <semantics:FunctionApplication>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <queries:ChildStep/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </semantics:FunctionApplication>
-                </queries:Do>
+                </queries:If>
             </queries:Choose>
         </semantics:SemanticFunction>
         <semantics:SemanticFunction>
@@ -603,14 +604,15 @@
                         <queries:VoidLiteral/>
                     </queries:Block>
                 </queries:If>
-                <queries:Do>
+                <queries:If>
+                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <semantics:FunctionApplication>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <queries:ChildStep/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </semantics:FunctionApplication>
-                </queries:Do>
+                </queries:If>
             </queries:Choose>
         </semantics:SemanticFunction>
         <semantics:SemanticFunction>
@@ -1432,8 +1434,7 @@
                                     <queries:Name value="expressionPoint"/>
                                 </queries:FreshNames>
                                 <queries:Sequence initialCapacity="2">
-                                    <queries:Do>
-                                        <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:MethodInvocation>
                                         <commons:StageDownFragment>
@@ -1456,8 +1457,7 @@
                                         </java:Arguments>
                                         </java:MethodInvocation>
                                         </java:ExpressionStatement>
-                                        </commons:StageUpFragment>
-                                    </queries:Do>
+                                    </commons:StageUpFragment>
                                     <semantics:FunctionApplication>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:FeatureStep value="whole:org.whole.crossexamples.lwc13:QLModel#expression"/>
@@ -1520,7 +1520,8 @@
                                         </semantics:FunctionApplication>
                                         </queries:Sequence>
                                     </queries:If>
-                                    <queries:Do>
+                                    <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:FieldDeclaration xmlns:java="http://lang.whole.org/Java">
                                         <commons:Resolver/>
@@ -1539,7 +1540,7 @@
                                         </java:VariableDeclarationFragments>
                                         </java:FieldDeclaration>
                                         </commons:StageUpFragment>
-                                    </queries:Do>
+                                    </queries:If>
                                 </queries:Choose>
                             </queries:Scope>
                             <queries:PointwiseInsert>
@@ -1623,7 +1624,8 @@
                                         </semantics:FunctionApplication>
                                         </queries:Sequence>
                                     </queries:If>
-                                    <queries:Do>
+                                    <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:Assignment>
@@ -1668,7 +1670,7 @@
                                         </java:Assignment>
                                         </java:ExpressionStatement>
                                         </commons:StageUpFragment>
-                                    </queries:Do>
+                                    </queries:If>
                                 </queries:Choose>
                             </queries:Scope>
                             <queries:PointwiseInsert>
@@ -1756,7 +1758,8 @@
                                         </java:ExpressionStatement>
                                         </commons:StageUpFragment>
                                     </queries:If>
-                                    <queries:Do>
+                                    <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:Sequence initialCapacity="2">
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
@@ -1791,7 +1794,7 @@
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </semantics:FunctionApplication>
                                         </queries:Sequence>
-                                    </queries:Do>
+                                    </queries:If>
                                 </queries:Choose>
                             </queries:Scope>
                             <queries:PointwiseInsert>

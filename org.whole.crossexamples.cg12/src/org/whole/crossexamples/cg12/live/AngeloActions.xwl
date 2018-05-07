@@ -284,7 +284,8 @@
                                         </java:ExpressionStatement>
                                         </commons:StageUpFragment>
                                     </queries:If>
-                                    <queries:Do>
+                                    <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:MethodInvocation>
@@ -302,7 +303,7 @@
                                         </java:MethodInvocation>
                                         </java:ExpressionStatement>
                                         </commons:StageUpFragment>
-                                    </queries:Do>
+                                    </queries:If>
                                 </queries:Choose>
                                 <queries:VariableTest value="forward"/>
                             </queries:Filter>
@@ -356,7 +357,8 @@
                                         </java:ExpressionStatement>
                                         </commons:StageUpFragment>
                                     </queries:If>
-                                    <queries:Do>
+                                    <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <java:ExpressionStatement xmlns:java="http://lang.whole.org/Java">
                                         <java:MethodInvocation>
@@ -374,7 +376,7 @@
                                         </java:MethodInvocation>
                                         </java:ExpressionStatement>
                                         </commons:StageUpFragment>
-                                    </queries:Do>
+                                    </queries:If>
                                 </queries:Choose>
                                 <queries:VariableTest value="backward"/>
                             </queries:Filter>

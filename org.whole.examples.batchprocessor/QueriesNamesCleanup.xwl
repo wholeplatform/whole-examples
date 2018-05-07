@@ -173,9 +173,10 @@
                             <queries:VariableRefStep value="pathExpression"/>
                         </queries:CartesianUpdate>
                     </queries:If>
-                    <queries:Do>
+                    <queries:If>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <queries:SelfStep/>
-                    </queries:Do>
+                    </queries:If>
                 </queries:Choose>
                 <queries:Block initialCapacity="2">
                     <queries:Path initialCapacity="2">

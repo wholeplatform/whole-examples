@@ -311,9 +311,10 @@
                                     <queries:IntLiteral value="1"/>
                                 </queries:Addition>
                             </queries:If>
-                            <queries:Do>
+                            <queries:If>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <queries:VariableRefStep value="size1"/>
-                            </queries:Do>
+                            </queries:If>
                         </queries:Choose>
                     </queries:Block>
                 </queries:QueryDeclaration>
@@ -393,7 +394,8 @@
                                     </queries:Call>
                                 </queries:Path>
                             </queries:If>
-                            <queries:Do>
+                            <queries:If>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <queries:Path initialCapacity="2">
                                     <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#right"/>
                                     <queries:Call>
@@ -403,7 +405,7 @@
                                         </queries:Expressions>
                                     </queries:Call>
                                 </queries:Path>
-                            </queries:Do>
+                            </queries:If>
                         </queries:Choose>
                     </queries:QueryDeclaration>
                     <queries:QueryDeclaration>
@@ -889,7 +891,8 @@
                                     </queries:Call>
                                 </queries:Path>
                             </queries:If>
-                            <queries:Do>
+                            <queries:If>
+                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                 <queries:Path initialCapacity="2">
                                     <queries:FeatureStep value="http://datatypes.examples.whole.org/RedBlackTree#right"/>
                                     <queries:Call>
@@ -899,7 +902,7 @@
                                         </queries:Expressions>
                                     </queries:Call>
                                 </queries:Path>
-                            </queries:Do>
+                            </queries:If>
                         </queries:Choose>
                     </queries:QueryDeclaration>
                     <queries:Call>

@@ -448,7 +448,8 @@
                                         <queries:VariableTest value="getsetImpl"/>
                                     </queries:Filter>
                                 </queries:If>
-                                <queries:Do>
+                                <queries:If>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                     <queries:Tuple initialCapacity="2">
                                         <queries:Filter>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
@@ -570,7 +571,7 @@
                                         <queries:VariableTest value="getsetImpl"/>
                                         </queries:Filter>
                                     </queries:Tuple>
-                                </queries:Do>
+                                </queries:If>
                             </queries:Choose>
                             <queries:Path initialCapacity="2">
                                 <queries:FeatureStep value="properties"/>
@@ -614,9 +615,10 @@
                                         </queries:EqualsStep>
                                         <queries:StringLiteral value="java.util.Date"/>
                                         </queries:If>
-                                        <queries:Do>
+                                        <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:SelfStep/>
-                                        </queries:Do>
+                                        </queries:If>
                                         </queries:Choose>
                                         <queries:VariableTest value="ptype"/>
                                     </queries:Filter>
@@ -1093,9 +1095,10 @@
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </queries:Call>
                                         </queries:If>
-                                        <queries:Do>
+                                        <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:SelfStep/>
-                                        </queries:Do>
+                                        </queries:If>
                                         </queries:Choose>
                                         <queries:VariableTest value="type"/>
                                         </queries:Filter>
@@ -1148,9 +1151,10 @@
                                         </queries:EqualsStep>
                                         <queries:StringLiteral value="java.util.Date"/>
                                         </queries:If>
-                                        <queries:Do>
+                                        <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:SelfStep/>
-                                        </queries:Do>
+                                        </queries:If>
                                     </queries:Choose>
                                     <queries:VariableTest value="dataType"/>
                                 </queries:Filter>
@@ -1379,9 +1383,10 @@
                                         </queries:Equals>
                                         <queries:StringLiteral value="INTEGER"/>
                                         </queries:If>
-                                        <queries:Do>
+                                        <queries:If>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <queries:VariableRefStep value="rtype"/>
-                                        </queries:Do>
+                                        </queries:If>
                                         </queries:Choose>
                                         <queries:VariableTest value="type"/>
                                         </queries:Filter>
