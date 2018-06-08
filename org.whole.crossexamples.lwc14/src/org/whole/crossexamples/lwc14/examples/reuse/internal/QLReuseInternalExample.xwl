@@ -219,16 +219,9 @@
                                     <queries:IntLiteral value="1"/>
                                 </queries:IndexTest>
                             </queries:Filter>
-                            <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                <workflows:Text value="clone"/>
+                            <queries:Clone>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                                <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                                <workflows:Expressions initialCapacity="1">
-                                    <queries:SelfStep/>
-                                </workflows:Expressions>
-                            </workflows:InvokeJavaClassMethod>
+                            </queries:Clone>
                         </queries:Path>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     </reusables:Model>

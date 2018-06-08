@@ -588,18 +588,14 @@
                                         <queries:And initialCapacity="2">
                                         <queries:TypeTest value="http://lang.whole.org/Java#ClassDeclaration"/>
                                         <queries:Equals>
-                                        <queries:Singleton>
                                         <queries:FeatureStep value="http://lang.whole.org/Java#name"/>
-                                        </queries:Singleton>
                                         <queries:VariableRefStep value="visitorType"/>
                                         </queries:Equals>
                                         </queries:And>
                                         <queries:And initialCapacity="2">
                                         <queries:TypeTest value="whole:org.whole.examples.javabeans:JavabeansPatternsModel#VisitorArtifact"/>
                                         <queries:Equals>
-                                        <queries:Singleton>
                                         <queries:FeatureStep value="whole:org.whole.examples.javabeans:JavabeansPatternsModel#name"/>
-                                        </queries:Singleton>
                                         <queries:VariableRefStep value="visitorType"/>
                                         </queries:Equals>
                                         </queries:And>

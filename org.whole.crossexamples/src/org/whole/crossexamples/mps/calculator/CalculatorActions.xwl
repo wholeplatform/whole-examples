@@ -275,6 +275,7 @@
                                         <java:SimpleName value="e"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         <java:Block initialCapacity="0"/>
                                         </java:CatchClause>
@@ -316,6 +317,7 @@
                                         <java:SimpleName value="e"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -347,6 +349,7 @@
                                         <java:SimpleName value="e"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -377,6 +380,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="e"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -413,6 +417,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="args"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -856,18 +861,9 @@
                                     <queries:SelfStep/>
                                     <queries:VariableTest value="outputFieldCode"/>
                                 </queries:Filter>
-                                <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
-                                    <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                        <workflows:Text value="clone outputField"/>
-                                        <commons:Resolver/>
-                                        <commons:Resolver/>
-                                        <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                                        <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                                        <workflows:Expressions initialCapacity="1">
-                                        <workflows:Variable value="outputField"/>
-                                        </workflows:Expressions>
-                                    </workflows:InvokeJavaClassMethod>
-                                </commons:SameStageFragment>
+                                <queries:Clone>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Clone>
                                 <queries:CartesianUpdate>
                                     <queries:Path initialCapacity="2">
                                         <queries:Filter>

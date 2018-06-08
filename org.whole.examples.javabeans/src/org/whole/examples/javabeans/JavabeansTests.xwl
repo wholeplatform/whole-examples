@@ -706,7 +706,7 @@
                                         <java:Parameters initialCapacity="0"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
-                                        <java:Block initialCapacity="3">
+                                        <java:Block initialCapacity="2">
                                         <java:VariableDeclarationStatement>
                                         <commons:Resolver/>
                                         <java:SimpleType value="Empty"/>
@@ -724,7 +724,6 @@
                                         </java:VariableDeclarationFragment>
                                         </java:VariableDeclarationFragments>
                                         </java:VariableDeclarationStatement>
-                                        <commons:Resolver/>
                                         <java:ReturnStatement>
                                         <java:SimpleName value="product"/>
                                         </java:ReturnStatement>
@@ -8660,16 +8659,9 @@
                         <tests:AssertThat>
                             <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
                                 <queries:VariableRefStep value="artifactsModel"/>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="clone"/>
+                                <queries:Clone>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                                    <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                                    <workflows:Expressions initialCapacity="1">
-                                        <queries:SelfStep/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
+                                </queries:Clone>
                                 <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                                     <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansLibrarySemantics#replaceWithCodePatterns"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -10436,16 +10428,9 @@
                         <tests:AssertThat>
                             <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
                                 <queries:VariableRefStep value="artifactsModel"/>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="clone"/>
+                                <queries:Clone>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                                    <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                                    <workflows:Expressions initialCapacity="1">
-                                        <queries:SelfStep/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
+                                </queries:Clone>
                                 <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                                     <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansLibrarySemantics#replaceWithDesignPatterns"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -11358,16 +11343,9 @@
                         <tests:AssertThat>
                             <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
                                 <queries:VariableRefStep value="artifactsModel"/>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="clone"/>
+                                <queries:Clone>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                                    <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                                    <workflows:Expressions initialCapacity="1">
-                                        <queries:SelfStep/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
+                                </queries:Clone>
                                 <queries:Block initialCapacity="2">
                                     <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                                         <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansLibrarySemantics#replaceWithCodePatterns"/>
@@ -11388,16 +11366,9 @@
                         <tests:AssertThat>
                             <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
                                 <queries:VariableRefStep value="artifactsModel"/>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="clone"/>
+                                <queries:Clone>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                                    <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                                    <workflows:Expressions initialCapacity="1">
-                                        <queries:SelfStep/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
+                                </queries:Clone>
                                 <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                                     <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansLibrarySemantics#replaceWithAllPatterns"/>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -11598,16 +11569,9 @@
                         <tests:AssertThat>
                             <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
                                 <queries:VariableRefStep value="artifactsModel"/>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="clone"/>
+                                <queries:Clone>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                                    <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                                    <workflows:Expressions initialCapacity="1">
-                                        <queries:SelfStep/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
+                                </queries:Clone>
                                 <queries:Block initialCapacity="2">
                                     <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                                         <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansLibrarySemantics#replaceWithAllPatterns"/>
@@ -11644,16 +11608,9 @@
                         <tests:AssertThat>
                             <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
                                 <queries:VariableRefStep value="artifactsModel"/>
-                                <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                                    <workflows:Text value="clone"/>
+                                <queries:Clone>
                                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                    <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                                    <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                                    <workflows:Expressions initialCapacity="1">
-                                        <queries:SelfStep/>
-                                    </workflows:Expressions>
-                                </workflows:InvokeJavaClassMethod>
+                                </queries:Clone>
                                 <queries:Block initialCapacity="2">
                                     <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                                         <semantics:Name value="whole:org.whole.examples.javabeans:JavabeansLibrarySemantics#replaceWithDesignPatterns"/>

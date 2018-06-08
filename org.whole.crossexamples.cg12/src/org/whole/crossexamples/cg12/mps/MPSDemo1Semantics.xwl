@@ -78,60 +78,15 @@
                 </semantics:ExecutionRule>
                 <semantics:ExecutionRule>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                    <semantics:TypedVariable>
-                        <semantics:Variable value="anyOther"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                        <semantics:AnyType/>
-                    </semantics:TypedVariable>
-                    <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
-                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
-                            <workflows:Text value="shallowClone"/>
+                    <semantics:AnyType/>
+                    <queries:Clone xmlns:queries="http://lang.whole.org/Queries">
+                        <semantics:FunctionApplication>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                            <workflows:StringLiteral value="org.whole.lang.semantics.util.SemanticsUtils"/>
-                            <workflows:StringLiteral value="createShallowCloneEntity(org.whole.lang.model.IEntity)"/>
-                            <workflows:Expressions initialCapacity="1">
-                                <queries:SelfStep/>
-                            </workflows:Expressions>
-                        </workflows:InvokeJavaClassMethod>
-                        <queries:Block initialCapacity="2">
-                            <queries:Choose initialCapacity="2">
-                                <queries:If>
-                                    <queries:KindTest value="SIMPLE"/>
-                                    <queries:PointwiseUpdate>
-                                        <queries:ChildStep/>
-                                        <semantics:FunctionApplication>
-                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        <queries:Path initialCapacity="2">
-                                        <queries:VariableRefStep value="anyOther"/>
-                                        <queries:ChildStep/>
-                                        </queries:Path>
-                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </semantics:FunctionApplication>
-                                    </queries:PointwiseUpdate>
-                                </queries:If>
-                                <queries:If>
-                                    <queries:KindTest value="COMPOSITE"/>
-                                    <queries:CartesianInsert>
-                                        <queries:Placement value="INTO"/>
-                                        <queries:SelfStep/>
-                                        <semantics:FunctionApplication>
-                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        <queries:Path initialCapacity="2">
-                                        <queries:VariableRefStep value="anyOther"/>
-                                        <queries:ChildStep/>
-                                        </queries:Path>
-                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        </semantics:FunctionApplication>
-                                    </queries:CartesianInsert>
-                                </queries:If>
-                            </queries:Choose>
-                            <queries:SelfStep/>
-                        </queries:Block>
-                    </queries:Path>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </semantics:FunctionApplication>
+                    </queries:Clone>
                 </semantics:ExecutionRule>
             </semantics:Rules>
         </semantics:SemanticFunction>

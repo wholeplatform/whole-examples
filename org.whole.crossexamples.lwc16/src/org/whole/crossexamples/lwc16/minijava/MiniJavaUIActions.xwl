@@ -24,34 +24,30 @@
                         <queries:Name value="newName"/>
                         <queries:Name value="factory"/>
                     </queries:FreshNames>
-                    <queries:Block initialCapacity="2">
+                    <queries:Block initialCapacity="4">
+                        <workflows:InvokeJavaClassMethod xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="Configure a custom dialog factory"/>
+                            <workflows:Variable value="factory"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                            <workflows:StringLiteral value="org.whole.lang.workflows.ui.dialogs.ChangeValueDialogFactory"/>
+                            <workflows:StringLiteral value="instance()"/>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </workflows:InvokeJavaClassMethod>
+                        <queries:Path initialCapacity="2">
+                            <queries:VariableRefStep value="primarySelectedEntity"/>
+                            <queries:Filter>
+                                <queries:Clone>
+                                    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                </queries:Clone>
+                                <queries:VariableTest value="name"/>
+                            </queries:Filter>
+                        </queries:Path>
                         <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
-                            <workflows:Sequence xmlns:workflows="http://lang.whole.org/Workflows">
-                                <workflows:Text value="sequence"/>
-                                <workflows:FlowObjects initialCapacity="3">
-                                    <workflows:InvokeJavaClassMethod>
-                                        <workflows:Text value="Configure a custom dialog factory"/>
-                                        <workflows:Variable value="factory"/>
-                                        <commons:Resolver/>
-                                        <workflows:StringLiteral value="org.whole.lang.workflows.ui.dialogs.ChangeValueDialogFactory"/>
-                                        <workflows:StringLiteral value="instance()"/>
-                                        <commons:Resolver/>
-                                    </workflows:InvokeJavaClassMethod>
-                                    <workflows:InvokeJavaClassMethod>
-                                        <workflows:Text value="clone oldName"/>
-                                        <workflows:Variable value="name"/>
-                                        <commons:Resolver/>
-                                        <workflows:StringLiteral value="org.whole.lang.util.EntityUtils"/>
-                                        <workflows:StringLiteral value="clone(org.whole.lang.model.IEntity)"/>
-                                        <workflows:Expressions initialCapacity="1">
-                                        <workflows:Variable value="primarySelectedEntity"/>
-                                        </workflows:Expressions>
-                                    </workflows:InvokeJavaClassMethod>
-                                    <workflows:Task>
-                                        <workflows:Text value="Rename refactoring"/>
-                                        <workflows:Text value="New name"/>
-                                        <workflows:Assignments initialCapacity="1">
-                                        <workflows:Assign>
+                            <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
+                                <workflows:Text value="Rename refactoring"/>
+                                <workflows:Text value="New name"/>
+                                <workflows:Assignments initialCapacity="1">
+                                    <workflows:Assign>
                                         <workflows:Variable value="newName"/>
                                         <commons:StageUpFragment>
                                         <commons:Variable>
@@ -60,12 +56,10 @@
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         </commons:StageUpFragment>
-                                        </workflows:Assign>
-                                        </workflows:Assignments>
-                                        <workflows:Variable value="factory"/>
-                                    </workflows:Task>
-                                </workflows:FlowObjects>
-                            </workflows:Sequence>
+                                    </workflows:Assign>
+                                </workflows:Assignments>
+                                <workflows:Variable value="factory"/>
+                            </workflows:Task>
                         </commons:SameStageFragment>
                         <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                             <semantics:Name value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics#rename"/>
