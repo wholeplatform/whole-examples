@@ -21,7 +21,6 @@ import org.whole.examples.annotations.AnnotationsActions;
 import org.whole.examples.dataintegration.motogp.MotoGP_TeamsActions;
 import org.whole.examples.dataintegration.motogp.MotoGP_TeamsCSVGrammar;
 import org.whole.examples.dataintegration.motogp.MotoGP_TeamsFLFGrammar;
-import org.whole.examples.dataintegration.xsd.DTAUSDeployer;
 import org.whole.examples.datatypes.RedBlackTreeUIDeployer;
 import org.whole.examples.datatypes.redblacktree.reflect.RedBlackTreeLanguageDeployer;
 import org.whole.examples.javadocs.JavadocsActions;
@@ -50,8 +49,7 @@ public class ExamplesContributionsDeployer extends AbstractSuiteDeployer {
 			ImpLanguageDeployer.class,
 			ImpUIDeployer.class,
 			RedBlackTreeLanguageDeployer.class,
-			RedBlackTreeUIDeployer.class,
-			DTAUSDeployer.class
+			RedBlackTreeUIDeployer.class
 		);
 	}
 

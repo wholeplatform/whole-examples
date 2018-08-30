@@ -8,7 +8,6 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.whole.examples.annotations,
  org.whole.examples.dataintegration.motogp,
- org.whole.examples.dataintegration.xsd,
  org.whole.examples.datatypes,
  org.whole.examples.datatypes.redblacktree.builders,
  org.whole.examples.datatypes.redblacktree.factories,

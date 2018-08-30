@@ -28,8 +28,6 @@ import org.whole.lang.text.codebase.TextSourcePersistenceKit;
 import org.whole.lang.util.StringUtils;
 import org.whole.lang.xml.codebase.XmlBuilderPersistenceKit;
 import org.whole.lang.xml.codebase.XmlSourcePersistenceKit;
-import org.whole.lang.xsd.codebase.XsdPersistenceKit;
-import org.whole.lang.xsd.codebase.XsiPersistenceKit;
 
 public class Helpers {
 	public static boolean isAbstractFactory(InterfaceDeclaration entity) {
@@ -104,24 +102,6 @@ public class Helpers {
 	}
 	public static void saveXmlBuilder(IEntity model, String fileName) throws Exception {
 		XmlBuilderPersistenceKit.instance().writeModel(model,
-				createFilePersistenceProvider(fileName));
-	}
-
-	public static IEntity loadXsi(String fileName) throws Exception {
-		return XsiPersistenceKit.instance().readModel(
-				createFilePersistenceProvider(fileName));
-	}
-	public static void saveXsi(IEntity model, String fileName) throws Exception {
-		XsiPersistenceKit.instance().writeModel(model,
-				createFilePersistenceProvider(fileName));
-	}
-
-	public static IEntity loadXsd(String fileName) throws Exception {
-		return XsdPersistenceKit.instance().readModel(
-				createFilePersistenceProvider(fileName));
-	}
-	public static void saveXsd(IEntity model, String fileName) throws Exception {
-		XsdPersistenceKit.instance().writeModel(model,
 				createFilePersistenceProvider(fileName));
 	}
 

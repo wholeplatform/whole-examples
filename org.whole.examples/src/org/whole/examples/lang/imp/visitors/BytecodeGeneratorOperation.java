@@ -36,13 +36,13 @@ public class BytecodeGeneratorOperation extends AbstractOperation implements Opc
 	private MethodVisitor methodVisitor;
 
 	public static byte[] compile(IEntity program, IBindingManager args) {
-		BytecodeGeneratorOperation gen = new BytecodeGeneratorOperation(args);
+		BytecodeGeneratorOperation gen = new BytecodeGeneratorOperation(program, args);
 		gen.stagedVisit(program);
 		return gen.getResult();
 	}
 
-	protected BytecodeGeneratorOperation(IBindingManager args) {
-		super(ID, args, false);
+	protected BytecodeGeneratorOperation(IEntity program, IBindingManager args) {
+		super(ID, program, args, false);
 	}
 
 	public byte[] getResult() {
