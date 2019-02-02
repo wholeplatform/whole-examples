@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<patterns:Library xmlns:patterns="whole:org.whole.lang.patterns:PatternsModel">
+    <patterns:URI value="whole:org.whole.lang.names:NamesLibrary"/>
+    <patterns:Namespace value="org.whole.lang.names"/>
+    <patterns:Name value="Names"/>
+    <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+    <patterns:Declarations initialCapacity="8">
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="scopeTraversal"/>
+            <queries:Sequence xmlns:queries="http://lang.whole.org/Queries" initialCapacity="5">
+                <queries:SelfStep/>
+                <queries:Path initialCapacity="2">
+                    <queries:Filter>
+                        <queries:SelfStep/>
+                        <queries:Some>
+                            <queries:Filter>
+                                <queries:ParentStep/>
+                                <queries:Or initialCapacity="2">
+                                    <queries:And initialCapacity="2">
+                                        <queries:LanguageTest value="http://lang.whole.org/Java"/>
+                                        <queries:TypeTest value="http://lang.whole.org/Java#Block"/>
+                                    </queries:And>
+                                    <queries:And initialCapacity="2">
+                                        <queries:LanguageTest value="whole:com.whole.lang.flows:FlowsPatternsModel"/>
+                                        <queries:Or initialCapacity="3">
+                                        <queries:TypeTest value="whole:com.whole.lang.flows:FlowsPatternsModel#Block"/>
+                                        <queries:TypeTest value="whole:com.whole.lang.flows:FlowsPatternsModel#Declarations"/>
+                                        <queries:TypeTest value="whole:com.whole.lang.flows:FlowsPatternsModel#Scope"/>
+                                        </queries:Or>
+                                    </queries:And>
+                                </queries:Or>
+                            </queries:Filter>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </queries:Some>
+                    </queries:Filter>
+                    <queries:PrecedingSiblingStep/>
+                </queries:Path>
+                <queries:Path initialCapacity="3">
+                    <queries:Filter>
+                        <queries:SelfStep/>
+                        <queries:Some>
+                            <queries:Filter>
+                                <queries:ParentStep/>
+                                <queries:And initialCapacity="2">
+                                    <queries:LanguageTest value="whole:com.whole.lang.flows:FlowsPatternsModel"/>
+                                    <queries:TypeTest value="whole:com.whole.lang.flows:FlowsPatternsModel#Scope"/>
+                                </queries:And>
+                            </queries:Filter>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </queries:Some>
+                    </queries:Filter>
+                    <queries:PrecedingSiblingStep/>
+                    <queries:ChildStep/>
+                </queries:Path>
+                <queries:Path initialCapacity="2">
+                    <queries:Filter>
+                        <queries:SelfStep/>
+                        <queries:Some>
+                            <queries:Filter>
+                                <queries:ParentStep/>
+                                <queries:Or initialCapacity="2">
+                                    <queries:And initialCapacity="2">
+                                        <queries:LanguageTest value="http://lang.whole.org/Java"/>
+                                        <queries:TypeTest value="http://lang.whole.org/Java#BodyDeclarations"/>
+                                    </queries:And>
+                                    <queries:And initialCapacity="2">
+                                        <queries:LanguageTest value="http://lang.whole.org/Models"/>
+                                        <queries:TypeTest value="http://lang.whole.org/Models#ModelDeclarations"/>
+                                    </queries:And>
+                                </queries:Or>
+                            </queries:Filter>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </queries:Some>
+                    </queries:Filter>
+                    <queries:Sequence initialCapacity="2">
+                        <queries:PrecedingSiblingStep/>
+                        <queries:FollowingSiblingStep/>
+                    </queries:Sequence>
+                </queries:Path>
+                <queries:Path initialCapacity="2">
+                    <queries:ParentStep/>
+                    <patterns:FunctionStep value="scopeTraversal"/>
+                </queries:Path>
+            </queries:Sequence>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="declarationsInScope"/>
+            <queries:Filter xmlns:queries="http://lang.whole.org/Queries">
+                <patterns:FunctionStep value="scopeTraversal"/>
+                <queries:Or initialCapacity="4">
+                    <queries:And initialCapacity="2">
+                        <queries:LanguageTest value="http://lang.whole.org/Java"/>
+                        <queries:Or initialCapacity="5">
+                            <queries:TypeTest value="http://lang.whole.org/Java#InterfaceDeclaration"/>
+                            <queries:TypeTest value="http://lang.whole.org/Java#ClassDeclaration"/>
+                            <queries:TypeTest value="http://lang.whole.org/Java#MethodDeclaration"/>
+                            <queries:TypeTest value="http://lang.whole.org/Java#FieldDeclaration"/>
+                            <queries:TypeTest value="http://lang.whole.org/Java#SingleVariableDeclaration"/>
+                        </queries:Or>
+                    </queries:And>
+                    <queries:And initialCapacity="2">
+                        <queries:LanguageTest value="http://lang.whole.org/Models"/>
+                        <queries:Or initialCapacity="1">
+                            <queries:Or initialCapacity="5">
+                                <queries:TypeTest value="http://lang.whole.org/Models#SimpleEntity"/>
+                                <queries:TypeTest value="http://lang.whole.org/Models#CompositeEntity"/>
+                                <queries:TypeTest value="http://lang.whole.org/Models#DataEntity"/>
+                                <queries:TypeTest value="http://lang.whole.org/Models#EnumEntity"/>
+                                <queries:TypeTest value="http://lang.whole.org/Models#MapEntity"/>
+                            </queries:Or>
+                        </queries:Or>
+                    </queries:And>
+                    <queries:And initialCapacity="2">
+                        <queries:LanguageTest value="whole:com.whole.lang.flows:FlowsPatternsModel"/>
+                        <queries:Or initialCapacity="2">
+                            <queries:TypeTest value="whole:com.whole.lang.flows:FlowsPatternsModel#VariableDeclaration"/>
+                            <queries:TypeTest value="whole:com.whole.lang.flows:FlowsPatternsModel#For"/>
+                        </queries:Or>
+                    </queries:And>
+                    <queries:TypeTest value="whole:com.whole.lang.services:ServicesPatternsModel#Service"/>
+                </queries:Or>
+            </queries:Filter>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="declarationName"/>
+            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="4">
+                <queries:If>
+                    <queries:LanguageTest value="http://lang.whole.org/Java"/>
+                    <queries:Choose initialCapacity="2">
+                        <queries:If>
+                            <queries:Or initialCapacity="4">
+                                <queries:TypeTest value="http://lang.whole.org/Java#InterfaceDeclaration"/>
+                                <queries:TypeTest value="http://lang.whole.org/Java#ClassDeclaration"/>
+                                <queries:TypeTest value="http://lang.whole.org/Java#MethodDeclaration"/>
+                                <queries:TypeTest value="http://lang.whole.org/Java#SingleVariableDeclaration"/>
+                            </queries:Or>
+                            <queries:FeatureStep value="http://lang.whole.org/Java#name"/>
+                        </queries:If>
+                        <queries:If>
+                            <queries:TypeTest value="http://lang.whole.org/Java#FieldDeclaration"/>
+                            <queries:Path initialCapacity="3">
+                                <queries:FeatureStep value="http://lang.whole.org/Java#fragments"/>
+                                <queries:ChildStep/>
+                                <queries:FeatureStep value="http://lang.whole.org/Java#name"/>
+                            </queries:Path>
+                        </queries:If>
+                    </queries:Choose>
+                </queries:If>
+                <queries:If>
+                    <queries:LanguageTest value="http://lang.whole.org/Models"/>
+                    <queries:FeatureStep value="http://lang.whole.org/Models#name"/>
+                </queries:If>
+                <queries:If>
+                    <queries:LanguageTest value="whole:com.whole.lang.flows:FlowsPatternsModel"/>
+                    <queries:Choose initialCapacity="2">
+                        <queries:If>
+                            <queries:TypeTest value="whole:com.whole.lang.flows:FlowsPatternsModel#VariableDeclaration"/>
+                            <queries:FeatureStep value="whole:com.whole.lang.flows:FlowsPatternsModel#name"/>
+                        </queries:If>
+                        <queries:If>
+                            <queries:TypeTest value="whole:com.whole.lang.flows:FlowsPatternsModel#For"/>
+                            <queries:FeatureStep value="whole:com.whole.lang.flows:FlowsPatternsModel#name"/>
+                        </queries:If>
+                    </queries:Choose>
+                </queries:If>
+                <queries:If>
+                    <queries:TypeTest value="whole:com.whole.lang.services:ServicesPatternsModel#Service"/>
+                    <patterns:VariablePoint>
+                        <patterns:Name value="requestParameterName"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariablePoint>
+                </queries:If>
+            </queries:Choose>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="nameDeclaration"/>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="1">
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="name"/>
+                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                </patterns:Declarations>
+                <queries:Filter xmlns:queries="http://lang.whole.org/Queries">
+                    <queries:Filter>
+                        <patterns:FunctionStep value="declarationsInScope"/>
+                        <queries:Some>
+                            <patterns:FunctionStep value="declarationName"/>
+                            <queries:EqualsStep>
+                                <queries:VariableRefStep value="name"/>
+                            </queries:EqualsStep>
+                        </queries:Some>
+                    </queries:Filter>
+                    <queries:IndexTest>
+                        <queries:IntLiteral value="0"/>
+                    </queries:IndexTest>
+                </queries:Filter>
+            </patterns:ScopePoint>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="implicitDeclaration"/>
+            <queries:Filter xmlns:queries="http://lang.whole.org/Queries">
+                <queries:Filter>
+                    <patterns:FunctionStep value="declarationsInScope"/>
+                    <queries:Or initialCapacity="2">
+                        <queries:TypeTest value="whole:com.whole.lang.flows:FlowsPatternsModel#For"/>
+                        <queries:TypeTest value="whole:com.whole.lang.services:ServicesPatternsModel#Service"/>
+                    </queries:Or>
+                </queries:Filter>
+                <queries:IndexTest>
+                    <queries:IntLiteral value="0"/>
+                </queries:IndexTest>
+            </queries:Filter>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="useSites"/>
+            <queries:Choose xmlns:queries="http://lang.whole.org/Queries" initialCapacity="2">
+                <queries:If>
+                    <queries:LanguageTest value="http://lang.whole.org/Models"/>
+                    <queries:Choose initialCapacity="7">
+                        <queries:If>
+                            <queries:TypeTest value="http://lang.whole.org/Models#Model"/>
+                            <queries:Path initialCapacity="2">
+                                <queries:Sequence initialCapacity="2">
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#typeRelations"/>
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#declarations"/>
+                                </queries:Sequence>
+                                <patterns:FunctionStep value="useSites"/>
+                            </queries:Path>
+                        </queries:If>
+                        <queries:If>
+                            <queries:Or initialCapacity="4">
+                                <queries:TypeTest value="http://lang.whole.org/Models#TypeRelations"/>
+                                <queries:TypeTest value="http://lang.whole.org/Models#Types"/>
+                                <queries:SubtypeTest value="http://lang.whole.org/Models#TypeRelation"/>
+                                <queries:TypeTest value="http://lang.whole.org/Models#ModelDeclarations"/>
+                            </queries:Or>
+                            <queries:Path initialCapacity="2">
+                                <queries:ChildStep/>
+                                <patterns:FunctionStep value="useSites"/>
+                            </queries:Path>
+                        </queries:If>
+                        <queries:If>
+                            <queries:TypeTest value="http://lang.whole.org/Models#SimpleEntity"/>
+                            <queries:Sequence initialCapacity="2">
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#types"/>
+                                    <queries:ChildStep/>
+                                </queries:Path>
+                                <queries:Path initialCapacity="3">
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#features"/>
+                                    <queries:ChildStep/>
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#type"/>
+                                </queries:Path>
+                            </queries:Sequence>
+                        </queries:If>
+                        <queries:If>
+                            <queries:TypeTest value="http://lang.whole.org/Models#CompositeEntity"/>
+                            <queries:Sequence initialCapacity="2">
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#types"/>
+                                    <queries:ChildStep/>
+                                </queries:Path>
+                                <queries:FeatureStep value="http://lang.whole.org/Models#componentType"/>
+                            </queries:Sequence>
+                        </queries:If>
+                        <queries:If>
+                            <queries:TypeTest value="http://lang.whole.org/Models#MapEntity"/>
+                            <queries:Sequence initialCapacity="3">
+                                <queries:Path initialCapacity="2">
+                                    <queries:FeatureStep value="http://lang.whole.org/Models#types"/>
+                                    <queries:ChildStep/>
+                                </queries:Path>
+                                <queries:FeatureStep value="http://lang.whole.org/Models#keyType"/>
+                                <queries:FeatureStep value="http://lang.whole.org/Models#valueType"/>
+                            </queries:Sequence>
+                        </queries:If>
+                        <queries:If>
+                            <queries:Or initialCapacity="2">
+                                <queries:TypeTest value="http://lang.whole.org/Models#EnumEntity"/>
+                                <queries:TypeTest value="http://lang.whole.org/Models#DataEntity"/>
+                            </queries:Or>
+                            <queries:Path initialCapacity="2">
+                                <queries:FeatureStep value="http://lang.whole.org/Models#types"/>
+                                <queries:ChildStep/>
+                            </queries:Path>
+                        </queries:If>
+                        <queries:If>
+                            <queries:Or initialCapacity="2">
+                                <queries:TypeTest value="http://lang.whole.org/Models#SimpleName"/>
+                                <queries:SubtypeTest value="http://lang.whole.org/Models#ForeignType"/>
+                            </queries:Or>
+                            <queries:SelfStep/>
+                        </queries:If>
+                    </queries:Choose>
+                </queries:If>
+                <queries:Do>
+                    <queries:Path initialCapacity="2">
+                        <queries:ChildStep/>
+                        <patterns:FunctionStep value="useSites"/>
+                    </queries:Path>
+                </queries:Do>
+            </queries:Choose>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="usesInScope"/>
+            <queries:Filter xmlns:queries="http://lang.whole.org/Queries">
+                <patterns:FunctionStep value="useSites"/>
+                <queries:Or initialCapacity="1">
+                    <queries:And initialCapacity="2">
+                        <queries:LanguageTest value="http://lang.whole.org/Models"/>
+                        <queries:Or initialCapacity="1">
+                            <queries:Or initialCapacity="1">
+                                <queries:TypeTest value="http://lang.whole.org/Models#SimpleName"/>
+                            </queries:Or>
+                        </queries:Or>
+                    </queries:And>
+                </queries:Or>
+            </queries:Filter>
+        </patterns:FunctionDeclaration>
+        <patterns:FunctionDeclaration>
+            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+            <patterns:Name value="nameUses"/>
+            <patterns:ScopePoint>
+                <patterns:Declarations initialCapacity="1">
+                    <patterns:VariableDeclaration>
+                        <patterns:Name value="name"/>
+                        <queries:SelfStep xmlns:queries="http://lang.whole.org/Queries"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </patterns:VariableDeclaration>
+                </patterns:Declarations>
+                <queries:Path xmlns:queries="http://lang.whole.org/Queries" initialCapacity="3">
+                    <patterns:FunctionStep value="nameDeclaration"/>
+                    <patterns:FunctionStep value="scopeTraversal"/>
+                    <queries:Filter>
+                        <patterns:FunctionStep value="usesInScope"/>
+                        <queries:EqualsStep>
+                            <queries:VariableRefStep value="name"/>
+                        </queries:EqualsStep>
+                    </queries:Filter>
+                </queries:Path>
+            </patterns:ScopePoint>
+        </patterns:FunctionDeclaration>
+    </patterns:Declarations>
+</patterns:Library>

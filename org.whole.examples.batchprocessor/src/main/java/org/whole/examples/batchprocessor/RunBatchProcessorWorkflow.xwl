@@ -19,10 +19,7 @@
             <workflows:StringLiteral value="org.whole.examples.batchprocessor.BatchProcessorApplication"/>
             <workflows:StringLiteral value="run(java.lang.String, java.lang.String, boolean)"/>
             <workflows:Expressions initialCapacity="3">
-                <queries:Addition xmlns:queries="http://lang.whole.org/Queries">
-                    <queries:VariableRefStep value="projectLocation"/>
-                    <queries:StringLiteral value="/input"/>
-                </queries:Addition>
+                <queries:StringLiteral xmlns:queries="http://lang.whole.org/Queries" value="/Users/riccardo/Documents/Progetti/Whole/repos/whole-spl/"/>
                 <queries:Addition xmlns:queries="http://lang.whole.org/Queries">
                     <queries:VariableRefStep value="projectLocation"/>
                     <queries:StringLiteral value="/QueriesNamesCleanup.xwl"/>
