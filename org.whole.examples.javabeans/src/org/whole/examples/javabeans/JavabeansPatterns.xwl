@@ -59,7 +59,7 @@
                                         </artifacts:NameWithExtension>
                                         <commons:Resolver/>
                                         <commons:StageUpFragment>
-                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:OrdinaryCompilationUnit xmlns:java="http://lang.whole.org/Java">
                                         <java:PackageDeclaration>
                                         <commons:Resolver/>
                                         <commons:Resolver/>
@@ -84,7 +84,7 @@
                                         <java:BodyDeclarations initialCapacity="0"/>
                                         </java:InterfaceDeclaration>
                                         </java:TypeDeclarations>
-                                        </java:CompilationUnit>
+                                        </java:OrdinaryCompilationUnit>
                                         </commons:StageUpFragment>
                                         </artifacts:FileArtifact>
                                         </commons:StageUpFragment>
@@ -182,7 +182,7 @@
                                         </artifacts:NameWithExtension>
                                         <commons:Resolver/>
                                         <commons:StageUpFragment>
-                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:OrdinaryCompilationUnit xmlns:java="http://lang.whole.org/Java">
                                         <java:PackageDeclaration>
                                         <commons:Resolver/>
                                         <commons:Resolver/>
@@ -207,7 +207,7 @@
                                         <java:BodyDeclarations initialCapacity="0"/>
                                         </java:InterfaceDeclaration>
                                         </java:TypeDeclarations>
-                                        </java:CompilationUnit>
+                                        </java:OrdinaryCompilationUnit>
                                         </commons:StageUpFragment>
                                         </artifacts:FileArtifact>
                                         </commons:StageUpFragment>
@@ -302,7 +302,7 @@
                         </artifacts:NameWithExtension>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                            <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                            <java:OrdinaryCompilationUnit xmlns:java="http://lang.whole.org/Java">
                                 <java:PackageDeclaration>
                                     <commons:Resolver/>
                                     <commons:Resolver/>
@@ -367,7 +367,7 @@
                                         </java:BodyDeclarations>
                                     </java:InterfaceDeclaration>
                                 </java:TypeDeclarations>
-                            </java:CompilationUnit>
+                            </java:OrdinaryCompilationUnit>
                         </commons:StageUpFragment>
                     </artifacts:FileArtifact>
                 </patterns:TemplatePoint>
@@ -525,7 +525,7 @@
                         </artifacts:NameWithExtension>
                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                            <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                            <java:OrdinaryCompilationUnit xmlns:java="http://lang.whole.org/Java">
                                 <java:PackageDeclaration>
                                     <commons:Resolver/>
                                     <commons:Resolver/>
@@ -605,7 +605,7 @@
                                         </java:BodyDeclarations>
                                     </java:ClassDeclaration>
                                 </java:TypeDeclarations>
-                            </java:CompilationUnit>
+                            </java:OrdinaryCompilationUnit>
                         </commons:StageUpFragment>
                     </artifacts:FileArtifact>
                 </patterns:TemplatePoint>
@@ -774,7 +774,7 @@
                     </artifacts:NameWithExtension>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                     <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                        <java:OrdinaryCompilationUnit xmlns:java="http://lang.whole.org/Java">
                             <java:PackageDeclaration>
                                 <commons:Resolver/>
                                 <commons:Resolver/>
@@ -894,7 +894,7 @@
                                     </patterns:SequencePoint>
                                 </patterns:ScopePoint>
                             </java:TypeDeclarations>
-                        </java:CompilationUnit>
+                        </java:OrdinaryCompilationUnit>
                     </commons:StageUpFragment>
                 </artifacts:FileArtifact>
             </patterns:TemplatePoint>

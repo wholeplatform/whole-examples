@@ -108,7 +108,7 @@ public class JavadocsActions extends AbstractTemplateFactory<org.whole.lang.acti
         b1.Resolver();
         b1.StageUpFragment_();
         org.whole.lang.java.builders.IJavaBuilder b4 = (org.whole.lang.java.builders.IJavaBuilder) op.wGetBuilder(org.whole.lang.java.reflect.JavaLanguageKit.URI);
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b4.PackageDeclaration_();
         b1.Resolver();
         b1.Resolver();
@@ -180,7 +180,7 @@ public class JavadocsActions extends AbstractTemplateFactory<org.whole.lang.acti
         b4._BodyDeclarations();
         b4._ClassDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b3._FileArtifact();
         b3._Artifacts();

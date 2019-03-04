@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+<java:OrdinaryCompilationUnit xmlns:java="http://lang.whole.org/Java">
     <java:PackageDeclaration>
         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -168,4 +168,4 @@
             </java:BodyDeclarations>
         </java:ClassDeclaration>
     </java:TypeDeclarations>
-</java:CompilationUnit>
+</java:OrdinaryCompilationUnit>

@@ -131,7 +131,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b1.Resolver();
         b1.StageUpFragment_();
         org.whole.lang.java.builders.IJavaBuilder b4 = (org.whole.lang.java.builders.IJavaBuilder) op.wGetBuilder(org.whole.lang.java.reflect.JavaLanguageKit.URI);
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b4.PackageDeclaration_();
         b1.Resolver();
         b1.Resolver();
@@ -268,7 +268,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._ClassDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b3._FileArtifact();
         b1._StageUpFragment();
@@ -355,7 +355,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b3._NameWithExtension();
         b1.Resolver();
         b1.StageUpFragment_();
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b4.PackageDeclaration_();
         b1.Resolver();
         b1.Resolver();
@@ -395,7 +395,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._InterfaceDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b3._FileArtifact();
         b1._StageUpFragment();
@@ -414,7 +414,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b3._NameWithExtension();
         b1.Resolver();
         b1.StageUpFragment_();
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b4.PackageDeclaration_();
         b1.Resolver();
         b1.Resolver();
@@ -497,7 +497,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._ClassDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b3._FileArtifact();
         b1._StageUpFragment();
@@ -959,7 +959,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b3._NameWithExtension();
         b1.Resolver();
         b1.StageUpFragment_();
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b4.PackageDeclaration_();
         b1.Resolver();
         b1.Resolver();
@@ -1333,7 +1333,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._ClassDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b3._FileArtifact();
         b1._StageUpFragment();
@@ -1583,7 +1583,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b0.Label("Generate Product interface");
         b2.Select_();
         b1.StageUpFragment_();
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b1.Resolver();
         b4.ImportDeclarations_(0);
         b4._ImportDeclarations();
@@ -1615,7 +1615,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._InterfaceDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b2.Path_(2);
         b2.VariableRefStep("selectedEntities");
@@ -1803,7 +1803,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b0.Label("Generate Product implementation");
         b2.Select_();
         b1.StageUpFragment_();
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b1.Resolver();
         b4.ImportDeclarations_(0);
         b4._ImportDeclarations();
@@ -1869,7 +1869,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._ClassDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b2.Path_(2);
         b2.VariableRefStep("selectedEntities");
@@ -2261,7 +2261,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b3._NameWithExtension();
         b1.Resolver();
         b1.StageUpFragment_();
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b4.PackageDeclaration_();
         b1.Resolver();
         b1.Resolver();
@@ -2393,7 +2393,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._ClassDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b3._FileArtifact();
         b1._StageUpFragment();
@@ -2427,7 +2427,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b3._NameWithExtension();
         b1.Resolver();
         b1.StageUpFragment_();
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b4.PackageDeclaration_();
         b1.Resolver();
         b1.Resolver();
@@ -2462,7 +2462,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._InterfaceDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b3._FileArtifact();
         b1._StageUpFragment();
@@ -2481,7 +2481,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b3._NameWithExtension();
         b1.Resolver();
         b1.StageUpFragment_();
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b4.PackageDeclaration_();
         b1.Resolver();
         b1.Resolver();
@@ -2526,7 +2526,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._ClassDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b3._FileArtifact();
         b1._StageUpFragment();
@@ -2697,7 +2697,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b0.Label("Generate Concrete Factory from an Abstract Factory");
         b2.Select_();
         b1.StageUpFragment_();
-        b4.CompilationUnit_();
+        b4.OrdinaryCompilationUnit_();
         b1.Resolver();
         b4.ImportDeclarations_(0);
         b4._ImportDeclarations();
@@ -2817,7 +2817,7 @@ public class JavaPatternsActions extends AbstractTemplateFactory<org.whole.lang.
         b4._BodyDeclarations();
         b4._ClassDeclaration();
         b4._TypeDeclarations();
-        b4._CompilationUnit();
+        b4._OrdinaryCompilationUnit();
         b1._StageUpFragment();
         b2.Path_(2);
         b2.FeatureStep("types");

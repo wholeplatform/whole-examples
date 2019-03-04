@@ -503,7 +503,7 @@
                             <tests:Matches>
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                     <misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="1">
-                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:OrdinaryCompilationUnit xmlns:java="http://lang.whole.org/Java">
                                         <java:PackageDeclaration>
                                         <commons:Resolver/>
                                         <commons:Resolver/>
@@ -1438,7 +1438,7 @@
                                         </java:BodyDeclarations>
                                         </java:ClassDeclaration>
                                         </java:TypeDeclarations>
-                                        </java:CompilationUnit>
+                                        </java:OrdinaryCompilationUnit>
                                     </misc:Misc>
                                 </commons:StageUpFragment>
                             </tests:Matches>
@@ -1579,7 +1579,7 @@
                             <tests:Matches>
                                 <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                     <misc:Misc xmlns:misc="http://lang.whole.org/Misc" initialCapacity="1">
-                                        <java:CompilationUnit xmlns:java="http://lang.whole.org/Java">
+                                        <java:OrdinaryCompilationUnit xmlns:java="http://lang.whole.org/Java">
                                         <java:PackageDeclaration>
                                         <commons:Resolver/>
                                         <commons:Resolver/>
@@ -3117,7 +3117,7 @@
                                         </java:BodyDeclarations>
                                         </java:ClassDeclaration>
                                         </java:TypeDeclarations>
-                                        </java:CompilationUnit>
+                                        </java:OrdinaryCompilationUnit>
                                     </misc:Misc>
                                 </commons:StageUpFragment>
                             </tests:Matches>

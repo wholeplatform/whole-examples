@@ -54,7 +54,7 @@
                                         <commons:Resolver/>
                                         <commons:StageUpFragment>
                                         <commons:Variable>
-                                        <commons:VarType value="http://lang.whole.org/Java#CompilationUnit"/>
+                                        <commons:VarType value="http://lang.whole.org/Java#OrdinaryCompilationUnit"/>
                                         <commons:VarName value="javaClass"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
