@@ -26,8 +26,8 @@
             <workflows:Text value="load Actions"/>
             <workflows:Variable value="rbtActions"/>
             <workflows:StringLiteral value="org.whole.lang.xml.codebase.XmlBuilderPersistenceKit"/>
-            <workflows:ResourceKind value="CLASSPATH"/>
-            <workflows:StringLiteral value="org\whole\examples\datatypes\RedBlackTreeActions.xwl"/>
+            <workflows:ResourceKind value="WORKSPACE"/>
+            <workflows:StringLiteral value="/org.whole.examples/src/org/whole/examples/datatypes/RedBlackTreeActions.xwl"/>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
         </workflows:LoadModel>
         <workflows:InvokeOperation>
