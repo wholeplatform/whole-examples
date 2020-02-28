@@ -467,12 +467,10 @@
                                         <queries:VariableRefStep value="min"/>
                                         <queries:VariableRefStep value="middle"/>
                                         </math:Equals>
-                                        <workflows:CreateEntity xmlns:workflows="http://lang.whole.org/Workflows">
-                                        <workflows:Text value="create stage down"/>
-                                        <commons:Resolver/>
-                                        <workflows:Registry value="DEFAULT"/>
-                                        <workflows:StringLiteral value="http://lang.whole.org/Commons#StageDownFragment"/>
-                                        <workflows:Expressions initialCapacity="1">
+                                        <queries:Create>
+                                        <queries:EntityType value="http://lang.whole.org/Commons#StageDownFragment"/>
+                                        <queries:Registry value="DEFAULT"/>
+                                        <queries:Children initialCapacity="1">
                                         <commons:StageUpFragment>
                                         <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="3">
                                         <text:Text value="is the answer"/>
@@ -484,17 +482,15 @@
                                         <text:Text value="?"/>
                                         </text:Row>
                                         </commons:StageUpFragment>
-                                        </workflows:Expressions>
-                                        </workflows:CreateEntity>
+                                        </queries:Children>
+                                        </queries:Create>
                                         </queries:If>
                                         <queries:If>
                                         <commons:Resolver/>
-                                        <workflows:CreateEntity xmlns:workflows="http://lang.whole.org/Workflows">
-                                        <workflows:Text value="create stage down"/>
-                                        <commons:Resolver/>
-                                        <workflows:Registry value="DEFAULT"/>
-                                        <workflows:StringLiteral value="http://lang.whole.org/Commons#StageDownFragment"/>
-                                        <workflows:Expressions initialCapacity="1">
+                                        <queries:Create>
+                                        <queries:EntityType value="http://lang.whole.org/Commons#StageDownFragment"/>
+                                        <queries:Registry value="DEFAULT"/>
+                                        <queries:Children initialCapacity="1">
                                         <commons:StageUpFragment>
                                         <text:Row xmlns:text="http://lang.whole.org/Text" initialCapacity="5">
                                         <text:Text value="is the answer between"/>
@@ -512,8 +508,8 @@
                                         <text:Text value="?"/>
                                         </text:Row>
                                         </commons:StageUpFragment>
-                                        </workflows:Expressions>
-                                        </workflows:CreateEntity>
+                                        </queries:Children>
+                                        </queries:Create>
                                         </queries:If>
                                         </queries:Choose>
                                         </commons:StageDownFragment>
