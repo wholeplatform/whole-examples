@@ -521,27 +521,21 @@
                                         <commons:VarName value="instanceChild"/>
                                         <commons:Quantifier value="*"/>
                                         </commons:Variable>
-                                        <workflows:CreateEntity xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <queries:Create>
                                         <commons:Variable>
-                                        <commons:VarType value="http://lang.whole.org/Workflows#Text"/>
-                                        <commons:VarName value="instanceFactoryName"/>
-                                        <commons:Quantifier value="!"/>
-                                        </commons:Variable>
-                                        <commons:Resolver/>
-                                        <workflows:Registry value="DEFAULT"/>
-                                        <commons:Variable>
-                                        <commons:VarType value="http://lang.whole.org/Workflows#StringLiteral"/>
+                                        <commons:VarType value="http://lang.whole.org/Queries#EntityType"/>
                                         <commons:VarName value="instanceUri"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
-                                        <workflows:Assignments initialCapacity="1">
+                                        <queries:Registry value="DEFAULT"/>
+                                        <queries:Features initialCapacity="1">
                                         <commons:Variable>
-                                        <commons:VarType value="http://lang.whole.org/Workflows#Assign"/>
+                                        <commons:VarType value="http://lang.whole.org/Queries#Feature"/>
                                         <commons:VarName value="property"/>
                                         <commons:Quantifier value="*"/>
                                         </commons:Variable>
-                                        </workflows:Assignments>
-                                        </workflows:CreateEntity>
+                                        </queries:Features>
+                                        </queries:Create>
                                     </queries:Block>
                                 </commons:StageUpFragment>
                                 <queries:SelfStep/>
@@ -553,18 +547,18 @@
                                         <queries:Tuple initialCapacity="2">
                                         <queries:Filter>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                        <workflows:Assign xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <queries:Feature>
                                         <commons:Variable>
-                                        <commons:VarType value="http://lang.whole.org/Workflows#Variable"/>
+                                        <commons:VarType value="http://lang.whole.org/Queries#Name"/>
                                         <commons:VarName value="name"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         <commons:Variable>
-                                        <commons:VarType value="http://lang.whole.org/Workflows#Variable"/>
+                                        <commons:VarType value="http://lang.whole.org/Queries#VariableRefStep"/>
                                         <commons:VarName value="instanceName"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
-                                        </workflows:Assign>
+                                        </queries:Feature>
                                         </commons:StageUpFragment>
                                         <queries:VariableTest value="property"/>
                                         </queries:Filter>
@@ -634,9 +628,9 @@
                                         <queries:Select>
                                         <queries:Filter>
                                         <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
-                                        <workflows:Assign xmlns:workflows="http://lang.whole.org/Workflows">
+                                        <queries:Feature>
                                         <commons:Variable>
-                                        <commons:VarType value="http://lang.whole.org/Workflows#Variable"/>
+                                        <commons:VarType value="http://lang.whole.org/Queries#Name"/>
                                         <commons:VarName value="name"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
@@ -647,7 +641,7 @@
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
                                         </commons:StageUpFragment>
-                                        </workflows:Assign>
+                                        </queries:Feature>
                                         </commons:StageUpFragment>
                                         <queries:VariableTest value="property"/>
                                         </queries:Filter>

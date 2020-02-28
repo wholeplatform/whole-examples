@@ -169,9 +169,21 @@
                                 <workflows:Variable value="entitiesGrammar"/>
                                 <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                             </workflows:Parse>
-                            <tests:IsNull/>
+                            <tests:Throws>
+                                <tests:ThrowableType value="org.whole.lang.exceptions.WholeIllegalArgumentException"/>
+                            </tests:Throws>
                         </tests:AssertThat>
                     </tests:TestStatements>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                    <tests:Result>
+                        <tests:Outcome value="ERROR"/>
+                        <tests:StringLiteral value="/testCases/0/tests/0"/>
+                        <tests:StringLiteral value="end of input expected, after input &apos;[...]&apos; got, at offset 0, &apos;entity Person {\n    string nam[...]&apos;"/>
+                    </tests:Result>
                 </tests:Test>
                 <tests:Test>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -333,8 +345,28 @@
                             </tests:Matches>
                         </tests:AssertThat>
                     </tests:TestStatements>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
                 </tests:Test>
             </tests:Tests>
+            <tests:Results>
+                <tests:IntLiteral value="2"/>
+                <tests:IntLiteral value="0"/>
+                <tests:IntLiteral value="0"/>
+            </tests:Results>
+            <tests:Results>
+                <tests:IntLiteral value="1"/>
+                <tests:IntLiteral value="0"/>
+                <tests:IntLiteral value="1"/>
+            </tests:Results>
         </tests:TestCase>
         <tests:TestCase>
             <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -554,6 +586,7 @@
                                         <java:SimpleName value="name"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -605,6 +638,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="firstName"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -658,6 +692,7 @@
                                         <java:SimpleName value="birthDate"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -709,6 +744,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="ownedCar"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -821,6 +857,7 @@
                                         <java:SimpleName value="make"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -872,6 +909,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="model"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1127,6 +1165,7 @@
                                         <java:SimpleName value="stringProp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -1178,6 +1217,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="dateProp"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1231,6 +1271,7 @@
                                         <java:SimpleName value="booleanProp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -1282,6 +1323,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="intProp"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1335,6 +1377,7 @@
                                         <java:SimpleName value="floatProp"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -1386,6 +1429,7 @@
                                         <java:Varargs value="false"/>
                                         <java:SimpleName value="refProp"/>
                                         <java:ExtraDimensions value="0"/>
+                                        <commons:Resolver/>
                                         <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
@@ -1498,6 +1542,7 @@
                                         <java:SimpleName value="make"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -1550,6 +1595,7 @@
                                         <java:SimpleName value="model"/>
                                         <java:ExtraDimensions value="0"/>
                                         <commons:Resolver/>
+                                        <commons:Resolver/>
                                         </java:SingleVariableDeclaration>
                                         </java:Parameters>
                                         <commons:Resolver/>
@@ -1588,6 +1634,16 @@
                             </tests:Matches>
                         </tests:AssertThat>
                     </tests:TestStatements>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
                 </tests:Test>
                 <tests:Test>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -1702,6 +1758,16 @@
                             </tests:Matches>
                         </tests:AssertThat>
                     </tests:TestStatements>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
                 </tests:Test>
                 <tests:Test>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -1921,6 +1987,16 @@
                             </tests:Matches>
                         </tests:AssertThat>
                     </tests:TestStatements>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
                 </tests:Test>
                 <tests:Test>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -2090,6 +2166,16 @@
                             </tests:Matches>
                         </tests:AssertThat>
                     </tests:TestStatements>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
                 </tests:Test>
                 <tests:Test>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -2326,8 +2412,38 @@
                             </tests:Matches>
                         </tests:AssertThat>
                     </tests:TestStatements>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
+                    <tests:Result>
+                        <tests:Outcome value="SUCCESS"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </tests:Result>
                 </tests:Test>
             </tests:Tests>
+            <tests:Results>
+                <tests:IntLiteral value="5"/>
+                <tests:IntLiteral value="0"/>
+                <tests:IntLiteral value="0"/>
+            </tests:Results>
+            <tests:Results>
+                <tests:IntLiteral value="5"/>
+                <tests:IntLiteral value="0"/>
+                <tests:IntLiteral value="0"/>
+            </tests:Results>
         </tests:TestCase>
     </tests:TestCases>
+    <tests:Results>
+        <tests:IntLiteral value="7"/>
+        <tests:IntLiteral value="0"/>
+        <tests:IntLiteral value="0"/>
+    </tests:Results>
+    <tests:Results>
+        <tests:IntLiteral value="6"/>
+        <tests:IntLiteral value="0"/>
+        <tests:IntLiteral value="1"/>
+    </tests:Results>
 </tests:TestSuite>
