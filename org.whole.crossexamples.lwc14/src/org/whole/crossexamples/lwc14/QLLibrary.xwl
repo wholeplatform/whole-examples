@@ -1066,15 +1066,18 @@
                                         <javascript:NewExpression>
                                         <javascript:Identifier value="Date"/>
                                         <javascript:Expressions initialCapacity="1">
+                                        <patterns:DerivationPoint>
                                         <workflows:InvokeJavaInstanceMethod xmlns:workflows="http://lang.whole.org/Workflows">
                                         <workflows:Text value="self.getTime()"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
-                                        <workflows:Variable value="self"/>
+                                        <queries:SelfStep/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         <workflows:StringLiteral value="java.util.Date"/>
                                         <workflows:StringLiteral value="getTime()"/>
                                         <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
                                         </workflows:InvokeJavaInstanceMethod>
+                                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                                        </patterns:DerivationPoint>
                                         </javascript:Expressions>
                                         </javascript:NewExpression>
                                         </javascript:ExpressionStatement>
