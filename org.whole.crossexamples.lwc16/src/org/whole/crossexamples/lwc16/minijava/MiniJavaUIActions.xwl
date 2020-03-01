@@ -42,25 +42,23 @@
                                 <queries:VariableTest value="name"/>
                             </queries:Filter>
                         </queries:Path>
-                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
-                            <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
-                                <workflows:Text value="Rename refactoring"/>
-                                <workflows:Text value="New name"/>
-                                <workflows:Assignments initialCapacity="1">
-                                    <workflows:Assign>
-                                        <workflows:Variable value="newName"/>
-                                        <commons:StageUpFragment>
+                        <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="Rename refactoring"/>
+                            <workflows:Text value="New name"/>
+                            <workflows:Assignments initialCapacity="1">
+                                <workflows:Assign>
+                                    <workflows:Variable value="newName"/>
+                                    <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                         <commons:Variable>
                                         <commons:VarType value="http://lang.whole.org/Workflows#StringLiteral"/>
                                         <commons:VarName value="name"/>
                                         <commons:Quantifier value="!"/>
                                         </commons:Variable>
-                                        </commons:StageUpFragment>
-                                    </workflows:Assign>
-                                </workflows:Assignments>
-                                <workflows:Variable value="factory"/>
-                            </workflows:Task>
-                        </commons:SameStageFragment>
+                                    </commons:StageUpFragment>
+                                </workflows:Assign>
+                            </workflows:Assignments>
+                            <workflows:Variable value="factory"/>
+                        </workflows:Task>
                         <semantics:FunctionApplication xmlns:semantics="http://lang.whole.org/Semantics">
                             <semantics:Name value="whole:org.whole.crossexamples.lwc16.minijava:MiniJavaLibrarySemantics#rename"/>
                             <queries:VariableRefStep value="primarySelectedEntity"/>

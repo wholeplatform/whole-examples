@@ -101,14 +101,12 @@
                     <queries:Not>
                         <queries:TypeTest value="whole:org.whole.crossexamples.lwc14:QLModel#Form"/>
                     </queries:Not>
-                    <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
-                        <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
-                            <workflows:Text value="No suitable form"/>
-                            <workflows:Text value="Can generate only Form entities!"/>
-                            <commons:Resolver/>
-                            <commons:Resolver/>
-                        </workflows:Task>
-                    </commons:SameStageFragment>
+                    <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
+                        <workflows:Text value="No suitable form"/>
+                        <workflows:Text value="Can generate only Form entities!"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                    </workflows:Task>
                 </queries:If>
                 <queries:If>
                     <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
@@ -334,23 +332,21 @@
                             </workflows:CreateJavaClassInstance>
                             <queries:VariableTest value="nameGenerator"/>
                         </queries:Filter>
-                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
-                            <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
-                                <workflows:Text value="Configure interval"/>
-                                <workflows:Text value="Choose min and max values"/>
-                                <workflows:Assignments initialCapacity="2">
-                                    <workflows:Assign>
-                                        <workflows:Variable value="min"/>
-                                        <queries:IntLiteral value="1"/>
-                                    </workflows:Assign>
-                                    <workflows:Assign>
-                                        <workflows:Variable value="max"/>
-                                        <queries:IntLiteral value="1024"/>
-                                    </workflows:Assign>
-                                </workflows:Assignments>
-                                <commons:Resolver/>
-                            </workflows:Task>
-                        </commons:SameStageFragment>
+                        <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="Configure interval"/>
+                            <workflows:Text value="Choose min and max values"/>
+                            <workflows:Assignments initialCapacity="2">
+                                <workflows:Assign>
+                                    <workflows:Variable value="min"/>
+                                    <queries:IntLiteral value="1"/>
+                                </workflows:Assign>
+                                <workflows:Assign>
+                                    <workflows:Variable value="max"/>
+                                    <queries:IntLiteral value="1024"/>
+                                </workflows:Assign>
+                            </workflows:Assignments>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </workflows:Task>
                         <queries:Select>
                             <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                 <ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
@@ -570,23 +566,21 @@
                             </workflows:CreateJavaClassInstance>
                             <queries:VariableTest value="nameGenerator"/>
                         </queries:Filter>
-                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
-                            <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
-                                <workflows:Text value="Configure interval"/>
-                                <workflows:Text value="Choose min and max values"/>
-                                <workflows:Assignments initialCapacity="2">
-                                    <workflows:Assign>
-                                        <workflows:Variable value="min"/>
-                                        <queries:IntLiteral value="1"/>
-                                    </workflows:Assign>
-                                    <workflows:Assign>
-                                        <workflows:Variable value="max"/>
-                                        <queries:IntLiteral value="1024"/>
-                                    </workflows:Assign>
-                                </workflows:Assignments>
-                                <commons:Resolver/>
-                            </workflows:Task>
-                        </commons:SameStageFragment>
+                        <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="Configure interval"/>
+                            <workflows:Text value="Choose min and max values"/>
+                            <workflows:Assignments initialCapacity="2">
+                                <workflows:Assign>
+                                    <workflows:Variable value="min"/>
+                                    <queries:IntLiteral value="1"/>
+                                </workflows:Assign>
+                                <workflows:Assign>
+                                    <workflows:Variable value="max"/>
+                                    <queries:IntLiteral value="1024"/>
+                                </workflows:Assign>
+                            </workflows:Assignments>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </workflows:Task>
                         <queries:Select>
                             <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                 <ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
@@ -943,27 +937,25 @@
                             </workflows:CreateJavaClassInstance>
                             <queries:VariableTest value="nameGenerator"/>
                         </queries:Filter>
-                        <commons:SameStageFragment xmlns:commons="http://lang.whole.org/Commons">
-                            <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
-                                <workflows:Text value="Configure interval"/>
-                                <workflows:Text value="Choose min and max values"/>
-                                <workflows:Assignments initialCapacity="3">
-                                    <workflows:Assign>
-                                        <workflows:Variable value="min"/>
-                                        <queries:IntLiteral value="1"/>
-                                    </workflows:Assign>
-                                    <workflows:Assign>
-                                        <workflows:Variable value="max"/>
-                                        <queries:IntLiteral value="1024"/>
-                                    </workflows:Assign>
-                                    <workflows:Assign>
-                                        <workflows:Variable value="width"/>
-                                        <queries:IntLiteral value="32"/>
-                                    </workflows:Assign>
-                                </workflows:Assignments>
-                                <commons:Resolver/>
-                            </workflows:Task>
-                        </commons:SameStageFragment>
+                        <workflows:Task xmlns:workflows="http://lang.whole.org/Workflows">
+                            <workflows:Text value="Configure interval"/>
+                            <workflows:Text value="Choose min and max values"/>
+                            <workflows:Assignments initialCapacity="3">
+                                <workflows:Assign>
+                                    <workflows:Variable value="min"/>
+                                    <queries:IntLiteral value="1"/>
+                                </workflows:Assign>
+                                <workflows:Assign>
+                                    <workflows:Variable value="max"/>
+                                    <queries:IntLiteral value="1024"/>
+                                </workflows:Assign>
+                                <workflows:Assign>
+                                    <workflows:Variable value="width"/>
+                                    <queries:IntLiteral value="32"/>
+                                </workflows:Assign>
+                            </workflows:Assignments>
+                            <commons:Resolver xmlns:commons="http://lang.whole.org/Commons"/>
+                        </workflows:Task>
                         <queries:Select>
                             <commons:StageUpFragment xmlns:commons="http://lang.whole.org/Commons">
                                 <ql:Form xmlns:ql="whole:org.whole.crossexamples.lwc14:QLModel">
