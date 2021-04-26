@@ -22,7 +22,7 @@
 		<scm.plugin.version>1.9.5</scm.plugin.version>
 
 		<commons-lang3.version>3.7</commons-lang3.version>
-		<commons-io.version>2.6</commons-io.version>
+		<commons-io.version>2.7</commons-io.version>
 		<whole-platform.version>1.0.0-SNAPSHOT</whole-platform.version>
 		<!--whole-platform.version>LATEST</whole-platform.version-->
 		<joda-time-version>1.6.2</joda-time-version>
